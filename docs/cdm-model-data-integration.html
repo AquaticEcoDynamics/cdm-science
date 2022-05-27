@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>3 CDM Model-Data Integration | The Coorong Dynamics Model</title>
+<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS --><link rel="stylesheet" href="css/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">The Coorong Dynamics Model</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="the-coorong-dynamics-model.html"><span class="header-section-number">2</span> The Coorong Dynamics Model</a></li>
+<li><a class="active" href="cdm-model-data-integration.html"><span class="header-section-number">3</span> CDM Model-Data Integration</a></li>
+<li><a class="" href="cdm-development-testing.html"><span class="header-section-number">4</span> CDM Development &amp; Testing</a></li>
+<li><a class="" href="cdm-habitat-modelling.html"><span class="header-section-number">5</span> CDM Habitat Modelling</a></li>
+<li><a class="" href="integrated-assessment-of-the-cdm.html"><span class="header-section-number">6</span> Integrated Assessment of the CDM</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a-data-catalogue.html">Appendix A : Data Catalogue</a></li>
+<li><a class="" href="appendix-b-results-archive.html">Appendix B : Results Archive</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cdm-model-data-integration" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> CDM Model-Data Integration<a class="anchor" aria-label="anchor" href="#cdm-model-data-integration"><i class="fas fa-link"></i></a>
+</h1>
+<p><br></p>
+<p>The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure <a href="cdm-model-data-integration.html#fig:cdm-pic5">3.1</a>.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span id="fig:cdm-pic5"></span>
+<img src="images/cdm/2_picture2.png" alt="The Coorong model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements." width="100%"><p class="caption">
+Figure 3.1: The Coorong model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements.
+</p>
+</div>
+</div>
+<p>To enable the ongoing use and development of the CDM in this context, we have developed a <strong>model-data integration framework</strong> able to be used by DEW staff and project partners to co-ordinate the reference datasets needed for model development, and standardise the data integration and modelling workflows. The below sections describe how the CDM is organised, the tools and approaches used for model provenance and managing data streams, and model versioning.</p>
+<p><br></p>
+<div id="cdm-structure-and-organisation" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> CDM structure and organisation<a class="anchor" aria-label="anchor" href="#cdm-structure-and-organisation"><i class="fas fa-link"></i></a>
+</h2>
+<p>The CDM has been designed is such a way to both facilitate the sharing of data and models across various agencies and researchers, as well as providing a formalised structure to store, catalogue and process complex and unique datasets. Comparmentalised data structures have been implemented to allow for tracking and version control of data and models as they are utilised and upgraded throughout the project.</p>
+<p>Data cataloguing via the “CDM Data Catalogue” (described in Section 3.4) has been designed with cross-agency usage in mind. Integration with the HCHB MEK Catalogue is essential to allow for the tracking of data changes and upgrades throughout the project. The “Point of Truth,” “MEK Catalogue Classification” and “Status Notes” catagories have been included in the CDM Data Catalogue to track a dataset’s evolution throughout the project.</p>
+<p>Github has been chosen to house the repository based on it’s mature version control systems and cross platform program support to aid all stakeholders accessing the data and models (<a href="https://github.com/" class="uri">https://github.com/</a>). In addition, there is a <a href="https://guides.github.com/activities/hello-world/">wide variety of documentation online</a> to assist users new to GitHub.</p>
+<div id="online-repository-access" class="section level3" number="3.1.1">
+<h3>
+<span class="header-section-number">3.1.1</span> <strong>Online repository access</strong><a class="anchor" aria-label="anchor" href="#online-repository-access"><i class="fas fa-link"></i></a>
+</h3>
+<p>The data and model files are stored in the Github <a href="https://github.com/AquaticEcoDynamics/CDM">CDM Repository</a> and shared with HCHB research partners.</p>
+</div>
+<div id="repository-folder-structure" class="section level3" number="3.1.2">
+<h3>
+<span class="header-section-number">3.1.2</span> <strong>Repository folder structure</strong><a class="anchor" aria-label="anchor" href="#repository-folder-structure"><i class="fas fa-link"></i></a>
+</h3>
+<p>The folders structure follows the logic of data types and resources as shown in Figure 2.7.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span id="fig:cdm-pic7"></span>
+<img src="images/cdm/2.4.1_Folder_Structure.png" alt="CDM online data storage folder structure" width="100%"><p class="caption">
+Figure 3.2: CDM online data storage folder structure
+</p>
+</div>
+</div>
+<p>The root directories are listed and described below:</p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:A-folders">Table 3.1: </span>CDM Root Folder Descriptions
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Folder Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+docs
+</td>
+<td style="text-align:left;">
+Documentation relevent to the CDM repository (including this manual)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+data
+</td>
+<td style="text-align:left;">
+All raw &amp; processed data, as well as summary images and tables
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+gis
+</td>
+<td style="text-align:left;">
+All QGIS project files, GIS data files and summary maps and images
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+models
+</td>
+<td style="text-align:left;">
+All models created and utilised during the project
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+scripts
+</td>
+<td style="text-align:left;">
+All Matlab, R &amp; Python scripts used to import &amp; process data, as well as model creation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+sandbox
+</td>
+<td style="text-align:left;">
+All free directory users can add scratch files and temporary datasets
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="high-level-workflows" class="section level3" number="3.1.3">
+<h3>
+<span class="header-section-number">3.1.3</span> <strong>High level workflows</strong><a class="anchor" aria-label="anchor" href="#high-level-workflows"><i class="fas fa-link"></i></a>
+</h3>
+<p>The raw data collected from previous works and current HCHB component outcomes are stored in the <code>data/incoming</code> folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the <code>scripts</code> folder) to convert the raw data into ‘standard’ data format (stored in the <code>data/store</code> folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure 2.9.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span id="fig:cdm-pic8"></span>
+<img src="images/cdm/2.4.1_Workflow.png" alt="CDM conceptual diagram showing the flow of data through the system" width="100%"><p class="caption">
+Figure 3.3: CDM conceptual diagram showing the flow of data through the system
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="data-repository-and-management" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Data repository and management<a class="anchor" aria-label="anchor" href="#data-repository-and-management"><i class="fas fa-link"></i></a>
+</h2>
+<div id="data-catalogue" class="section level3" number="3.2.1">
+<h3>
+<span class="header-section-number">3.2.1</span> <strong>Data catalogue</strong><a class="anchor" aria-label="anchor" href="#data-catalogue"><i class="fas fa-link"></i></a>
+</h3>
+<p>All data that is uploaded to the CDM github repository is logged in the CDM Data Catalogue. The catalogue (found in the data directory) is comprised of a main data sheet (“CDM Data Catalogue”) as well as summary sheets for all processed data. Every raw datafile is logged with the following information:</p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:A-metadata">Table 3.2: </span>CDM Catalogue Metadata
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Classification
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AED Classification
+</td>
+<td style="text-align:left;">
+Description code for the data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Agency Code
+</td>
+<td style="text-align:left;">
+Legend name for the data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Document Title
+</td>
+<td style="text-align:left;">
+Title of Raw document, or folder name is large number of files (e.g. Year met station downloaded data)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Description
+</td>
+<td style="text-align:left;">
+Brief description of the data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+# Sites
+</td>
+<td style="text-align:left;">
+Number of unique sites in the data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Date Range
+</td>
+<td style="text-align:left;">
+Total date range for the data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CDM Location
+</td>
+<td style="text-align:left;">
+Agency / Location responsible for maintaining raw data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Point of Truth
+</td>
+<td style="text-align:left;">
+Agency / Location responsible for maintaining raw data
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Contact Name
+</td>
+<td style="text-align:left;">
+Author of Document or person responsible
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Contact Email
+</td>
+<td style="text-align:left;">
+email address of Contact Name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MEK Catalogue Classification
+</td>
+<td style="text-align:left;">
+Location within MEK Catalogue
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Status Notes
+</td>
+<td style="text-align:left;">
+Notes on whether the dataset is finalised, or if work is ongoing
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Summary Sheet
+</td>
+<td style="text-align:left;">
+Sheet within this document summarising the data &amp; sites
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Import Status
+</td>
+<td style="text-align:left;">
+Yes / No
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Store File
+</td>
+<td style="text-align:left;">
+Processed data file
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Summary Images
+</td>
+<td style="text-align:left;">
+Images for each site &amp; variable
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Conversion File
+</td>
+<td style="text-align:left;">
+XLSX spreadsheet with any site name and variable conversions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GIS File
+</td>
+<td style="text-align:left;">
+Shape file or raster
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GIS Map
+</td>
+<td style="text-align:left;">
+Final GIS map showing sites &amp; other information
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Supplemental File
+</td>
+<td style="text-align:left;">
+store file with data merged from other uploads (coorong.mat)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BC Usage
+</td>
+<td style="text-align:left;">
+If data is used in the creation of model BC files
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Validation Usage
+</td>
+<td style="text-align:left;">
+If data is used as part of the model validation
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<p>A catalogue of all data under management of the CDM is provided in <a href="Appendix%20A%20:%20Data%20Catalogue">Appendix A</a>.</p>
+</div>
+<div id="data-organisation" class="section level3" number="3.2.2">
+<h3>
+<span class="header-section-number">3.2.2</span> <strong>Data organisation</strong><a class="anchor" aria-label="anchor" href="#data-organisation"><i class="fas fa-link"></i></a>
+</h3>
+<p>All raw data is initially uploaded into the <code>data/incoming</code> directory is filed under either it’s Trials and Investigations (T&amp;I) component, or the agency responsible for supplying the data.</p>
+<p>Data is then imported into a common format via the scripts found in the <code>scripts/dataimport</code> directory and stored in the <code>data/store</code> directory. Although some imported data may contain extra fields, all imported data contains the following fields:</p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:CDM-datastore">Table 3.3: </span>CDM Stored Data
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Type
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="4">
+<td colspan="2" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Site Info</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+X
+</td>
+<td style="text-align:left;">
+X Co-Ords of site in UTM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Y
+</td>
+<td style="text-align:left;">
+Y Co-Ords of site in UTM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Name
+</td>
+<td style="text-align:left;">
+Site Name
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Agency
+</td>
+<td style="text-align:left;">
+Classification code matching entry in CDM Catalogue
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="2" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Data Info</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Data
+</td>
+<td style="text-align:left;">
+Array of Data Values
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Date
+</td>
+<td style="text-align:left;">
+Array of Sampling dates in Matlab Julian Date format
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Depth
+</td>
+<td style="text-align:left;">
+Array of sampling depths
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Units
+</td>
+<td style="text-align:left;">
+Data Units
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<p>Once imported, the data is then summerised via a script in the <code>scripts/dataimport/summary</code> directory to create a standard set of plots and summary tables that can be found in the <code>data/summary</code> directory. ESRI shapefiles are also automatically produced and saved into the <code>gis/summary</code> directory to be used to create a stardarised site map of the data’s sampling locations.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span id="fig:cdm-pic10"></span>
+<img src="images/cdm/DEW%20WaterDataSA%20Locations.png" alt="Example GIS Map showing the sampling locations for the Water Data SA online data " width="100%"><p class="caption">
+Figure 3.4: Example GIS Map showing the sampling locations for the Water Data SA online data
+</p>
+</div>
+</div>
+</div>
+<div id="data-processing-workflows" class="section level3" number="3.2.3">
+<h3>
+<span class="header-section-number">3.2.3</span> <strong>Data processing workflows</strong><a class="anchor" aria-label="anchor" href="#data-processing-workflows"><i class="fas fa-link"></i></a>
+</h3>
+<p>The data processing scripts for the CDM are all contained within the <code>scripts/</code> directory, which has three subfodlers:</p>
+<ul>
+<li>
+<code>dataimport</code>: All scripts that import data into the CDM, or process data into a common format</li>
+<li>
+<code>datatools</code>: All scripts that use processed data to create additional datasets or model input files</li>
+<li>
+<code>modeltools</code>: All scripts that use processed data and model output to create additional datasets, model validation images and analysis</li>
+</ul>
+<p>Scripting has been predominately carried out utilising the <a href="https://au.mathworks.com/?s_tid=gn_logo">Matlab</a> programming language, however there are scripts within the <code>scripts</code> directory using both <a href="https://www.r-project.org/about.html">R</a> and <a href="https://www.python.org/">Python</a>. Users are able to add scripts in their preferred language; the repository core scripts for data storage and model plotting are currently in Matlab.</p>
+<p>Below is an example workflow outlining how a meteorological boundary condition file for the TUFLOW-FV model is created (Figure <a href="cdm-model-data-integration.html#fig:cdm-pic9">3.5</a>. Data is first downloaded and processed by scripts in the <code>dataimport</code> directory. A series of Matlab functions found in the <code>datatools</code> directory then read in the processed data (archived in the <code>data/store</code> directory) and use it to create the meteorological boundary condition file for the model. Both Matlab and R scripts were used in this example.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span id="fig:cdm-pic9"></span>
+<img src="images/cdm/2.4.1_Met_Workflow.png" alt="CDM work flow diagram for met data" width="100%"><p class="caption">
+Figure 3.5: CDM work flow diagram for met data
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="model-repository-and-management" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Model repository and management<a class="anchor" aria-label="anchor" href="#model-repository-and-management"><i class="fas fa-link"></i></a>
+</h2>
+<div id="model-catalogue" class="section level3" number="3.3.1">
+<h3>
+<span class="header-section-number">3.3.1</span> <strong>Model catalogue</strong><a class="anchor" aria-label="anchor" href="#model-catalogue"><i class="fas fa-link"></i></a>
+</h3>
+<p>All model files are stored in the <code>models</code> folder. As the model is developed over time, the model files are classified with project names and model generation identifiers. The ‘MER’ folder contains the model files used for assessing ‘eWater’ within the MER program; the ‘CIIP’ folder contains the model files developed for assessing CIIP scenarios, and the ‘HCHB’ folder contains the the core CDM files being updated throughout the HCHB project.</p>
+<p>Models within each project directory are separated via both <em>generation</em> and model <em>type</em>. Within the HCHB model folder there are currently 3 distinct models:</p>
+<ul>
+<li><code>hchb_swan_v1</code></li>
+<li><code>hchb_tfvaed_v1</code></li>
+<li><code>coorong-rapid</code></li>
+</ul>
+<p>The <code>hchb_swan_v1</code> is the first generation of the Coorong SWAN Wave model that has been developed (see Section 3.2).</p>
+<p>The <code>coorong-rapid</code> simulation folder and the <code>hchb_tfvaed_v1</code> simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files.</p>
+<p>Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model’s configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CDM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.</p>
+</div>
+<div id="tuflow-fv-model-organisation" class="section level3" number="3.3.2">
+<h3>
+<span class="header-section-number">3.3.2</span> <strong>TUFLOW-FV model organisation</strong><a class="anchor" aria-label="anchor" href="#tuflow-fv-model-organisation"><i class="fas fa-link"></i></a>
+</h3>
+<p>Each version of TUFLOW-FV models in the <em>CIIP</em> and <em>HCHB</em> sub-folders are organised with the following structure:</p>
+<ul>
+<li>
+<code>Bc_dbase</code> (or <code>BCs</code>): boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;</li>
+<li>
+<code>External</code>: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CDM is in 3D mode;</li>
+<li>
+<code>Model</code>: TUFLOW-FV model structure files, including geometry and mesh files, and GIS files controlling the nodestrings and material zones;</li>
+<li>
+<code>Run</code>: model control/configuration files;</li>
+</ul>
+<p>The TUFLOW-FV model found in the MER project folder was created prior to the above structure being implemented and contains the following folder structure:</p>
+<ul>
+<li>
+<code>BCs</code>: boundary condition files, including tide and inflow boundary files; meteorological boundary files, and initial condition files;</li>
+<li>
+<code>External</code>: AED model files linked with the TUFLOW-FV, and optionally the ‘GOTM’ vertical mixing model if the CDM is in 3D mode;</li>
+<li>
+<code>GEO</code>: TUFLOW-FV model structure files, including geometry and mesh files, and GIS files controlling the nodestrings and material zones;</li>
+<li>
+<code>INPUT</code>: model control/configuration files;</li>
+<li>
+<code>Plotting</code> : Directory to store model output images;</li>
+</ul>
+</div>
+<div id="swan-wave-model-organisation" class="section level3" number="3.3.3">
+<h3>
+<span class="header-section-number">3.3.3</span> <strong>SWAN Wave Model organisation</strong><a class="anchor" aria-label="anchor" href="#swan-wave-model-organisation"><i class="fas fa-link"></i></a>
+</h3>
+<p>The SWAN Wave models found in the HCHB model directory have the following format:</p>
+<ul>
+<li>
+<code>01_geometry</code> : Contains the bathymetry input files as well as a automatically generated image of the bathymetry and a matlab .mat file containing the bathymetry information;</li>
+<li>
+<code>02_bc_dbase</code> : Contains the processed wind input files</li>
+<li>
+<code>03_simulation</code> : Contains the INPUT control file required to run the simulation</li>
+<li>
+<code>04_results</code> : Model output directory</li>
+</ul>
+<p>The script required to create and configure a new SWAN wave model can be found in the <code>scripts/datatools/wave</code> directory.</p>
+</div>
+<div id="model-processing-toolbox" class="section level3" number="3.3.4">
+<h3>
+<span class="header-section-number">3.3.4</span> <strong>Model processing toolbox</strong><a class="anchor" aria-label="anchor" href="#model-processing-toolbox"><i class="fas fa-link"></i></a>
+</h3>
+<p>The processing of any model output is predominately written and run in Matlab. Scripts that have been specifically developed for this project are contained within the <code>scripts/modeltools</code> directory. Scripts that have created Figures 3.9, 3.11 and 5.2 (among others) can be found here.</p>
+<p>Plotting and model processing types include:</p>
+<ul>
+<li>Time-series plotting;</li>
+<li>Transect plotting;</li>
+<li>Model animation creation;</li>
+<li>Error assessment;</li>
+<li>Wave model plotting;</li>
+<li>Habitat mapping (e.g., Ruppia &amp; Fish HSI processing and mapping)</li>
+<li>Scenario comparison and “DelMap” plotting;</li>
+<li>Nutrient budget assessments.</li>
+</ul>
+<p>In particular, the publicly available GitHub repository called <a href="https://github.com/AquaticEcoDynamics/aed_matlab_modeltools"><code>aed_matlab_modeltools</code></a> is used and contains a wide variety of matlab scripts and functions that are frequently used to process and visualise model output. <code>plottfv_polygon</code> and <code>plottfv_transect</code> are the main functions that are frequently used. Tables 7.3 and 7.6 in Appendix B are examples of output generated via the <code>plottfv_polygon</code> function found in the <code>aed_matlab_modeltools</code> repository. This plotting function uses data and gis files stored in the CDM repository, in addition to model output to create timeseries plots of the model (averaged within a polygon region) compared against field data. The plotting function will also automatically calculate a range of error statistics based on model output and field measured data.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span id="fig:cdm-plottfvpolygon"></span>
+<img src="images/cdm/0006_A4261209.png" alt="Example output from plottfv_polygon with error matrix" width="100%"><p class="caption">
+Figure 3.6: Example output from plottfv_polygon with error matrix
+</p>
+</div>
+</div>
+<p><code>plottfv_transect</code> can also be found in the <code>aed_matlab_modeltools</code> repository. This plots model data extracted along a transect line during a specified plotting period, and compares against the range of field data found within that period.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span id="fig:cdm-plottfvtransect"></span>
+<img src="images/cdm/example_Transect.png" alt="Example output from plottfv_transect with distance from Goolwa Barrage (km) along the x-axis" width="100%"><p class="caption">
+Figure 3.7: Example output from plottfv_transect with distance from Goolwa Barrage (km) along the x-axis
+</p>
+</div>
+</div>
+<p>The <code>aed_matlab_modeltools</code> also houses scripts and functions for:</p>
+<ul>
+<li>Curtain plotting;</li>
+<li>Mesh manipulation tools;</li>
+<li>Data exports;</li>
+<li>Sheet plotting and animation tools;</li>
+</ul>
+<p>Information on how to clone a publicly available GitHub repository can be found <a href="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository">here</a>.</p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="the-coorong-dynamics-model.html"><span class="header-section-number">2</span> The Coorong Dynamics Model</a></div>
+<div class="next"><a href="cdm-development-testing.html"><span class="header-section-number">4</span> CDM Development &amp; Testing</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cdm-model-data-integration"><span class="header-section-number">3</span> CDM Model-Data Integration</a></li>
+<li>
+<a class="nav-link" href="#cdm-structure-and-organisation"><span class="header-section-number">3.1</span> CDM structure and organisation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#online-repository-access"><span class="header-section-number">3.1.1</span> Online repository access</a></li>
+<li><a class="nav-link" href="#repository-folder-structure"><span class="header-section-number">3.1.2</span> Repository folder structure</a></li>
+<li><a class="nav-link" href="#high-level-workflows"><span class="header-section-number">3.1.3</span> High level workflows</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#data-repository-and-management"><span class="header-section-number">3.2</span> Data repository and management</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data-catalogue"><span class="header-section-number">3.2.1</span> Data catalogue</a></li>
+<li><a class="nav-link" href="#data-organisation"><span class="header-section-number">3.2.2</span> Data organisation</a></li>
+<li><a class="nav-link" href="#data-processing-workflows"><span class="header-section-number">3.2.3</span> Data processing workflows</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#model-repository-and-management"><span class="header-section-number">3.3</span> Model repository and management</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#model-catalogue"><span class="header-section-number">3.3.1</span> Model catalogue</a></li>
+<li><a class="nav-link" href="#tuflow-fv-model-organisation"><span class="header-section-number">3.3.2</span> TUFLOW-FV model organisation</a></li>
+<li><a class="nav-link" href="#swan-wave-model-organisation"><span class="header-section-number">3.3.3</span> SWAN Wave Model organisation</a></li>
+<li><a class="nav-link" href="#model-processing-toolbox"><span class="header-section-number">3.3.4</span> Model processing toolbox</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 12-September-2021.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+</html>

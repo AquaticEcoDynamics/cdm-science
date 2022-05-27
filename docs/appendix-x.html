@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Appendix X | The Coorong Dynamics Model</title>
+<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS --><link rel="stylesheet" href="css/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">The Coorong Dynamics Model</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="the-coorong-dynamics-model.html"><span class="header-section-number">2</span> The Coorong Dynamics Model</a></li>
+<li><a class="" href="cdm-development-testing.html"><span class="header-section-number">3</span> CDM Development &amp; Testing</a></li>
+<li><a class="" href="cdm-habitat-modelling.html"><span class="header-section-number">4</span> CDM Habitat Modelling</a></li>
+<li><a class="" href="integrated-assessment-of-the-cdm.html"><span class="header-section-number">5</span> Integrated assessment of the CDM</a></li>
+<li><a class="" href="scenario-testing-and-management.html"><span class="header-section-number">6</span> Scenario testing and management</a></li>
+<li><a class="" href="conclusion.html"><span class="header-section-number">7</span> Conclusion</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="active" href="appendix-x.html">Appendix X</a></li>
+<li><a class="" href="appendix-y.html">Appendix Y</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="appendix-x" class="section level1 unnumbered">
+<h1>Appendix X<a class="anchor" aria-label="anchor" href="#appendix-x"><i class="fas fa-link"></i></a>
+</h1>
+<div id="data-catalogue" class="section level2 unnumbered">
+<h2>Data catalogue<a class="anchor" aria-label="anchor" href="#data-catalogue"><i class="fas fa-link"></i></a>
+</h2>
+<p>A summary of the available data categorised by data type and agency/supplier is shown below.</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:5000px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:A-datacatalogue">Table 7.1: </span>CDM simulated variable summary
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Source
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Agency Code
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+# Sites
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Date Range
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Contact Name…9
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Document Title
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Bathymetry</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW Bathymetry
+</td>
+<td style="text-align:left;max-width: 19em; ">
+X,Y,Z survey points around Parnka Point region
+</td>
+<td style="text-align:left;min-width: 10em; ">
+<ul><li></ul>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2021
+</td>
+<td style="text-align:left;">
+Matt Gibbs
+</td>
+<td style="text-align:left;">
+bathymetry (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW 2021 Contour
+</td>
+<td style="text-align:left;max-width: 19em; ">
+25cm Contours and channel topo
+</td>
+<td style="text-align:left;min-width: 10em; ">
+<ul><li></ul>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2021
+</td>
+<td style="text-align:left;">
+Matt Gibbs
+</td>
+<td style="text-align:left;">
+Coorong_TheNeedles_SwanIsland_Bathymetry_2021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW 2018 DEM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2m Coorong DEM (2018) (resampled from 1m)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+<ul><li></ul>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2018
+</td>
+<td style="text-align:left;">
+Matt Gibbs
+</td>
+<td style="text-align:left;">
+TOPO_DEM_COORONG_2M.tif
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW MM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Murray Mouth Surveys
+</td>
+<td style="text-align:left;min-width: 10em; ">
+<ul><li></ul>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1999 - 2019
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Data not stored in CDM
+</td>
+</tr>
+<tr grouplength="11">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Ecology</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA ORH
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Ruppia presence/absence, Algae No/Rare/Present/Extreme
+</td>
+<td style="text-align:left;min-width: 10em; ">
+24 (Dec 2016) or 11 (Mar 2011)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Dec-2016, Mar 2017
+</td>
+<td style="text-align:left;">
+Michelle Waycott
+</td>
+<td style="text-align:left;">
+Ruppia 2016 data.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA DP
+</td>
+<td style="text-align:left;max-width: 19em; ">
+% cores with shoots, count of shoots
+</td>
+<td style="text-align:left;min-width: 10em; ">
+13
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1999-2015 every July
+</td>
+<td style="text-align:left;">
+David Paton
+</td>
+<td style="text-align:left;">
+Ruppia core data 1999-2015 (taken every July)_CC.xls
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA DP
+</td>
+<td style="text-align:left;max-width: 19em; ">
+contains no actual Ruppia data, only some metadata of the above dataset (latlong etc)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+13
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1999-2015 every July
+</td>
+<td style="text-align:left;">
+David Paton
+</td>
+<td style="text-align:left;">
+Research data compile (Arcmap compatible).xls
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA HCHB
+</td>
+<td style="text-align:left;max-width: 19em; ">
+biomass (g dry weight) of seagrass, count of R.tuberosa seeds, count of R.tuberosa type I&amp;II turions, count of Ruppia spp. flowers, count of Ruppia spp. fruit, count of seagrass shoots, count of Althenia flowers, count of R.megacarpa seeds
+</td>
+<td style="text-align:left;min-width: 10em; ">
+97
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sep/Oct-2020
+</td>
+<td style="text-align:left;">
+Michelle Waycott
+</td>
+<td style="text-align:left;">
+01FEB2021 Aquatic Plant seasonal sampling.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA HCHB
+</td>
+<td style="text-align:left;max-width: 19em; ">
+biomass (g dry weight) of seagrass, count of R.tuberosa seeds, count of R.tuberosa type I&amp;II turions, count of Ruppia spp. flowers, count of Ruppia spp. fruit, count of seagrass shoots, count of Althenia flowers, count of R.megacarpa seeds, algae cover
+</td>
+<td style="text-align:left;min-width: 10em; ">
+97
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sep/Oct-2020
+</td>
+<td style="text-align:left;">
+Michelle Waycott
+</td>
+<td style="text-align:left;">
+seasonal sampling 20210304.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA MDBA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+count of shoots (green/brown), turions type I&amp;II, seeds
+</td>
+<td style="text-align:left;min-width: 10em; ">
+13
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1998-2018 every July
+</td>
+<td style="text-align:left;">
+Michelle Waycott or David Paton?
+</td>
+<td style="text-align:left;">
+MDBA_Coorong_RuppiaDB.accdb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA MDBA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+count of shoots (green/brown), turions type I&amp;II, seeds, flowerstalk (since 2017 at some sites), % grazed, grazed length
+</td>
+<td style="text-align:left;min-width: 10em; ">
+22
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2007-2019 every Jan
+</td>
+<td style="text-align:left;">
+Michelle Waycott or David Paton?
+</td>
+<td style="text-align:left;">
+MDBA_Coorong_RuppiaDB.accdb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA MDBA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+count of shoots (green/brown), turions (half/full), seeds, % grazed, grazed length, algae presence/absence
+</td>
+<td style="text-align:left;min-width: 10em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+42856
+</td>
+<td style="text-align:left;">
+David Paton
+</td>
+<td style="text-align:left;">
+MDBA_Coorong_RuppiaDB.accdb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA MDBA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+count of flowerhead
+</td>
+<td style="text-align:left;min-width: 10em; ">
+9
+</td>
+<td style="text-align:left;min-width: 5em; ">
+42675
+</td>
+<td style="text-align:left;">
+David Paton
+</td>
+<td style="text-align:left;">
+MDBA_Coorong_RuppiaDB.accdb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA HCHB
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Pending
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Pending
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44256
+</td>
+<td style="text-align:left;">
+Michelle Waycott
+</td>
+<td style="text-align:left;">
+Pending
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Sediment environmental conditions (TN, TP, TOC, abundance of macrobenthic fauna)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+NA
+</td>
+<td style="text-align:left;">
+Orlando
+</td>
+<td style="text-align:left;">
+Macrobenthic_and_sediment_data_Orlando_Sabine.xlsx
+</td>
+</tr>
+<tr grouplength="9">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Hydrology</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW Salt Creek
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Salt Creek Flow
+</td>
+<td style="text-align:left;min-width: 10em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1990 - 2021
+</td>
+<td style="text-align:left;">
+Claire Sims
+</td>
+<td style="text-align:left;">
+FINAL_compiledSaltCkData_1990-2021.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW Barrage
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Barrage Flow
+</td>
+<td style="text-align:left;min-width: 10em; ">
+6
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1990 - 2021
+</td>
+<td style="text-align:left;">
+Claire Sims
+</td>
+<td style="text-align:left;">
+FINAL_compiledBarragesData_1990-2021.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA MDBA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+4 categories of water depth (dry, waterline, 30cm, 60cm) with latlong (recorded during Ruppia survey)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+22
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2007-2019 every Jan
+</td>
+<td style="text-align:left;">
+Michelle Waycott or David Paton?
+</td>
+<td style="text-align:left;">
+MDBA_Coorong_RuppiaDB.accdb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA MDBA
+</td>
+<td style="text-align:left;max-width: 19em; ">
+4 categories of water depth (dry, waterline, 30cm, 60cm) with latlong (recorded during Ruppia survey)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+42856
+</td>
+<td style="text-align:left;">
+David Paton
+</td>
+<td style="text-align:left;">
+MDBA_Coorong_RuppiaDB.accdb
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW VH
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Victor Harbor Tidal Data
+</td>
+<td style="text-align:left;min-width: 10em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1990 - 2021
+</td>
+<td style="text-align:left;">
+Claire Sims
+</td>
+<td style="text-align:left;">
+FINAL_compiledTideData_1990-2021_DatumCorrection.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+UA
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA ADV
+</td>
+<td style="text-align:left;max-width: 19em; ">
+3D Velocity and Amplitude at Policeman Point Boat Ramp and Villa dei Yumpa
+</td>
+<td style="text-align:left;min-width: 10em; ">
+2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1/2/2021-3/2/2021
+</td>
+<td style="text-align:left;">
+Daniel Chilton / Justin Brookes
+</td>
+<td style="text-align:left;">
+ADV data 1-3FEB21_formatted (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+UA
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA ADV
+</td>
+<td style="text-align:left;max-width: 19em; ">
+3D Velocity and Amplitude at Policeman Point Boat Ramp and Villa dei Yumpa
+</td>
+<td style="text-align:left;min-width: 10em; ">
+2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1/3/2021-3/3/2021
+</td>
+<td style="text-align:left;">
+Daniel Chilton / Justin Brookes
+</td>
+<td style="text-align:left;">
+ADV data 1-3MAR21_formatted (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+UA
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Wave
+</td>
+<td style="text-align:left;max-width: 19em; ">
+In situ wave heights and periods
+</td>
+<td style="text-align:left;min-width: 10em; ">
+2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Dec 2020 &amp; Mar 2021
+</td>
+<td style="text-align:left;">
+Daniel Chilton / Justin Brookes
+</td>
+<td style="text-align:left;">
+Wave data DEC20 - MAR21.csv
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW WDSA Hydro
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Hourly hydro data (flow, level, water temp, conductivity, salinity,TDS)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+55
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2010 - 2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Data not stored in CDM: Can be downloaded via scripts_datafiles.m
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Meteorology</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW WDSA Met
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Hourly met data (air pressure, air temp,humidity, solar rad, wind speed, wind dir)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2010 - 2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Data not stored in CDM: Can be downloaded via scripts_datafiles.m
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+BOM
+</td>
+<td style="text-align:left;min-width: 7em; ">
+BOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+BOM daily data
+</td>
+<td style="text-align:left;min-width: 10em; ">
+18 Stations
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1870 - 2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+BOM/Raw (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+BOM
+</td>
+<td style="text-align:left;min-width: 7em; ">
+BOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+BARRA met product
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Gridded
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2006 - 2019
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Data not stored in CDM
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+NRM
+</td>
+<td style="text-align:left;min-width: 7em; ">
+NRM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+NRM Narrung AWS data
+</td>
+<td style="text-align:left;min-width: 10em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2016 - 2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NRM/Narrung (folder)
+</td>
+</tr>
+<tr grouplength="14">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Sediment</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Lab fluxes:
+O2 DOC CH4 N2O
+Light/dark
+</td>
+<td style="text-align:left;min-width: 10em; ">
+4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44228
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+Fluxes February 2021.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cores:
+DGT-DET probes
+15N O2 PO43- NH4+ NO3- Light/dark
+Net primary production
+Community respiration
+Gross primary production
+</td>
+<td style="text-align:left;min-width: 10em; ">
+1
+(5 replicates)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44136
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+Oxygen and nutrient fluxes Nov 2020 (Parnka Point).xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Sediment grab
+% gravel to mud; 7 classes
+</td>
+<td style="text-align:left;min-width: 10em; ">
+7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44317
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Component 4 grain size results with GPS.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Sediment grab
+Moisture, pH, conductivity, TN, TOC, OM, TP
+</td>
+<td style="text-align:left;min-width: 10em; ">
+7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44317
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Component 4 sediment results with GPS.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cores
+DGT-DET
+</td>
+<td style="text-align:left;min-width: 10em; ">
+4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44228
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+Coorong GHG’s (Coorong February 2021).xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Grab samples 0 to 5 cm
+Texture, C, N, P, Mn, Fe, S
+</td>
+<td style="text-align:left;min-width: 10em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+43891
+</td>
+<td style="text-align:left;">
+Luke Mosley
+</td>
+<td style="text-align:left;">
+Coorong Sediment Quality survey Mar20 Lab Results.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Grab samples 0 to 2 cm
+Rapid assessment
+</td>
+<td style="text-align:left;min-width: 10em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+43891
+</td>
+<td style="text-align:left;">
+Luke Mosley
+</td>
+<td style="text-align:left;">
+Coorong_March_2020_final Field Results and Photos.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Lab cores:
+O2 sensors light/dark wet/dry weights
+</td>
+<td style="text-align:left;min-width: 10em; ">
+4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44228
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+sediment core information and incubation time February 2021.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Core slices: 0 to 3 cm, 3 to 10 cm, 10 to 20 cm
+pH TN TP TOC
+</td>
+<td style="text-align:left;min-width: 10em; ">
+4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44287
+</td>
+<td style="text-align:left;">
+Luke Mosley
+</td>
+<td style="text-align:left;">
+UNI012-SS-K5799 Sediment Results Feb-Mar 2021 Leslie_Luke.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cores: NH4+ PO43- Light/dark
+</td>
+<td style="text-align:left;min-width: 10em; ">
+3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44136
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+ammonium and phosphate data (November 2020).xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cores: Fe day/night
+</td>
+<td style="text-align:left;min-width: 10em; ">
+4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44228
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+Fe data (Coorong February 2021).xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cores: Fe day/night
+</td>
+<td style="text-align:left;min-width: 10em; ">
+3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44136
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+Fe data (November 2020).xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cores: -2.75 to 11.5 cm
+DET-DGT probes
+</td>
+<td style="text-align:left;min-width: 10em; ">
+4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44228
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+S data (Coorong February 2021).xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Sediment
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Cores: -2.75 to 11.5 cm
+DET-DGT probes
+</td>
+<td style="text-align:left;min-width: 10em; ">
+3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+44136
+</td>
+<td style="text-align:left;">
+Leslie Huang
+</td>
+<td style="text-align:left;">
+S data (November 2020).xlsx
+</td>
+</tr>
+<tr grouplength="10">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Water Quality</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 1
+</td>
+<td style="text-align:left;min-width: 7em; ">
+AWQC (compiled)
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Compilation of historical nutrient and chemistry data from AWQC
+</td>
+<td style="text-align:left;min-width: 10em; ">
+16
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1995 - 2020
+</td>
+<td style="text-align:left;">
+Luke Mosley
+</td>
+<td style="text-align:left;">
+Coorong Data 1995_2020_Final.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA ORH
+</td>
+<td style="text-align:left;max-width: 19em; ">
+salinity, water depth (sampled during Ruppia survey)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+25 (Dec 2016) or 11 (Mar 2011)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Dec-2016, Mar 2017
+</td>
+<td style="text-align:left;">
+Michelle Waycott
+</td>
+<td style="text-align:left;">
+Ruppia 2016 data.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA HCHB WQ
+</td>
+<td style="text-align:left;max-width: 19em; ">
+salinity, water depth (sampled during Ruppia survey)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+93
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sep/Oct-2020
+</td>
+<td style="text-align:left;">
+Michelle Waycott
+</td>
+<td style="text-align:left;">
+seasonal sampling 20210304.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+ALS
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Nutrient and chemistry data from ALS
+</td>
+<td style="text-align:left;min-width: 10em; ">
+19
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2020 - 2021
+</td>
+<td style="text-align:left;">
+Matt Gibbs
+</td>
+<td style="text-align:left;">
+ALS Results (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+AWQC (DEW)
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Nutrient and chemistry data from AWQC
+</td>
+<td style="text-align:left;min-width: 10em; ">
+15
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2020
+</td>
+<td style="text-align:left;">
+Matt Gibbs
+</td>
+<td style="text-align:left;">
+AWQC Results (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW Profile
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Monthly profile campaigns
+</td>
+<td style="text-align:left;min-width: 10em; ">
+20
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2018 - 2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Field results spreadsheet (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+T &amp; I 2
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA Logger
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Temperature logger in CSL
+</td>
+<td style="text-align:left;min-width: 10em; ">
+3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10/2019 - 03/2020
+</td>
+<td style="text-align:left;">
+Michelle Waycott
+</td>
+<td style="text-align:left;">
+All HOBO temperature data to March 2020.xlsx
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW Profile
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Conductivity and Temperature Profile Campaigns
+</td>
+<td style="text-align:left;min-width: 10em; ">
+<ul><li></ul>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2019 - 2020
+</td>
+<td style="text-align:left;">
+Matt Gibbs
+</td>
+<td style="text-align:left;">
+EC Profile Data (folder)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+DEW
+</td>
+<td style="text-align:left;min-width: 7em; ">
+DEW WDSA Sonde
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Hourly WQ data (pH, Turbidity, TChla, Oxygen conc., Oxygen Sat., BGA, fDom)
+</td>
+<td style="text-align:left;min-width: 10em; ">
+13
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2010 - 2021
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+Data not stored in CDM: Can be downloaded via scripts_datafiles.m
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+UA
+</td>
+<td style="text-align:left;min-width: 7em; ">
+UA LISST
+</td>
+<td style="text-align:left;max-width: 19em; ">
+In situ particle size data collected by the LISST profiler
+</td>
+<td style="text-align:left;min-width: 10em; ">
+2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Dec 2020 &amp; Mar 2021
+</td>
+<td style="text-align:left;">
+Daniel Chilton / Justin Brookes
+</td>
+<td style="text-align:left;">
+Merged LISST data DEC20 - MAR21.csv
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<br>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="references.html">References</a></div>
+<div class="next"><a href="appendix-y.html">Appendix Y</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#appendix-x">Appendix X</a></li>
+<li><a class="nav-link" href="#data-catalogue">Data catalogue</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 07-September-2021.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+</html>
