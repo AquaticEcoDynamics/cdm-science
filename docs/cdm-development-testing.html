@@ -1,67 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="" xml:lang="">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>4 CDM Development &amp; Testing | The Coorong Dynamics Model</title>
-<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.7/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS --><link rel="stylesheet" href="css/style.css">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 CDM Development &amp; Testing | The Coorong Dynamics Model</title>
+  <meta name="description" content="4 CDM Development &amp; Testing | The Coorong Dynamics Model (CDM)" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 CDM Development &amp; Testing | The Coorong Dynamics Model" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="4 CDM Development &amp; Testing | The Coorong Dynamics Model (CDM)" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 CDM Development &amp; Testing | The Coorong Dynamics Model" />
+  
+  <meta name="twitter:description" content="4 CDM Development &amp; Testing | The Coorong Dynamics Model (CDM)" />
+  
+
+<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="cdm-model-data-integration.html"/>
+<link rel="next" href="cdm-habitat-modelling.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
-<body data-spy="scroll" data-target="#toc">
 
-<div class="container-fluid">
-<div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<body>
 
-    <div class="d-flex align-items-start justify-content-between">
-      <h1>
-        <a href="index.html" title="">The Coorong Dynamics Model</a>
-      </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
-    </div>
 
-    <div id="main-nav" class="collapse-lg">
-      <form role="search">
-        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
 
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">Welcome</a></li>
-<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="" href="the-coorong-dynamics-model.html"><span class="header-section-number">2</span> The Coorong Dynamics Model</a></li>
-<li><a class="" href="cdm-model-data-integration.html"><span class="header-section-number">3</span> CDM Model-Data Integration</a></li>
-<li><a class="active" href="cdm-development-testing.html"><span class="header-section-number">4</span> CDM Development &amp; Testing</a></li>
-<li><a class="" href="cdm-habitat-modelling.html"><span class="header-section-number">5</span> CDM Habitat Modelling</a></li>
-<li><a class="" href="integrated-assessment-of-the-cdm.html"><span class="header-section-number">6</span> Integrated Assessment of the CDM</a></li>
-<li><a class="" href="references.html">References</a></li>
-<li><a class="" href="appendix-a-data-catalogue.html">Appendix A : Data Catalogue</a></li>
-<li><a class="" href="appendix-b-results-archive.html">Appendix B : Results Archive</a></li>
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><b>Coorong Dynamics Model</b></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#project-background"><i class="fa fa-check"></i>Project background</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#report-layout-and-guidance"><i class="fa fa-check"></i>Report layout and guidance</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#coordinating-authors"><i class="fa fa-check"></i>Coordinating authors</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#adding-and-updating-content"><i class="fa fa-check"></i>Adding and updating content</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#using-rstudios-visual-editor"><i class="fa fa-check"></i>Using RStudio’s visual editor</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-and-significance-of-the-coorong"><i class="fa fa-check"></i><b>1.1</b> Background and significance of the Coorong</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#importance-of-the-coorong"><i class="fa fa-check"></i><b>1.1.1</b> Importance of the Coorong</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#ecological-character-of-the-coorong"><i class="fa fa-check"></i><b>1.1.2</b> Ecological Character of the Coorong</a></li>
+<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#management-challenges"><i class="fa fa-check"></i><b>1.1.3</b> Management challenges</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#need-for-an-integrated-model-to-support-coorong-management"><i class="fa fa-check"></i><b>1.2</b> Need for an integrated model to support Coorong management</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#prior-modelling"><i class="fa fa-check"></i><b>1.2.1</b> Prior modelling</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#knowledge-gaps-and-development-needs"><i class="fa fa-check"></i><b>1.2.2</b> Knowledge gaps and development needs</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#aims-and-scope"><i class="fa fa-check"></i><b>1.3</b> Aims and Scope</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html"><i class="fa fa-check"></i><b>2</b> The Coorong Dynamics Model</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#model-platform"><i class="fa fa-check"></i><b>2.2</b> Model platform</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#hydrodynamics-tuflow-fv"><i class="fa fa-check"></i><b>2.2.1</b> Hydrodynamics: TUFLOW-FV</a></li>
+<li class="chapter" data-level="2.2.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#waves-swan"><i class="fa fa-check"></i><b>2.2.2</b> Waves: SWAN</a></li>
+<li class="chapter" data-level="2.2.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#water-quality-and-habitat-aed"><i class="fa fa-check"></i><b>2.2.3</b> Water quality and habitat: AED</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#cdm-setup-and-configuration"><i class="fa fa-check"></i><b>2.3</b> CDM setup and configuration</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#simulation-domains"><i class="fa fa-check"></i><b>2.3.1</b> Simulation domains</a></li>
+<li class="chapter" data-level="2.3.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#boundary-conditions"><i class="fa fa-check"></i><b>2.3.2</b> Boundary conditions</a></li>
+<li class="chapter" data-level="2.3.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#hydrodynamic-settings"><i class="fa fa-check"></i><b>2.3.3</b> Hydrodynamic settings</a></li>
+<li class="chapter" data-level="2.3.4" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#water-quality-modules"><i class="fa fa-check"></i><b>2.3.4</b> Water quality modules</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#model-generation-summary"><i class="fa fa-check"></i><b>2.4</b> Model generation summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html"><i class="fa fa-check"></i><b>3</b> CDM Model-Data Integration</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#cdm-structure-and-organisation"><i class="fa fa-check"></i><b>3.1</b> CDM structure and organisation</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#online-repository-access"><i class="fa fa-check"></i><b>3.1.1</b> <strong>Online repository access</strong></a></li>
+<li class="chapter" data-level="3.1.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#repository-folder-structure"><i class="fa fa-check"></i><b>3.1.2</b> <strong>Repository folder structure</strong></a></li>
+<li class="chapter" data-level="3.1.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#high-level-workflows"><i class="fa fa-check"></i><b>3.1.3</b> <strong>High level workflows</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-repository-and-management"><i class="fa fa-check"></i><b>3.2</b> Data repository and management</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-catalogue"><i class="fa fa-check"></i><b>3.2.1</b> <strong>Data catalogue</strong></a></li>
+<li class="chapter" data-level="3.2.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-organisation"><i class="fa fa-check"></i><b>3.2.2</b> <strong>Data organisation</strong></a></li>
+<li class="chapter" data-level="3.2.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-processing-workflows"><i class="fa fa-check"></i><b>3.2.3</b> <strong>Data processing workflows</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-repository-and-management"><i class="fa fa-check"></i><b>3.3</b> Model repository and management</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-catalogue"><i class="fa fa-check"></i><b>3.3.1</b> <strong>Model catalogue</strong></a></li>
+<li class="chapter" data-level="3.3.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#tuflow-fv-model-organisation"><i class="fa fa-check"></i><b>3.3.2</b> <strong>TUFLOW-FV model organisation</strong></a></li>
+<li class="chapter" data-level="3.3.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#swan-wave-model-organisation"><i class="fa fa-check"></i><b>3.3.3</b> <strong>SWAN Wave Model organisation</strong></a></li>
+<li class="chapter" data-level="3.3.4" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-processing-toolbox"><i class="fa fa-check"></i><b>3.3.4</b> <strong>Model processing toolbox</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html"><i class="fa fa-check"></i><b>4</b> CDM Development &amp; Testing</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#modelling-development-rationale"><i class="fa fa-check"></i><b>4.1</b> Modelling development rationale</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#known-gaps-and-model-limitations"><i class="fa fa-check"></i><b>4.1.1</b> Known gaps and model limitations</a></li>
+<li class="chapter" data-level="4.1.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#development-focus-and-integration-with-hchb-research-and-monitoring"><i class="fa fa-check"></i><b>4.1.2</b> Development focus and integration with HCHB research and monitoring</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#waves-and-resuspension"><i class="fa fa-check"></i><b>4.2</b> Waves and resuspension</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-1"><i class="fa fa-check"></i><b>4.2.1</b> Overview</a></li>
+<li class="chapter" data-level="4.2.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach"><i class="fa fa-check"></i><b>4.2.2</b> Model approach</a></li>
+<li class="chapter" data-level="4.2.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment"><i class="fa fa-check"></i><b>4.2.3</b> Validation and assessment</a></li>
+<li class="chapter" data-level="4.2.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#lagoon-scale-predictions"><i class="fa fa-check"></i><b>4.2.4</b> Lagoon scale predictions</a></li>
+<li class="chapter" data-level="4.2.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021"><i class="fa fa-check"></i><b>4.2.5</b> Summary (Sept 2021)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#sediment-biogeochemistry"><i class="fa fa-check"></i><b>4.3</b> Sediment biogeochemistry</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-2"><i class="fa fa-check"></i><b>4.3.1</b> Overview</a></li>
+<li class="chapter" data-level="4.3.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-candi-aed"><i class="fa fa-check"></i><b>4.3.2</b> Model approach: CANDI-AED</a></li>
+<li class="chapter" data-level="4.3.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup-and-configuration"><i class="fa fa-check"></i><b>4.3.3</b> Model setup and configuration</a></li>
+<li class="chapter" data-level="4.3.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-1"><i class="fa fa-check"></i><b>4.3.4</b> Validation and assessment</a></li>
+<li class="chapter" data-level="4.3.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#lagoon-scale-predictions-1"><i class="fa fa-check"></i><b>4.3.5</b> Lagoon scale predictions</a></li>
+<li class="chapter" data-level="4.3.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021-1"><i class="fa fa-check"></i><b>4.3.6</b> Summary (Sept 2021)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#oxygen-metabolism-and-nutrient-cycling"><i class="fa fa-check"></i><b>4.4</b> Oxygen metabolism and nutrient cycling</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-3"><i class="fa fa-check"></i><b>4.4.1</b> Overview</a></li>
+<li class="chapter" data-level="4.4.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-1"><i class="fa fa-check"></i><b>4.4.2</b> Model approach</a></li>
+<li class="chapter" data-level="4.4.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#data-availability"><i class="fa fa-check"></i><b>4.4.3</b> Data availability</a></li>
+<li class="chapter" data-level="4.4.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup"><i class="fa fa-check"></i><b>4.4.4</b> Model setup</a></li>
+<li class="chapter" data-level="4.4.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-2"><i class="fa fa-check"></i><b>4.4.5</b> Validation and assessment</a></li>
+<li class="chapter" data-level="4.4.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary"><i class="fa fa-check"></i><b>4.4.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#macroalgal-dynamics"><i class="fa fa-check"></i><b>4.5</b> Macroalgal dynamics</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-4"><i class="fa fa-check"></i><b>4.5.1</b> Overview</a></li>
+<li class="chapter" data-level="4.5.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-2"><i class="fa fa-check"></i><b>4.5.2</b> Model approach</a></li>
+<li class="chapter" data-level="4.5.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#data-availability-1"><i class="fa fa-check"></i><b>4.5.3</b> Data availability</a></li>
+<li class="chapter" data-level="4.5.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup-1"><i class="fa fa-check"></i><b>4.5.4</b> Model setup</a></li>
+<li class="chapter" data-level="4.5.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-3"><i class="fa fa-check"></i><b>4.5.5</b> Validation and assessment</a></li>
+<li class="chapter" data-level="4.5.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021-2"><i class="fa fa-check"></i><b>4.5.6</b> Summary (Sept 2021)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html"><i class="fa fa-check"></i><b>5</b> CDM Habitat Modelling</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#habitat-modelling---ruppia"><i class="fa fa-check"></i><b>5.1</b> Habitat modelling - <strong>Ruppia</strong></a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#overview-5"><i class="fa fa-check"></i><b>5.1.1</b> Overview</a></li>
+<li class="chapter" data-level="5.1.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-description-ruppia-hsi"><i class="fa fa-check"></i><b>5.1.2</b> Model description: Ruppia HSI</a></li>
+<li class="chapter" data-level="5.1.3" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#data-availability-2"><i class="fa fa-check"></i><b>5.1.3</b> Data availability</a></li>
+<li class="chapter" data-level="5.1.4" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-application"><i class="fa fa-check"></i><b>5.1.4</b> Model application</a></li>
+<li class="chapter" data-level="5.1.5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-results-and-assessment"><i class="fa fa-check"></i><b>5.1.5</b> Model results and assessment</a></li>
+<li class="chapter" data-level="5.1.6" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#summary-sept-2021-3"><i class="fa fa-check"></i><b>5.1.6</b> Summary (Sept 2021)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#habitat-modelling---fish"><i class="fa fa-check"></i><b>5.2</b> Habitat modelling - <strong>Fish</strong></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#overview-6"><i class="fa fa-check"></i><b>5.2.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-description-fish-hsi"><i class="fa fa-check"></i><b>5.2.2</b> Model description: Fish HSI</a></li>
+<li class="chapter" data-level="5.2.3" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#data-availability-3"><i class="fa fa-check"></i><b>5.2.3</b> Data availability</a></li>
+<li class="chapter" data-level="5.2.4" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-application-1"><i class="fa fa-check"></i><b>5.2.4</b> Model application</a></li>
+<li class="chapter" data-level="5.2.5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-results-and-assessment-1"><i class="fa fa-check"></i><b>5.2.5</b> Model results and assessment</a></li>
+<li class="chapter" data-level="5.2.6" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#summary-sept-2021-4"><i class="fa fa-check"></i><b>5.2.6</b> Summary (Sept 2021)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html"><i class="fa fa-check"></i><b>6</b> Integrated Assessment of the CDM</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#overview-7"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
+<li class="chapter" data-level="6.2" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#integrated-simulations"><i class="fa fa-check"></i><b>6.2</b> Integrated simulations</a></li>
+<li class="chapter" data-level="6.3" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#model-assessment-approach"><i class="fa fa-check"></i><b>6.3</b> Model assessment approach</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#summary-of-validation-data"><i class="fa fa-check"></i><b>6.3.1</b> Summary of validation data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#performance-assessment-metrics"><i class="fa fa-check"></i><b>6.3.2</b> Performance assessment metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#validation-focus-period-2020-2021"><i class="fa fa-check"></i><b>6.4</b> Validation focus period: 2020-2021</a></li>
+<li class="chapter" data-level="6.5" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#long-term-simulation-performance"><i class="fa fa-check"></i><b>6.5</b> Long-term simulation performance</a></li>
+<li class="chapter" data-level="6.6" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#nutrient-budget-assessment"><i class="fa fa-check"></i><b>6.6</b> Nutrient budget assessment</a></li>
+<li class="chapter" data-level="6.7" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#habitat-condition-assessment"><i class="fa fa-check"></i><b>6.7</b> Habitat condition assessment</a></li>
+<li class="chapter" data-level="6.8" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#summary-sept-2021-5"><i class="fa fa-check"></i><b>6.8</b> Summary (Sept 2021)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="appendix-a-data-catalogue.html"><a href="appendix-a-data-catalogue.html"><i class="fa fa-check"></i>Appendix A : Data Catalogue</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-a-data-catalogue.html"><a href="appendix-a-data-catalogue.html#coorong-data-catalogue-sept-2021"><i class="fa fa-check"></i>Coorong data catalogue (Sept 2021)</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html"><i class="fa fa-check"></i>Appendix B : Results Archive</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#long-term-assessment-of-model-performance-2013-2019"><i class="fa fa-check"></i>Long term assessment of model performance (2013 – 2019)</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#hchb-generaton-0"><i class="fa fa-check"></i>HCHB <em>Generaton 0</em></a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#sensitivity-assessment"><i class="fa fa-check"></i>Sensitivity assessment</a>
+<ul>
+<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#sensitivity-to-internal-nutrient-loading"><i class="fa fa-check"></i>Sensitivity to internal nutrient loading</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
-        <div class="book-extra">
-          
-        </div>
       </nav>
-</div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cdm-development-testing" class="section level1" number="4">
-<h1>
-<span class="header-section-number">4</span> CDM Development &amp; Testing<a class="anchor" aria-label="anchor" href="#cdm-development-testing"><i class="fas fa-link"></i></a>
-</h1>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Coorong Dynamics Model</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="cdm-development-testing" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> CDM Development &amp; Testing<a href="cdm-development-testing.html#cdm-development-testing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><br></p>
-<div id="modelling-development-rationale" class="section level2" number="4.1">
-<h2>
-<span class="header-section-number">4.1</span> Modelling development rationale<a class="anchor" aria-label="anchor" href="#modelling-development-rationale"><i class="fas fa-link"></i></a>
-</h2>
-<div id="known-gaps-and-model-limitations" class="section level3" number="4.1.1">
-<h3>
-<span class="header-section-number">4.1.1</span> Known gaps and model limitations<a class="anchor" aria-label="anchor" href="#known-gaps-and-model-limitations"><i class="fas fa-link"></i></a>
-</h3>
+<div id="modelling-development-rationale" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Modelling development rationale<a href="cdm-development-testing.html#modelling-development-rationale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="known-gaps-and-model-limitations" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Known gaps and model limitations<a href="cdm-development-testing.html#known-gaps-and-model-limitations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A significant component of the work tasks are allocated to customise and develop key modules of the AED platform to incorporate the specific science requirements of the model so it is compatible with the findings and details reported in the T&amp;I research projects. These are identified in the specification as:</p>
 <ul>
 <li>Need to improve and validate hydrodynamic-biogeochemical-habitat models, including updating the Ruppia Habitat Suitability Model, to provide increased certainty in the forecasted responses to various management interventions, this includes improving and updating model representation of the following:
@@ -69,68 +268,54 @@
 <li>external and internal nutrient loads based on outputs from ‘Understanding Coorong nutrient dynamics’ (T&amp;I activity 1.2)</li>
 <li>sediment loads, nutrient fluxes and cycling based on environmental data collected and outputs from ‘Understanding Coorong nutrient dynamics’ (T&amp;I activity 1.3)</li>
 <li>Ruppia habitat suitability model and filamentous algae preference model (within AED) based on environmental data collected and outputs from ‘Investigating the drivers and controls of filamentous algae and restoration of aquatic plants’ in the Coorong (T&amp;I activities 2.4 and 2.5)</li>
-</ul>
-</li>
+</ul></li>
 <li>Extended habitat models to incorporate the quantitative models developed through the food web and waterbird components, including:
 <ul>
 <li>Linking the quantitative food web models developed as part of ‘Restoring a functioning Coorong food web’ (T&amp;I activity 3.4) to the existing TUFLOW FV – AED model framework to enable additional outcomes to be evaluated</li>
 <li>Linking the habitat suitability models for priority waterbird species developed as part of ‘Maintaining viable waterbird populations’ (T&amp;I activities 4.1 and 4.3) to the existing TUFLOW FV – AED2 model framework to enable additional outcomes to be evaluated</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 </div>
-<div id="development-focus-and-integration-with-hchb-research-and-monitoring" class="section level3" number="4.1.2">
-<h3>
-<span class="header-section-number">4.1.2</span> Development focus and integration with HCHB research and monitoring<a class="anchor" aria-label="anchor" href="#development-focus-and-integration-with-hchb-research-and-monitoring"><i class="fas fa-link"></i></a>
-</h3>
+<div id="development-focus-and-integration-with-hchb-research-and-monitoring" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Development focus and integration with HCHB research and monitoring<a href="cdm-development-testing.html#development-focus-and-integration-with-hchb-research-and-monitoring" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The staged development and assessment approach to the above model components and how they are linked with related T&amp;I components are summarised in Figure * (the data-model integration strategy diagram) and outlined in the below sections.</p>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pic0"></span>
-<img src="images/dev/Project%20integration%20diagram.png" alt="Data and model integration strategy, showing links between the HCHB Goyder T&amp;I research program and the model development priorities." width="100%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pic0"></span>
+<img src="images/dev/Project%20integration%20diagram.png" alt="Data and model integration strategy, showing links between the HCHB Goyder T&amp;I research program and the model development priorities." width="100%" />
+<p class="caption">
 Figure 4.1: Data and model integration strategy, showing links between the HCHB Goyder T&amp;I research program and the model development priorities.
 </p>
 </div>
 </div>
 <p><br></p>
-<hr>
+<hr />
 <p><br></p>
 </div>
 </div>
-<div id="waves-and-resuspension" class="section level2" number="4.2">
-<h2>
-<span class="header-section-number">4.2</span> Waves and resuspension<a class="anchor" aria-label="anchor" href="#waves-and-resuspension"><i class="fas fa-link"></i></a>
-</h2>
-<div id="overview-1" class="section level3" number="4.2.1">
-<h3>
-<span class="header-section-number">4.2.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-1"><i class="fas fa-link"></i></a>
-</h3>
+<div id="waves-and-resuspension" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Waves and resuspension<a href="cdm-development-testing.html#waves-and-resuspension" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overview-1" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Overview<a href="cdm-development-testing.html#overview-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In shallow lagoons such as the Coorong, wind-induced waves at the water surface causes the bottom material to resuspend; this can dominate water quality during strong winds, due to large changes in nutrients, suspended solids, and turbidity within the water. Specifically, we seek to capture the role of wind-driven waves on water column suspended solids and organic matter concentration within Coorong.</p>
 <p>In order to capture this effect in the Coorong, the SWAN wave model was applied. The wave model predicts the spatial pattern of significant wave height and wave periods and the output is then coupled with the TUFLOW-FV model for modelling shear stress at the seabed and the rate of sediment resuspension.</p>
 <p>The model settings and validation results are described below. Wave and turbidity data are available from experimental work undertaken in 2020 at some sites which is used for calibration purposes, and the particle properties such resuspension rates and settling rates are also discussed.</p>
 </div>
-<div id="model-approach" class="section level3" number="4.2.2">
-<h3>
-<span class="header-section-number">4.2.2</span> Model approach<a class="anchor" aria-label="anchor" href="#model-approach"><i class="fas fa-link"></i></a>
-</h3>
-<div id="swan-wave-model-simulation" class="section level4" number="4.2.2.1">
-<h4>
-<span class="header-section-number">4.2.2.1</span> SWAN wave model simulation<a class="anchor" aria-label="anchor" href="#swan-wave-model-simulation"><i class="fas fa-link"></i></a>
-</h4>
+<div id="model-approach" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Model approach<a href="cdm-development-testing.html#model-approach" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="swan-wave-model-simulation" class="section level4 hasAnchor" number="4.2.2.1">
+<h4><span class="header-section-number">4.2.2.1</span> SWAN wave model simulation<a href="cdm-development-testing.html#swan-wave-model-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The SWAN wave model was adopted using a Cartesian grid with 200 m resolution, and the third generation simulation mode. The model was initially forced with the Narrung weather station data and the water depth was interpolated from the existing (2008) Coorong bathymetry data. Wind data at the measurement site was also used for a period when it was available.</p>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-sites"></span>
-<img src="images/dev/HCHB%20SWAN%20Extents.png" alt="Model extents for SWAN Wave Model and the TFV domains, with validation sites." width="100%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-sites"></span>
+<img src="images/dev/HCHB%20SWAN%20Extents.png" alt="Model extents for SWAN Wave Model and the TFV domains, with validation sites." width="100%" />
+<p class="caption">
 Figure 4.2: Model extents for SWAN Wave Model and the TFV domains, with validation sites.
 </p>
 </div>
 </div>
 </div>
-<div id="suspended-solids-and-light" class="section level4" number="4.2.2.2">
-<h4>
-<span class="header-section-number">4.2.2.2</span> Suspended solids and light<a class="anchor" aria-label="anchor" href="#suspended-solids-and-light"><i class="fas fa-link"></i></a>
-</h4>
+<div id="suspended-solids-and-light" class="section level4 hasAnchor" number="4.2.2.2">
+<h4><span class="header-section-number">4.2.2.2</span> Suspended solids and light<a href="cdm-development-testing.html#suspended-solids-and-light" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The AED component of the simulation is configured to include light (<span class="math inline">\(I\)</span>), and two suspended solids (<span class="math inline">\(SS\)</span>) groups.  The TUFLOW-FV – AED models are dynamically coupled to capture the feedbacks between <span class="math inline">\(SS\)</span>, light, surface heating and (optionally) vegetation presence. </p>
 <p>The model accounts for incident shortwave radiation to be attenuated as it penetrates the water column. The attenuation of light is dependent on the specific bandwidth. For primary production, the shortwave (280-2800 nm) intensity at the surface (<span class="math inline">\(I_0\)</span>) is partitioned to the photosynthetically active component (PAR) based on the assumption that ~45% of the incident spectrum lies between 400-700nm. PAR and other light bandwidths such as ultra-violet (UV, ~3.5%) and near-infrared (NIR, ~51%), penetrate into the water column according to the Beer-Lambert Law:</p>
 <p><span class="math display" id="eq:lagoonhabitat1">\[
@@ -149,10 +334,8 @@ K_{d} = K_{w} + K_{e_{s}} SS + K_{e_{F}} FA
 \]</span></p>
 <p>where <span class="math inline">\(f_{t_{s}}\)</span> is an empirical coefficient, determined through site specific correlations or literature. The suspended solids-turbidity ratio is currently assumed to be 1, and this relationship is based on experimental data from the March 2020 UA field assessment.</p>
 </div>
-<div id="resuspension" class="section level4" number="4.2.2.3">
-<h4>
-<span class="header-section-number">4.2.2.3</span> Resuspension<a class="anchor" aria-label="anchor" href="#resuspension"><i class="fas fa-link"></i></a>
-</h4>
+<div id="resuspension" class="section level4 hasAnchor" number="4.2.2.3">
+<h4><span class="header-section-number">4.2.2.3</span> Resuspension<a href="cdm-development-testing.html#resuspension" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The concentration of suspended solids at any location depends on inputs from tributaries, advection of material through the lagoon, and vertical fluxes due to particle resuspension and deposition. Deposition is computed based on a prescribed settling velocity for each particle group. The rate of resuspension (<span class="math inline">\(R\)</span>) varies across the system due to heterogeneity in sediment properties. It is calculated by assuming linearity with the excess shear stress at the bed (Lee et al. 2005), such that:</p>
 <p><span class="math display" id="eq:lagoonhabitat4">\[
 R_i=\sum_{s=1}^{n_s}{{\ \ f}_{s,i}\ {\ \ \varepsilon}_s}\ \ \text{max}\left(\tau_b-\tau_c,\ 0\right)
@@ -162,11 +345,12 @@ R_i=\sum_{s=1}^{n_s}{{\ \ f}_{s,i}\ {\ \ \varepsilon}_s}\ \ \text{max}\left(\tau
 <p>The resuspended particles are then subjected to settling assuming a constant settling velocity
 <span class="math inline">\(\omega\)</span> of 0.2 m/day. A literature review and current CDM settings of resuspension is summarised in Table xx.</p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
-<div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:dev-wavepars">Table 4.1: </span>Summary of key parameters in the resuspension model
 </caption>
-<thead><tr>
+<thead>
+<tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter
 </th>
@@ -182,7 +366,8 @@ Literature range
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Current CDM setting
 </th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td style="text-align:left;">
@@ -226,11 +411,11 @@ N/m2
 Resuspension coefficient
 </td>
 <td style="text-align:left;">
-<ul><li></ul>
-</td>
+<ul>
+<li></td>
 <td style="text-align:left;">
-<ul><li></ul>
-</td>
+<ul>
+<li></td>
 <td style="text-align:left;">
 1.000
 </td>
@@ -253,13 +438,14 @@ m/day
 </td>
 </tr>
 </tbody>
-</table></div>
+</table>
 </div>
 a Zhu et al., 2015 <br>
 b Ghose-Hajra et al., 2014<br>
 c van Rijn, 2007<br>
 d McAnally et al., 2007<br>
-e Mehta, 1991<br><!--
+e Mehta, 1991<br>
+<!--
 Table xx. Summary of key parameters in the resuspension model.
 
 Parameter   Description Unit    Literature range    Current CDM setting
@@ -273,13 +459,13 @@ $\omega$    Settling velocity   m/day   0.01-1 d, e     0.2
     c van Rijn, 2007
     d McAnally et al., 2007
     e Mehta, 1991
--->
+--></li>
+</ul></li>
+</ul>
 </div>
 </div>
-<div id="validation-and-assessment" class="section level3" number="4.2.3">
-<h3>
-<span class="header-section-number">4.2.3</span> Validation and assessment<a class="anchor" aria-label="anchor" href="#validation-and-assessment"><i class="fas fa-link"></i></a>
-</h3>
+<div id="validation-and-assessment" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Validation and assessment<a href="cdm-development-testing.html#validation-and-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The SWAN wave model was calibrated during the periods between the UA sediment resuspension studies undertaken in December 2020 and March 2021. The comparison between the SWAN wave model outputs and the field survey data of significant wave height is shown in Figure 3.9, which indicates the wave model produced reasonable outcomes in the time variation and magnitude of the response of significant wave height.</p>
 <!-- 
  <div class = 'text-image'><div class="figure">
@@ -288,54 +474,53 @@ $\omega$    Settling velocity   m/day   0.01-1 d, e     0.2
  </div></div>
 -->
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pic101"></span>
-<img src="images/dev/compare_wave_Policeman_v2_2000w.png" alt="Comparison of the Coorong SWAN wave model output and the UA field survey data at two sites. Period spanning Dec 2020." width="60%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pic101"></span>
+<img src="images/dev/compare_wave_Policeman_v2_2000w.png" alt="Comparison of the Coorong SWAN wave model output and the UA field survey data at two sites. Period spanning Dec 2020." width="60%" />
+<p class="caption">
 Figure 4.3: Comparison of the Coorong SWAN wave model output and the UA field survey data at two sites. Period spanning Dec 2020.
 </p>
 </div>
 </div>
 <p>The wave model output is then coupled to the TUFLOW-AED model to calibrate the sediment resuspension. The resulting turbidity, in comparison with the field observations and the CDM outputs without the waves, at site of A4261209 is shown in Figure 3.10. The comparison indicates the waves introduced resuspension when compared to the ‘no-waves’ scenario, and the model with the wave inputs captured the general variations in the turbidity, though more calibrations to the resuspension events under high wind conditions will be examined in next stages of model development.</p>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pic2"></span>
-<img src="images/dev/0006_A4261209.png" alt="Comparison of the AED turbidity model output and the DEW in situ sensor data within the South Lagoon station A4261209." width="80%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pic2"></span>
+<img src="images/dev/0006_A4261209.png" alt="Comparison of the AED turbidity model output and the DEW in situ sensor data within the South Lagoon station A4261209." width="80%" />
+<p class="caption">
 Figure 4.4: Comparison of the AED turbidity model output and the DEW in situ sensor data within the South Lagoon station A4261209.
 </p>
 </div>
 </div>
 </div>
-<div id="lagoon-scale-predictions" class="section level3" number="4.2.4">
-<h3>
-<span class="header-section-number">4.2.4</span> Lagoon scale predictions<a class="anchor" aria-label="anchor" href="#lagoon-scale-predictions"><i class="fas fa-link"></i></a>
-</h3>
+<div id="lagoon-scale-predictions" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Lagoon scale predictions<a href="cdm-development-testing.html#lagoon-scale-predictions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Examples of spatial distribution of significant wave height, bottom shear stress (TAUB), resuspension rate, and TSS concentration in the water during a low wind event (Figure xx) and high wind event (Figure xx) are shown below. In general, the wind condition was shown to be the dominant factor of the sediment resuspension rate. During the calm wind condition such as in 01/11/2021 when the wind speed was &lt; 3 m/s, the sediment resuspension rate was negligible. The resuspension rate exceeded 20 g/m<sup>2</sup>/day in 19/11/2020 when the wind speed reached 9 m/s, which subsequently led to increase in the water TSS concentrations. The shallow water in the littoral zones are more vulnerable to the wind-induced resuspension.</p>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pic3"></span>
-<img src="images/dev/3_picture2.png" alt="An example output of modelled (a) weight height, (b) bottom shear stress, (c) resuspension rates, and (d) total suspended solid concentration in Coorong during low wind condition (&lt; 3m/s)." width="100%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pic3"></span>
+<img src="images/dev/3_picture2.png" alt="An example output of modelled (a) weight height, (b) bottom shear stress, (c) resuspension rates, and (d) total suspended solid concentration in Coorong during low wind condition (&lt; 3m/s)." width="100%" />
+<p class="caption">
 Figure 4.5: An example output of modelled (a) weight height, (b) bottom shear stress, (c) resuspension rates, and (d) total suspended solid concentration in Coorong during low wind condition (&lt; 3m/s).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pic4"></span>
-<img src="images/dev/3_picture3.png" alt="Same as Figure xx except for a relatively higher wind condition (&gt;9m/s)." width="100%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pic4"></span>
+<img src="images/dev/3_picture3.png" alt="Same as Figure xx except for a relatively higher wind condition (&gt;9m/s)." width="100%" />
+<p class="caption">
 Figure 4.6: Same as Figure xx except for a relatively higher wind condition (&gt;9m/s).
 </p>
 </div>
 </div>
 <p>An animation of the wave, resuspension and turbidity conditions is shown below.</p>
-<br><center>
-<video width="100%" height="100%" controls><source src="images/dev/animation_resuspension.mp4" type="video/mp4"></source></video>
+<br>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/dev/animation_resuspension.mp4" type="video/mp4">
+</video>
 </center>
 <p><br></p>
 </div>
-<div id="summary-sept-2021" class="section level3" number="4.2.5">
-<h3>
-<span class="header-section-number">4.2.5</span> Summary (Sept 2021)<a class="anchor" aria-label="anchor" href="#summary-sept-2021"><i class="fas fa-link"></i></a>
-</h3>
+<div id="summary-sept-2021" class="section level3 hasAnchor" number="4.2.5">
+<h3><span class="header-section-number">4.2.5</span> Summary (Sept 2021)<a href="cdm-development-testing.html#summary-sept-2021" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The existing wave model is shown to be well calibrated, and the resuspension model performance is reasonable in terms of resuspension magnitudes and changes in the TSS concentration. However, there are also remaining knowledge gaps/limitations which are to be refined:</p>
 <ol style="list-style-type: decimal">
 <li>Considering more particle groups in the sediment and TSS composition, based on assessment of the UA LISST data.</li>
@@ -343,43 +528,36 @@ Figure 4.6: Same as Figure xx except for a relatively higher wind condition (&gt
 <li>Further calibration on the sediment resuspension rates and the critical shear stress for better model performance, also including organic vs inorganic resuspension rates.</li>
 </ol>
 <p><br></p>
-<hr>
+<hr />
 <p><br></p>
 </div>
 </div>
-<div id="sediment-biogeochemistry" class="section level2" number="4.3">
-<h2>
-<span class="header-section-number">4.3</span> Sediment biogeochemistry<a class="anchor" aria-label="anchor" href="#sediment-biogeochemistry"><i class="fas fa-link"></i></a>
-</h2>
-<div id="overview-2" class="section level3" number="4.3.1">
-<h3>
-<span class="header-section-number">4.3.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-2"><i class="fas fa-link"></i></a>
-</h3>
+<div id="sediment-biogeochemistry" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Sediment biogeochemistry<a href="cdm-development-testing.html#sediment-biogeochemistry" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overview-2" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Overview<a href="cdm-development-testing.html#overview-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In environments like the Coorong, where nutrient dynamics influence the rest of the ecosystem, management often focuses on reducing nutrient inputs and increasing flushing to the sea. However, it is important not to overlook the sediment as a long term source or sink of nutrients.</p>
 <p>In previous versions of the Coorong model, a constant flux rate has been used for the lagoon – for example consumption of oxygen and release of ammonium. This is an efficient and simplified first step, however, the model can be improved by using the depth-resolved sediment diagenesis model. The sediment model can represent spatial heterogeneity along the lagoon, it can capture the future burial or release of nutrients and it can make use of the rich data sets measured in the field.</p>
 <p>Under some conditions, the sediment stores can release nutrients to the water column, while under other conditions, the sediment can remove nutrients in the long term through burial, and the surface layers can remove nitrogen through denitrification. The fine balance that controls the conditions under which the sediment stores will store, release or remove nutrients is largely governed by the aerobic state of the sediment pore water, and the amount of reactive organic matter fuelling the reactions. The depth-resolved sediment model accounts for mixing from the hydrodynamic model into the upper sediment layers. It calculates whether organic matter is consumed aerobically, through denitrification or deeper down, through sulfate reduction or even methanogenesis.</p>
 <p>The sediment model can also capture and contrast different environments in the Coorong. The model includes a depth of bioturbation and bioirrigation by macrobiota living in the sediment. The north lagoon of the Coorong has higher populations of macrobiota, which cause mixing of oxygen into deeper sediment layers, which in turn helps in removal of organic matter and reduced nitrogen. In contrast, in the south lagoon there is less bioturbation of the sediment and it is more likely that organic matter is consumed through anaerobic processes. The production of toxic H<sub>2</sub>S gas through sulfate reduction would lead to a further degradation of the ecosystem.</p>
 </div>
-<div id="model-approach-candi-aed" class="section level3" number="4.3.2">
-<h3>
-<span class="header-section-number">4.3.2</span> Model approach: CANDI-AED<a class="anchor" aria-label="anchor" href="#model-approach-candi-aed"><i class="fas fa-link"></i></a>
-</h3>
+<div id="model-approach-candi-aed" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Model approach: CANDI-AED<a href="cdm-development-testing.html#model-approach-candi-aed" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The heart of this model is the reaction, diffusion, advection model of Berner (1980), which was implemented as the Carbon and Nutrient Diagenesis model of Boudreau (1996). CANDI-AED implementation however has evolved from the original code, and the main differences pertain to the treatment of organic matter, and the simulation of the geochemical conditions known to influence the diagenetic equations. However, the core organic matter breakdown equations (and their numerical solution) remains similar as the original descriptions presented in Boudreau (1996), and to other similar sediment models. An overview of the model is shown in Figure X.</p>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-pic00"></span>
-<img src="images/dev/sed_image2.png" alt="CANDI-AED includes chemical processes of organic matter transformation and oxidation, and reduction/oxidation, crystallisation, adsorption and precipitation reactions of inorganic by-products. Most of the processes are triggered by the input of POM at the sediment-water interface." width="80%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-pic00"></span>
+<img src="images/dev/sed_image2.png" alt="CANDI-AED includes chemical processes of organic matter transformation and oxidation, and reduction/oxidation, crystallisation, adsorption and precipitation reactions of inorganic by-products. Most of the processes are triggered by the input of POM at the sediment-water interface." width="80%" />
+<p class="caption">
 Figure 4.7: CANDI-AED includes chemical processes of organic matter transformation and oxidation, and reduction/oxidation, crystallisation, adsorption and precipitation reactions of inorganic by-products. Most of the processes are triggered by the input of POM at the sediment-water interface.
 </p>
 </div>
 </div>
-<div id="sediment-reactive-transport-model" class="section level4 unnumbered">
-<h4>Sediment reactive transport model<a class="anchor" aria-label="anchor" href="#sediment-reactive-transport-model"><i class="fas fa-link"></i></a>
-</h4>
+<div id="sediment-reactive-transport-model" class="section level4 unnumbered hasAnchor">
+<h4>Sediment reactive transport model<a href="cdm-development-testing.html#sediment-reactive-transport-model" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The model is based on a 1D approximation of the sediment and pore-water profiles. Each active sediment zone (or column) is discretized into a user defineable number of layers that start at thicknesses of around 1mm at the sediment-water interface and increase exponentially down to a pre-defined sediment depth. The model resolves in each layer both physical (e.g. pore-water diffusion or bioturbation) and chemical (e.g., redox transformations) processes; these are summarised next.</p>
 <p><strong>Chemical reactions</strong></p>
 <p>The dynamic model considers two types of reactions - the slow, kinetically controlled reactions, and the fast thermodynamically based equilibrium reactions. The latter are simulated in the sediment through appropriate configuration of the geochemistry reactions; the configuration of the equilibrium model will apply to both the water and each of the sediment layers. The kinetically controlled reactions are mostly microbially-mediated and include the reactions for organic matter breakdown and eventual oxidation, the re-oxidation of various by-products and the dynamics of the metal sulfides.</p>
-<p>The organic matter (<span class="math inline">\(OM\)</span>) degradation pathway considers labile and refractory <span class="math inline">\(DOM\)</span> components (<span class="math inline">\(DOM\)</span> and <span class="math inline">\(DOM_R\)</span> respectively) and the breakdown pathway simulated is conceptually summarized in Figure . Reactions included in the kinetic component include the hydrolysis of the complex (e.g., high molecular weight) <span class="math inline">\(OM\)</span> pools (<span class="math inline">\(POM_{VR}\)</span>, <span class="math inline">\(POM_R\)</span>, <span class="math inline">\(DOM_R\)</span>, <span class="math inline">\(POM_L\)</span>) and transformation of Low Molecular Weight (LMW) <span class="math inline">\(DOM_L\)</span> by oxidants (<span class="math inline">\(O_2\)</span>, <span class="math inline">\(MnO_2\)</span>, <span class="math inline">\(Fe(III)\)</span> and <span class="math inline">\(SO_4^{2-}\)</span> - the so-called ‘terminal metabolism’), and the release of resulting nutrients (<span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>) and reduced by-products (<span class="math inline">\(Mn^{2+}\)</span>, <span class="math inline">\(Fe^{2+}\)</span>, <span class="math inline">\(N_2\)</span>, <span class="math inline">\(H_2S\)</span>, <span class="math inline">\(CH_4\)</span>) and <span class="math inline">\(CO_2\)</span>. Oxidants, nutrients and by-products are all capable of interacting, say through complexation or re-oxidation of reduced species for example.</p>
+<p>The organic matter (<span class="math inline">\(OM\)</span>) degradation pathway considers labile and refractory <span class="math inline">\(DOM\)</span> components (<span class="math inline">\(DOM\)</span> and <span class="math inline">\(DOM_R\)</span> respectively) and the breakdown pathway simulated is conceptually summarized in Figure <span class="math inline">\(\ref{fig:sed_dynamic}\)</span>. Reactions included in the kinetic component include the hydrolysis of the complex (e.g., high molecular weight) <span class="math inline">\(OM\)</span> pools (<span class="math inline">\(POM_{VR}\)</span>, <span class="math inline">\(POM_R\)</span>, <span class="math inline">\(DOM_R\)</span>, <span class="math inline">\(POM_L\)</span>) and transformation of Low Molecular Weight (LMW) <span class="math inline">\(DOM_L\)</span> by oxidants (<span class="math inline">\(O_2\)</span>, <span class="math inline">\(MnO_2\)</span>, <span class="math inline">\(Fe(III)\)</span> and <span class="math inline">\(SO_4^{2-}\)</span> - the so-called ‘terminal metabolism’), and the release of resulting nutrients (<span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>) and reduced by-products (<span class="math inline">\(Mn^{2+}\)</span>, <span class="math inline">\(Fe^{2+}\)</span>, <span class="math inline">\(N_2\)</span>, <span class="math inline">\(H_2S\)</span>, <span class="math inline">\(CH_4\)</span>) and <span class="math inline">\(CO_2\)</span>. Oxidants, nutrients and by-products are all capable of interacting, say through complexation or re-oxidation of reduced species for example.</p>
 <p>The decay of the complex <span class="math inline">\(OM\)</span> types to the LMW <span class="math inline">\(DOM\)</span> required for the hetertrophic bacteria to utilise are all modelled with a simple first-order decay rate. The subsequent reactions that describe the breakdown of <span class="math inline">\(DOM_L\)</span> may be written as:
 <span class="math display">\[\begin{eqnarray}
 \overbrace{(CH_2O)_{106}(NH_3)_{16}(H_3PO_4)}^{\textrm{organic matter}} &amp;+&amp; 138O_2 \rightarrow \nonumber
@@ -428,9 +606,8 @@ Figure 4.7: CANDI-AED includes chemical processes of organic matter transformati
 <p><strong>Physical processes</strong></p>
 <p>Accounting for advection and diffusion reactions is fairly consistent across diagenesis models, and here we use the same methods. Porosity (<span class="math inline">\(\phi\)</span>) is defined according to equation 5 - 104, which allows it to decrease with depth, and the solid fraction is defined from <span class="math inline">\(\phi_s=(1-\phi)\)</span>. For bioturbation the model uses a diffusion coefficient that varies with depth (<span class="math inline">\(D_{B(z)}\)</span>) as a two layer function or a Gaussian decrease (Boudreau 1996). For the porewater components, diffusion coefficients are used that are based on free-solution molecular diffusion constants corrected for sediment tortuosity, <span class="math inline">\(θ\)</span>, according to equation 5 - 105.</p>
 </div>
-<div id="model-extensions-and-development" class="section level4 unnumbered">
-<h4>Model extensions and development<a class="anchor" aria-label="anchor" href="#model-extensions-and-development"><i class="fas fa-link"></i></a>
-</h4>
+<div id="model-extensions-and-development" class="section level4 unnumbered hasAnchor">
+<h4>Model extensions and development<a href="cdm-development-testing.html#model-extensions-and-development" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons (Paraska et al. 2014). Three main developments have been undertaken to adapt the code-base to the Coorong application (Figure <a href="cdm-development-testing.html#fig:dev-pics5">4.8</a>):</p>
 <ol style="list-style-type: lower-roman">
 <li>Improved parameterisation of diffusion at the sediment-water interface</li>
@@ -438,9 +615,9 @@ Figure 4.7: CANDI-AED includes chemical processes of organic matter transformati
 <li>Addition of MPB</li>
 </ol>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pics5"></span>
-<img src="images/dev/sdg%20extensions%20and%20development-01.png" alt="Visual summary of model updates undertaken." width="100%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pics5"></span>
+<img src="images/dev/sdg%20extensions%20and%20development-01.png" alt="Visual summary of model updates undertaken." width="100%" />
+<p class="caption">
 Figure 4.8: Visual summary of model updates undertaken.
 </p>
 </div>
@@ -460,14 +637,13 @@ F = D_{0}\frac{\Delta C}{\Delta x} = \frac{D_{0}}{\delta} (C_{bw} - C_{1})
 <p>To Be Completed</p>
 <p><br></p>
 </div>
-<div id="resolving-sediment-zonation" class="section level4 unnumbered">
-<h4>Resolving sediment zonation<a class="anchor" aria-label="anchor" href="#resolving-sediment-zonation"><i class="fas fa-link"></i></a>
-</h4>
-<p>Facility also exists within the model to use sediment zones’ which are identical to the above description but are not necessarily coincident with the grid-structure of the water. This way sed-zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment will be averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure ). Using zones is a practical compromise between computational efficiency and capturing spatial heterogeneity in sediment properties and their fluxes.</p>
+<div id="resolving-sediment-zonation" class="section level4 unnumbered hasAnchor">
+<h4>Resolving sediment zonation<a href="cdm-development-testing.html#resolving-sediment-zonation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Facility also exists within the model to use sediment zones’ which are identical to the above description but are not necessarily coincident with the grid-structure of the water. This way sed-zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment will be averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure <span class="math inline">\(\ref{fig:sed_integration}\)</span>). Using zones is a practical compromise between computational efficiency and capturing spatial heterogeneity in sediment properties and their fluxes.</p>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pics3"></span>
-<img src="images/dev/sed_picture5.png" alt="Schematic depicting sediment zone numerical approach." width="100%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pics3"></span>
+<img src="images/dev/sed_picture5.png" alt="Schematic depicting sediment zone numerical approach." width="100%" />
+<p class="caption">
 Figure 4.9: Schematic depicting sediment zone numerical approach.
 </p>
 </div>
@@ -475,17 +651,16 @@ Figure 4.9: Schematic depicting sediment zone numerical approach.
 <p><strong>3-zone experiment</strong></p>
 <p>To demonstrate the zones can function independently, a model test was performed with three zones. In this simulation each model zone received a sustained 1-year surface loading of organic material, which either was maintained for throughout the simulation duration (Zone 1), or was reduced to a new lower value (Zone 2 and 3); this can conceptually be considered as a test of the sediment model to respond to ‘remediation’ scenarios. The results highlight the individual zones responding accordingly, as shown for NO<sub>3</sub> (Figure X).</p>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pics4"></span>
-<img src="images/dev/sed_picture6.png" alt="Example of sediment concentration-depth-time plot for ammonia, given different organic matter influx rates in three different zones. To demonstrate capability for spatial differences, the organic matter input stayed the same in Zone 1 but decreased after 1 year in Zones 2 and 3 to different levels." width="100%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pics4"></span>
+<img src="images/dev/sed_picture6.png" alt="Example of sediment concentration-depth-time plot for ammonia, given different organic matter influx rates in three different zones. To demonstrate capability for spatial differences, the organic matter input stayed the same in Zone 1 but decreased after 1 year in Zones 2 and 3 to different levels." width="100%" />
+<p class="caption">
 Figure 4.10: Example of sediment concentration-depth-time plot for ammonia, given different organic matter influx rates in three different zones. To demonstrate capability for spatial differences, the organic matter input stayed the same in Zone 1 but decreased after 1 year in Zones 2 and 3 to different levels.
 </p>
 </div>
 </div>
 </div>
-<div id="sediment-water-coupling" class="section level4 unnumbered">
-<h4>Sediment-water coupling<a class="anchor" aria-label="anchor" href="#sediment-water-coupling"><i class="fas fa-link"></i></a>
-</h4>
+<div id="sediment-water-coupling" class="section level4 unnumbered hasAnchor">
+<h4>Sediment-water coupling<a href="cdm-development-testing.html#sediment-water-coupling" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The sediment and hydrodynamic models are coupled at the sediment-water interface. The AED model setup has separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:</p>
 <ul>
 <li>flux of solid material onto the sediment surface</li>
@@ -493,9 +668,9 @@ Figure 4.10: Example of sediment concentration-depth-time plot for ammonia, give
 <li>flux of dissolved substances from the top sediment layer</li>
 </ul>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-pics2"></span>
-<img src="images/dev/sed_picture3.png" alt="Schematic of sediment water coupling approach." width="45%"><img src="images/dev/sed_picture4.png" alt="Schematic of sediment water coupling approach." width="45%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-pics2"></span>
+<img src="images/dev/sed_picture3.png" alt="Schematic of sediment water coupling approach." width="45%" /><img src="images/dev/sed_picture4.png" alt="Schematic of sediment water coupling approach." width="45%" />
+<p class="caption">
 Figure 4.11: Schematic of sediment water coupling approach.
 </p>
 </div>
@@ -504,31 +679,29 @@ Figure 4.11: Schematic of sediment water coupling approach.
 <p><em>To Be Completed</em></p>
 </div>
 </div>
-<div id="model-setup-and-configuration" class="section level3" number="4.3.3">
-<h3>
-<span class="header-section-number">4.3.3</span> Model setup and configuration<a class="anchor" aria-label="anchor" href="#model-setup-and-configuration"><i class="fas fa-link"></i></a>
-</h3>
+<div id="model-setup-and-configuration" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Model setup and configuration<a href="cdm-development-testing.html#model-setup-and-configuration" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Coorong lagoon is divided into 10(20) sediment zones along its length. One sediment model is run for each of the ten(twenty) zones. The zone boundaries are largely based on locations of sandbars and where the lagoon channel narrows and broadens. There are measured data points in all zones except for zone 1, south of the Salt Creek inflow. Zones 1 to 4 correspond to the South Lagoon, as mentioned in the Goyder Institute nutrient budget. Zone 5 is the intermediate area and zones 6 to 10 are the North Lagoon.</p>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-pics1"></span>
-<img src="images/dev/sed_picture1.png" alt="Example sediment zonation." width="45%"><img src="images/dev/sed_picture2.png" alt="Example sediment zonation." width="45%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-pics1"></span>
+<img src="images/dev/sed_picture1.png" alt="Example sediment zonation." width="45%" /><img src="images/dev/sed_picture2.png" alt="Example sediment zonation." width="45%" />
+<p class="caption">
 Figure 4.12: Example sediment zonation.
 </p>
 </div>
 </div>
 <p>The sediment model is calibrated initially without any coupling. The sediment-water interface boundaries are based on measured bottom water data, where available, or literature values. Some parameters are tuned so that measured data matches simulated variables, for concentration depth profiles and fluxes.</p>
 <p>The sediment model is then coupled to the water column model. Many variables are set up to be linked between the two models; however, not all variables need to be linked. The fluxes and concentrations of linked variables in the bottom water are averaged across all cells in a zone, and this average value is passed to the sediment. Similarly, the value of a dissolved flux from the sediment is given to all bottom water cells within a sediment zone.</p>
-<div id="parameters-and-settings" class="section level4 unnumbered">
-<h4>Parameters and settings<a class="anchor" aria-label="anchor" href="#parameters-and-settings"><i class="fas fa-link"></i></a>
-</h4>
+<div id="parameters-and-settings" class="section level4 unnumbered hasAnchor">
+<h4>Parameters and settings<a href="cdm-development-testing.html#parameters-and-settings" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The assigned parameters for the model are described below in Table X.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:800px; overflow-x: scroll; width:690px; ">
-<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:3dev-sedpars">Table 4.2: </span>Sediment physical and transport parameters
 </caption>
-<thead><tr>
+<thead>
+<tr>
 <th style="text-align:center;">
 Parameter name
 </th>
@@ -541,7 +714,8 @@ Value
 <th style="text-align:center;">
 Description
 </th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr>
 <td style="text-align:center;min-width: 10em; background-color: white !important;">
@@ -803,13 +977,12 @@ Number of vertical layers
 </td>
 </tr>
 </tbody>
-</table></div>
+</table>
 </div>
 <p><br></p>
 </div>
-<div id="validation-sites-and-data" class="section level4 unnumbered">
-<h4>Validation sites and data<a class="anchor" aria-label="anchor" href="#validation-sites-and-data"><i class="fas fa-link"></i></a>
-</h4>
+<div id="validation-sites-and-data" class="section level4 unnumbered hasAnchor">
+<h4>Validation sites and data<a href="cdm-development-testing.html#validation-sites-and-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A wide diversity of data has been collected and is documentaed in Appendix A (Data Catalogue). In summary, there are four broad categories of field data available from the University of Adelaide surveys for model setup and parameterisation.</p>
 <p><em>Grab samples – C, N, P, Mn, Fe, S</em> : These are available for many sites but only one or two depths. They are useful for averaging a concentration at depth within a zone. These are key variables for sediment biogeochemistry.</p>
 <p><em>Cores – Fe, S, NH4+, PO43- GHGs</em> : The cores are available for only around four sites, but they are used for calibrating depth profiles and sediment-water fluxes. These often have data measured in the day and the night, as well as in November and March, which all have different concentrations and fluxes. The challenge will be to capture both day and night conditions, while also capturing seasonal changes.
@@ -818,85 +991,57 @@ The GHG models are new and require testing and development. It may be a challeng
 <p><em>Macroinvertebrates – bioturbation parameters</em> : These measurements are used for setting bioturbation and bioirrigation parameters. Broadly, the North Lagoon has high bioturbation and the South Lagoon has very little bioturbation. The depth to bioturbation is important, as it is expected that there is uninhabited black ooze below a certain depth.</p>
 </div>
 </div>
-<div id="validation-and-assessment-1" class="section level3" number="4.3.4">
-<h3>
-<span class="header-section-number">4.3.4</span> Validation and assessment<a class="anchor" aria-label="anchor" href="#validation-and-assessment-1"><i class="fas fa-link"></i></a>
-</h3>
+<div id="validation-and-assessment-1" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Validation and assessment<a href="cdm-development-testing.html#validation-and-assessment-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>To Be Completed</em></p>
 </div>
-<div id="lagoon-scale-predictions-1" class="section level3" number="4.3.5">
-<h3>
-<span class="header-section-number">4.3.5</span> Lagoon scale predictions<a class="anchor" aria-label="anchor" href="#lagoon-scale-predictions-1"><i class="fas fa-link"></i></a>
-</h3>
+<div id="lagoon-scale-predictions-1" class="section level3 hasAnchor" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Lagoon scale predictions<a href="cdm-development-testing.html#lagoon-scale-predictions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>To Be Completed</em></p>
 </div>
-<div id="summary-sept-2021-1" class="section level3" number="4.3.6">
-<h3>
-<span class="header-section-number">4.3.6</span> Summary (Sept 2021)<a class="anchor" aria-label="anchor" href="#summary-sept-2021-1"><i class="fas fa-link"></i></a>
-</h3>
+<div id="summary-sept-2021-1" class="section level3 hasAnchor" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> Summary (Sept 2021)<a href="cdm-development-testing.html#summary-sept-2021-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The sediment biogeochemistry model has been implemented that can resolve the nature of sediment condition across the Coorong lagoon. The model has been demonstrated to capture sharp vertical gradients in nutients, organic matter and sulfides, and can be applied across discrete zones within the overall lagoon to resolve spatial heterogeneity. The model is now being calibrated against T&amp;I1 project data.</p>
 <p><br></p>
-<hr>
+<hr />
 <p><br></p>
 </div>
 </div>
-<div id="oxygen-metabolism-and-nutrient-cycling" class="section level2" number="4.4">
-<h2>
-<span class="header-section-number">4.4</span> Oxygen metabolism and nutrient cycling<a class="anchor" aria-label="anchor" href="#oxygen-metabolism-and-nutrient-cycling"><i class="fas fa-link"></i></a>
-</h2>
-<div id="overview-3" class="section level3" number="4.4.1">
-<h3>
-<span class="header-section-number">4.4.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-3"><i class="fas fa-link"></i></a>
-</h3>
+<div id="oxygen-metabolism-and-nutrient-cycling" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Oxygen metabolism and nutrient cycling<a href="cdm-development-testing.html#oxygen-metabolism-and-nutrient-cycling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overview-3" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Overview<a href="cdm-development-testing.html#overview-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="model-approach-1" class="section level3" number="4.4.2">
-<h3>
-<span class="header-section-number">4.4.2</span> Model approach<a class="anchor" aria-label="anchor" href="#model-approach-1"><i class="fas fa-link"></i></a>
-</h3>
+<div id="model-approach-1" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Model approach<a href="cdm-development-testing.html#model-approach-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="data-availability" class="section level3" number="4.4.3">
-<h3>
-<span class="header-section-number">4.4.3</span> Data availability<a class="anchor" aria-label="anchor" href="#data-availability"><i class="fas fa-link"></i></a>
-</h3>
+<div id="data-availability" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Data availability<a href="cdm-development-testing.html#data-availability" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="model-setup" class="section level3" number="4.4.4">
-<h3>
-<span class="header-section-number">4.4.4</span> Model setup<a class="anchor" aria-label="anchor" href="#model-setup"><i class="fas fa-link"></i></a>
-</h3>
+<div id="model-setup" class="section level3 hasAnchor" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> Model setup<a href="cdm-development-testing.html#model-setup" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="validation-and-assessment-2" class="section level3" number="4.4.5">
-<h3>
-<span class="header-section-number">4.4.5</span> Validation and assessment<a class="anchor" aria-label="anchor" href="#validation-and-assessment-2"><i class="fas fa-link"></i></a>
-</h3>
+<div id="validation-and-assessment-2" class="section level3 hasAnchor" number="4.4.5">
+<h3><span class="header-section-number">4.4.5</span> Validation and assessment<a href="cdm-development-testing.html#validation-and-assessment-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="summary" class="section level3" number="4.4.6">
-<h3>
-<span class="header-section-number">4.4.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary"><i class="fas fa-link"></i></a>
-</h3>
+<div id="summary" class="section level3 hasAnchor" number="4.4.6">
+<h3><span class="header-section-number">4.4.6</span> Summary<a href="cdm-development-testing.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><br></p>
-<hr>
+<hr />
 <p><br></p>
 </div>
 </div>
-<div id="macroalgal-dynamics" class="section level2" number="4.5">
-<h2>
-<span class="header-section-number">4.5</span> Macroalgal dynamics<a class="anchor" aria-label="anchor" href="#macroalgal-dynamics"><i class="fas fa-link"></i></a>
-</h2>
-<div id="overview-4" class="section level3" number="4.5.1">
-<h3>
-<span class="header-section-number">4.5.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-4"><i class="fas fa-link"></i></a>
-</h3>
+<div id="macroalgal-dynamics" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Macroalgal dynamics<a href="cdm-development-testing.html#macroalgal-dynamics" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overview-4" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Overview<a href="cdm-development-testing.html#overview-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Recent surveys in the Coorong South Lagoon have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, mainly the species Ulva. The survey data highlight that the filamentous algae are tightly associated with the locations that Ruppia are present, and late in the season the smothering and deoxygenation casued by large biomass accumulations are driving poor water quality. This section describes the approach to simulating macroalgae, and development of the model to the CSL situation.</p>
 </div>
-<div id="model-approach-2" class="section level3" number="4.5.2">
-<h3>
-<span class="header-section-number">4.5.2</span> Model approach<a class="anchor" aria-label="anchor" href="#model-approach-2"><i class="fas fa-link"></i></a>
-</h3>
+<div id="model-approach-2" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Model approach<a href="cdm-development-testing.html#model-approach-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Within the Coorong, the AED model has previously been set up to predict inorganic and organic nutrients, and chlorophyll-a. Whilst nutrients are not directly required for the <em>Ruppia</em> model assessment, the presence of filamentous algal blooms can compete for light and these are linked to bioavailable nutrients within the water column (in addition to other attributes).</p>
-<div id="filamentous-algae" class="section level4" number="4.5.2.1">
-<h4>
-<span class="header-section-number">4.5.2.1</span> Filamentous algae<a class="anchor" aria-label="anchor" href="#filamentous-algae"><i class="fas fa-link"></i></a>
-</h4>
+<div id="filamentous-algae" class="section level4 hasAnchor" number="4.5.2.1">
+<h4><span class="header-section-number">4.5.2.1</span> Filamentous algae<a href="cdm-development-testing.html#filamentous-algae" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>We include a filamentous algae variable, <span class="math inline">\(FA\)</span>, in the model that is customized to reflect the Ulva community that was been extensively described. For this case we assumed it to be attached to benthic substrate, and is therefore is not subject to advection and mixing, but can slough off under high stress conditions and become a floating variable subject to transport. Evidence from the field suggest the abundance of filaments are tightly linked to the Ruppia shoots, which the algae use to anchor too.</p>
 <p>In general, the balance equation describes how the biomass changes over time, according to:</p>
 <p><span class="math display" id="eq:lagoonhabitat5">\[
@@ -909,27 +1054,26 @@ where the main growth term is resolved as:</p>
 \tag{4.7}
 \]</span></p>
 <p>An example of the above approach in practice is shown in the below animation. The results highlight, for this time period of interest, the areas where salinity exceeds the threshold and initially limits the productivity, and the shallow areas where light is abundant; along with other environmental drivers (e.g., temperature) these shape the biomass accumulation pattern seen in the top left panel. Animations like this for different periods throughout the year, or between years, can look quite different.</p>
-<br><center>
-<video width="100%" height="100%" controls><source src="images/dev/MA2_JAN.mp4" type="video/mp4"></source></video>
+<br>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/dev/MA2_JAN.mp4" type="video/mp4">
+</video>
 </center>
 <p><br></p>
 </div>
-<div id="macroalgae-growth-physiology" class="section level4" number="4.5.2.2">
-<h4>
-<span class="header-section-number">4.5.2.2</span> Macroalgae growth physiology<a class="anchor" aria-label="anchor" href="#macroalgae-growth-physiology"><i class="fas fa-link"></i></a>
-</h4>
+<div id="macroalgae-growth-physiology" class="section level4 hasAnchor" number="4.5.2.2">
+<h4><span class="header-section-number">4.5.2.2</span> Macroalgae growth physiology<a href="cdm-development-testing.html#macroalgae-growth-physiology" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The original AED macroalgal biomass model previously applied and exemplified in the above example has been replaced with an updated version that includes numerous advances to light extinction within the canopy, nutrient cycling and excretion processes, and updates to the parameterisations associated with photosynthesis and biomass accumulation. The latter, in particular, are updated to better align with the experimental work reported in Waycott et al. (2019) and …</p>
 </div>
-<div id="resolving-seasonal-life-stage-dynamics" class="section level4" number="4.5.2.3">
-<h4>
-<span class="header-section-number">4.5.2.3</span> Resolving seasonal life-stage dynamics<a class="anchor" aria-label="anchor" href="#resolving-seasonal-life-stage-dynamics"><i class="fas fa-link"></i></a>
-</h4>
+<div id="resolving-seasonal-life-stage-dynamics" class="section level4 hasAnchor" number="4.5.2.3">
+<h4><span class="header-section-number">4.5.2.3</span> Resolving seasonal life-stage dynamics<a href="cdm-development-testing.html#resolving-seasonal-life-stage-dynamics" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Following review of the initial data and findings from the T&amp;I project 2, the approach to modelling macroalgae has been revised to better resolve seasonal shifts in form and physiology over the seasonal cycle.</p>
 <p>A new ‘colony’ based model for simulating clump emergence, biomass accumulation and sloughing has been conceptualised (Figure 13). The model adopts the same underlying physiology as described in the above section, but allows for age/size specific application of these rates to better align with recent observations and monitoring.</p>
 <div class="text-image">
-<div class="figure">
-<span id="fig:dev-pic5"></span>
-<img src="images/dev/macroalgae_conceptual.png" alt="Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay." width="100%"><p class="caption">
+<div class="figure"><span style="display:block;" id="fig:dev-pic5"></span>
+<img src="images/dev/macroalgae_conceptual.png" alt="Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay." width="100%" />
+<p class="caption">
 Figure 4.13: Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay.
 </p>
 </div>
@@ -938,27 +1082,22 @@ Figure 4.13: Schematic depicting a new life-stage based macroalgal “clump” m
 <p>The approach essentially follows a size-class based model for resolving the filamentous algae biomass pool. According to the above conceptual schematic, four discrete life-stage (aka size) categories are included. In general they are fixed in space, but note that ‘sloughed’ biomass that becomes mobilised after a sloughing event can continue to be exposed to surface light irradiances and also begin decomposition should environmental conditions be inadequate for growth (e.g., as the water becomes too salty).</p>
 </div>
 </div>
-<div id="data-availability-1" class="section level3" number="4.5.3">
-<h3>
-<span class="header-section-number">4.5.3</span> Data availability<a class="anchor" aria-label="anchor" href="#data-availability-1"><i class="fas fa-link"></i></a>
-</h3>
-<div id="environmental-threshold-parameter-review" class="section level4" number="4.5.3.1">
-<h4>
-<span class="header-section-number">4.5.3.1</span> Environmental threshold parameter review<a class="anchor" aria-label="anchor" href="#environmental-threshold-parameter-review"><i class="fas fa-link"></i></a>
-</h4>
+<div id="data-availability-1" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Data availability<a href="cdm-development-testing.html#data-availability-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="environmental-threshold-parameter-review" class="section level4 hasAnchor" number="4.5.3.1">
+<h4><span class="header-section-number">4.5.3.1</span> Environmental threshold parameter review<a href="cdm-development-testing.html#environmental-threshold-parameter-review" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p><em>To be completed</em></p>
 </div>
-<div id="algae-extent-within-the-lagoon" class="section level4" number="4.5.3.2">
-<h4>
-<span class="header-section-number">4.5.3.2</span> Algae extent within the lagoon<a class="anchor" aria-label="anchor" href="#algae-extent-within-the-lagoon"><i class="fas fa-link"></i></a>
-</h4>
+<div id="algae-extent-within-the-lagoon" class="section level4 hasAnchor" number="4.5.3.2">
+<h4><span class="header-section-number">4.5.3.2</span> Algae extent within the lagoon<a href="cdm-development-testing.html#algae-extent-within-the-lagoon" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A summary of the available algale extent data is summarised in Table X.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:360px; overflow-x: scroll; width:680px; ">
-<div class="inline-table"><table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
+<table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:3-malgtable">Table 4.3: </span>Macroalgae data availability summary
 </caption>
-<thead><tr>
+<thead>
+<tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Identifier
 </th>
@@ -971,7 +1110,8 @@ Date range
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
 # sites
 </th>
-</tr></thead>
+</tr>
+</thead>
 <tbody>
 <tr grouplength="2">
 <td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
@@ -1040,143 +1180,123 @@ Pending
 </td>
 </tr>
 </tbody>
-</table></div>
+</table>
 </div>
 <p><br></p>
 <p><strong>Historical Monitoring</strong> A summary of historical (pre 2020) <em>Filamentous Algae</em> monitoring locations are shown in Figure <a href="cdm-development-testing.html#fig:dev-pic10">4.14</a>.</p>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-pic10"></span>
-<img src="images/dev/3_picture10a.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 4.3. Turquoise outline represents the model boundary." width="45%"><img src="images/dev/3_picture10b.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 4.3. Turquoise outline represents the model boundary." width="45%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-pic10"></span>
+<img src="images/dev/3_picture10a.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 4.3. Turquoise outline represents the model boundary." width="45%" /><img src="images/dev/3_picture10b.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 4.3. Turquoise outline represents the model boundary." width="45%" />
+<p class="caption">
 Figure 4.14: Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 4.3. Turquoise outline represents the model boundary.
 </p>
 </div>
 </div>
 <p><strong>HCHB Monitoring</strong> A summary of the HCHB monitoring locations are shown in Figure <a href="cdm-development-testing.html#fig:dev-pic11">4.15</a>.</p>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-pic11"></span>
-<img src="images/dev/3_picture11.png" alt="Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 4.4. Turquoise outline represents the model boundary." width="45%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-pic11"></span>
+<img src="images/dev/3_picture11.png" alt="Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 4.4. Turquoise outline represents the model boundary." width="45%" />
+<p class="caption">
 Figure 4.15: Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 4.4. Turquoise outline represents the model boundary.
 </p>
 </div>
 </div>
 </div>
 </div>
-<div id="model-setup-1" class="section level3" number="4.5.4">
-<h3>
-<span class="header-section-number">4.5.4</span> Model setup<a class="anchor" aria-label="anchor" href="#model-setup-1"><i class="fas fa-link"></i></a>
-</h3>
+<div id="model-setup-1" class="section level3 hasAnchor" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Model setup<a href="cdm-development-testing.html#model-setup-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="validation-and-assessment-3" class="section level3" number="4.5.5">
-<h3>
-<span class="header-section-number">4.5.5</span> Validation and assessment<a class="anchor" aria-label="anchor" href="#validation-and-assessment-3"><i class="fas fa-link"></i></a>
-</h3>
+<div id="validation-and-assessment-3" class="section level3 hasAnchor" number="4.5.5">
+<h3><span class="header-section-number">4.5.5</span> Validation and assessment<a href="cdm-development-testing.html#validation-and-assessment-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using the Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure <a href="cdm-development-testing.html#fig:dev-pic12">4.16</a>).</p>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-pic12"></span>
-<img src="images/dev/AlgaeDec2016vsULVAbiomass2016.png" alt="Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)." width="45%"><img src="images/dev/AlgaeMay2017vsUlvaBiomass2016.png" alt="Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)." width="45%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-pic12"></span>
+<img src="images/dev/AlgaeDec2016vsULVAbiomass2016.png" alt="Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)." width="45%" /><img src="images/dev/AlgaeMay2017vsUlvaBiomass2016.png" alt="Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)." width="45%" />
+<p class="caption">
 Figure 4.16: Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right).
 </p>
 </div>
 </div>
 <p>The modelled Ulva HSI prediction correlates well with the observed filamentous algae density, however, the correlation between predicted biomass and obsevred presence was less accurate (Figure <a href="cdm-development-testing.html#fig:dev-pic13">4.17</a>). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted and further data from 2020-2021 is needed to assess whether the HSI calculation needs further refinement.</p>
 <div class="text-image">
-<div class="figure" style="text-align: center">
-<span id="fig:dev-pic13"></span>
-<img src="images/dev/Algae_2016.png" alt="Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom)." width="100%"><p class="caption">
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:dev-pic13"></span>
+<img src="images/dev/Algae_2016.png" alt="Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom)." width="100%" />
+<p class="caption">
 Figure 4.17: Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom).
 </p>
 </div>
 </div>
 </div>
-<div id="summary-sept-2021-2" class="section level3" number="4.5.6">
-<h3>
-<span class="header-section-number">4.5.6</span> Summary (Sept 2021)<a class="anchor" aria-label="anchor" href="#summary-sept-2021-2"><i class="fas fa-link"></i></a>
-</h3>
+<div id="summary-sept-2021-2" class="section level3 hasAnchor" number="4.5.6">
+<h3><span class="header-section-number">4.5.6</span> Summary (Sept 2021)<a href="cdm-development-testing.html#summary-sept-2021-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The macroalgae model in AED is able to capture the broad spatial patterns in environmental drivers that control biomass. Comparison of the Generation 0 model with the pre-HCHB survey data has provided insights to the suitability of the model approach. This is being used to refine the conceptual basis of the model which will be introduced in the next model versions.</p>
 
 </div>
 </div>
 </div>
-  <div class="chapter-nav">
-<div class="prev"><a href="cdm-model-data-integration.html"><span class="header-section-number">3</span> CDM Model-Data Integration</a></div>
-<div class="next"><a href="cdm-habitat-modelling.html"><span class="header-section-number">5</span> CDM Habitat Modelling</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#cdm-development-testing"><span class="header-section-number">4</span> CDM Development &amp; Testing</a></li>
-<li>
-<a class="nav-link" href="#modelling-development-rationale"><span class="header-section-number">4.1</span> Modelling development rationale</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#known-gaps-and-model-limitations"><span class="header-section-number">4.1.1</span> Known gaps and model limitations</a></li>
-<li><a class="nav-link" href="#development-focus-and-integration-with-hchb-research-and-monitoring"><span class="header-section-number">4.1.2</span> Development focus and integration with HCHB research and monitoring</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#waves-and-resuspension"><span class="header-section-number">4.2</span> Waves and resuspension</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#overview-1"><span class="header-section-number">4.2.1</span> Overview</a></li>
-<li><a class="nav-link" href="#model-approach"><span class="header-section-number">4.2.2</span> Model approach</a></li>
-<li><a class="nav-link" href="#validation-and-assessment"><span class="header-section-number">4.2.3</span> Validation and assessment</a></li>
-<li><a class="nav-link" href="#lagoon-scale-predictions"><span class="header-section-number">4.2.4</span> Lagoon scale predictions</a></li>
-<li><a class="nav-link" href="#summary-sept-2021"><span class="header-section-number">4.2.5</span> Summary (Sept 2021)</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#sediment-biogeochemistry"><span class="header-section-number">4.3</span> Sediment biogeochemistry</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#overview-2"><span class="header-section-number">4.3.1</span> Overview</a></li>
-<li><a class="nav-link" href="#model-approach-candi-aed"><span class="header-section-number">4.3.2</span> Model approach: CANDI-AED</a></li>
-<li><a class="nav-link" href="#model-setup-and-configuration"><span class="header-section-number">4.3.3</span> Model setup and configuration</a></li>
-<li><a class="nav-link" href="#validation-and-assessment-1"><span class="header-section-number">4.3.4</span> Validation and assessment</a></li>
-<li><a class="nav-link" href="#lagoon-scale-predictions-1"><span class="header-section-number">4.3.5</span> Lagoon scale predictions</a></li>
-<li><a class="nav-link" href="#summary-sept-2021-1"><span class="header-section-number">4.3.6</span> Summary (Sept 2021)</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#oxygen-metabolism-and-nutrient-cycling"><span class="header-section-number">4.4</span> Oxygen metabolism and nutrient cycling</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#overview-3"><span class="header-section-number">4.4.1</span> Overview</a></li>
-<li><a class="nav-link" href="#model-approach-1"><span class="header-section-number">4.4.2</span> Model approach</a></li>
-<li><a class="nav-link" href="#data-availability"><span class="header-section-number">4.4.3</span> Data availability</a></li>
-<li><a class="nav-link" href="#model-setup"><span class="header-section-number">4.4.4</span> Model setup</a></li>
-<li><a class="nav-link" href="#validation-and-assessment-2"><span class="header-section-number">4.4.5</span> Validation and assessment</a></li>
-<li><a class="nav-link" href="#summary"><span class="header-section-number">4.4.6</span> Summary</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#macroalgal-dynamics"><span class="header-section-number">4.5</span> Macroalgal dynamics</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#overview-4"><span class="header-section-number">4.5.1</span> Overview</a></li>
-<li><a class="nav-link" href="#model-approach-2"><span class="header-section-number">4.5.2</span> Model approach</a></li>
-<li><a class="nav-link" href="#data-availability-1"><span class="header-section-number">4.5.3</span> Data availability</a></li>
-<li><a class="nav-link" href="#model-setup-1"><span class="header-section-number">4.5.4</span> Model setup</a></li>
-<li><a class="nav-link" href="#validation-and-assessment-3"><span class="header-section-number">4.5.5</span> Validation and assessment</a></li>
-<li><a class="nav-link" href="#summary-sept-2021-2"><span class="header-section-number">4.5.6</span> Summary (Sept 2021)</a></li>
-</ul>
-</li>
-</ul>
+            </section>
 
-      <div class="book-extra">
-        <ul class="list-unstyled">
-          
-        </ul>
-</div>
-    </nav>
-</div>
-
-</div>
-</div> <!-- .container -->
-
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 12-September-2021.</p>
+          </div>
+        </div>
+      </div>
+<a href="cdm-model-data-integration.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cdm-habitat-modelling.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
   </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "c('white', 'night')",
+"family": "sans",
+"size": 1
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"info": false
+});
+});
+</script>
 
-  <div class="col-12 col-md-6 mt-3">
-    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
-  </div>
-
-</div></div>
-</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -1190,4 +1310,5 @@ Figure 4.17: Filamentous algae observed density and equivalent model predicted U
   })();
 </script>
 </body>
+
 </html>
