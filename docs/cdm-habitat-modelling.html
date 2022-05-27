@@ -1,293 +1,109 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 CDM Habitat Modelling | The Coorong Dynamics Model</title>
-  <meta name="description" content="5 CDM Habitat Modelling | The Coorong Dynamics Model (CDM)" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="5 CDM Habitat Modelling | The Coorong Dynamics Model" />
-  <meta property="og:type" content="book" />
-  
-  <meta property="og:description" content="5 CDM Habitat Modelling | The Coorong Dynamics Model (CDM)" />
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 CDM Habitat Modelling | The Coorong Dynamics Model" />
-  
-  <meta name="twitter:description" content="5 CDM Habitat Modelling | The Coorong Dynamics Model (CDM)" />
-  
-
-<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="cdm-development-testing.html"/>
-<link rel="next" href="integrated-assessment-of-the-cdm.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-
-
-
-
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>5 CDM Habitat Modelling | The Coorong Dynamics Model</title>
+<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
+<meta name="description" content="5.1 Habitat modelling - Ruppia  5.1.1 Overview Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="5 CDM Habitat Modelling | The Coorong Dynamics Model">
+<meta property="og:type" content="book">
+<meta property="og:description" content="5.1 Habitat modelling - Ruppia  5.1.1 Overview Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="5 CDM Habitat Modelling | The Coorong Dynamics Model">
+<meta name="twitter:description" content="5.1 Habitat modelling - Ruppia  5.1.1 Overview Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="css/style.css">
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./"><b>Coorong Dynamics Model</b></a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#project-background"><i class="fa fa-check"></i>Project background</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#report-layout-and-guidance"><i class="fa fa-check"></i>Report layout and guidance</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#coordinating-authors"><i class="fa fa-check"></i>Coordinating authors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#adding-and-updating-content"><i class="fa fa-check"></i>Adding and updating content</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#using-rstudios-visual-editor"><i class="fa fa-check"></i>Using RStudio’s visual editor</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-and-significance-of-the-coorong"><i class="fa fa-check"></i><b>1.1</b> Background and significance of the Coorong</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#importance-of-the-coorong"><i class="fa fa-check"></i><b>1.1.1</b> Importance of the Coorong</a></li>
-<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#ecological-character-of-the-coorong"><i class="fa fa-check"></i><b>1.1.2</b> Ecological Character of the Coorong</a></li>
-<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#management-challenges"><i class="fa fa-check"></i><b>1.1.3</b> Management challenges</a></li>
-</ul></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#need-for-an-integrated-model-to-support-coorong-management"><i class="fa fa-check"></i><b>1.2</b> Need for an integrated model to support Coorong management</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#prior-modelling"><i class="fa fa-check"></i><b>1.2.1</b> Prior modelling</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#knowledge-gaps-and-development-needs"><i class="fa fa-check"></i><b>1.2.2</b> Knowledge gaps and development needs</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#aims-and-scope"><i class="fa fa-check"></i><b>1.3</b> Aims and Scope</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html"><i class="fa fa-check"></i><b>2</b> The Coorong Dynamics Model</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
-<li class="chapter" data-level="2.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#model-platform"><i class="fa fa-check"></i><b>2.2</b> Model platform</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#hydrodynamics-tuflow-fv"><i class="fa fa-check"></i><b>2.2.1</b> Hydrodynamics: TUFLOW-FV</a></li>
-<li class="chapter" data-level="2.2.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#waves-swan"><i class="fa fa-check"></i><b>2.2.2</b> Waves: SWAN</a></li>
-<li class="chapter" data-level="2.2.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#water-quality-and-habitat-aed"><i class="fa fa-check"></i><b>2.2.3</b> Water quality and habitat: AED</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#cdm-setup-and-configuration"><i class="fa fa-check"></i><b>2.3</b> CDM setup and configuration</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#simulation-domains"><i class="fa fa-check"></i><b>2.3.1</b> Simulation domains</a></li>
-<li class="chapter" data-level="2.3.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#boundary-conditions"><i class="fa fa-check"></i><b>2.3.2</b> Boundary conditions</a></li>
-<li class="chapter" data-level="2.3.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#hydrodynamic-settings"><i class="fa fa-check"></i><b>2.3.3</b> Hydrodynamic settings</a></li>
-<li class="chapter" data-level="2.3.4" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#water-quality-modules"><i class="fa fa-check"></i><b>2.3.4</b> Water quality modules</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#model-generation-summary"><i class="fa fa-check"></i><b>2.4</b> Model generation summary</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html"><i class="fa fa-check"></i><b>3</b> CDM Model-Data Integration</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#cdm-structure-and-organisation"><i class="fa fa-check"></i><b>3.1</b> CDM structure and organisation</a>
-<ul>
-<li class="chapter" data-level="3.1.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#online-repository-access"><i class="fa fa-check"></i><b>3.1.1</b> <strong>Online repository access</strong></a></li>
-<li class="chapter" data-level="3.1.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#repository-folder-structure"><i class="fa fa-check"></i><b>3.1.2</b> <strong>Repository folder structure</strong></a></li>
-<li class="chapter" data-level="3.1.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#high-level-workflows"><i class="fa fa-check"></i><b>3.1.3</b> <strong>High level workflows</strong></a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-repository-and-management"><i class="fa fa-check"></i><b>3.2</b> Data repository and management</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-catalogue"><i class="fa fa-check"></i><b>3.2.1</b> <strong>Data catalogue</strong></a></li>
-<li class="chapter" data-level="3.2.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-organisation"><i class="fa fa-check"></i><b>3.2.2</b> <strong>Data organisation</strong></a></li>
-<li class="chapter" data-level="3.2.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-processing-workflows"><i class="fa fa-check"></i><b>3.2.3</b> <strong>Data processing workflows</strong></a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-repository-and-management"><i class="fa fa-check"></i><b>3.3</b> Model repository and management</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-catalogue"><i class="fa fa-check"></i><b>3.3.1</b> <strong>Model catalogue</strong></a></li>
-<li class="chapter" data-level="3.3.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#tuflow-fv-model-organisation"><i class="fa fa-check"></i><b>3.3.2</b> <strong>TUFLOW-FV model organisation</strong></a></li>
-<li class="chapter" data-level="3.3.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#swan-wave-model-organisation"><i class="fa fa-check"></i><b>3.3.3</b> <strong>SWAN Wave Model organisation</strong></a></li>
-<li class="chapter" data-level="3.3.4" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-processing-toolbox"><i class="fa fa-check"></i><b>3.3.4</b> <strong>Model processing toolbox</strong></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html"><i class="fa fa-check"></i><b>4</b> CDM Development &amp; Testing</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#modelling-development-rationale"><i class="fa fa-check"></i><b>4.1</b> Modelling development rationale</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#known-gaps-and-model-limitations"><i class="fa fa-check"></i><b>4.1.1</b> Known gaps and model limitations</a></li>
-<li class="chapter" data-level="4.1.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#development-focus-and-integration-with-hchb-research-and-monitoring"><i class="fa fa-check"></i><b>4.1.2</b> Development focus and integration with HCHB research and monitoring</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#waves-and-resuspension"><i class="fa fa-check"></i><b>4.2</b> Waves and resuspension</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-1"><i class="fa fa-check"></i><b>4.2.1</b> Overview</a></li>
-<li class="chapter" data-level="4.2.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach"><i class="fa fa-check"></i><b>4.2.2</b> Model approach</a></li>
-<li class="chapter" data-level="4.2.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment"><i class="fa fa-check"></i><b>4.2.3</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.2.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#lagoon-scale-predictions"><i class="fa fa-check"></i><b>4.2.4</b> Lagoon scale predictions</a></li>
-<li class="chapter" data-level="4.2.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021"><i class="fa fa-check"></i><b>4.2.5</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#sediment-biogeochemistry"><i class="fa fa-check"></i><b>4.3</b> Sediment biogeochemistry</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-2"><i class="fa fa-check"></i><b>4.3.1</b> Overview</a></li>
-<li class="chapter" data-level="4.3.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-candi-aed"><i class="fa fa-check"></i><b>4.3.2</b> Model approach: CANDI-AED</a></li>
-<li class="chapter" data-level="4.3.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup-and-configuration"><i class="fa fa-check"></i><b>4.3.3</b> Model setup and configuration</a></li>
-<li class="chapter" data-level="4.3.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-1"><i class="fa fa-check"></i><b>4.3.4</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.3.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#lagoon-scale-predictions-1"><i class="fa fa-check"></i><b>4.3.5</b> Lagoon scale predictions</a></li>
-<li class="chapter" data-level="4.3.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021-1"><i class="fa fa-check"></i><b>4.3.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#oxygen-metabolism-and-nutrient-cycling"><i class="fa fa-check"></i><b>4.4</b> Oxygen metabolism and nutrient cycling</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-3"><i class="fa fa-check"></i><b>4.4.1</b> Overview</a></li>
-<li class="chapter" data-level="4.4.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-1"><i class="fa fa-check"></i><b>4.4.2</b> Model approach</a></li>
-<li class="chapter" data-level="4.4.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#data-availability"><i class="fa fa-check"></i><b>4.4.3</b> Data availability</a></li>
-<li class="chapter" data-level="4.4.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup"><i class="fa fa-check"></i><b>4.4.4</b> Model setup</a></li>
-<li class="chapter" data-level="4.4.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-2"><i class="fa fa-check"></i><b>4.4.5</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.4.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary"><i class="fa fa-check"></i><b>4.4.6</b> Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#macroalgal-dynamics"><i class="fa fa-check"></i><b>4.5</b> Macroalgal dynamics</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-4"><i class="fa fa-check"></i><b>4.5.1</b> Overview</a></li>
-<li class="chapter" data-level="4.5.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-2"><i class="fa fa-check"></i><b>4.5.2</b> Model approach</a></li>
-<li class="chapter" data-level="4.5.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#data-availability-1"><i class="fa fa-check"></i><b>4.5.3</b> Data availability</a></li>
-<li class="chapter" data-level="4.5.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup-1"><i class="fa fa-check"></i><b>4.5.4</b> Model setup</a></li>
-<li class="chapter" data-level="4.5.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-3"><i class="fa fa-check"></i><b>4.5.5</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.5.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021-2"><i class="fa fa-check"></i><b>4.5.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html"><i class="fa fa-check"></i><b>5</b> CDM Habitat Modelling</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#habitat-modelling---ruppia"><i class="fa fa-check"></i><b>5.1</b> Habitat modelling - <strong>Ruppia</strong></a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#overview-5"><i class="fa fa-check"></i><b>5.1.1</b> Overview</a></li>
-<li class="chapter" data-level="5.1.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-description-ruppia-hsi"><i class="fa fa-check"></i><b>5.1.2</b> Model description: Ruppia HSI</a></li>
-<li class="chapter" data-level="5.1.3" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#data-availability-2"><i class="fa fa-check"></i><b>5.1.3</b> Data availability</a></li>
-<li class="chapter" data-level="5.1.4" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-application"><i class="fa fa-check"></i><b>5.1.4</b> Model application</a></li>
-<li class="chapter" data-level="5.1.5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-results-and-assessment"><i class="fa fa-check"></i><b>5.1.5</b> Model results and assessment</a></li>
-<li class="chapter" data-level="5.1.6" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#summary-sept-2021-3"><i class="fa fa-check"></i><b>5.1.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#habitat-modelling---fish"><i class="fa fa-check"></i><b>5.2</b> Habitat modelling - <strong>Fish</strong></a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#overview-6"><i class="fa fa-check"></i><b>5.2.1</b> Overview</a></li>
-<li class="chapter" data-level="5.2.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-description-fish-hsi"><i class="fa fa-check"></i><b>5.2.2</b> Model description: Fish HSI</a></li>
-<li class="chapter" data-level="5.2.3" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#data-availability-3"><i class="fa fa-check"></i><b>5.2.3</b> Data availability</a></li>
-<li class="chapter" data-level="5.2.4" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-application-1"><i class="fa fa-check"></i><b>5.2.4</b> Model application</a></li>
-<li class="chapter" data-level="5.2.5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-results-and-assessment-1"><i class="fa fa-check"></i><b>5.2.5</b> Model results and assessment</a></li>
-<li class="chapter" data-level="5.2.6" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#summary-sept-2021-4"><i class="fa fa-check"></i><b>5.2.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html"><i class="fa fa-check"></i><b>6</b> Integrated Assessment of the CDM</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#overview-7"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#integrated-simulations"><i class="fa fa-check"></i><b>6.2</b> Integrated simulations</a></li>
-<li class="chapter" data-level="6.3" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#model-assessment-approach"><i class="fa fa-check"></i><b>6.3</b> Model assessment approach</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#summary-of-validation-data"><i class="fa fa-check"></i><b>6.3.1</b> Summary of validation data</a></li>
-<li class="chapter" data-level="6.3.2" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#performance-assessment-metrics"><i class="fa fa-check"></i><b>6.3.2</b> Performance assessment metrics</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#validation-focus-period-2020-2021"><i class="fa fa-check"></i><b>6.4</b> Validation focus period: 2020-2021</a></li>
-<li class="chapter" data-level="6.5" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#long-term-simulation-performance"><i class="fa fa-check"></i><b>6.5</b> Long-term simulation performance</a></li>
-<li class="chapter" data-level="6.6" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#nutrient-budget-assessment"><i class="fa fa-check"></i><b>6.6</b> Nutrient budget assessment</a></li>
-<li class="chapter" data-level="6.7" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#habitat-condition-assessment"><i class="fa fa-check"></i><b>6.7</b> Habitat condition assessment</a></li>
-<li class="chapter" data-level="6.8" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#summary-sept-2021-5"><i class="fa fa-check"></i><b>6.8</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="appendix-a-data-catalogue.html"><a href="appendix-a-data-catalogue.html"><i class="fa fa-check"></i>Appendix A : Data Catalogue</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-a-data-catalogue.html"><a href="appendix-a-data-catalogue.html#coorong-data-catalogue-sept-2021"><i class="fa fa-check"></i>Coorong data catalogue (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html"><i class="fa fa-check"></i>Appendix B : Results Archive</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#long-term-assessment-of-model-performance-2013-2019"><i class="fa fa-check"></i>Long term assessment of model performance (2013 – 2019)</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#hchb-generaton-0"><i class="fa fa-check"></i>HCHB <em>Generaton 0</em></a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#sensitivity-assessment"><i class="fa fa-check"></i>Sensitivity assessment</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#sensitivity-to-internal-nutrient-loading"><i class="fa fa-check"></i>Sensitivity to internal nutrient loading</a></li>
-</ul></li>
-</ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">The Coorong Dynamics Model</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Coorong Dynamics Model</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="the-coorong-dynamics-model.html"><span class="header-section-number">2</span> The Coorong Dynamics Model</a></li>
+<li><a class="" href="cdm-model-data-integration.html"><span class="header-section-number">3</span> CDM Model-Data Integration</a></li>
+<li><a class="" href="cdm-development-testing.html"><span class="header-section-number">4</span> CDM Development &amp; Testing</a></li>
+<li><a class="active" href="cdm-habitat-modelling.html"><span class="header-section-number">5</span> CDM Habitat Modelling</a></li>
+<li><a class="" href="integrated-assessment-of-the-cdm.html"><span class="header-section-number">6</span> Integrated Assessment of the CDM</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a-data-catalogue.html">Appendix A : Data Catalogue</a></li>
+<li><a class="" href="appendix-b-results-archive.html">Appendix B : Results Archive</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="cdm-habitat-modelling" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">5</span> CDM Habitat Modelling<a href="cdm-habitat-modelling.html#cdm-habitat-modelling" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cdm-habitat-modelling" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> CDM Habitat Modelling<a class="anchor" aria-label="anchor" href="#cdm-habitat-modelling"><i class="fas fa-link"></i></a>
+</h1>
 <p><br></p>
-<div id="habitat-modelling---ruppia" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Habitat modelling - <strong>Ruppia</strong><a href="cdm-habitat-modelling.html#habitat-modelling---ruppia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="overview-5" class="section level3 hasAnchor" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Overview<a href="cdm-habitat-modelling.html#overview-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="habitat-modelling---ruppia" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Habitat modelling - <strong>Ruppia</strong><a class="anchor" aria-label="anchor" href="#habitat-modelling---ruppia"><i class="fas fa-link"></i></a>
+</h2>
+<div id="overview-5" class="section level3" number="5.1.1">
+<h3>
+<span class="header-section-number">5.1.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-5"><i class="fas fa-link"></i></a>
+</h3>
 <p>Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health and preventing extreme hyper-salinity (Brookes et al. 2009). <em>Ruppia tuberosa</em> is an important macrophyte in the Coorong that provides habitat for fish and food for herbivorous birds (Phillips and Muller 2006), and it can tolerate a salinity higher than natural seawater. It therefore is known to concentrate in the mid to southern regions (Figure <a href="cdm-habitat-modelling.html#fig:hab-pic1">5.1</a>).  </p>
 <p>The germination and growth of <em>R. tuberosa</em> is known to be governed in large part by changes in salinity and water level regimes, which are influenced by flows through the barrages (Kim et al. 2013). Other factors that influence <em>R. tuberosa</em> growth include nutrient availability, water temperature, sediment quality and interactions with algae, including shading of light and interference with flowers and fruits on the surface. Early summer flows are thought to be particularly beneficial as they delay the drop in water level in the South Lagoon and can prevent extreme salinities emerging, thereby encouraging a more complete reproductive cycle (Collier et al. 2017).</p>
 <p>In addition, salinity has also been identified as the key driver that influences fish assemblage structure and the extent of estuarine fish habitat in the Coorong (Ye et al. 2011). This section describes how simulations of <em>Ruppia and</em> estuarine fish habitat have been configured and assessed.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic1"></span>
-<img src="images/lagoon_habitat/picture1.png" alt="Conceptual diagram of Ruppia presence in the Coorong, under base case conditions=  with moderate inflows from the Barrages (North) and Salt Creek (South-east)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic1"></span>
+<img src="images/lagoon_habitat/picture1.png" alt="Conceptual diagram of Ruppia presence in the Coorong, under base case conditions=  with moderate inflows from the Barrages (North) and Salt Creek (South-east)." width="100%"><p class="caption">
 Figure 5.1: Conceptual diagram of Ruppia presence in the Coorong, under base case conditions= with moderate inflows from the Barrages (North) and Salt Creek (South-east).
 </p>
 </div>
 </div>
 </div>
-<div id="model-description-ruppia-hsi" class="section level3 hasAnchor" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Model description: Ruppia HSI<a href="cdm-habitat-modelling.html#model-description-ruppia-hsi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-description-ruppia-hsi" class="section level3" number="5.1.2">
+<h3>
+<span class="header-section-number">5.1.2</span> Model description: Ruppia HSI<a class="anchor" aria-label="anchor" href="#model-description-ruppia-hsi"><i class="fas fa-link"></i></a>
+</h3>
 <p>The approach adopted in the current study is to simulate “habitat suitability” based on an assessment of modelled environmental conditions relative to the known requirements of Ruppia tuberosa, for example, considering salinity, light and/or other environmental conditions. This approach was then used to define a relative index for each computational cell by overlaying the various environmental controls/limitations that have been informed based on prior experiments and surveys. The <strong><em>Habitat Suitability Index</em></strong> approach empirically defines conditions that lead to successful growth and reproduction, without simulation of processes such as photosynthesis and respiration.</p>
 <p>For the Coorong, a similar habitat model approach was undertaken previously by Ye et al. (2014), who focused exclusively on the salinity and water level requirements of Ruppia and presented the model results as an overall probability that Ruppia plants would successfully complete their lifecycle, by accounting for the different tolerances of different life stages.</p>
 <p>In this study, we used the hydrodynamic-biogeochemical model to predict environmental conditions at high spatial and temporal resolution for a period of multiple years, and used this to calculate the habitat suitability index (HSI) for each particular phase of the life cycle of Ruppia (Figure <a href="cdm-habitat-modelling.html#fig:lagoonhabitat-pic2">5.2</a>). The calculation of the HSI required the integration of environmental conditions over a biologically relevant time period, based on the typical duration and seasonal timing for each life-stage. HSI results for different life stages were then combined and integrated to obtain overall HSI results for successful completion of sexual or asexual life cycles of Ruppia. For each annual cycle these model results were then summarised over the length of the Coorong, to allow estimation of the total suitable area.</p>
 <div class="text-image">
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:lagoonhabitat-pic2"></span>
-<img src="images/lagoon_habitat/picture2.png" alt="Overview of the sexual and vegetative life cycles of *Ruppia tuberosa* (from Collier et al. 2017)." width="75%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:lagoonhabitat-pic2"></span>
+<img src="images/lagoon_habitat/picture2.png" alt="Overview of the sexual and vegetative life cycles of *Ruppia tuberosa* (from Collier et al. 2017)." width="75%"><p class="caption">
 Figure 5.2: Overview of the sexual and vegetative life cycles of <em>Ruppia tuberosa</em> (from Collier et al. 2017).
 </p>
 </div>
 </div>
-<div id="ruppia-habitat-suitability-index-calculation" class="section level4 unnumbered hasAnchor">
-<h4>Ruppia Habitat Suitability Index calculation<a href="cdm-habitat-modelling.html#ruppia-habitat-suitability-index-calculation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ruppia-habitat-suitability-index-calculation" class="section level4 unnumbered">
+<h4>Ruppia Habitat Suitability Index calculation<a class="anchor" aria-label="anchor" href="#ruppia-habitat-suitability-index-calculation"><i class="fas fa-link"></i></a>
+</h4>
 <p>In each model cell (<span class="math inline">\(c\)</span>), the Habitat Suitability Index (HSI) is computed based on suitability of conditions (<span class="math inline">\(i\)</span>), for each of the main life-stages (<span class="math inline">\(j\)</span>), by defining a fractional index, . The fractional index for each attribute is computed at each time, step and then integrated over a 90-day window, specific to the life-cycle stage.</p>
 <p><span class="math display" id="eq:lagoonhabitat7">\[
 \Phi^{HSI_{j}}_{i} = \frac{1}{t_{j_{\text{start}}}-t_{j_{\text{end}}}} \sum^{t_{j_{\text{end}}}}_{t=t_{j_{\text{start}}}}\Phi^{HSI_{j}}_{i}(i)_{t}
@@ -314,29 +130,29 @@ A^{HSI} = \sum_{c} \Phi^{HSI}_{c} A_{c}
 \tag{5.4}
 \]</span></p>
 <p><br></p>
-<table>
+<div class="inline-table"><table class="table table-sm">
 <caption>Life cycle time windows over which environmental suitability is assessed. {#tbl:table1}</caption>
 <colgroup>
-<col width="30%" />
-<col width="15%" />
-<col width="15%" />
-<col width="12%" />
-<col width="9%" />
-<col width="16%" />
+<col width="30%">
+<col width="15%">
+<col width="15%">
+<col width="12%">
+<col width="9%">
+<col width="16%">
 </colgroup>
-<thead>
-<tr class="header">
-<th>Stage, <span class="math inline">\(j\)</span></th>
+<thead><tr class="header">
+<th>Stage, <span class="math inline">\(j\)</span>
+</th>
 <th>Seed germination</th>
 <th>Turion sprouting</th>
 <th>Adult growth</th>
 <th>Flowering</th>
 <th>Turion production</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
-<td>Start date, <span class="math inline">\(t_{j_{\text{start}}}\)</span></td>
+<td>Start date, <span class="math inline">\(t_{j_{\text{start}}}\)</span>
+</td>
 <td><em>Apr</em></td>
 <td><em>Apr</em></td>
 <td><em>Jun</em></td>
@@ -344,7 +160,8 @@ A^{HSI} = \sum_{c} \Phi^{HSI}_{c} A_{c}
 <td><em>Aug</em></td>
 </tr>
 <tr class="even">
-<td>End date, <span class="math inline">\(t_{j_{\text{end}}}\)</span></td>
+<td>End date, <span class="math inline">\(t_{j_{\text{end}}}\)</span>
+</td>
 <td><em>Jun</em></td>
 <td><em>Jun</em></td>
 <td><em>Aug</em></td>
@@ -352,31 +169,32 @@ A^{HSI} = \sum_{c} \Phi^{HSI}_{c} A_{c}
 <td><em>Oct</em></td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
 </div>
-<div id="data-availability-2" class="section level3 hasAnchor" number="5.1.3">
-<h3><span class="header-section-number">5.1.3</span> Data availability<a href="cdm-habitat-modelling.html#data-availability-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="data-availability-2" class="section level3" number="5.1.3">
+<h3>
+<span class="header-section-number">5.1.3</span> Data availability<a class="anchor" aria-label="anchor" href="#data-availability-2"><i class="fas fa-link"></i></a>
+</h3>
 <p>The model approach requires empirical data for a) assignment of appropriate environmental threshold data for each life-stage, and b) validation and assessment of the approach under various conditions. The available data for this tasks is described next.</p>
-<div id="environmental-threshold-parameter-review-1" class="section level4 unnumbered hasAnchor">
-<h4>Environmental threshold parameter review<a href="cdm-habitat-modelling.html#environmental-threshold-parameter-review-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="environmental-threshold-parameter-review-1" class="section level4 unnumbered">
+<h4>Environmental threshold parameter review<a class="anchor" aria-label="anchor" href="#environmental-threshold-parameter-review-1"><i class="fas fa-link"></i></a>
+</h4>
 <p>Environmental conditions and thresholds suitable for Ruppia growth have been reviewed and summarised in Table 5.2.</p>
-<table>
+<div class="inline-table"><table class="table table-sm">
 <caption>Summary of environmental thresholds for Ruppia growth. {#tbl:table2}</caption>
 <colgroup>
-<col width="4%" />
-<col width="31%" />
-<col width="30%" />
-<col width="32%" />
+<col width="4%">
+<col width="31%">
+<col width="30%">
+<col width="32%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Environmental attribute</th>
 <th>Optimal</th>
 <th>Acceptable</th>
 <th>Rationale/source</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>Water depth</td>
@@ -392,7 +210,8 @@ A^{HSI} = \sum_{c} \Phi^{HSI}_{c} A_{c}
 </tr>
 <tr class="odd">
 <td>Salinity</td>
-<td><em>Adult</em> (Jun-Sep): 25 -122g/L; <em>Flowering &amp; seed set</em> (Sep-Dec): 40-62g/L; <em>Turion formation</em> (Sep-Dec): 128-162g/L; Seed germi (Apr-Jun): 5-60g/L; Turion sprouting (Apr-Jun): 20-75g/L</td>
+<td>
+<em>Adult</em> (Jun-Sep): 25 -122g/L; <em>Flowering &amp; seed set</em> (Sep-Dec): 40-62g/L; <em>Turion formation</em> (Sep-Dec): 128-162g/L; Seed germi (Apr-Jun): 5-60g/L; Turion sprouting (Apr-Jun): 20-75g/L</td>
 <td>Adult (Jun-Sep): 5 -215g/L; Flowering &amp; seed set (Sep-Dec): 12-102g/L; Turion formation (Sep-Dec): 72-228g/L; Seed germi (Apr-Jun): 0-85g/L; Turion sprouting (Apr-Jun): 0-130g/L</td>
 <td>Thresholds derived from pre – 2019 studies and summarised in TI-2.1.1_TRS_20-13_Aquatic Plant Synthesis_2020-12-11_Final v2. Section 3</td>
 </tr>
@@ -409,47 +228,50 @@ A^{HSI} = \sum_{c} \Phi^{HSI}_{c} A_{c}
 <td>TI-2.2.1_Annual Report_AquaticPlantSurveys_2020-12-11_Final</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
-<div id="ruppia-extent-within-the-lagoon" class="section level4 unnumbered hasAnchor">
-<h4>Ruppia extent within the lagoon<a href="cdm-habitat-modelling.html#ruppia-extent-within-the-lagoon" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="ruppia-extent-within-the-lagoon" class="section level4 unnumbered">
+<h4>Ruppia extent within the lagoon<a class="anchor" aria-label="anchor" href="#ruppia-extent-within-the-lagoon"><i class="fas fa-link"></i></a>
+</h4>
 <p>The distribution and abundance of Ruppia has been regularly monitored in the Coorong since 1998. However, the types of data collected, the sampling season, location and methods varied between programs. An overview of the available historical and HBHC datasets is shown in Figure 5.3.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic4"></span>
-<img src="images/lagoon_habitat/fig4.3.ruppia%20data%20availability.png" alt="Overview of Ruppia survey datasets showing sampling periods and types of data collected (purple boxes), versus habitat model output (HSI, blue boxes) on a timeline. Datasets from the HCHB project are highlighted in yellow." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic4"></span>
+<img src="images/lagoon_habitat/fig4.3.ruppia%20data%20availability.png" alt="Overview of Ruppia survey datasets showing sampling periods and types of data collected (purple boxes), versus habitat model output (HSI, blue boxes) on a timeline. Datasets from the HCHB project are highlighted in yellow." width="100%"><p class="caption">
 Figure 5.3: Overview of Ruppia survey datasets showing sampling periods and types of data collected (purple boxes), versus habitat model output (HSI, blue boxes) on a timeline. Datasets from the HCHB project are highlighted in yellow.
 </p>
 </div>
 </div>
 <p><strong>Historical Monitoring</strong> A summary of historical Ruppia monitoring datasets (pre-2020) is shown in Table 5.3. Locations of sampling sites are shown in Figure 5.4.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic5"></span>
-<img src="images/lagoon_habitat/fig4.4.ruppia%20sites.png" alt="Ruppia sampling sites for various monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 5.3. Turquoise outline represents the model boundary. Note that sampling sites of the last dataset listed in Table 5.3 are the same as UA MDBA_2." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic5"></span>
+<img src="images/lagoon_habitat/fig4.4.ruppia%20sites.png" alt="Ruppia sampling sites for various monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 5.3. Turquoise outline represents the model boundary. Note that sampling sites of the last dataset listed in Table 5.3 are the same as UA MDBA_2." width="100%"><p class="caption">
 Figure 5.4: Ruppia sampling sites for various monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 5.3. Turquoise outline represents the model boundary. Note that sampling sites of the last dataset listed in Table 5.3 are the same as UA MDBA_2.
 </p>
 </div>
 </div>
 <p><strong>HCHB Monitoring</strong> A summary of the HCHB monitoring datasets is shown in Table 5.4. Locations of sampling sites are shown in Figure 5.5.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic6"></span>
-<img src="images/lagoon_habitat/fig4.5.ruppia%20sites_HCHB.png" alt="Ruppia sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 5.4. Turquoise outline represents the model boundary." width="40%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic6"></span>
+<img src="images/lagoon_habitat/fig4.5.ruppia%20sites_HCHB.png" alt="Ruppia sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 5.4. Turquoise outline represents the model boundary." width="40%"><p class="caption">
 Figure 5.5: Ruppia sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 5.4. Turquoise outline represents the model boundary.
 </p>
 </div>
 </div>
 </div>
 </div>
-<div id="model-application" class="section level3 hasAnchor" number="5.1.4">
-<h3><span class="header-section-number">5.1.4</span> Model application<a href="cdm-habitat-modelling.html#model-application" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-application" class="section level3" number="5.1.4">
+<h3>
+<span class="header-section-number">5.1.4</span> Model application<a class="anchor" aria-label="anchor" href="#model-application"><i class="fas fa-link"></i></a>
+</h3>
 <p>The hydrodynamic-biogeochemical model TUFLOW-FV – AED is used to simulate the hydrodynamic conditions (velocity, salinity, temperature and water level), water clarity (light and turbidity) and the potential for filamentous algae (nutrients and algae). Specifically, the HCHB V0.1 model was applied, configured using the specification of AED parameters (….). The Coorong has a long residence time and to account for the longer timescales of water and solute flux, multi-year simulations must be performed.</p>
 <p>The habitat suitability functions for each environmental variable of each Ruppia life-stage were determined based on literature review and expert judgement (Table 5.5), and used for the calculation of overall habitat suitability indices (Section 5.1.2). In these tests, the model was run from May 2013 to March 2019 using the base case condition.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic7"></span>
-<img src="images/lagoon_habitat/Table4.5.ruppia%20suitability%20functions.png" alt="Suitability functions for Ruppia life stages (based on literature review presented in Table 5.2 and expert judgement). Note that optimal = 1, unsuitable = 0, and sub-optimal is linearly interpolated between these values. Note: for Salinity, Temperature, Light and Algal biomass, use 90-day rolling mean values for the respective periods to interrogate the model outputs against these thresholds." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic7"></span>
+<img src="images/lagoon_habitat/Table4.5.ruppia%20suitability%20functions.png" alt="Suitability functions for Ruppia life stages (based on literature review presented in Table 5.2 and expert judgement). Note that optimal = 1, unsuitable = 0, and sub-optimal is linearly interpolated between these values. Note: for Salinity, Temperature, Light and Algal biomass, use 90-day rolling mean values for the respective periods to interrogate the model outputs against these thresholds." width="100%"><p class="caption">
 Figure 5.6: Suitability functions for Ruppia life stages (based on literature review presented in Table 5.2 and expert judgement). Note that optimal = 1, unsuitable = 0, and sub-optimal is linearly interpolated between these values. Note: for Salinity, Temperature, Light and Algal biomass, use 90-day rolling mean values for the respective periods to interrogate the model outputs against these thresholds.
 </p>
 </div>
@@ -459,79 +281,82 @@ Figure 5.6: Suitability functions for Ruppia life stages (based on literature re
 <p>By comparing scenarios with different flows into the Lagoon, we can see that there is an expansion of good habitat in the north of the South Lagoon, and along the South Lagoon margins, when extreme salinity values are avoided (Figure 11).</p>
 <center>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:lagoonhabitat-pic4"></span>
-<img src="images/lagoon_habitat/picture4.png" alt="Habitat suitability (HSI) for the adult plant phase of *Ruppia tuberosa* in the Coorong as a function of salinity, light, water level and presence of filamentous algae for the Base Case (2015)." width="60%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:lagoonhabitat-pic4"></span>
+<img src="images/lagoon_habitat/picture4.png" alt="Habitat suitability (HSI) for the adult plant phase of *Ruppia tuberosa* in the Coorong as a function of salinity, light, water level and presence of filamentous algae for the Base Case (2015)." width="60%"><p class="caption">
 Figure 5.7: Habitat suitability (HSI) for the adult plant phase of <em>Ruppia tuberosa</em> in the Coorong as a function of salinity, light, water level and presence of filamentous algae for the Base Case (2015).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:lagoonhabitat-pic5"></span>
-<img src="images/lagoon_habitat/picture5.png" alt="Overall Habitat Suitability (HSI) for a successful completion of the asexual life cycle by *Ruppia tuberosa* in the Coorong, calculated by integrating the HSI results for adult plants, turion formation and turion sprouting for the Base Case (2015)." width="60%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:lagoonhabitat-pic5"></span>
+<img src="images/lagoon_habitat/picture5.png" alt="Overall Habitat Suitability (HSI) for a successful completion of the asexual life cycle by *Ruppia tuberosa* in the Coorong, calculated by integrating the HSI results for adult plants, turion formation and turion sprouting for the Base Case (2015)." width="60%"><p class="caption">
 Figure 5.8: Overall Habitat Suitability (HSI) for a successful completion of the asexual life cycle by <em>Ruppia tuberosa</em> in the Coorong, calculated by integrating the HSI results for adult plants, turion formation and turion sprouting for the Base Case (2015).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:lagoonhabitat-pic6"></span>
-<img src="images/lagoon_habitat/picture6.png" alt="Overall Habitat Suitability (HSI) for a successful completion of the sexual life cycle by *Ruppia tuberosa* in the Coorong, calculated by integrating the HSI results for adult plants, flowering (incl. seed formation) and seed germination (incl. seedling survival) for the Base Case (2015)." width="60%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:lagoonhabitat-pic6"></span>
+<img src="images/lagoon_habitat/picture6.png" alt="Overall Habitat Suitability (HSI) for a successful completion of the sexual life cycle by *Ruppia tuberosa* in the Coorong, calculated by integrating the HSI results for adult plants, flowering (incl. seed formation) and seed germination (incl. seedling survival) for the Base Case (2015)." width="60%"><p class="caption">
 Figure 5.9: Overall Habitat Suitability (HSI) for a successful completion of the sexual life cycle by <em>Ruppia tuberosa</em> in the Coorong, calculated by integrating the HSI results for adult plants, flowering (incl. seed formation) and seed germination (incl. seedling survival) for the Base Case (2015).
 </p>
 </div>
 </div>
 </center>
 </div>
-<div id="model-results-and-assessment" class="section level3 hasAnchor" number="5.1.5">
-<h3><span class="header-section-number">5.1.5</span> Model results and assessment<a href="cdm-habitat-modelling.html#model-results-and-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-results-and-assessment" class="section level3" number="5.1.5">
+<h3>
+<span class="header-section-number">5.1.5</span> Model results and assessment<a class="anchor" aria-label="anchor" href="#model-results-and-assessment"><i class="fas fa-link"></i></a>
+</h3>
 <p>To assess the accuracy of model predictions, the habitat suitability maps produced above were compared with Ruppia field survey results for both distribution and abundance, including several types of plant materials (e.g., shoot, seed, turion) which were used to validate HSI of different life-stages.</p>
-<div id="historical-validation" class="section level4 unnumbered hasAnchor">
-<h4>Historical validation<a href="cdm-habitat-modelling.html#historical-validation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<p><br> <strong>i. Field seed/flower count (obs) vs. HSI flowering and seed set (model)</strong></p>
+<div id="historical-validation" class="section level4 unnumbered">
+<h4>Historical validation<a class="anchor" aria-label="anchor" href="#historical-validation"><i class="fas fa-link"></i></a>
+</h4>
+<p><br><strong>i. Field seed/flower count (obs) vs. HSI flowering and seed set (model)</strong></p>
 <p>Average number of seeds per core sampled in January from 2017 to 2019 were compared with HSI flowering and seed set of the previous year (2016 – 2018) (Figure 5.7 – 5.10), which is a result of integrated average condition between August and December in each year (Figure 5.3). Number of flowerheads was sampled in November 2016 only, and was compared with HSI flowering and seed set of the same year.</p>
 <p>Both of these validation methods are relatively straight forward and should reflect a close link between model output and field observations i.e. if the habitat suitability for flowering and seed set was suitable for existing Ruppia to flower and set seed between August and December, the flower count in November the same year should largely reflect this. Seed count conducted in January the following year should also be a good indicator as the Ruppia that had flowered in the previous year should have set seed by January. However, as it may take several years for the seed bank to deplete, number of seeds recorded each year could potentially be a ‘cumulative’ result of the sexual reproduction success of Ruppia in preceding years. This means there could be a lag between the actual seed count, and the HSI which largely reflects the environmental conditions of the current year only.</p>
 <p>Surveys conducted during other times of the year, such as May or July, are more complicated to validated against, as during this period some of the seeds that were produced during last spring would have had germinated. Therefore, the seed abundance at this time is a combined result of previous year’s seed production success, and current year’s seed germination rate.</p>
 <p>In general, the spatial distribution of seeds and flowers in the field agreed with model outputs (Figure 5.7 – 5.10). For example, higher number of seeds and flowers were often found in the middle lagoon, overlapping with areas where higher HSIs are concentrated. In comparison, north and/or south lagoons recorded lower density of seeds and/or flowers, matching the lower HSIs or limited suitable habitat extent in these regions. However, there were some disagreements between the modelled HSI and field data in the relative abundance of seeds recorded in the south and north lagoons. Specifically, seeds appeared to be mostly absent in the north lagoon between 2017 and 2019, while they had been in higher abundance in the south consistently. Current model predictions however, predicted that the south and north lagoon had similar habitat suitability for flowering and seed set.</p>
 <p>In addition to the visual comparison between model outputs and field observations, a quantitative validation was conducted between seed abundance in 2019 and HSI flowering and seed set in 2018 (Figure 5.9). A 600-meter radius buffer was created around each sampling site, and HSI value in each cell that falls within this buffer were averaged and compared with seed count at each site.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic11"></span>
-<img src="images/lagoon_habitat/fig4.7.seed2017vsHSI2016.png" alt="Average seed count per core in **2017 January** (circles) overlaid on HSI model output for flowering and seed set in 2016. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic11"></span>
+<img src="images/lagoon_habitat/fig4.7.seed2017vsHSI2016.png" alt="Average seed count per core in **2017 January** (circles) overlaid on HSI model output for flowering and seed set in 2016. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.10: Average seed count per core in <strong>2017 January</strong> (circles) overlaid on HSI model output for flowering and seed set in 2016. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic12"></span>
-<img src="images/lagoon_habitat/fig4.8.seed2018vsHSI2017.png" alt="Average seed count per core in **2018 January** (circles) overlaid on HSI model output for flowering and seed set in 2017. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic12"></span>
+<img src="images/lagoon_habitat/fig4.8.seed2018vsHSI2017.png" alt="Average seed count per core in **2018 January** (circles) overlaid on HSI model output for flowering and seed set in 2017. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.11: Average seed count per core in <strong>2018 January</strong> (circles) overlaid on HSI model output for flowering and seed set in 2017. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic13"></span>
-<img src="images/lagoon_habitat/fig4.9left.seed2019vsHSI2018.png" alt="Average seed count per core in **2019 January** (circles) overlaid on HSI model output for flowering and seed set in 2018 (left). A HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow). Inset shows the size of the buffers created around sampling sites. Scatter plot shows the relationship between average seed count per core in 2019 January and averaged HSI for flowering and seed set in 2018 (right). Text on top of each data point indicates site name." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic13"></span>
+<img src="images/lagoon_habitat/fig4.9left.seed2019vsHSI2018.png" alt="Average seed count per core in **2019 January** (circles) overlaid on HSI model output for flowering and seed set in 2018 (left). A HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow). Inset shows the size of the buffers created around sampling sites. Scatter plot shows the relationship between average seed count per core in 2019 January and averaged HSI for flowering and seed set in 2018 (right). Text on top of each data point indicates site name." width="100%"><p class="caption">
 Figure 5.12: Average seed count per core in <strong>2019 January</strong> (circles) overlaid on HSI model output for flowering and seed set in 2018 (left). A HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow). Inset shows the size of the buffers created around sampling sites. Scatter plot shows the relationship between average seed count per core in 2019 January and averaged HSI for flowering and seed set in 2018 (right). Text on top of each data point indicates site name.
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic14"></span>
-<img src="images/lagoon_habitat/fig4.10.flower2016vsHSI2016.png" alt="Average flowerhead count per square meter quadrat in 2016 November (circles) overlaid on HSI model output for flowering and seed set in 2016. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic14"></span>
+<img src="images/lagoon_habitat/fig4.10.flower2016vsHSI2016.png" alt="Average flowerhead count per square meter quadrat in 2016 November (circles) overlaid on HSI model output for flowering and seed set in 2016. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.13: Average flowerhead count per square meter quadrat in 2016 November (circles) overlaid on HSI model output for flowering and seed set in 2016. Inset on top right shows the overall habitat suitability for the flowering and seed set phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
 <p>The modelled Ruppia HSI prediction for flowers correlates reasonably well with the observed seed count measured at the beginning of the following season, particularly in the South Lagoon (Figure <a href="cdm-habitat-modelling.html#fig:hab-pic21">5.14</a>).</p>
 <div class="text-image">
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hab-pic21"></span>
-<img src="images/lagoon_habitat/Ruppia_flowerHSI2018_seed2019Jan.png" alt="Filamentous algae observed density and equivalent model predicted Ruppia HSI for the entire lagoon (top) and restricted to just the South Lagoon (bottom)." width="100%" />
-<p class="caption">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:hab-pic21"></span>
+<img src="images/lagoon_habitat/Ruppia_flowerHSI2018_seed2019Jan.png" alt="Filamentous algae observed density and equivalent model predicted Ruppia HSI for the entire lagoon (top) and restricted to just the South Lagoon (bottom)." width="100%"><p class="caption">
 Figure 5.14: Filamentous algae observed density and equivalent model predicted Ruppia HSI for the entire lagoon (top) and restricted to just the South Lagoon (bottom).
 </p>
 </div>
@@ -541,25 +366,25 @@ Figure 5.14: Filamentous algae observed density and equivalent model predicted R
 <p>As number of turions recorded in January should reflect the habitat conditions for turion formation in the preceding months when HSI for turions were calculated (August to December), this validation method is relatively straight forward, compared to if model outputs were to be validated against surveys conducted during other times of the year such as May or July, as some of the turions formed during previous spring should have had sprouted in May or July in the current year. Such validation will be more complicated as turion abundance in the field is a combined result of previous year’s turion formation success and current year’s turion sprouting rate.</p>
 <p>Visual validation of turions showed mixed results (Figure 5.11 – 5.13). HSIs for turion formation in 2015 were generally consistent with turion distribution and abundance in 2016 January, where south lagoon observed more suitable environmental conditions than the north, and field records showed a similar pattern (Figure 5.11). However, the model seemed to underpredict habitat suitability in the south lagoon in 2016 and 2018 (Figure 5.12 and 5.13).</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic15"></span>
-<img src="images/lagoon_habitat/fig4.11.turion2016vsHSI2015.png" alt="Average turion count (type I and II) per core in **2016 January** (circles) overlaid on HSI model output for turion formation in 2015. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic15"></span>
+<img src="images/lagoon_habitat/fig4.11.turion2016vsHSI2015.png" alt="Average turion count (type I and II) per core in **2016 January** (circles) overlaid on HSI model output for turion formation in 2015. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.15: Average turion count (type I and II) per core in <strong>2016 January</strong> (circles) overlaid on HSI model output for turion formation in 2015. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic16"></span>
-<img src="images/lagoon_habitat/fig4.12.turion2017vsHSI2016.png" alt="HSI turion Average turion count (type I and II) per core in **2017 January** (circles) overlaid on HSI model output for turion formation in 2016. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic16"></span>
+<img src="images/lagoon_habitat/fig4.12.turion2017vsHSI2016.png" alt="HSI turion Average turion count (type I and II) per core in **2017 January** (circles) overlaid on HSI model output for turion formation in 2016. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.16: HSI turion Average turion count (type I and II) per core in <strong>2017 January</strong> (circles) overlaid on HSI model output for turion formation in 2016. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic17"></span>
-<img src="images/lagoon_habitat/fig4.13.turion2019vsHSI2018.png" alt="Average turion count (type I and II) per core in **2019 January** (circles) overlaid on HSI model output for turion formation in 2018. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic17"></span>
+<img src="images/lagoon_habitat/fig4.13.turion2019vsHSI2018.png" alt="Average turion count (type I and II) per core in **2019 January** (circles) overlaid on HSI model output for turion formation in 2018. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.17: Average turion count (type I and II) per core in <strong>2019 January</strong> (circles) overlaid on HSI model output for turion formation in 2018. Inset on top right shows the overall habitat suitability for the turion formation phase of Ruppia as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
@@ -569,44 +394,53 @@ Figure 5.17: Average turion count (type I and II) per core in <strong>2019 Janua
 <p>Although a proportion of Ruppia might have died off in January, the total shoot count including green and brown materials should be a relatively good indicator of environmental conditions experienced in the previous year. Presence of shoots could be a result of sexual or asexual reproduction success, and hence HSI sexual and asexual were integrated for validation.</p>
 <p>Similar to turion predictions, the HSI model seemed to relatively underpredict the habitat suitability in the south lagoon, and overpredict in the north in both years (Figure 5.14 – 5.15). Since the model result is an integration of all life stages of Ruppia, this mismatch may be stemmed from a particular life stage, such as the turion formation stage described in the above section.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic18"></span>
-<img src="images/lagoon_habitat/fig4.14.shoot2018vsHSI2017.png" alt="Average shoot count (green and brown) per core in **2018 January** (circles) overlaid on HSI model output for combined sexual and asexual cycle in 2017. Inset on top right shows the overall habitat suitability for the completion of sexual and asexual life cycle of Ruppia by integrating the HSI results for each life stage. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic18"></span>
+<img src="images/lagoon_habitat/fig4.14.shoot2018vsHSI2017.png" alt="Average shoot count (green and brown) per core in **2018 January** (circles) overlaid on HSI model output for combined sexual and asexual cycle in 2017. Inset on top right shows the overall habitat suitability for the completion of sexual and asexual life cycle of Ruppia by integrating the HSI results for each life stage. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.18: Average shoot count (green and brown) per core in <strong>2018 January</strong> (circles) overlaid on HSI model output for combined sexual and asexual cycle in 2017. Inset on top right shows the overall habitat suitability for the completion of sexual and asexual life cycle of Ruppia by integrating the HSI results for each life stage. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic19"></span>
-<img src="images/lagoon_habitat/fig4.14.shoot2018vsHSI2017.png" alt="Average shoot count (green and brown) per core in **2019 January** (circles) overlaid on HSI model output for combined sexual and asexual cycle in 2018. Inset on top right shows the overall habitat suitability for the completion of sexual and asexual life cycle of Ruppia by integrating the HSI results for each life stage. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic19"></span>
+<img src="images/lagoon_habitat/fig4.14.shoot2018vsHSI2017.png" alt="Average shoot count (green and brown) per core in **2019 January** (circles) overlaid on HSI model output for combined sexual and asexual cycle in 2018. Inset on top right shows the overall habitat suitability for the completion of sexual and asexual life cycle of Ruppia by integrating the HSI results for each life stage. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 5.19: Average shoot count (green and brown) per core in <strong>2019 January</strong> (circles) overlaid on HSI model output for combined sexual and asexual cycle in 2018. Inset on top right shows the overall habitat suitability for the completion of sexual and asexual life cycle of Ruppia by integrating the HSI results for each life stage. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
 </div>
-<div id="hchb-validation" class="section level4 unnumbered hasAnchor">
-<h4>HCHB validation<a href="cdm-habitat-modelling.html#hchb-validation" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="hchb-validation" class="section level4 unnumbered">
+<h4>HCHB validation<a class="anchor" aria-label="anchor" href="#hchb-validation"><i class="fas fa-link"></i></a>
+</h4>
 <p>…To be completed…</p>
 </div>
 </div>
-<div id="summary-sept-2021-3" class="section level3 hasAnchor" number="5.1.6">
-<h3><span class="header-section-number">5.1.6</span> Summary (Sept 2021)<a href="cdm-habitat-modelling.html#summary-sept-2021-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="summary-sept-2021-3" class="section level3" number="5.1.6">
+<h3>
+<span class="header-section-number">5.1.6</span> Summary (Sept 2021)<a class="anchor" aria-label="anchor" href="#summary-sept-2021-3"><i class="fas fa-link"></i></a>
+</h3>
 <p>We undertook an extensive review of the Ruppia monitoring data availability dating back to 1998 within the Coorong lagoon, including distribution and abundance of several types of plant materials (i.e. shoot, seed, turion, flowers) during different seasons. Habitat Suitability Index outputs from the existing model were compared against available field observations to assess model accuracy with a primary focus in recent years (post-2015).</p>
 <p>In general, model predictions aligned with the general distribution pattern of Ruppia seeds, but turions and shoots produced mixed results. Detailed investigation is needed to pinpoint potential ways to improve model accuracy. Ruppia environmental thresholds need further refinement as new data become available.</p>
 <p><br><br></p>
-<hr />
+<hr>
 <p><br></p>
 </div>
 </div>
-<div id="habitat-modelling---fish" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Habitat modelling - <strong>Fish</strong><a href="cdm-habitat-modelling.html#habitat-modelling---fish" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="overview-6" class="section level3 hasAnchor" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Overview<a href="cdm-habitat-modelling.html#overview-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="habitat-modelling---fish" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Habitat modelling - <strong>Fish</strong><a class="anchor" aria-label="anchor" href="#habitat-modelling---fish"><i class="fas fa-link"></i></a>
+</h2>
+<div id="overview-6" class="section level3" number="5.2.1">
+<h3>
+<span class="header-section-number">5.2.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-6"><i class="fas fa-link"></i></a>
+</h3>
 <p>The high salinity values experienced in times of low freshwater flows challenges the fish populations that inhabit the lagoon. As an indicator of suitable conditions, the fish model calculates probabilities of habitat suitability for juveniles of seven key species, mulloway (<em>Argyrosomus japonicus</em>), black bream (<em>Acanthopagrus butcheri</em>), greenback flounder (<em>Rhombosolea tapirina</em>), yelloweye mullet (<em>Aldrichetta forsteri</em>), congolli (<em>Pseudaphritis urvillii</em>), Tamar goby (<em>Afurcagobius tamarensis</em>) and smallmouth hardyhead (<em>Atherinosoma microstoma</em>), based on laboratory experiment-derived salinity thresholds (Table 2. Ye et al. 2016a).</p>
 </div>
-<div id="model-description-fish-hsi" class="section level3 hasAnchor" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Model description: Fish HSI<a href="cdm-habitat-modelling.html#model-description-fish-hsi" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-description-fish-hsi" class="section level3" number="5.2.2">
+<h3>
+<span class="header-section-number">5.2.2</span> Model description: Fish HSI<a class="anchor" aria-label="anchor" href="#model-description-fish-hsi"><i class="fas fa-link"></i></a>
+</h3>
 <p>The model adopts a seasonal effect by account for temperature sensitivity to the salinity thresholds (higher salinity tolerance at lower temperatures), according to functions and parameters described in Table 1 and Table 2. It is computed as:</p>
 <p><span class="math display">\[\begin{equation}
   Fish\: HSI =\left\{
@@ -636,37 +470,38 @@ Figure 5.19: Average shoot count (green and brown) per core in <strong>2019 Janu
 <p>where <span class="math inline">\(\bar{T}\)</span> is the monthly average water temperature and the <span class="math inline">\(LC\)</span> are the experimentally determined salinity concentrations that removed 10 and 50% of the population for the denoted temperatured.</p>
 <p>Figure 5 shows an example three-dimensional plot of the HSI functions for mulloway. In addition, habitat is deemed unsuitable if water is less than 0.1m deep. The computed habitat suitability index (HSI) ranges between 0 and 1, where 0 represents least suitable and 1 represents most suitable.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:hab-pic20"></span>
-<img src="images/lagoon_habitat/4_picture1.png" alt="Fish Habitat Suitability Index (HSI) surface plot (3D) as a function of salinity tolerance for mulloway, where a HSI value of 1 represents the most suitable conditions and 0 the least suitable. The salinity thresholds are specified as a function of water temperature where fish is able to tolerate higher salinities at lower temperatures. The red lines (2D) show the effect of salinity on HSI at two fixed temperatures" width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:hab-pic20"></span>
+<img src="images/lagoon_habitat/4_picture1.png" alt="Fish Habitat Suitability Index (HSI) surface plot (3D) as a function of salinity tolerance for mulloway, where a HSI value of 1 represents the most suitable conditions and 0 the least suitable. The salinity thresholds are specified as a function of water temperature where fish is able to tolerate higher salinities at lower temperatures. The red lines (2D) show the effect of salinity on HSI at two fixed temperatures" width="100%"><p class="caption">
 Figure 5.20: Fish Habitat Suitability Index (HSI) surface plot (3D) as a function of salinity tolerance for mulloway, where a HSI value of 1 represents the most suitable conditions and 0 the least suitable. The salinity thresholds are specified as a function of water temperature where fish is able to tolerate higher salinities at lower temperatures. The red lines (2D) show the effect of salinity on HSI at two fixed temperatures
 </p>
 </div>
 </div>
 </div>
-<div id="data-availability-3" class="section level3 hasAnchor" number="5.2.3">
-<h3><span class="header-section-number">5.2.3</span> Data availability<a href="cdm-habitat-modelling.html#data-availability-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="environmental-threshold-parameter-review-2" class="section level4 unnumbered hasAnchor">
-<h4>Environmental threshold parameter review<a href="cdm-habitat-modelling.html#environmental-threshold-parameter-review-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="data-availability-3" class="section level3" number="5.2.3">
+<h3>
+<span class="header-section-number">5.2.3</span> Data availability<a class="anchor" aria-label="anchor" href="#data-availability-3"><i class="fas fa-link"></i></a>
+</h3>
+<div id="environmental-threshold-parameter-review-2" class="section level4 unnumbered">
+<h4>Environmental threshold parameter review<a class="anchor" aria-label="anchor" href="#environmental-threshold-parameter-review-2"><i class="fas fa-link"></i></a>
+</h4>
 <p>The following parameters have been assigned as the temperature and salinity thresholds (Table X).</p>
 <p>Table X. Summary of <span class="math inline">\(LC_{50}\)</span> and <span class="math inline">\(LC_{10}\)</span> estimates of salinity (expressed as ppt) for six species at 14°C (<span class="math inline">\(LC^{14}\)</span>) and 23°C (<span class="math inline">\(LC^{23}\)</span>) temperatures.</p>
-<table>
+<div class="inline-table"><table class="table table-sm">
 <colgroup>
-<col width="27%" />
-<col width="19%" />
-<col width="19%" />
-<col width="17%" />
-<col width="17%" />
+<col width="27%">
+<col width="19%">
+<col width="19%">
+<col width="17%">
+<col width="17%">
 </colgroup>
-<thead>
-<tr class="header">
+<thead><tr class="header">
 <th>Common name</th>
 <th><span class="math inline">\(LC^{14}_{50}\)</span></th>
 <th><span class="math inline">\(LC^{23}_{50}\)</span></th>
 <th><span class="math inline">\(LC^{14}_{10}\)</span></th>
 <th><span class="math inline">\(LC^{23}_{10}\)</span></th>
-</tr>
-</thead>
+</tr></thead>
 <tbody>
 <tr class="odd">
 <td>Mulloway</td>
@@ -718,10 +553,11 @@ Figure 5.20: Fish Habitat Suitability Index (HSI) surface plot (3D) as a functio
 <td>97</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 </div>
-<div id="fish-data" class="section level4 unnumbered hasAnchor">
-<h4>Fish data<a href="cdm-habitat-modelling.html#fish-data" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="fish-data" class="section level4 unnumbered">
+<h4>Fish data<a class="anchor" aria-label="anchor" href="#fish-data"><i class="fas fa-link"></i></a>
+</h4>
 <ul>
 <li>Overview</li>
 <li>Historical monitoring</li>
@@ -729,85 +565,80 @@ Figure 5.20: Fish Habitat Suitability Index (HSI) surface plot (3D) as a functio
 </ul>
 </div>
 </div>
-<div id="model-application-1" class="section level3 hasAnchor" number="5.2.4">
-<h3><span class="header-section-number">5.2.4</span> Model application<a href="cdm-habitat-modelling.html#model-application-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-application-1" class="section level3" number="5.2.4">
+<h3>
+<span class="header-section-number">5.2.4</span> Model application<a class="anchor" aria-label="anchor" href="#model-application-1"><i class="fas fa-link"></i></a>
+</h3>
 <p>The Generation 0 model was run between 2013 - 2019.</p>
 </div>
-<div id="model-results-and-assessment-1" class="section level3 hasAnchor" number="5.2.5">
-<h3><span class="header-section-number">5.2.5</span> Model results and assessment<a href="cdm-habitat-modelling.html#model-results-and-assessment-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="model-results-and-assessment-1" class="section level3" number="5.2.5">
+<h3>
+<span class="header-section-number">5.2.5</span> Model results and assessment<a class="anchor" aria-label="anchor" href="#model-results-and-assessment-1"><i class="fas fa-link"></i></a>
+</h3>
 <p>The estuarine fish species that inhabit the Coorong vary slightly in their tolerance to salinity with yellow-eye mullet and small mouth hardyhead able to tolerate more saline conditions. Salinity varies in response to tides, season and river flow. Fish can move to in response to the expansion and contraction of appropriate salinity conditions.</p>
 <p>To summarise the suitable habitat area for each species, the sum of HSI-weighted area (i.e. HSI * area) in each grid cell for each scenario was computed.</p>
 </div>
-<div id="summary-sept-2021-4" class="section level3 hasAnchor" number="5.2.6">
-<h3><span class="header-section-number">5.2.6</span> Summary (Sept 2021)<a href="cdm-habitat-modelling.html#summary-sept-2021-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="summary-sept-2021-4" class="section level3" number="5.2.6">
+<h3>
+<span class="header-section-number">5.2.6</span> Summary (Sept 2021)<a class="anchor" aria-label="anchor" href="#summary-sept-2021-4"><i class="fas fa-link"></i></a>
+</h3>
 <p>The fish habitat model has been applied with the Generation 0 model and has demonstrated its usefulness in comparing how different hydrologic conditions can impact on biota. The approach will be further tested with T &amp; I 3 project data using results from the next model simualtions.</p>
 
 </div>
 </div>
 </div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="cdm-development-testing.html"><span class="header-section-number">4</span> CDM Development &amp; Testing</a></div>
+<div class="next"><a href="integrated-assessment-of-the-cdm.html"><span class="header-section-number">6</span> Integrated Assessment of the CDM</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cdm-habitat-modelling"><span class="header-section-number">5</span> CDM Habitat Modelling</a></li>
+<li>
+<a class="nav-link" href="#habitat-modelling---ruppia"><span class="header-section-number">5.1</span> Habitat modelling - Ruppia</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#overview-5"><span class="header-section-number">5.1.1</span> Overview</a></li>
+<li><a class="nav-link" href="#model-description-ruppia-hsi"><span class="header-section-number">5.1.2</span> Model description: Ruppia HSI</a></li>
+<li><a class="nav-link" href="#data-availability-2"><span class="header-section-number">5.1.3</span> Data availability</a></li>
+<li><a class="nav-link" href="#model-application"><span class="header-section-number">5.1.4</span> Model application</a></li>
+<li><a class="nav-link" href="#model-results-and-assessment"><span class="header-section-number">5.1.5</span> Model results and assessment</a></li>
+<li><a class="nav-link" href="#summary-sept-2021-3"><span class="header-section-number">5.1.6</span> Summary (Sept 2021)</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#habitat-modelling---fish"><span class="header-section-number">5.2</span> Habitat modelling - Fish</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#overview-6"><span class="header-section-number">5.2.1</span> Overview</a></li>
+<li><a class="nav-link" href="#model-description-fish-hsi"><span class="header-section-number">5.2.2</span> Model description: Fish HSI</a></li>
+<li><a class="nav-link" href="#data-availability-3"><span class="header-section-number">5.2.3</span> Data availability</a></li>
+<li><a class="nav-link" href="#model-application-1"><span class="header-section-number">5.2.4</span> Model application</a></li>
+<li><a class="nav-link" href="#model-results-and-assessment-1"><span class="header-section-number">5.2.5</span> Model results and assessment</a></li>
+<li><a class="nav-link" href="#summary-sept-2021-4"><span class="header-section-number">5.2.6</span> Summary (Sept 2021)</a></li>
+</ul>
+</li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="cdm-development-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="integrated-assessment-of-the-cdm.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 27-May-2022.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": false,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": false
-},
-"fontsettings": {
-"theme": "c('white', 'night')",
-"family": "sans",
-"size": 1
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": {},
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-},
-"info": false
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -819,7 +650,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>

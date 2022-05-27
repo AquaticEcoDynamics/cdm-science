@@ -1,269 +1,82 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html lang="en">
 <head>
-
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Integrated Assessment of the CDM | The Coorong Dynamics Model</title>
-  <meta name="description" content="6 Integrated Assessment of the CDM | The Coorong Dynamics Model (CDM)" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
-
-  <meta property="og:title" content="6 Integrated Assessment of the CDM | The Coorong Dynamics Model" />
-  <meta property="og:type" content="book" />
-  
-  <meta property="og:description" content="6 Integrated Assessment of the CDM | The Coorong Dynamics Model (CDM)" />
-  
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Integrated Assessment of the CDM | The Coorong Dynamics Model" />
-  
-  <meta name="twitter:description" content="6 Integrated Assessment of the CDM | The Coorong Dynamics Model (CDM)" />
-  
-
-<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs" />
-
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  
-  
-<link rel="prev" href="cdm-habitat-modelling.html"/>
-<link rel="next" href="references.html"/>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
-<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
-
-
-
-
-
-
-<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
-<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-
-
-
-
-<link rel="stylesheet" href="css/style.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>6 Integrated Assessment of the CDM | The Coorong Dynamics Model</title>
+<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
+<meta name="description" content="6.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully-coupled...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="6 Integrated Assessment of the CDM | The Coorong Dynamics Model">
+<meta property="og:type" content="book">
+<meta property="og:description" content="6.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully-coupled...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="6 Integrated Assessment of the CDM | The Coorong Dynamics Model">
+<meta name="twitter:description" content="6.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully-coupled...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="css/style.css">
 </head>
+<body data-spy="scroll" data-target="#toc">
 
-<body>
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
 
-
-
-  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
-
-    <div class="book-summary">
-      <nav role="navigation">
-
-<ul class="summary">
-<li><a href="./"><b>Coorong Dynamics Model</b></a></li>
-
-<li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#project-background"><i class="fa fa-check"></i>Project background</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#report-layout-and-guidance"><i class="fa fa-check"></i>Report layout and guidance</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i>Contributing</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#coordinating-authors"><i class="fa fa-check"></i>Coordinating authors</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#adding-and-updating-content"><i class="fa fa-check"></i>Adding and updating content</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#using-rstudios-visual-editor"><i class="fa fa-check"></i>Using RStudio’s visual editor</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#background-and-significance-of-the-coorong"><i class="fa fa-check"></i><b>1.1</b> Background and significance of the Coorong</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#importance-of-the-coorong"><i class="fa fa-check"></i><b>1.1.1</b> Importance of the Coorong</a></li>
-<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#ecological-character-of-the-coorong"><i class="fa fa-check"></i><b>1.1.2</b> Ecological Character of the Coorong</a></li>
-<li class="chapter" data-level="1.1.3" data-path="introduction.html"><a href="introduction.html#management-challenges"><i class="fa fa-check"></i><b>1.1.3</b> Management challenges</a></li>
-</ul></li>
-<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#need-for-an-integrated-model-to-support-coorong-management"><i class="fa fa-check"></i><b>1.2</b> Need for an integrated model to support Coorong management</a>
-<ul>
-<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#prior-modelling"><i class="fa fa-check"></i><b>1.2.1</b> Prior modelling</a></li>
-<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#knowledge-gaps-and-development-needs"><i class="fa fa-check"></i><b>1.2.2</b> Knowledge gaps and development needs</a></li>
-</ul></li>
-<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#aims-and-scope"><i class="fa fa-check"></i><b>1.3</b> Aims and Scope</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html"><i class="fa fa-check"></i><b>2</b> The Coorong Dynamics Model</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
-<li class="chapter" data-level="2.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#model-platform"><i class="fa fa-check"></i><b>2.2</b> Model platform</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#hydrodynamics-tuflow-fv"><i class="fa fa-check"></i><b>2.2.1</b> Hydrodynamics: TUFLOW-FV</a></li>
-<li class="chapter" data-level="2.2.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#waves-swan"><i class="fa fa-check"></i><b>2.2.2</b> Waves: SWAN</a></li>
-<li class="chapter" data-level="2.2.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#water-quality-and-habitat-aed"><i class="fa fa-check"></i><b>2.2.3</b> Water quality and habitat: AED</a></li>
-</ul></li>
-<li class="chapter" data-level="2.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#cdm-setup-and-configuration"><i class="fa fa-check"></i><b>2.3</b> CDM setup and configuration</a>
-<ul>
-<li class="chapter" data-level="2.3.1" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#simulation-domains"><i class="fa fa-check"></i><b>2.3.1</b> Simulation domains</a></li>
-<li class="chapter" data-level="2.3.2" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#boundary-conditions"><i class="fa fa-check"></i><b>2.3.2</b> Boundary conditions</a></li>
-<li class="chapter" data-level="2.3.3" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#hydrodynamic-settings"><i class="fa fa-check"></i><b>2.3.3</b> Hydrodynamic settings</a></li>
-<li class="chapter" data-level="2.3.4" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#water-quality-modules"><i class="fa fa-check"></i><b>2.3.4</b> Water quality modules</a></li>
-</ul></li>
-<li class="chapter" data-level="2.4" data-path="the-coorong-dynamics-model.html"><a href="the-coorong-dynamics-model.html#model-generation-summary"><i class="fa fa-check"></i><b>2.4</b> Model generation summary</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html"><i class="fa fa-check"></i><b>3</b> CDM Model-Data Integration</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#cdm-structure-and-organisation"><i class="fa fa-check"></i><b>3.1</b> CDM structure and organisation</a>
-<ul>
-<li class="chapter" data-level="3.1.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#online-repository-access"><i class="fa fa-check"></i><b>3.1.1</b> <strong>Online repository access</strong></a></li>
-<li class="chapter" data-level="3.1.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#repository-folder-structure"><i class="fa fa-check"></i><b>3.1.2</b> <strong>Repository folder structure</strong></a></li>
-<li class="chapter" data-level="3.1.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#high-level-workflows"><i class="fa fa-check"></i><b>3.1.3</b> <strong>High level workflows</strong></a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-repository-and-management"><i class="fa fa-check"></i><b>3.2</b> Data repository and management</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-catalogue"><i class="fa fa-check"></i><b>3.2.1</b> <strong>Data catalogue</strong></a></li>
-<li class="chapter" data-level="3.2.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-organisation"><i class="fa fa-check"></i><b>3.2.2</b> <strong>Data organisation</strong></a></li>
-<li class="chapter" data-level="3.2.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#data-processing-workflows"><i class="fa fa-check"></i><b>3.2.3</b> <strong>Data processing workflows</strong></a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-repository-and-management"><i class="fa fa-check"></i><b>3.3</b> Model repository and management</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-catalogue"><i class="fa fa-check"></i><b>3.3.1</b> <strong>Model catalogue</strong></a></li>
-<li class="chapter" data-level="3.3.2" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#tuflow-fv-model-organisation"><i class="fa fa-check"></i><b>3.3.2</b> <strong>TUFLOW-FV model organisation</strong></a></li>
-<li class="chapter" data-level="3.3.3" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#swan-wave-model-organisation"><i class="fa fa-check"></i><b>3.3.3</b> <strong>SWAN Wave Model organisation</strong></a></li>
-<li class="chapter" data-level="3.3.4" data-path="cdm-model-data-integration.html"><a href="cdm-model-data-integration.html#model-processing-toolbox"><i class="fa fa-check"></i><b>3.3.4</b> <strong>Model processing toolbox</strong></a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html"><i class="fa fa-check"></i><b>4</b> CDM Development &amp; Testing</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#modelling-development-rationale"><i class="fa fa-check"></i><b>4.1</b> Modelling development rationale</a>
-<ul>
-<li class="chapter" data-level="4.1.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#known-gaps-and-model-limitations"><i class="fa fa-check"></i><b>4.1.1</b> Known gaps and model limitations</a></li>
-<li class="chapter" data-level="4.1.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#development-focus-and-integration-with-hchb-research-and-monitoring"><i class="fa fa-check"></i><b>4.1.2</b> Development focus and integration with HCHB research and monitoring</a></li>
-</ul></li>
-<li class="chapter" data-level="4.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#waves-and-resuspension"><i class="fa fa-check"></i><b>4.2</b> Waves and resuspension</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-1"><i class="fa fa-check"></i><b>4.2.1</b> Overview</a></li>
-<li class="chapter" data-level="4.2.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach"><i class="fa fa-check"></i><b>4.2.2</b> Model approach</a></li>
-<li class="chapter" data-level="4.2.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment"><i class="fa fa-check"></i><b>4.2.3</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.2.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#lagoon-scale-predictions"><i class="fa fa-check"></i><b>4.2.4</b> Lagoon scale predictions</a></li>
-<li class="chapter" data-level="4.2.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021"><i class="fa fa-check"></i><b>4.2.5</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#sediment-biogeochemistry"><i class="fa fa-check"></i><b>4.3</b> Sediment biogeochemistry</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-2"><i class="fa fa-check"></i><b>4.3.1</b> Overview</a></li>
-<li class="chapter" data-level="4.3.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-candi-aed"><i class="fa fa-check"></i><b>4.3.2</b> Model approach: CANDI-AED</a></li>
-<li class="chapter" data-level="4.3.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup-and-configuration"><i class="fa fa-check"></i><b>4.3.3</b> Model setup and configuration</a></li>
-<li class="chapter" data-level="4.3.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-1"><i class="fa fa-check"></i><b>4.3.4</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.3.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#lagoon-scale-predictions-1"><i class="fa fa-check"></i><b>4.3.5</b> Lagoon scale predictions</a></li>
-<li class="chapter" data-level="4.3.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021-1"><i class="fa fa-check"></i><b>4.3.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#oxygen-metabolism-and-nutrient-cycling"><i class="fa fa-check"></i><b>4.4</b> Oxygen metabolism and nutrient cycling</a>
-<ul>
-<li class="chapter" data-level="4.4.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-3"><i class="fa fa-check"></i><b>4.4.1</b> Overview</a></li>
-<li class="chapter" data-level="4.4.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-1"><i class="fa fa-check"></i><b>4.4.2</b> Model approach</a></li>
-<li class="chapter" data-level="4.4.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#data-availability"><i class="fa fa-check"></i><b>4.4.3</b> Data availability</a></li>
-<li class="chapter" data-level="4.4.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup"><i class="fa fa-check"></i><b>4.4.4</b> Model setup</a></li>
-<li class="chapter" data-level="4.4.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-2"><i class="fa fa-check"></i><b>4.4.5</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.4.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary"><i class="fa fa-check"></i><b>4.4.6</b> Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="4.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#macroalgal-dynamics"><i class="fa fa-check"></i><b>4.5</b> Macroalgal dynamics</a>
-<ul>
-<li class="chapter" data-level="4.5.1" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#overview-4"><i class="fa fa-check"></i><b>4.5.1</b> Overview</a></li>
-<li class="chapter" data-level="4.5.2" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-approach-2"><i class="fa fa-check"></i><b>4.5.2</b> Model approach</a></li>
-<li class="chapter" data-level="4.5.3" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#data-availability-1"><i class="fa fa-check"></i><b>4.5.3</b> Data availability</a></li>
-<li class="chapter" data-level="4.5.4" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#model-setup-1"><i class="fa fa-check"></i><b>4.5.4</b> Model setup</a></li>
-<li class="chapter" data-level="4.5.5" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#validation-and-assessment-3"><i class="fa fa-check"></i><b>4.5.5</b> Validation and assessment</a></li>
-<li class="chapter" data-level="4.5.6" data-path="cdm-development-testing.html"><a href="cdm-development-testing.html#summary-sept-2021-2"><i class="fa fa-check"></i><b>4.5.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html"><i class="fa fa-check"></i><b>5</b> CDM Habitat Modelling</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#habitat-modelling---ruppia"><i class="fa fa-check"></i><b>5.1</b> Habitat modelling - <strong>Ruppia</strong></a>
-<ul>
-<li class="chapter" data-level="5.1.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#overview-5"><i class="fa fa-check"></i><b>5.1.1</b> Overview</a></li>
-<li class="chapter" data-level="5.1.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-description-ruppia-hsi"><i class="fa fa-check"></i><b>5.1.2</b> Model description: Ruppia HSI</a></li>
-<li class="chapter" data-level="5.1.3" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#data-availability-2"><i class="fa fa-check"></i><b>5.1.3</b> Data availability</a></li>
-<li class="chapter" data-level="5.1.4" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-application"><i class="fa fa-check"></i><b>5.1.4</b> Model application</a></li>
-<li class="chapter" data-level="5.1.5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-results-and-assessment"><i class="fa fa-check"></i><b>5.1.5</b> Model results and assessment</a></li>
-<li class="chapter" data-level="5.1.6" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#summary-sept-2021-3"><i class="fa fa-check"></i><b>5.1.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="5.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#habitat-modelling---fish"><i class="fa fa-check"></i><b>5.2</b> Habitat modelling - <strong>Fish</strong></a>
-<ul>
-<li class="chapter" data-level="5.2.1" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#overview-6"><i class="fa fa-check"></i><b>5.2.1</b> Overview</a></li>
-<li class="chapter" data-level="5.2.2" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-description-fish-hsi"><i class="fa fa-check"></i><b>5.2.2</b> Model description: Fish HSI</a></li>
-<li class="chapter" data-level="5.2.3" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#data-availability-3"><i class="fa fa-check"></i><b>5.2.3</b> Data availability</a></li>
-<li class="chapter" data-level="5.2.4" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-application-1"><i class="fa fa-check"></i><b>5.2.4</b> Model application</a></li>
-<li class="chapter" data-level="5.2.5" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#model-results-and-assessment-1"><i class="fa fa-check"></i><b>5.2.5</b> Model results and assessment</a></li>
-<li class="chapter" data-level="5.2.6" data-path="cdm-habitat-modelling.html"><a href="cdm-habitat-modelling.html#summary-sept-2021-4"><i class="fa fa-check"></i><b>5.2.6</b> Summary (Sept 2021)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html"><i class="fa fa-check"></i><b>6</b> Integrated Assessment of the CDM</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#overview-7"><i class="fa fa-check"></i><b>6.1</b> Overview</a></li>
-<li class="chapter" data-level="6.2" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#integrated-simulations"><i class="fa fa-check"></i><b>6.2</b> Integrated simulations</a></li>
-<li class="chapter" data-level="6.3" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#model-assessment-approach"><i class="fa fa-check"></i><b>6.3</b> Model assessment approach</a>
-<ul>
-<li class="chapter" data-level="6.3.1" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#summary-of-validation-data"><i class="fa fa-check"></i><b>6.3.1</b> Summary of validation data</a></li>
-<li class="chapter" data-level="6.3.2" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#performance-assessment-metrics"><i class="fa fa-check"></i><b>6.3.2</b> Performance assessment metrics</a></li>
-</ul></li>
-<li class="chapter" data-level="6.4" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#validation-focus-period-2020-2021"><i class="fa fa-check"></i><b>6.4</b> Validation focus period: 2020-2021</a></li>
-<li class="chapter" data-level="6.5" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#long-term-simulation-performance"><i class="fa fa-check"></i><b>6.5</b> Long-term simulation performance</a></li>
-<li class="chapter" data-level="6.6" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#nutrient-budget-assessment"><i class="fa fa-check"></i><b>6.6</b> Nutrient budget assessment</a></li>
-<li class="chapter" data-level="6.7" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#habitat-condition-assessment"><i class="fa fa-check"></i><b>6.7</b> Habitat condition assessment</a></li>
-<li class="chapter" data-level="6.8" data-path="integrated-assessment-of-the-cdm.html"><a href="integrated-assessment-of-the-cdm.html#summary-sept-2021-5"><i class="fa fa-check"></i><b>6.8</b> Summary (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="" data-path="appendix-a-data-catalogue.html"><a href="appendix-a-data-catalogue.html"><i class="fa fa-check"></i>Appendix A : Data Catalogue</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-a-data-catalogue.html"><a href="appendix-a-data-catalogue.html#coorong-data-catalogue-sept-2021"><i class="fa fa-check"></i>Coorong data catalogue (Sept 2021)</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html"><i class="fa fa-check"></i>Appendix B : Results Archive</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#long-term-assessment-of-model-performance-2013-2019"><i class="fa fa-check"></i>Long term assessment of model performance (2013 – 2019)</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#hchb-generaton-0"><i class="fa fa-check"></i>HCHB <em>Generaton 0</em></a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#sensitivity-assessment"><i class="fa fa-check"></i>Sensitivity assessment</a>
-<ul>
-<li class="chapter" data-level="" data-path="appendix-b-results-archive.html"><a href="appendix-b-results-archive.html#sensitivity-to-internal-nutrient-loading"><i class="fa fa-check"></i>Sensitivity to internal nutrient loading</a></li>
-</ul></li>
-</ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
-</ul>
-
-      </nav>
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">The Coorong Dynamics Model</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
     </div>
 
-    <div class="book-body">
-      <div class="body-inner">
-        <div class="book-header" role="navigation">
-          <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Coorong Dynamics Model</a>
-          </h1>
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="" href="the-coorong-dynamics-model.html"><span class="header-section-number">2</span> The Coorong Dynamics Model</a></li>
+<li><a class="" href="cdm-model-data-integration.html"><span class="header-section-number">3</span> CDM Model-Data Integration</a></li>
+<li><a class="" href="cdm-development-testing.html"><span class="header-section-number">4</span> CDM Development &amp; Testing</a></li>
+<li><a class="" href="cdm-habitat-modelling.html"><span class="header-section-number">5</span> CDM Habitat Modelling</a></li>
+<li><a class="active" href="integrated-assessment-of-the-cdm.html"><span class="header-section-number">6</span> Integrated Assessment of the CDM</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a-data-catalogue.html">Appendix A : Data Catalogue</a></li>
+<li><a class="" href="appendix-b-results-archive.html">Appendix B : Results Archive</a></li>
+</ul>
+
+        <div class="book-extra">
+          
         </div>
-
-        <div class="page-wrapper" tabindex="-1" role="main">
-          <div class="page-inner">
-
-            <section class="normal" id="section-">
-<div id="integrated-assessment-of-the-cdm" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">6</span> Integrated Assessment of the CDM<a href="integrated-assessment-of-the-cdm.html#integrated-assessment-of-the-cdm" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="integrated-assessment-of-the-cdm" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Integrated Assessment of the CDM<a class="anchor" aria-label="anchor" href="#integrated-assessment-of-the-cdm"><i class="fas fa-link"></i></a>
+</h1>
 <p><br></p>
-<div id="overview-7" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Overview<a href="integrated-assessment-of-the-cdm.html#overview-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="overview-7" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-7"><i class="fas fa-link"></i></a>
+</h2>
 <p>The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully-coupled model, against the complete data-set. A range of metrics are used for a large number of predicted variable and different sites.</p>
 <p><br></p>
 </div>
-<div id="integrated-simulations" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Integrated simulations<a href="integrated-assessment-of-the-cdm.html#integrated-simulations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="integrated-simulations" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Integrated simulations<a class="anchor" aria-label="anchor" href="#integrated-simulations"><i class="fas fa-link"></i></a>
+</h2>
 <p>A summary of the different simulations used through the model life cycle of model development:</p>
 <p><span style="color:teal"><strong>Generation 0</strong> model</span> : Original mesh, 2D hydrodynamics, no surface wave coupling, 5 sediment zones with statically assigned flux rates based on assumed parameters.</p>
 <p><span style="color:orangered"><strong>Generation I</strong> model</span> : Original mesh, 3D hydrodynamics, surface wave coupling, 20 sediment zones with statically assigned flux rates, updared based on observed estimates.</p>
@@ -276,11 +89,15 @@
 -->
 <p><br></p>
 </div>
-<div id="model-assessment-approach" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Model assessment approach<a href="integrated-assessment-of-the-cdm.html#model-assessment-approach" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="model-assessment-approach" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Model assessment approach<a class="anchor" aria-label="anchor" href="#model-assessment-approach"><i class="fas fa-link"></i></a>
+</h2>
 <p>The approach to assess the model loosely follows the <a href="https://www.sciencedirect.com/science/article/pii/S1364815219309727?via%3Dihub">CSPS framework</a> of Hipsey et al (2020). The framework considers: Level 0, conceptual evaluation; Level 1, simulated state variables; Level 2, process rates; and Level 3, system-level patterns and emergent properties. Within each level a range of ways of interrogating he model are possible to demonstrate the level of performance. The specific data available for validation and the assessment metrics used are described next.</p>
-<div id="summary-of-validation-data" class="section level3 hasAnchor" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Summary of validation data<a href="integrated-assessment-of-the-cdm.html#summary-of-validation-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="summary-of-validation-data" class="section level3" number="6.3.1">
+<h3>
+<span class="header-section-number">6.3.1</span> Summary of validation data<a class="anchor" aria-label="anchor" href="#summary-of-validation-data"><i class="fas fa-link"></i></a>
+</h3>
 <p>The field observation data available for the model validation and assessment include a diversity of historical data (collected pre 2020), and a large volume of data generated by recent monitoring and HCHB research projects. Relevant data for validation include:</p>
 <ul>
 <li>In situ water quality sensors; high frequency measurements at fixed locations.</li>
@@ -290,39 +107,50 @@
 </ul>
 <p>All the data relevant to model calibration and validation are included in the <em>CDM Data Catalogue</em> (see Section 3.2) and detailed in Appendix A. The data spans a wide range of locations and time-periods; the most intense period of monitoring is however between 2020-2021 and this serves as our primary model assessment focus period. Long-term assessments are also undertaken for different versions of the model, as outlined next.</p>
 </div>
-<div id="performance-assessment-metrics" class="section level3 hasAnchor" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Performance assessment metrics<a href="integrated-assessment-of-the-cdm.html#performance-assessment-metrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="performance-assessment-metrics" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> Performance assessment metrics<a class="anchor" aria-label="anchor" href="#performance-assessment-metrics"><i class="fas fa-link"></i></a>
+</h3>
 <p>The modelling results are compared against historical data collected within the Coorong (where available), using both traditional statistical metrics of model error, and other metrics relevant to model function. The approach is applied to each model generation with the aim to identify areas for further improvement and ongoing calibration effort.</p>
 <p>Initially, the model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a are assessed with a set of statistical metrics, and the calculations of statistical metrics was performed for each observation site where the number of field observations was &gt;10 in the assessment period.</p>
 <p>The core statistical metrics considered consist of:</p>
 <ul>
-<li><span class="math inline">\(r\)</span>: regression coefficient, Varies between -1 and 1, with a score of 1 indicating the model varies perfectly with the observations and a negative score indicating the model varies inversely with the observations. A consistent bias may be present even when high score of r is obtained.</li>
-<li><span class="math inline">\(BIAS\)</span>: bias of average prediction to the average observation during the assessing period. This method presents a magnitude for the discrepancy between the model results and the observational data.</li>
-<li><span class="math inline">\(MAE\)</span>: mean absolute error: Similar to RMSE except absolute value is used. This reduces the bias towards large events. Values near zero indicate good model skill.</li>
-<li><span class="math inline">\(RMS\)</span>: root mean squared error, Measures the mean magnitude, but not direction, of the difference between model data and observations, and hence can be used to measure bias. Values near zero are desirable. This method is not affected by cancellation of negative and positive errors, but squaring the data may cause bias towards large events.</li>
-<li><span class="math inline">\(nash\)</span>: the Nash-Sutcliffe metric (also called <span class="math inline">\(NSE\)</span> or <span class="math inline">\(MEF\)</span> is a matrix of modelling efficiency, measures the mean magnitude of the difference between model data and observations. This method compares the performance of the model to that only uses the mean of the observed data. A value of 1 would indicate a perfect model, while a value of zero indicates performance similar to simply using the mean of observed data.</li>
+<li>
+<span class="math inline">\(r\)</span>: regression coefficient, Varies between -1 and 1, with a score of 1 indicating the model varies perfectly with the observations and a negative score indicating the model varies inversely with the observations. A consistent bias may be present even when high score of r is obtained.</li>
+<li>
+<span class="math inline">\(BIAS\)</span>: bias of average prediction to the average observation during the assessing period. This method presents a magnitude for the discrepancy between the model results and the observational data.</li>
+<li>
+<span class="math inline">\(MAE\)</span>: mean absolute error: Similar to RMSE except absolute value is used. This reduces the bias towards large events. Values near zero indicate good model skill.</li>
+<li>
+<span class="math inline">\(RMS\)</span>: root mean squared error, Measures the mean magnitude, but not direction, of the difference between model data and observations, and hence can be used to measure bias. Values near zero are desirable. This method is not affected by cancellation of negative and positive errors, but squaring the data may cause bias towards large events.</li>
+<li>
+<span class="math inline">\(nash\)</span>: the Nash-Sutcliffe metric (also called <span class="math inline">\(NSE\)</span> or <span class="math inline">\(MEF\)</span> is a matrix of modelling efficiency, measures the mean magnitude of the difference between model data and observations. This method compares the performance of the model to that only uses the mean of the observed data. A value of 1 would indicate a perfect model, while a value of zero indicates performance similar to simply using the mean of observed data.</li>
 </ul>
 <p><br></p>
 <p>* <em>Other metrics used for specific areas</em> *</p>
 <p><br></p>
 </div>
 </div>
-<div id="validation-focus-period-2020-2021" class="section level2 hasAnchor" number="6.4">
-<h2><span class="header-section-number">6.4</span> Validation focus period: 2020-2021<a href="integrated-assessment-of-the-cdm.html#validation-focus-period-2020-2021" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="validation-focus-period-2020-2021" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Validation focus period: 2020-2021<a class="anchor" aria-label="anchor" href="#validation-focus-period-2020-2021"><i class="fas fa-link"></i></a>
+</h2>
 <p>* <em>Pending Gen I and II model calibration</em> *</p>
 <p><br></p>
 </div>
-<div id="long-term-simulation-performance" class="section level2 hasAnchor" number="6.5">
-<h2><span class="header-section-number">6.5</span> Long-term simulation performance<a href="integrated-assessment-of-the-cdm.html#long-term-simulation-performance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="long-term-simulation-performance" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Long-term simulation performance<a class="anchor" aria-label="anchor" href="#long-term-simulation-performance"><i class="fas fa-link"></i></a>
+</h2>
 <p>With the <span style="color:teal"><em>Generation 0</em> model</span> compiled boundary conditions (tide, barrages, Salt Ck inflows) and BARRA weather forcing, the performance of the model in reproducing the long-term nutrient pools has been examined.
 <!--
 Example model outcomes against the field observations of TN and TP are shown in Figure 10 & 11, and a summary of model performance is provided in Table 1. In summary, the model predicted well the temporal and spatial variations in TN and TP concentrations. However, the model has been shown to poorly predict the phytoplankton concentration in the South Coorong. A reason for this may be due to the current CDM being in in 2D mode which assumes the water column is fully mixed; whilst the phytoplankton samples were taken in the surface water where the phytoplankton can accumulate. The release of bioavailable nutrients is also subject to change once the sediment modelling is completed and the accuracy resolving bioavailable nutrients is still weak. A further examination of phytoplankton and nutrient data is underway, and a 3D Coorong model is under development to capture the vertical distribution of phytoplankton biomass.
 -->
 A summary of model performance is provided in Table 6.1. The full set of time-series validation plots against comparing the model with field observations of salinity, temperature, phytoplankton, and nitrogen/phosphorus species are included in Appendix B1. In summary, the <span style="color:teal"><em>Generation 0</em> </span> model predicted well the temporal and spatial variations in TN and TP concentrations. However, this version of the model poorly predicted the phytoplankton concentration in the South Lagoon. A reason for this may be due to the fact that this version is run in 2D mode which assumes the water column is fully mixed; whilst the phytoplankton samples were taken in the surface water where the phytoplankton can accumulate.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:ass-pic0"></span>
-<img src="tables/error.png" alt="Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN and TP concentrations." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:ass-pic0"></span>
+<img src="tables/error.png" alt="Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN and TP concentrations." width="100%"><p class="caption">
 Figure 6.1: Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN and TP concentrations.
 </p>
 </div>
@@ -330,29 +158,36 @@ Figure 6.1: Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN an
 <p>The release of bioavailable nutrients is also subject to change once the sediment modelling is completed and the accuracy resolving bioavailable nutrients is still weak. Examination of phytoplankton and nutrient data (see CDM sensitivity assessment to internal loading in appendix B2), and implmentation of 3D dynamics is under development with the Generation I model to capture the vertical distribution of phytoplankton biomass.</p>
 <p><br></p>
 </div>
-<div id="nutrient-budget-assessment" class="section level2 hasAnchor" number="6.6">
-<h2><span class="header-section-number">6.6</span> Nutrient budget assessment<a href="integrated-assessment-of-the-cdm.html#nutrient-budget-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="nutrient-budget-assessment" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Nutrient budget assessment<a class="anchor" aria-label="anchor" href="#nutrient-budget-assessment"><i class="fas fa-link"></i></a>
+</h2>
 <p>A methodology for nutrient flux and budget analysis has been developed. For the nutrient budget analysis, all of the nutrient pools (dissolved and particulate carbon, nitrogen and phosphorus, macroalgae and Ruppia) can be summarized for different regions of the estuary (north, south etc.). As an example of this method, the results from a period of three years (July 2017 to July 2020) were summarized for each region (Figure 5). Fluxes into and out of a region are shown. For the nutrient flux analysis we have developed script for calculating the salt and nutrient fluxes through selected node-string.</p>
 <div class="text-image">
-<div class="figure"><span style="display:block;" id="fig:ass-pic1"></span>
-<img src="images/assessment/5_nutrient_budget.png" alt="South Lagoon regional nutrient input/output loads for carbon, nitrogen and phosphorus for the e-water simulation July 2017 to July 2020. Negative fluxes are material leaving the region to Upper Salt Creek region. There is a high build-up of macroalgae predicted after the winter release and nutrient pulse (Gen 0 simulation)." width="100%" />
-<p class="caption">
+<div class="figure">
+<span style="display:block;" id="fig:ass-pic1"></span>
+<img src="images/assessment/5_nutrient_budget.png" alt="South Lagoon regional nutrient input/output loads for carbon, nitrogen and phosphorus for the e-water simulation July 2017 to July 2020. Negative fluxes are material leaving the region to Upper Salt Creek region. There is a high build-up of macroalgae predicted after the winter release and nutrient pulse (Gen 0 simulation)." width="100%"><p class="caption">
 Figure 6.2: South Lagoon regional nutrient input/output loads for carbon, nitrogen and phosphorus for the e-water simulation July 2017 to July 2020. Negative fluxes are material leaving the region to Upper Salt Creek region. There is a high build-up of macroalgae predicted after the winter release and nutrient pulse (Gen 0 simulation).
 </p>
 </div>
 </div>
 <p><br></p>
 </div>
-<div id="habitat-condition-assessment" class="section level2 hasAnchor" number="6.7">
-<h2><span class="header-section-number">6.7</span> Habitat condition assessment<a href="integrated-assessment-of-the-cdm.html#habitat-condition-assessment" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="habitat-condition-assessment" class="section level2" number="6.7">
+<h2>
+<span class="header-section-number">6.7</span> Habitat condition assessment<a class="anchor" aria-label="anchor" href="#habitat-condition-assessment"><i class="fas fa-link"></i></a>
+</h2>
 <p>* <em>Pending Gen II model calibration</em> *</p>
 <p><br></p>
 </div>
-<div id="summary-sept-2021-5" class="section level2 hasAnchor" number="6.8">
-<h2><span class="header-section-number">6.8</span> Summary (Sept 2021)<a href="integrated-assessment-of-the-cdm.html#summary-sept-2021-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="summary-sept-2021-5" class="section level2" number="6.8">
+<h2>
+<span class="header-section-number">6.8</span> Summary (Sept 2021)<a class="anchor" aria-label="anchor" href="#summary-sept-2021-5"><i class="fas fa-link"></i></a>
+</h2>
 <p>The following assessments have been undertaken:</p>
 <ul>
-<li><p>Development of integrated CDM assessment toolbox able to:</p>
+<li>
+<p>Development of integrated CDM assessment toolbox able to:</p>
 <ul>
 <li>Accomodate data from different sources/campaigns (see Appendix A)</li>
 <li>Flexible plotting of time-series outputs at points and integrated over polygons</li>
@@ -361,8 +196,10 @@ Figure 6.2: South Lagoon regional nutrient input/output loads for carbon, nitrog
 <li>Nutrient budget on defined polygon regions</li>
 <li>Error metric assessment</li>
 <li>Habitat area calculation</li>
-</ul></li>
-<li><p>Gen 0 calibration over the period 2013 - 2019.</p>
+</ul>
+</li>
+<li>
+<p>Gen 0 calibration over the period 2013 - 2019.</p>
 <ul>
 <li>The model accurately captures water level and salinity in both the North and South lagoon.</li>
 <li>The model accurately captures TN and TP within both the North and South lagoon, based on low-frequency sampling.</li>
@@ -370,79 +207,61 @@ Figure 6.2: South Lagoon regional nutrient input/output loads for carbon, nitrog
 <li>Dissolved nutrients are not predicted accurately.</li>
 <li>The Ruppia HSI shows reasonable performance against pre 2020 data.</li>
 <li>The macroalgae biomass is poorly predicted across the length of the lagoon, but the Ulva HSI captures the spatial distribution of filamentous algae well.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>These results show the promise of the model and give direction to focus areas for development (see Chapter 4) and calibration. Further work to undertake the integrated assessment includes:</p>
 <ul>
 <li>Application of the assessment toolbox on Gen I and Gen II models.</li>
 <li>Further nutrient budget analyses and interpretation</li>
 </ul>
-
 </div>
 </div>
-            </section>
+  <div class="chapter-nav">
+<div class="prev"><a href="cdm-habitat-modelling.html"><span class="header-section-number">5</span> CDM Habitat Modelling</a></div>
+<div class="next"><a href="references.html">References</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#integrated-assessment-of-the-cdm"><span class="header-section-number">6</span> Integrated Assessment of the CDM</a></li>
+<li><a class="nav-link" href="#overview-7"><span class="header-section-number">6.1</span> Overview</a></li>
+<li><a class="nav-link" href="#integrated-simulations"><span class="header-section-number">6.2</span> Integrated simulations</a></li>
+<li>
+<a class="nav-link" href="#model-assessment-approach"><span class="header-section-number">6.3</span> Model assessment approach</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#summary-of-validation-data"><span class="header-section-number">6.3.1</span> Summary of validation data</a></li>
+<li><a class="nav-link" href="#performance-assessment-metrics"><span class="header-section-number">6.3.2</span> Performance assessment metrics</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#validation-focus-period-2020-2021"><span class="header-section-number">6.4</span> Validation focus period: 2020-2021</a></li>
+<li><a class="nav-link" href="#long-term-simulation-performance"><span class="header-section-number">6.5</span> Long-term simulation performance</a></li>
+<li><a class="nav-link" href="#nutrient-budget-assessment"><span class="header-section-number">6.6</span> Nutrient budget assessment</a></li>
+<li><a class="nav-link" href="#habitat-condition-assessment"><span class="header-section-number">6.7</span> Habitat condition assessment</a></li>
+<li><a class="nav-link" href="#summary-sept-2021-5"><span class="header-section-number">6.8</span> Summary (Sept 2021)</a></li>
+</ul>
 
-          </div>
-        </div>
-      </div>
-<a href="cdm-habitat-modelling.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
-    </div>
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 27-May-2022.</p>
   </div>
-<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
-<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
-<script>
-gitbook.require(["gitbook"], function(gitbook) {
-gitbook.start({
-"sharing": {
-"github": false,
-"facebook": false,
-"twitter": false,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": false
-},
-"fontsettings": {
-"theme": "c('white', 'night')",
-"family": "sans",
-"size": 1
-},
-"edit": {
-"link": null,
-"text": null
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": {},
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section"
-},
-"info": false
-});
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -454,7 +273,22 @@ gitbook.start({
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
 </script>
 </body>
-
 </html>
