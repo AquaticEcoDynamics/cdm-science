@@ -82,7 +82,6 @@ If you're unfamiliar with writing `.Rmd` and `.md` files, the [RStudio IDE 1.4](
 <br>
 
 ```{r logo1, echo=FALSE, out.width='25%', class = "text-image"}
-
 knitr::include_graphics(c("images/contributing/aed-transparent-background.png","images/contributing/UWA-Full-Hor-CMYK.png"))
 
 ```
