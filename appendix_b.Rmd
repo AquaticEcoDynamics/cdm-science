@@ -4,14 +4,14 @@
  
 ### HCHB *Generaton 0* {-}
 
-The aims of this section are to statistically compare the modelling results against historical data collected within the Coorong (where available) in the period of 2013-2019, with outputs of CDM. The model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a are assessed with a set of statistical matrix consist of: 
+The aim of this section is to statistically compare the modelling results against historical data collected within the Coorong (where available), over the period of 2013-2019, with outputs of the CDM. The model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics: 
 
   +	$R$ : regression coefficient; 
   +	$BIAS$ : bias of average prediction to the average observation; 
   +	$RMS$ : root mean square; and 
   +	$NRMS$ : normalized root mean square calculated as $RMS$ normalized by the average of observed values.
 
-The calculations of statistical matrix was performed for each site where the number of field observations was >10 in the assessment period (6 year). The validation plots including the statistics values for each site are presented in the below table (Table 7.3), with links to each assessed water quality variable.
+The calculations of statistical metrics was performed for each site where the number of field observations was >10 in the assessment period (6 year). The validation plots including the statistics values for each site are presented in the below table (Table 7.3), with links to each assessed water quality variable.
            
           
            
