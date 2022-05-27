@@ -1,28 +1,28 @@
-bookdown::gitbook:
-  css: css/style.css
-  config:
-    toc:
-      collapse: section
-      before: |
-        <li><a href="./"><b>Coorong Dynamics Model</b></a></li>
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    download: []
-    search: yes
-    fontsettings:
-      theme: c('white', 'night')
-      family: sans
-      size: 1
-    sharing:
-      facebook: no
-      github: no
-      twitter: no
-      linkedin: no
-      weibo: no
-      instapaper: no
-      vk: no
-      all: no
-    info: no
+# bookdown::gitbook:
+#   css: css/style.css
+#   config:
+#     toc:
+#       collapse: section
+#       before: |
+#         <li><a href="./"><b>Coorong Dynamics Model</b></a></li>
+#       after: |
+#         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+#     download: []
+#     search: yes
+#     fontsettings:
+#       theme: c('white', 'night')
+#       family: sans
+#       size: 1
+#     sharing:
+#       facebook: no
+#       github: no
+#       twitter: no
+#       linkedin: no
+#       weibo: no
+#       instapaper: no
+#       vk: no
+#       all: no
+#     info: no
 bookdown::bs4_book:
   css: css/style.css
   theme:
