@@ -23,7 +23,7 @@ knitr::knit_hooks$set(class = function(before, options, envir) {
 
 # Welcome {-}
 
-Welcome to the **Coorong Dynamics Model** ($\mathbf{CDM}$) information pages!
+Welcome to the Coorong Dynamics Model ($\mathbf{CDM}$) information pages!
 
 
 ## Project background {-}
