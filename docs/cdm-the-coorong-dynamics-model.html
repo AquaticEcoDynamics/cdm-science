@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>2 CDM: The Coorong Dynamics Model | The Coorong Dynamics Model</title>
+<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
+<meta name="description" content="2.1 Overview The Coorong Dynamics Model (CDM) is a spatially resolved model to simulate the environmental conditions within the Coorong, a large coastal lagoon located in South Australia. It is...">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta property="og:title" content="2 CDM: The Coorong Dynamics Model | The Coorong Dynamics Model">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 Overview The Coorong Dynamics Model (CDM) is a spatially resolved model to simulate the environmental conditions within the Coorong, a large coastal lagoon located in South Australia. It is...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2 CDM: The Coorong Dynamics Model | The Coorong Dynamics Model">
+<meta name="twitter:description" content="2.1 Overview The Coorong Dynamics Model (CDM) is a spatially resolved model to simulate the environmental conditions within the Coorong, a large coastal lagoon located in South Australia. It is...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">The Coorong Dynamics Model</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li><a class="active" href="cdm-the-coorong-dynamics-model.html"><span class="header-section-number">2</span> CDM: The Coorong Dynamics Model</a></li>
+<li><a class="" href="model-data-ecosystem.html"><span class="header-section-number">3</span> Model-Data Ecosystem</a></li>
+<li><a class="" href="resuspension-and-turbidity.html"><span class="header-section-number">4</span> Resuspension and Turbidity</a></li>
+<li><a class="" href="oxygen-nutrients-and-chlorohyll-a.html"><span class="header-section-number">5</span> Oxygen, Nutrients and Chlorohyll-a</a></li>
+<li><a class="" href="macroalgae.html"><span class="header-section-number">6</span> Macroalgae</a></li>
+<li><a class="" href="sediment-biogeochemistry.html"><span class="header-section-number">7</span> Sediment Biogeochemistry</a></li>
+<li><a class="" href="habitat-modelling.html"><span class="header-section-number">8</span> Habitat Modelling</a></li>
+<li><a class="" href="integrated-assessment.html"><span class="header-section-number">9</span> Integrated Assessment</a></li>
+<li><a class="" href="references.html">References</a></li>
+<li><a class="" href="appendix-a-data-catalogue.html">Appendix A : Data Catalogue</a></li>
+<li><a class="" href="appendix-b-results-archive.html">Appendix B : Results Archive</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="cdm-the-coorong-dynamics-model" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> CDM: The Coorong Dynamics Model<a class="anchor" aria-label="anchor" href="#cdm-the-coorong-dynamics-model"><i class="fas fa-link"></i></a>
+</h1>
+<p><br></p>
+<div id="overview" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Coorong Dynamics Model (CDM) is a spatially resolved model to simulate the environmental conditions within the Coorong, a large coastal lagoon located in South Australia. It is not a single model, but a system of models that can be configured, applied and coupled in various ways for different purposes.</p>
+<p>At its core, it consists of the hydrodynamic model TUFLOW-FV and the water quality model AED, which can be optionally linked with the SWAN wave model. Different model domain resolutions can be selected and/or time-periods of interest simulated. Different levels of model complexity (i.e., biogeochemical or ecological components) can be engaged within an environment with common input files and output analysis workflows. The flexibility allows a common approach to be used in different use-cases; for example, a long-term low-resolution simulation vs a high-resolution habitat restoration simulation can share common model settings, parameters and parameterisations. This provides decision-makers a single trusted tool that can be used to answer a diversity of questions that span from day-to-day management (e.g., barrage operation) to long-term policy settings (e.g, restoration and climate change adaptation strategies).</p>
+<p>In general, the models are configured to resolve hydrodynamics and flushing, water temperature and salinity, and numerous water quality attributes including oxygen, nutrients (organic and inorganic), phytoplankton, macroalgae, and suspended sediment. The outputs from these modules are used to predict ecological attributes of interest, including seagrass, fish and benthic macro-invertebrates.</p>
+<p>The CDM is also more the individual models. The model links a large volume of data from historical surveys, real-time data streams and recent experimental work. Complex integration workflows are implemented to process data for model inputs (e.g., boundary conditions) or model assessment (e.g., calibration or validation).</p>
+<p>The CDM project is therefore a model-data ‘ecosystem’ that serves as a shared analytics platform. Model and data provenance is a high priority and all data and model products that are developed are under strict version control within the platform to ensure traceability and transparency in model use and assumptions (see Section 3).</p>
+<p>The following sections describe the model platform, detail the CDM configuration, and summarise the different model generations being developed and used for decision support.</p>
+<p><br></p>
+</div>
+<div id="model-platform" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Model platform<a class="anchor" aria-label="anchor" href="#model-platform"><i class="fas fa-link"></i></a>
+</h2>
+<div id="hydrodynamics-tuflow-fv" class="section level3" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> Hydrodynamics: TUFLOW-FV<a class="anchor" aria-label="anchor" href="#hydrodynamics-tuflow-fv"><i class="fas fa-link"></i></a>
+</h3>
+<p><a href="https://www.tuflow.com/products/tuflow-fv/">TUFLOW-FV</a> is a finite volume hydrodynamic model, developed by BMT Global Pty Ltd (BMTWBM, 2019). It has flexible-mesh and accounts for variations in water level, salinity, temperature, and density in response to tides, inflows and surface thermodynamics. The current version has various use-ability features including integration with QGIS and optimisiation for operation on desktop GPU resources.</p>
+<p>The TUFLOW-FV has been used extensively in the region for hydrological assessments. Within the CDM two(three) different model domains are applied with different levels of spatial resolution, including both 2D and 3D implementations.</p>
+</div>
+<div id="waves-swan" class="section level3" number="2.2.2">
+<h3>
+<span class="header-section-number">2.2.2</span> Waves: SWAN<a class="anchor" aria-label="anchor" href="#waves-swan"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Simulating WAves Nearshore (<a href="https://www.tudelft.nl/en/ceg/about-faculty/departments/hydraulic-engineering/sections/environmental-fluid-mechanics/research/swan/">SWAN</a>) model is a numerical wave model used to obtain realistic estimates of surface wave parameters in coastal areas, lakes, and estuaries from given wind, bottom, and current conditions. The model is based on the wave action balance equation (or energy balance in the absence of currents) with sources and sinks. SWAN is a third-generation wave model with first-, second-, and third-generation options.</p>
+</div>
+<div id="water-quality-and-habitat-aed" class="section level3" number="2.2.3">
+<h3>
+<span class="header-section-number">2.2.3</span> Water quality and habitat: AED<a class="anchor" aria-label="anchor" href="#water-quality-and-habitat-aed"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Aquatic EcoDynamics (<a href="http://aed.see.uwa.edu.au/research/models/aed/">AED</a> ) water quality model is a community-driven library of modules and algorithms for simulation of “aquatic ecodynamics” - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the AED research group of UWA (Hipsey et al., 2019). Each module aims to be based on state-of-the-art science sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers.</p>
+<p><br></p>
+</div>
+</div>
+<div id="cdm-setup-and-configuration" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> CDM setup and configuration<a class="anchor" aria-label="anchor" href="#cdm-setup-and-configuration"><i class="fas fa-link"></i></a>
+</h2>
+<p>The following sections describe the general setup and approach of the model and provide an overview. Speciic simulations decsribed in subsequent sections may use tailored or customised versions adapted from this description.</p>
+<div id="simulation-domains" class="section level3" number="2.3.1">
+<h3>
+<span class="header-section-number">2.3.1</span> Simulation domains<a class="anchor" aria-label="anchor" href="#simulation-domains"><i class="fas fa-link"></i></a>
+</h3>
+<p>The CDM modelling domain spans from the Murray Mouth region to the south end of the Coorong, with a length of ~116 km and a total area of ~237 km<sup>2</sup>.</p>
+<p>Two types of model mesh were developed to support different research purposes. The first is a fine-resolution mesh (26250 cells with mean cell size of ~1×10<sup>4</sup> m<sup>2</sup>, Figure 2.1, left); this mesh was used for resolving the spatial heterogeneity of the water quality response, especially for the habitat predictions; the second is a relatively coarse resolution mesh (2202 cells with mean cell size of ~1.3×10<sup>5</sup> m<sup>2</sup>, Figure 2.1, right) for faster simulations of investigating water balance and other modelling experiments. The fine- and coarse-mesh models share the same boundary conditions and have been bench-marked with each other, and can be used in different stages of model development.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:cdm-pic1"></span>
+<img src="images/cdm/2_picture1.png" alt="Plan view of the Coorong Dynamics Model fine (left) and coarse (right) mesh." width="100%"><p class="caption">
+Figure 2.1: Plan view of the Coorong Dynamics Model fine (left) and coarse (right) mesh.
+</p>
+</div>
+</div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:CDM-grid">Table 2.1: </span>Grid Specifications
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Filename
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Number of Cells
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Total Area (m2)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Min Cell Area (m2)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Max Cell Area (m2)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Mean Cell Area (m2)
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="1">
+<td colspan="6" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>HCHB: Fine</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+CoorongBGC_mesh_000.2dm
+</td>
+<td style="text-align:left;min-width: 7em; ">
+26250
+</td>
+<td style="text-align:left;max-width: 19em; ">
+271376866
+</td>
+<td style="text-align:left;min-width: 10em; ">
+67.4623
+</td>
+<td style="text-align:left;min-width: 5em; ">
+97990.76
+</td>
+<td style="text-align:left;min-width: 10em; ">
+10338.17
+</td>
+</tr>
+<tr grouplength="1">
+<td colspan="6" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>HCHB: Coarse</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+A10583_Coorong_fast_010.2dm
+</td>
+<td style="text-align:left;min-width: 7em; ">
+2202
+</td>
+<td style="text-align:left;max-width: 19em; ">
+295416859
+</td>
+<td style="text-align:left;min-width: 10em; ">
+3534.0982
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1179297.53
+</td>
+<td style="text-align:left;min-width: 10em; ">
+134158.43
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<p>A range of bathymetry data is available and specified within the model(s).</p>
+<ul>
+<li>2008 survey</li>
+<li>2018 1m Lidar / Sentinel DEM</li>
+<li>1999 - 2019 Murray Mouth Surveys</li>
+</ul>
+<p>This is processe within the SMS software to generate a computational mesh suitable for TUFLOW-FV.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:cdm-pic2"></span>
+<img src="images/cdm/HCHB%202dm.png" alt="Coorong bathymetry." width="100%"><p class="caption">
+Figure 2.2: Coorong bathymetry.
+</p>
+</div>
+</div>
+</div>
+<div id="boundary-conditions" class="section level3" number="2.3.2">
+<h3>
+<span class="header-section-number">2.3.2</span> Boundary conditions<a class="anchor" aria-label="anchor" href="#boundary-conditions"><i class="fas fa-link"></i></a>
+</h3>
+<p>Regardless of the model domain / mesh option that is chosen, then CDM system manages several standard boundary conditions to allow the model to be forced by tidal, meteorological and inflow information, which is brought together from various data sources.</p>
+<ul>
+<li>
+<strong>Tidal conditions:</strong> Set on the ocean side of the Murray Mouth, an open water level boundary is specified based on Barker Knoll / Victor Harbour tidal data, which are available at 10 minute resolution.</li>
+<li>
+<strong>Salk Creek inflow:</strong> Inflow to the South Lagoon from the local catchment via Salt Creek was set based on available flow data from <a href="water.data.sa.gov.au">water.data.sa.gov.au</a> (curated by the South Australian Department of Environment and Water). The nutrient boundary condition inputs are extrapolated based on field measurements at Salt Ck.</li>
+<li>
+<strong>Barrage flows:</strong> Inflow boundary conditions at the five barrages are based off historical daily-interval measurements of flow rate, temperature, salinity. The nutrient boundary condition inputs are extrapolated based on field measurements at Lake Alexandrina, close to the barrages.</li>
+<li>
+<strong>Meteorology:</strong> Meteorological conditions are collected from a range of sources. The main data used include that from Narrung weather station (Figure <a href="cdm-the-coorong-dynamics-model.html#fig:cdm-pic4">2.3</a>), and stations maintained on the Coorong by DEW. The spatially -resolved Bureau of Meteorology Atmospheric High-Resolution Regional Reanalysis for Australia (BARRA) climate model is also available and has been used, but we note this product is discontinued beyond 2019. A comparison of weather data sources is discussed <a href="https://github.com/AquaticEcoDynamics/CDM/discussions/4">here</a>.</li>
+</ul>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:cdm-pic4"></span>
+<img src="images/cdm/HCHB_Inflows%20with%20Met.png" alt="Summary locations where relevant boundary condition data is collected and/or applied." width="100%"><p class="caption">
+Figure 2.3: Summary locations where relevant boundary condition data is collected and/or applied.
+</p>
+</div>
+</div>
+<p>For each of the flow boundaries, the model requires specification of inflow nutrient and salt concentrations, to resolve the external loading into the domain. This is depicted in Figure <a href="cdm-the-coorong-dynamics-model.html#fig:cdm-pic6">2.4</a>. Details on the specific simulated variables that must be specified are summarised in further detail below.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:cdm-pic6"></span>
+<img src="images/cdm/HCHB_Inflows.png" alt="Summary of inflow files used for boundary specification and the required input constituents." width="100%"><p class="caption">
+Figure 2.4: Summary of inflow files used for boundary specification and the required input constituents.
+</p>
+</div>
+</div>
+</div>
+<div id="hydrodynamic-settings" class="section level3" number="2.3.3">
+<h3>
+<span class="header-section-number">2.3.3</span> Hydrodynamic settings<a class="anchor" aria-label="anchor" href="#hydrodynamic-settings"><i class="fas fa-link"></i></a>
+</h3>
+<p>The key hydrodynamic settings controlling the water transportation and mixing in the TUFLOW-FV model include:</p>
+<ul>
+<li>
+<strong>Bottom drag</strong>: For hydrodynamic simulations the bed boundary resistance is described using a <span class="math inline">\(K_S\)</span> bottom drag model, which assumes a log-law velocity profile and requires specification of a surface roughness length-scale. A background roughness length-scale of 0.018 was applied in the CDM (<em>update to reflect zones</em>);</li>
+<li>
+<strong>Horizontal momentum mixing</strong>: the Smagorinsky scheme was applied for the horizontal momentum mixing modelling, with default Smagorinsky coefficient of 0.2;</li>
+<li>
+<strong>Horizontal scalar mixing</strong>: the horizontal non-isotropic scalar diffusivity is calculated according to the Elder model, with Global Horizontal Scalar Diffusivity was set to 250 m<sup>2</sup>/s and the coefficient was set to 25;</li>
+<li>
+<strong>Tidal input</strong>: a <code>WL</code> (water level) boundary condition was applied to the Murray Mouth tidal input;</li>
+<li>
+<strong>Inflow input</strong>: a <code>Q</code> (nodestring flow) boundary condition was applied to the barrage flows, and a <code>QC</code> (cell inflow) boundary condition was applied to the Salt Ck inflow;</li>
+<li>
+<strong>Meteorology</strong>:
+<ul>
+<li>The background shortwave radiation extinction coefficients was set to 2.0, with feedback from the AED model of TSS concentration altering the extinction coefficient;</li>
+<li>Longwave radiation heat transfer model was using the net downward long wave radiation input, based on cloud cover;</li>
+<li>The wind stress was calculated using the Wu (1982) wind stress model.</li>
+</ul>
+</li>
+<li>
+<strong>Salinity correction on evaporation</strong>: The effect of high salinity on evaporation is included, as outlined <a href="https://github.com/AquaticEcoDynamics/CDM/discussions/5">here</a>.</li>
+</ul>
+</div>
+<div id="water-quality-modules" class="section level3" number="2.3.4">
+<h3>
+<span class="header-section-number">2.3.4</span> Water quality modules<a class="anchor" aria-label="anchor" href="#water-quality-modules"><i class="fas fa-link"></i></a>
+</h3>
+<p>The water quality model AED has been dynamically linked with TUFLOW-FV to simulate the mass balance and redistribution of carbon, nutrients and sediment, including partitioning between organic and inorganic forms and resolution of the relevant biotic components. This includes turbidity (including particle resuspension and sediment redistribution), chlorophyll a (chl-a), and filamentous algae (Ulva), plus habitat quality of Ruppia. Benthic and pelagic properties have been resolved.</p>
+<p>A summary of simulated model variables is shown in Table 1. For detailed scientific documentation the reader is referred to the <a href="https://aquaticecodynamics.github.io/aed-science/index.html">AED Science Manual</a>.</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:2800px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:2-varstable">Table 2.2: </span>CDM simulated variable summary
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Symbol
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Full Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="7">
+<td colspan="5" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Physical variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>temp</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[T\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Temperature
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Temperature modelled by hydrodynamic model, subject to surface heating and cooling processes
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>sal</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[S\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{psu}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Salinity
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Salinity simulated by TUFLOW-FV, impacting density. Subject to inputs and evapo-concentration
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>NA</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[EC\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{uS /cm}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Electrical conductivity
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Derived from salinity variable
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>TOT_par</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[I_{PAR}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{W /m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Shortwave light intensity
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Incident light, <span class="math inline">\(I_0\)</span>, is attenuated as a function of depth
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>TOT_uv</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[I_{UV}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{W /m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Shortwave light intensity
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Incident light, <span class="math inline">\(I_0\)</span>, is attenuated as a function of depth
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>TOT_EXTC</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[\eta_{PAR}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/m}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+PAR extinction coefficient
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Extinction coefficient is computed based on organic matter and suspended solids
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>NA</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[\eta_{UV}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/m}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+UV extinction coefficient
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Extinction coefficient is computed based on organic matter and suspended solids
+</td>
+</tr>
+<tr grouplength="20">
+<td colspan="5" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Biogeochemical variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OXY_oxy</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[DO\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol O_2/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved oxygen
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Impacted by photosynthesis, organic decomposition, nitrification, surface exchange, and sediment oxygen demand
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>SIL_rsi</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[RSi\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol Si/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Reactive Silica
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Algal uptake, sediment flux
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>PHS_frp</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[FRP\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Filterable reactive phosphorus
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Algal uptake, organic mineralization, sediment flux
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>PHS_frpads</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[PIP\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate inorganic phosphorus
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Adsorption/desorption of/to free FRP
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>NIT_amm</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[NH_4^+\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Ammonium
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Algal uptake, nitrification, organic mineralization, sediment flux
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>NIT_nit</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[NO_3^-\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Nitrate
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Algal uptake, nitrification, denitrification, sediment flux
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_cpom</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[CPOM\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Coarse particulate organic matter
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Enzymatic hydrolysis to particulate organic matter
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_docr</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[DOC-R\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Refractory DOC
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sediment release, photolysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_donr</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[DON-R\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Refractory DON
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sediment release, photolysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_dopr</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[DOP-R\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Refractory DOP
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sediment release, photolysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_doc</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[DOC\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved organic carbon
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Mineralisation, algal mortality/excretion, photolysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_don</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[DON\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved organic nitrogen
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Mineralisation, algal mortality/excretion, photolysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_dop</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[DOP\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Dissolved organic phosphorus
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Mineralisation, algal mortality/excretion, photolysis
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_poc</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[POC\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate organic carbon
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Breakdown, settling, algal mortality/excretion
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_pon</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[PON\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate organic nitrogen
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Breakdown, settling, algal mortality/excretion
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_pop</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[POP\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Particulate organic phosphorus
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Breakdown, settling, algal mortality/excretion
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>TOT_tp</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[TP\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Total Phosphorus
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sum of all phosphorus state variables
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>TOT_tn</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[TN\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Total Nitrogen
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sum of all nitrogen state variables
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>TOT_tkn</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[TKN\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Total Kjedahl Nitrogen
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sum of relevant nitrogen state variables
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>OGM_cdom</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[CDOM\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Chromophoric Dissolved Organic Matter
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Related from DOC-R and DOC concentrations
+</td>
+</tr>
+<tr grouplength="5">
+<td colspan="5" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Planktonic variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>PHY_bga</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[PHY_{i=1}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Cyanobacteria
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Photosynthesis, nutrient uptake, respiration, sedimentation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>PHY_grn</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[PHY_{i=2}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Green
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Photosynthesis, nutrient uptake, respiration, sedimentation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>PHY_diatom</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[PHY_{i=3}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C/m^4}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Diatom
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Photosynthesis, nutrient uptake, respiration, sedimentation
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>MAG_ulva</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[ULVA\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol P/m^4}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Ulva (floating)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sloughing, sedimentation and transport, photosynthesis &amp; respiration
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>PHY_tchla</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[TCHLA\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{\mu g/ L}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Total Chlorophyll-a
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sum of planktonic algal groups, converted to chlorophyll-a
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="5" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Sediment &amp; turbidity</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>NCS_ss1</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[SS\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{g SS m-3}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Suspended sediment
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Sedimentation, resuspension
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>TOT_turbidity</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[Turbidity\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{NTU}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Turbidity
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Derived from particulate components in suspension
+</td>
+</tr>
+<tr grouplength="3">
+<td colspan="5" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Benthic variables</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>PHY_mpb</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[MPB\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C /m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Benthic algae
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Benthic photosynthesis &amp; respiration.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>MAG_ulva_ben</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[ULVA_{BEN}\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol C /m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Ulva (benthic)
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Benthic photosynthesis, nutrient uptake, respiration &amp; sloughing
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>HAB_ruppia</code>
+</td>
+<td style="text-align:left;min-width: 6em; ">
+<span class="math display">\[Ruppia\:HSI\]</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Ruppia Habitat Suitability
+</td>
+<td style="text-align:left;min-width: 5em; ">
+Computed from light, depth, salinity, temperature and algae
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<p>For the sediment and benthic related variables, the model allows for spatial variability in these properties, and this is captured through the definition of several <em>material zones</em>. This is explored in some detail in Chapter 4; though an example default material zone setup (used in Generation I simulations, see below) is shown below in Figure <a href="cdm-the-coorong-dynamics-model.html#fig:cdm-pic3">2.5</a>.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:cdm-pic3"></span>
+<img src="images/cdm/HCHB%2020%20zones.png" alt="Different sediment zones used within the domain." width="100%"><p class="caption">
+Figure 2.5: Different sediment zones used within the domain.
+</p>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="model-generation-summary" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Model generation summary<a class="anchor" aria-label="anchor" href="#model-generation-summary"><i class="fas fa-link"></i></a>
+</h2>
+<p>The CDM modelling project by its very nature has evolving capability over time, and different modelling capabilities have been developed for particular use-cases. For context, the range of pre-HCHB and HCHB simulation “generations” are summarised in Table <a href="cdm-the-coorong-dynamics-model.html#tab:2-simtable">2.3</a>. As at Sept 2021, this document mainly reports on Generation 0 results and the development of Generation I and II which is underway.</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:1100px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:2-simtable">Table 2.3: </span>CDM simulation summary
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Name
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Version
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Date
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Domain
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Waves
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+WQ
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="1">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>ORH</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>ORH</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+og
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2014-2016
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_000; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED2 + HSI
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Original mesh with default settings and Ruppia HSI
+</td>
+</tr>
+<tr grouplength="1">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>MER</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>MER</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+og
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2017-2019
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_000; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED2 + HSI
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Original extended to 2019
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>CIIP</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>CIIP Hydro</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+og
+</td>
+<td style="text-align:left;max-width: 19em; ">
+?
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_000; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>CIIP Phase 1</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2017-2019
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_000; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED + HSI
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Original configuration with updated TUFLOW and AED binaries and boundary conditions
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>CIIP Phase 2</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2017-2019
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_000; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED + HSI
+</td>
+<td style="text-align:left;max-width: 19em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>coorong-rapid</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+?
+</td>
+<td style="text-align:left;max-width: 19em; ">
+A10583_Coorong_fast_010; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+BMT coarse mesh model run over extended period
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>HCHB</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>Generation 0</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2013-2019
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_000; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+N
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED + HSI
+</td>
+<td style="text-align:left;max-width: 19em; ">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>Generation I - rapid</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2011-2021
+</td>
+<td style="text-align:left;max-width: 19em; ">
+A10583_Coorong_fast_010; 2D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Y
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED
+</td>
+<td style="text-align:left;max-width: 19em; ">
+coorong-rapid used for nutrient calibration
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>Generation I</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2020-2021
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_000; 3D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Y
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED + HSI
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Updated with waves, and 20x sediment zones
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<code>Generation II</code>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2
+</td>
+<td style="text-align:left;max-width: 19em; ">
+2020-2021
+</td>
+<td style="text-align:left;max-width: 19em; ">
+CoorongBGC_mesh_002; 3D
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Y
+</td>
+<td style="text-align:left;max-width: 19em; ">
+AED + HSI + SDG + MAG
+</td>
+<td style="text-align:left;max-width: 19em; ">
+Habitat optimised mesh and new sediment and macroalgae models
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="introduction.html"><span class="header-section-number">1</span> Introduction</a></div>
+<div class="next"><a href="model-data-ecosystem.html"><span class="header-section-number">3</span> Model-Data Ecosystem</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cdm-the-coorong-dynamics-model"><span class="header-section-number">2</span> CDM: The Coorong Dynamics Model</a></li>
+<li><a class="nav-link" href="#overview"><span class="header-section-number">2.1</span> Overview</a></li>
+<li>
+<a class="nav-link" href="#model-platform"><span class="header-section-number">2.2</span> Model platform</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#hydrodynamics-tuflow-fv"><span class="header-section-number">2.2.1</span> Hydrodynamics: TUFLOW-FV</a></li>
+<li><a class="nav-link" href="#waves-swan"><span class="header-section-number">2.2.2</span> Waves: SWAN</a></li>
+<li><a class="nav-link" href="#water-quality-and-habitat-aed"><span class="header-section-number">2.2.3</span> Water quality and habitat: AED</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#cdm-setup-and-configuration"><span class="header-section-number">2.3</span> CDM setup and configuration</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#simulation-domains"><span class="header-section-number">2.3.1</span> Simulation domains</a></li>
+<li><a class="nav-link" href="#boundary-conditions"><span class="header-section-number">2.3.2</span> Boundary conditions</a></li>
+<li><a class="nav-link" href="#hydrodynamic-settings"><span class="header-section-number">2.3.3</span> Hydrodynamic settings</a></li>
+<li><a class="nav-link" href="#water-quality-modules"><span class="header-section-number">2.3.4</span> Water quality modules</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#model-generation-summary"><span class="header-section-number">2.4</span> Model generation summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 28-May-2022.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

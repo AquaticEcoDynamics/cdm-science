@@ -3,19 +3,24 @@ output_dir: docs
 delete_merged_file: true
 rmd_files: ["index.Rmd",
            #"executive_summary.Rmd",
-            "introduction.Rmd",
-            "cdm.Rmd",
+            "cdm_introduction.Rmd",
+            "cdm_overview.Rmd",
             "cdm_integration.Rmd",
-            "development_and_testing.Rmd",
-            "habitat_modelling.Rmd",
-            "integrated_assessment.Rmd",
+            "cdm_resuspension_and_turbidity.Rmd",
+            "cdm_water_biogeochemistry.Rmd",
+            "cdm_macroalgae.Rmd",
+            "cdm_sediment_biogeochemistry.Rmd",
+            "cdm_habitat_modelling.Rmd",
+            "cdm_integrated_assessment.Rmd",
+            "cdm_references.Rmd",
+            "appendix_a.Rmd",
+            "appendix_b.Rmd"]
+new_session: no
+
+           #"development_and_testing.Rmd",
            #"testing_and_management.Rmd",
            #"lagoon_hydrodynamics.Rmd",
            #"lagoon_water_quality.Rmd",
            #"lagoon_habitat.Rmd",
            #"scenarios.Rmd",
            #"conclusion.Rmd",
-            "references.Rmd",
-            "appendix_a.Rmd",
-            "appendix_b.Rmd"]
-new_session: no
