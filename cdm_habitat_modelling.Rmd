@@ -10,167 +10,335 @@ Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flow
 
 The germination and growth of *R. tuberosa* is known to be governed in large part by changes in salinity and water level regimes, which are influenced by flows through the barrages (Kim et al. 2013). Other factors that influence *R. tuberosa* growth include nutrient availability, water temperature, sediment quality and interactions with algae, including shading of light and interference with flowers and fruits on the surface. Early summer flows are thought to be particularly beneficial as they delay the drop in water level in the South Lagoon and can prevent extreme salinities emerging, thereby encouraging a more complete reproductive cycle (Collier et al. 2017).
 
-In addition, salinity has also been identified as the key driver that influences fish assemblage structure and the extent of estuarine fish habitat in the Coorong (Ye et al. 2011). This section describes how simulations of *Ruppia and* estuarine fish habitat have been configured and assessed.
+In addition, salinity has also been identified as the key driver that influences fish assemblage structure and the extent of estuarine fish habitat in the Coorong (Ye et al. 2011). This section describes how simulations of *Ruppia* and estuarine fish habitat have been configured and assessed.
 
-```{r hab-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Conceptual diagram of Ruppia presence in the Coorong, under base case conditions=  with moderate inflows from the Barrages (North) and Salt Creek (South-east)."}
+```{r hab-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Conceptual diagram of *Ruppia* presence in the Coorong, under base case conditions=  with moderate inflows from the Barrages (North) and Salt Creek (South-east)."}
 
-knitr::include_graphics("images/lagoon_habitat/picture1.png")
+knitr::include_graphics("images/lagoon_habitat/fig1.png")
 
 ```
 
 ### Model description: Ruppia HSI
 
-The approach adopted in the current study is to simulate "habitat suitability" based on an assessment of modelled environmental conditions relative to the known requirements of Ruppia tuberosa, for example, considering salinity, light and/or other environmental conditions. This approach was then used to define a relative index for each computational cell by overlaying the various environmental controls/limitations that have been informed based on prior experiments and surveys. The ***Habitat Suitability Index*** approach empirically defines conditions that lead to successful growth and reproduction, without simulation of processes such as photosynthesis and respiration.
+The approach adopted in the current study is to simulate "habitat suitability" based on an assessment of modelled environmental conditions relative to the known requirements of *Ruppia tuberosa*, for example, considering salinity, light and/or other environmental conditions. This approach was then used to define a relative index for each computational cell by overlaying the various environmental controls/limitations that have been informed based on prior experiments and surveys. The ***Habitat Suitability Index*** approach empirically defines conditions that lead to successful growth and reproduction, without simulation of processes such as photosynthesis and respiration.
 
-For the Coorong, a similar habitat model approach was undertaken previously by Ye et al. (2014), who focused exclusively on the salinity and water level requirements of Ruppia and presented the model results as an overall probability that Ruppia plants would successfully complete their lifecycle, by accounting for the different tolerances of different life stages.
+For the Coorong, a similar habitat model approach was undertaken previously by Ye et al. (2014), who focused exclusively on the salinity and water level requirements of *Ruppia* and presented the model results as an overall probability that *Ruppia* plants would successfully complete their lifecycle, by accounting for the different tolerances of different life stages.
 
-In this study, we used the hydrodynamic-biogeochemical model to predict environmental conditions at high spatial and temporal resolution for a period of multiple years, and used this to calculate the habitat suitability index (HSI) for each particular phase of the life cycle of Ruppia (Figure \@ref(fig:lagoonhabitat-pic2)). The calculation of the HSI required the integration of environmental conditions over a biologically relevant time period, based on the typical duration and seasonal timing for each life-stage. HSI results for different life stages were then combined and integrated to obtain overall HSI results for successful completion of sexual or asexual life cycles of Ruppia. For each annual cycle these model results were then summarised over the length of the Coorong, to allow estimation of the total suitable area.
+In this study, we used the hydrodynamic-biogeochemical model to predict environmental conditions at high spatial and temporal resolution for a period of multiple years, and used this to calculate the habitat suitability index (HSI) for each particular phase of the life cycle of *Ruppia* (Figure \@ref(fig:hab-pic2)). The calculation of the HSI required the integration of environmental conditions over a biologically relevant time period, based on the typical duration and seasonal timing for each life-stage. HSI results for different life stages were then combined and integrated to obtain overall HSI results for successful completion of sexual or asexual life cycles of *Ruppia*. For each annual cycle these model results were then summarised over the length of the Coorong, to allow estimation of the total suitable area.
 
-```{r lagoonhabitat-pic2, echo = FALSE, out.width='75%', class = "text-image", fig.align='center', fig.cap = "Overview of the sexual and vegetative life cycles of *Ruppia tuberosa* (from Collier et al. 2017)."}
+```{r hab-pic2, echo = FALSE, out.width='75%', class = "text-image", fig.align='center', fig.cap = "Overview of the sexual and vegetative life cycles of *Ruppia tuberosa* (from Collier et al. 2017)."}
 
-knitr::include_graphics("images/lagoon_habitat/picture2.png")
+knitr::include_graphics("images/lagoon_habitat/lifecycle.png")
 ```
 
-#### Ruppia Habitat Suitability Index calculation {-}
+#### Ruppia Habitat Suitability Index calculation {.unnumbered}
 
-In each model cell ($c$), the Habitat Suitability Index (HSI) is computed based on suitability of conditions ($i$), for each of the main life-stages ($j$), by defining a fractional index, . The fractional index for each attribute is computed at each time, step and then integrated over a 90-day window, specific to the life-cycle stage.
+In each model cell ($c$), the Habitat Suitability Index (HSI) is computed based on suitability of conditions ($i$), for each of the main life-stages ($j$), by defining a fractional index, $Φ$. The fractional index for each attribute is computed at each time, step and then integrated over a time window, specific to the life-cycle stage.
 
 $$
 \Phi^{HSI_{j}}_{i} = \frac{1}{t_{j_{\text{start}}}-t_{j_{\text{end}}}} \sum^{t_{j_{\text{end}}}}_{t=t_{j_{\text{start}}}}\Phi^{HSI_{j}}_{i}(i)_{t}
-(\#eq:lagoonhabitat7)
+(\#eq:hab1)
 \\
 \scriptsize{
 \\ \text{whereby: $i$ = {salinity, temperature, light, depth, algae}}
-\\ \text{and: $j$ = {seed, sprout, adult, flower, turion}}}
+\\ \text{and: $j$ = {seed, sprout, adult, flower, turion} (Generation 0), or}
+\\ \text{$j$ = {turion viability, seed, sprout, adult, flower, turion} (Generation II)}}
 $$
 
-The integration time for each life-stage, $j$, is set to be 90-days based on assessment of literature on the typical impact times reported following shading or disturbance. The optimum 90-day period is selected from within the available plant growth windows, as indicated in Table 2.
+The integration time for each life-stage, $j$, is selected from within the available plant growth windows, as indicated in Table \@ref(tab:timewindow-0) (Generation 0) and Table \@ref(tab:timewindow-2) (Generation II).
 
-The above function is computed in each cell and produces maps of suitability (between 0 and 1) for each environmental attribute for each life stage within any given year. The individual functions are piecewise, based on synthesis of the available literature (Table 3). These are then overlaid to produce a final map for any given year using:
+The above function is computed in each cell and produces maps of suitability (between 0 and 1) for each environmental attribute for each life stage within any given year. The individual functions are piece-wise, based on synthesis of the available literature and analyses of survey data (Table \@ref(tab:threshold)). These are then overlaid to produce a final map for any given year using:
 
 $$
-\Phi^{HSI}_{c} = \text{min}\left[\Phi^{HSI_{j}}_{c} \right]_{c}
-(\#eq:lagoonhabitat8)
+\Phi^{HSI}_{c} = \text{min}\left[\Phi^{HSI_{j}}_{i} \right]_{c}
+(\#eq:hab2)
 $$
 
 To compare the overall area of suitable habitat between years, or the relative suitability of alternate scenarios, the fractional suitability is used as a multiplier with the cell area, according to:
 
 $$
 A^{HSI} = \sum_{c} \Phi^{HSI}_{c} A_{c}
-(\#eq:lagoonhabitat9)
+(\#eq:hab3)
 $$
 
 and the spatially averaged HSI in any given region (with area A) is computed as:
 
 $$
 \overline{HSI} = \frac{1}{A}\sum_{c} \Phi^{HSI}_{c} A_{c}
-(\#eq:lagoonhabitat10)
+(\#eq:hab4)
 $$
-
-<br>
-
-+------------------------------------+------------------+------------------+--------------+-----------+-------------------+
-| Stage, $j$                         | Seed germination | Turion sprouting | Adult growth | Flowering | Turion production |
-+====================================+==================+==================+==============+===========+===================+
-| Start date, $t_{j_{\text{start}}}$ | *Apr*            | *Apr*            | *Jun*        | *Aug*     | *Aug*             |
-+------------------------------------+------------------+------------------+--------------+-----------+-------------------+
-| End date, $t_{j_{\text{end}}}$     | *Jun*            | *Jun*            | *Aug*        | *Oct*     | *Oct*             |
-+------------------------------------+------------------+------------------+--------------+-----------+-------------------+
-
-: Life cycle time windows over which environmental suitability is assessed. {\#tbl:table1}
 
 ### Data availability
 
 The model approach requires empirical data for a) assignment of appropriate environmental threshold data for each life-stage, and b) validation and assessment of the approach under various conditions. The available data for this tasks is described next.
 
-#### Environmental threshold parameter review {-}
+#### Environmental threshold review
 
-Environmental conditions and thresholds suitable for Ruppia growth have been reviewed and summarised in Table 5.2.
+##### Ruppia life-stages {.unnumbered}
 
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Environmental attribute    | Optimal                                                                                                                                                                                  | Acceptable                                                                                                                                                                        | Rationale/source                                                                                                                                                                                 |
-+============================+==========================================================================================================================================================================================+===================================================================================================================================================================================+==================================================================================================================================================================================================+
-| Water depth                | Adult: 0.2 -- 0.7 mAHD, Flowering and turion formation: 0.1-0.4 mAHD                                                                                                                     | Adult: 0.1 -- 1 mAHD                                                                                                                                                              | Prone to desiccation if \<0.3m, light limited if \>0.6m. Thresholds derived from pre -- 2019 studies and summarised in TI-2.1.1_TRS_20-13_Aquatic Plant Synthesis_2020-12-11_Final v2. Section 3 |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Water depth                | -0.2 -- 0.2 mAHD                                                                                                                                                                         | -0.5 -- 0.3m AHD                                                                                                                                                                  | TI-2.3.2_Restoration_2021-06-15_v1.0_FINAL                                                                                                                                                       |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Salinity                   | *Adult* (Jun-Sep): 25 -122g/L; *Flowering & seed set* (Sep-Dec): 40-62g/L; *Turion formation* (Sep-Dec): 128-162g/L; Seed germi (Apr-Jun): 5-60g/L; Turion sprouting (Apr-Jun): 20-75g/L | Adult (Jun-Sep): 5 -215g/L; Flowering & seed set (Sep-Dec): 12-102g/L; Turion formation (Sep-Dec): 72-228g/L; Seed germi (Apr-Jun): 0-85g/L; Turion sprouting (Apr-Jun): 0-130g/L | Thresholds derived from pre -- 2019 studies and summarised in TI-2.1.1_TRS_20-13_Aquatic Plant Synthesis_2020-12-11_Final v2. Section 3                                                          |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Light                      | ? - 100%                                                                                                                                                                                 | \>5%                                                                                                                                                                              | As above                                                                                                                                                                                         |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Substrate/slope            |                                                                                                                                                                                          | Non-rocky and non-sloping steeply                                                                                                                                                 | TI-2.2.1_Annual Report_AquaticPlantSurveys_2020-12-11_Final                                                                                                                                      |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+*Ruppia* life-stage time windows were reviewed based on both the phenology and seasonal survey datasets collected during the HCHB program. Number of *Ruppia* flowers, fruits, seeds, turions and their biomass recorded at each site during September 2020 -- December 2021 as well as algae biomass were grouped by month and plotted as timeseries to visualise the peak of life-stage events that are relevant to the *Ruppia* habitat model. It was evident that the peak of flowering/fruiting and turion formation lies between September and December (Figure \@ref(fig:phe-sex) and Figure \@ref(fig:phe-asex)). Seed count peaked around March -- May in 2021, as well as during the reproductive period (September -- December) in 2020, however in 2021 Dec much fewer seeds were recorded (Figure \@ref(fig:phe-sex)). Peak algae growth occurred around September -- December, coincident with the *Ruppia* reproductive period (Figure \@ref(fig:phe-biomass)). It was suggested that there were remnant living plants during the aestivation season (January -- March), which indicates the presence of a perennial *Ruppia* community (Lewis et al. 2022).
 
-: Summary of environmental thresholds for Ruppia growth. {\#tbl:table2}
+```{r phe-sex, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Boxplots  of monthly *Ruppia* flower count, fruit count, seed count (per m^2^) and biomass of sexual reproductive structures (inflorescence, flowers, fruits, g DW/m^2^) between December 2020 and December 2021. ‘+’ indicates data outside of plotting range."}
 
-#### Ruppia extent within the lagoon  {-}
-
-The distribution and abundance of Ruppia has been regularly monitored in the Coorong since 1998. However, the types of data collected, the sampling season, location and methods varied between programs. An overview of the available historical and HBHC datasets is shown in Figure 5.3.
-
-```{r hab-pic4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Overview of Ruppia survey datasets showing sampling periods and types of data collected (purple boxes), versus habitat model output (HSI, blue boxes) on a timeline. Datasets from the HCHB project are highlighted in yellow."}
-
-knitr::include_graphics("images/lagoon_habitat/fig4.3.ruppia data availability.png")
+knitr::include_graphics("images/lagoon_habitat/phenology_sexual.png")
 ```
 
-**Historical Monitoring** A summary of historical Ruppia monitoring datasets (pre-2020) is shown in Table 5.3. Locations of sampling sites are shown in Figure 5.4.
+```{r phe-asex, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Boxplots of monthly *Ruppia* turion count (type I and type II combined, per m^2^) and turion biomass (type I and type II combined, g DW/m^2^) between December 2020 and December 2021."}
 
-```{r hab-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Ruppia sampling sites for various monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 5.3. Turquoise outline represents the model boundary. Note that sampling sites of the last dataset listed in Table 5.3 are the same as UA MDBA_2."}
+knitr::include_graphics("images/lagoon_habitat/phenology_asexual.png")
+```
 
-knitr::include_graphics("images/lagoon_habitat/fig4.4.ruppia sites.png")
+```{r phe-biomass, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Boxplots of monthly aboveground macrophyte biomass (excluding reproductive structures, g DW/m^2^) and estimated algae biomass (g DW/m^2^) between December 2020 and December 2021."}
+
+knitr::include_graphics("images/lagoon_habitat/phenology_shoot_algae.png")
+```
+
+<br>
+
+##### Environmental threshold parameters {.unnumbered}
+
+Environmental conditions and thresholds suitable for *Ruppia* growth, including salinity, water depth, light availability and temperature have been reviewed and summarised in Table \@ref(tab:threshold) based on existing literature and analyses of survey data collected during the HCHB program.
+
+```{r threshold, echo=FALSE, message=FALSE, warning=FALSE}
+# library(kableExtra)
+# library(readxl)
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet =4)
+
+kbl(theSheet[,2:6], caption = "Summary of environmental thresholds for *Ruppia* growth based on existing literature (including reports prepared during the HCHB program) and analyses of survey data collected during the HCHB program.", align = "l",escape = F) %>%  #escape controls whether the syntax in table is interpreted
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(bootstrap_options = "basic", full_width = T,font_size = 10) %>%
+  column_spec(1, width = "12em")%>%
+  column_spec(2, width = "12em")%>%
+  column_spec(4, width = "10em")%>%
+#  scroll_box(fixed_thead = FALSE) %>%
+  pack_rows("Turion viability (Jan 1 – Mar 31)", 1, 1) %>%
+  pack_rows("Seed germination (Apr 1 – Jun 30)", 2, 2) %>%
+  pack_rows("Turion sprouting (Apr 1 – Jun 30)", 3, 4) %>%
+  pack_rows("Adult plant growth (Jun 1 – Sep 30)", 5, 9) %>%
+  pack_rows("Flowering and seed set (Sep 1 – Dec 31)", 10, 14) %>%
+  pack_rows("Turion formation (Sep 1 – Dec 31)", 15, 18)
+```
+
+<br>
+
+Statistical analyses were conducted on HCHB *Ruppia* survey data to investigate the influences of salinity and water depth on *Ruppia* abundance during 2020 -- 2021, in order to further refine environmental thresholds in the *Ruppia* model. This is because some of the optimal values presented in the literature prior to HCHB were thought to be possibly biased due to extreme environmental conditions in the Coorong during the survey (e.g. salinity thresholds for turion formation from Kim et al. 2015, pers. comm). Nonparametric multiplicative regressions (NPMR, McCune 2006) were used to derive optimal fit models describing the response of different life-stages of *Ruppia* to salinity and water depth in seasons appropriate for each life-stage. Salinity and water depth were found to be the most important abiotic factors influencing the distribution and abundance of *R.tuberosa* in previous studies (Kim et al. 2015). Although recent studies suggested that Distance from Murray Mouth (DFMM), elevation and algal biomass also influence macrophyte communities in the lagoon (Lewis et al. 2022), they are not included in this NPMR analysis as 1) the mechanisms underlying how DFMM influences macrophyte abundance is unclear; 2) elevation was recorded as a more permanent landmark which does not vary between seasons compared to water depth, however it is the actual water depth that influences the distribution of seagrass; 3) algae biomass is also influenced by salinity therefore co-correlation likely exists. The analysis was conducted in R using the 'ngnn' package and results are shown in (Figure \@ref(fig:NPMR-repro) and Figure \@ref(fig:NPMR-allperiod)) and Table \@ref(tab:NPMRresult) below. The abundance of *Ruppia* flower, seed and macrophyte shoot recorded during 2020 -- 2021 surveys in relation to salinity and water depth largely agreed with existing literature (Table \@ref(tab:threshold)). However, relatively high turion abundance was found to be in lower salinity conditions than previously recorded by Kim et al. 2015. During 2020 -- 2021, considerable number of turions occurred below salinity of 70 g/L down to approximately 45 g/L, especially when water depth \<0.4m (Figure \@ref(fig:NPMR-repro)), while Kim et al. (2015) suggested that turions were most likely to occur with salinity \>70 g/L. This finding was therefore incorporated into the turion formation thresholds in the habitat model (Table \@ref(tab:threshold)). <br>
+
+```{r NPMR-repro, echo = FALSE, fig.show="hold", out.width='50%',  fig.align = "default", class = "text-image",  fig.cap = "Relationship between abundance of *Ruppia* flowers, turions, macroalgae and salinity (g/L) and water depth (m) during the Ruppia reproductive period (Sep – Dec 2020 and Dec 2021) in the Coorong."}
+
+knitr::include_graphics("images/lagoon_habitat/NPMR_flower.png")
+knitr::include_graphics("images/lagoon_habitat/NPMR_turion.png")
+knitr::include_graphics("images/lagoon_habitat/NPMR_algaebiomass.png")
+knitr::include_graphics("images/lagoon_habitat/NPMR_algaecover.png")
+```
+
+<br>
+
+```{r NPMR-allperiod, echo = FALSE, fig.show="hold", out.width='50%',  fig.align = "default", class = "text-image",  fig.cap = "Relationship between abundance of *Ruppia* seeds, macrophyte shoots, macrophyte biomass and salinity (g/L) and water depth (m) during the Ruppia reproductive and aestivation period (Sep – Dec 2020, Mar – Apr 2021 and Dec 2021) in the Coorong."}
+
+knitr::include_graphics("images/lagoon_habitat/NPMR_seed_allperiod.png")
+knitr::include_graphics("images/lagoon_habitat/NPMR_shoot_allperiod.png")
+knitr::include_graphics("images/lagoon_habitat/NPMR_seagrassbiomass_allperiod.png")
+```
+
+<br>
+
+```{r NPMRresult, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 1)
+kbl(theSheet[,1:7], caption = "Summary of nonparametric multiplicative regression results on the influence of salinity and water depth on *Ruppia* and macroalgae abundance. Tol: tolerance; Sens: sensitivity.", align = "c",escape=F) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = F,font_size = 10) %>%
+  column_spec(1, width = "15em")%>%
+  column_spec(2, width = "11em")%>%
+  column_spec(3, width = "11em")%>%
+  scroll_box(fixed_thead = FALSE)
+```
+
+<br>
+
+##### Macroalgae influences {.unnumbered}
+
+As the presence of filamentous algae mats is thought to negatively impact *Ruppia* growth by shading submerged plants and entangle flowers/fruits potentially causing sexual reproductive failure (Paton et al. 2018; Asanopoulos & Waycott 2020), a literature review and statistical analyses on HCHB survey data were conducted on the relationship between *Ruppia* abundance and macroalgae abundance in an attempt to quantify the effect of macroalgae on *Ruppia* and improve model accuracy. Very limited literature exists on the impact of macroalgae on seagrass that may potentially be translated to the *Ruppia* model. A field experimental study by Bittick et al. 2018 on the effect of *Ulva* biomass on *Zostera marina* shoot density and growth indicated that *Zostera* shoot density was negatively affected by *Ulva* biomass predictable by an exponential decay function (Figure \@ref(fig:Bittick), while *Zostera* growth was not affected. Irlandi et al. 2004. found that 100% drift algal cover for 2-3 months produced around 25% reduction in above ground seagrass biomass (*Thalassia testudinum*). However, below-ground biomass, shoot density or growth rate were not impacted.
+
+```{r Bittick, echo = FALSE, fig.show="hold", out.width='100%', class = "text-image",  fig.cap = "Relationship between *Ulva* biomass and *Zostera marina* shoot density (Source: Bittick et al. 2018)."}
+
+knitr::include_graphics("images/lagoon_habitat/Bittick2018.png")
+```
+
+<br>
+
+During the HCHB survey filamentous algae largely co-occur with *Ruppia* communities both spatially and temporally, and dense mats were observed to be almost exclusively associated with the presence of macrophytes (Lewis et al. 2022). Lewis et al. (2022) identified that when estimated algae biomass exceeded 184 g DW/m^2^, there was a significant reduction in macrophyte biomass.\
+As it was previously speculated that filamentous algal mats may have a negative impact on the reproductive success of *Ruppia* by entangling and breaking flower stalks away from the stem (Paton et al. 2018; Asanopoulos & Waycott 2020), further analyses were conducted on the relationship between algae biomass and various *Ruppia* life-stages to provide insights on assigning appropriate threshold values to each *Ruppia* life-stage in the habitat model. HCHB seasonal survey core data including seagrass biomass, seagrass shoot count, *Ruppia* flower count and total turion count during period when algae growth was most active (i.e., September - December 2020 and December 2021, Figure \@ref(fig:phe-biomass)) were averaged by site and summarised in boxplots against six levels of algae biomass (estimated by converting algal severity index, conversion method is described in Lewis et al. 2022). Results indicated that compared to overall macrophyte biomass or density, flower density appeared to have a shaper reduction as algae biomass reached 184 g DW/m^2^ (Figure \@ref(fig:ruppia-algae)). Although this association may not indicate causation, a lower maximum tolerance on algae was assigned to the flowering stage than adult growth stage in the habitat model (Table \@ref(tab:threshold)) based on the assumption that the impact of dense algal mats is likely to be greater on the sexual reproductive success than on vegetative growth. In contrast, turion density appeared to be almost unaffected by high algae biomass (Figure \@ref(fig:ruppia-algae)). However, it is unclear whether this was a shift of reproductive strategy from aboveground (flowering) to belowground (turion) when algae mats were dense, or other co-correlating factors were at play. As a result, no threshold values were assigned for turion formation in the model.
+
+```{r ruppia-algae, echo = FALSE, fig.show="hold", out.width='100%',  class = "text-image",  fig.cap = "Boxplots for macrophyte biomass, macrophyte shoot count, *Ruppia* flower count and turion count against six levels of estimated algae biomass during September - December 2020 and December 2021.."}
+
+knitr::include_graphics("images/lagoon_habitat/AlgaeVSRuppia.png")
+```
+
+<br>
+
+#### Ruppia extent within the lagoon
+
+The distribution and abundance of *Ruppia* has been regularly monitored in the Coorong since 1998. However, the types of data collected, the sampling season, location and methods varied between programs. An overview of the available historical and HBHC datasets is shown in Figure \@ref(fig:dataavail).
+
+```{r dataavail, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Overview of *Ruppia* survey datasets showing sampling periods and types of data collected (purple boxes, with HCHB data highlighted in yellow), versus habitat model output (HSI, blue boxes) on a timeline. For model output, life-stages involved in the integration of overall sexual reproduction success are shaded in light blue (with light blue dashed outline), and life-stages involved in the integration of overall asexual reproduction success are shaded in light green (with green dashed outline). Please note that the integration method shown reflects the updated Ruppia model (Generation II), for detailed information on the differences between Generation II model and Generation 0 model (pre-HCHB) please refer to Section 5.1.4."}
+
+knitr::include_graphics("images/lagoon_habitat/data_availability.png")
+```
+
+**Historical Monitoring** A summary of historical *Ruppia* monitoring datasets (pre-2020) is shown in Table \@ref(tab:data-hist). Locations of sampling sites are shown in Figure \@ref(fig:site-hist). <br>
+
+```{r data-hist, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 2)
+kbl(theSheet[,1:4], caption = "Details of available *Ruppia* survey datasets prior to 2020 showing types of data collected, date range and number of sites surveyed. UA = University of Adelaide. MDBA = Murray-Darling Basin Authority. ORH = Optimising Ruppia Habitat project.", align = "l",escape = F) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(bootstrap_options = "basic",full_width = F,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+```{r site-hist, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "*Ruppia* sampling sites for various monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 5.3. Turquoise outline represents the model boundary. Note that sampling sites of the last dataset listed in Table 5.3 are the same as UA MDBA_2."}
+
+knitr::include_graphics("images/lagoon_habitat/surveysites_hist.png")
 
 ```
 
-**HCHB Monitoring** A summary of the HCHB monitoring datasets is shown in Table 5.4. Locations of sampling sites are shown in Figure 5.5.
+**HCHB Monitoring** A summary of the HCHB monitoring datasets is shown in Table \@ref(tab:data-hchb). Locations of sampling sites are shown in Figure \@ref(fig:site-hchb). <br>
 
-```{r hab-pic6, echo = FALSE, out.width='40%', class = "text-image", fig.cap = "Ruppia sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 5.4. Turquoise outline represents the model boundary."}
+```{r data-hchb, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 3)
+kbl(theSheet[,1:4], caption = "Details of available *Ruppia* survey datasets for the HCHB program showing types of data collected, date range and number of sites surveyed. UA = University of Adelaide. HCHB = Healthy Coorong Healthy Basin project.", align = "l",escape = F) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(bootstrap_options = "basic",full_width = F,font_size = 10) %>%
+  scroll_box(fixed_thead = FALSE)
+```
 
-knitr::include_graphics("images/lagoon_habitat/fig4.5.ruppia sites_HCHB.png")
+```{r site-hchb, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "*Ruppia* sampling sites for the HCHB program. Agency/program code under each map corresponds to those listed in Table 5.4. Turquoise outline represents the model boundary."}
+
+knitr::include_graphics("images/lagoon_habitat/surveysites_hchb.png")
 
 ```
 
 ### Model application
 
-The hydrodynamic-biogeochemical model TUFLOW-FV -- AED is used to simulate the hydrodynamic conditions (velocity, salinity, temperature and water level), water clarity (light and turbidity) and the potential for filamentous algae (nutrients and algae). Specifically, the HCHB V0.1 model was applied, configured using the specification of AED parameters (....). The Coorong has a long residence time and to account for the longer timescales of water and solute flux, multi-year simulations must be performed.
+This section describes both the Generation 0 model, which is the original model developed before HCHB, and the Generation II model, which was developed during HCHB.
 
-The habitat suitability functions for each environmental variable of each Ruppia life-stage were determined based on literature review and expert judgement (Table 5.5), and used for the calculation of overall habitat suitability indices (Section 5.1.2). In these tests, the model was run from May 2013 to March 2019 using the base case condition.
+#### Generation 0 model
 
-```{r hab-pic7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Suitability functions for Ruppia life stages (based on literature review presented in Table 5.2 and expert judgement). Note that optimal = 1, unsuitable = 0, and sub-optimal is linearly interpolated between these values. Note: for Salinity, Temperature, Light and Algal biomass, use 90-day rolling mean values for the respective periods to interrogate the model outputs against these thresholds."}
+The hydrodynamic-biogeochemical model TUFLOW-FV -- AED was used to simulate hydrodynamic conditions (velocity, salinity, temperature and water level), water clarity (light and turbidity) and the potential for filamentous algae (nutrients and algae). Specifically, the HCHB V0.1 model was applied, configured using the specification of AED parameters (...). The Coorong has a long residence time and to account for the longer timescales of water and solute flux, multi-year simulations must be performed. The habitat suitability functions for each environmental variable of each *Ruppia* life-stage were determined based on literature review and expert judgement (Table \@ref(tab:timewindow-0) and Table \@ref(tab:threshold-0)), and used for the calculation of HSI for each life-stage (Equation \@ref(eq:hab1) and Equation \@ref(eq:hab2)). The HSI for each life-stage were integrated into an overall HSI for
 
-knitr::include_graphics("images/lagoon_habitat/Table4.5.ruppia suitability functions.png")
+-   Completing the sexual reproduction annual cycle by going through seed germination in autumn, adult growth in winter and flowering and seed set in spring; or
+-   Completing the asexual reproduction annual cycle by going through turion sprouting in autumn, adult growth in winter and turion formation in spring. Specifically:
+
+$$
+\Phi^{HSI sexual}_{c} = \text{min}\left[\Phi^{HSI_{seed}}_{i},\Phi^{HSI_{adult}}_{i},\Phi^{HSI_{flower}}_{i} \right]_{c}
+(\#eq:hab5)
+$$
+
+$$
+\Phi^{HSI asexual}_{c} = \text{min}\left[\Phi^{HSI_{sprout}}_{i},\Phi^{HSI_{adult}}_{i},\Phi^{HSI_{turion}}_{i} \right]_{c}
+(\#eq:hab6)
+$$
+
+<br>
+
+```{r timewindow-0, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 5)
+kbl(theSheet[,1:4], caption = "Life-stage time windows over which environmental suitability for *Ruppia* is assessed. Refer to Section 5.1.3.1 for details on rationale.", align = "c",escape = F) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(bootstrap_options = "basic",full_width = F,font_size = 10)
+#  scroll_box(fixed_thead = FALSE)
 ```
 
-\* provided that the wet days are not followed by \>8 dry days (= unsuitable)
+<br>
 
-The outputs of the model are maps of habitat suitability of critical life stages (Figure 5.6a, showing only the flowering stage in 2018), in response to light, depth, salinity and temperature, which in the end results in a combined probability of sexual or asexual life-cycle completion (Figure 5.6b, showing only the overall HSI for a completion of the sexual life cycle in 2018). The requirements for each life stage are quite different, and when each is superimposed together, the areas where life-cycle completion are limited to the margins of the main lagoons, and the shallow areas around Parnka. From year to year, the area of good habitat changes, depending on that year's eco-hydrodynamic regime.
-
-By comparing scenarios with different flows into the Lagoon, we can see that there is an expansion of good habitat in the north of the South Lagoon, and along the South Lagoon margins, when extreme salinity values are avoided (Figure 11).
-
-<center>
-
-```{r lagoonhabitat-pic4, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Habitat suitability (HSI) for the adult plant phase of *Ruppia tuberosa* in the Coorong as a function of salinity, light, water level and presence of filamentous algae for the Base Case (2015)."}
-
-knitr::include_graphics("images/lagoon_habitat/picture4.png")
+```{r threshold-0, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 7)
+kbl(theSheet[,1:6], caption = "Suitability functions for *Ruppia* life stages based on past literature review and expert judgement. Note that HSI = 1 under optimal conditions, HSI = 0 under unsuitable conditions, and HSI for sub-optimal is linearly interpolated between these values.", align = "c",escape = F) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(bootstrap_options = "basic",full_width = T,font_size = 10)
+#  scroll_box(fixed_thead = FALSE)
 ```
 
-```{r lagoonhabitat-pic5, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Overall Habitat Suitability (HSI) for a successful completion of the asexual life cycle by *Ruppia tuberosa* in the Coorong, calculated by integrating the HSI results for adult plants, turion formation and turion sprouting for the Base Case (2015)."}
+<font size="1"> \*Provided that the wet days are not followed by \>8 dry days (= unsuitable).</font> <font size="1"> Note: for Salinity, Temperature, Light and Algal biomass, use 90-day rolling mean values for the respective periods to interrogate the model outputs against these thresholds</font> <br>
 
-knitr::include_graphics("images/lagoon_habitat/picture5.png")
+In these tests, the model was run from May 2013 to March 2019 using the base case condition. The outputs of the model are maps of habitat suitability of critical life stages (Figure \@ref(fig:ewater-HSIflower), showing only the flowering stage in 2018), in response to light, depth, salinity and filamentous algae presence, which in the end results in a combined probability of sexual or asexual life-cycle completion (Figure \@ref(fig:ewater-HSIsexual), showing only the overall HSI for the completion of the sexual life cycle in 2018). The requirements for each life stage are quite different, and when each is superimposed together, the areas where life-cycle completion are limited to the margins of the main lagoons, and the shallow areas around the central region. From year to year, the area of good habitat changes, depending on that year's eco-hydrodynamic regime.
 
+```{r ewater-HSIflower, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Habitat suitability (HSI) for the flowering plant phase of *Ruppia tuberosa* in the Coorong as a function of salinity f(S), light f(l), water level f(WL), and presence of filamentous algae f(FA) for the Base Case in 2018.An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/eWater_HSI flowering.png")
 ```
 
-```{r lagoonhabitat-pic6, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Overall Habitat Suitability (HSI) for a successful completion of the sexual life cycle by *Ruppia tuberosa* in the Coorong, calculated by integrating the HSI results for adult plants, flowering (incl. seed formation) and seed germination (incl. seedling survival) for the Base Case (2015)."}
+```{r ewater-HSIsexual, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Overall HSI for the successful completion of the sexual life cycle of *Ruppia tuberosa* calculated by integrating the HSI results for adult plants, flowering and seedset, and seed germination in the Coorong, for the Base Case in 2018. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-knitr::include_graphics("images/lagoon_habitat/picture6.png")
+knitr::include_graphics("images/lagoon_habitat/eWater_HSI sexual.png")
 
 ```
 
 </center>
 
+#### Generation II model
+
+The hydrodynamic-biogeochemical model TUFLOW-FV -- AED was used to simulate the hydrodynamic conditions (velocity, salinity, temperature and water level), water clarity (light and turbidity) and the potential for filamentous algae (nutrients and algae). Specifically, the HCHB Generation II model was applied, configured using the specification of AED parameters (...). The Coorong has a long residence time and to account for the longer timescales of water and solute flux, multi-year simulations must be performed. The habitat suitability functions for each environmental variable of each *Ruppia* life-stage were determined based on recent literature review, analyses of the HCHB survey data and expert judgement (Table \@ref(tab:timewindow-2) and Table \@ref(tab:threshold-2), Appendix X), and used for the calculation of HSI for each life-stage (Equation \@ref(eq:hab1) and Equation \@ref(eq:hab2)). The HSI for each life-stage were integrated into
+
+-   An overall HSI sexual, representing the integrated habitat suitability for *Ruppia* to complete its annual life cycle by reproducing sexually, i.e., flowering, which includes i) emerging in autumn, either from germination from seed or sprouting from viable turions that survived the summer; ii) vegetative growth to adult plants in winter; and iii) successful flowering and producing seed in spring; or
+
+-   An overall HSI asexual, representing the integrated habitat suitability for *Ruppia* to complete its annual life cycle by reproducing asexually, i.e., forming turions, which includes i) emerging in autumn, either from germination from seed or sprouting from viable turions that survived the summer; ii) vegetative growth to adult plants in winter; and iii) formation of turions in spring. Specifically:
+
+$$
+\Phi^{HSI sexual}_{c} = \text{min}\left[\text{max}\left[\Phi^{HSI_{seed}}_{i},\text{min}\left[\Phi^{HSI_{viability}}_{i},\Phi^{HSI_{sprout}}_{i}\right]\right],\Phi^{HSI_{adult}}_{i},\Phi^{HSI_{flower}}_{i}\right]_{c}
+(\#eq:hab7)
+$$
+
+$$
+\Phi^{HSI asexual}_{c} = \text{min}\left[\text{max}\left[\Phi^{HSI_{seed}}_{i},\text{min}\left[\Phi^{HSI_{viability}}_{i},\Phi^{HSI_{sprout}}_{i}\right]\right],\Phi^{HSI_{adult}}_{i},\Phi^{HSI_{turion}}_{i}\right]_{c}
+(\#eq:hab8)
+$$
+
+<br> This new HSI integration approach differs from the Generation 0 model in two ways:
+
+1.  A new function, turion viability was added to the model for the summer dormancy period and integrated in the HSI calculation before turion sprouting to exclude areas where salinity levels were sufficiently high to cause ion toxicity in turions during summer. Kim et al. (2013) showed that after exposure to high salinities for 60 days, most turions lost viability and failed to sprout after being transferred back to fresher conditions. In comparison, seed viability was not negatively affected by high salinities.
+
+2.  For the beginning of *Ruppia*'s life cycle in autumn, the probability of both seed germination and turion sprouting are included in both sexual and asexual pathways, whereas in the previous version, seed germination was exclusive to the calculation of HSI sexual and turion sprouting exclusive to HSI asexual. The rationale behind this change is because *Ruppia* individuals that ended up flowering may not necessarily have started from seed germination but could be from turion sprouting. Likewise, *Ruppia* individuals that formed turions in the end could have started from seed germination. <br>
+
+```{r timewindow-2, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 6)
+kbl(theSheet[,1:5], caption = "Life-stage time windows over which environmental suitability for *Ruppia* is assessed. Refer to Section 5.1.3.1 for details on rationale.", align = "c",escape = F) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(bootstrap_options = "basic",full_width = F,font_size = 10)
+#  scroll_box(fixed_thead = FALSE)
+```
+
+<br>
+
+```{r threshold-2, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 8)
+kbl(theSheet[,1:6], caption = "Suitability functions for *Ruppia* life stages based on recent literature review, HCHB survey data and expert judgement. Note that HSI = 1 under optimal conditions, HSI = 0 under unsuitable conditions, and HSI for sub-optimal is linearly interpolated between these values. Refer to Section 5.1.3.1 and Appendix X for more details on each function and rationale.", align = "c",escape = F) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(bootstrap_options = "basic",full_width = T,font_size = 10)
+#  scroll_box(fixed_thead = FALSE)
+```
+
+<font size="1"> \*Provided that the wet days are not followed by \>8 dry days (= unsuitable).</font>
+
+<br> Model output: pending... <br>
+
 ### Model results and assessment
 
-To assess the accuracy of model predictions, the habitat suitability maps produced above were compared with Ruppia field survey results for both distribution and abundance, including several types of plant materials (e.g., shoot, seed, turion) which were used to validate HSI of different life-stages.
+To assess the accuracy of model predictions, the habitat suitability maps produced above were compared with *Ruppia* field survey results for both distribution and abundance, including several types of plant materials (e.g., shoot, seed, turion) which were used to validate HSI of different life-stages. In addition to a visual assessment, regression analyses were conducted in R studio between HSI values and *Ruppia* abundance for each life-stage over relevant periods. In general, this was done by overlaying *Ruppia* spatial data on HSI maps, creating a buffer around each sampling site, averaging HSI values in each model cell that fall within this buffer, and comparing with *Ruppia* abundance. The specific validation approach has evolved as the project progresses with more data becoming available, model updates implemented, and more insights revealed. For example, the strategies for pairing specific plant material recorded in the field with HSI output of a particular life-stage (e.g. seed abundance in Mar vs. HSI flowering in Sep the previous year) and its appropriate timing has initially been explored extensively. Table \@ref(tab:validversion) summarises the various major validation versions, including their data source, model version and methodology. Details of methods and results of each version are described in following sections. <br>
 
-#### Historical validation  {-}
+```{r validversion, echo=FALSE, message=FALSE, warning=FALSE}
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 9)
+kbl(theSheet[,1:9], caption = "Validation versions for the *Ruppia* model showing their data source, model version and validation methodology. Gen 0: Generation 0 model; Gen II: Generation II model; ‘default’ model output timeframe: the output HSI results were integrated across the entire period of relevant life-stage (e.g. HSI flowering by default is an integration of environmental conditions over Aug – Dec); ‘tailored’ model output timeframe: the output HSI results were integrated only up to the survey period (e.g. to validate against field surveys conducted in Sep, HSI flowering Sep is an integration of environmental conditions over Aug – Sep only).", align = "c",escape = F) %>%
+  add_header_above(c(" " = 3, "Ruppia model" = 3, "Validation methodology" = 3))%>%
+#row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  column_spec(2, width = "13em")%>%
+  column_spec(6, width = "8em")%>%
+  kable_styling(bootstrap_options = "basic",full_width = T,font_size = 10)
+#  scroll_box(fixed_thead = FALSE)
+```
+
+<font size="1"> \*Excludes turion viability function </font> <br>
+
+#### Historical validation {.unnumbered}
 
 <br> **i. Field seed/flower count (obs) vs. HSI flowering and seed set (model)**
 
@@ -207,16 +375,13 @@ knitr::include_graphics("images/lagoon_habitat/fig4.10.flower2016vsHSI2016.png")
 
 ```
 
-
-The modelled Ruppia HSI prediction for flowers correlates reasonably well with the observed seed count measured at the beginning of the following season, particularly in the South Lagoon (Figure \@ref(fig:hab-pic21)). 
-
+The modelled Ruppia HSI prediction for flowers correlates reasonably well with the observed seed count measured at the beginning of the following season, particularly in the South Lagoon (Figure \@ref(fig:hab-pic21)).
 
 ```{r hab-pic21, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Filamentous algae observed density and equivalent model predicted Ruppia HSI for the entire lagoon (top) and restricted to just the South Lagoon (bottom)."}
 
 knitr::include_graphics("images/lagoon_habitat/Ruppia_flowerHSI2018_seed2019Jan.png")
 
 ```
-
 
 **ii. Field turion count (obs) vs. HSI turion formation (model)**
 
@@ -264,7 +429,7 @@ knitr::include_graphics("images/lagoon_habitat/fig4.14.shoot2018vsHSI2017.png")
 
 ```
 
-#### HCHB validation {-}
+#### HCHB validation {.unnumbered}
 
 ...To be completed...
 
@@ -272,12 +437,11 @@ knitr::include_graphics("images/lagoon_habitat/fig4.14.shoot2018vsHSI2017.png")
 
 We undertook an extensive review of the Ruppia monitoring data availability dating back to 1998 within the Coorong lagoon, including distribution and abundance of several types of plant materials (i.e. shoot, seed, turion, flowers) during different seasons. Habitat Suitability Index outputs from the existing model were compared against available field observations to assess model accuracy with a primary focus in recent years (post-2015).
 
-In general, model predictions aligned with the general distribution pattern of Ruppia seeds, but turions and shoots produced mixed results. Detailed investigation is needed to pinpoint potential ways to improve model accuracy. Ruppia environmental thresholds need further refinement as new data become available. 
+In general, model predictions aligned with the general distribution pattern of Ruppia seeds, but turions and shoots produced mixed results. Detailed investigation is needed to pinpoint potential ways to improve model accuracy. Ruppia environmental thresholds need further refinement as new data become available.
 
+<br><br>
 
-<br><br> 
-
----
+------------------------------------------------------------------------
 
 <br>
 
@@ -289,9 +453,9 @@ The high salinity values experienced in times of low freshwater flows challenges
 
 ### Model description: Fish HSI
 
-
 The model adopts a seasonal effect by account for temperature sensitivity to the salinity thresholds (higher salinity tolerance at lower temperatures), according to functions and parameters described in Table 1 and Table 2. It is computed as:
 
+```{=tex}
 \begin{equation}
   Fish\: HSI =\left\{
   \begin{array}{@{}ll@{}}
@@ -299,8 +463,8 @@ The model adopts a seasonal effect by account for temperature sensitivity to the
     \frac{S_{c50}-S}{S_{c50}-S_{c10}}, & S_{c10} \le S \lt S_{c50}\\
     0 & S\ge S_{c50}\\
   \end{array}\right.
-\end{equation} 
-
+\end{equation}
+```
 where $S$ is salinity $S_{c50}$ is the temperature-corrected concentration of salinity that kills 50% of the test animals and $S_{c10}$ is the temperature-corrected concentration of salinity that kills 10% of the test animals. These are based on lethal concentration tests at specific temperatures, and calculated according to:
 
 \begin{equation}
@@ -310,17 +474,16 @@ where $S$ is salinity $S_{c50}$ is the temperature-corrected concentration of sa
     \frac{LC_{10}^{23}-LC_{10}^{14}}{23-14}(T-14) +LC_{10}^{14} , & 14 \le \bar{T} \lt 23 \\
     LC_{10}^{23}, & \bar{T} \ge 23 \\
   \end{array}\right.
-\end{equation} 
-\begin{equation}
+\end{equation} \begin{equation}
   S_{c50} =\left\{ 
   \begin{array}{@{}ll@{}}
     LC_{50}^{14}, & 0 \le \bar{T} \lt 14 \\
     \frac{LC_{50}^{23}-LC_{50}^{14}}{23-14}(T-14) +LC_{50}^{14} , & 14 \le \bar{T} \lt 23 \\
     LC_{50}^{23}, & \bar{T} \ge 23 \\
   \end{array}\right.
-\end{equation} 
+\end{equation}
 
-where $\bar{T}$ is the monthly average water temperature and the $LC$ are the experimentally determined  salinity concentrations that removed 10 and 50% of the population for the denoted temperatured.
+where $\bar{T}$ is the monthly average water temperature and the $LC$ are the experimentally determined salinity concentrations that removed 10 and 50% of the population for the denoted temperatured.
 
 Figure 5 shows an example three-dimensional plot of the HSI functions for mulloway. In addition, habitat is deemed unsuitable if water is less than 0.1m deep. The computed habitat suitability index (HSI) ranges between 0 and 1, where 0 represents least suitable and 1 represents most suitable.
 
@@ -329,35 +492,33 @@ Figure 5 shows an example three-dimensional plot of the HSI functions for mullow
 knitr::include_graphics("images/lagoon_habitat/4_picture1.png")
 ```
 
-
 ### Data availability
 
-####	Environmental threshold parameter review {-}
+#### Environmental threshold parameter review {.unnumbered}
 
 The following parameters have been assigned as the temperature and salinity thresholds (Table X).
 
 Table X. Summary of $LC_{50}$ and $LC_{10}$ estimates of salinity (expressed as ppt) for six species at 14°C ($LC^{14}$) and 23°C ($LC^{23}$) temperatures.
 
-+--------------------------+------------------+------------------+----------------+----------------+
-| Common name              | $LC^{14}_{50}$   | $LC^{23}_{50}$   | $LC^{14}_{10}$ | $LC^{23}_{10}$ |
-+==========================+==================+==================+================+================+
-| Mulloway                 | 64               | 59               | 60             | 51             |
-+--------------------------+------------------+------------------+----------------+----------------+
-| Tamar goby               | 73               | 71               | 68             | 66             |
-+--------------------------+------------------+------------------+----------------+----------------+
-| Black bream              | 85               | 88               | 79             | 82             |
-+--------------------------+------------------+------------------+----------------+----------------+
-| Greenback flounder       | 88               | 79               | 81             | 73             |
-+--------------------------+------------------+------------------+----------------+----------------+
-| Yelloweye mullet         | 91               | 82.4\*           | 84             | 68             |
-+--------------------------+------------------+------------------+----------------+----------------+
-| Congolli                 | 100              | 94               | 90             | 87             |
-+--------------------------+------------------+------------------+----------------+----------------+
-| Smallmouth hardyhead     | 108              | 108              | 100            | 97             |
-+--------------------------+------------------+------------------+----------------+----------------+
++----------------------+----------------+----------------+----------------+----------------+
+| Common name          | $LC^{14}_{50}$ | $LC^{23}_{50}$ | $LC^{14}_{10}$ | $LC^{23}_{10}$ |
++======================+================+================+================+================+
+| Mulloway             | 64             | 59             | 60             | 51             |
++----------------------+----------------+----------------+----------------+----------------+
+| Tamar goby           | 73             | 71             | 68             | 66             |
++----------------------+----------------+----------------+----------------+----------------+
+| Black bream          | 85             | 88             | 79             | 82             |
++----------------------+----------------+----------------+----------------+----------------+
+| Greenback flounder   | 88             | 79             | 81             | 73             |
++----------------------+----------------+----------------+----------------+----------------+
+| Yelloweye mullet     | 91             | 82.4\*         | 84             | 68             |
++----------------------+----------------+----------------+----------------+----------------+
+| Congolli             | 100            | 94             | 90             | 87             |
++----------------------+----------------+----------------+----------------+----------------+
+| Smallmouth hardyhead | 108            | 108            | 100            | 97             |
++----------------------+----------------+----------------+----------------+----------------+
 
-
-####	Fish data  {-}
+#### Fish data {.unnumbered}
 
 -   Overview
 -   Historical monitoring
