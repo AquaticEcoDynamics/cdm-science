@@ -43,6 +43,16 @@ fig:dev-pics3
 fig:dev-pics4
 fig:dev-pics2
 fig:dev-pics1
+tab:3dev-sedvars
+tab:3dev-sedlinkvars
+tab:3dev-init
+tab:3dev-Timing
+tab:3dev-Mixing
+tab:3dev-Layers
+tab:3dev-OM
+tab:3dev-NRedox
+tab:3dev-SecondaryRedox
+tab:3dev-Geochem
 tab:3dev-sedpars
 fig:hab-pic1
 fig:hab-pic2
@@ -163,7 +173,9 @@ summary-sept-2021-1
 sediment-biogeochemistry
 overview-4
 model-approach-candi-aed
-model-setup-and-configuration
+coorong-model-setup-and-configuration
+site-description-and-zonation
+constant-sediment-water-interface-conditions
 validation-and-assessment-3
 lagoon-scale-predictions-1
 summary-sept-2021-2

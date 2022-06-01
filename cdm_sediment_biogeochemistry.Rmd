@@ -197,20 +197,20 @@ A range of data was collected and is documented in Appendix A (Data Catalogue). 
 
 
 
-```{r 3dev-sedvars200, echo=FALSE, message=FALSE, warning=FALSE}
+```{r 3dev-sedvars, echo=FALSE, message=FALSE, warning=FALSE}
  library(knitr)
  library(kableExtra)
  library(readxl)
 
- sediment_vars100 <- read_xlsx("tables/BookdownSDGVars.xlsx", sheet = "Vars" )
- kable(sediment_vars200,"html", escape = F, align = "c", caption = "All sediment parameters",
+ sediment_vars <- read_xlsx("tables/BookdownSDGVars.xlsx", sheet = "Vars" )
+ kable(sediment_vars,"html", escape = F, align = "c", caption = "All sediment parameters",
        bootstrap_options = "hover") %>%
    kable_styling(sediment_vars, bootstrap_options = "hover", 
                  full_width = F, position = "center", 
                  font_size = 12) %>% 
    column_spec(1, width_min = "10em") %>%
-   row_spec(1:10, background = 'white') %>% 
-   scroll_box(width = "690px", height = "800px",
+   row_spec(1:5, background = 'white') %>% 
+   scroll_box(width = "100px", height = "200px",
               fixed_thead = FALSE)
 ```
 
@@ -220,15 +220,15 @@ A range of data was collected and is documented in Appendix A (Data Catalogue). 
 
 The linked variables are listed in the table. They can be linked by concentration, dissolved flux and particle flux. Salinity has only one possible salinity link, which is hard-coded in the sediment model. The SO~4~^2-^ link is hard-coded such that SO~4~^2-^ concentration in mmol L^-1^ is 0.9 × salinity (PSU). 
 
-```{r 3dev-sedvars, echo=FALSE, message=FALSE, warning=FALSE}
+```{r 3dev-sedlinkvars, echo=FALSE, message=FALSE, warning=FALSE}
  library(knitr)
  library(kableExtra)
  library(readxl)
 
- sediment_variables <- read_xlsx("tables/BookdownSDGVars.xlsx", sheet = "Links" )
- kable(sediment_variables,"html", escape = F, align = "c", caption = "Linked sediment parameters",
+ sediment_linkvars <- read_xlsx("tables/BookdownSDGVars.xlsx", sheet = "Links" )
+ kable(sediment_linkvars,"html", escape = F, align = "c", caption = "Linked sediment parameters",
        bootstrap_options = "hover") %>%
-   kable_styling(sediment_variables, bootstrap_options = "hover", 
+   kable_styling(sediment_linkvars, bootstrap_options = "hover", 
                  full_width = F, position = "center", 
                  font_size = 12) %>% 
    column_spec(1, width_min = "10em") %>%
@@ -280,10 +280,13 @@ kable(sediment_Timing,"html", escape = F, align = "c", caption = "Sediment timin
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
- row_spec(1:10, background = 'white') %>%
- scroll_box(width = "690px", height = "800px",
+ row_spec(1:7, background = 'white') %>%
+ scroll_box(width = "600px", height = "200px",
             fixed_thead = FALSE)
 ```
+
+
+
 <!-- 2 Mixing -->
 ```{r 3dev-Mixing, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_Mixing <- read_xlsx("tables/BookdownParams.xlsx", sheet = "Mixing" )
@@ -295,8 +298,8 @@ kable(sediment_Mixing,"html", escape = F, align = "c", caption = "Sediment physi
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
- row_spec(1:10, background = 'white') %>%
- scroll_box(width = "690px", height = "800px",
+ row_spec(1:5, background = 'white') %>%
+ scroll_box(width = "600px", height = "200px",
             fixed_thead = FALSE)
 ```
 <!-- 3 SedimentLayers -->
@@ -310,8 +313,8 @@ kable(sediment_Layers,"html", escape = F, align = "c", caption = "Sediment layer
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
- row_spec(1:10, background = 'white') %>%
- scroll_box(width = "690px", height = "800px",
+ row_spec(1:5, background = 'white') %>%
+ scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
 <!-- 4 OM -->
@@ -325,10 +328,12 @@ kable(sediment_OM ,"html", escape = F, align = "c", caption = "Organic matter ox
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
- row_spec(1:10, background = 'white') %>%
- scroll_box(width = "690px", height = "800px",
+ row_spec(1:5, background = 'white') %>%
+ scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
+
+
 <!-- 5 NRedox -->
 ```{r 3dev-NRedox, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_Nredox <- read_xlsx("tables/BookdownParams.xlsx", sheet = "NRedox" )
@@ -336,28 +341,32 @@ kable(sediment_Nredox ,"html", escape = F, align = "c", caption = "Nitrogen redo
      bootstrap_options = "hover") %>%
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
+               font_size = 12) %>%
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
-               font_size = 12) %>%
- row_spec(1:10, background = 'white') %>%
- scroll_box(width = "690px", height = "800px",
+ row_spec(1:5, background = 'white') %>%
+ scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
+
+
 <!-- 6 SecondaryRedox -->
 ```{r 3dev-SecondaryRedox, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_SecondaryRedox <- read_xlsx("tables/BookdownParams.xlsx", sheet = "SecondaryRedox" )
-kable(sediment_SecondaryRedox ,"html", escape = F, align = "c", caption = "Secondary redox parameters",      bootstrap_options = "hover") %>%
+kable(sediment_SecondaryRedox ,"html", escape = F, align = "c", caption = "Secondary redox arameters",      bootstrap_options = "hover") %>%
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
- row_spec(1:10, background = 'white') %>%
- scroll_box(width = "690px", height = "800px",
+ row_spec(1:5, background = 'white') %>%
+ scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
+
+
 <!-- 7 Geochem -->
 ```{r 3dev-Geochem, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_Geochem <- read_xlsx("tables/BookdownParams.xlsx", sheet = "Geochem" )
@@ -369,8 +378,8 @@ kable(sediment_Geochem ,"html", escape = F, align = "c", caption = "Geochemistry
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
- row_spec(1:10, background = 'white') %>%
- scroll_box(width = "690px", height = "800px",
+ row_spec(1:5, background = 'white') %>%
+ scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
 
