@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>5 Oxygen, Nutrients and Chlorohyll-a | The Coorong Dynamics Model</title>
 <meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
-<meta name="description" content="5.1 Overview Oxygen metabolism and nutrient cycling  5.2 Model approach   5.3 Data availability   5.4 Model setup   5.5 Validation and assessment   5.6 Summary">
+<meta name="description" content="5.1 Overview Oxygen metabolism and nutrient cycling  5.2 Model approach   5.3 Data availability   5.4 Model setup   5.5 Validation and assessment   5.6 Phytoplankton Four pools were confgured to...">
 <meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="5 Oxygen, Nutrients and Chlorohyll-a | The Coorong Dynamics Model">
 <meta property="og:type" content="book">
-<meta property="og:description" content="5.1 Overview Oxygen metabolism and nutrient cycling  5.2 Model approach   5.3 Data availability   5.4 Model setup   5.5 Validation and assessment   5.6 Summary">
+<meta property="og:description" content="5.1 Overview Oxygen metabolism and nutrient cycling  5.2 Model approach   5.3 Data availability   5.4 Model setup   5.5 Validation and assessment   5.6 Phytoplankton Four pools were confgured to...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="5 Oxygen, Nutrients and Chlorohyll-a | The Coorong Dynamics Model">
-<meta name="twitter:description" content="5.1 Overview Oxygen metabolism and nutrient cycling  5.2 Model approach   5.3 Data availability   5.4 Model setup   5.5 Validation and assessment   5.6 Summary">
+<meta name="twitter:description" content="5.1 Overview Oxygen metabolism and nutrient cycling  5.2 Model approach   5.3 Data availability   5.4 Model setup   5.5 Validation and assessment   5.6 Phytoplankton Four pools were confgured to...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -95,10 +95,1274 @@
 <span class="header-section-number">5.5</span> Validation and assessment<a class="anchor" aria-label="anchor" href="#validation-and-assessment-1"><i class="fas fa-link"></i></a>
 </h2>
 </div>
-<div id="summary" class="section level2" number="5.6">
+<div id="phytoplankton" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">5.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Phytoplankton<a class="anchor" aria-label="anchor" href="#phytoplankton"><i class="fas fa-link"></i></a>
 </h2>
+<p>Four pools were confgured to simulate the biomass of phytoplankton, <span class="math inline">\(grn\)</span>, <span class="math inline">\(crypt\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>. The parameters used in the setup are outlined in Table (Table <a href="oxygen-nutrients-and-chlorohyll-a.html#tab:5-phytopars">5.1</a>).</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4600px; overflow-x: scroll; width:700px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:5-phytopars">Table 5.1: </span>Phytoplankton parameter summary
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter1
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter2
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter3
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter4
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>General</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[a\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+name of phytoplankton group
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘grn’
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘crypt’
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘diatom’
+</td>
+<td style="text-align:left;min-width: 5em; ">
+‘dino’
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[PHY |_{t=0}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+initial concentration of phytoplankton
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[PHY_0\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum concentration of phytoplankton
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: C/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{C:chla}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+carbon to chlorophyll ratio
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mg\: C/mg\: chla}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+<td style="text-align:left;min-width: 5em; ">
+50
+</td>
+</tr>
+<tr grouplength="6">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Growth</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{growth}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+phytoplankton group maximum growth rate at <span class="math inline">\(20^{\circ}C\)</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{tem}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+specifies temperature limitation function of growth
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\theta_{growth}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Arrenhius temperature scaling for growth function
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[T_{std}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+standard temperature
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+20
+</td>
+<td style="text-align:left;min-width: 5em; ">
+18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[T_{opt}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+optimum temperature
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+23
+</td>
+<td style="text-align:left;min-width: 5em; ">
+26
+</td>
+<td style="text-align:left;min-width: 5em; ">
+28
+</td>
+<td style="text-align:left;min-width: 5em; ">
+25
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[T_{max}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum temperature
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{^{\circ}C}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+35
+</td>
+<td style="text-align:left;min-width: 5em; ">
+38
+</td>
+<td style="text-align:left;min-width: 5em; ">
+39
+</td>
+<td style="text-align:left;min-width: 5em; ">
+32
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Light</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{lgt}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch to assign the type of light response function
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[I_K\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half saturation constant for light limitation of growth
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{W/m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+<td style="text-align:left;min-width: 5em; ">
+100
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[K_e\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+specific attenuation coefficient
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/m/(mmol\:C/m^3)}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+4.0800000000000003E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+5.1000000000000004E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+4.0800000000000003E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+4.7999999999999996E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[f_{pr}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of primary production lost to exudation
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.5000000000000001E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.5000000000000001E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.5000000000000001E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.5000000000000001E-2
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Respiration</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{resp}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+phytoplankton respiration/metabolic loss rate at <span class="math inline">\(20^{\circ}C\)</span>
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.04
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.02
+</td>
+<td style="text-align:left;min-width: 5em; ">
+9.5000000000000001E-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\theta_{resp}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+Arrhenius temperature scaling factor for respiration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[k_{fres}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of metabolic loss that is true respiration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[k_{fdom}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of metabolic loss that is released as DOM
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3
+</td>
+</tr>
+<tr grouplength="4">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Salinity</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{sal}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+type of salinity limitation function
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[S_{bep}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+salinity limitation value at maximum salinity (<span class="math inline">\(S_{maxsp}\)</span>)
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[S_{maxsp}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum salinity where growth is possible
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{g/kg}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+28
+</td>
+<td style="text-align:left;min-width: 5em; ">
+60
+</td>
+<td style="text-align:left;min-width: 5em; ">
+200
+</td>
+<td style="text-align:left;min-width: 5em; ">
+90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[S_{opt}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+optimal salinity for growth
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{g/kg}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+10
+</td>
+<td style="text-align:left;min-width: 5em; ">
+20
+</td>
+<td style="text-align:left;min-width: 5em; ">
+60
+</td>
+<td style="text-align:left;min-width: 5em; ">
+40
+</td>
+</tr>
+<tr grouplength="12">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Nitrogen</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{din}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(DIN\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{don}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(DON\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{n2}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(N_2\)</span> fixation
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{in}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate dynamic intracellular <span class="math inline">\(N\)</span> store
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[N_o\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+external <span class="math inline">\(DIN\)</span> concentration below which uptake is 0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.02
+</td>
+<td style="text-align:left;min-width: 5em; ">
+7.0999999999999994E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.02
+</td>
+<td style="text-align:left;min-width: 5em; ">
+7.0999999999999994E-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[K_N\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half-saturation concentration of nitrogen
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.786
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.1429999999999998
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.786
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{ncon}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+constant internal nitrogen concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.16
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.151
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.16700000000000001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{nmin}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum internal nitrogen concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.9000000000000006E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+5.3999999999999999E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.9000000000000006E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.9000000000000006E-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{nmax}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum internal nitrogen concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+5.3999999999999999E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.18
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.20599999999999999
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{nuptake}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum nitrogen uptake rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: N/m^3/d\: /(mmol\: C/m^3)}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.9000000000000006E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.2000000000000001E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.9000000000000006E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.20599999999999999
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[k_{nfix}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+growth rate reduction under maximum nitrogen fixation
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{nfix}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+nitrogen fixation rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+5.9999999999999995E-4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+7.5000000000000002E-4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+5.9999999999999995E-4
+</td>
+<td style="text-align:left;min-width: 5em; ">
+5.9999999999999995E-4
+</td>
+</tr>
+<tr grouplength="8">
+<td colspan="7" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Phosphorus</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{dip}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(DIP\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{ip}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate dynamic intracellular <span class="math inline">\(P\)</span> store
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[P_o\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+external <span class="math inline">\(DIP\)</span> concentration below which uptake is 0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.4000000000000003E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.4000000000000003E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.4000000000000003E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+6.4000000000000003E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[K_P\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half-saturation concentration of phosphorus
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.25259999999999999
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.3226
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.24260000000000001
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0.36
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{pcon}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+constant internal phosphorus concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.9759999999999999E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+2.8086000000000001E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.8600000000000001E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.1061999999999999E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{pmin}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum internal phosphorus concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.5E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.5E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.5E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.5E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\chi_{pmax}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum internal phosphorus concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+9.5999999999999992E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+9.5999999999999992E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+9.5999999999999992E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+9.5999999999999992E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{puptake}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+maximum phosphorus uptake rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: P/m^3/d\: /(mmol\: C/m^3)}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.0999999999999999E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.0999999999999999E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.0999999999999999E-3
+</td>
+<td style="text-align:left;min-width: 5em; ">
+3.0999999999999999E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[\Theta_{si}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+switch for the selected group to simulate <span class="math inline">\(Si\)</span> uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[Si_o\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+external <span class="math inline">\(SiO2\)</span> concentration below which uptake is 0
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: Si/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[K_{Si}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+half-saturation concentration of silica uptake
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: Si/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+<td style="text-align:left;min-width: 5em; ">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[\chi_{sicon}^{PHY}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+constant internal silica concentration
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{mmol\: Si/m^3}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.7100000000000001E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.7100000000000001E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.7100000000000001E-2
+</td>
+<td style="text-align:left;min-width: 5em; ">
+1.7100000000000001E-2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[\omega_{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+sedimentation rate
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{m/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-0.05
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+-0.1
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[d_{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+phytoplankton group mean cell diameter
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{m}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[c_1\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+rate coefficient for density increase
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{kg/m^3/s}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[c_3\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+minimum rate of density decrease with time
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{kg/m^3/s}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[f_1\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of maximum intracellular nitrogen where motility tends down towards nutrients
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<span class="math display">\[f_2\]</span>
+</td>
+<td style="text-align:left;min-width: 10em; ">
+fraction of maximum intracellular nitrogen where motility tends up towards light
+</td>
+<td style="text-align:left;max-width: 19em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+<td style="text-align:left;min-width: 5em; ">
+0
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
 <p><br></p>
 <hr>
 <p><br></p>
@@ -117,7 +1381,7 @@
 <li><a class="nav-link" href="#data-availability"><span class="header-section-number">5.3</span> Data availability</a></li>
 <li><a class="nav-link" href="#model-setup"><span class="header-section-number">5.4</span> Model setup</a></li>
 <li><a class="nav-link" href="#validation-and-assessment-1"><span class="header-section-number">5.5</span> Validation and assessment</a></li>
-<li><a class="nav-link" href="#summary"><span class="header-section-number">5.6</span> Summary</a></li>
+<li><a class="nav-link" href="#phytoplankton"><span class="header-section-number">5.6</span> Phytoplankton</a></li>
 </ul>
 
       <div class="book-extra">
@@ -134,7 +1398,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 30-May-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 01-June-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

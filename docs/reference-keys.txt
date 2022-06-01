@@ -28,12 +28,14 @@ fig:dev-pic101
 fig:dev-pic2
 fig:dev-pic3
 fig:dev-pic4
+tab:5-phytopars
 eq:lagoonhabitat5
 eq:lagoonhabitat6
 fig:dev-pic5
 tab:3-malgtable
 fig:dev-pic10
 fig:dev-pic11
+tab:6-malgpars
 fig:dev-pic12
 fig:dev-pic13
 fig:dev-pic00
@@ -157,7 +159,7 @@ model-approach-1
 data-availability
 model-setup
 validation-and-assessment-1
-summary
+phytoplankton
 macroalgae
 overview-3
 model-approach-2

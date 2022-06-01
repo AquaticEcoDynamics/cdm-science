@@ -94,19 +94,18 @@ Figure 7.1: CANDI-AED includes chemical processes of organic matter transformati
 <div id="sediment-reactive-transport-model" class="section level4 unnumbered">
 <h4>Sediment reactive transport model<a class="anchor" aria-label="anchor" href="#sediment-reactive-transport-model"><i class="fas fa-link"></i></a>
 </h4>
-<p>The model is based on a 1D approximation of the sediment and pore-water profiles. Each active sediment zone (or column) is discretized into a user defineable number of layers that start at thicknesses of around 1mm at the sediment-water interface and increase exponentially down to a pre-defined sediment depth. The model resolves in each layer both physical (e.g. pore-water diffusion or bioturbation) and chemical (e.g., redox transformations) processes; these are summarised next.</p>
+<p>The model is based on a 1D approximation of the sediment and pore-water profiles. Each active sediment zone (or column) is discretized into a user-defineable number of layers that start at thicknesses of around 1 mm at the sediment-water interface and increase exponentially down to a pre-defined sediment depth. The model resolves in each layer both physical (e.g. pore-water diffusion or bioturbation) and chemical (e.g., redox transformations) processes; these are summarised next.</p>
 <p><strong>Chemical reactions</strong></p>
 <p>The dynamic model considers two types of reactions - the slow, kinetically controlled reactions, and the fast thermodynamically based equilibrium reactions. The latter are simulated in the sediment through appropriate configuration of the geochemistry reactions; the configuration of the equilibrium model will apply to both the water and each of the sediment layers. The kinetically controlled reactions are mostly microbially-mediated and include the reactions for organic matter breakdown and eventual oxidation, the re-oxidation of various by-products and the dynamics of the metal sulfides.</p>
-<p>The organic matter (<span class="math inline">\(OM\)</span>) degradation pathway considers labile and refractory <span class="math inline">\(DOM\)</span> components (<span class="math inline">\(DOM\)</span> and <span class="math inline">\(DOM_R\)</span> respectively) and the breakdown pathway simulated is conceptually summarized in Figure <span class="math inline">\(\ref{fig:sed_dynamic}\)</span>. Reactions included in the kinetic component include the hydrolysis of the complex (e.g., high molecular weight) <span class="math inline">\(OM\)</span> pools (<span class="math inline">\(POM_{VR}\)</span>, <span class="math inline">\(POM_R\)</span>, <span class="math inline">\(DOM_R\)</span>, <span class="math inline">\(POM_L\)</span>) and transformation of Low Molecular Weight (LMW) <span class="math inline">\(DOM_L\)</span> by oxidants (<span class="math inline">\(O_2\)</span>, <span class="math inline">\(MnO_2\)</span>, <span class="math inline">\(Fe(III)\)</span> and <span class="math inline">\(SO_4^{2-}\)</span> - the so-called ‘terminal metabolism’), and the release of resulting nutrients (<span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>) and reduced by-products (<span class="math inline">\(Mn^{2+}\)</span>, <span class="math inline">\(Fe^{2+}\)</span>, <span class="math inline">\(N_2\)</span>, <span class="math inline">\(H_2S\)</span>, <span class="math inline">\(CH_4\)</span>) and <span class="math inline">\(CO_2\)</span>. Oxidants, nutrients and by-products are all capable of interacting, say through complexation or re-oxidation of reduced species for example.</p>
-<p>The decay of the complex <span class="math inline">\(OM\)</span> types to the LMW <span class="math inline">\(DOM\)</span> required for the hetertrophic bacteria to utilise are all modelled with a simple first-order decay rate. The subsequent reactions that describe the breakdown of <span class="math inline">\(DOM_L\)</span> may be written as:
-<span class="math display">\[\begin{eqnarray}
+<p>The organic matter (<span class="math inline">\(OM\)</span>) degradation pathway considers labile and refractory <span class="math inline">\(DOM\)</span> components (<span class="math inline">\(DOM_L\)</span> and <span class="math inline">\(DOM_R\)</span> respectively) and the breakdown pathway simulated is conceptually summarized in Figure <span class="math inline">\(\ref{fig:sed_dynamic}\)</span>. Reactions included in the kinetic component include the hydrolysis of the complex (e.g., high molecular weight) <span class="math inline">\(OM\)</span> pools (<span class="math inline">\(POM_{VR}\)</span>, <span class="math inline">\(POM_R\)</span>, <span class="math inline">\(DOM_R\)</span>, <span class="math inline">\(POM_L\)</span>) and transformation of low molecular weight (LMW) <span class="math inline">\(DOM_L\)</span> by oxidants (<span class="math inline">\(O_2\)</span>, <span class="math inline">\(MnO_2\)</span>, <span class="math inline">\(Fe(III)\)</span> and <span class="math inline">\(SO_4^{2-}\)</span> - the so-called ‘terminal metabolism’), and the release of resulting nutrients (<span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>) and reduced by-products (<span class="math inline">\(Mn^{2+}\)</span>, <span class="math inline">\(Fe^{2+}\)</span>, <span class="math inline">\(N_2\)</span>, <span class="math inline">\(H_2S\)</span>, <span class="math inline">\(CH_4\)</span>) and <span class="math inline">\(CO_2\)</span>. Oxidants, nutrients and by-products are all capable of interacting, say through complexation or re-oxidation of reduced species for example.</p>
+<p>The decay of the complex <span class="math inline">\(OM\)</span> types to the LMW <span class="math inline">\(DOM\)</span> required for the heterotrophic bacteria to utilise are all modelled with a simple first-order decay rate. The subsequent reactions that describe the breakdown of <span class="math inline">\(DOM_L\)</span> may be written as: <span class="math display">\[\begin{eqnarray}
 \overbrace{(CH_2O)_{106}(NH_3)_{16}(H_3PO_4)}^{\textrm{organic matter}} &amp;+&amp; 138O_2 \rightarrow \nonumber
 \\
 &amp;&amp; 106CO_2 + 16HNO_3 + H_3PO_4 + 122H_2O
 \\
 \textrm{Free energy, } \Delta G_0 &amp;=&amp; -3190\:kJmol^{-1} \nonumber
 \end{eqnarray}\]</span></p>
-<p><span class="math display">\[\begin{eqnarray}
+<span class="math display">\[\begin{eqnarray}
 (CH_2O)_{106}(NH_3)_{16}(H_3PO_4) &amp;+&amp; 236MnO_2 +472H^+ \rightarrow  \nonumber
 \\
 &amp;&amp; 106CO_2 + 236Mn^{2+} + 8N_2 + H_3PO_4 + 366H_2O
@@ -140,7 +139,7 @@ Figure 7.1: CANDI-AED includes chemical processes of organic matter transformati
 &amp;&amp; 53CO_2 + 53CH_4 + 16NH_3 + H_3PO_4
 \\
 \textrm{Free energy, } \Delta G_0 &amp;=&amp; -350\:kJmol^{-1} \nonumber
-\end{eqnarray}\]</span></p>
+\end{eqnarray}\]</span>
 <p>and the reaction rates for each of these are calculated dynamically based on Monod expressions which mediate the reaction rate according to the concentration of potential oxidants higher in the redox sequence, and the concentration of the available oxidant.</p>
 <p>In addition to the primary redox reactions associated with <span class="math inline">\(OM\)</span> breakdown, the model also includes numerous secondary reactions, such as oxidation of reduced by-products (e.g., Fe or S oxidation).</p>
 <p><strong>Physical processes</strong></p>
@@ -181,7 +180,7 @@ F = D_{0}\frac{\Delta C}{\Delta x} = \frac{D_{0}}{\delta} (C_{bw} - C_{1})
 <div id="resolving-sediment-zonation" class="section level4 unnumbered">
 <h4>Resolving sediment zonation<a class="anchor" aria-label="anchor" href="#resolving-sediment-zonation"><i class="fas fa-link"></i></a>
 </h4>
-<p>Facility also exists within the model to use sediment zones’ which are identical to the above description but are not necessarily coincident with the grid-structure of the water. This way sed-zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment will be averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure <span class="math inline">\(\ref{fig:sed_integration}\)</span>). Using zones is a practical compromise between computational efficiency and capturing spatial heterogeneity in sediment properties and their fluxes.</p>
+<p>Facility also exists within the model to use sediment zones, which are identical to the above description but are not necessarily coincident with the grid-structure of the water. This way sediment zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment will be averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure <span class="math inline">\(\ref{fig:sed_integration}\)</span>). Using zones is a practical compromise between computational efficiency and capturing spatial heterogeneity in sediment properties and their fluxes.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:dev-pics3"></span>
@@ -191,7 +190,7 @@ Figure 7.3: Schematic depicting sediment zone numerical approach.
 </div>
 </div>
 <p><strong>3-zone experiment</strong></p>
-<p>To demonstrate the zones can function independently, a model test was performed with three zones. In this simulation each model zone received a sustained 1-year surface loading of organic material, which either was maintained for throughout the simulation duration (Zone 1), or was reduced to a new lower value (Zone 2 and 3); this can conceptually be considered as a test of the sediment model to respond to ‘remediation’ scenarios. The results highlight the individual zones responding accordingly, as shown for NO<sub>3</sub> (Figure X).</p>
+<p>To demonstrate the zones can function independently, a model test was performed with three zones. In this simulation each model zone received a sustained 1-year surface loading of organic material, which either was maintained for throughout the simulation duration (Zone 1), or was reduced to a new lower value (Zone 2 and 3); this can conceptually be considered as a test of the sediment model to respond to ‘remediation’ scenarios. The results highlight the individual zones responding accordingly, as shown for NO<sub>3</sub><sup>-</sup> (Figure X).</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:dev-pics4"></span>
@@ -218,15 +217,21 @@ Figure 7.5: Schematic of sediment water coupling approach.
 </p>
 </div>
 </div>
-<p><strong>Zone tracer experiment</strong></p>
-<p><em>To Be Completed</em></p>
+<p><strong>Zone tracer experiment</strong> To test the new sediment-water coupling functions, a simple simulation was set up using a lake with five zones. A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones 3 and 5 were set as active sediment model zones, with especially high concentrations of tracer. Zone 2 was not set as an active sediment zone, but it was given a high constant flux rate. Zones 1 and 4 had neither high initial sediment concentrations nor high flux rates. The purpose of the simulation was to see whether 1) the flux link was working between the sediment and the water, 2) whether the links were functioning in the correct zones, and 2) whether the model could be set up to have a combination of active sediment zones and constant fluxes.</p>
+<p>The result was that the tracer spread from the high initial concetnration in sediment zones 3 and 5 into the surrounding zone 1. The constant flux also from zone 2 also created a high concentration in zone 2. In the early time steps, the banks fo the lake increased their concetration soonest, since the water depth was lower and so the sediment flux had a greater effect. As the simulation progressed, the zone filled with high concentration tracer and then finally it spread from zone 2 into the other zones.</p>
 </div>
 </div>
-<div id="model-setup-and-configuration" class="section level2" number="7.3">
+<div id="coorong-model-setup-and-configuration" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">7.3</span> Model setup and configuration<a class="anchor" aria-label="anchor" href="#model-setup-and-configuration"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Coorong model setup and configuration<a class="anchor" aria-label="anchor" href="#coorong-model-setup-and-configuration"><i class="fas fa-link"></i></a>
 </h2>
-<p>The Coorong lagoon is divided into 10(20) sediment zones along its length. One sediment model is run for each of the ten(twenty) zones. The zone boundaries are largely based on locations of sandbars and where the lagoon channel narrows and broadens. There are measured data points in all zones except for zone 1, south of the Salt Creek inflow. Zones 1 to 4 correspond to the South Lagoon, as mentioned in the Goyder Institute nutrient budget. Zone 5 is the intermediate area and zones 6 to 10 are the North Lagoon.</p>
+<div id="site-description-and-zonation" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> Site description and zonation<a class="anchor" aria-label="anchor" href="#site-description-and-zonation"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Flow paths of the northern and southern lagoons</strong> The major inflow into the lagoon is in the north, through a set of barrages from the Murray Lower Lakes into the northern lagoon and out to the sea (Figure 1). The southern lagoon had a minor inflow from Salt Creek and otherwise receives less freshwater than the northern lagoon. In the hot summer months, as the water in the southern lagoon evaporates, remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment.</p>
+<p><strong>Spatial aggregation - ten zones</strong> In order to simplify the Coorong study site measurement points and simulation areas, the lagoon was divided into ten separate Coorong zones (Figure 2). These were primarily based on the natural boundaries, channels and sandbars of the estuary. Zones 1 to 4 were the southern lagoon, zone 5 was the intermediate area and zones 6 to 10 were the northern lagoon.</p>
+<p><strong>Deep and shallow sites</strong> The ten Coorong zones were further subdivided into three sections – the western bank on the ocean side, the central channel, and the eastern bank on the inland side. The cut-off between the channel and the bank subdivision was defined by any area that reached more than 1 m deep. Therefore, each of the ten zones along the length of the lagoon had three zones across the breadth of the lagoon, and zone ten had one additional zone for the ocean boundary, giving 31 zones in total.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-pics1"></span>
@@ -235,16 +240,4563 @@ Figure 7.6: Example sediment zonation.
 </p>
 </div>
 </div>
-<p>The sediment model is calibrated initially without any coupling. The sediment-water interface boundaries are based on measured bottom water data, where available, or literature values. Some parameters are tuned so that measured data matches simulated variables, for concentration depth profiles and fluxes.</p>
-<p>The sediment model is then coupled to the water column model. Many variables are set up to be linked between the two models; however, not all variables need to be linked. The fluxes and concentrations of linked variables in the bottom water are averaged across all cells in a zone, and this average value is passed to the sediment. Similarly, the value of a dissolved flux from the sediment is given to all bottom water cells within a sediment zone.</p>
-<div id="parameters-and-settings" class="section level4 unnumbered">
-<h4>Parameters and settings<a class="anchor" aria-label="anchor" href="#parameters-and-settings"><i class="fas fa-link"></i></a>
+<div id="validation-sites-and-data" class="section level4 unnumbered">
+<h4>Validation sites and data<a class="anchor" aria-label="anchor" href="#validation-sites-and-data"><i class="fas fa-link"></i></a>
 </h4>
+<p>A range of data was collected and is documented in Appendix A (Data Catalogue). In summary, there were five broad categories of field data available from the University of Adelaide surveys for model setup and parameterisation:</p>
+<p><em>Grab samples – C, N, P, Mn, Fe, S</em> : These were available for many sites but only one or two depths. They were useful for averaging a concentration at depth within a zone. These were key variables for sediment biogeochemistry.</p>
+<p><em>Cores – Fe, S, NH<sub>4</sub><sup>+</sup>, PO<sub>4</sub><sup>3-</sup> GHGs</em> : The cores were available for only around four sites, but they were used for calibrating depth profiles and sediment-water fluxes. These often had data measured in the day and the night, as well as in November and March, which all had different concentrations and fluxes. The challenge was to capture both day and night conditions, while also capturing seasonal changes.</p>
+<p><em>Sediment quality</em> : These measurements were used for setting the initial porosity parameters. Once these were set they were not tuned further.</p>
+<p><em>Macroinvertebrates – bioturbation parameters</em> : These measurements were used for setting bioturbation and bioirrigation parameters. Broadly, the North Lagoon had high bioturbation and the South Lagoon had very little bioturbation. The depth to bioturbation was important, as it was expected that there was uninhabited black ooze below a few centimetres.</p>
+<p><em>Water column water quality measurements</em> : These were used for estimating water column concentrations and influxes for variables that were not linked to the water column model.</p>
+</div>
+<div id="model-variables" class="section level4 unnumbered">
+<h4>Model variables<a class="anchor" aria-label="anchor" href="#model-variables"><i class="fas fa-link"></i></a>
+</h4>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:100px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-sedvars">Table 7.1: </span>All sediment parameters
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+variables
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘salt’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘mpb’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘docl’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘docr’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘donl’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘donr’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘dopl’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘dopr’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pocs’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pons’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pops’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pocl’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pocr’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘ponl’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘ponr’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘popl’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘popr’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘oxy’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘nit’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘amm’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘n2o’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘no2’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘n2’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘so4’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘h2s’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘frp’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pip’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘ch4’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘dic’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘mnii’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘mno2a’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘mno2b’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘feii’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘feoh3a’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘feoh3b’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘fes’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘fes2’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘ca’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘caco3’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pipvr’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pin’
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="linked-variables" class="section level5 unnumbered">
+<h5>Linked variables<a class="anchor" aria-label="anchor" href="#linked-variables"><i class="fas fa-link"></i></a>
+</h5>
+<p>The linked variables are listed in the table. They can be linked by concentration, dissolved flux and particle flux. Salinity has only one possible salinity link, which is hard-coded in the sediment model. The SO<sub>4</sub><sup>2-</sup> link is hard-coded such that SO<sub>4</sub><sup>2-</sup> concentration in mmol L<sup>-1</sup> is 0.9 × salinity (PSU).</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:800px; overflow-x: scroll; width:690px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-sedlinkvars">Table 7.2: </span>Linked sediment parameters
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Model variable name
+</th>
+<th style="text-align:center;">
+…2
+</th>
+<th style="text-align:center;">
+Linked dissolved concentration
+</th>
+<th style="text-align:center;">
+Linked dissolved flux
+</th>
+<th style="text-align:center;">
+Linked particle flux
+</th>
+<th style="text-align:center;">
+Scaling for linked particles
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+variables
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Variable description
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+water_link
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+diss_flux_link
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+part_sed_link
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+part_sed_scale
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘salt’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Salinity (PSU)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘oxy’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+O<sub>2</sub> (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘pocl’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Labile POC (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘OGM_poc_swi’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘pocr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory POC (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘OGM_poc_swi’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘ponl’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Labile PON (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘OGM_pon_swi’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘ponr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory PON (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘OGM_pon_swi’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘popl’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Labile POP (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘OGM_pop_swi’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘popr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory POP (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘OGM_pop_swi’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘docr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory DOC (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘OGM_doc’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘SDF_Fsed_doc’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘donr’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Refractory DON (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+‘OGM_don’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+‘SDF_Fsed_don’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘dopr’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Refractory DOP (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+‘OGM_dop’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+‘SDF_Fsed_dop’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘frp’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Reactive dissolved PO<sub>4</sub><sup>3-</sup> (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+‘PHS_frp’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+‘SDF_Fsed_frp’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘so4’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+SO<sub>4</sub><sup>2-</sup> (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘h2s’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+H<sub>2</sub>S (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘mno2a’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Amorphous MnO<sub>2</sub> (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘fes’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+FeS (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘fes2’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+FeS<sub>2</sub> (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pipvr’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Unreactive solid P (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘caco3’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+CaCO<sub>3</sub> (mmol m<sup>-2</sup> y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+’’
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="initial-conditions" class="section level5 unnumbered">
+<h5>Initial conditions<a class="anchor" aria-label="anchor" href="#initial-conditions"><i class="fas fa-link"></i></a>
+</h5>
+<p>Most chemical species are initialized at zero concentration. Some species are initialised to meet field data (table below).</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:800px; overflow-x: scroll; width:690px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-init">Table 7.3: </span>Sediment initial conditions
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Model variable name
+</th>
+<th style="text-align:center;">
+Zone
+</th>
+<th style="text-align:center;">
+11
+</th>
+<th style="text-align:center;">
+12
+</th>
+<th style="text-align:center;">
+13
+</th>
+<th style="text-align:center;">
+21
+</th>
+<th style="text-align:center;">
+22
+</th>
+<th style="text-align:center;">
+23
+</th>
+<th style="text-align:center;">
+31
+</th>
+<th style="text-align:center;">
+32
+</th>
+<th style="text-align:center;">
+33
+</th>
+<th style="text-align:center;">
+41
+</th>
+<th style="text-align:center;">
+42
+</th>
+<th style="text-align:center;">
+43
+</th>
+<th style="text-align:center;">
+51
+</th>
+<th style="text-align:center;">
+52
+</th>
+<th style="text-align:center;">
+53
+</th>
+<th style="text-align:center;">
+61
+</th>
+<th style="text-align:center;">
+62
+</th>
+<th style="text-align:center;">
+63
+</th>
+<th style="text-align:center;">
+71
+</th>
+<th style="text-align:center;">
+72
+</th>
+<th style="text-align:center;">
+73
+</th>
+<th style="text-align:center;">
+81
+</th>
+<th style="text-align:center;">
+82
+</th>
+<th style="text-align:center;">
+83
+</th>
+<th style="text-align:center;">
+91
+</th>
+<th style="text-align:center;">
+92
+</th>
+<th style="text-align:center;">
+93
+</th>
+<th style="text-align:center;">
+101
+</th>
+<th style="text-align:center;">
+102
+</th>
+<th style="text-align:center;">
+103
+</th>
+<th style="text-align:center;">
+104
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘salt’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Salinity (PSU)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+85000
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+85000
+</td>
+<td style="text-align:center;background-color: white !important;">
+85000
+</td>
+<td style="text-align:center;background-color: white !important;">
+85000
+</td>
+<td style="text-align:center;background-color: white !important;">
+85000
+</td>
+<td style="text-align:center;background-color: white !important;">
+85000
+</td>
+<td style="text-align:center;background-color: white !important;">
+75000
+</td>
+<td style="text-align:center;background-color: white !important;">
+75000
+</td>
+<td style="text-align:center;background-color: white !important;">
+75000
+</td>
+<td style="text-align:center;background-color: white !important;">
+75000
+</td>
+<td style="text-align:center;background-color: white !important;">
+65000
+</td>
+<td style="text-align:center;background-color: white !important;">
+75000
+</td>
+<td style="text-align:center;background-color: white !important;">
+60000
+</td>
+<td style="text-align:center;background-color: white !important;">
+55000
+</td>
+<td style="text-align:center;background-color: white !important;">
+60000
+</td>
+<td style="text-align:center;background-color: white !important;">
+60000
+</td>
+<td style="text-align:center;background-color: white !important;">
+50000
+</td>
+<td style="text-align:center;background-color: white !important;">
+45000
+</td>
+<td style="text-align:center;background-color: white !important;">
+45000
+</td>
+<td style="text-align:center;background-color: white !important;">
+45000
+</td>
+<td style="text-align:center;background-color: white !important;">
+45000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+40000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+<td style="text-align:center;background-color: white !important;">
+35000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘pocl’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Labile POC (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘pocr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory POC (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+610000
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+10000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+2520000
+</td>
+<td style="text-align:center;background-color: white !important;">
+610000
+</td>
+<td style="text-align:center;background-color: white !important;">
+10000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+2520000
+</td>
+<td style="text-align:center;background-color: white !important;">
+24000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+5175000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+2700000
+</td>
+<td style="text-align:center;background-color: white !important;">
+710000
+</td>
+<td style="text-align:center;background-color: white !important;">
+2700000
+</td>
+<td style="text-align:center;background-color: white !important;">
+2700000
+</td>
+<td style="text-align:center;background-color: white !important;">
+5325000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1900000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1900000
+</td>
+<td style="text-align:center;background-color: white !important;">
+3525000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1900000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+9000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+<td style="text-align:center;background-color: white !important;">
+4050000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘ponl’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Labile PON (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘ponr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory PON (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+5000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+5000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+50000
+</td>
+<td style="text-align:center;background-color: white !important;">
+50000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+50000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+1000000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+<td style="text-align:center;background-color: white !important;">
+500000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘popl’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Labile POP (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘popr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory POP (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+10000
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+525
+</td>
+<td style="text-align:center;background-color: white !important;">
+10000
+</td>
+<td style="text-align:center;background-color: white !important;">
+10000
+</td>
+<td style="text-align:center;background-color: white !important;">
+525
+</td>
+<td style="text-align:center;background-color: white !important;">
+10000
+</td>
+<td style="text-align:center;background-color: white !important;">
+78000
+</td>
+<td style="text-align:center;background-color: white !important;">
+390
+</td>
+<td style="text-align:center;background-color: white !important;">
+10000
+</td>
+<td style="text-align:center;background-color: white !important;">
+10000
+</td>
+<td style="text-align:center;background-color: white !important;">
+420
+</td>
+<td style="text-align:center;background-color: white !important;">
+10000
+</td>
+<td style="text-align:center;background-color: white !important;">
+5940
+</td>
+<td style="text-align:center;background-color: white !important;">
+19200
+</td>
+<td style="text-align:center;background-color: white !important;">
+5940
+</td>
+<td style="text-align:center;background-color: white !important;">
+5940
+</td>
+<td style="text-align:center;background-color: white !important;">
+390
+</td>
+<td style="text-align:center;background-color: white !important;">
+6600
+</td>
+<td style="text-align:center;background-color: white !important;">
+6600
+</td>
+<td style="text-align:center;background-color: white !important;">
+36
+</td>
+<td style="text-align:center;background-color: white !important;">
+6600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+12150
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+<td style="text-align:center;background-color: white !important;">
+18600
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘docr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory DOC (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘donr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory DON (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘dopr’
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Refractory DOP (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+<td style="text-align:center;background-color: white !important;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘frp’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Reactive dissolved PO<sub>4</sub><sup>3-</sup> (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘so4’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+SO<sub>4</sub><sup>2-</sup> (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+75650
+</td>
+<td style="text-align:center;min-width: 10em; ">
+75650
+</td>
+<td style="text-align:center;">
+90000
+</td>
+<td style="text-align:center;">
+75650
+</td>
+<td style="text-align:center;">
+75650
+</td>
+<td style="text-align:center;">
+90000
+</td>
+<td style="text-align:center;">
+66750
+</td>
+<td style="text-align:center;">
+66750
+</td>
+<td style="text-align:center;">
+86000
+</td>
+<td style="text-align:center;">
+86000
+</td>
+<td style="text-align:center;">
+84000
+</td>
+<td style="text-align:center;">
+86000
+</td>
+<td style="text-align:center;">
+53400
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+53400
+</td>
+<td style="text-align:center;">
+53400
+</td>
+<td style="text-align:center;">
+44500
+</td>
+<td style="text-align:center;">
+48000
+</td>
+<td style="text-align:center;">
+48000
+</td>
+<td style="text-align:center;">
+40050
+</td>
+<td style="text-align:center;">
+48000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+35600
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+<td style="text-align:center;">
+31000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘h2s’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+H<sub>2</sub>S (mmol m<sup>-3</sup> porewater)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+72
+</td>
+<td style="text-align:center;min-width: 10em; ">
+72
+</td>
+<td style="text-align:center;">
+72
+</td>
+<td style="text-align:center;">
+72
+</td>
+<td style="text-align:center;">
+72
+</td>
+<td style="text-align:center;">
+72
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+56
+</td>
+<td style="text-align:center;">
+57
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+36
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+30
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘mno2a’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Amorphous MnO<sub>2</sub> (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+10
+</td>
+<td style="text-align:center;min-width: 10em; ">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘fes’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+FeS (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1300
+</td>
+<td style="text-align:center;min-width: 10em; ">
+43000
+</td>
+<td style="text-align:center;">
+1300
+</td>
+<td style="text-align:center;">
+1300
+</td>
+<td style="text-align:center;">
+43000
+</td>
+<td style="text-align:center;">
+1300
+</td>
+<td style="text-align:center;">
+21000
+</td>
+<td style="text-align:center;">
+6000
+</td>
+<td style="text-align:center;">
+11000
+</td>
+<td style="text-align:center;">
+11000
+</td>
+<td style="text-align:center;">
+10000
+</td>
+<td style="text-align:center;">
+11000
+</td>
+<td style="text-align:center;">
+8000
+</td>
+<td style="text-align:center;">
+15400
+</td>
+<td style="text-align:center;">
+8000
+</td>
+<td style="text-align:center;">
+8000
+</td>
+<td style="text-align:center;">
+8000
+</td>
+<td style="text-align:center;">
+5600
+</td>
+<td style="text-align:center;">
+5600
+</td>
+<td style="text-align:center;">
+14000
+</td>
+<td style="text-align:center;">
+5600
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+25000
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+8200
+</td>
+<td style="text-align:center;">
+8200
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘fes2’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+FeS<sub>2</sub> (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+92000
+</td>
+<td style="text-align:center;min-width: 10em; ">
+692000
+</td>
+<td style="text-align:center;">
+92000
+</td>
+<td style="text-align:center;">
+92000
+</td>
+<td style="text-align:center;">
+692000
+</td>
+<td style="text-align:center;">
+92000
+</td>
+<td style="text-align:center;">
+268000
+</td>
+<td style="text-align:center;">
+75000
+</td>
+<td style="text-align:center;">
+42000
+</td>
+<td style="text-align:center;">
+42000
+</td>
+<td style="text-align:center;">
+123000
+</td>
+<td style="text-align:center;">
+42000
+</td>
+<td style="text-align:center;">
+18000
+</td>
+<td style="text-align:center;">
+126000
+</td>
+<td style="text-align:center;">
+18000
+</td>
+<td style="text-align:center;">
+18000
+</td>
+<td style="text-align:center;">
+749
+</td>
+<td style="text-align:center;">
+39000
+</td>
+<td style="text-align:center;">
+39000
+</td>
+<td style="text-align:center;">
+107000
+</td>
+<td style="text-align:center;">
+39000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+925000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+<td style="text-align:center;">
+71000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘pipvr’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Unreactive solid P (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+445000
+</td>
+<td style="text-align:center;min-width: 10em; ">
+84750
+</td>
+<td style="text-align:center;">
+40000
+</td>
+<td style="text-align:center;">
+445000
+</td>
+<td style="text-align:center;">
+84750
+</td>
+<td style="text-align:center;">
+40000
+</td>
+<td style="text-align:center;">
+97500
+</td>
+<td style="text-align:center;">
+86100
+</td>
+<td style="text-align:center;">
+-5000
+</td>
+<td style="text-align:center;">
+-5000
+</td>
+<td style="text-align:center;">
+85800
+</td>
+<td style="text-align:center;">
+-5000
+</td>
+<td style="text-align:center;">
+7425
+</td>
+<td style="text-align:center;">
+40200
+</td>
+<td style="text-align:center;">
+7425
+</td>
+<td style="text-align:center;">
+7425
+</td>
+<td style="text-align:center;">
+14100
+</td>
+<td style="text-align:center;">
+8900
+</td>
+<td style="text-align:center;">
+8900
+</td>
+<td style="text-align:center;">
+8640
+</td>
+<td style="text-align:center;">
+8900
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+5850
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+23250
+</td>
+<td style="text-align:center;">
+23250
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+‘caco3’
+</td>
+<td style="text-align:center;min-width: 20em; ">
+CaCO<sub>3</sub> (mmol m<sup>-3</sup> solids)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+15000000
+</td>
+<td style="text-align:center;min-width: 10em; ">
+47000000
+</td>
+<td style="text-align:center;">
+19000000
+</td>
+<td style="text-align:center;">
+15000000
+</td>
+<td style="text-align:center;">
+47000000
+</td>
+<td style="text-align:center;">
+19000000
+</td>
+<td style="text-align:center;">
+42000000
+</td>
+<td style="text-align:center;">
+19000000
+</td>
+<td style="text-align:center;">
+3600000
+</td>
+<td style="text-align:center;">
+3600000
+</td>
+<td style="text-align:center;">
+36000000
+</td>
+<td style="text-align:center;">
+3600000
+</td>
+<td style="text-align:center;">
+4500000
+</td>
+<td style="text-align:center;">
+7400000
+</td>
+<td style="text-align:center;">
+4500000
+</td>
+<td style="text-align:center;">
+4500000
+</td>
+<td style="text-align:center;">
+5200000
+</td>
+<td style="text-align:center;">
+390000
+</td>
+<td style="text-align:center;">
+390000
+</td>
+<td style="text-align:center;">
+770000
+</td>
+<td style="text-align:center;">
+390000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+8600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+<td style="text-align:center;">
+1600000
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id="constant-sediment-water-interface-conditions" class="section level4" number="7.3.1.1">
+<h4>
+<span class="header-section-number">7.3.1.1</span> Constant sediment-water interface conditions<a class="anchor" aria-label="anchor" href="#constant-sediment-water-interface-conditions"><i class="fas fa-link"></i></a>
+</h4>
+<p>The flux of Fe(OH)<sub>3A</sub> from the water column to the sediment is set from the parameter ‘default_vals’. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the Fe<sup>2+</sup> concentration value.</p>
+</div>
+<div id="model-parameters" class="section level4 unnumbered">
+<h4>Model parameters<a class="anchor" aria-label="anchor" href="#model-parameters"><i class="fas fa-link"></i></a>
+</h4>
+<div id="zone-specific-parameters" class="section level5 unnumbered">
+<h5>Zone-specific parameters<a class="anchor" aria-label="anchor" href="#zone-specific-parameters"><i class="fas fa-link"></i></a>
+</h5>
+<!-- 1 Timing -->
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:600px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-Timing">Table 7.4: </span>Sediment timing parameters
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Value
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+start time
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Simulation start date
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘1/11/2019’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+end time
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Simulation end date
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+‘1/01/2022’
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+substep
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Sediment model substep (h)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+24
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+spinup_days
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Duration of spinup before flux (d)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+spinup_dt
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Timestep during spinup period
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.25
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+driver_dt
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Hydrodynamic model time step (s)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+900
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+substep
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Sediment model substep (h)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+8
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<!-- 2 Mixing -->
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:600px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-Mixing">Table 7.5: </span>Sediment physical properties
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Value
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+p0
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Upper porosity (-)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.90
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+p00
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Lower porosity (-)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.39
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+taubsensitivity
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Diffusion sensitivity to external transport (-)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+100.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+w00
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Sediment accumulation rate (cm y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+db0
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Bioturbation rate (cm y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+40.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+poreflux
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Porewater advection rate (cm y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+Sal1
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Lower salinity concenration for F<sub>Sal</sub> (PSU)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+35.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+Sal2
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Upper salinity concenration for F<sub>Sal</sub> (PSU)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+70.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kH2S
+</td>
+<td style="text-align:center;min-width: 20em; ">
+H<sub>2</sub>S concentration for K<sub>Sul</sub> (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+swibc_mode
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Sediment-water interface boundary switch
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+deepbc_mode
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Bottom boundary switch
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.00
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<!-- 3 SedimentLayers -->
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-Layers">Table 7.6: </span>Sediment layer setup parameters and mixing parameters that vary by zone.
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Zone:
+</th>
+<th style="text-align:center;">
+11
+</th>
+<th style="text-align:center;">
+12
+</th>
+<th style="text-align:center;">
+13
+</th>
+<th style="text-align:center;">
+21
+</th>
+<th style="text-align:center;">
+22
+</th>
+<th style="text-align:center;">
+23
+</th>
+<th style="text-align:center;">
+31
+</th>
+<th style="text-align:center;">
+32
+</th>
+<th style="text-align:center;">
+33
+</th>
+<th style="text-align:center;">
+41
+</th>
+<th style="text-align:center;">
+42
+</th>
+<th style="text-align:center;">
+43
+</th>
+<th style="text-align:center;">
+51
+</th>
+<th style="text-align:center;">
+52
+</th>
+<th style="text-align:center;">
+53
+</th>
+<th style="text-align:center;">
+61
+</th>
+<th style="text-align:center;">
+62
+</th>
+<th style="text-align:center;">
+63
+</th>
+<th style="text-align:center;">
+71
+</th>
+<th style="text-align:center;">
+72
+</th>
+<th style="text-align:center;">
+73
+</th>
+<th style="text-align:center;">
+81
+</th>
+<th style="text-align:center;">
+82
+</th>
+<th style="text-align:center;">
+83
+</th>
+<th style="text-align:center;">
+91
+</th>
+<th style="text-align:center;">
+92
+</th>
+<th style="text-align:center;">
+93
+</th>
+<th style="text-align:center;">
+101
+</th>
+<th style="text-align:center;">
+102
+</th>
+<th style="text-align:center;">
+103
+</th>
+<th style="text-align:center;">
+104
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+p0
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Upper porosity (-)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.9
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.90
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+p00
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Lower porosity (-)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.39
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.39
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.39
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.39
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.39
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.39
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.7
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.7
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.5
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.5
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.7
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.5
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.4
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.79
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.4
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.4
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.79
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.4
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.4
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.79
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.4
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+<td style="text-align:center;background-color: white !important;">
+0.75
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+xl
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Simulation depth
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+80.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+maxnpts
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Number of sediment layers
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+50.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+job
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Switch for linear or exponential layer spacing
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.0
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+<td style="text-align:center;background-color: white !important;">
+2.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+x1
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Depth of full bioturbation (cm)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+NA
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+<td style="text-align:center;">
+0.50
+</td>
+<td style="text-align:center;">
+1.0
+</td>
+<td style="text-align:center;">
+1.0
+</td>
+<td style="text-align:center;">
+1.0
+</td>
+<td style="text-align:center;">
+1.0
+</td>
+<td style="text-align:center;">
+1.0
+</td>
+<td style="text-align:center;">
+1.0
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+2.00
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+2.00
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+2.00
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+x2
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Depth of bioturbation decline (cm)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+NA
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+10.0
+</td>
+<td style="text-align:center;">
+4.00
+</td>
+<td style="text-align:center;">
+10.0
+</td>
+<td style="text-align:center;">
+10.0
+</td>
+<td style="text-align:center;">
+4.00
+</td>
+<td style="text-align:center;">
+10.0
+</td>
+<td style="text-align:center;">
+10.0
+</td>
+<td style="text-align:center;">
+4.00
+</td>
+<td style="text-align:center;">
+10.0
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+alpha0
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Irrigation rate (cm y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+NA
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.0
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+<td style="text-align:center;">
+200.00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+xirrig
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Depth of irrigation (cm)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+NA
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+1.00
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+5.00
+</td>
+<td style="text-align:center;">
+5.0
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+<td style="text-align:center;">
+10.00
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<!-- 4 OM -->
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-OM">Table 7.7: </span>Organic matter oxidation parameters
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Value
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+OMModel
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Complexity of OM model
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+2.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+OMapproach
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Limitation function switch
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+docl2dic
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.0e+02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+donl2din
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Labile DON terminal metabolism rate (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.0e+02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+dopl2dip
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.0e+02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+pocl2docl
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Labile POC hydrolysis rate (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5.0e+01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+ponl2donl
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5.0e+01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+popl2dopl
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Labile POP hydrolysis rate (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5.0e+01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+docr2docl
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+2.5e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+donr2donl
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Refractory DON terminal metabolism rate (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+2.5e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+dopr2dopl
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+2.5e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+pocr2docr
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Refractory POC hydrolysis rate (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+ponr2donr
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+popr2dopr
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Refractory POP hydrolysis rate (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+pocvr2docr
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+ponvr2donr
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Very refractory PON hydrolysis rate (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+popvr2dopr
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+domr2dic
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Refractory DOM terminal metabolism (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.0e-02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+domr2pomr
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.0e-03
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+poml2doml
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Labile POM hydrolysis (y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+pocu
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.0e+06
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+ponu
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Minimum concentration of refractory PON at which reactions stop (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+5.0e+03
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+popu
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Description
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.0e+04
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<!-- 5 NRedox -->
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-NRedox">Table 7.8: </span>Nitrogen redox cycle parameters
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Parameter name
+</th>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Value
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kin_denitrit
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Inhibition concentration of denitritation (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.000297
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kpart_ammox
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Inhibition concentration of ammonium oxidation (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.001000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kin_denitrous
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Inhibition concentration of denitrousation (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.000205
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kin_deamm
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Inhibition concentration of deammonification (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0.000886
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+klim_denitrat
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Limitation concentration of denitratation (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.001000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kpart_denitrit
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Partitioning concentration of denitritation (mmol L<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.006000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+knh4no2
+</td>
+<td style="text-align:center;min-width: 20em; ">
+NH<sub>$</sub><sup>+</sup> oxidation by NO<sub>2</sub><sup>-</sup> kinetic rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.365000
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kno2o2
+</td>
+<td style="text-align:center;min-width: 20em; ">
+NO<sub>2</sub> oxidation kinetic rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+0.001000
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<!-- 6 SecondaryRedox -->
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-SecondaryRedox">Table 7.9: </span>Secondary redox arameters
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Value
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kMnFe
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Fe<sup>2+</sup> oxidation by MnO<sub>2</sub> rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+3.0e+03
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kTSMn
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+H<sub>2</sub>S oxidation by MnO<sub>2</sub> rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+2.0e+01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kTSOX
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+H<sub>2</sub>S oxidation rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.6e+02
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kTSFe
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+H<sub>2</sub>S oxidation by Fe(OH)<sub>3</sub> rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+8.0e+00
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+kPyrite
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+FeS<sub>2</sub> precipitation rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+2.3e-04
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kMnFe
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Fe<sup>2+</sup> oxidation by MnO<sub>2</sub> rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+3.0e+03
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kTSMn
+</td>
+<td style="text-align:center;min-width: 20em; ">
+H<sub>2</sub>S oxidation by MnO<sub>2</sub> rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+2.0e+01
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kCH4OX
+</td>
+<td style="text-align:center;min-width: 20em; ">
+CH<sub>4</sub> oxidation rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.0e+07
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kCH4SO4
+</td>
+<td style="text-align:center;min-width: 20em; ">
+CH<sub>4</sub> oxidation by SO<sub>4</sub><sup>2-</sup> rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1.0e+00
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<!-- 7 Geochem -->
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
+<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:3dev-Geochem">Table 7.10: </span>Geochemistry and precipitation/dissolution parameters
+</caption>
+<thead><tr>
+<th style="text-align:center;">
+Parameter
+</th>
+<th style="text-align:center;">
+Description
+</th>
+<th style="text-align:center;">
+Value
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+rxn_mode
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Geochemical reaction complexity
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+ads_use_pH
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+Use of pH in adsorption reactions
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+.true.
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+PO4AdsorptionModel
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+KPO4p
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.05
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+Kadsratio
+</td>
+<td style="text-align:center;min-width: 20em; background-color: white !important;">
+NA
+</td>
+<td style="text-align:center;min-width: 10em; background-color: white !important;">
+1.05
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+NH4AdsorptionModel
+</td>
+<td style="text-align:center;min-width: 20em; ">
+NH<sub>4</sub><sup>+</sup> adsorption model switch
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kPyrite
+</td>
+<td style="text-align:center;min-width: 20em; ">
+FeS<sub>2</sub> precipitation rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+2.3000000000000001E-4
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kFeSppt
+</td>
+<td style="text-align:center;min-width: 20em; ">
+FeS precipitation kinetic rate
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+kFeSdis
+</td>
+<td style="text-align:center;min-width: 20em; ">
+FeS dissolution kinetic rate
+</td>
+<td style="text-align:center;min-width: 10em; ">
+1E-3
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; ">
+KPFeS
+</td>
+<td style="text-align:center;min-width: 20em; ">
+Equilibrium constant for FeS precipitation (-)
+</td>
+<td style="text-align:center;min-width: 10em; ">
+-2.2000000000000002
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="general-parameters" class="section level5 unnumbered">
+<h5>General parameters<a class="anchor" aria-label="anchor" href="#general-parameters"><i class="fas fa-link"></i></a>
+</h5>
+<p>Organic matter initialisation spinup days; spinup_dt; driver_dt; substep swibc_mode = 0 deepbc_mode = 1</p>
 <p>The assigned parameters for the model are described below in Table X.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:800px; overflow-x: scroll; width:690px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:3dev-sedpars">Table 7.1: </span>Sediment physical and transport parameters
+<span id="tab:3dev-sedpars">Table 7.11: </span>Sediment physical and transport parameters
 </caption>
 <thead><tr>
 <th style="text-align:center;">
@@ -525,15 +5077,7 @@ Number of vertical layers
 </div>
 <p><br></p>
 </div>
-<div id="validation-sites-and-data" class="section level4 unnumbered">
-<h4>Validation sites and data<a class="anchor" aria-label="anchor" href="#validation-sites-and-data"><i class="fas fa-link"></i></a>
-</h4>
-<p>A wide diversity of data has been collected and is documentaed in Appendix A (Data Catalogue). In summary, there are four broad categories of field data available from the University of Adelaide surveys for model setup and parameterisation.</p>
-<p><em>Grab samples – C, N, P, Mn, Fe, S</em> : These are available for many sites but only one or two depths. They are useful for averaging a concentration at depth within a zone. These are key variables for sediment biogeochemistry.</p>
-<p><em>Cores – Fe, S, NH4+, PO43- GHGs</em> : The cores are available for only around four sites, but they are used for calibrating depth profiles and sediment-water fluxes. These often have data measured in the day and the night, as well as in November and March, which all have different concentrations and fluxes. The challenge will be to capture both day and night conditions, while also capturing seasonal changes.
-The GHG models are new and require testing and development. It may be a challenge to tune these models to fit GHG flux measurements.</p>
-<p><em>Sediment quality</em> : These measurements are used for setting the initial porosity parameters. Once these are set they are not tuned further.</p>
-<p><em>Macroinvertebrates – bioturbation parameters</em> : These measurements are used for setting bioturbation and bioirrigation parameters. Broadly, the North Lagoon has high bioturbation and the South Lagoon has very little bioturbation. The depth to bioturbation is important, as it is expected that there is uninhabited black ooze below a certain depth.</p>
+</div>
 </div>
 </div>
 <div id="validation-and-assessment-3" class="section level2" number="7.4">
@@ -566,7 +5110,9 @@ The GHG models are new and require testing and development. It may be a challeng
 <li><a class="nav-link" href="#sediment-biogeochemistry"><span class="header-section-number">7</span> Sediment Biogeochemistry</a></li>
 <li><a class="nav-link" href="#overview-4"><span class="header-section-number">7.1</span> Overview</a></li>
 <li><a class="nav-link" href="#model-approach-candi-aed"><span class="header-section-number">7.2</span> Model approach: CANDI-AED</a></li>
-<li><a class="nav-link" href="#model-setup-and-configuration"><span class="header-section-number">7.3</span> Model setup and configuration</a></li>
+<li>
+<a class="nav-link" href="#coorong-model-setup-and-configuration"><span class="header-section-number">7.3</span> Coorong model setup and configuration</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#site-description-and-zonation"><span class="header-section-number">7.3.1</span> Site description and zonation</a></li></ul>
+</li>
 <li><a class="nav-link" href="#validation-and-assessment-3"><span class="header-section-number">7.4</span> Validation and assessment</a></li>
 <li><a class="nav-link" href="#lagoon-scale-predictions-1"><span class="header-section-number">7.5</span> Lagoon scale predictions</a></li>
 <li><a class="nav-link" href="#summary-sept-2021-2"><span class="header-section-number">7.6</span> Summary (Sept 2021)</a></li>
@@ -586,7 +5132,7 @@ The GHG models are new and require testing and development. It may be a challeng
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 30-May-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 01-June-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
