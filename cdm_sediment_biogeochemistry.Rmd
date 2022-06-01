@@ -137,7 +137,7 @@ knitr::include_graphics("images/dev/sed_picture5.png")
 
 **3-zone experiment**
 
-To demonstrate the zones can function independently, a model test was performed with three zones. In this simulation each model zone received a sustained 1-year surface loading of organic material, which either was maintained for throughout the simulation duration (Zone 1), or was reduced to a new lower value (Zone 2 and 3); this can conceptually be considered as a test of the sediment model to respond to 'remediation' scenarios. The results highlight the individual zones responding accordingly, as shown for NO~3~ (Figure X).
+To demonstrate the zones can function independently, a model test was performed with three zones. In this simulation each model zone received a sustained 1-year surface loading of organic material, which either was maintained for throughout the simulation duration (Zone 1), or was reduced to a new lower value (Zone 2 and 3); this can conceptually be considered as a test of the sediment model to respond to 'remediation' scenarios. The results highlight the individual zones responding accordingly, as shown for NO~3~^-^ (Figure X).
 
 ```{r dev-pics4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Example of sediment concentration-depth-time plot for ammonia, given different organic matter influx rates in three different zones. To demonstrate capability for spatial differences, the organic matter input stayed the same in Zone 1 but decreased after 1 year in Zones 2 and 3 to different levels."}
 
@@ -185,7 +185,7 @@ A range of data was collected and is documented in Appendix A (Data Catalogue). 
 
 *Grab samples -- C, N, P, Mn, Fe, S* : These were available for many sites but only one or two depths. They were useful for averaging a concentration at depth within a zone. These were key variables for sediment biogeochemistry.
 
-*Cores -- Fe, S, NH_4\^+, PO_4\^3- GHGs* : The cores were available for only around four sites, but they were used for calibrating depth profiles and sediment-water fluxes. These often had data measured in the day and the night, as well as in November and March, which all had different concentrations and fluxes. The challenge was to capture both day and night conditions, while also capturing seasonal changes.
+*Cores -- Fe, S, NH~4~^+^, PO~4~^3-^ GHGs* : The cores were available for only around four sites, but they were used for calibrating depth profiles and sediment-water fluxes. These often had data measured in the day and the night, as well as in November and March, which all had different concentrations and fluxes. The challenge was to capture both day and night conditions, while also capturing seasonal changes.
 
 *Sediment quality* : These measurements were used for setting the initial porosity parameters. Once these were set they were not tuned further.
 
@@ -195,11 +195,30 @@ A range of data was collected and is documented in Appendix A (Data Catalogue). 
 
 #### Model variables {.unnumbered}
 
-##### Linked variables
-water_link
-  salt
-diss_flux_link
-part_sed_link (part_sed_scale)
+
+
+```{r 3dev-sedvars200, echo=FALSE, message=FALSE, warning=FALSE}
+ library(knitr)
+ library(kableExtra)
+ library(readxl)
+
+ sediment_vars100 <- read_xlsx("tables/BookdownSDGVars.xlsx", sheet = "Vars" )
+ kable(sediment_vars200,"html", escape = F, align = "c", caption = "All sediment parameters",
+       bootstrap_options = "hover") %>%
+   kable_styling(sediment_vars, bootstrap_options = "hover", 
+                 full_width = F, position = "center", 
+                 font_size = 12) %>% 
+   column_spec(1, width_min = "10em") %>%
+   row_spec(1:10, background = 'white') %>% 
+   scroll_box(width = "690px", height = "800px",
+              fixed_thead = FALSE)
+```
+
+
+
+##### Linked variables {.unnumbered}
+
+The linked variables are listed in the table. They can be linked by concentration, dissolved flux and particle flux. Salinity has only one possible salinity link, which is hard-coded in the sediment model. The SO~4~^2-^ link is hard-coded such that SO~4~^2-^ concentration in mmol L^-1^ is 0.9 × salinity (PSU). 
 
 ```{r 3dev-sedvars, echo=FALSE, message=FALSE, warning=FALSE}
  library(knitr)
@@ -213,61 +232,147 @@ part_sed_link (part_sed_scale)
                  full_width = F, position = "center", 
                  font_size = 12) %>% 
    column_spec(1, width_min = "10em") %>%
-   column_spec(2, width_min = "7em") %>% 
-   column_spec(3, width_min = "7em") %>% 
-   column_spec(4, width_min = "15em") %>%
-   row_spec(1:19, background = 'white') %>% 
+   column_spec(2, width_min = "20em") %>% 
+   column_spec(3, width_min = "10em") %>% 
+   column_spec(4, width_min = "10em") %>%
+   column_spec(5, width_min = "10em") %>%
+   column_spec(6, width_min = "10em") %>%
+   row_spec(1:10, background = 'white') %>% 
    scroll_box(width = "690px", height = "800px",
               fixed_thead = FALSE)
 ```
 
+##### Initial conditions {.unnumbered}
+Most chemical species are initialized at zero concentration. Some species are initialised to meet field data (table below).
 
 
-# <!-- ##### Initial conditions -->
-# <!-- Zero for most things -->
-# <!--   List most things -->
-# <!-- ```{r 3dev-init, echo=FALSE, message=FALSE, warning=FALSE} -->
-# <!-- sediment_initial <- read_xlsx("tables/BookdownSDGVars.xlsx", sheet = "Initial" ) -->
-# <!-- kable(sediment_initial,"html", escape = F, align = "c", caption = "Sediment initial conditions", -->
-# <!--       bootstrap_options = "hover") %>% -->
-# <!--   kable_styling(sediment_initial, bootstrap_options = "hover", -->
-# <!--                 full_width = F, position = "center", -->
-# <!--                 font_size = 12) %>% -->
-# <!--   column_spec(1, width_min = "10em") %>% -->
-# <!--   column_spec(2, width_min = "7em") %>% -->
-# <!--   column_spec(3, width_min = "7em") %>% -->
-# <!--   column_spec(4, width_min = "15em") %>% -->
-# <!--   row_spec(1:19, background = 'white') %>% -->
-# <!--   scroll_box(width = "690px", height = "800px", -->
-# <!--              fixed_thead = FALSE) -->
-# <!-- ``` -->
+```{r 3dev-init, echo=FALSE, message=FALSE, warning=FALSE}
 
+sediment_initial <- read_xlsx("tables/BookdownSDGVars.xlsx", sheet = "Initial" )
+kable(sediment_initial,"html", escape = F, align = "c", caption = "Sediment initial conditions", 
+     bootstrap_options = "hover") %>%
+ kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+               font_size = 12) %>%
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+ column_spec(4, width_min = "10em") %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
+#### Constant sediment-water interface conditions
+The flux of Fe(OH)~3A~ from the water column to the sediment is set from the parameter 'default_vals'. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the Fe^2+^ concentration value.
 
-##### Constant sediment-water interface conditions
-
-##### Linked variables
-
-#### Model parameters
+#### Model parameters {.unnumbered}
 
 ##### Zone-specific parameters {.unnumbered}
 
-x1 x2 xirrig p00 Rootsdepth? MPBDepth? taubsensitivity
-
-Important setup parameters dB0 xl; maxnpts OMModel rxn_mode ads_use_pH
-
-docl2dic; donl2din; dopl2dip pocl2docl; ponl2donl; popl2dinl docr2docl; donr2donl; dopr2dopl pocr2docr; ponr2donr; popr2dopr pocvr2docr; ponvr2donr; popvr2ponr
-
-kTSOx kFeSppt kFeSdis kTSFe kTSMn kCH4SO4
-
-kin_deamm
-
-KPFeS
-
-knh4no2
-
-pocu; ponu; popu
-
-other parameters are in the appendix
+<!-- 1 Timing -->
+```{r 3dev-Timing, echo=FALSE, message=FALSE, warning=FALSE}
+sediment_Timing <- read_xlsx("tables/BookdownParams.xlsx", sheet = "Timing" )
+kable(sediment_Timing,"html", escape = F, align = "c", caption = "Sediment timing parameters", 
+     bootstrap_options = "hover") %>%
+   kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+               font_size = 12) %>%
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
+<!-- 2 Mixing -->
+```{r 3dev-Mixing, echo=FALSE, message=FALSE, warning=FALSE}
+sediment_Mixing <- read_xlsx("tables/BookdownParams.xlsx", sheet = "Mixing" )
+kable(sediment_Mixing,"html", escape = F, align = "c", caption = "Sediment physical properties", 
+     bootstrap_options = "hover") %>%
+   kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+               font_size = 12) %>%
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
+<!-- 3 SedimentLayers -->
+```{r 3dev-Layers, echo=FALSE, message=FALSE, warning=FALSE}
+sediment_Layers <- read_xlsx("tables/BookdownParams.xlsx", sheet = "Layers" )
+kable(sediment_Layers,"html", escape = F, align = "c", caption = "Sediment layer setup parameters and mixing parameters that vary by zone.", 
+     bootstrap_options = "hover") %>%
+   kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+               font_size = 12) %>%
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
+<!-- 4 OM -->
+```{r 3dev-OM, echo=FALSE, message=FALSE, warning=FALSE}
+sediment_OM <- read_xlsx("tables/BookdownParams.xlsx", sheet = "OM" )
+kable(sediment_OM ,"html", escape = F, align = "c", caption = "Organic matter oxidation parameters", 
+     bootstrap_options = "hover") %>%
+   kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+               font_size = 12) %>%
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
+<!-- 5 NRedox -->
+```{r 3dev-NRedox, echo=FALSE, message=FALSE, warning=FALSE}
+sediment_Nredox <- read_xlsx("tables/BookdownParams.xlsx", sheet = "NRedox" )
+kable(sediment_Nredox ,"html", escape = F, align = "c", caption = "Nitrogen redox cycle parameters", 
+     bootstrap_options = "hover") %>%
+   kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+               font_size = 12) %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
+<!-- 6 SecondaryRedox -->
+```{r 3dev-SecondaryRedox, echo=FALSE, message=FALSE, warning=FALSE}
+sediment_SecondaryRedox <- read_xlsx("tables/BookdownParams.xlsx", sheet = "SecondaryRedox" )
+kable(sediment_SecondaryRedox ,"html", escape = F, align = "c", caption = "Secondary redox parameters",      bootstrap_options = "hover") %>%
+   kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+               font_size = 12) %>%
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
+<!-- 7 Geochem -->
+```{r 3dev-Geochem, echo=FALSE, message=FALSE, warning=FALSE}
+sediment_Geochem <- read_xlsx("tables/BookdownParams.xlsx", sheet = "Geochem" )
+kable(sediment_Geochem ,"html", escape = F, align = "c", caption = "Geochemistry and precipitation/dissolution parameters",
+      bootstrap_options = "hover") %>%
+   kable_styling(sediment_initial, bootstrap_options = "hover",
+               full_width = F, position = "center",
+               font_size = 12) %>%
+ column_spec(1, width_min = "10em") %>%
+ column_spec(2, width_min = "20em") %>%
+ column_spec(3, width_min = "10em") %>%
+ row_spec(1:10, background = 'white') %>%
+ scroll_box(width = "690px", height = "800px",
+            fixed_thead = FALSE)
+```
 
 ##### General parameters {.unnumbered}
 
