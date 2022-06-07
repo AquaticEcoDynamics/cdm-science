@@ -205,7 +205,7 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "CDM simulated variable summary", ali
 <br>
 
 
-For the sediment and benthic related variables, the model allows for spatial variability in these properties, and this is captured through the definition of several *material zones*. This is explored in some detail in Chapter 4; though an example default material zone setup (used in Generation I simulations, see below) is shown below in Figure \@ref(fig:cdm-pic3).
+For the sediment and benthic related variables, the model allows for spatial variability in these properties, and this is captured through the definition of several *material zones*. This is explored in some detail in Chapter 4; though an example default material zone setup (used in Generation 1.5 simulations, see below) is shown below in Figure \@ref(fig:cdm-pic3).
 
 ```{r cdm-pic3, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Different sediment zones used within the domain."}
 
