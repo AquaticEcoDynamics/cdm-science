@@ -209,7 +209,7 @@ For the sediment and benthic related variables, the model allows for spatial var
 
 ```{r cdm-pic3, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Different sediment zones used within the domain."}
 
-knitr::include_graphics("images/cdm/HCHB 20 zones.png")
+knitr::include_graphics("images/cdm/Material Zones Updated.png")
 
 ```
 
