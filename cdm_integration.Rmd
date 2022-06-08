@@ -159,15 +159,19 @@ knitr::include_graphics("images/cdm/2.4.1_Met_Workflow.png")
 
 All model files are stored in the `models` folder. As the model is developed over time, the model files are classified with project names and model generation identifiers. The ‘MER’ folder contains the model files used for assessing ‘eWater’ within the MER program; the ‘CIIP’ folder contains the model files developed for assessing CIIP scenarios, and the ‘HCHB’ folder contains the the core CDM files being updated throughout the HCHB project. 
 
-Models within each project directory are separated via both *generation* and model *type*. Within the HCHB model folder there are currently 3 distinct models:
+Models within each project directory are separated via both *generation* and model *type*. Within the HCHB model folder there are currently 4 distinct models:
 
 + `hchb_swan_v1`
-+ `hchb_tfvaed_v1`
++ `hchb_tfvaed_Gen1.0_1PFT`
++ `hchb_tfvaed_Gen1.5_4PFT_MAG`
 + `coorong-rapid`
 
-The ```hchb_swan_v1``` is the first generation of the Coorong SWAN Wave model that has been developed (see Section 3.2). 
+The ```hchb_swan_v1``` is the first generation of the Coorong SWAN Wave model that has been developed (see Section 3.2). Found inside the ```hchb_swan_v1``` directory are two zipped model folders:
 
-The ```coorong-rapid``` simulation folder and the ```hchb_tfvaed_v1``` simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files.
++ `Coorong_swn_20170101_20220101_UA_Wind_200g_2000w.zip`
++ `Coorong_swn_20191101_20220101_UA_Wind_200g_2000w.zip`
+
+The ```coorong-rapid``` simulation folder and the ```hchb_tfvaed_Gen1.0_1PFT``` simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files. The Generation 1.5 simulation (```hchb_tfvaed_Gen1.5_4PFT_MAG```) represents an upgrade in the number of phytoplankton groups, new material zones and the addition of macroalgae.
 
 Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model's configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CDM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.
 
@@ -188,7 +192,8 @@ The TUFLOW-FV model found in the MER project folder was created prior to the abo
   + `GEO`: TUFLOW-FV model structure files, including geometry and mesh files, and GIS files controlling the nodestrings and material zones;
   + `INPUT`: model control/configuration files;
   + `Plotting` : Directory to store model output images;
-    
+
+The ```hchb_tfvaed_Gen1.5_4PFT_MAG``` simulation folder also contains a `bin` directory containing the windows binaries for the TFV-AED model   
 
 ### **SWAN Wave Model organisation**
 
