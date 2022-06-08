@@ -195,6 +195,10 @@ The TUFLOW-FV model found in the MER project folder was created prior to the abo
 
 The ```hchb_tfvaed_Gen1.5_4PFT_MAG``` simulation folder also contains a `bin` directory containing the windows binaries for the TFV-AED model   
 
+  + `TFV:` Build version: 2020.03.105
+  + `AED:` Build version: 2.0.5b
+
+
 ### **SWAN Wave Model organisation**
 
 The SWAN Wave models found in the HCHB model directory have the following format:
@@ -240,7 +244,7 @@ knitr::include_graphics("images/cdm/example_Transect.png")
 
 The `aed_matlab_modeltools` also houses scripts and functions for:
 
-  + Nutirent Budgeting;
+  + Nutrient Budgeting;
   + Stacked Area Transect;
   + Curtain plotting;
   + Mesh manipulation tools;
