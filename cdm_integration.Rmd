@@ -240,6 +240,8 @@ knitr::include_graphics("images/cdm/example_Transect.png")
 
 The `aed_matlab_modeltools` also houses scripts and functions for:
 
+  + Nutirent Budgeting;
+  + Stacked Area Transect;
   + Curtain plotting;
   + Mesh manipulation tools;
   + Data exports;
