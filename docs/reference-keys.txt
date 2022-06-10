@@ -18,6 +18,8 @@ fig:cdm-pic10
 fig:cdm-pic9
 fig:cdm-plottfvpolygon
 fig:cdm-plottfvtransect
+fig:cdm-stackedarea
+fig:cdm-nutrientbudget
 fig:dev-sites
 eq:lagoonhabitat1
 eq:lagoonhabitat2
