@@ -153,13 +153,16 @@ resuspension
 validation-and-assessment
 lagoon-scale-predictions
 summary-sept-2021
-oxygen-nutrients-and-chlorohyll-a
+oxygen-nutrients-and-chlorophyll-a
 overview-2
 model-approach-1
 data-availability
 model-setup
 validation-and-assessment-1
 phytoplankton
+background
+model-setup-1
+model-results
 macroalgae
 overview-3
 model-approach-2
@@ -169,7 +172,7 @@ resolving-seasonal-life-stage-dynamics
 data-availability-1
 environmental-threshold-parameter-review
 algae-extent-within-the-lagoon
-model-setup-1
+model-setup-2
 validation-and-assessment-2
 summary-sept-2021-1
 sediment-biogeochemistry

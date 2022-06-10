@@ -49,7 +49,7 @@
 <li><a class="" href="cdm-the-coorong-dynamics-model.html"><span class="header-section-number">2</span> CDM: The Coorong Dynamics Model</a></li>
 <li><a class="active" href="model-data-ecosystem.html"><span class="header-section-number">3</span> Model-Data Ecosystem</a></li>
 <li><a class="" href="resuspension-and-turbidity.html"><span class="header-section-number">4</span> Resuspension and Turbidity</a></li>
-<li><a class="" href="oxygen-nutrients-and-chlorohyll-a.html"><span class="header-section-number">5</span> Oxygen, Nutrients and Chlorohyll-a</a></li>
+<li><a class="" href="oxygen-nutrients-and-chlorophyll-a.html"><span class="header-section-number">5</span> Oxygen, Nutrients and Chlorophyll-a</a></li>
 <li><a class="" href="macroalgae.html"><span class="header-section-number">6</span> Macroalgae</a></li>
 <li><a class="" href="sediment-biogeochemistry.html"><span class="header-section-number">7</span> Sediment Biogeochemistry</a></li>
 <li><a class="" href="habitat-modelling.html"><span class="header-section-number">8</span> Habitat Modelling</a></li>
@@ -537,14 +537,19 @@ Figure 3.5: CDM work flow diagram for met data
 <span class="header-section-number">3.3.1</span> <strong>Model catalogue</strong><a class="anchor" aria-label="anchor" href="#model-catalogue"><i class="fas fa-link"></i></a>
 </h3>
 <p>All model files are stored in the <code>models</code> folder. As the model is developed over time, the model files are classified with project names and model generation identifiers. The ‘MER’ folder contains the model files used for assessing ‘eWater’ within the MER program; the ‘CIIP’ folder contains the model files developed for assessing CIIP scenarios, and the ‘HCHB’ folder contains the the core CDM files being updated throughout the HCHB project.</p>
-<p>Models within each project directory are separated via both <em>generation</em> and model <em>type</em>. Within the HCHB model folder there are currently 3 distinct models:</p>
+<p>Models within each project directory are separated via both <em>generation</em> and model <em>type</em>. Within the HCHB model folder there are currently 4 distinct models:</p>
 <ul>
 <li><code>hchb_swan_v1</code></li>
-<li><code>hchb_tfvaed_v1</code></li>
+<li><code>hchb_tfvaed_Gen1.0_1PFT</code></li>
+<li><code>hchb_tfvaed_Gen1.5_4PFT_MAG</code></li>
 <li><code>coorong-rapid</code></li>
 </ul>
-<p>The <code>hchb_swan_v1</code> is the first generation of the Coorong SWAN Wave model that has been developed (see Section 3.2).</p>
-<p>The <code>coorong-rapid</code> simulation folder and the <code>hchb_tfvaed_v1</code> simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files.</p>
+<p>The <code>hchb_swan_v1</code> is the first generation of the Coorong SWAN Wave model that has been developed (see Section 3.2). Found inside the <code>hchb_swan_v1</code> directory are two zipped model folders:</p>
+<ul>
+<li><code>Coorong_swn_20170101_20220101_UA_Wind_200g_2000w.zip</code></li>
+<li><code>Coorong_swn_20191101_20220101_UA_Wind_200g_2000w.zip</code></li>
+</ul>
+<p>The <code>coorong-rapid</code> simulation folder and the <code>hchb_tfvaed_Gen1.0_1PFT</code> simulation folder both contain TUFLOW-FV - AED simulations, but are kept separate as they constitute different generations, using different grids, simulation periods and BC files. The Generation 1.5 simulation (<code>hchb_tfvaed_Gen1.5_4PFT_MAG</code>) represents an upgrade in the number of phytoplankton groups, new material zones and the addition of macroalgae.</p>
 <p>Each model folder may contain multiple simulation sets, but they will all rely on the same model base configuration, with minor differences or adujstments. Major changes to a model’s configuration will constitute a change in generation numeber and these are stored in a separate folder. Note, models uploaded to the CDM repository may have been created by different agencies and researchers and should maintain a consistent naming convention.</p>
 </div>
 <div id="tuflow-fv-model-organisation" class="section level3" number="3.3.2">
@@ -574,6 +579,13 @@ Figure 3.5: CDM work flow diagram for met data
 <code>INPUT</code>: model control/configuration files;</li>
 <li>
 <code>Plotting</code> : Directory to store model output images;</li>
+</ul>
+<p>The <code>hchb_tfvaed_Gen1.5_4PFT_MAG</code> simulation folder also contains a <code>bin</code> directory containing the windows binaries for the TFV-AED model</p>
+<ul>
+<li>
+<code>TFV:</code> Build version: 2020.03.105</li>
+<li>
+<code>AED:</code> Build version: 2.0.5b</li>
 </ul>
 </div>
 <div id="swan-wave-model-organisation" class="section level3" number="3.3.3">
@@ -629,6 +641,8 @@ Figure 3.7: Example output from plottfv_transect with distance from Goolwa Barra
 </div>
 <p>The <code>aed_matlab_modeltools</code> also houses scripts and functions for:</p>
 <ul>
+<li>Nutrient Budgeting;</li>
+<li>Stacked Area Transect;</li>
 <li>Curtain plotting;</li>
 <li>Mesh manipulation tools;</li>
 <li>Data exports;</li>

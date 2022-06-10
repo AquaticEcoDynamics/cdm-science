@@ -1,4 +1,4 @@
-# Oxygen, Nutrients and Chlorohyll-a
+# Oxygen, Nutrients and Chlorophyll-a
 
 <br>
 
@@ -17,7 +17,38 @@ Oxygen metabolism and nutrient cycling
 
 ## Phytoplankton
 
-Four pools were confgured to simulate the biomass of phytoplankton, $grn$, $crypt$, $diatom$ and $dino$. The parameters used in the setup are outlined in Table (Table \@ref(tab:5-phytopars)). 
+### Background
+
+The approach to simulate algal biomass is to adopt several plankton functional types (PFTs) that are typically defined based on specific groups. Whilst each group that is simulated is unique, they share a common mathematical approach and each simulate growth, death and sedimentation processes, and customisable internal nitrogen, phosphorus and/or silica stores if desired. Distinction between groups is made by adoption of group’s specific parameters for environmental dependencies, and/or enabling options such as vertical migration or N fixation.
+
+Within the Coorong, salinity has been identified as the most important driver of phytoplankton communities (Jendyk et al., 2014; Leterme et al., 2015; Schapira et al., 2010). The water in the north lagoon is brackish because of mixing between the ocean intrusion and barrage flows, and  generally dominated by chlorophytes. On the other hand, the water in the south lagoon is hypersaline and generally dominated by diatoms. Cryptophytes and dinoflagellates were found to present throughout both lagoons but in comparatively much lower abundance (Jendyk et al., 2014; Leterme et al., 2015). 
+
+Some key information from this paper are:
+•         Salinity was the most important driver of phytoplankton communities in Coorong;
+•         The north lagoon was dominated by chlorophytes and south was dominated by diatom;
+•         The salinity threshold for chlorophyte is 28 PSU;
+•         Cryptophytes and dinoflagellates were found to be present throughout both lagoons but in comparatively much lower abundances
+ 
+Most importantly, this paper proposed 4 salinity regimes for phytoplankton habitats:
+•         Waters in the H1 category (<5 PSU) were dominated by chlorophytes, although diatoms and cryptophytes sporadically accounted for between 10 and 50% of the overall phytoplankton abundance at Site 1 and Site 2. 
+•         The H2 category (5–20 PSU) was co-dominated by chlorophytes, diatoms and cryptophytes with no significant temporal differences in the relative overall abundance evident. 
+•         Waters in the H3 category (21–40 PSU) saw drastic decreases in the prevalence of chlorophytes compared to lower salinity habitats and marked increases in the abundance of dinoflagellates, particularly toward the higher end of the salinity spectrum. 
+•         The H4 category ( >41 PSU) was mainly dominated by diatoms, although the abundance of dinoflagellates was sometimes higher than that of diatoms.
+
+
+There is a paper of phytoplankton groups in Coorong by Schapira et al (2010). The major conclusion from that paper are: 
+•         Salinity was identified as the main factor structuring the distribution of picophytoplankton along the lagoon.
+•         Highest picophytoplankton abundances were recorded under salinity conditions ranging between 8.0% and 11.0%;
+•         One population of pico-eukaryote dominated the community throughout the salinity gradient and was responsible for the bloom observed between 8.0% and 11.0%. Only this halotolerant population and Prochlorococcus-like picocyanobacteria were identified in hypersaline waters (i.e. above 14.0%)
+ 
+### Model setup
+
+Based on recommendations by Jendyk et al., (2014), the phytoplankton community in the Coorong are configured into four PFTs according to their salinity tolerance and literature review of their biogeochemical properties - spanning green algae (cryptophyte), cryptophyte, dinoflagellates, and diatom.
+
+The algal biomass of each group, $PHY_C$, is simulated in units of carbon (mmol C m-3), and the group can be configured to have a constant C:N:P:Si ratio, or have dynamic uptake of N and P sources in response to changing water column condition and cellular physiology. Balance equations that capture the various processes impacting phytoplankton are outlined in the following sections, including the salinity limitation functions on phytoplankton communities. A full description of the phytoplankton model can be referred to the AED science manual in https://aquaticecodynamics.github.io/aed-science/phytoplankton.html. 
+
+
+The four pools  configured to simulate the biomass of phytoplankton, were denoted $grn$, $crypt$, $diatom$ and $dino$. The parameters used in the setup are outlined in Table (Table \@ref(tab:5-phytopars)). 
 
 ```{r 5-phytopars, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -89,7 +120,20 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 <br>
 
+The salinity tolerance effect on phytoplankton is given by various quadratic formulations, depending on the groups’ sensitivity to salinity (Griffin et al 2001; Robson and Hamilton, 2004). There are four options for defining the salinity effect (f(s)):
+
+The salinity limitation settings are included in the phytoplankton parameter table and the use of various salinity limitation options for each phytoplankton PFT are shown in the following figure:
+
+
+In terms of understanding the productivity of phytoplankton, for informing other rate parameters in the model, there is a reference of phytoplankton along a hypersaline gradient by Joint et al (2002), which suggests:
+•         Elevated photosynthetic pigment concentrations were present in ponds of intermediate (5^11%) and high (s32%) salinity but rates of primary production and nutrient uptake were generally reduced at the highest salinity.
+•         Maximum primary production was measured at 8% salinity and chlorophyll-specific carbon fixation also maximised at this salinity.
+•         Ammonium was the dominant nitrogen source throughout the salinity gradient
+
+
 ***	
+
+### Model results
 
 <br>
 
