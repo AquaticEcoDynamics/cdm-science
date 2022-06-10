@@ -230,7 +230,7 @@ In particular, the publicly available GitHub repository called [`aed_matlab_mode
 
 ```{r cdm-plottfvpolygon, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_polygon with error matrix"}
 
-knitr::include_graphics("images/cdm/0006_A4261209.png")
+knitr::include_graphics("images/cdm/plottfv_polygon.png")
 
 ```
 
@@ -250,6 +250,20 @@ The `aed_matlab_modeltools` also houses scripts and functions for:
   + Mesh manipulation tools;
   + Data exports;
   + Sheet plotting and animation tools;
+
+
+```{r cdm-stackedarea, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example output from plottfv_transect_StackedArea with distance from Goolwa Barrage (km) along the x-axis"}
+
+knitr::include_graphics("images/cdm/stackedarea.png")
+
+```
+
+
+```{r cdm-nutrientbudget, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Example Nutrient Budgeting output of the North Coorong"}
+
+knitr::include_graphics("images/cdm/nutrient_budget_1.png")
+
+```
 
 Information on how to clone a publicly available GitHub repository can be found [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository-from-github/cloning-a-repository).
 
