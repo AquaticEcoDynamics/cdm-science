@@ -89,7 +89,14 @@ Filterable reactive phosphorus also is known to adsorb onto suspended solids (SS
 
 The hypersalinity in the Coorong also has potential to impair the nitrification-denitrification process which is regarded as a function to remove the nitrogen in healthy coastal wetland systems. Multiple studies have suggested that the nitrification and denitrification rates in estuarine environments generally decrease with increasing salinity (Helder and DeVries, 1983; Isaji et al., 2019; Santoro and Enrich-Prast, 2015). Salinity inhibits ammonia oxidizing bacteria activity that has been observed to lead to enrichment of ammonium with salinity (Cui et al., 2016; Isaji et al., 2019). This is coincident with the finding in the Coorong that strong ammonium flux from sediment and high ammonium concentrations within surface sediments observed at Parnka Point (Mosley et al., 2020). In the Coorong, it also has been found that the denitrification gene *nirK* had a strong inverse relationship with salinity, and the decline of the *nirK* concentration became more significant when the salinity was over about 40 PSU (Mosley et al., 2020). Therefore, a Michaelis-Menten kinetic function of salinity limitation has been adopted for the nitrification and denitrification rates within the water columns as:
 
-f_SAL={(1  when S≤S_thresh@K_S/(K_S+(〖S-S〗_thresh )  when S>S_thresh )}
+```{=tex}
+\begin{equation}
+  f_{SAL}=\begin{cases}
+    1, & \text{when $S \le S_{thresh}$}\\
+    \frac{K_S}{K_S+(S-S_{thresh})}, & \text{when $S>S_{thresh}$}
+  \end{cases}
+\end{equation}
+```
 
 where $f_{SAL}$ is the limitation factor, $S$ the salinity, $S_{thresh}$ the salinity threshold when limitation starts to work, and $K_S$ is the half saturation coefficient. In the Coorong, the $S_{thresh}$ is set to 40 PSU and $K_S$ is set to 20 PSU as interpolated from the report of Mosley et al., (2020). This is shown graphically in Figure \@ref(fig:water-sal1).
 
@@ -195,7 +202,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 <br>
 
-These sediment flux parameters serve as the default values used in the intial simulations. When the model is run with the dynamic sediment biogeochemistry model this fluxes in the tables are not used as input parameters, but rather as guides for validation of the predicted rates - see Chapter 9 for further detail about the dynamic prediction of sediment nutrient fluxes. 
+These sediment flux parameters serve as the default values used in the intial simulations. When the model is run with the dynamic sediment biogeochemistry model this fluxes in the tables are not used as input parameters, but rather as guides for validation of the predicted rates - see Chapter 7 for further detail about the dynamic prediction of sediment nutrient fluxes. 
 
 <br>
 
@@ -223,8 +230,14 @@ A summary of the overall model parameters used within the CDM simulations relate
 
 ### Model results
 
-The results of the integrated assessment for the final calibrated model are shown in Chapter 7.
+A summary of the model performance for several nutrient variables is shown in Figure \@ref(fig:water-nut1), for a wet and dry period in 2018-2019. The results show the gradient along the lagoon, and also the very low concentrations of bio-available nutrient fractions within the total pool. Further results of the nutrient variables are reported in the integrated assessment of the model in Chapter 9. The predictions of nutrient concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in Appendix B.
 
+
+```{r water-nut1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Performance of predicted nutrient concentrations along the length of the Coorong. The observed (field) data is from available monitoring over the period of a dry season (left) and wet season (right), presented as a box-whisker plot for each site based on all data available for that site within that period."}
+
+knitr::include_graphics("images/dev/water/nutrient_transect_v3.jpg")
+
+```
 
 <br>
 
@@ -410,9 +423,29 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ### Model results
 
+The simulated phytoplankton biomass has been compared against the available chlorophyll-a data from the routine WQ monitoring sites. The model captures well the long-term mean gradient in biomass along the length of the Coorong, which includes the separation of the groups based on their optimum salinity and nutrient parameters (Figure \@ref(fig:water-phy1)).
+
+```{r water-phy1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Simulated and observed chlorophyll-a concentration along the length of the Coorong from the Murray Mouth. The observed (field) data is from available monitoring over the period from Jul 2017 to Jan 2022, presented as a box-whisker plot for each site based on all data available for that site. The simulated data is shaded based on the PFT (group) contribution to the total phytoplankton biomass."}
+
+knitr::include_graphics("images/dev/water/phyto_stacked_area.png")
+
+```
+
 <br>
 
+Whilst the above plot shows the along-lagoon gradient, the seasonal and high frequency variability of chlorophyll-a can be more variable and is also well-captured by the model (Figure \@ref(fig:water-phy2)).
 
+```{r water-phy2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Performance of predicted phytoplankton biomass and other key water quality variables at north lagoon, center, and south lagoon."}
+
+knitr::include_graphics("images/dev/water/waterquality_v3_new.png")
+
+```
+
+<br>
+
+The limitation plots for each simulated group provide insights into the dynamic environmental controls on group productivity (Figures \@ref(fig:water-lim1)-\@ref(fig:water-lim7)). 
+
+<br>
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -421,13 +454,13 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 .tab button {
   background-color: #2481AA;
   float: left;
-  width: 50%;
+  width: 14.25%;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: 14px;
   color: #FFFFFF;
   font-weight: bold;
 }
@@ -436,33 +469,85 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 <body>
 
 <div class="tab">
-  <button class="tablinks" onclick="opentab(event, 'AED-water')"id="defaultOpen">AED-water</button>
-  <button class="tablinks" onclick="opentab(event, 'AED-benthic')">AED-benthic</button>
+  <button class="tablinks" onclick="opentab(event, 'A4260633')"id="defaultOpen">A4260633</button>
+  <button class="tablinks" onclick="opentab(event, 'A4261036')">A4261036</button>
+  <button class="tablinks" onclick="opentab(event, 'A4261039')">A4261039</button>
+  <button class="tablinks" onclick="opentab(event, 'A4261134')">A4261134</button>
+  <button class="tablinks" onclick="opentab(event, 'A4261135')">A4261135</button>
+  <button class="tablinks" onclick="opentab(event, 'A4261165')">A4261165</button>
+  <button class="tablinks" onclick="opentab(event, 'A4261209')">A4261209</button>
 </div>
 
-<div id="AED-water" class="tabcontent">
+<div id="A4260633" class="tabcontent">
   <p>
+```{r water-lim1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4260633 (Click the station ID above to change image)."}
 
-```{r water-sal6, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature."}
-
-knitr::include_graphics("images/dev/water/salinity_phytoplankton.jpg")
+knitr::include_graphics("images/dev/water/phyto_limitation_allPFTs_movmean_A4260633.png")
 
 ```
-
   </p>
 </div>
 
-<div id="AED-benthic" class="tabcontent">
+<div id="A4261036" class="tabcontent">
   <p>
+```{r water-lim2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261036."}
 
-```{r water-sal7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature."}
-
-knitr::include_graphics("images/dev/water/salinity_phytoplankton.jpg")
+knitr::include_graphics("images/dev/water/phyto_limitation_allPFTs_movmean_A4261036.png")
 
 ```
-
   </p>
 </div>
+
+<div id="A4261039" class="tabcontent">
+  <p>
+```{r water-lim3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261039."}
+
+knitr::include_graphics("images/dev/water/phyto_limitation_allPFTs_movmean_A4261039.png")
+
+```
+  </p>
+</div>
+
+<div id="A4261134" class="tabcontent">
+  <p>
+```{r water-lim4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261134."}
+
+knitr::include_graphics("images/dev/water/phyto_limitation_allPFTs_movmean_A4261134.png")
+
+```
+  </p>
+</div>
+
+<div id="A4261135" class="tabcontent">
+  <p>
+```{r water-lim5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261135."}
+
+knitr::include_graphics("images/dev/water/phyto_limitation_allPFTs_movmean_A4261135.png")
+
+```
+  </p>
+</div>
+
+<div id="A4261165" class="tabcontent">
+  <p>
+```{r water-lim6, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261165."}
+
+knitr::include_graphics("images/dev/water/phyto_limitation_allPFTs_movmean_A4261165.png")
+
+```
+  </p>
+</div>
+
+<div id="A4261209" class="tabcontent">
+  <p>
+```{r water-lim7, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261209."}
+
+knitr::include_graphics("images/dev/water/phyto_limitation_allPFTs_movmean_A4261209.png")
+
+```
+  </p>
+</div>
+
 
 <script>
 function opentab(evt, tabName) {
