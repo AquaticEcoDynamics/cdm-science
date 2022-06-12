@@ -167,7 +167,12 @@ Figure 5.1: (a) Long-term time-series and (b) zoom-in view of the modelled vs. 
 <h4>Impact of hypersalinity on nitrification and denitrification<a class="anchor" aria-label="anchor" href="#impact-of-hypersalinity-on-nitrification-and-denitrification"><i class="fas fa-link"></i></a>
 </h4>
 <p>The hypersalinity in the Coorong also has potential to impair the nitrification-denitrification process which is regarded as a function to remove the nitrogen in healthy coastal wetland systems. Multiple studies have suggested that the nitrification and denitrification rates in estuarine environments generally decrease with increasing salinity (Helder and DeVries, 1983; Isaji et al., 2019; Santoro and Enrich-Prast, 2015). Salinity inhibits ammonia oxidizing bacteria activity that has been observed to lead to enrichment of ammonium with salinity (Cui et al., 2016; Isaji et al., 2019). This is coincident with the finding in the Coorong that strong ammonium flux from sediment and high ammonium concentrations within surface sediments observed at Parnka Point (Mosley et al., 2020). In the Coorong, it also has been found that the denitrification gene <em>nirK</em> had a strong inverse relationship with salinity, and the decline of the <em>nirK</em> concentration became more significant when the salinity was over about 40 PSU (Mosley et al., 2020). Therefore, a Michaelis-Menten kinetic function of salinity limitation has been adopted for the nitrification and denitrification rates within the water columns as:</p>
-<p>f_SAL={(1 when S≤<a href="mailto:S_thresh@K" class="email">S_thresh@K</a>_S/(K_S+(〖S-S〗_thresh ) when S&gt;S_thresh )}</p>
+<span class="math display">\[\begin{equation}
+  f_{SAL}=\begin{cases}
+    1, &amp; \text{when $S \le S_{thresh}$}\\
+    \frac{K_S}{K_S+(S-S_{thresh})}, &amp; \text{when $S&gt;S_{thresh}$}
+  \end{cases}
+\end{equation}\]</span>
 <p>where <span class="math inline">\(f_{SAL}\)</span> is the limitation factor, <span class="math inline">\(S\)</span> the salinity, <span class="math inline">\(S_{thresh}\)</span> the salinity threshold when limitation starts to work, and <span class="math inline">\(K_S\)</span> is the half saturation coefficient. In the Coorong, the <span class="math inline">\(S_{thresh}\)</span> is set to 40 PSU and <span class="math inline">\(K_S\)</span> is set to 20 PSU as interpolated from the report of Mosley et al., (2020). This is shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal1">5.2</a>.</p>
 <div class="text-image">
 <div class="figure">
@@ -373,7 +378,7 @@ AED, <code>Fsed_oxy</code>
 </table></div>
 </div>
 <p><br></p>
-<p>These sediment flux parameters serve as the default values used in the intial simulations. When the model is run with the dynamic sediment biogeochemistry model this fluxes in the tables are not used as input parameters, but rather as guides for validation of the predicted rates - see Chapter 9 for further detail about the dynamic prediction of sediment nutrient fluxes.</p>
+<p>These sediment flux parameters serve as the default values used in the intial simulations. When the model is run with the dynamic sediment biogeochemistry model this fluxes in the tables are not used as input parameters, but rather as guides for validation of the predicted rates - see Chapter 7 for further detail about the dynamic prediction of sediment nutrient fluxes.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
@@ -1036,7 +1041,15 @@ Zone 104
 <h3>
 <span class="header-section-number">5.3.3</span> Model results<a class="anchor" aria-label="anchor" href="#model-results-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>The results of the integrated assessment for the final calibrated model are shown in Chapter 7.</p>
+<p>A summary of the model performance for several nutrient variables is shown in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-nut1">5.4</a>, for a wet and dry period in 2018-2019. The results show the gradient along the lagoon, and also the very low concentrations of bio-available nutrient fractions within the total pool. Further results of the nutrient variables are reported in the integrated assessment of the model in Chapter 9. The predictions of nutrient concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in Appendix B.</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-nut1"></span>
+<img src="images/dev/water/nutrient_transect_v3.jpg" alt="Performance of predicted nutrient concentrations along the length of the Coorong. The observed (field) data is from available monitoring over the period of a dry season (left) and wet season (right), presented as a box-whisker plot for each site based on all data available for that site within that period." width="100%"><p class="caption">
+Figure 5.4: Performance of predicted nutrient concentrations along the length of the Coorong. The observed (field) data is from available monitoring over the period of a dry season (left) and wet season (right), presented as a box-whisker plot for each site based on all data available for that site within that period.
+</p>
+</div>
+</div>
 <p><br></p>
 <!-- ------------------- -->
 </div>
@@ -2341,12 +2354,12 @@ fraction of maximum intracellular nitrogen where motility tends up towards light
 <p><br></p>
 <p>In terms of understanding the productivity of phytoplankton, for informing other rate parameters in the model, Joint et al (2002) studied phytoplankton along a hypersalinity gradient and found that elevated photosynthetic pigment concentrations were present in ponds of intermediate (5^11%) and high (s32%) salinity, but that rates of primary production and nutrient uptake were generally reduced at the highest salinity. For example, the maximum primary production was measured at 8% salinity and chlorophyll-specific carbon fixation also maximised at this salinity under conditions where ammonium was the dominant nitrogen source throughout the salinity gradient.</p>
 <p>Noting that salinity impacts productivity and the observations noted in the previous section in the Coorong, the salinity tolerance effect on phytoplankton was therefore given by adopting salinity tolerance functions, <span class="math inline">\(f(S)\)</span>, depending on the group’s sensitivity to salinity. There are four options adding into the <span class="math inline">\(CDM\)</span> based on quadratic functions that are used to define the salinity effect (Griffin et al., 2001; Robson and Hamilton, 2004):</p>
-<p>The salinity limitation settings are included in the phytoplankton parameter table and the use of various salinity limitation options for each phytoplankton PFT are shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal3">5.4</a>.</p>
+<p>The salinity limitation settings are included in the phytoplankton parameter table and the use of various salinity limitation options for each phytoplankton PFT are shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal3">5.5</a>.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-sal3"></span>
 <img src="images/dev/water/salinity_phytoplankton.jpg" alt="Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature." width="100%"><p class="caption">
-Figure 5.4: Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature.
+Figure 5.5: Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature.
 </p>
 </div>
 </div>
@@ -2506,6 +2519,27 @@ set of benthic zones with <span class="math inline">\(MPB\)</span> active, where
 <h3>
 <span class="header-section-number">5.4.4</span> Model results<a class="anchor" aria-label="anchor" href="#model-results-2"><i class="fas fa-link"></i></a>
 </h3>
+<p>The simulated phytoplankton biomass has been compared against the available chlorophyll-a data from the routine WQ monitoring sites. The model captures well the long-term mean gradient in biomass along the length of the Coorong, which includes the separation of the groups based on their optimum salinity and nutrient parameters (Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-phy1">5.6</a>).</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-phy1"></span>
+<img src="images/dev/water/phyto_stacked_area.png" alt="Simulated and observed chlorophyll-a concentration along the length of the Coorong from the Murray Mouth. The observed (field) data is from available monitoring over the period from Jul 2017 to Jan 2022, presented as a box-whisker plot for each site based on all data available for that site. The simulated data is shaded based on the PFT (group) contribution to the total phytoplankton biomass." width="100%"><p class="caption">
+Figure 5.6: Simulated and observed chlorophyll-a concentration along the length of the Coorong from the Murray Mouth. The observed (field) data is from available monitoring over the period from Jul 2017 to Jan 2022, presented as a box-whisker plot for each site based on all data available for that site. The simulated data is shaded based on the PFT (group) contribution to the total phytoplankton biomass.
+</p>
+</div>
+</div>
+<p><br></p>
+<p>Whilst the above plot shows the along-lagoon gradient, the seasonal and high frequency variability of chlorophyll-a can be more variable and is also well-captured by the model (Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-phy2">5.7</a>).</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-phy2"></span>
+<img src="images/dev/water/waterquality_v3_new.png" alt="Performance of predicted phytoplankton biomass and other key water quality variables at north lagoon, center, and south lagoon." width="100%"><p class="caption">
+Figure 5.7: Performance of predicted phytoplankton biomass and other key water quality variables at north lagoon, center, and south lagoon.
+</p>
+</div>
+</div>
+<p><br></p>
+<p>The limitation plots for each simulated group provide insights into the dynamic environmental controls on group productivity (Figures <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-lim1">5.8</a>-<a href="oxygen-nutrients-chlorophyll-a.html#fig:water-lim7">5.14</a>).</p>
 <p><br></p>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -2514,42 +2548,112 @@ set of benthic zones with <span class="math inline">\(MPB\)</span> active, where
 .tab button {
   background-color: #2481AA;
   float: left;
-  width: 50%;
+  width: 14.25%;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: 14px;
   color: #FFFFFF;
   font-weight: bold;
 }
 </style>
 <div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'AED-water')" id="defaultOpen">AED-water</button>
-<button class="tablinks" onclick="opentab(event, 'AED-benthic')">AED-benthic</button></p>
+<p><button class="tablinks" onclick="opentab(event, 'A4260633')" id="defaultOpen">A4260633</button>
+<button class="tablinks" onclick="opentab(event, 'A4261036')">A4261036</button>
+<button class="tablinks" onclick="opentab(event, 'A4261039')">A4261039</button>
+<button class="tablinks" onclick="opentab(event, 'A4261134')">A4261134</button>
+<button class="tablinks" onclick="opentab(event, 'A4261135')">A4261135</button>
+<button class="tablinks" onclick="opentab(event, 'A4261165')">A4261165</button>
+<button class="tablinks" onclick="opentab(event, 'A4261209')">A4261209</button></p>
 </div>
-<div id="AED-water" class="tabcontent">
+<div id="A4260633" class="tabcontent">
 <p>
 </p>
 <div class="text-image">
 <div class="figure">
-<span style="display:block;" id="fig:water-sal6"></span>
-<img src="images/dev/water/salinity_phytoplankton.jpg" alt="Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature." width="100%"><p class="caption">
-Figure 5.5: Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature.
+<span style="display:block;" id="fig:water-lim1"></span>
+<img src="images/dev/water/phyto_limitation_allPFTs_movmean_A4260633.png" alt="Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4260633 (Click the station ID above to change image)." width="100%"><p class="caption">
+Figure 5.8: Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4260633 (Click the station ID above to change image).
 </p>
 </div>
 </div>
 
 </div>
-<div id="AED-benthic" class="tabcontent">
+<div id="A4261036" class="tabcontent">
 <p>
 </p>
 <div class="text-image">
 <div class="figure">
-<span style="display:block;" id="fig:water-sal7"></span>
-<img src="images/dev/water/salinity_phytoplankton.jpg" alt="Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature." width="100%"><p class="caption">
-Figure 5.6: Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature.
+<span style="display:block;" id="fig:water-lim2"></span>
+<img src="images/dev/water/phyto_limitation_allPFTs_movmean_A4261036.png" alt="Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261036." width="100%"><p class="caption">
+Figure 5.9: Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261036.
+</p>
+</div>
+</div>
+
+</div>
+<div id="A4261039" class="tabcontent">
+<p>
+</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-lim3"></span>
+<img src="images/dev/water/phyto_limitation_allPFTs_movmean_A4261039.png" alt="Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261039." width="100%"><p class="caption">
+Figure 5.10: Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261039.
+</p>
+</div>
+</div>
+
+</div>
+<div id="A4261134" class="tabcontent">
+<p>
+</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-lim4"></span>
+<img src="images/dev/water/phyto_limitation_allPFTs_movmean_A4261134.png" alt="Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261134." width="100%"><p class="caption">
+Figure 5.11: Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261134.
+</p>
+</div>
+</div>
+
+</div>
+<div id="A4261135" class="tabcontent">
+<p>
+</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-lim5"></span>
+<img src="images/dev/water/phyto_limitation_allPFTs_movmean_A4261135.png" alt="Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261135." width="100%"><p class="caption">
+Figure 5.12: Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261135.
+</p>
+</div>
+</div>
+
+</div>
+<div id="A4261165" class="tabcontent">
+<p>
+</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-lim6"></span>
+<img src="images/dev/water/phyto_limitation_allPFTs_movmean_A4261165.png" alt="Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261165." width="100%"><p class="caption">
+Figure 5.13: Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261165.
+</p>
+</div>
+</div>
+
+</div>
+<div id="A4261209" class="tabcontent">
+<p>
+</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-lim7"></span>
+<img src="images/dev/water/phyto_limitation_allPFTs_movmean_A4261209.png" alt="Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261209." width="100%"><p class="caption">
+Figure 5.14: Phytoplankton environmental limitation controlling the photosynthesis rate of each phytoplankton group, for site A4261209.
 </p>
 </div>
 </div>
