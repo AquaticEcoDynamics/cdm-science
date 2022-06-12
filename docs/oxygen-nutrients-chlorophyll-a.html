@@ -88,7 +88,7 @@
 <h3>
 <span class="header-section-number">5.2.1</span> Background<a class="anchor" aria-label="anchor" href="#background"><i class="fas fa-link"></i></a>
 </h3>
-<p>Dissolved Oxygen (<span class="math inline">\(DO\)</span>) dynamics respond to processes of atmospheric exchange, sediment oxygen demand, microbial use during organic matter mineralisation and nitrification, photosynthetic oxygen production and respiratory oxygen consumption, chemical oxygen demand and respiration by other biotic components. In general, within the Coorong, dissolved oxygen levels are affected by salinity and temperature changes, which control oxygen solubility. In the South Lagoon however, enriched sediments create a large sediment oxygen demand (<span class="math inline">\(SOD\)</span>), which can casue a temporary sag in the oxygen saturation levels, particualr under quiescent codnitions when wind mixing is unable to replenish low oxugen in the bottom waters. Superimposed on this is the often patchy photosynthetic inputs of oxygen by phytoplankton and filamentous macroalgae, and their subsequent high respiratory demands under dark conditions.</p>
+<p>Dissolved Oxygen (<span class="math inline">\(DO\)</span>) dynamics respond to processes of atmospheric exchange, sediment oxygen demand, microbial use during organic matter mineralisation and nitrification, photosynthetic oxygen production and respiratory oxygen consumption, chemical oxygen demand and respiration by other biotic components. In general, within the Coorong, dissolved oxygen levels are affected by salinity and temperature changes, which control oxygen solubility. In the South Lagoon however, enriched sediments create a large sediment oxygen demand (<span class="math inline">\(SOD\)</span>), which can casue a temporary sag in the oxygen saturation levels, particualr under quiescent conditions when wind mixing is unable to replenish low oxugen in the bottom waters. Superimposed on this is the often patchy photosynthetic inputs of oxygen by phytoplankton and filamentous macroalgae, and their subsequent high respiratory demands under dark conditions.</p>
 </div>
 <div id="model-setup" class="section level3" number="5.2.2">
 <h3>
@@ -150,15 +150,18 @@ Figure 5.1: (a) Long-term time-series and (b) zoom-in view of the modelled vs. 
 <h3>
 <span class="header-section-number">5.3.1</span> Background<a class="anchor" aria-label="anchor" href="#background-1"><i class="fas fa-link"></i></a>
 </h3>
+<p>Nutrient retention in the Coorong lagoon is currently a core management driver, linked to habitat quality and a key target of proposed management interventions. Recent analysis of the available historical nutrient data across the lagoon has shown the sharp gradients in nutrient species, and often high levels of nutrients in the South Lagoon in particular (Mosley et al., 202X). Furthermore, process investigations have elucidated the high rates of benthic metabolism and rates of productivity, contributing to a system with intensively cycled materials between ecosystem pools. Yet, we currently have only a limited understanding of the nutrient budget within the lagoons and the hydrodynamic and biogeochemical controls on elemental cycling. In this section, we outline the model setup and approach to parameterisation and parameter selection for the key pools and processes relevant to the Coorong.</p>
 </div>
 <div id="model-setup-1" class="section level3" number="5.3.2">
 <h3>
 <span class="header-section-number">5.3.2</span> Model setup<a class="anchor" aria-label="anchor" href="#model-setup-1"><i class="fas fa-link"></i></a>
 </h3>
-<div id="general-approach" class="section level4" number="5.3.2.1">
-<h4>
-<span class="header-section-number">5.3.2.1</span> General approach<a class="anchor" aria-label="anchor" href="#general-approach"><i class="fas fa-link"></i></a>
+<div id="general-approach" class="section level4 unnumbered">
+<h4>General approach<a class="anchor" aria-label="anchor" href="#general-approach"><i class="fas fa-link"></i></a>
 </h4>
+<p>The CDM approach to simulate nutrients includes the <a href="https://aquaticecodynamics.github.io/aed-science/inorganic-nitrogen.html">nitrogen</a>, <a href="https://aquaticecodynamics.github.io/aed-science/inorganic-phosphorus.html">phosphorus</a>, <a href="https://aquaticecodynamics.github.io/aed-science/silica.html">silica</a> and <a href="https://aquaticecodynamics.github.io/aed-science/organic-matter.html">organic matter</a> modules within AED. Both the inorganic and organic, and dissolved and particulate forms of C, N and P are modelled explicitly along the general degradation pathway of POM to DOM to dissolved inorganic matter (DIM), however the need for discrete OM pools is elaborated upon below. The nitrogen cycle includes the additional processes of denitrification and nitrification that are not in the carbon and phosphorus cycles.</p>
+<p>An 8-pool organic matter module able to capture the variable reactivity of the OM pool and its stoichiometry is included. Under this conceptual model the decomposition of particulate detrital material is broken down through a process of enzymatic hydrolysis that slowly converts POM to labile DOM. A small fraction, f_ref, of this material is diverted to the DOM-R pool. The bioavailable DOM material enters the bacterial terminal metabolism pathways. These are active depending on the ambient oxygen concentrations and presence of electron acceptors, and of most relevance to the reservoirs, these pathways aerobic breakdown, denitrification, sulfate reduction, and methanogenesis. In most model approaches it is assumed these communities vary in response to temperature, and are mediated using a simple oxygen dependence or limitation factor. Reoxidation of reduced by-products is also included to account the role of nitrifiers, sulfate oxidising bacteria (SOB) and methane oxidising bacteria (MOB).</p>
+<p>Filterable reactive phosphorus also is known to adsorb onto suspended solids (SS), however, the rate is often site specific. Particulate organic matter in that deposits into the sediment may also be resuspended back into the water column when the bottom shear stress is adequate. In addition to the normal process descriptions included in the AED modules summarised above, several adjustments were made during the Coorong application, as dsicussed next.</p>
 </div>
 <div id="impact-of-hypersalinity-on-nitrification-and-denitrification" class="section level4 unnumbered">
 <h4>Impact of hypersalinity on nitrification and denitrification<a class="anchor" aria-label="anchor" href="#impact-of-hypersalinity-on-nitrification-and-denitrification"><i class="fas fa-link"></i></a>
@@ -178,19 +181,25 @@ Figure 5.2: Limitation factor of salinity on base nitrification and denitrificat
 <div id="impact-of-salinity-and-temperature-on-phosphorus-adsorption-desorption" class="section level4 unnumbered">
 <h4>Impact of salinity and temperature on phosphorus adsorption-desorption<a class="anchor" aria-label="anchor" href="#impact-of-salinity-and-temperature-on-phosphorus-adsorption-desorption"><i class="fas fa-link"></i></a>
 </h4>
-<p>Because of low solubility of P-bearing minerals in the earth’s crust and a strong affinity of dissolved phosphate to adsorb on the solid surfaces, sediment, including suspended particles, has been identified as the dominant P reservoir in both freshwater and coastal marine environments. Suspended particles are able to adsorb or desorb phosphate in the water, depending on the sediment phosphorus contents and a range of environmental conditions. Adsorption can vary considerably along a salinity gradient (Sundareshwar and Morris, 1999; Zhang and Huang, 2011) as well as affected by the temperature (Zhang and Huang, 2011). For this process adoption of the algorithm, as implemented by Zhang and Huang, 2011, is a convenient method. In this method, the PO4 adsorption capability (<span class="math inline">\(K_{PO4-P}\)</span>), defined as the ratio of PO4 concentration in the particles and water per mg of suspended particles, is calculated as:</p>
+<p>Because of low solubility of P-bearing minerals in the earth’s crust and a strong affinity of dissolved phosphate to adsorb on the solid surfaces, sediment, including suspended particles, has been identified as the dominant P reservoir in both freshwater and coastal marine environments. Suspended particles are able to adsorb or desorb phosphate in the water, depending on the sediment phosphorus contents and a range of environmental conditions. Adsorption can vary considerably along a salinity gradient (Sundareshwar and Morris, 1999; Zhang and Huang, 2011) as well as affected by the temperature (Zhang and Huang, 2011). For this process adoption of the algorithm, as implemented by Zhang and Huang, 2011, is a convenient method. In this method, the PO4 adsorption capability (<span class="math inline">\(K_{PO4-P}\)</span>), defined as the ratio of <span class="math inline">\(PO_4\)</span> concentration in the particles and water per mg of suspended particles, is calculated as:</p>
 <center>
 <span class="math display" id="eq:watereq1">\[\begin{equation}
 K_{PO4-P} = (60- [EPC]_0)/(100 ×[EPC]_0)
 \tag{5.1}
 \end{equation}\]</span>
 </center>
-<p>where the <span class="math inline">\([EPC]_0\)</span> is the equilibrium PO4 concentration in the water and is a function of the exchangeable PO4 content in the particle <span class="math inline">\(P_{exch}\)</span>, calculated as:</p>
-<p>K_(PO4-P)=A×P_exch+B×P_exch^2</p>
-<p>where A and B in Eq() are coefficients as a function of salinity and temperature through multiparameter regression analysis from their laboratory experiments as:</p>
-<p>A=-140.5+1098.2/t+30.67×ln⁡(t)+0.0907×S
-B=1225.96-6880.49/t-278.77×ln⁡(t)+0.4561×S</p>
-<p>where t is the water temperature in °C, S is the salinity in PSU. In the Coorong, the P_exch is estimated as 0.78 µmol P/g from the field survey data (Mosley et al., 2020). The resulting PO4 adsorption capability under a range of temperature and salinity is shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal2">5.3</a>.</p>
+<p>where the <span class="math inline">\([EPC]_0\)</span> is the equilibrium <span class="math inline">\(PO_4\)</span> concentration in the water and is a function of the exchangeable <span class="math inline">\(PO_4\)</span> content in the particle <span class="math inline">\(P_{exch}\)</span>, calculated as:</p>
+<span class="math display" id="eq:watereq2">\[\begin{equation}
+[EPC]_0 = A × P_{exch} +B×P_{exch}^2
+\tag{5.2}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> in Eq <a href="oxygen-nutrients-chlorophyll-a.html#eq:watereq2">(5.2)</a> are coefficients as a function of salinity and temperature through multi-parameter regression analysis from laboratory experiments as:</p>
+<span class="math display" id="eq:watereq3">\[\begin{equation}
+A=-140.5+1098.2/T+30.67× ln(T)+0.0907×S \\
+B=1225.96-6880.49/T-278.77×ln(T))+0.4561×S
+\tag{5.3}
+\end{equation}\]</span>
+<p>where <span class="math inline">\(T\)</span> is the water temperature in °C, <span class="math inline">\(S\)</span> is the salinity in PSU. In the Coorong, the <span class="math inline">\(P_{exch}\)</span> is estimated as 0.78 µmol P/g from the field survey data (Mosley et al., 2020). The resulting <span class="math inline">\(PO4\)</span> adsorption capability under a range of temperature and salinity is shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal2">5.3</a>.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-sal2"></span>
@@ -203,22 +212,833 @@ Figure 5.3: Response of the adsorption capability of phosphorus of suspended par
 <div id="nutrient-flux-at-the-sediment-water-interface-swi" class="section level4 unnumbered">
 <h4>Nutrient flux at the sediment-water interface (SWI)<a class="anchor" aria-label="anchor" href="#nutrient-flux-at-the-sediment-water-interface-swi"><i class="fas fa-link"></i></a>
 </h4>
-<p>One of the key drivers of estuarine water quality is the sediment biogeochemical processes and the exchange of nutrient at the SWI (Crowe et al., 2012). In shallow waters, hydrodynamics and diffusion have been regarded as the crucial factors to dominate the nutrients release. More specifically, two modes are responsible for nutrients release from sediment layers to overlying water, i.e., static release by nutrient diffusion in relatively calm situation caused by concentration gradient, and dynamic release accompanied by hydrodynamic-induced sediment resuspension in the shallow lake (Qin et al., 2006, Tengberg et al., 2003). In open water where the fetch is long, in particular, the dynamic release is the dominant mode in the actual situations since the water-sediment interface is frequently disturbed by the hydrodynamic process (Qin et al., 2006). Fan et al. (2001) have claimed that the internal phosphorus (P) load induced by resuspension was 8–10 times larger than the static release, while Reddy et al. (1996) have reported that ammonia concentration increased ten times in the overlying water caused by resuspension compared with gradient diffusion. Besides, it is also found that internal P from sediment resuspension resulting from moderate wind could be comparable in magnitude to the daily external supply (Gelencser and Szilagyi, 1982). Thus, the disturbance at the water-sediment layer induced by wind can significantly affect SS and nutrients behaviors in the lake ecosystem (Huang et al., 2016).</p>
-<p>Resuspension led to increase of suspended solids (including POC) in the overlying water, but the impacts on the dissolved nutrient is depending on many factors. Tengler et al (2003) showed the resuspension lead to increase flux of nitrate, but decrease of PO4 and no change of NH4. Similarly, Tengberg et al. (2003) and Sondergaard et al. (1992) found that resuspension can led to either higher or lower concentration of phosphate in the overlying water, depending the iron level of the suspended solids. Furthermore, the effects of resuspension on the long-term nitrogen and phosphorus liberation may be mild. Sloth et al. (1996) showed small changes in nutrient fluxes in the laboratory study, and the measured parameters of a marine system returned to the condition before the resuspension events. Blackburn (1997) also stated that natural resuspension does not significantly contribute to a long-term change of sediment nitrogen release. The nitrogen release with or without resuspension is just a matter of time, that is a sudden or a gradual release but to the same extent.</p>
-<p>In the Coorong, the effects of wind-induced resuspension on the nutrient release in the Coorong is relatively mild. In the field survey of waves and resuspension in the Coorong, there was no significant change in nutrient levels due to resuspension. Total nutrient concentrations did not show a consistent relationship to any other variables and TN and TP had a moderately negative relationship to each other. Dissolved nutrient concentrations were consistently below minimum detectable levels. This is probably due to the major components of N/P released by resuspension was the particulate forms (Tang et al., 2020); also, the sediment experiment showed a strong diffusive nutrient flux of NH4 and PO4 under calm condition, which indicate the diffusive flux of nutrient is the major process of sediment release in the Coorong. The major components of TSS in the Coorong was found to be phytoplankton, where the inorganic suspended particles contributed relatively small to the TSS.</p>
-<p>Therefore, in the CDM generation one the “static” sediment flux algorithm is adopted that is suited to long-term studies and assumed the OM concentration is thought to be relatively stable. The sediment oxygen demand and nutrient flux rates were set based on the sediment flux data from the site of Parnka Point (Table 2.4, Mosley et al., 2020) which were then interpolated into the zones based on the sediment particle sizes and organic matter contents, following a role of thumb that the oxygen demand and nutrient flux increased with the organic matter contents.</p>
+<p>One of the key drivers of lagoon water quality is the sediment biogeochemical processes and the exchange of nutrient at the SWI (Crowe et al., 2012). In shallow waters, hydrodynamics and diffusion have been regarded as the crucial factors to dominate the rate of sediment nutrient release. More specifically, two modes are responsible for nutrient release from sediment layers to overlying water: static release by nutrient diffusion in relatively calm situations as driven by a concentration gradient, and dynamic release accompanied by hydrodynamic-induced sediment resuspension (Qin et al., 2006, Tengberg et al., 2003). In open water where the fetch is long, in particular, the dynamic release can be the dominant mode since the water-sediment interface is frequently disturbed by hydrodynamic processes (Qin et al., 2006). Fan et al. (2001) have claimed that the internal phosphorus (P) load induced by resuspension was 8–10 times larger than the static release, while Reddy et al. (1996) have reported that ammonia concentration increased ten times in the overlying water caused by resuspension compared with gradient diffusion. It is also found that internal P from sediment resuspension resulting from moderate wind could be comparable in magnitude to the daily external supply (Gelencser and Szilagyi, 1982). Thus, the disturbance at the water-sediment layer induced by wind can significantly affect SS and nutrient behaviors in shallow aquatic ecosystems (Huang et al., 2016).</p>
+<p>Resuspension leads to a predictable increase of suspended solids (including POC) in the overlying water, but the impacts on the dissolved nutrient release rate depends on many factors. Tengler et al (2003) showed the resuspension led to an increase flux of NO3, but decrease of PO4 and no change of NH4. Similarly, Tengberg et al. (2003) and Sondergaard et al. (1992) found that resuspension can led to either higher or lower concentration of phosphate in the overlying water, depending the iron level of the suspended solids. Furthermore, the effects of resuspension on the long-term nitrogen and phosphorus liberation may be mild. Sloth et al. (1996) showed small changes in nutrient fluxes in the laboratory study, and the measured parameters of a marine system returned to the condition before the resuspension events. Blackburn (1997) also stated that natural resuspension does not significantly contribute to a long-term change of sediment nitrogen release. The nitrogen release with or without resuspension is just a matter of time, that is a sudden or a gradual release but to the same extent.</p>
+<p>In the Coorong, the effects of wind-induced resuspension on the nutrient release in the Coorong may be relatively mild. In the field survey of waves and resuspension in the Coorong, there was no significant change in nutrient levels due to resuspension. Total nutrient concentrations did not show a consistent relationship to any other variables and TN and TP had a moderately negative relationship to each other. Dissolved nutrient concentrations were consistently below minimum detectable levels. This is probably due to the major components of N/P released by resuspension was the particulate forms (Tang et al., 2020); also, the sediment experiment showed a strong diffusive nutrient flux of NH4 and PO4 under calm condition, which indicate the diffusive flux of nutrient is the major process of sediment release in the Coorong. The major components of TSS in the Coorong was found to be phytoplankton, where the inorganic suspended particles contributed relatively small to the TSS.</p>
+<p>Therefore, in the CDM generation one the “static” sediment flux algorithm is adopted that is suited to long-term studies and assumed the OM concentration is thought to be relatively stable. The sediment oxygen demand and nutrient flux rates were set based on the sediment flux data from the site of Parnka Point (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-sedpars">5.1</a>) which were then interpolated into the zones based on the sediment particle sizes and organic matter contents, following a role of thumb that the oxygen demand and nutrient flux increased with the organic matter contents (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-zonepars">5.2</a>).</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:5-sedpars">Table 5.1: </span>Summary of dissolved sediment flux data collected within the Coorong (HCHB T&amp;I 1) and used in the CDM model.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Dataset
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Units
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Light
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Dark
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="2">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>SWI ammonium flux</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Mosley et al. (2020)
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\mu mol\: /m^2\: /h\]</span>
+</td>
+<td style="text-align:left;">
+253 ± 88.4
+</td>
+<td style="text-align:left;">
+172.5 ± 107.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+AED, <code>Fsed_amm</code>
+</td>
+<td style="text-align:left;">
+<span class="math display">\[mmol\:/ m^2\:/d\]</span>
+</td>
+<td style="text-align:left;">
+6.07 ± 2.12
+</td>
+<td style="text-align:left;">
+4.14 ± 2.58
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>SWI nitrate flux</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Mosley et al. (2020)
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\mu mol\: /m^2\: /h\]</span>
+</td>
+<td style="text-align:left;">
+267.2 ± 269.8
+</td>
+<td style="text-align:left;">
+2.90 ± 43.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+AED, <code>Fsed_nit</code>
+</td>
+<td style="text-align:left;">
+<span class="math display">\[mmol\:/ m^2\:/d\]</span>
+</td>
+<td style="text-align:left;">
+6.41 ± 6.47
+</td>
+<td style="text-align:left;">
+0.07 ± 1.05
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>SWI phosphate flux</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Mosley et al. (2020)
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\mu mol\: /m^2\: /h\]</span>
+</td>
+<td style="text-align:left;">
+5.6 ± 5.8
+</td>
+<td style="text-align:left;">
+28.3 ± 16.9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+AED, <code>Fsed_frp</code>
+</td>
+<td style="text-align:left;">
+<span class="math display">\[mmol\:/ m^2\:/d\]</span>
+</td>
+<td style="text-align:left;">
+0.13 ± 0.14
+</td>
+<td style="text-align:left;">
+0.68 ± 0.41
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>SWI oxygen flux</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Mosley et al. (2020)
+</td>
+<td style="text-align:left;">
+<span class="math display">\[\mu mol\: /m^2\: /h\]</span>
+</td>
+<td style="text-align:left;">
+1546 ± 2857
+</td>
+<td style="text-align:left;">
+-4925 ± 541
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+AED, <code>Fsed_oxy</code>
+</td>
+<td style="text-align:left;">
+<span class="math display">\[mmol\:/ m^2\:/d\]</span>
+</td>
+<td style="text-align:left;">
+37.1 ± 68.57
+</td>
+<td style="text-align:left;">
+-118.2 ± 12.98
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
+<p>These sediment flux parameters serve as the default values used in the intial simulations. When the model is run with the dynamic sediment biogeochemistry model this fluxes in the tables are not used as input parameters, but rather as guides for validation of the predicted rates - see Chapter 9 for further detail about the dynamic prediction of sediment nutrient fluxes.</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; ">
+<div class="inline-table"><table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:5-zonepars">Table 5.2: </span>Summary of sediment oxygen demand and nutrient fluxes setting in the CDM with 31 material zones.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Zone ID
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Oxygen flux (SOD)
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Ammonium flux
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Nitrate flux
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Phosphate flux
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 11
+</td>
+<td style="text-align:left;">
+-8.40
+</td>
+<td style="text-align:left;">
+7.7040
+</td>
+<td style="text-align:left;">
+-0.0057
+</td>
+<td style="text-align:left;">
+0.12313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 12
+</td>
+<td style="text-align:left;">
+-103.20
+</td>
+<td style="text-align:left;">
+13.3920
+</td>
+<td style="text-align:left;">
+-0.0136
+</td>
+<td style="text-align:left;">
+0.68013
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 13
+</td>
+<td style="text-align:left;">
+-8.40
+</td>
+<td style="text-align:left;">
+7.7040
+</td>
+<td style="text-align:left;">
+-0.0057
+</td>
+<td style="text-align:left;">
+0.12313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 21
+</td>
+<td style="text-align:left;">
+-6.24
+</td>
+<td style="text-align:left;">
+7.5744
+</td>
+<td style="text-align:left;">
+-0.0055
+</td>
+<td style="text-align:left;">
+0.11272
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 22
+</td>
+<td style="text-align:left;">
+-103.20
+</td>
+<td style="text-align:left;">
+13.3920
+</td>
+<td style="text-align:left;">
+-0.0136
+</td>
+<td style="text-align:left;">
+0.68013
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 23
+</td>
+<td style="text-align:left;">
+-8.40
+</td>
+<td style="text-align:left;">
+7.7040
+</td>
+<td style="text-align:left;">
+-0.0057
+</td>
+<td style="text-align:left;">
+0.12313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 31
+</td>
+<td style="text-align:left;">
+-47.88
+</td>
+<td style="text-align:left;">
+10.0728
+</td>
+<td style="text-align:left;">
+-0.0090
+</td>
+<td style="text-align:left;">
+0.31345
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 32
+</td>
+<td style="text-align:left;">
+-87.60
+</td>
+<td style="text-align:left;">
+12.4560
+</td>
+<td style="text-align:left;">
+-0.0123
+</td>
+<td style="text-align:left;">
+0.90492
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 33
+</td>
+<td style="text-align:left;">
+-8.40
+</td>
+<td style="text-align:left;">
+7.7040
+</td>
+<td style="text-align:left;">
+-0.0057
+</td>
+<td style="text-align:left;">
+0.72313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 41
+</td>
+<td style="text-align:left;">
+-0.24
+</td>
+<td style="text-align:left;">
+7.2144
+</td>
+<td style="text-align:left;">
+-0.0050
+</td>
+<td style="text-align:left;">
+0.08380
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 42
+</td>
+<td style="text-align:left;">
+-117.60
+</td>
+<td style="text-align:left;">
+14.2560
+</td>
+<td style="text-align:left;">
+-0.0148
+</td>
+<td style="text-align:left;">
+0.64954
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 43
+</td>
+<td style="text-align:left;">
+-0.24
+</td>
+<td style="text-align:left;">
+7.2144
+</td>
+<td style="text-align:left;">
+-0.0050
+</td>
+<td style="text-align:left;">
+0.08380
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 51
+</td>
+<td style="text-align:left;">
+-55.80
+</td>
+<td style="text-align:left;">
+7.0320
+</td>
+<td style="text-align:left;">
+-0.0097
+</td>
+<td style="text-align:left;">
+0.35163
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 52
+</td>
+<td style="text-align:left;">
+-117.60
+</td>
+<td style="text-align:left;">
+9.5040
+</td>
+<td style="text-align:left;">
+-0.0148
+</td>
+<td style="text-align:left;">
+0.64954
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 53
+</td>
+<td style="text-align:left;">
+-12.00
+</td>
+<td style="text-align:left;">
+5.2800
+</td>
+<td style="text-align:left;">
+-0.0060
+</td>
+<td style="text-align:left;">
+0.41319
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 61
+</td>
+<td style="text-align:left;">
+-6.60
+</td>
+<td style="text-align:left;">
+5.0640
+</td>
+<td style="text-align:left;">
+-0.0056
+</td>
+<td style="text-align:left;">
+0.11445
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 62
+</td>
+<td style="text-align:left;">
+-113.52
+</td>
+<td style="text-align:left;">
+9.3408
+</td>
+<td style="text-align:left;">
+-0.0145
+</td>
+<td style="text-align:left;">
+0.62987
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 63
+</td>
+<td style="text-align:left;">
+-6.60
+</td>
+<td style="text-align:left;">
+5.0640
+</td>
+<td style="text-align:left;">
+-0.0056
+</td>
+<td style="text-align:left;">
+0.11445
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 71
+</td>
+<td style="text-align:left;">
+-6.60
+</td>
+<td style="text-align:left;">
+5.0640
+</td>
+<td style="text-align:left;">
+-0.0056
+</td>
+<td style="text-align:left;">
+0.08900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 72
+</td>
+<td style="text-align:left;">
+-22.20
+</td>
+<td style="text-align:left;">
+5.6880
+</td>
+<td style="text-align:left;">
+-0.0069
+</td>
+<td style="text-align:left;">
+0.14751
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 73
+</td>
+<td style="text-align:left;">
+-6.60
+</td>
+<td style="text-align:left;">
+5.0640
+</td>
+<td style="text-align:left;">
+-0.0056
+</td>
+<td style="text-align:left;">
+0.08900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 81
+</td>
+<td style="text-align:left;">
+-6.60
+</td>
+<td style="text-align:left;">
+5.0640
+</td>
+<td style="text-align:left;">
+-0.0056
+</td>
+<td style="text-align:left;">
+0.08900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 82
+</td>
+<td style="text-align:left;">
+-60.24
+</td>
+<td style="text-align:left;">
+7.2096
+</td>
+<td style="text-align:left;">
+-0.0100
+</td>
+<td style="text-align:left;">
+0.16440
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 83
+</td>
+<td style="text-align:left;">
+-6.60
+</td>
+<td style="text-align:left;">
+5.0640
+</td>
+<td style="text-align:left;">
+-0.0056
+</td>
+<td style="text-align:left;">
+0.08900
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 91
+</td>
+<td style="text-align:left;">
+-0.12
+</td>
+<td style="text-align:left;">
+4.8048
+</td>
+<td style="text-align:left;">
+-0.0050
+</td>
+<td style="text-align:left;">
+0.06471
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 92
+</td>
+<td style="text-align:left;">
+-60.24
+</td>
+<td style="text-align:left;">
+7.2096
+</td>
+<td style="text-align:left;">
+-0.0100
+</td>
+<td style="text-align:left;">
+0.09644
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 93
+</td>
+<td style="text-align:left;">
+-0.12
+</td>
+<td style="text-align:left;">
+4.8048
+</td>
+<td style="text-align:left;">
+-0.0050
+</td>
+<td style="text-align:left;">
+0.06471
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Side
+</td>
+<td style="text-align:left;">
+Zone 101
+</td>
+<td style="text-align:left;">
+-2.04
+</td>
+<td style="text-align:left;">
+4.8816
+</td>
+<td style="text-align:left;">
+-0.0052
+</td>
+<td style="text-align:left;">
+0.07190
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Channel
+</td>
+<td style="text-align:left;">
+Zone 102
+</td>
+<td style="text-align:left;">
+-13.68
+</td>
+<td style="text-align:left;">
+5.3472
+</td>
+<td style="text-align:left;">
+-0.0061
+</td>
+<td style="text-align:left;">
+0.11553
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lakes Side
+</td>
+<td style="text-align:left;">
+Zone 103
+</td>
+<td style="text-align:left;">
+-2.04
+</td>
+<td style="text-align:left;">
+4.8816
+</td>
+<td style="text-align:left;">
+-0.0052
+</td>
+<td style="text-align:left;">
+0.07190
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ocean Fan
+</td>
+<td style="text-align:left;">
+Zone 104
+</td>
+<td style="text-align:left;">
+0.00
+</td>
+<td style="text-align:left;">
+4.8000
+</td>
+<td style="text-align:left;">
+-0.0050
+</td>
+<td style="text-align:left;">
+0.06429
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
 </div>
 <div id="parameter-summary" class="section level4 unnumbered">
 <h4>Parameter summary<a class="anchor" aria-label="anchor" href="#parameter-summary"><i class="fas fa-link"></i></a>
 </h4>
+<p>A summary of the overall model parameters used within the CDM simulations related to nutrient dynamics are summarised below in Table X.</p>
 </div>
 </div>
 <div id="model-results-1" class="section level3" number="5.3.3">
 <h3>
 <span class="header-section-number">5.3.3</span> Model results<a class="anchor" aria-label="anchor" href="#model-results-1"><i class="fas fa-link"></i></a>
 </h3>
+<p>The results of the integrated assessment for the final calibrated model are shown in Chapter 7.</p>
 <p><br></p>
-<!-- -->
+<!-- ------------------- -->
 </div>
 </div>
 <div id="phytoplankton-chlorophyll-a" class="section level2" number="5.4">
@@ -253,12 +1073,12 @@ Figure 5.3: Response of the adsorption capability of phosphorus of suspended par
 <p>The approach to simulate algal biomass is to adopt several plankton functional types (PFTs) that are typically defined based on specific groups. Whilst each group that is simulated is unique, they share a common mathematical approach and each simulate growth, death and sedimentation processes, and customisable internal nitrogen, phosphorus and/or silica stores. Distinction between groups is made by adoption of group’s specific parameters for environmental dependencies, and/or enabling options such as vertical migration or N fixation. This way the group-specific traits are used to inform the groups parameterisations.</p>
 <p>Based on the findings of the above-cited studies, the phytoplankton community in the CDM has been configured into four PFTs, according to their salinity tolerance and literature review of their biogeochemical properties asscoiated with the dominant taxa - spanning green algae (chlorophytes), cryptophytes, dinoflagellates, and diatoms.</p>
 <p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of carbon (<span class="math inline">\(mmol\:C/m^3\)</span>), and the groups have been configured to have a constant C:N:P:Si ratio (this can be alternatuvely changed to use dynamic stoichiometry and uptake of N and P sources in response to changing water column condition and cellular physiology if preferred). The total water column chlorophyll-a is calculated from the sum of the individual groups with a carbon:chlorophyll-a conversion applied. Balance equations that capture the various processes impacting phytoplankton are outlined in the full description of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science manual</a>. Key aspects relevant to the Coorong implementation are summarised in the following sections, including the salinity limitation functions and parameters used to differentiate the phytoplankton groups within the community.</p>
-<p>The four pools configured to simulate the biomass of phytoplankton, were denoted <span class="math inline">\(grn\)</span>, <span class="math inline">\(crypt\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>, which map to the mixed assemblage groups identified above as <span class="math inline">\(H1\)</span> - <span class="math inline">\(H4\)</span>. The parameters used in the setup are outlined in Table (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.1</a>).</p>
+<p>The four pools configured to simulate the biomass of phytoplankton, were denoted <span class="math inline">\(grn\)</span>, <span class="math inline">\(crypt\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>, which map to the mixed assemblage groups identified above as <span class="math inline">\(H1\)</span> - <span class="math inline">\(H4\)</span>. The parameters used in the setup are outlined in Table (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.3</a>).</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4200px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:5-phytopars">Table 5.1: </span>Summary of the phytoplankton parameters used in the CDM version of the AED model.
+<span id="tab:5-phytopars">Table 5.3: </span>Summary of the phytoplankton parameters used in the CDM version of the AED model.
 </caption>
 <thead><tr>
 <th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
@@ -1530,7 +2350,7 @@ Figure 5.4: Salinity limitation curves applied to the photosynthesis rate of eac
 </p>
 </div>
 </div>
-<p>Direct measurements for other group-specific physiological rates and parameters are not yet available for the Coorong, and so the current version of the model relies on prior experience and relevant literature to set the other key parameters shown in Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.1</a> for each group, such as the sedimentation rate, nutrient stoichiometry and light sensitivity.</p>
+<p>Direct measurements for other group-specific physiological rates and parameters are not yet available for the Coorong, and so the current version of the model relies on prior experience and relevant literature to set the other key parameters shown in Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.3</a> for each group, such as the sedimentation rate, nutrient stoichiometry and light sensitivity.</p>
 <hr>
 </div>
 <div id="model-setup-microphytobenthos" class="section level3" number="5.4.3">
@@ -1538,14 +2358,219 @@ Figure 5.4: Salinity limitation curves applied to the photosynthesis rate of eac
 <span class="header-section-number">5.4.3</span> Model setup: Microphytobenthos<a class="anchor" aria-label="anchor" href="#model-setup-microphytobenthos"><i class="fas fa-link"></i></a>
 </h3>
 <p>The approach to simulate the biomass of benthic microalgae (microphytobenthos) is to allocate a single biomass pool that cocneptually sites between the water and sediment (i.e., at the sediment-water interface). The biomass of this group, <span class="math inline">\(MPB\)</span>, is simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>), and has a dynamic C:N:P stoichiometry based on the history of the deposited phytopalnkton that have landed on the sediment. The model is conceptually simple compared to the overlying phytoplankton group model, with paramaetrs to mediate response to light, resuspension back into the watre column, and burial into the deeper sediment.Balance equations that capture the various processes impacting phytoplankton are outlined in the full description of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science manual</a>.</p>
-<p>The <span class="math inline">\(MPB\)</span> pool configured to simulate the biomass is configured according to the parameters outlined in Table (Table <a href="#tab:5-mpbpars"><strong>??</strong></a>).</p>
+<p>The <span class="math inline">\(MPB\)</span> pool configured to simulate the biomass is configured according to the parameters outlined in Table (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-mpbpars">5.4</a>).</p>
+<p><br></p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:700px; overflow-x: scroll; width:680px; ">
+<div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+<span id="tab:5-mpbpars">Table 5.4: </span>Summary of the microphytobenthos parameters used in the CDM version of the AED model.
+</caption>
+<thead><tr>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Unit
+</th>
+<th style="text-align:left;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Parameter1
+</th>
+</tr></thead>
+<tbody>
+<tr grouplength="8">
+<td colspan="4" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Microphytobenthos</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{mpb-g}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+maximum growth rate of <span class="math inline">\(MPB\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+0.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{mpb-r}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+dark respiration rate of <span class="math inline">\(MPB\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[R_{mpb-b}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+rate of MPB burial
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{/d}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+0.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[I_{K_{mpb}}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+half saturation constant for light limitation of growth
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{W/m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[MPB_{max}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+maximum biomass density of <span class="math inline">\(MPB\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{mmol\: C/m^2}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+1500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\Theta_{resus}^{phy}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+fraction to set the amount of resuspension for <span class="math inline">\(PHY\)</span> group <span class="math inline">\(a\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+1.2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[N_{sz}^{mpb}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+number of benthic zones where <span class="math inline">\(MPB\)</span> is active
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+<span class="math display">\[\mathbb{Z}_{sz}^{mpb}\]</span>
+</td>
+<td style="text-align:left;min-width: 15em; ">
+set of benthic zones with <span class="math inline">\(MPB\)</span> active, where <span class="math inline">\(sz \in \mathbb{Z}\)</span>
+</td>
+<td style="text-align:left;max-width: 20em; ">
+<span class="math display">\[\small{-}\]</span>
+</td>
+<td style="text-align:left;min-width: 20em; ">
+…
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p><br></p>
 </div>
 <div id="model-results-2" class="section level3" number="5.4.4">
 <h3>
 <span class="header-section-number">5.4.4</span> Model results<a class="anchor" aria-label="anchor" href="#model-results-2"><i class="fas fa-link"></i></a>
 </h3>
 <p><br></p>
-<!-- -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #2481AA;
+  float: left;
+  width: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+</style>
+<div class="tab">
+<p><button class="tablinks" onclick="opentab(event, 'AED-water')" id="defaultOpen">AED-water</button>
+<button class="tablinks" onclick="opentab(event, 'AED-benthic')">AED-benthic</button></p>
+</div>
+<div id="AED-water" class="tabcontent">
+<p>
+</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-sal6"></span>
+<img src="images/dev/water/salinity_phytoplankton.jpg" alt="Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature." width="100%"><p class="caption">
+Figure 5.5: Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature.
+</p>
+</div>
+</div>
+
+</div>
+<div id="AED-benthic" class="tabcontent">
+<p>
+</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:water-sal7"></span>
+<img src="images/dev/water/salinity_phytoplankton.jpg" alt="Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature." width="100%"><p class="caption">
+Figure 5.6: Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature.
+</p>
+</div>
+</div>
+
+</div>
+<script>
+function opentab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script><!-- -->
 </div>
 </div>
 <div id="summary" class="section level2" number="5.5">

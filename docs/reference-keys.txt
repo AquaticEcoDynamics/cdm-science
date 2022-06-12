@@ -33,9 +33,16 @@ fig:dev-pic4
 fig:water-oxy1
 fig:water-sal1
 eq:watereq1
+eq:watereq2
+eq:watereq3
 fig:water-sal2
+tab:5-sedpars
+tab:5-zonepars
 tab:5-phytopars
 fig:water-sal3
+tab:5-mpbpars
+fig:water-sal6
+fig:water-sal7
 eq:lagoonhabitat5
 eq:lagoonhabitat6
 fig:dev-pic5
@@ -169,7 +176,6 @@ model-results
 nitrogen-phosphorus-silica
 background-1
 model-setup-1
-general-approach
 model-results-1
 phytoplankton-chlorophyll-a
 background-2
