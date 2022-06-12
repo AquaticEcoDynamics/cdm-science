@@ -1,54 +1,184 @@
-# Oxygen, Nutrients and Chlorophyll-a
+# Oxygen, Nutrients & Chlorophyll-a
 
 <br>
 
-
+<!-- -->
 ## Overview
 
-Oxygen metabolism and nutrient cycling
+Coastal lagoons occur along 13% of the coastlines of all continents (Barnes, 1980) and represent a special type of coastal systems in terms of their hydrology and biogeochemistry, where strong gradients in chemical variables and ecosystem function persist (Kjervfe, 1994). Coastal lagoons like the Coorong are shallow with restricted connection with the ocean, and become vulnerable to nutrient enrichment and eutrophication. Choked lagoons have comparatively long water retention time and high phytoplankton biomass (Knoppers et al., 1991, Newton et al., 2005) due to the restricted water exchange. The relatively poor flushing, together with shallow bathymetry and evaporation, leads to accumulation of salt and nutrients within the basins that is not easily flushed out. Within the South Lagoon in particular, the intense cycling of N and P between the organic and inorganic forms is mediated by the many complex controls on oxygen solubility and primary productivity.
 
-## Model approach
+Furthermore, the biogeochemical cycle of hypersaline environments is highly distinct from typical freshwater, estuarine or marine environments because it is strongly affected by changes in the physicochemical parameters of the brine as well as in the state and composition of the biological community in response to the salinity variations (Zhang and Huang, 2011; Isaji et al., 2019; Mosley et al., 2020). The use of water quality models in the management of coastal water has been well recognised and many models have been utilized to date for coastal management, however, water quality models considering hypersaline lagoon environments are relatively rare although extensive hydrodynamic modelling has been undertaken in these systems.
 
-## Data availability
+Therefore, whilst the base AED model platform being used in previous model versions has been a good starting point, there is a need to tailor the setup to the hypersaline Coorong lagoon system. The aim of this section is to describe the approach, model adjustments and model assessment in terms of how the model is applied to capture the core biogeochemical components: the oxygen, nutrients, and phytoplankton that form the foundation of the elemental cycles in the lagoon. 
 
-## Model setup
+<br>
 
-## Validation and assessment
-
-## Phytoplankton
+<!-- -->
+## Dissolved Oxygen
 
 ### Background
 
-The approach to simulate algal biomass is to adopt several plankton functional types (PFTs) that are typically defined based on specific groups. Whilst each group that is simulated is unique, they share a common mathematical approach and each simulate growth, death and sedimentation processes, and customisable internal nitrogen, phosphorus and/or silica stores if desired. Distinction between groups is made by adoption of group’s specific parameters for environmental dependencies, and/or enabling options such as vertical migration or N fixation.
+Dissolved Oxygen ($DO$) dynamics respond to processes of atmospheric exchange, sediment oxygen demand, microbial use during organic matter mineralisation and nitrification, photosynthetic oxygen production and respiratory oxygen consumption, chemical oxygen demand and respiration by other biotic components. In general, within the Coorong, dissolved oxygen levels are affected by salinity and temperature changes, which control oxygen solubility. In the South Lagoon however, enriched sediments create a large sediment oxygen demand ($SOD$), which can casue a temporary sag in the oxygen saturation levels, particualr under quiescent codnitions when wind mixing is unable to replenish low oxugen in the bottom waters. Superimposed on this is the often patchy photosynthetic inputs of oxygen by phytoplankton and filamentous macroalgae, and their subsequent high respiratory demands under dark conditions. 
 
-Within the Coorong, salinity has been identified as the most important driver of phytoplankton communities (Jendyk et al., 2014; Leterme et al., 2015; Schapira et al., 2010). The water in the north lagoon is brackish because of mixing between the ocean intrusion and barrage flows, and  generally dominated by chlorophytes. On the other hand, the water in the south lagoon is hypersaline and generally dominated by diatoms. Cryptophytes and dinoflagellates were found to present throughout both lagoons but in comparatively much lower abundance (Jendyk et al., 2014; Leterme et al., 2015). 
-
-Some key information from this paper are:
-•         Salinity was the most important driver of phytoplankton communities in Coorong;
-•         The north lagoon was dominated by chlorophytes and south was dominated by diatom;
-•         The salinity threshold for chlorophyte is 28 PSU;
-•         Cryptophytes and dinoflagellates were found to be present throughout both lagoons but in comparatively much lower abundances
- 
-Most importantly, this paper proposed 4 salinity regimes for phytoplankton habitats:
-•         Waters in the H1 category (<5 PSU) were dominated by chlorophytes, although diatoms and cryptophytes sporadically accounted for between 10 and 50% of the overall phytoplankton abundance at Site 1 and Site 2. 
-•         The H2 category (5–20 PSU) was co-dominated by chlorophytes, diatoms and cryptophytes with no significant temporal differences in the relative overall abundance evident. 
-•         Waters in the H3 category (21–40 PSU) saw drastic decreases in the prevalence of chlorophytes compared to lower salinity habitats and marked increases in the abundance of dinoflagellates, particularly toward the higher end of the salinity spectrum. 
-•         The H4 category ( >41 PSU) was mainly dominated by diatoms, although the abundance of dinoflagellates was sometimes higher than that of diatoms.
-
-
-There is a paper of phytoplankton groups in Coorong by Schapira et al (2010). The major conclusion from that paper are: 
-•         Salinity was identified as the main factor structuring the distribution of picophytoplankton along the lagoon.
-•         Highest picophytoplankton abundances were recorded under salinity conditions ranging between 8.0% and 11.0%;
-•         One population of pico-eukaryote dominated the community throughout the salinity gradient and was responsible for the bloom observed between 8.0% and 11.0%. Only this halotolerant population and Prochlorococcus-like picocyanobacteria were identified in hypersaline waters (i.e. above 14.0%)
- 
 ### Model setup
 
-Based on recommendations by Jendyk et al., (2014), the phytoplankton community in the Coorong are configured into four PFTs according to their salinity tolerance and literature review of their biogeochemical properties - spanning green algae (cryptophyte), cryptophyte, dinoflagellates, and diatom.
+The CDM oxygen modelling approach follows the AED oxygen model setup as outlined in the [AED science manual](https://aquaticecodynamics.github.io/aed-science/DO_1.html). The configuration used in the CDM simulations includes:
 
-The algal biomass of each group, $PHY_C$, is simulated in units of carbon (mmol C m-3), and the group can be configured to have a constant C:N:P:Si ratio, or have dynamic uptake of N and P sources in response to changing water column condition and cellular physiology. Balance equations that capture the various processes impacting phytoplankton are outlined in the following sections, including the salinity limitation functions on phytoplankton communities. A full description of the phytoplankton model can be referred to the AED science manual in https://aquaticecodynamics.github.io/aed-science/phytoplankton.html. 
++ atmospheric exchange, based on oxygen solubility
++ phytoplankton photosynthesis and respiration
++ microphytobenthos photosynthesis and respiration
++ macroalgae photosynthesis and respiration
++ sediment oxygen demand
++ oxygen consumption due to nitrification 
++ oxygen consumption due to organic matter mineralisation
+
+The sediment oxygen demand is calculated either by the static sediment oxygen model, or when the SDG model is engaged, then the sediment oxygen demand is computed dynamically based on the oxygen gradient across the sediment-water interface. 
+
+The settings for the model run with the static sediement oxygen demand models, include sensitivity of the SOD to temperature and oxygen concentration in the overlying water. The base oxygen flux rate is however specified for each sediment zone; this is summarised in more detail in the subsequent section. 
+
+Aside from the sediment oxygen demand, the parameters used in the oxygen module are largely fixed and based on either the solubility constants for oxygen, and the reaction rates computed in the nutrient and primary producer modules based on a pre-determined oxygen stoichiometry.
 
 
-The four pools  configured to simulate the biomass of phytoplankton, were denoted $grn$, $crypt$, $diatom$ and $dino$. The parameters used in the setup are outlined in Table (Table \@ref(tab:5-phytopars)). 
+### Model results
+
+The oxygen predictions have been assessed over various years of conditions in the Coorong (2017-2021) based on the routine oxygen monitoring data available, in addition to the once-off high-frequency oxygen logger deployment undertaken at McGrath. In assessing the model performance, we sought to ensure:
+
++ the mean solubility condition across the lagoon was resolved along the salinity gradient
++ the seasonal cycle of solubility was reproduced in the mouth, south lagoon and north lagoon
++ the high-frequency measurements of diel oxygen variation were resolved in the deep (open) water monitoring sites, and
++ the high-frequency measurements of diel oxygen variation were resolved in the shallow (littoral) water monitoring locations, which have higher densities of macrophytes and macroalgae.
+
+The results of the integrated assessment for the final calibrated model are shown in Chapter 9, and below some focused results are presented to demonstrate model performance in simulation oxygen dynamics.
+
+#### Oxygen metabolism at McGrath {.unnumbered}
+
+Figure \@ref(fig:water-oxy1) shows the modelled dissolved oxygen saturation levels against the high frequency oxygen logger data that was collected at the site of McGrath. The results indicate the model captures diel oxygen metabolism at this site well, with fluctuations of high oxygen saturation levels in the day time and low oxygen saturation level at the night time, due to primary production and respiration, respectively.
+
+
+```{r water-oxy1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "(a) Long-term time-series and (b) zoom-in view of the modelled vs. measured DO saturation levels at McGrath."}
+
+knitr::include_graphics("images/dev/water/oxygen_metabolism_mcgrath.png")
+
+```
+
+
+#### Long-term oxygen predictions {.unnumbered}
+
+The predictions of oxygen concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in Appendix B.
+
+<br>
+
+<!-- -->
+## Nitrogen, Phosphorus & Silica
+
+### Background
+
+### Model setup
+
+#### General approach
+
+#### Impact of hypersalinity on nitrification and denitrification {.unnumbered}
+
+The hypersalinity in the Coorong also has potential to impair the nitrification-denitrification process which is regarded as a function to remove the nitrogen in healthy coastal wetland systems. Multiple studies have suggested that the nitrification and denitrification rates in estuarine environments generally decrease with increasing salinity (Helder and DeVries, 1983; Isaji et al., 2019; Santoro and Enrich-Prast, 2015). Salinity inhibits ammonia oxidizing bacteria activity that has been observed to lead to enrichment of ammonium with salinity (Cui et al., 2016; Isaji et al., 2019). This is coincident with the finding in the Coorong that strong ammonium flux from sediment and high ammonium concentrations within surface sediments observed at Parnka Point (Mosley et al., 2020). In the Coorong, it also has been found that the denitrification gene *nirK* had a strong inverse relationship with salinity, and the decline of the *nirK* concentration became more significant when the salinity was over about 40 PSU (Mosley et al., 2020). Therefore, a Michaelis-Menten kinetic function of salinity limitation has been adopted for the nitrification and denitrification rates within the water columns as:
+
+f_SAL={(1  when S≤S_thresh@K_S/(K_S+(〖S-S〗_thresh )  when S>S_thresh )}
+
+where $f_{SAL}$ is the limitation factor, $S$ the salinity, $S_{thresh}$ the salinity threshold when limitation starts to work, and $K_S$ is the half saturation coefficient. In the Coorong, the $S_{thresh}$ is set to 40 PSU and $K_S$ is set to 20 PSU as interpolated from the report of Mosley et al., (2020). This is shown graphically in Figure \@ref(fig:water-sal1).
+
+```{r water-sal1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Limitation factor of salinity on base nitrification and denitrification rates."}
+
+knitr::include_graphics("images/dev/water/salinity_denitrification.png")
+
+```
+
+
+#### Impact of salinity and temperature on phosphorus adsorption-desorption {.unnumbered}
+
+Because of low solubility of P-bearing minerals in the earth's crust and a strong affinity of dissolved phosphate to adsorb on the solid surfaces, sediment, including suspended particles, has been identified as the dominant P reservoir in both freshwater and coastal marine environments. Suspended particles are able to adsorb or desorb phosphate in the water, depending on the sediment phosphorus contents and a range of environmental conditions. Adsorption can vary considerably along a salinity gradient (Sundareshwar and Morris, 1999; Zhang and Huang, 2011) as well as affected by the temperature (Zhang and Huang, 2011). For this process adoption of the algorithm, as implemented by Zhang and Huang, 2011, is a convenient method. In this method, the PO4 adsorption capability ($K_{PO4-P}$), defined as the ratio of PO4 concentration in the particles and water per mg of suspended particles, is calculated as:
+
+<center>
+
+```{=tex}
+\begin{equation}
+K_{PO4-P} = (60- [EPC]_0)/(100 ×[EPC]_0)
+(\#eq:watereq1)
+\end{equation}
+```
+
+</center>
+
+where the $[EPC]_0$ is the equilibrium PO4 concentration in the water and is a function of the exchangeable PO4 content in the particle $P_{exch}$, calculated as:
+
+K_(PO4-P)=A×P_exch+B×P_exch^2
+
+where A and B in Eq() are coefficients as a function of salinity and temperature through multiparameter regression analysis from their laboratory experiments as:
+
+A=-140.5+1098.2/t+30.67×ln⁡(t)+0.0907×S
+B=1225.96-6880.49/t-278.77×ln⁡(t)+0.4561×S
+
+where t is the water temperature in °C, S is the salinity in PSU. In the Coorong, the P_exch is estimated as 0.78 µmol P/g from the field survey data (Mosley et al., 2020). The resulting PO4 adsorption capability under a range of temperature and salinity is shown graphically in Figure \@ref(fig:water-sal2).
+
+```{r water-sal2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Response of the adsorption capability of phosphorus of suspended particles to water temperature and salinity."}
+
+knitr::include_graphics("images/dev/water/salinity_p_adsorption.png")
+
+```
+
+#### Nutrient flux at the sediment-water interface (SWI) {.unnumbered}
+
+One of the key drivers of estuarine water quality is the sediment biogeochemical processes and the exchange of nutrient at the SWI (Crowe et al., 2012). In shallow waters, hydrodynamics and diffusion have been regarded as the crucial factors to dominate the nutrients release. More specifically, two modes are responsible for nutrients release from sediment layers to overlying water, i.e., static release by nutrient diffusion in relatively calm situation caused by concentration gradient, and dynamic release accompanied by hydrodynamic-induced sediment resuspension in the shallow lake (Qin et al., 2006, Tengberg et al., 2003). In open water where the fetch is long, in particular, the dynamic release is the dominant mode in the actual situations since the water-sediment interface is frequently disturbed by the hydrodynamic process (Qin et al., 2006). Fan et al. (2001) have claimed that the internal phosphorus (P) load induced by resuspension was 8–10 times larger than the static release, while Reddy et al. (1996) have reported that ammonia concentration increased ten times in the overlying water caused by resuspension compared with gradient diffusion. Besides, it is also found that internal P from sediment resuspension resulting from moderate wind could be comparable in magnitude to the daily external supply (Gelencser and Szilagyi, 1982). Thus, the disturbance at the water-sediment layer induced by wind can significantly affect SS and nutrients behaviors in the lake ecosystem (Huang et al., 2016).
+
+Resuspension led to increase of suspended solids (including POC) in the overlying water, but the impacts on the dissolved nutrient is depending on many factors. Tengler et al (2003) showed the resuspension lead to increase flux of nitrate, but decrease of PO4 and no change of NH4. Similarly, Tengberg et al. (2003) and Sondergaard et al. (1992) found that resuspension can led to either higher or lower concentration of phosphate in the overlying water, depending the iron level of the suspended solids. Furthermore, the effects of resuspension on the long-term nitrogen and phosphorus liberation may be mild. Sloth et al. (1996) showed small changes in nutrient fluxes in the laboratory study, and the measured parameters of a marine system returned to the condition before the resuspension events. Blackburn (1997) also stated that natural resuspension does not significantly contribute to a long-term change of sediment nitrogen release. The nitrogen release with or without resuspension is just a matter of time, that is a sudden or a gradual release but to the same extent.
+
+In the Coorong, the effects of wind-induced resuspension on the nutrient release in the Coorong is relatively mild. In the field survey of waves and resuspension in the Coorong, there was no significant change in nutrient levels due to resuspension. Total nutrient concentrations did not show a consistent relationship to any other variables and TN and TP had a moderately negative relationship to each other. Dissolved nutrient concentrations were consistently below minimum detectable levels. This is probably due to the major components of N/P released by resuspension was the particulate forms (Tang et al., 2020); also, the sediment experiment showed a strong diffusive nutrient flux of NH4 and PO4 under calm condition, which indicate the diffusive flux of nutrient is the major process of sediment release in the Coorong. The major components of TSS in the Coorong was found to be phytoplankton, where the inorganic suspended particles contributed relatively small to the TSS.
+
+Therefore, in the CDM generation one the “static” sediment flux algorithm is adopted that is suited to long-term studies and assumed the OM concentration is thought to be relatively stable. The sediment oxygen demand and nutrient flux rates were set based on the sediment flux data from the site of Parnka Point (Table 2.4, Mosley et al., 2020) which were then interpolated into the zones based on the sediment particle sizes and organic matter contents, following a role of thumb that the oxygen demand and nutrient flux increased with the organic matter contents.
+
+#### Parameter summary {.unnumbered}
+
+
+### Model results
+
+
+<br>
+
+<!-- -->
+## Phytoplankton & Chlorophyll-a
+
+### Background
+
+Within the Coorong, salinity has been identified as the most important driver of the phytoplankton community (Schapira et al., 2010, Jendyk et al., 2014; Leterme et al., 2015). The water in the north lagoon is brackish because of mixing between the ocean and barrage flows, and this area is generally dominated by chlorophytes since the salinity threshold for dominant chlorophyte species in the lagoon is reported to be ~28 PSU. On the other hand, the water in the south lagoon is hypersaline and generally dominated by diatoms. Cryptophytes and dinoflagellates have also be documented throughout both lagoons but in comparatively lower abundance and biomass (Jendyk et al., 2014; Leterme et al., 2015). 
+
+More specifically, this paper proposed 4 salinity regimes that tend to shape phytoplankton habitat:
+
++ waters in the H1 category (<5 PSU) which tend to be dominated by chlorophytes, although diatoms and cryptophytes sporadically accounted for between 10 and 50% of the overall phytoplankton abundance at Site 1 and Site 2. 
++ waters in the H2 category (5–20 PSU) are co-dominated by chlorophytes, diatoms and cryptophytes with no significant temporal differences in the relative overall abundance evident. 
++ waters in the H3 category (21–40 PSU) saw a drastic decrease in the prevalence of chlorophytes compared to lower salinity habitats, and a marked increases in the abundance of dinoflagellates, particularly toward the higher end of the salinity spectrum. 
++ waters the H4 category (>41 PSU) which are mainly dominated by diatoms, although the abundance of dinoflagellates was sometimes higher than that of diatoms.
+
+
+Aside from these main habitat-species groupings, Schapira et al (2010) had previously reported on the Coorong phytoplankton community. The major conclusions from theri study were:
+
++ salinity was identified as the main factor structuring the distribution of pico-phytoplankton along the lagoon;
++ the highest pico-phytoplankton abundances were recorded under salinity conditions ranging between 8.0% and 11.0%;
++ one population of pico-eukaryote dominated the community throughout the salinity gradient and was responsible for the bloom observed between 8.0% and 11.0%. Only this halotolerant population and *Prochlorococcus*-like pico-cyanobacteria were identified in hypersaline waters (i.e. above 14.0%).
+
+In addition to the phytoplankton assemblage (algae and cyanobacteria suspended in the water), the lagoon is also characterised by benthic microalgae - the so-called microphytobenthos (MPB). These have been shown to vary along the lagoon as part of the The Living Murray ecological sampling (Dittman et al. 2021). As with the phytoplankton biomass, the benthic chlorophyll-a biomass is also controlled by the sharp salinity gradient with significantly higher biomass in the North Lagoon.
+
+The subsequent sections document the phytoplankton ($PHY$) and microphytobenthos ($MPB$) modelling approach and rationale, and the results and analysis, with comaprisons against available chlorophyll-a data within the lagoon. 
+
+### Model setup: Phytoplankton
+
+The approach to simulate algal biomass is to adopt several plankton functional types (PFTs) that are typically defined based on specific groups. Whilst each group that is simulated is unique, they share a common mathematical approach and each simulate growth, death and sedimentation processes, and customisable internal nitrogen, phosphorus and/or silica stores. Distinction between groups is made by adoption of group’s specific parameters for environmental dependencies, and/or enabling options such as vertical migration or N fixation. This way the group-specific traits are used to inform the groups parameterisations.
+
+Based on the findings of the above-cited studies, the phytoplankton community in the CDM has been configured into four PFTs, according to their salinity tolerance and literature review of their biogeochemical properties asscoiated with the dominant taxa - spanning green algae (chlorophytes), cryptophytes, dinoflagellates, and diatoms.
+
+The algal biomass of each group, $PHY_C$, is simulated in units of carbon ($mmol\:C/m^3$), and the groups have been configured to have a constant C:N:P:Si ratio (this can be alternatuvely changed to use dynamic stoichiometry and uptake of N and P sources in response to changing water column condition and cellular physiology if preferred). The total water column chlorophyll-a is calculated from the sum of the individual groups with a carbon:chlorophyll-a conversion applied.  Balance equations that capture the various processes impacting phytoplankton are outlined in the full description of the phytoplankton model within the [AED science manual](https://aquaticecodynamics.github.io/aed-science/phytoplankton.html). Key aspects relevant to the Coorong implementation are summarised in the following sections, including the salinity limitation functions and parameters used to differentiate the phytoplankton groups within the community.
+
+
+The four pools  configured to simulate the biomass of phytoplankton, were denoted $grn$, $crypt$, $diatom$ and $dino$, which map to the mixed assemblage groups identified above as $H1$ - $H4$. The parameters used in the setup are outlined in Table (Table \@ref(tab:5-phytopars)). 
+
+<br>
 
 ```{r 5-phytopars, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -74,7 +204,7 @@ for(i in seq_along(theSheet$Unit)){
   }
 }
 
-kbl(theSheet[,3:NCOL(theSheet)], caption = "Phytoplankton parameter summary", align = "l",) %>%
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Summary of the phytoplankton parameters used in the CDM version of the AED model.", align = "l",) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
@@ -112,28 +242,47 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   column_spec(5, width_min = "5em") %>%
   column_spec(6, width_min = "5em") %>%
   column_spec(7, width_min = "5em") %>%
-    scroll_box(width = "700px", height = "4600px",
+    scroll_box(width = "700px", height = "4200px",
              fixed_thead = FALSE)
 ```
 
 
-
 <br>
 
-The salinity tolerance effect on phytoplankton is given by various quadratic formulations, depending on the groups’ sensitivity to salinity (Griffin et al 2001; Robson and Hamilton, 2004). There are four options for defining the salinity effect (f(s)):
+In terms of understanding the productivity of phytoplankton, for informing other rate parameters in the model, Joint et al (2002) studied phytoplankton along a hypersalinity gradient and found that elevated photosynthetic pigment concentrations were present in ponds of intermediate (5^11%) and high (s32%) salinity, but that rates of primary production and nutrient uptake were generally reduced at the highest salinity. For example, the maximum primary production was measured at 8% salinity and chlorophyll-specific carbon fixation also maximised at this salinity under conditions where ammonium was the dominant nitrogen source throughout the salinity gradient.
 
-The salinity limitation settings are included in the phytoplankton parameter table and the use of various salinity limitation options for each phytoplankton PFT are shown in the following figure:
+Noting that salinity impacts productivity and the observations noted in the previous section in the Coorong, the salinity tolerance effect on phytoplankton was therefore given by adopting salinity tolerance functions, $f(S)$,  depending on the group's sensitivity to salinity. There are four options adding into the $CDM$ based on quadratic functions that are used to define the salinity effect (Griffin et al., 2001; Robson and Hamilton, 2004):
 
 
-In terms of understanding the productivity of phytoplankton, for informing other rate parameters in the model, there is a reference of phytoplankton along a hypersaline gradient by Joint et al (2002), which suggests:
-•         Elevated photosynthetic pigment concentrations were present in ponds of intermediate (5^11%) and high (s32%) salinity but rates of primary production and nutrient uptake were generally reduced at the highest salinity.
-•         Maximum primary production was measured at 8% salinity and chlorophyll-specific carbon fixation also maximised at this salinity.
-•         Ammonium was the dominant nitrogen source throughout the salinity gradient
+The salinity limitation settings are included in the phytoplankton parameter table and the use of various salinity limitation options for each phytoplankton PFT are shown graphically in Figure \@ref(fig:water-sal3).
+
+```{r water-sal3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Salinity limitation curves applied to the photosynthesis rate of each phytoplankton group to acheive the phytoplankton group zonation reported in the literature."}
+
+knitr::include_graphics("images/dev/water/salinity_phytoplankton.jpg")
+
+```
+
+
+
+
+Direct measurements for other group-specific physiological rates and parameters are not yet available for the Coorong, and so the current version of the model relies on prior experience and relevant literature to set the other key parameters shown in Table \@ref(tab:5-phytopars) for each group, such as the sedimentation rate, nutrient stoichiometry and light sensitivity. 
 
 
 ***	
 
+### Model setup: Microphytobenthos
+
+The approach to simulate the biomass of benthic microalgae (microphytobenthos) is to allocate a single biomass pool that cocneptually sites between the water and sediment (i.e., at the sediment-water interface). The biomass of this group, $MPB$, is simulated in units of carbon ($mmol\:C/m^2$), and has a dynamic C:N:P stoichiometry based on the history of the deposited phytopalnkton that have landed on the sediment. The model is conceptually simple compared to the overlying phytoplankton group model, with paramaetrs to mediate response to light, resuspension back into the watre column, and burial into the deeper sediment.Balance equations that capture the various processes impacting phytoplankton are outlined in the full description of the phytoplankton model within the [AED science manual](https://aquaticecodynamics.github.io/aed-science/phytoplankton.html). 
+
+
+The $MPB$ pool configured to simulate the biomass is configured according to the parameters outlined in Table (Table \@ref(tab:5-mpbpars)). 
+
+
 ### Model results
 
 <br>
+
+
+<!-- -->
+## Summary
 

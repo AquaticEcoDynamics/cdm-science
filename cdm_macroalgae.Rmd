@@ -61,6 +61,8 @@ This approach allows more direct links with a) the experimental data collected o
 The approach essentially follows a size-class based model for resolving the filamentous algae biomass pool. According to the above conceptual schematic, four discrete life-stage (aka size) categories are included. In general they are fixed in space, but note that 'sloughed' biomass that becomes mobilised after a sloughing event can continue to be exposed to surface light irradiances and also begin decomposition should environmental conditions be inadequate for growth (e.g., as the water becomes too salty).
 
 
+The algal biomass of each group, $PHY_C$, is simulated in units of carbon ($mmol\:C/m^3$), and the groups have been configured to have a constant C:N:P:Si ratio. , or have dynamic uptake of N and P sources in response to changing water column condition and cellular physiology. Balance equations that capture the various processes impacting phytoplankton are outlined in the following sections, including the salinity limitation functions on phytoplankton communities. A full description of the phytoplankton model can be referred to the AED science manual in https://aquaticecodynamics.github.io/aed-science/phytoplankton.html. 
+
 
 ## Data availability
 
