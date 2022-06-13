@@ -112,21 +112,20 @@ knitr::include_graphics("images/assessment/5_nutrient_budget.png")
 
 ## Coorong Decision Making Framework
 
-To falicitate management decision making, and comprehensive list of customised model post-processing exports has been created. The DMF exports encompass a wide range of critical CPS indicators, outlined in the tables below:
+To facilitate management decision making, and comprehensive list of customised model post-processing exports has been created. The DMF exports encompass a wide range of critical CPS indicators.
 
-
-These are defined in Table (Table \@ref(tab:A-dataclasses)).
+These are defined in Table \@ref(tab:A-dataclasses).
 
 ```{r A-dmftable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
-theSheet <- read_excel('tables/dmf.xlsx', sheet = 2)
+theSheet <- read_excel('tables/dmf.xlsx', sheet = 1)
 theSheet <- theSheet[theSheet$Table == "data",]
 theSheetGroups <- unique(theSheet$Group)
 
-kbl(theSheet[,4:10], caption = "Coorong Decision Making Framework", align = "l",) %>%
+kbl(theSheet[,3:7], caption = "Coorong Decision Making Framework", align = "l",) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
