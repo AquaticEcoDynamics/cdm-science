@@ -114,12 +114,9 @@ knitr::include_graphics("images/assessment/5_nutrient_budget.png")
 
 To facilitate management decision making, and comprehensive list of customised model post-processing exports has been created. The DMF exports encompass a wide range of critical CPS indicators.
 
-<<<<<<< HEAD
 
 These are defined in Table (Table \@ref(tab:ass-dmftable)).
-=======
-These are defined in Table \@ref(tab:A-dataclasses).
->>>>>>> 7da055d56ac58ee29204fb74171a3dcb74d9ec99
+
 
 ```{r ass-dmftable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
