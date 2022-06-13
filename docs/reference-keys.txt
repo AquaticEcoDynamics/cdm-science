@@ -122,6 +122,7 @@ fig:hab-pic19
 fig:hab-pic20
 fig:ass-pic0
 fig:ass-pic1
+tab:ass-dmftable
 tab:A-datacatalogue
 tab:A-dataclasses
 tab:A-testing
