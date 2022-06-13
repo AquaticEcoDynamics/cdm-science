@@ -117,7 +117,7 @@ To falicitate management decision making, and comprehensive list of customised m
 
 These are defined in Table (Table \@ref(tab:A-dataclasses)).
 
-```{r A-datacatalogue, echo=FALSE, message=FALSE, warning=FALSE}
+```{r A-dmftable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
