@@ -106,7 +106,7 @@ theSheet_Names <- list.files(path = "HTML/Gen15", pattern = NULL, all.files = FA
            ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
 theSheet <- paste("<",'a href="HTML/Gen15/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
 #theSheet <- append(theSheets,'Validation 2013 2016',0)
-kbl(theSheet, caption = "Model results for Generation 1.5", align = "l",escape = F,col.names = 'Validation 2013 2019', ) %>%
+kbl(theSheet, caption = "Model results for Generation 1.5", align = "l",escape = F,col.names = 'Validation 2017 2022', ) %>%
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
@@ -129,7 +129,7 @@ theSheet_Names <- list.files(path = "HTML/Gen15", pattern = NULL, all.files = FA
            ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
 theSheet <- paste("<",'a href="HTML/Gen15/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
 #theSheet <- append(theSheets,'Validation 2013 2016',0)
-kbl(theSheet, caption = "Model results for Generation 2", align = "l",escape = F,col.names = 'Validation 2013 2019', ) %>%
+kbl(theSheet, caption = "Model results for Generation 2", align = "l",escape = F,col.names = 'Validation 2017 2022', ) %>%
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
@@ -140,7 +140,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 <div id="COMP" class="tabcontent">
 <p> 
-HCHB *Comparisons*
+HCHB *Wave Comparisons*
 
 ```{r A-testing4, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -152,7 +152,7 @@ theSheet_Names <- list.files(path = "HTML/WaveComp", pattern = NULL, all.files =
            ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
 theSheet <- paste("<",'a href="HTML/WaveComp/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
 #theSheet <- append(theSheets,'Validation 2013 2016',0)
-kbl(theSheet, caption = "Model SWAN Wave Comparison", align = "l",escape = F,col.names = 'Validation 2013 2019', ) %>%
+kbl(theSheet, caption = "Model SWAN Wave Comparison", align = "l",escape = F,col.names = 'Validation 2017 2022', ) %>%
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
