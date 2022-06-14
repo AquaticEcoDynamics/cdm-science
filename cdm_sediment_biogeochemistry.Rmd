@@ -204,12 +204,14 @@ A range of data was collected and is documented in Appendix A (Data Catalogue). 
 *Macroinvertebrates -- bioturbation parameters* : These measurements were used for setting bioturbation and bioirrigation parameters. Broadly, the North Lagoon had high bioturbation and the South Lagoon had very little bioturbation. The depth to bioturbation was important, as it was expected that there was uninhabited black ooze below a few centimetres.
 
 *Water column water quality measurements* : These were used for estimating water column concentrations and influxes for variables that were not linked to the water column model.
-<br>
+
 ### Fundamental model setup
 
 #### Model variables {.unnumbered}
 
 All simulated variables are listed in Table \@ref(tab:3dev-sedvars).
+
+<center>
 
 ```{r 3dev-sedvars, echo=FALSE, message=FALSE, warning=FALSE}
  library(knitr)
@@ -222,6 +224,7 @@ All simulated variables are listed in Table \@ref(tab:3dev-sedvars).
    kable_styling(sediment_vars, bootstrap_options = "hover", 
                  full_width = F, position = "center", 
                  font_size = 12) %>% 
+   row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
    column_spec(1, width_min = "10em") %>%
    column_spec(1, width_min = "10em") %>%
    column_spec(1, width_min = "10em") %>%
@@ -229,7 +232,11 @@ All simulated variables are listed in Table \@ref(tab:3dev-sedvars).
    scroll_box(width = "200px", height = "200px",
               fixed_thead = FALSE)
 ```
+
+</center>
+
 <br>
+\
 ##### Linked variables {.unnumbered}
 
 The linked variables are listed in Table \@ref(tab:3dev-sedlinkvars). They can be linked by concentration, dissolved flux and particle flux. Salinity has only one possible salinity link, which is hard-coded in the sediment model. The $SO_4^2-$ link is hard-coded such that $SO_4^2-$ concentration in mmol L^-1^ is 0.9 × salinity (PSU).
@@ -245,6 +252,7 @@ The linked variables are listed in Table \@ref(tab:3dev-sedlinkvars). They can b
    kable_styling(sediment_linkvars, bootstrap_options = "hover", 
                  full_width = F, position = "center", 
                  font_size = 12) %>% 
+   row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
    column_spec(1, width_min = "10em") %>%
    column_spec(2, width_min = "20em") %>% 
    column_spec(3, width_min = "10em") %>% 
@@ -256,6 +264,9 @@ The linked variables are listed in Table \@ref(tab:3dev-sedlinkvars). They can b
               fixed_thead = FALSE)
 ```
 <br>
+
+\
+
 ##### Initial conditions {.unnumbered}
 
 Most chemical species are initialized at zero concentration. Some species are initialised to meet field data (Table \@ref(tab:3dev-init)). The calibration is outlined in the calibration section below.
@@ -268,6 +279,7 @@ kable(sediment_initial,"html", escape = F, align = "c", caption = "Sediment init
  kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -276,11 +288,18 @@ kable(sediment_initial,"html", escape = F, align = "c", caption = "Sediment init
  scroll_box(width = "650px", height = "400px",
             fixed_thead = FALSE)
 ```
+
 <br>
+
+\
+
 #### Constant sediment-water interface conditions {.unnumbered}
 
 The flux of $Fe(OH)_{3A}$ from the water column to the sediment is set from the parameter 'default_vals'. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the $Fe^2+$ concentration value.
 <br>
+
+\
+
 #### Model parameters {.unnumbered}
 
 ##### Timing parameters {.unnumbered}
@@ -296,6 +315,7 @@ kable(sediment_Timing,"html", escape = F, align = "c", caption = "Sediment timin
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -304,6 +324,9 @@ kable(sediment_Timing,"html", escape = F, align = "c", caption = "Sediment timin
             fixed_thead = FALSE)
 ```
 <br>
+
+\
+
 ##### Physical parameters {.unnumbered}
 
 The physical properties of the sediment are given in Table \@ref(tab:3dev-Mixing) and \@ref(tab:3dev-Layers). Some parameters are set as constant values for all zones, while others are set to be variable in each zone. The variability of bioturbation and irrigation along the length of the lagoon is set using the depth of the effect ($x_1$, $x_2$ and $x_{irrig}$) rather than the intensity ($DB_0$, $\alpha_0$). Upper porosity $\rho_0$ is held at 0.9 (i.e. 90% porewater) for all zones and the lower porosity $\rho_{00}$ is based on measured data at sites in each zone.
@@ -317,6 +340,7 @@ kable(sediment_Mixing,"html", escape = F, align = "c", caption = "Sediment physi
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -335,6 +359,7 @@ kable(sediment_Layers,"html", escape = F, align = "c", caption = "Sediment layer
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -342,7 +367,11 @@ kable(sediment_Layers,"html", escape = F, align = "c", caption = "Sediment layer
  scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
+
 <br>
+
+\
+
 ##### Organic matter parameters {.unnumbered}
 
 Many of the key processes in the sediment are driven by organic matter oxidation. Fresh organic matter supplied to the sediment surface fuels the bacterially-driven primary redox reactions that constantly shift the chemical equilibrium in the sediment. Organic matter metabolism also releases organic N and P to the water column. The parameters are given in Table \@ref(tab:3dev-OM).
@@ -358,6 +387,7 @@ kable(sediment_OM ,"html", escape = F, align = "c", caption = "Organic matter ox
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -365,7 +395,11 @@ kable(sediment_OM ,"html", escape = F, align = "c", caption = "Organic matter ox
  scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
+
 <br>
+
+\
+
 ##### Secondary redox reactions {.unnumbered}
 
 Secondary redox reactions are formed from the by-products of primary redox reactions. The nitrogen redox cycle parameters are given in Table \@ref(tab:3dev-NRedox).
@@ -379,6 +413,7 @@ kable(sediment_Nredox ,"html", escape = F, align = "c", caption = "Nitrogen redo
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -397,6 +432,7 @@ kable(sediment_SecondaryRedox ,"html", escape = F, align = "c", caption = "Secon
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -404,7 +440,11 @@ kable(sediment_SecondaryRedox ,"html", escape = F, align = "c", caption = "Secon
  scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
+
 <br>
+
+\
+
 ##### Geochemistry parameters {.unnumbered}
 
 Equilibrium and precipitation/dissolution constants are given in Table \@ref(tab:3dev-Geochem).
@@ -418,6 +458,7 @@ kable(sediment_Geochem ,"html", escape = F, align = "c", caption = "Geochemistry
    kable_styling(sediment_initial, bootstrap_options = "hover",
                full_width = F, position = "center",
                font_size = 12) %>%
+ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%  
  column_spec(1, width_min = "10em") %>%
  column_spec(2, width_min = "20em") %>%
  column_spec(3, width_min = "10em") %>%
@@ -428,7 +469,9 @@ kable(sediment_Geochem ,"html", escape = F, align = "c", caption = "Geochemistry
 
 <br>
 
+
 ### Model development and setup for the Coorong
+
 
 #### Nutrient species {.unnumbered}
 
@@ -557,7 +600,7 @@ Another mechanism of nutrient removal was adsorption of dissolved nutrients onto
 ```{=tex}
 \begin{eqnarray}
 
-NH_{4 _{Total}}^+       = NH_{4} + NH_{4_{Adsorbed}}
+NH_{4 _{Total}}^+       = NH_{4}^+ + NH_{4_{Adsorbed}}
 \\
 \\
 NH_{4 _{Dissolved}}^+   = \frac {1}{K_{NH_4p}}
@@ -691,6 +734,7 @@ A side effect of producing the $DON_R$ intermediate product was its flux into th
 In the initial calibration, denitrification processes did not occur in the sediment model, which was in conflict with the rates measured by UA in T&I 1.2.2 (Reference). The high penetration of oxygen into the sediment inhibited the reduction of $NO_3^-$ to $NO_2^-$ and $NO_2^-$ to $NH_4^+$ or $N_2$. Furthermore, there was too little labile dissolved organic matter to consume the oxygen in the upper layers. The salinity and sulphide factors *FSal* and *FSul* inhibited denitrification in the deep sediment.
 
 <br>
+
 ### Calibrated results
 
 #### Top 5 cm budget {.unnumbered}
@@ -812,16 +856,16 @@ knitr::include_graphics(c("images/dev/sed_Z6Bioturb.png"))
 
 ```
 
-The total mass of TN flux across the sediment-water interface was calculated for one year. The flux was dominated by the influx of $PON$ from the water to the sediment. There was a relatively smaller amount of $NH_4^+$ outflux from the sediment to the water.\
+The total mass of TN flux across the sediment-water interface was calculated for one year (Figure \@ref(fig:dev-nutpics4)). The flux was dominated by the influx of $PON$ from the water to the sediment. There was a relatively smaller amount of $NH_4^+$ outflux from the sediment to the water.
 
 
-```{r dev-nutpics4, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Total flux of TN across the sediment-water interface, calculated as a mass (tonnes). The smaller species, such as $NO_2$ were at such low masses that they do not appear on the figure. "}
+```{r dev-nutpics4, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Total flux of TN across the sediment-water interface, calculated as a mass (tonnes). The smaller species, such as $NO_2$ were at such low masses that they do not appear on the figure. "}
 
 knitr::include_graphics(c("images/dev/sed_TotalNFluxMass.png"))
 
 ```
 
-Although the influx of $PON$ was a far larger amount than the outflux of $NH_4^+$, there was an overall loss of $PON_R$ in the upper 5 cm (see figure). The $PON_R$ was hydrolysed to $DON_R$, which was mineralised to $NH_4^+$. Deeper than 10 cm, the $PON_R$ concentration was stable over time. The $DON_R$ concentration was dependent on the flux to the water column.
+Although the influx of $PON$ was a far larger amount than the outflux of $NH_4^+$, there was an overall loss of $PON_R$ in the upper 5 cm (Figures \@ref(fig:dev-nutpics5) and \@ref(fig:dev-nutpics6)). The $PON_R$ was hydrolysed to $DON_R$, which was mineralised to $NH_4^+$. Deeper than 10 cm, the $PON_R$ concentration was stable over time. The $DON_R$ concentration was dependent on the flux to the water column.
 
 ```{r dev-nutpics5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Upper 25 cm of sediment over 50 days for zone 52."}
 
@@ -839,8 +883,7 @@ knitr::include_graphics(c("images/dev/sed_t_F_3Nzone_52.png"))
 
 #### Nutrient burial {.unnumbered}
 
-The change in mass at the 5 cm depth over a year was very small (around 1%) for both lagoons and for both $TN$ and $TP$. Using this definition of burial, very little of the nutrients were removed.\
-The concentration of adsorbed $NH_4^+$ and $PO4^{3-}$ was also a small percentage of TN and TP, and stayed constant over the course of the simulation (see, for example the figure below). It was not the case that adsorption was a major process for removing water column nutrients and locking them in the sediment. In the case of adsorbed $PO4^{3-}$, the lack of change in concentration was due, in part, to the relatively low amount of Fe reduction in the sediment.
+The change in mass at the 5 cm depth over a year was very small (around 1%) for both lagoons and for both $TN$ and $TP$. Using this definition of burial, very little of the nutrients were removed. The concentration of adsorbed $NH_4^+$ and $PO4^{3-}$ was also a small percentage of TN and TP, and stayed constant over the course of the simulation (see, for example, Figure \@ref(fig:dev-nutpics7)). It was not the case that adsorption was a major process for removing water column nutrients and locking them in the sediment. In the case of adsorbed $PO4^{3-}$, the lack of change in concentration was due, in part, to the relatively low amount of Fe reduction in the sediment.
 
 ```{r dev-nutpics7, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Adsorbed N and P in zone 52."}
 
@@ -858,7 +901,7 @@ $O_2$ penetration into the sediment from MPB and roots inhibited many of the nit
 
 #### Denitrification {.unnumbered}
 
-Little TN was lost through the denitrification reactions. Overall, conditions were not very favourable for denitrification, as the processes were either inhibited by $O_2$ and salinity from above, or $H_2S$ from below. In areas that lacked mixing due to low bioturbation and bioirrigation, $NO_3^-$ was not mixed into the upper sediment layers. Where denitrification did occur, it was through the deammonification pathway, rather than denitrousation (see the figure below). The denitrousation pathway is favoured by mixing labile organic matter deeper into the sediment, and so a low amount of organic matter and inhibited bioturbation made denitrousation unfavourable in this simulation.
+Little TN was lost through the denitrification reactions. Overall, conditions were not very favourable for denitrification, as the processes were either inhibited by $O_2$ and salinity from above, or $H_2S$ from below. In areas that lacked mixing due to low bioturbation and bioirrigation, $NO_3^-$ was not mixed into the upper sediment layers. Where denitrification did occur, it was through the deammonification pathway, rather than denitrousation (see Figure \@ref(fig:dev-nutpics8)). The denitrousation pathway is favoured by mixing labile organic matter deeper into the sediment, and so a low amount of organic matter and inhibited bioturbation made denitrousation unfavourable in this simulation.
 
 The total mass of N converted to $N_2$ in each lagoon over the course of the simulation was around 10 g.
 
@@ -872,7 +915,7 @@ knitr::include_graphics(c("images/dev/sed_FO2-04.png"))
 
 #### Integrated TN results {.unnumbered}
 
-Overall, most of the TN was in the form of $PON_R$. In the upper 5 cm of the sediment the legacy $PON_R$ decayed to $DON_R$ and was fluxed out of the sediment. In the deeper layers, the $PON_R$ remained relatively constant. The sediment received a greater mass of $PON_R$ and $PON_L$ than it returned to the water column, so it was a source of $NH_4^+$ and $DON_R$ but a sink of TN. The major TN pathways and masses are given in the table below.
+Overall, most of the TN was in the form of $PON_R$. In the upper 5 cm of the sediment the legacy $PON_R$ decayed to $DON_R$ and was fluxed out of the sediment. In the deeper layers, the $PON_R$ remained relatively constant. The sediment received a greater mass of $PON_R$ and $PON_L$ than it returned to the water column, so it was a source of $NH_4^+$ and $DON_R$ but a sink of TN. The major TN pathways and masses are given in Table \@ref(tab:3dev-TotalTNa) and \@ref(tab:3dev-TotalTNb).
 
 ```{r 3dev-TotalTNa, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_Geochem <- read_xlsx("tables/sed/TotalTN.xlsx", sheet = "SCL" )
@@ -888,6 +931,8 @@ kable(sediment_Geochem ,"html", escape = F, align = "c", caption = "TN balance f
  scroll_box(width = "600px", height = "300px",
             fixed_thead = FALSE)
 ```
+
+\
 
 ```{r 3dev-TotalTNb, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_Geochem <- read_xlsx("tables/sed/TotalTN.xlsx", sheet = "NCL" )
