@@ -85,7 +85,7 @@ Accounting for advection and diffusion reactions is fairly consistent across dia
 
 #### Model extensions and development {.unnumbered}
 
-The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons (Paraska et al. 2014). Three main developments have been undertaken to adapt the code-base to the Coorong application (Figure \@ref(fig:dev-pics5)):
+The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons (Paraska et al. 2014). Three main developments have been undertaken to adapt the code-base to the Coorong application:
 
 -   Improved parameterisation of diffusion at the sediment-water interface
 -   Inclusion of functionality to resolve resuspension effects
@@ -100,12 +100,6 @@ The above model approach is broadly used in lakes, ocean and estuarine environme
 -   *Tau\~b* sensitivity
 -   Very unreactive organic matter
 -   Salinity-driven flocculation
-
-```{r dev-pics5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Visual summary of model updates undertaken."}
-
-knitr::include_graphics("images/dev/sdg extensions and development-01.png")
-
-```
 
 **SWI diffusion**
 
@@ -147,13 +141,13 @@ knitr::include_graphics("images/dev/sed_picture6.png")
 
 #### Sediment-water coupling {.unnumbered}
 
-The sediment and hydrodynamic models are coupled at the sediment-water interface (Figure \@ref(fig:dev-pics2)). The AED model setup has separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:
+The sediment and hydrodynamic models are coupled at the sediment-water interface (Figure \@ref(fig:dev-pics5)). The AED model setup has separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:
 
--   flux of solid material onto the sediment surface
--   concentration of dissolved substances in the bottom water
--   flux of dissolved substances from the top sediment layer
+-   flux of solid material onto the sediment surface from the water column: *part_sed_link*
+-   concentration of dissolved substances in the bottom water to the sediment: *water_link*
+-   flux of dissolved substances from the top sediment layer to the water column: *diss_flux_link*
 
-```{r dev-pics2, echo = FALSE, out.width=c('45%','35%'), class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of sediment water coupling approach."}
+```{r dev-pics5, echo = FALSE, out.width=c('45%','35%'), class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of sediment water coupling approach. Left: the three linking options between the water column and sediment models. Right: Water column cell concentrations and fluxes within a zone are averaged and transferred between the models."}
 
 knitr::include_graphics(c("images/dev/sed_picture3.png","images/dev/sed_picture4.png"))
 
@@ -161,7 +155,7 @@ knitr::include_graphics(c("images/dev/sed_picture3.png","images/dev/sed_picture4
 
 **Zone tracer experiment** To test the new sediment-water coupling functions, a simple simulation was set up using a lake with five zones (Figure \@ref(fig:dev-pics6)). A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones 3 and 5 were set as active sediment model zones, with especially high concentrations of tracer. Zone 2 was not set as an active sediment zone, but it was given a high constant flux rate. Zones 1 and 4 had neither high initial sediment concentrations nor high flux rates. The purpose of the simulation was to see whether 1) the flux link was working between the sediment and the water, 2) whether the links were functioning in the correct zones, and 2) whether the model could be set up to have a combination of active sediment zones and constant fluxes.
 
-```{r dev-pics6, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Five zones in the lake. Zones 3 and 5 had active sediment zones and Zone 2 had a constant flux."}
+```{r dev-pics6, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Map of the five zones in the lake for the zone tracer experiment. Zones 3 and 5 had active sediment zones and Zone 2 had a constant flux."}
 
 knitr::include_graphics("images/dev/sed_QuickTFV-03.png")
 
@@ -169,7 +163,7 @@ knitr::include_graphics("images/dev/sed_QuickTFV-03.png")
 
 The result was that the tracer spread from the high initial concetnration in sediment zones 3 and 5 into the surrounding zone 1 (Figure \@ref(fig:dev-pics7)). The constant flux also from zone 2 also created a high concentration in zone 2. In the early time steps, the banks fo the lake increased their concetration soonest, since the water depth was lower and so the sediment flux had a greater effect. As the simulation progressed, the zone filled with high concentration tracer and then finally it spread from zone 2 into the other zones.
 
-```{r dev-pics7, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Tracer appearing in linked zones."}
+```{r dev-pics7, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Time series figures of the maps in the zone tracer experiment. Over time the tracer left the linked zones and spread through the model domain."}
 
 knitr::include_graphics("images/dev/sed_Tracers.png")
 
@@ -181,13 +175,19 @@ knitr::include_graphics("images/dev/sed_Tracers.png")
 
 **Flow paths of the northern and southern lagoons** The major inflow into the lagoon is in the north, through a set of barrages from the Murray Lower Lakes into the northern lagoon and out to the sea. The southern lagoon had a minor inflow from Salt Creek and otherwise receives less freshwater than the northern lagoon. In the hot summer months, as the water in the southern lagoon evaporates, remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment.
 
-**Spatial aggregation - ten zones** In order to simplify the Coorong study site measurement points and simulation areas, the lagoon was divided into ten separate Coorong zones (Figure 2). These were primarily based on the natural boundaries, channels and sandbars of the estuary. Zones 1 to 4 were the southern lagoon, zone 5 was the intermediate area and zones 6 to 10 were the northern lagoon.
-
-**Deep and shallow sites** The ten Coorong zones were further subdivided into three sections -- the western bank on the ocean side, the central channel, and the eastern bank on the inland side. The cut-off between the channel and the bank subdivision was defined by any area that reached more than 1 m deep. Therefore, each of the ten zones along the length of the lagoon had three zones across the breadth of the lagoon, and zone ten had one additional zone for the ocean boundary, giving 31 zones in total (Figure \@ref(fig:dev-pics1)).
+**Spatial aggregation - ten zones** In order to simplify the Coorong study site measurement points and simulation areas, the lagoon was divided into ten separate Coorong zones (Figure 2). These were primarily based on the natural boundaries, channels and sandbars of the estuary. Zones 1 to 4 were the southern lagoon, zone 5 was the intermediate area and zones 6 to 10 were the northern lagoon (Figure \@ref(fig:dev-pics1)).
 
 ```{r dev-pics1, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example sediment zonation."}
 
-knitr::include_graphics(c("images/dev/sed_Zones.png","images/dev/sed_Zones.png"))
+knitr::include_graphics(c("images/dev/sed_Zones.png","images/dev/sed_ZonesSat.png"))
+
+```
+
+**Deep and shallow sites** The ten Coorong zones were further subdivided into three sections -- the western bank on the ocean side, the central channel, and the eastern bank on the inland side. The cut-off between the channel and the bank subdivision was defined by any area that reached more than 1 m deep. Therefore, each of the ten zones along the length of the lagoon had three zones across the breadth of the lagoon, and zone ten had one additional zone for the ocean boundary, giving 31 zones in total (Figure \@ref(fig:dev-pics2)).
+
+```{r dev-pics2, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example sediment zonation."}
+
+knitr::include_graphics(c("images/dev/sed_Half Page zones11to104.png","images/dev/sed_Half Page zones61to73.png"))
 
 ```
 
@@ -229,14 +229,16 @@ All simulated variables are listed in Table \@ref(tab:3dev-sedvars).
    column_spec(1, width_min = "10em") %>%
    column_spec(1, width_min = "10em") %>%
    row_spec(1, background = 'white') %>% 
-   scroll_box(width = "200px", height = "200px",
+   scroll_box(width = "400px", height = "200px",
               fixed_thead = FALSE)
 ```
 
 </center>
 
 <br>
+
 \
+
 ##### Linked variables {.unnumbered}
 
 The linked variables are listed in Table \@ref(tab:3dev-sedlinkvars). They can be linked by concentration, dissolved flux and particle flux. Salinity has only one possible salinity link, which is hard-coded in the sediment model. The $SO_4^2-$ link is hard-coded such that $SO_4^2-$ concentration in mmol L^-1^ is 0.9 × salinity (PSU).
@@ -350,7 +352,7 @@ kable(sediment_Mixing,"html", escape = F, align = "c", caption = "Sediment physi
 ```
 
 <!-- 3 SedimentLayers -->
-\\
+\
 
 ```{r 3dev-Layers, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_Layers <- read_xlsx("tables/BookdownParams.xlsx", sheet = "Layers" )
@@ -489,9 +491,9 @@ This is also the case for water column nutrients, however, they were not simulat
 
 From the calibration, the bulk of the nutrients were the in the refractory organic phases $PON_R$ and $POP_R$.
 
-```{r dev-picsbudgetsetup-1, echo = FALSE, out.width='75%', class = "text-image", fig.show='hold' , fig.align='center', fig.cap = "Major N pools as transferred between the water and sediment models."}
+```{r dev-picsbudgetsetup-1, echo = FALSE, out.width='50%', class = "text-image", fig.show='hold' , fig.align='center', fig.cap = "Schematic of major N pools, as transferred between the water and sediment models. The water column PON is partitioned into labile and refractory fractions in the sediment. The refractory DON is fluxed back to the water column."}
 
-knitr::include_graphics("images/dev/sed_N_Overall.png")
+knitr::include_graphics("images/dev/sed_N_Overall-10-10.png")
 
 ```
 
@@ -516,7 +518,7 @@ The equations for $F_{Sal}$ are given below.
 ```
 The effect of the scaling is shown in Figure \@ref(fig:dev-picsbudgetsetup-2).
 
-```{r dev-picsbudgetsetup-2, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Salinity factor $F_{Sal}$ scaling between 1 and 0 between parameters *Sal~1~* and *Sal~2~*"}
+```{r dev-picsbudgetsetup-2, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diaagram of the salinity factor $F_{Sal}$, scaling between 1 and 0 between the parameters. In this diagram *Sal~1~* is 40 and *Sal~2~* is 70."}
 
 knitr::include_graphics("images/dev/sed_FSal.png")
 
@@ -549,7 +551,7 @@ F_{Sul} = \frac {K_{H_{2}S}} {(K_{H_{2}S} + H_{2}S)}
 ```
 As with $F_{Sal}$, $F_{Sul}$ scales between 1 and 0, however, as a decay rather than a stepped function (Figure \@ref(fig:dev-picsbudgetsetup-3)). The value for *K~H2S~* can be found in the physical parameters table above. In this simulation, the same value for all was used in all zones.
 
-```{r dev-picsbudgetsetup-3, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Salinity factor $F_{Sal}$ scaling between 1 and 0 between parameters *Sal_1* and *Sal_2*"}
+```{r dev-picsbudgetsetup-3, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram of the $H_2S$ factor, $F_{Sul}$, scaling from 1 to 0 as $H_2S$ concentration decreases. "}
 
 knitr::include_graphics("images/dev/sed_FSul.png")
 
@@ -581,7 +583,7 @@ Molecular diffusion was driven by differences in chemical concentration across t
 
 Bioturbation was set up using the step-wise function, where *x~1~* was the depth of full bioturbation, and *x~2~* the depth of zero bioturbation (Figure \@ref(fig:dev-picsbudgetsetup-4)). The values for *x~1~* and *x~2~* can be found in the physical parameters table above. In this simulation, the values were assigned for each zone, with deeper vales for the northern zones. The rate constant *DB~0~* was assigned to be the same for all zones. The original model had a constant bioturbation rate assigned at the initialisation step. For this simulation the model was developed to have a dynamic bioturbation rate that is updated at every time step.
 
-```{r dev-picsbudgetsetup-4, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Salinity factor $F_{Sal}$ scaling between 1 and 0 between parameters *Sal_1* and *Sal_2*"}
+```{r dev-picsbudgetsetup-4, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram of bioturbation setup, showing full bioturbation above the parameter *x~1~* and no bioturbation below *x~2~*."}
 
 knitr::include_graphics("images/dev/sed_Bioturb.png")
 
@@ -654,7 +656,7 @@ $O_2$ is injected into the sediment from microphytobenthic algae ($MPB$) and fro
 
 The rate of $O_2$ injection from roots is calculated from the variable $RTO_2$, which applies above the depth $RTDP$. Both $RTO_2$ and $RTDP$ are linked directly from the water column model.
 
-```{r dev-picsbudgetsetup-5, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "$O_2$ injected into the sediment from $MPB$ and plant roots."}
+```{r dev-picsbudgetsetup-5, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the new parameterisation of $O_2$ injection into the sediment. Left: $O_2$ is released where $MPB$ are respiring. Right: $O_2$ comes from plant roots to the depth of *RTDP*."}
 
 knitr::include_graphics("images/dev/sed_O2Inject.png")
 
@@ -747,7 +749,7 @@ knitr::include_graphics(c("images/dev/sed_TNNorth.png"))
 
 ```
 
-```{r dev-calpics2, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "TN budgets in the top 5 cm"}
+```{r dev-calpics2, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "TN budgets in the top 5 cm. Above: North lagoon. Below: South lagoon. Left: each zone is displayed in the horizontal bars, changing over time across the x axis. Right: sum of all zones in the lagoon, changing over time across the x axis. The 'Target concentration' is the lagoon concentration as determined by UA."}
 
 knitr::include_graphics(c("images/dev/sed_TNSouth.png"))
 
@@ -759,7 +761,7 @@ knitr::include_graphics(c("images/dev/sed_TPNorth.png"))
 
 ```
 
-```{r dev-calpics4, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "TP budgets in the top 5 cm"}
+```{r dev-calpics4, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "TP budgets in the top 5 cm. Above: North lagoon. Below: South lagoon. Left: each zone is displayed in the horizontal bars, changing over time across the x axis. Right: sum of all zones in the lagoon, changing over time across the x axis. The 'Target concentration' is the lagoon concentration as determined by UA."}
 
 knitr::include_graphics(c("images/dev/sed_TPSouth.png"))
 
@@ -777,7 +779,7 @@ $O_2$ concentration was generally higher, and the penetration was deeper in the 
 
 The fluxes were generally within the right order of magnitude (Figure \@ref(fig:dev-calpics5)). Comparison was made with either the constant values used by the water column model for calibration, and the measured fluxes. Constant values were available for $O_2$, $NO_3^-$, $PO_4^{3-}$ and $NH_4^+$. Zone 52 had the most measured flux data, from Parnka Point and measured under dark and light conditions, with measurements for $O_2$, $NO_3^-$, $PO_4^{3-}$, $NH_4^+$, $N_2O$ and $CH_4$. Simulated fluxes were generally closer to the measured values than the constant values for $O_2$, $PO_4^{3-}$, $NH_4^+$. In the case of $NO_3^-$, the constant flux was close to the measured fluxes.
 
-```{r dev-calpics5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Sediment-water fluxes in zone 52. Measured values are averages of several measurements for dark and light conditions."}
+```{r dev-calpics5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example of 12 sediment-water flux results for zone 52. Measured values are averages of several measurements for dark and light conditions and 'Constant fluxes' were those used in the previous calibration of the water column model."}
 
 knitr::include_graphics(c("images/dev/sed_t_F_zone_52.png"))
 
@@ -799,13 +801,13 @@ knitr::include_graphics(c("images/dev/sed_C_D_core_zone73_amm_2020-11-30.png"))
 
 Some measured $Fe^{2+}$ and $H_2S$ data showed a clear spike in the profile at around 10 cm (with the $H_2S$ spike being slightly deeper in the sediment than the $Fe^{2+}$ spike) (Figure \@ref(fig:dev-calpics7) and \@ref(fig:dev-calpics8)). The sediment model did not capture this, and so a future calibration would require getting the total magnitude of both species right, as well as the right depth of $O_2$ penetration. Since the $O_2$ was generally slightly too deep, it is assumed that a shallower $O_2$ depth would create the right anoxic zone for Fe and SO~4~^2-^ reduction.
 
-```{r dev-calpics7, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Iron concentration profile "}
+```{r dev-calpics7, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "$Fe^{2+}$ concentration profile with simulated and measured data, as a snapshot at November 2020."}
 
 knitr::include_graphics(c("images/dev/sed_C_D_core_zone33_feii_2020-11-01.png"))
 
 ```
 
-```{r dev-calpics8, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Sulfide concentration profile "}
+```{r dev-calpics8, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "$H_2S$ concentration profile with simulated and measured data, as a snapshot at November 2020."}
 
 knitr::include_graphics(c("images/dev/sed_C_D_core_zone33_h2s_2020-11-01.png"))
 
@@ -825,7 +827,7 @@ Most of the TN and TP was present in unreactive OM, largely as a result of how t
 
 High salinity and high $H_2S$ in the southern zones created inhibition. $F_{Sal}$ was at around 0.2 and $F_{Sul}$ around 0.7 (Figure \@ref(fig:dev-nutpics1)). In the northern zones, both factors were closer to 1.0, and therefore not inhibitory at all. The inhibition in the southern zones affected biota-driven mixing (see section below) and denitrification reactions (see section below).
 
-```{r dev-nutpics1, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Salinity and sulfide inhibition functions in four of the sediment zones."}
+```{r dev-nutpics1, echo = FALSE, out.width='95%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Time-magnitude-depth profiles of $F_{Sal}$ and $F_{Sul}$ inhibition factors in four of the sediment zones, from north to south. The central figure shows the interpolated salinity from the UA survey. The higher salinity and higher $H_2S$ in the southern zones resulted in greater inhibition of other processes."}
 
 knitr::include_graphics(c("images/dev/sed_FSalFSulBioturb_2-02.png"))
 
@@ -842,15 +844,15 @@ Bioturbation and irrigation resulted from\
 \
 Note that the bioturbation and bioirrigation input parameters were 40 and 200, respectively (Figure \@ref(fig:dev-nutpics3)). In the southern zones, these raw inputs were decreased to around 8 for bioturbation and 40 for bioirrigation. The image from Zone 52, which is the intermediate area between the north and south lagoons, illustrates how the dynamic salinity boundary produced a dynamic response from biota-driven mixing. Future work could build in a time lag between the onset of the environmental condition and the result for the benthic fauna.
 
-```{r dev-nutpics3, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Salinity and sulfide inhibition functions in four of the sediment zones."}
+```{r dev-nutpics3, echo = FALSE, out.width='95%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Time-magnitude-depth profiles of bioturbation and bioirrigation in four of the sediment zones, from north to south. The central figure shows the interpolated salinity from the UA survey. The higher salinity and higher $H_2S$ in the southern zones resulted in greater inhibition of bioturbation and bioirrigation."}
 
 knitr::include_graphics(c("images/dev/sed_FSalFSulBioturb-01.png"))
 
 ```
 
-As an example going across the breadth of the lagoon, bioturbation and bioirrigation in zones 61 to 63 are shown in Figure \@ref(fig:dev-nutpics2). The depth and magnitude of bioturbation are smaller in the central, deep zone 62, than on the shallow edge zones, 61 and 63.
+As an example going across the breadth of the lagoon, bioturbation and bioirrigation in zones 61 to 63 are shown in Figure \@ref(fig:dev-nutpics2). The depth and magnitude of bioturbation are smaller in the central, deep zone 62, than on the shallow edge zones, 61 and 63. 
 
-```{r dev-nutpics2, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Salinity and sulfide inhibition functions in four of the sediment zones."}
+```{r dev-nutpics2, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Time-magnitude-depth profiles of bioturbation and bioirrigation in three sediment zones, across the breadth of the lagoon in zone 6. The deeper central zone had lower bioturbation than the edge zones."}
 
 knitr::include_graphics(c("images/dev/sed_Z6Bioturb.png"))
 
@@ -867,13 +869,13 @@ knitr::include_graphics(c("images/dev/sed_TotalNFluxMass.png"))
 
 Although the influx of $PON$ was a far larger amount than the outflux of $NH_4^+$, there was an overall loss of $PON_R$ in the upper 5 cm (Figures \@ref(fig:dev-nutpics5) and \@ref(fig:dev-nutpics6)). The $PON_R$ was hydrolysed to $DON_R$, which was mineralised to $NH_4^+$. Deeper than 10 cm, the $PON_R$ concentration was stable over time. The $DON_R$ concentration was dependent on the flux to the water column.
 
-```{r dev-nutpics5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Upper 25 cm of sediment over 50 days for zone 52."}
+```{r dev-nutpics5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Time-concentration-depth figures for three major N species. Upper 25 cm of sediment over 50 days for zone 52."}
 
 knitr::include_graphics(c("images/dev/sed_t_D_C_3N_zone_52.png"))
 
 ```
 
-```{r dev-nutpics6, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Sediment-water interface fluxes for major N species."}
+```{r dev-nutpics6, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Sediment-water interface fluxes for major N species. The fluxes correspond to the concentration figures above."}
 
 knitr::include_graphics(c("images/dev/sed_t_F_3Nzone_52.png"))
 
@@ -885,7 +887,7 @@ knitr::include_graphics(c("images/dev/sed_t_F_3Nzone_52.png"))
 
 The change in mass at the 5 cm depth over a year was very small (around 1%) for both lagoons and for both $TN$ and $TP$. Using this definition of burial, very little of the nutrients were removed. The concentration of adsorbed $NH_4^+$ and $PO4^{3-}$ was also a small percentage of TN and TP, and stayed constant over the course of the simulation (see, for example, Figure \@ref(fig:dev-nutpics7)). It was not the case that adsorption was a major process for removing water column nutrients and locking them in the sediment. In the case of adsorbed $PO4^{3-}$, the lack of change in concentration was due, in part, to the relatively low amount of Fe reduction in the sediment.
 
-```{r dev-nutpics7, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Adsorbed N and P in zone 52."}
+```{r dev-nutpics7, echo = FALSE, out.width='95%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Time-concentration-depth figures of adsorbed N and P in zone 52."}
 
 knitr::include_graphics(c("images/dev/sed_t_D_C_pip_zone_52.png"))
 
@@ -905,7 +907,7 @@ Little TN was lost through the denitrification reactions. Overall, conditions we
 
 The total mass of N converted to $N_2$ in each lagoon over the course of the simulation was around 10 g.
 
-```{r dev-nutpics8, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Denitrification reactions in four zones across the lagoon."}
+```{r dev-nutpics8, echo = FALSE, out.width='95%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Denitrification reactions in four zones across the lagoon from north to south. The occurrence of the process of deammonification can be seen at around 10 to 20 cm."}
 
 knitr::include_graphics(c("images/dev/sed_FO2-04.png"))
 
