@@ -141,6 +141,8 @@ fig:hab-pic20
 fig:ass-pic0
 fig:ass-pic1
 tab:ass-dmftable
+tab:ass-DMFexportexample
+fig:ass-pic2
 tab:A-datacatalogue
 tab:A-dataclasses
 tab:A-testing
