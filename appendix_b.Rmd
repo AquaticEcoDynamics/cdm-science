@@ -1,7 +1,7 @@
 # Appendix B : Results Archive {-}
 
 ## Long term assessment of model performance (2013 – 2019)  {-}
- 
+
 ### HCHB *Generaton 0* {-}
 
 The aim of this section is to statistically compare the modelling results against historical data collected within the Coorong (where available), over the period of 2013-2019, with outputs of the CDM. The model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics: 
@@ -12,31 +12,175 @@ The aim of this section is to statistically compare the modelling results agains
   +	$NRMS$ : normalized root mean square calculated as $RMS$ normalized by the average of observed values.
 
 The calculations of statistical metrics was performed for each site where the number of field observations was >10 in the assessment period (6 year). The validation plots including the statistics values for each site are presented in the below table (Table 7.3), with links to each assessed water quality variable.
-           
-          
-           
+
+
+<br>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #2481AA;
+  float: left;
+  width: 20%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event, 'GEN0')"id="defaultOpen">HCHB Generation 0</button>
+  <button class="tablinks" onclick="opentab(event, 'GEN1')">HCHB Generation 1</button>
+  <button class="tablinks" onclick="opentab(event, 'GEN15')">HCHB Generation 1.5</button>
+  <button class="tablinks" onclick="opentab(event, 'GEN2')">HCHB Generation 2.0</button>
+  <button class="tablinks" onclick="opentab(event, 'COMP')">HCHB Generation</button>
+</div>
+
+
+<div id="GEN0" class="tabcontent">
+<p> 
+HCHB *Generaton 0*
+
 ```{r A-testing, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
-
 theSheet_Names <- list.files(path = "HTML/longterm_performance_2013_2019", pattern = NULL, all.files = FALSE,
            full.names = FALSE, recursive = FALSE,
            ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
-
 theSheet <- paste("<",'a href="HTML/longterm_performance_2013_2019/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
-
 #theSheet <- append(theSheets,'Validation 2013 2016',0)
-
 kbl(theSheet, caption = "Model results for longterm_performance_2013_2019", align = "l",escape = F,col.names = 'Validation 2013 2019', ) %>%
-
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
 ```
-<br>
 
+</p>
+</div>
+
+<div id="GEN1" class="tabcontent">
+<p> 
+HCHB *Generaton 1*
+
+```{r A-testing1, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet_Names <- list.files(path = "HTML/longterm_performance_2013_2019", pattern = NULL, all.files = FALSE,
+           full.names = FALSE, recursive = FALSE,
+           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+theSheet <- paste("<",'a href="HTML/longterm_performance_2013_2019/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
+#theSheet <- append(theSheets,'Validation 2019 2021',0)
+kbl(theSheet, caption = "Model results for longterm_performance_2013_2019", align = "l",escape = F,col.names = 'Validation 2019 2021', ) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+</p>
+</div>
+
+<div id="GEN15" class="tabcontent">
+<p> 
+HCHB *Generaton 1.5*
+
+```{r A-testing2, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet_Names <- list.files(path = "HTML/longterm_performance_2013_2019", pattern = NULL, all.files = FALSE,
+           full.names = FALSE, recursive = FALSE,
+           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+theSheet <- paste("<",'a href="HTML/longterm_performance_2013_2019/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
+#theSheet <- append(theSheets,'Validation 2013 2016',0)
+kbl(theSheet, caption = "Model results for longterm_performance_2013_2019", align = "l",escape = F,col.names = 'Validation 2013 2019', ) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+</p>
+</div>
+
+<div id="GEN2" class="tabcontent">
+<p> 
+HCHB *Generaton 2.0*
+
+```{r A-testing3, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet_Names <- list.files(path = "HTML/longterm_performance_2013_2019", pattern = NULL, all.files = FALSE,
+           full.names = FALSE, recursive = FALSE,
+           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+theSheet <- paste("<",'a href="HTML/longterm_performance_2013_2019/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
+#theSheet <- append(theSheets,'Validation 2013 2016',0)
+kbl(theSheet, caption = "Model results for longterm_performance_2013_2019", align = "l",escape = F,col.names = 'Validation 2013 2019', ) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+</p>
+</div>
+
+<div id="COMP" class="tabcontent">
+<p> 
+HCHB *Comparisons*
+
+```{r A-testing4, echo=FALSE, message=FALSE, warning=FALSE}
+library(knitr)
+library(kableExtra)
+library(readxl)
+library(rmarkdown)
+theSheet_Names <- list.files(path = "HTML/longterm_performance_2013_2019", pattern = NULL, all.files = FALSE,
+           full.names = FALSE, recursive = FALSE,
+           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+theSheet <- paste("<",'a href="HTML/longterm_performance_2013_2019/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
+#theSheet <- append(theSheets,'Validation 2013 2016',0)
+kbl(theSheet, caption = "Model results for longterm_performance_2013_2019", align = "l",escape = F,col.names = 'Validation 2013 2019', ) %>%
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+```
+
+</p>
+</div>
+
+
+<script>
+function opentab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+<p> </p>
 
 ## Sensitivity assessment {-}
 
