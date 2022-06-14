@@ -212,7 +212,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 In addition to the required DMF value, time series plots are also produced to provide context to the data analyst.
 
-```{r ass-pic2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Critial CPS for macroinvertabrates where Average daily area (Km2) with water cover and <25 g/L Apr-Sep"}
+```{r ass-pic2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Critial CPS for macroinvertabrates where Average daily area (Km2) with water cover and Salinity is < 25 g/L Apr-Sep"}
 
 knitr::include_graphics('images/cdm/DMF_Example.png')
 
