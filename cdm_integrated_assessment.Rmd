@@ -199,7 +199,7 @@ Another useful method for evaluating the model performance is the environmental 
 
 ## Habitat condition assessment
 
-The overall habitat suitablity for sexual and asexual reproduction between 2018 - 2021 have been simulated using the Gen II model (Figure \@ref(tab:HSIsexual4) and Figure \@ref(tab:HSIasexual4)). Habitat quality and suitable areas changes from year to year. In comparison, 2021 offered the least amount of suitable habitat for Ruppia to complete its sexual life cycle (flowering), which was consistent with field observations in that very few flowers were recorded in 2021 compared to 2020.
+The overall habitat suitablity for sexual and asexual reproduction between 2018 - 2021 have been simulated using the Gen II model (Figure \@ref(fig:HSIsexual4) and Figure \@ref(fig:HSIasexual4)). Habitat quality and suitable areas changes from year to year. In comparison, 2021 offered the least amount of suitable habitat for Ruppia to complete its sexual life cycle (flowering), which was consistent with field observations in that very few flowers were recorded in 2021 compared to 2020.
 
 ```{r HSIsexual4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Overall Habitat Suitability Index for the successful completion of the sexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 

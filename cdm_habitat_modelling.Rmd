@@ -18,7 +18,7 @@ knitr::include_graphics("images/lagoon_habitat/fig1.png")
 
 ```
 
-### Model description: Ruppia HSI
+### Model description: *Ruppia* HSI
 
 The approach adopted in the current study is to simulate "habitat suitability" based on an assessment of modelled environmental conditions relative to the known requirements of *Ruppia tuberosa*, for example, considering salinity, light and/or other environmental conditions. This approach was then used to define a relative index for each computational cell by overlaying the various environmental controls/limitations that have been informed based on prior experiments and surveys. The ***Habitat Suitability Index*** approach empirically defines conditions that lead to successful growth and reproduction, without simulation of processes such as photosynthesis and respiration.
 
@@ -31,7 +31,7 @@ In this study, we used the hydrodynamic-biogeochemical model to predict environm
 knitr::include_graphics("images/lagoon_habitat/lifecycle.png")
 ```
 
-#### Ruppia Habitat Suitability Index calculation {.unnumbered}
+#### *Ruppia* Habitat Suitability Index calculation {.unnumbered}
 
 In each model cell ($c$), the Habitat Suitability Index (HSI) is computed based on suitability of conditions ($i$), for each of the main life-stages ($j$), by defining a fractional index, $Φ$. The fractional index for each attribute is computed at each time, step and then integrated over a time window, specific to the life-cycle stage.
 
@@ -74,7 +74,7 @@ The model approach requires empirical data for a) assignment of appropriate envi
 
 #### Environmental threshold review
 
-##### Ruppia life-stages {.unnumbered}
+##### *Ruppia* life-stages {.unnumbered}
 
 *Ruppia* life-stage time windows were reviewed based on both the phenology and seasonal survey datasets collected during the HCHB program. Number of *Ruppia* flowers, fruits, seeds, turions and their biomass recorded at each site during September 2020 -- December 2021 as well as algae biomass were grouped by month and plotted as timeseries to visualise the peak of life-stage events that are relevant to the *Ruppia* habitat model. It was evident that the peak of flowering/fruiting and turion formation lies between September and December (Figure \@ref(fig:phe-sex) and Figure \@ref(fig:phe-asex)). Seed count peaked around March -- May in 2021, as well as during the reproductive period (September -- December) in 2020, however in 2021 Dec much fewer seeds were recorded (Figure \@ref(fig:phe-sex)). Peak algae growth occurred around September -- December, coincident with the *Ruppia* reproductive period (Figure \@ref(fig:phe-biomass)). It was suggested that there were remnant living plants during the aestivation season (January -- March), which indicates the presence of a perennial *Ruppia* community (Lewis et al. 2022).
 
@@ -123,7 +123,7 @@ kbl(theSheet[,2:6], caption = "Summary of environmental thresholds for *Ruppia* 
 
 Statistical analyses were conducted on HCHB *Ruppia* survey data to investigate the influences of salinity and water depth on *Ruppia* abundance during 2020 -- 2021, in order to further refine environmental thresholds in the *Ruppia* model. This is because some of the optimal values presented in the literature prior to HCHB were thought to be possibly biased due to extreme environmental conditions in the Coorong during the survey (e.g. salinity thresholds for turion formation from Kim et al. 2015, pers. comm). Nonparametric multiplicative regressions (NPMR, McCune 2006) were used to derive optimal fit models describing the response of different life-stages of *Ruppia* to salinity and water depth in seasons appropriate for each life-stage. Salinity and water depth were found to be the most important abiotic factors influencing the distribution and abundance of *R.tuberosa* in previous studies (Kim et al. 2015). Although recent studies suggested that Distance from Murray Mouth (DFMM), elevation and algal biomass also influence macrophyte communities in the lagoon (Lewis et al. 2022), they are not included in this NPMR analysis as 1) the mechanisms underlying how DFMM influences macrophyte abundance is unclear; 2) elevation was recorded as a more permanent landmark which does not vary between seasons compared to water depth, however it is the actual water depth that influences the distribution of seagrass; 3) algae biomass is also influenced by salinity therefore co-correlation likely exists. The analysis was conducted in R using the 'ngnn' package and results are shown in (Figure \@ref(fig:NPMR-repro) and Figure \@ref(fig:NPMR-allperiod)) and Table \@ref(tab:NPMRresult) below. The abundance of *Ruppia* flower, seed and macrophyte shoot recorded during 2020 -- 2021 surveys in relation to salinity and water depth largely agreed with existing literature (Table \@ref(tab:threshold)). However, relatively high turion abundance was found to be in lower salinity conditions than previously recorded by Kim et al. 2015. During 2020 -- 2021, considerable number of turions occurred below salinity of 70 g/L down to approximately 45 g/L, especially when water depth \<0.4m (Figure \@ref(fig:NPMR-repro)), while Kim et al. (2015) suggested that turions were most likely to occur with salinity \>70 g/L. This finding was therefore incorporated into the turion formation thresholds in the habitat model (Table \@ref(tab:threshold)). <br>
 
-```{r NPMR-repro, echo = FALSE, fig.show="hold", out.width='50%',  fig.align = "default", class = "text-image",  fig.cap = "Relationship between abundance of *Ruppia* flowers, turions, macroalgae and salinity (g/L) and water depth (m) during the Ruppia reproductive period (Sep – Dec 2020 and Dec 2021) in the Coorong."}
+```{r NPMR-repro, echo = FALSE, fig.show="hold", out.width='50%',  fig.align = "default", class = "text-image",  fig.cap = "Relationship between abundance of *Ruppia* flowers, turions, macroalgae and salinity (g/L) and water depth (m) during the *Ruppia* reproductive period (Sep – Dec 2020 and Dec 2021) in the Coorong."}
 
 knitr::include_graphics("images/lagoon_habitat/NPMR_flower.png")
 knitr::include_graphics("images/lagoon_habitat/NPMR_turion.png")
@@ -133,7 +133,7 @@ knitr::include_graphics("images/lagoon_habitat/NPMR_algaecover.png")
 
 <br>
 
-```{r NPMR-allperiod, echo = FALSE, fig.show="hold", out.width='50%',  fig.align = "default", class = "text-image",  fig.cap = "Relationship between abundance of *Ruppia* seeds, macrophyte shoots, macrophyte biomass and salinity (g/L) and water depth (m) during the Ruppia reproductive and aestivation period (Sep – Dec 2020, Mar – Apr 2021 and Dec 2021) in the Coorong."}
+```{r NPMR-allperiod, echo = FALSE, fig.show="hold", out.width='50%',  fig.align = "default", class = "text-image",  fig.cap = "Relationship between abundance of *Ruppia* seeds, macrophyte shoots, macrophyte biomass and salinity (g/L) and water depth (m) during the *Ruppia* reproductive and aestivation period (Sep – Dec 2020, Mar – Apr 2021 and Dec 2021) in the Coorong."}
 
 knitr::include_graphics("images/lagoon_habitat/NPMR_seed_allperiod.png")
 knitr::include_graphics("images/lagoon_habitat/NPMR_shoot_allperiod.png")
@@ -176,11 +176,11 @@ knitr::include_graphics("images/lagoon_habitat/AlgaeVSRuppia.png")
 
 <br>
 
-#### Ruppia extent within the lagoon
+#### *Ruppia* extent within the lagoon
 
 The distribution and abundance of *Ruppia* has been regularly monitored in the Coorong since 1998. However, the types of data collected, the sampling season, location and methods varied between programs. An overview of the available historical and HBHC datasets is shown in Figure \@ref(fig:dataavail).
 
-```{r dataavail, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Overview of *Ruppia* survey datasets showing sampling periods and types of data collected (purple boxes, with HCHB data highlighted in yellow), versus habitat model output (HSI, blue boxes) on a timeline. For model output, life-stages involved in the integration of overall sexual reproduction success are shaded in light blue (with light blue dashed outline), and life-stages involved in the integration of overall asexual reproduction success are shaded in light green (with green dashed outline). Please note that the integration method shown reflects the updated Ruppia model (Generation II), for detailed information on the differences between Generation II model and Generation 0 model (pre-HCHB) please refer to Section 8.1.4."}
+```{r dataavail, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Overview of *Ruppia* survey datasets showing sampling periods and types of data collected (purple boxes, with HCHB data highlighted in yellow), versus habitat model output (HSI, blue boxes) on a timeline. For model output, life-stages involved in the integration of overall sexual reproduction success are shaded in light blue (with light blue dashed outline), and life-stages involved in the integration of overall asexual reproduction success are shaded in light green (with green dashed outline). Please note that the integration method shown reflects the updated *Ruppia* model (Generation II), for detailed information on the differences between Generation II model and Generation 0 model (pre-HCHB) please refer to Section 8.1.4."}
 
 knitr::include_graphics("images/lagoon_habitat/data_availability.png")
 ```
@@ -326,7 +326,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 In these tests, the model was run from July 2017 to Dec 2021 using the base case condition.
 The outputs of the model are maps of habitat suitability of critical life stages (Figure \@ref(fig:Gen2-HSIflower)), showing only the flowering stage in 2020), in response to light, depth, salinity, temperature and filamentous algae presence, which in the end results in a combined probability of sexual or asexual life-cycle completion (Figure \@ref(fig:Gen2-HSIsexual), showing only the overall HSI for the completion of the sexual life cycle in 2020). The requirements for each life stage are quite different, and when each is superimposed together, the areas where life-cycle completion are limited to the margins of the main lagoons, and the shallow areas around the central region. From year to year, the area of good habitat changes, depending on that year’s eco-hydrodynamic regime.
 
-```{r Gen2-HSIflower, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Habitat suitability (HSI) for the flowering plant phase of Ruppia tuberosa in the Coorong as a function of salinity f(S), light f(l), water level f(WL), temperature f(T) and presence of filamentous algae f(FA) for the base case in 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r Gen2-HSIflower, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Habitat suitability (HSI) for the flowering plant phase of *Ruppia tuberosa* in the Coorong as a function of salinity f(S), light f(l), water level f(WL), temperature f(T) and presence of filamentous algae f(FA) for the base case in 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/Gen2_HSI_flower.png")
 ```
@@ -359,14 +359,14 @@ kbl(theSheet[,1:9], caption = "Validation versions for the *Ruppia* model showin
 
 <br>
 
-Ruppia survey data and associated model output used for the Gen II model assessment as well as validation metrics (correlation coefficients) are summarised in Table \@ref(tab:validpairs), and results described in following subsections. Overall, implementation of the Ruppia Gen II model has improved validation scores on most life-cycle phases, in particular field turion abundance versus modelled HSI for asexual reproduction due to a major update on the turion environmental threshold parameters. In most cases, model achieved a higher validation score in the south lagoon compared to the whole lagoon, which offers a higher confidence in assessing potential management options that are focused in the south. Model performance was significantly better in 2020 than in 2021 (for all validation pairs in the whole lagoon: average R = 0.4 in 2020 versus R = 0.11 in 2021). The lower scores in 2021 may be due to 1) an unusually cool and wet conditions experienced in the winter/spring 2021 that has delayed the Ruppia life cycle, particularly the flowering phase which may be triggered by rising temperature (Waycott 2020, pers.comm.), the threshold of which is currently unknown; 2) quantitative field surveys were conducted in Dec only in 2021 due to accessibility issues in extremely wet conditions prior to Dec,  instead of between Sep and Dec in 2020.
+Ruppia survey data and associated model output used for the Gen II model assessment as well as validation metrics (correlation coefficients) are summarised in Table \@ref(tab:validpairs), and results described in following subsections. Overall, implementation of the *Ruppia* Gen II model has improved validation scores on most life-cycle phases, in particular field turion abundance versus modelled HSI for asexual reproduction due to a major update on the turion environmental threshold parameters. In most cases, model achieved a higher validation score in the south lagoon compared to the whole lagoon, which offers a higher confidence in assessing potential management options that are focused in the south. Model performance was significantly better in 2020 than in 2021 (for all validation pairs in the whole lagoon: average R = 0.4 in 2020 versus R = 0.11 in 2021). The lower scores in 2021 may be due to 1) an unusually cool and wet conditions experienced in the winter/spring 2021 that has delayed the *Ruppia* life cycle, particularly the flowering phase which may be triggered by rising temperature (Waycott 2020, pers.comm.), the threshold of which is currently unknown; 2) quantitative field surveys were conducted in Dec only in 2021 due to accessibility issues in extremely wet conditions prior to Dec,  instead of between Sep and Dec in 2020.
 
 ```{r validpairs, echo=FALSE, message=FALSE, warning=FALSE}
 # library(kableExtra)
 # library(readxl)
 theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet =12)
 
-kbl(theSheet[,1:6], caption = "Summary of Ruppia survey data with their corresponding model output used for validation of the Gen II model, and correlation coefficients (R) between field abundance and modelled Habitat Suitability Index (HSI).", align = "l",escape = F) %>%  #escape controls whether the syntax in table is interpreted
+kbl(theSheet[,1:6], digits = 2, caption = "Summary of *Ruppia* survey data with their corresponding model output used for validation of the Gen II model, and correlation coefficients (R) between field abundance and modelled Habitat Suitability Index (HSI).", align = "l",escape = F) %>%  #escape controls whether the syntax in table is interpreted
   row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(bootstrap_options = "basic", full_width = T,font_size = 10) 
   # column_spec(1, width = "12em")%>%
@@ -387,7 +387,7 @@ knitr::include_graphics("images/lagoon_habitat/shoot2020_germspradt2020_map.png"
 
 ```
 
-```{r hchb-shoot2020, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per square meter in Sep – Dec 2020 versus HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-shoot2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per square meter in Sep – Dec 2020 versus HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/shoot2020_germspradt2020.png")
 
@@ -396,15 +396,15 @@ knitr::include_graphics("images/lagoon_habitat/shoot2020_germspradt2020.png")
 
 **ii.	Field flower count Sep 2020 (obs) vs. HSI sexual Oct 2020 (model)**
 
-Average number of Ruppia flower per square meter recorded in Sep - Dec 2020 (reproductive period) were compared with overall HSI for sexual reproduction up to end of Oct in the same year (Figure \@ref(fig:hchb-flower2020map) and \@ref(fig:hchb-flower2020)). The Gen II has similar validation scores of the Gen 0 model. The overall distribution of flowers was consistent with model prediction. Highest density of flowers was found in the north lagoon where HSI predictions were highest. Almost no flowers were recorded in the south lagoon, where HSI predictions were low.
+Average number of *Ruppia* flower per square meter recorded in Sep - Dec 2020 (reproductive period) were compared with overall HSI for sexual reproduction up to end of Oct in the same year (Figure \@ref(fig:hchb-flower2020map) and \@ref(fig:hchb-flower2020)). The Gen II has similar validation scores of the Gen 0 model. The overall distribution of flowers was consistent with model prediction. Highest density of flowers was found in the north lagoon where HSI predictions were highest. Almost no flowers were recorded in the south lagoon, where HSI predictions were low.
 
-```{r hchb-flower2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia flower count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-flower2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* flower count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/flower2020_sexual2020_map.png")
 
 ```
 
-```{r hchb-flower2020, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia flower count per square meter in Sep – Dec 2020 versus HSI model output for overall sexual reproduction integrated over Jan - Oct 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-flower2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* flower count per square meter in Sep – Dec 2020 versus HSI model output for overall sexual reproduction integrated over Jan - Oct 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/flower2020_sexual2020.png")
 
@@ -415,14 +415,14 @@ knitr::include_graphics("images/lagoon_habitat/flower2020_sexual2020.png")
 
 **iii.	Field seed count Mar 2021 (obs) vs. HSI sexual Dec 2020 (model)**
 
-Average number of Ruppia tuberosa seed per square meter recorded in Mar - Apr 2021 (aestivation period) were compared with overall HSI for sexual reproduction in 2020 (Figure \@ref(fig:hchb-seed2021map) and \@ref(fig:hchb-seed2021)). The Gen II model update has resulted in better validation scores than the Gen 0 model, especially in the south lagoon. It’s important to note that seeds have the potential to disperse with water current/wind therefore its distribution and abundance may be less predictable than other plant materials.
+Average number of *Ruppia tuberosa* seed per square meter recorded in Mar - Apr 2021 (aestivation period) were compared with overall HSI for sexual reproduction in 2020 (Figure \@ref(fig:hchb-seed2021map) and \@ref(fig:hchb-seed2021)). The Gen II model update has resulted in better validation scores than the Gen 0 model, especially in the south lagoon. It’s important to note that seeds have the potential to disperse with water current/wind therefore its distribution and abundance may be less predictable than other plant materials.
 
-```{r hchb-seed2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia tuberosa seed count per square meter in Mar – Apr 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-seed2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia tuberosa* seed count per square meter in Mar – Apr 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2020_map.png")
 ```
 
-```{r hchb-seed2021, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia tuberosa seed count per square meter in Mar – Apr 2021 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-seed2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia tuberosa* seed count per square meter in Mar – Apr 2021 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2020.png")
 ```
@@ -431,14 +431,14 @@ knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2020.png")
 
 **iv.Field turion count Sep 2020 (obs) vs. HSI asexual Oct 2020 (model)**
 
-Average number of Ruppia turion (type I and II) per square meter recorded in Sep - Dec 2020 (reproductive period) were compared with overall HSI for asexual reproduction up to end of Oct in the same year (Figure \@ref(fig:hchb-turion2020map) and \@ref(fig:hchb-turion2020)). The Gen II model update has significantly improved validation scores compared to the Gen 0 model due to a major change in salinity threshold parameter. The overall distribution of turions agreed with model prediction in that more turions were found around the middle lagoon and northern end of south lagoon, where HSI were highest. 
+Average number of *Ruppia* turion (type I and II) per square meter recorded in Sep - Dec 2020 (reproductive period) were compared with overall HSI for asexual reproduction up to end of Oct in the same year (Figure \@ref(fig:hchb-turion2020map) and \@ref(fig:hchb-turion2020)). The Gen II model update has significantly improved validation scores compared to the Gen 0 model due to a major change in salinity threshold parameter. The overall distribution of turions agreed with model prediction in that more turions were found around the middle lagoon and northern end of south lagoon, where HSI were highest. 
 
-```{r hchb-turion2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia turion count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-turion2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* turion count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/turion2020_asexual2020_map.png")
 ```
 
-```{r hchb-turion2020, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia turion count per square meter in Sep – Dec 2020 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-turion2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* turion count per square meter in Sep – Dec 2020 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/turion2020_asexual2020.png")
 ```
@@ -447,14 +447,14 @@ knitr::include_graphics("images/lagoon_habitat/turion2020_asexual2020.png")
 
 **v.	Field shoot count Dec 2021 (obs) vs. HSI seed germination + turion viability + turion sprouting + adult growth Sep 2021 (model)**
 
-Average number of seagrass shoots per square meter recorded in Dec 2021 (reproductive period) were compared with combined HSI for seed germination, turion sprouting and adult growth up to end of Sep in the same year (Figure \@ref(fig:hchb-shoot2021map) and \@ref(fig:hchb-shoot2021)). The validation scores of 2021 were lower than that of 2020, possibly due to the environmental conditions experienced in winter-spring 2021 (including unusually cool and wet conditions), which may have caused a delay in the Ruppia life cycle (Waycott 2022, pers. comm.). 
+Average number of seagrass shoots per square meter recorded in Dec 2021 (reproductive period) were compared with combined HSI for seed germination, turion sprouting and adult growth up to end of Sep in the same year (Figure \@ref(fig:hchb-shoot2021map) and \@ref(fig:hchb-shoot2021)). The validation scores of 2021 were lower than that of 2020, possibly due to the environmental conditions experienced in winter-spring 2021 (including unusually cool and wet conditions), which may have caused a delay in the *Ruppia* life cycle (Waycott 2022, pers. comm.). 
 
 ```{r hchb-shoot2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average seagrass shoot count per square meter in Dec 2021 (circles) overlaid on HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/shoot2021_germspradt2021_map.png")
 ```
 
-```{r hchb-shoot2021, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per square meter in Dec 2021 versus HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-shoot2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per square meter in Dec 2021 versus HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/shoot2021_germspradt2021.png")
 ```
@@ -462,14 +462,14 @@ knitr::include_graphics("images/lagoon_habitat/shoot2021_germspradt2021.png")
 
 **vi.	Field flower count Dec 2021 (obs) vs. HSI sexual Dec 2021 (model) **
 
-Average number of Ruppia flowers per square meter recorded in Dec 2021 (reproductive period) were compared with overall HSI for sexual reproduction in 2021 (Figure \@ref(fig:hchb-flower2021map) and \@ref(fig:hchb-flower2021)). The validation scores of 2021 were lower than that of 2020, possibly due to the environmental conditions experienced in winter-spring 2021 (including unusually cool and wet conditions), which may have caused a delay in the Ruppia life cycle (Waycott 2022, pers. comm.). Overall very few flowers were recorded in the 2021 reproductive period. It was speculated that flowering may be triggered by warming temperature (Waycott 2022, pers. comm.), the threshold of which remains unclear (in the current model the temperature threshold for flowering is assumed to be the same as vegetative growth).
+Average number of *Ruppia* flowers per square meter recorded in Dec 2021 (reproductive period) were compared with overall HSI for sexual reproduction in 2021 (Figure \@ref(fig:hchb-flower2021map) and \@ref(fig:hchb-flower2021)). The validation scores of 2021 were lower than that of 2020, possibly due to the environmental conditions experienced in winter-spring 2021 (including unusually cool and wet conditions), which may have caused a delay in the *Ruppia* life cycle (Waycott 2022, pers. comm.). Overall very few flowers were recorded in the 2021 reproductive period. It was speculated that flowering may be triggered by warming temperature (Waycott 2022, pers. comm.), the threshold of which remains unclear (in the current model the temperature threshold for flowering is assumed to be the same as vegetative growth).
 
-```{r hchb-flower2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia flower count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-flower2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* flower count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/flower2021_sexual2021_map.png")
 ```
 
-```{r hchb-flower2021, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia flower count per square meter in Dec 2021 versus HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-flower2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* flower count per square meter in Dec 2021 versus HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/flower2021_sexual2021.png")
 ```
@@ -478,14 +478,14 @@ knitr::include_graphics("images/lagoon_habitat/flower2021_sexual2021.png")
 
 **vii.	Field seed count Dec 2021 (obs) vs. HSI sexual Dec 2021 (model)**
 
-Average number of Ruppia tuberosa seeds per square meter recorded in Dec 2021 (reproductive period) were compared with overall HSI for sexual reproduction in 2021 (Figure \@ref(fig:hchb-seed2021map-2) and \@ref(fig:hchb-seed2021-2)). The validation scores of 2021 were lower than that of 2020. This is as expected, since flowering activity was markedly delayed in 2021 and would not have set seed in Dec yet. 
+Average number of *Ruppia tuberosa* seeds per square meter recorded in Dec 2021 (reproductive period) were compared with overall HSI for sexual reproduction in 2021 (Figure \@ref(fig:hchb-seed2021map-2) and \@ref(fig:hchb-seed2021-2)). The validation scores of 2021 were lower than that of 2020. This is as expected, since flowering activity was markedly delayed in 2021 and would not have set seed in Dec yet. 
 
-```{r hchb-seed2021map-2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia tuberosa seed count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-seed2021map-2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia tuberosa* seed count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2021_map.png")
 ```
 
-```{r hchb-seed2021-2, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia tuberosa seed count per square meter in Dec 2021 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-seed2021-2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia tuberosa* seed count per square meter in Dec 2021 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2021.png")
 ```
@@ -495,14 +495,14 @@ knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2021.png")
 
 **viii. Field turion count Dec 2021 (obs) vs. HSI asexual Dec 2021 (model) **
 
-Average number of Ruppia turion (type I and II) per square meter recorded in Dec 2021 (reproductive period) were compared with overall HSI for asexual reproduction in 2021 (Figure \@ref(fig:hchb-turion2021map) and \@ref(fig:hchb-turion2021)). Validation scores for 2021 is markedly higher than in 2020. The overall distribution of turions agreed with model prediction in that more turions were found around the middle lagoon and northern half of south lagoon, where HSI were higher. 
+Average number of *Ruppia* turion (type I and II) per square meter recorded in Dec 2021 (reproductive period) were compared with overall HSI for asexual reproduction in 2021 (Figure \@ref(fig:hchb-turion2021map) and \@ref(fig:hchb-turion2021)). Validation scores for 2021 is markedly higher than in 2020. The overall distribution of turions agreed with model prediction in that more turions were found around the middle lagoon and northern half of south lagoon, where HSI were higher. 
 
-```{r hchb-turion2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia turion count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-turion2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* turion count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/turion2021_asexual2021_map.png")
 ```
 
-```{r hchb-turion2021, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia turion count per square meter in Dec 2021 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-turion2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* turion count per square meter in Dec 2021 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/turion2021_asexual2021.png")
 ```
@@ -519,7 +519,7 @@ Average number of seagrass shoots per 7.5 cm core recorded in Jul 2018 were comp
 knitr::include_graphics("images/lagoon_habitat/shoot2018_germspradt2018_map.png")
 ```
 
-```{r hchb-shoot2018, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per 7.5 cm core in Jul 2018 versus HSI model output for germination, sprouting and adult growth integrated over Jan – Jun 2018. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-shoot2018, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per 7.5 cm core in Jul 2018 versus HSI model output for germination, sprouting and adult growth integrated over Jan – Jun 2018. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/shoot2018_germspradt2018.png")
 ```
@@ -530,14 +530,14 @@ knitr::include_graphics("images/lagoon_habitat/shoot2018_germspradt2018.png")
 
 **xi.	Field seed count Jan 2019 (obs) vs. HSI sexual Dec 2018 (model)**
 
-Average number of Ruppia tuberosa seeds per 7.5 cm core recorded in Jan 2019 were compared with overall HSI for sexual reproduction in 2018 (Figure \@ref(fig:hchb-seed2019map) and \@ref(fig:hchb-seed2019)). The overall distribution of seeds agreed with model predictions. More seeds were found around the middle lagoon where model predicted higher HSIs. 
+Average number of *Ruppia tuberosa* seeds per 7.5 cm core recorded in Jan 2019 were compared with overall HSI for sexual reproduction in 2018 (Figure \@ref(fig:hchb-seed2019map) and \@ref(fig:hchb-seed2019)). The overall distribution of seeds agreed with model predictions. More seeds were found around the middle lagoon where model predicted higher HSIs. 
 
-```{r hchb-seed2019map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia tuberosa seed count per 7.5 cm core in Jan 2019 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2018. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-seed2019map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia tuberosa* seed count per 7.5 cm core in Jan 2019 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2018. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/seed2019_sexual2018_map.png")
 ```
 
-```{r hchb-seed2019, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia tuberosa seed count per 7.5 cm core in Jan 2019 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2018. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-seed2019, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia tuberosa* seed count per 7.5 cm core in Jan 2019 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2018. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/seed2019_sexual2018.png")
 ```
@@ -545,14 +545,14 @@ knitr::include_graphics("images/lagoon_habitat/seed2019_sexual2018.png")
 
 **xii.	Field turion count Jan 2019 (obs) vs. HSI asexual Dec 2018 (model)**
 
-Average number of Ruppia turions (type I and II) per 7.5 cm core recorded in Jan 2019 were compared with overall HSI for asexual reproduction in 2018 (Figure \@ref(fig:hchb-turion2019map) and \@ref(fig:hchb-turion2019)). Higher density of turions were recorded around the northern end of south lagoon, where our model also predicted high HSIs, however there are also sites with a mismatch between modelled and observed, such as around the southern end of north lagoon.
+Average number of *Ruppia* turions (type I and II) per 7.5 cm core recorded in Jan 2019 were compared with overall HSI for asexual reproduction in 2018 (Figure \@ref(fig:hchb-turion2019map) and \@ref(fig:hchb-turion2019)). Higher density of turions were recorded around the northern end of south lagoon, where our model also predicted high HSIs, however there are also sites with a mismatch between modelled and observed, such as around the southern end of north lagoon.
 
-```{r hchb-turion2019map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average Ruppia turion count per 7.5 cm core in Jan 2019 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Dec 2018. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+```{r hchb-turion2019map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* turion count per 7.5 cm core in Jan 2019 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Dec 2018. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
 knitr::include_graphics("images/lagoon_habitat/turion2019_asexual2018_map.png")
 ```
 
-```{r hchb-turion2019, echo = FALSE, out.width='60%', class = "text-image", fig.cap = "Scatter plot and boxplot of average Ruppia turion count per 7.5 cm core in Jan 2019 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2018. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-turion2019, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* turion count per 7.5 cm core in Jan 2019 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2018. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/turion2019_asexual2018.png")
 ```
@@ -563,9 +563,9 @@ knitr::include_graphics("images/lagoon_habitat/turion2019_asexual2018.png")
 
 ### Summary
 
-We undertook an extensive review of historical and HCHB Ruppia monitoring data and literature review on environmental influences including the effect of macroalgae on all Ruppia life-stages. We also conducted statistical analyses on Ruppia phenology and distribution data in relation to salinity, water depth and macroalgae abundance. Based on literature review, data analyses and on-going model assessment, we have developed the Ruppia Gen II model by 1) refining relevant environmental threshold parameters and time windows for all Ruppia life-stages, with a new life-stage function (turion viability) added to the model; 2) improving life-stage integration approach in the model. We have also for the first time developed an approach for validating model output against field data.
+We undertook an extensive review of historical and HCHB *Ruppia* monitoring data and literature review on environmental influences including the effect of macroalgae on all *Ruppia* life-stages. We also conducted statistical analyses on *Ruppia* phenology and distribution data in relation to salinity, water depth and macroalgae abundance. Based on literature review, data analyses and on-going model assessment, we have developed the Ruppia Gen II model by 1) refining relevant environmental threshold parameters and time windows for all *Ruppia* life-stages, with a new life-stage function (turion viability) added to the model; 2) improving life-stage integration approach in the model. We have also for the first time developed an approach for validating model output against field data.
 <br>
-Model performance was overall satisfactory, where areas with higher HSI predicted by the model aligned with higher abundance recorded in the field in most cases. The implementation of Gen II model has improved validation metrics for most life stages, especially turion abundance versus HSI for asexual reproduction. In most cases, model achieved a higher validation score in the south lagoon compared to the whole lagoon, which offers higher confidence in assessing potential management options that are focused in the south. The year-to-year variability in model performance, however, implicates that there were likely environmental factors influencing the distribution and abundance of Ruppia and its life phases that were not accounted for in the model, such as environmental cues for flowering event, which may include elevated temperature and photoperiod. Similar for other life stages, statistical analysis conducted on HCHB survey data showed that only a small portion of the variances in the distribution of seagrass biomass (23%), Ruppia seeds (6.8%) and turion (13%) could be explained by salinity, depth, elevation, algae biomass, and distance to Murray Mouth (Lewis et al. 2022). Although the unexplained variances remain a knowledge gap, it is important to note that our Ruppia model focuses on the potential suitability of habitats based on environmental factors and does not take into account biotic interactions such as foraging by birds. Our model focuses on the annual life cycle of Ruppia, while it was observed during the HCHB surveys that there exists a perennial Ruppia community in the Coorong (Lewis et al. 2022) which may cause some mismatch between the modelled and observed Ruppia presence. However what factors contribute to Ruppia community persisting through the aestivation period is unclear and could potentially be integrated into our model in the future.
+Model performance was overall satisfactory, where areas with higher HSI predicted by the model aligned with higher abundance recorded in the field in most cases. The implementation of Gen II model has improved validation metrics for most life stages, especially turion abundance versus HSI for asexual reproduction. In most cases, model achieved a higher validation score in the south lagoon compared to the whole lagoon, which offers higher confidence in assessing potential management options that are focused in the south. The year-to-year variability in model performance, however, implicates that there were likely environmental factors influencing the distribution and abundance of *Ruppia* and its life phases that were not accounted for in the model, such as environmental cues for flowering event, which may include elevated temperature and photoperiod. Similar for other life stages, statistical analysis conducted on HCHB survey data showed that only a small portion of the variances in the distribution of seagrass biomass (23%), *Ruppia* seeds (6.8%) and turion (13%) could be explained by salinity, depth, elevation, algae biomass, and distance to Murray Mouth (Lewis et al. 2022). Although the unexplained variances remain a knowledge gap, it is important to note that our Ruppia model focuses on the potential suitability of habitats based on environmental factors and does not take into account biotic interactions such as foraging by birds. Our model focuses on the annual life cycle of *Ruppia*, while it was observed during the HCHB surveys that there exists a perennial *Ruppia* community in the Coorong (Lewis et al. 2022) which may cause some mismatch between the modelled and observed *Ruppia* presence. However what factors contribute to *Ruppia* community persisting through the aestivation period is unclear and could potentially be integrated into our model in the future.
 
 <br><br>
 
