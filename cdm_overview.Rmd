@@ -10,11 +10,11 @@ At its core, it consists of the hydrodynamic model TUFLOW-FV and the water quali
 
 In general, the models are configured to resolve hydrodynamics and flushing, water temperature and salinity, and numerous water quality attributes including oxygen, nutrients (organic and inorganic), phytoplankton, macroalgae, and suspended sediment. The outputs from these modules are used to predict ecological attributes of interest, including seagrass, fish and benthic macro-invertebrates.
 
-The CDM is also more the individual models. The model links a large volume of data from historical surveys, real-time data streams and recent experimental work. Complex integration workflows are implemented to process data for model inputs (e.g., boundary conditions) or model assessment (e.g., calibration or validation).
+The CDM is also more than the individual models. The model links a large volume of data from historical surveys, real-time data streams and recent experimental work. Complex integration workflows are implemented to process data for model inputs (e.g., boundary conditions) or model assessment (e.g., calibration or validation).
 
-The CDM project is therefore a model-data ‘ecosystem’ that serves as a shared analytics platform. Model and data provenance is a high priority and all data and model products that are developed are under strict version control within the platform to ensure traceability and transparency in model use and assumptions (see Section 3).
+The CDM project is therefore a model-data ‘ecosystem’ that serves as a shared analytics platform to provide a holistic view of the many complex aspects of the system. Model and data provenance is a high priority and all data and model products that are developed are under strict version control within the platform to ensure traceability and transparency in model use and assumptions (see Section 3).
 
-The following sections describe the model platform, detail the CDM configuration, and summarise the different model generations being developed and used for decision support.
+The following sections describe the model platform, detail the CDM configuration, summarise the different model generations being developed and used for decision support, and provide a persistent resource summarising model performance.
 
 <br>
 
