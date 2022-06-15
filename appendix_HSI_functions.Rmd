@@ -1,0 +1,45 @@
+# Appendix: Habitat Suitability Index Functions {-}
+
+
+Habitat suitability functions for Ruppia life stages based on literature review and analyses of HCHB survey data. Note that HSI = 1 under optimal conditions, HSI = 0 under unsuitable conditions, and HSI for sub-optimal is linearly interpolated between these values. Rows shaded in green indicate threshold values were largely sourced from current literature (except text in red), while rows shaded in orange indicate threshold values were estimated. 
+
+
+```{r hsi-function, echo=FALSE, message=FALSE, warning=FALSE}
+# library(knitr)
+# library(kableExtra)
+# library(readxl)
+# library(rmarkdown)
+# library(dplyr)
+# library(pander)
+
+theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet =10)
+#gsub(pattern = "pic",x = theSheet[,5], replacement = <img src="images/lagoon_habitat/HSI_viability_salinity.png">)
+  # theSheet %>% 
+  # slice(1) %>% 
+  # mutate(
+  #   pic = "images/lagoon_habitat/HSI_viability_salinity.png" %>% pander::pandoc.image.return()
+  #   ) %>% 
+  # pander()%>%
+
+kbl(theSheet[,2:8], caption = "Habitat suitability functions for Ruppia life stages based on literature review and analyses of HCHB survey data. Note that HSI = 1 under optimal conditions, HSI = 0 under unsuitable conditions, and HSI for sub-optimal is linearly interpolated between these values. Rows shaded in green indicate threshold values were largely sourced from current literature (except text in red), while rows shaded in orange indicate threshold values were estimated.", align = "l",escape = F) %>%  #escape controls whether the syntax in table is interpreted
+  row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+
+  kable_styling(full_width = F,font_size = 10) %>%
+  column_spec(4, width = "20em")%>%
+  pack_rows("Turion viability (Jan 1 – Mar 31)", 1, 1) %>%
+  pack_rows("Seed germination (Apr 1 – Jun 30)", 2, 6) %>%
+  pack_rows("Turion sprouting (Apr 1 – Jun 30)", 7, 11) %>% #3rd and 4th row
+  pack_rows("Adult plant growth (Jun 1 – Sep 30)", 12, 16) %>%
+  pack_rows("Flowering and seed set (Sep 1 – Dec 31)", 17, 21) %>%
+  pack_rows("Turion formation (Sep 1 – Dec 31)", 22, 26)%>%
+  scroll_box(width="150%",fixed_thead = T)
+
+  # column_spec(2, width = "12em")%>%
+  # column_spec(4, width = "10em")%>%
+
+```
+
+<br>
+
+
+

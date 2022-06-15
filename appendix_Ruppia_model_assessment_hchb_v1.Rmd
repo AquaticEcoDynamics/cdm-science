@@ -1,0 +1,77 @@
+# Appendix: Ruppia model assessment - HCHB data version 1{-}
+
+
+**i. Field seagrass shoot count Sep 2020 (obs) vs. HSI germination & sprouting Jul 2020 (model)**
+
+Average number of shoots per core sampled in Sep - Oct 2020 were compared with combined HSI for seed germination and turion sprouting in the same year (Figure \@ref(fig:hchbv1-shoot2020)). By default, the integration period for germination and sprouting is Apr – Jul, therefore there was around a two-month gap between the end of the model period and the start of the survey period. In addition to the 600m-radius buffer, a 100m-radius buffer was also used as a comparison since there were far more survey sites throughout the lagoon during HCHB and sites were relatively close to each other. 100m is approximately the average width of a grid cell on the model domain.
+In general, model outputs agreed with field shoot abundance, despite the two-month gap where environmental conditions were not accounted for. Both field data and HSI outputs suggested higher shoot abundance in the north lagoon compared to the south, likely due to a lower salinity level in the north. Using a 100m-radius buffer seemed to result in a better model fit. 
+It is worth noting that the seagrass shoot count includes several seagrass species in the lagoon such as R. tuberosa and Althenia cylindrocarpa, whereas the environmental thresholds for seed germination and turion sprouting were derived from experiments on R. tuberosa only (Kim et al. 2013). Although these species can co-occur and may have overlapping requirements on some environmental aspects (Asanopoulos & Waycott 2020), care should be taken when interpreting validation results.
+
+```{r hchbv1-shoot2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average shoot count per core in 2020 Sep (circles) overlaid on HSI model output for germination and sprouting in 2020 (right), and validation plots for the entire lagoon (top left, 600m buffer), entire lagoon separated into north and south (middle left, red: north, blue: south, 100m buffer), and south lagoon only (bottom left, 100m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_shoot2020.png")
+
+```
+
+**ii. Field flower count Sep 2020 (obs) vs. HSI flowering and seed set Dec 2020 (model)**
+Average number of flowers per core sampled in Sep - Oct 2020 were compared with HSI for flowering and seed set in the same year (Figure \@ref(fig:hchbv1-flower2020)). By default, the integration period for flowering and seed set is Aug – Dec, which included approximately a two-month period after the survey. Both 600m-radius and 100m-radius buffer were used as a comparison.
+Model output generally agreed with field flower abundance, in that the condition in the south lagoon was mostly unsuitable where no flowers were recorded, while the conditions around the middle and north lagoon were more suitable where Ruppia was flowering. Using a 100m-radius buffer resulted in an improved validation score.
+
+```{r hchbv1-flower2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average flower count per core in 2020 Sep (circles) overlaid on HSI model output for flowering and seed set in 2020 (right), and validation plots for the entire lagoon (top left, 600m buffer), entire lagoon separated into north and south (middle left, red: north, blue: south, 100m buffer), and south lagoon only (bottom left, 100m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_flower2020vsHSIflower.png")
+
+```
+
+**iii.	Field flower count Sep 2020 (obs) vs. HSI sexual Dec 2020 (model)**
+Average number of flowers per core sampled in Sep - Oct 2020 were compared with HSI for overall sexual reproduction the same year (Figure \@ref(fig:hchbv1-flower2020-2)), which is an integration of habitat suitability for seed germination, adult growth and flowering and seed set over Apr - Dec. Validation results were similar to the previous case (ii). 
+
+```{r hchbv1-flower2020-2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average flower count per core in 2020 Sep (circles) overlaid on HSI model output for overall probability of completing sexual reproduction cycle in 2020 (right), and validation plots for the entire lagoon (separated into north and south (top left, red: north, blue: south, 100m buffer), and south lagoon only (bottom left, 100m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_flower2020vsHSIsexual.png")
+```
+
+**iv.	Field seed count Mar 2021 (obs) vs. HSI flowering and seed set Dec 2020 (model) **
+Average number of seeds per core sampled in Mar – Apr 2021 were compared with HSI for flowering and seed set in the previous year (Figure \@ref(fig:hchbv1-seed2021)) using both 600m and 100m-radius buffer. Seed abundance appeared to be less predictable than shoots or flowers, likely because once detached from mother plant, seeds can disperse with water currents before settling down. Kim et al. (2015) studied the physiochemical influences on R. tuberosa abundance in the Coorong and found that only 27% of the seed abundance variation could be explained by salinity, depth and turbidity, which was much less than shoots, flowers or turions. Our NPMR results indicated a similar trend on the HCHB data (Table \@ref(tab:NPMRresult)). Using the bigger buffer produced slightly higher validation scores (R = 0.35) than the smaller buffer (R = 0.25, Figure \@ref(fig:hchbv1-seed2021)), which may be a reflection of the Ruppia seeds being able to disperse a small distance (i.e. > 100m).
+
+```{r hchbv1-seed2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average seed count per core in 2021 Mar (circles) overlaid on HSI model output for flowering and seed set in 2020 (right), and validation plots for the entire lagoon (top left, 600m buffer), entire lagoon separated into north and south (middle left, red: north, blue: south, 100m buffer), and south lagoon only (bottom left, 100m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_seed2021vsHSIflower.png")
+```
+
+**v.	Field seed count Mar 2021 (obs) vs. HSI sexual Dec 2020 (model) **
+Average number of seeds per core sampled in Mar – Apr 2021 were compared with HSI for overall sexual reproduction in the previous year (Figure \@ref(fig:hchbv1-seed2021-sexual)). This produced similar results to the above case (iv).
+
+```{r hchbv1-seed2021-sexual, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average seed count per core in 2021 Mar (circles) overlaid on HSI model output for overall probability of completing sexual reproduction cycle in 2020 (right), and validation plots for the entire lagoon separated into north and south (top left, red: north, blue: south, 100m buffer), and south lagoon only (bottom left, 100m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_seed2021vsHSIsexual.png")
+```
+
+**vi.	Field turion count Sep 2020 (obs) vs. HSI turion formation Dec 2020 (model)**
+Average number of turions per core sampled in Sep - Oct 2020 were compared with HSI for turion formation in the same year (Figure \@ref(fig:hchbv1-turion2020)) using a 600m buffer. Model predictions did not agree well with field turion abundance, as the environmental thresholds used for turion formation (derived from Kim et al. 2015) was likely biased from a year with very high salinities (discussed in Section 8.1.3.1).
+
+```{r hchbv1-turion2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average turion count per core in 2020 Sep (circles) overlaid on HSI model output for turion formation in 2020 (right), and validation plots for the entire lagoon (left, 600m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_turion2020vsHSIturion.png")
+```
+
+**vii.	Field turion count Mar 2021 (obs) vs. HSI turion formation Dec 2020 (model)**
+Average number of turions per core sampled in Mar - Apr 2020 were compared with HSI for turion formation in the previous year (Figure \@ref(fig:hchbv1-turion2021)) using a 600m buffer. Validation results were similar to the previous case (vi).
+
+```{r hchbv1-turion2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average turion count per core in 2021 Mar (circles) overlaid on HSI model output for turion formation in 2020 (right), and validation plots for the entire lagoon (left, 600m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_turion2021vsHSIturion.png")
+```
+
+**viii.	Field algae cover % Sep 2020 (obs) vs. HSI Ulva Nov 2020 or biomass Nov 2020 (model)**
+Site macroalgae cover proportion in Sep – Oct 2020 were compared with Ulva HSI and biomass in the same year (Figure \@ref(fig:hchbv1-algaecover2020) and Figure \@ref(fig:hchbv1-algaecover2020-biomass)). Compared to modelled Ulva biomass, Ulva HSI prediction correlates better with the observed algae cover. This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted. 
+
+```{r hchbv1-algaecover2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Site algae cover (%) in 2020 Sep (circles) overlaid on HSI model output for Ulva in 2020 (right), and validation plots for the entire lagoon (left, 600m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_algaecover2020vsHSI.png")
+```
+
+```{r hchbv1-algaecover2020-biomass, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Site algae cover (%) in 2020 Sep (circles) overlaid on model output for Ulva biomass (g) in 2020 (right), and validation plots for the entire lagoon (left, 600m buffer). An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
+
+knitr::include_graphics("images/lagoon_habitat/hchbv1_algaecover2020vsbiomass.png")
+```
