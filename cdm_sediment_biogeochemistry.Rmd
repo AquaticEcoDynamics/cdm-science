@@ -915,9 +915,25 @@ knitr::include_graphics(c("images/dev/sed_FO2-04.png"))
 
 <br>
 
+Across the lagoon, there were at least three major types of sediment environment that affected denitrification rates. In the northern zones, where salinity was lower, the upper sediment was well-mixed and so water column variables such as $O_2$, $NO_3^-$ and organic matter went deeper into the sediment. Overall $SO_4^{2-}$, and therefore $H_2S$ concentration was also lower in the northner zones. In the southern zones, where salinity was high, the upper sediment was not well mixed. High concentrations of $O_2$, $NO_3^-$ and organic matter were held in the upper few mm, and reacted before they were mixed deeper. In some southern zones, salinity was high but plant roots added $O_2$ deeper into the sediment. Mixing was still low, and so $NO_3^-$ and organic matter were not mixed deep into the sediment. Denitrification reactions were able to occur just below the oxic zone. 
+
+```{r dev-nutpics9, echo = FALSE, out.width='55%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of three of the possible sediment zone denitrification results. Left: low-salinity areas were well mixed and had $O_2$ added at a relatively deep layer. Centre: high-salinity zones had little mixing and so influxing chemicals were confined to the very top layers. Right: High-salinity zones with plants had $O_2$ but not other variables mixed into the deeper layers."}
+
+knitr::include_graphics(c("images/dev/sed_3panel-16.png"))
+
+```
+
+
+
 #### Integrated TN results {.unnumbered}
 
-Overall, most of the TN was in the form of $PON_R$. In the upper 5 cm of the sediment the legacy $PON_R$ decayed to $DON_R$ and was fluxed out of the sediment. In the deeper layers, the $PON_R$ remained relatively constant. The sediment received a greater mass of $PON_R$ and $PON_L$ than it returned to the water column, so it was a source of $NH_4^+$ and $DON_R$ but a sink of TN. The major TN pathways and masses are given in Table \@ref(tab:3dev-TotalTNa) and \@ref(tab:3dev-TotalTNb).
+The mass of TN in the top 5 cm of the sediment was close to the target mass, and it can be refined after further calibration. Most of the TN was in the form of $PON_R$, which decayed from its initial concentration. As the $PON_R$ was hydrolysed to $DON_R$, the $DON_R$ solute was fluxed to the water column. Below 10 cm, the $PON_R$ concentration was relatively stable. The sediment received a greater mass of $PON_R$ and $PON_L$ than it returned to the water column, and so the sediment was a source of $NH_4^+$ and $DON_R$ but overall a sink of TN. The major TN pathways and masses are given in Table \@ref(tab:3dev-TotalTNa) and \@ref(tab:3dev-TotalTNb).
+
+
+A challenge of this project was the accumulation of TN. The small extra amount of DON fluxed from the sediment to the water column created a high concentration of $NH_4^+$ in the water column by the end of a long simulation.
+
+A future calibration will start with a check of $O_2$ penetration depth in each zone, compared to the rapid samples. A shallower $O_2$ depth would provide a better agreement with $Fe^2+$ and $H_2S$ depth profiles. 
+     
 
 ```{r 3dev-TotalTNa, echo=FALSE, message=FALSE, warning=FALSE}
 sediment_Geochem <- read_xlsx("tables/sed/TotalTN.xlsx", sheet = "SCL" )
@@ -952,6 +968,7 @@ kable(sediment_Geochem ,"html", escape = F, align = "c", caption = "TN balance f
 ```
 
 <br>
+
 
 ------------------------------------------------------------------------
 
