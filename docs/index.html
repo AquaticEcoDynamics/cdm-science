@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Welcome | The Coorong Dynamics Model</title>
-<meta name="author" content="MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs">
+<meta name="author" content="MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims">
 <meta name="description" content="Welcome | The Coorong Dynamics Model (CDM)">
 <meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="Welcome | The Coorong Dynamics Model">
@@ -57,10 +57,7 @@
 <li><a class="" href="references.html">References</a></li>
 <li><a class="" href="appendix-a-data-catalogue.html">Appendix A : Data Catalogue</a></li>
 <li><a class="" href="appendix-b-results-archive.html">Appendix B : Results Archive</a></li>
-<li><a class="" href="appendix-habitat-suitability-index-functions.html">Appendix: Habitat Suitability Index Functions</a></li>
-<li><a class="" href="appendix-model-assessment---historical-data.html">Appendix: Model assessment - historical data</a></li>
-<li><a class="" href="appendix-ruppia-model-assessment---hchb-data-version-1.html">Appendix: Ruppia model assessment - HCHB data version 1</a></li>
-<li><a class="" href="appendix-ruppia-model-assessment---hchb-data-version-2.html">Appendix: Ruppia model assessment - HCHB data version 2</a></li>
+<li><a class="" href="appendix-c-ruppia-habitat-assessment.html">Appendix C : Ruppia Habitat Assessment</a></li>
 </ul>
 
         <div class="book-extra">
@@ -75,13 +72,13 @@
 <div id="project-background" class="section level2 unnumbered">
 <h2>Project background<a class="anchor" aria-label="anchor" href="#project-background"><i class="fas fa-link"></i></a>
 </h2>
-<p>The Coorong is a unique coastal ecosystem that is important in supporting the local culture, economy, and environment, and is recognised globally by its Ramsar-listing. However, the state of the Coorong has degraded significantly over the past decade, primarily due to a reduction in freshwater flows and accumulation of nutrients and the resulting changes in water quality.</p>
+<p>The Coorong is a unique coastal ecosystem that is important in supporting the local culture, economy, and environment, and is recognised globally by its Ramsar-listing. However, the state of the Coorong has degraded significantly over the past decade, primarily due to a reduction in freshwater flows and accumulation of nutrients, and the resulting changes in water quality.</p>
 <p>To avoid further degradation and to help restore the ecosystem, the <a href="https://www.environment.sa.gov.au/topics/coorong/healthy-coorong-healthy-basin">Healthy Coorong Healthy Basin</a> (HCHB) program was established by the Commonwealth and South Australian Governments in 2019. The HCHB Program supports a number of scientific trials, investigations and on-ground works to help restore the balance to the Coorong and identify long term solutions.</p>
-<p>As part of the HCHB program, the Coorong Dynamics Model (CDM) has been developed to gain insights in to the nutrient cycling the habitat changes within the Coorong ecosystem and to assist with Coorong management and decision making. A previous version of the CDM has been developed and applied for assessing the environmental benefits of <a href="https://flow-mer.org.au/selected-area-lower-murray/">Commonwealth Environmental Water</a> on the ecological habitat, and most recently the <a href="https://www.environment.sa.gov.au/topics/coorong/healthy-coorong-healthy-basin/coorong-infrastructure-investigations-project">Coorong Infrastructure Investigations Project</a> (CIIP) to assess the environmental effect on water quality and habitat. Within the HCHB program, the key areas of the CDM development is to update core data inputs from other HCHB science investigations such as nutrient cycling studies and ecological habitats surveys, and to integrate these data with our best modelling tools to help improve the functional capability of the CDM in capturing the Coorong environmental conditions.</p>
+<p>As part of the HCHB program, the Coorong Dynamics Model (CDM) has been developed to gain insights in to the nutrient cycling and habitat changes within the Coorong ecosystem, and to assist with Coorong management and decision making. A previous version of the CDM has been developed and applied for assessing the environmental benefits of <a href="https://flow-mer.org.au/selected-area-lower-murray/">Commonwealth Environmental Water</a> on the ecological habitat, and most recently the <a href="https://www.environment.sa.gov.au/topics/coorong/healthy-coorong-healthy-basin/coorong-infrastructure-investigations-project">Coorong Infrastructure Investigations Project</a> (CIIP) to assess the environmental effect on water quality and habitat. Within the HCHB program, the key areas of the CDM development is to update core data inputs from other HCHB science investigations such as nutrient cycling studies and ecological habitats surveys, and to integrate these data with our best modelling tools to help improve the functional capability of the CDM in capturing the Coorong environmental conditions.</p>
 <p>This report documents the development of the CDM, including the data integration with our knowledge generation activities within the HCHB program. Improvements in the model functional capability, detailed validation tests, and assessment of the management and climate scenarios are reported here.</p>
 </div>
-<div id="report-layout-and-guidance" class="section level2 unnumbered">
-<h2>Report layout and guidance<a class="anchor" aria-label="anchor" href="#report-layout-and-guidance"><i class="fas fa-link"></i></a>
+<div id="document-layout-and-guidance" class="section level2 unnumbered">
+<h2>Document layout and guidance<a class="anchor" aria-label="anchor" href="#document-layout-and-guidance"><i class="fas fa-link"></i></a>
 </h2>
 <p>This documentation is structured to allow a systematic description of the model rationale, model description and testing, and the finally results from the model in the context of assessing management options. The document starts with an introduction to the site and general model approach, including an overview opf previous modelling work in the Coorong and the research challenges and knowledge gaps that motivated the present work. The second chapter “<em>The Coorong Dynamics Model</em>” describes the details of the CDM platforms, configuration and the approach to data-model integration. The third chapter “<em>Model Development and Testing</em>” describes the model integration and development with other HCHB science projects. This is followed by the integrated assessment of the CDM (“<em>Integrated assessment of CDM</em>”) with the available Coorong data. Finally, the section “<em>Scenario testing and management</em>” reports the outcomes from our process of scenario assessment, which considers the nutrient management scenarios, flow variation scenarios, and climate change scenarios as informed by other HCHB analyses Lastly, the major conclusions and recommendations from the current project are provided.</p>
 </div>
@@ -99,7 +96,6 @@
 <li>Daniel Paraska ǂ</li>
 <li>Sherry Zhai ǂ</li>
 <li>Claire Sims *</li>
-<li>Matt Gibbs *</li>
 </ul>
 <p>ǂ Aquatic Ecodynamics, UWA School of Agriculture &amp; Environment, The University of Western Australia, Crawley WA 6009, Australia.
 *</p>
@@ -107,7 +103,7 @@
 <div id="adding-and-updating-content" class="section level3 unnumbered">
 <h3>Adding and updating content<a class="anchor" aria-label="anchor" href="#adding-and-updating-content"><i class="fas fa-link"></i></a>
 </h3>
-<p>The intent of the CDM Manual is that the model - <em>and its documentation</em> - can continually be updated; thus the correction, improvement and addition of material is encouraged. This online book is therefore open-source and interested stakeholders can further develop content.</p>
+<p>The intent of the CDM Manual is that the model - <em>and its documentation</em> - can continually be updated; thus the correction, improvement and addition of material is encouraged. This online book is therefore open-source and interested stakeholders can comment, raise issues, and further develop content.</p>
 <p>The CDM documentation is available via GitHub and prepared in “R Mark Down” language. This is an implementation of mark down that can integrate with the R environment for enabling interactive content.</p>
 <p>To access and edit the CDM manual you can <a href="https://github.com/AquaticEcoDynamics/CDM">download the CDM repository</a> and work with the <code>CDM-manual</code> R project file in RStudio.</p>
 </div>
@@ -118,13 +114,20 @@
 <center>
 <video width="100%" height="100%" controls><source src="images/contributing/video1.mp4" type="video/mp4"></source></video>
 </center>
-<p><br><br></p>
+<p><br></p>
+</div>
+</div>
+<div id="citing-this-document" class="section level2 unnumbered">
+<h2>Citing this document<a class="anchor" aria-label="anchor" href="#citing-this-document"><i class="fas fa-link"></i></a>
+</h2>
+<p>Please cite this online book in reports and scientific publications as:</p>
+<p>Hipsey, M.R., Huang, P., Zhai, S., Busch, B.. Paraska, D., Sims, C., 2022. The Coorong Dynamics Model. Zenodo: DOI: 10.5281/zenodo.xxpendingxx.</p>
+<p><br></p>
 <div class="text-image">
 <img src="images/contributing/aed-transparent-background.png" width="25%"><img src="images/contributing/UWA-Full-Hor-CMYK.png" width="25%">
 </div>
 <p><br></p>
 
-</div>
 </div>
 </div>
   <div class="chapter-nav">
@@ -135,7 +138,7 @@
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#welcome">Welcome</a></li>
 <li><a class="nav-link" href="#project-background">Project background</a></li>
-<li><a class="nav-link" href="#report-layout-and-guidance">Report layout and guidance</a></li>
+<li><a class="nav-link" href="#document-layout-and-guidance">Document layout and guidance</a></li>
 <li>
 <a class="nav-link" href="#contributing">Contributing</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#coordinating-authors">Coordinating authors</a></li>
@@ -143,6 +146,7 @@
 <li><a class="nav-link" href="#using-rstudios-visual-editor">Using RStudio’s visual editor</a></li>
 </ul>
 </li>
+<li><a class="nav-link" href="#citing-this-document">Citing this document</a></li>
 </ul>
 
       <div class="book-extra">
@@ -159,7 +163,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 15-June-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 15-June-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
