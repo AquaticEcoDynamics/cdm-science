@@ -68,7 +68,6 @@
 <h1>
 <span class="header-section-number">7</span> Sediment Biogeochemistry<a class="anchor" aria-label="anchor" href="#sediment-biogeochemistry"><i class="fas fa-link"></i></a>
 </h1>
-<p><br></p>
 <div id="overview-4" class="section level2" number="7.1">
 <h2>
 <span class="header-section-number">7.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-4"><i class="fas fa-link"></i></a>
@@ -76,13 +75,13 @@
 <p>In environments like the Coorong, where nutrient dynamics influence the rest of the ecosystem, management often focuses on reducing nutrient inputs and increasing flushing to the sea. However, it is important not to overlook the sediment as a long term source or sink of nutrients.</p>
 <p>In previous versions of the Coorong model, a constant flux rate has been used for the lagoon – for example consumption of oxygen and release of ammonium. This is an efficient and simplified first step, however, the model can be improved by using the depth-resolved sediment diagenesis model. The sediment model can represent spatial heterogeneity along the lagoon, it can capture the future burial or release of nutrients and it can make use of the rich data sets measured in the field.</p>
 <p>Under some conditions, the sediment stores can release nutrients to the water column, while under other conditions, the sediment can remove nutrients in the long term through burial, and the surface layers can remove nitrogen through denitrification. The fine balance that controls the conditions under which the sediment stores will store, release or remove nutrients is largely governed by the aerobic state of the sediment pore water, and the amount of reactive organic matter fuelling the reactions. The depth-resolved sediment model accounts for mixing from the hydrodynamic model into the upper sediment layers. It calculates whether organic matter is consumed aerobically, through denitrification or deeper down, through sulfate reduction or even methanogenesis.</p>
-<p>The sediment model can also capture and contrast different environments in the Coorong. The model includes a depth of bioturbation and bioirrigation by macrobiota living in the sediment. The north lagoon of the Coorong has higher populations of macrobiota, which cause mixing of oxygen into deeper sediment layers, which in turn helps in removal of organic matter and reduced nitrogen. In contrast, in the south lagoon there is less bioturbation of the sediment and it is more likely that organic matter is consumed through anaerobic processes. The production of toxic H<sub>2</sub>S gas through sulfate reduction would lead to a further degradation of the ecosystem.</p>
+<p>The sediment model can also capture and contrast different environments in the Coorong. The model includes a depth of bioturbation and bioirrigation by macrobiota living in the sediment. The north lagoon of the Coorong has higher populations of macrobiota, which cause mixing of oxygen into deeper sediment layers, which in turn helps in removal of organic matter and reduced nitrogen. In contrast, in the south lagoon there is less bioturbation of the sediment and it is more likely that organic matter is consumed through anaerobic processes. The production of toxic <span class="math inline">\(H_2S\)</span> gas through sulfate reduction would lead to a further degradation of the ecosystem.</p>
 </div>
 <div id="model-approach-candi-aed" class="section level2" number="7.2">
 <h2>
 <span class="header-section-number">7.2</span> Model approach: CANDI-AED<a class="anchor" aria-label="anchor" href="#model-approach-candi-aed"><i class="fas fa-link"></i></a>
 </h2>
-<p>The heart of this model is the reaction, diffusion, advection model of Berner (1980), which was implemented as the Carbon and Nutrient Diagenesis model of Boudreau (1996). CANDI-AED implementation however has evolved from the original code, and the main differences pertain to the treatment of organic matter, and the simulation of the geochemical conditions known to influence the diagenetic equations. However, the core organic matter breakdown equations (and their numerical solution) remains similar as the original descriptions presented in Boudreau (1996), and to other similar sediment models. An overview of the model is shown in Figure X.</p>
+<p>The heart of this model is the reaction, diffusion, advection model of Berner (1980), which was implemented as the Carbon and Nutrient Diagenesis model of Boudreau (1996). CANDI-AED implementation however has evolved from the original code, and the main differences pertain to the treatment of organic matter, and the simulation of the geochemical conditions known to influence the diagenetic equations. However, the core organic matter breakdown equations (and their numerical solution) remains similar as the original descriptions presented in Boudreau (1996), and to other similar sediment models. An overview of the model is shown in Figure <a href="sediment-biogeochemistry.html#fig:dev-pic00">7.1</a>.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-pic00"></span>
@@ -148,30 +147,27 @@ Figure 7.1: CANDI-AED includes chemical processes of organic matter transformati
 <div id="model-extensions-and-development" class="section level4 unnumbered">
 <h4>Model extensions and development<a class="anchor" aria-label="anchor" href="#model-extensions-and-development"><i class="fas fa-link"></i></a>
 </h4>
-<p>The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons (Paraska et al. 2014). Three main developments have been undertaken to adapt the code-base to the Coorong application (Figure <a href="sediment-biogeochemistry.html#fig:dev-pics5">7.2</a>):</p>
+<p>The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons (Paraska et al. 2014). Three main developments have been undertaken to adapt the code-base to the Coorong application:</p>
 <ul>
 <li>Improved parameterisation of diffusion at the sediment-water interface</li>
 <li>Inclusion of functionality to resolve resuspension effects</li>
 <li>Addition of MPB</li>
 <li>Sediment water links and zone averaging</li>
-<li>H2S inhibitor</li>
+<li>
+<span class="math inline">\(H_2S\)</span> inhibitor</li>
 <li>Bioturbation functions</li>
-<li>O2 sources</li>
+<li>
+<span class="math inline">\(O_2\)</span> sources</li>
 <li>Timing switches</li>
-<li>NH4+ adsorption</li>
-<li>PO43- adsorption</li>
-<li>Taub sensitivity</li>
+<li>
+<span class="math inline">\(NH_4^+\)</span> adsorption</li>
+<li>
+<span class="math inline">\(PO_4^{3-}\)</span> adsorption</li>
+<li>
+<em>Tau~b</em> sensitivity</li>
 <li>Very unreactive organic matter</li>
 <li>Salinity-driven flocculation</li>
 </ul>
-<div class="text-image">
-<div class="figure">
-<span style="display:block;" id="fig:dev-pics5"></span>
-<img src="images/dev/sdg%20extensions%20and%20development-01.png" alt="Visual summary of model updates undertaken." width="100%"><p class="caption">
-Figure 7.2: Visual summary of model updates undertaken.
-</p>
-</div>
-</div>
 <p><strong>SWI diffusion</strong></p>
 <p>Fluxes of dissolved species occur between the sediment and water column depending on the sediment type, solute and interfacial turbulence being experienced at the sediment-water interface. Dissolved fluxes are calculated from the concentration gradient at the sediment-water interface according to Fick’s Law:</p>
 <center>
@@ -186,22 +182,22 @@ F = D_{0}\frac{\Delta C}{\Delta x} = \frac{D_{0}}{\delta} (C_{bw} - C_{1})
 <div id="resolving-sediment-zonation" class="section level4 unnumbered">
 <h4>Resolving sediment zonation<a class="anchor" aria-label="anchor" href="#resolving-sediment-zonation"><i class="fas fa-link"></i></a>
 </h4>
-<p>Facility also exists within the model to use sediment zones, which are identical to the above description but are not necessarily coincident with the grid-structure of the water. This way sediment zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment will be averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure <span class="math inline">\(\ref{fig:sed_integration}\)</span>). Using zones is a practical compromise between computational efficiency and capturing spatial heterogeneity in sediment properties and their fluxes.</p>
+<p>Facility also exists within the model to use sediment zones, which are identical to the above description but are not necessarily coincident with the grid-structure of the water. This way sediment zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment will be averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure @ref{fig:dev-pics3}). Using zones is a practical compromise between computational efficiency and capturing spatial heterogeneity in sediment properties and their fluxes.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:dev-pics3"></span>
 <img src="images/dev/sed_picture5.png" alt="Schematic depicting sediment zone numerical approach." width="100%"><p class="caption">
-Figure 7.3: Schematic depicting sediment zone numerical approach.
+Figure 7.2: Schematic depicting sediment zone numerical approach.
 </p>
 </div>
 </div>
 <p><strong>3-zone experiment</strong></p>
-<p>To demonstrate the zones can function independently, a model test was performed with three zones. In this simulation each model zone received a sustained 1-year surface loading of organic material, which either was maintained for throughout the simulation duration (Zone 1), or was reduced to a new lower value (Zone 2 and 3); this can conceptually be considered as a test of the sediment model to respond to ‘remediation’ scenarios. The results highlight the individual zones responding accordingly, as shown for <span class="math inline">\(NO_3^-^\)</span> (Figure X).</p>
+<p>To demonstrate the zones can function independently, a model test was performed with three zones. In this simulation each model zone received a sustained 1-year surface loading of organic material, which either was maintained for throughout the simulation duration (Zone 1), or was reduced to a new lower value (Zone 2 and 3); this can conceptually be considered as a test of the sediment model to respond to ‘remediation’ scenarios. The results highlight the individual zones responding accordingly, as shown for <span class="math inline">\(NO_3^-\)</span> (Figure <a href="sediment-biogeochemistry.html#fig:dev-pics4">7.3</a>).</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:dev-pics4"></span>
 <img src="images/dev/sed_picture6.png" alt="Example of sediment concentration-depth-time plot for ammonia, given different organic matter influx rates in three different zones. To demonstrate capability for spatial differences, the organic matter input stayed the same in Zone 1 but decreased after 1 year in Zones 2 and 3 to different levels." width="100%"><p class="caption">
-Figure 7.4: Example of sediment concentration-depth-time plot for ammonia, given different organic matter influx rates in three different zones. To demonstrate capability for spatial differences, the organic matter input stayed the same in Zone 1 but decreased after 1 year in Zones 2 and 3 to different levels.
+Figure 7.3: Example of sediment concentration-depth-time plot for ammonia, given different organic matter influx rates in three different zones. To demonstrate capability for spatial differences, the organic matter input stayed the same in Zone 1 but decreased after 1 year in Zones 2 and 3 to different levels.
 </p>
 </div>
 </div>
@@ -209,35 +205,38 @@ Figure 7.4: Example of sediment concentration-depth-time plot for ammonia, given
 <div id="sediment-water-coupling" class="section level4 unnumbered">
 <h4>Sediment-water coupling<a class="anchor" aria-label="anchor" href="#sediment-water-coupling"><i class="fas fa-link"></i></a>
 </h4>
-<p>The sediment and hydrodynamic models are coupled at the sediment-water interface. The AED model setup has separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:</p>
+<p>The sediment and hydrodynamic models are coupled at the sediment-water interface (Figure <a href="sediment-biogeochemistry.html#fig:dev-pics5">7.4</a>). The AED model setup has separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:</p>
 <ul>
-<li>flux of solid material onto the sediment surface</li>
-<li>concentration of dissolved substances in the bottom water</li>
-<li>flux of dissolved substances from the top sediment layer</li>
+<li>flux of solid material onto the sediment surface from the water column: <em>part_sed_link</em>
+</li>
+<li>concentration of dissolved substances in the bottom water to the sediment: <em>water_link</em>
+</li>
+<li>flux of dissolved substances from the top sediment layer to the water column: <em>diss_flux_link</em>
+</li>
 </ul>
 <div class="text-image">
 <div class="figure" style="text-align: center">
-<span style="display:block;" id="fig:dev-pics2"></span>
-<img src="images/dev/sed_picture3.png" alt="Schematic of sediment water coupling approach." width="45%"><img src="images/dev/sed_picture4.png" alt="Schematic of sediment water coupling approach." width="35%"><p class="caption">
-Figure 7.5: Schematic of sediment water coupling approach.
+<span style="display:block;" id="fig:dev-pics5"></span>
+<img src="images/dev/sed_picture3.png" alt="Schematic of sediment water coupling approach. Left: the three linking options between the water column and sediment models. Right: Water column cell concentrations and fluxes within a zone are averaged and transferred between the models." width="45%"><img src="images/dev/sed_picture4.png" alt="Schematic of sediment water coupling approach. Left: the three linking options between the water column and sediment models. Right: Water column cell concentrations and fluxes within a zone are averaged and transferred between the models." width="35%"><p class="caption">
+Figure 7.4: Schematic of sediment water coupling approach. Left: the three linking options between the water column and sediment models. Right: Water column cell concentrations and fluxes within a zone are averaged and transferred between the models.
 </p>
 </div>
 </div>
-<p><strong>Zone tracer experiment</strong> To test the new sediment-water coupling functions, a simple simulation was set up using a lake with five zones. A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones 3 and 5 were set as active sediment model zones, with especially high concentrations of tracer. Zone 2 was not set as an active sediment zone, but it was given a high constant flux rate. Zones 1 and 4 had neither high initial sediment concentrations nor high flux rates. The purpose of the simulation was to see whether 1) the flux link was working between the sediment and the water, 2) whether the links were functioning in the correct zones, and 2) whether the model could be set up to have a combination of active sediment zones and constant fluxes.</p>
+<p><strong>Zone tracer experiment</strong> To test the new sediment-water coupling functions, a simple simulation was set up using a lake with five zones (Figure <a href="sediment-biogeochemistry.html#fig:dev-pics6">7.5</a>). A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones 3 and 5 were set as active sediment model zones, with especially high concentrations of tracer. Zone 2 was not set as an active sediment zone, but it was given a high constant flux rate. Zones 1 and 4 had neither high initial sediment concentrations nor high flux rates. The purpose of the simulation was to see whether 1) the flux link was working between the sediment and the water, 2) whether the links were functioning in the correct zones, and 2) whether the model could be set up to have a combination of active sediment zones and constant fluxes.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-pics6"></span>
-<img src="images/dev/sed_QuickTFV-03.png" alt="Five zones in the lake. Zones 3 and 5 had active sediment zones and Zone 2 had a constant flux." width="75%"><p class="caption">
-Figure 7.6: Five zones in the lake. Zones 3 and 5 had active sediment zones and Zone 2 had a constant flux.
+<img src="images/dev/sed_QuickTFV-03.png" alt="Map of the five zones in the lake for the zone tracer experiment. Zones 3 and 5 had active sediment zones and Zone 2 had a constant flux." width="75%"><p class="caption">
+Figure 7.5: Map of the five zones in the lake for the zone tracer experiment. Zones 3 and 5 had active sediment zones and Zone 2 had a constant flux.
 </p>
 </div>
 </div>
-<p>The result was that the tracer spread from the high initial concetnration in sediment zones 3 and 5 into the surrounding zone 1. The constant flux also from zone 2 also created a high concentration in zone 2. In the early time steps, the banks fo the lake increased their concetration soonest, since the water depth was lower and so the sediment flux had a greater effect. As the simulation progressed, the zone filled with high concentration tracer and then finally it spread from zone 2 into the other zones.</p>
+<p>The result was that the tracer spread from the high initial concetnration in sediment zones 3 and 5 into the surrounding zone 1 (Figure <a href="sediment-biogeochemistry.html#fig:dev-pics7">7.6</a>). The constant flux also from zone 2 also created a high concentration in zone 2. In the early time steps, the banks fo the lake increased their concetration soonest, since the water depth was lower and so the sediment flux had a greater effect. As the simulation progressed, the zone filled with high concentration tracer and then finally it spread from zone 2 into the other zones.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-pics7"></span>
-<img src="images/dev/sed_Tracers.png" alt="Tracer appearing in linked zones." width="75%"><p class="caption">
-Figure 7.7: Tracer appearing in linked zones.
+<img src="images/dev/sed_Tracers.png" alt="Time series figures of the maps in the zone tracer experiment. Over time the tracer left the linked zones and spread through the model domain." width="100%"><p class="caption">
+Figure 7.6: Time series figures of the maps in the zone tracer experiment. Over time the tracer left the linked zones and spread through the model domain.
 </p>
 </div>
 </div>
@@ -251,13 +250,21 @@ Figure 7.7: Tracer appearing in linked zones.
 <h3>
 <span class="header-section-number">7.3.1</span> Site description and zonation<a class="anchor" aria-label="anchor" href="#site-description-and-zonation"><i class="fas fa-link"></i></a>
 </h3>
-<p><strong>Flow paths of the northern and southern lagoons</strong> The major inflow into the lagoon is in the north, through a set of barrages from the Murray Lower Lakes into the northern lagoon and out to the sea (Figure 1). The southern lagoon had a minor inflow from Salt Creek and otherwise receives less freshwater than the northern lagoon. In the hot summer months, as the water in the southern lagoon evaporates, remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment.</p>
-<p><strong>Spatial aggregation - ten zones</strong> In order to simplify the Coorong study site measurement points and simulation areas, the lagoon was divided into ten separate Coorong zones (Figure 2). These were primarily based on the natural boundaries, channels and sandbars of the estuary. Zones 1 to 4 were the southern lagoon, zone 5 was the intermediate area and zones 6 to 10 were the northern lagoon.</p>
-<p><strong>Deep and shallow sites</strong> The ten Coorong zones were further subdivided into three sections – the western bank on the ocean side, the central channel, and the eastern bank on the inland side. The cut-off between the channel and the bank subdivision was defined by any area that reached more than 1 m deep. Therefore, each of the ten zones along the length of the lagoon had three zones across the breadth of the lagoon, and zone ten had one additional zone for the ocean boundary, giving 31 zones in total.</p>
+<p><strong>Flow paths of the northern and southern lagoons</strong> The major inflow into the lagoon is in the north, through a set of barrages from the Murray Lower Lakes into the northern lagoon and out to the sea. The southern lagoon had a minor inflow from Salt Creek and otherwise receives less freshwater than the northern lagoon. In the hot summer months, as the water in the southern lagoon evaporates, remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment.</p>
+<p><strong>Spatial aggregation - ten zones</strong> In order to simplify the Coorong study site measurement points and simulation areas, the lagoon was divided into ten separate Coorong zones (Figure 2). These were primarily based on the natural boundaries, channels and sandbars of the estuary. Zones 1 to 4 were the southern lagoon, zone 5 was the intermediate area and zones 6 to 10 were the northern lagoon (Figure <a href="sediment-biogeochemistry.html#fig:dev-pics1">7.7</a>).</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-pics1"></span>
-<img src="images/dev/sed_Zones.png" alt="Example sediment zonation." width="45%"><img src="images/dev/sed_Zones.png" alt="Example sediment zonation." width="45%"><p class="caption">
+<img src="images/dev/sed_Zones.png" alt="Example sediment zonation." width="45%"><img src="images/dev/sed_ZonesSat.png" alt="Example sediment zonation." width="45%"><p class="caption">
+Figure 7.7: Example sediment zonation.
+</p>
+</div>
+</div>
+<p><strong>Deep and shallow sites</strong> The ten Coorong zones were further subdivided into three sections – the western bank on the ocean side, the central channel, and the eastern bank on the inland side. The cut-off between the channel and the bank subdivision was defined by any area that reached more than 1 m deep. Therefore, each of the ten zones along the length of the lagoon had three zones across the breadth of the lagoon, and zone ten had one additional zone for the ocean boundary, giving 31 zones in total (Figure <a href="sediment-biogeochemistry.html#fig:dev-pics2">7.8</a>).</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:dev-pics2"></span>
+<img src="images/dev/sed_Half%20Page%20zones11to104.png" alt="Example sediment zonation." width="45%"><img src="images/dev/sed_Half%20Page%20zones61to73.png" alt="Example sediment zonation." width="45%"><p class="caption">
 Figure 7.8: Example sediment zonation.
 </p>
 </div>
@@ -280,252 +287,382 @@ Figure 7.8: Example sediment zonation.
 <div id="model-variables" class="section level4 unnumbered">
 <h4>Model variables<a class="anchor" aria-label="anchor" href="#model-variables"><i class="fas fa-link"></i></a>
 </h4>
-<p>All simulated variables are listed in the table below.</p>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:20px; overflow-x: scroll; width:200px; ">
+<p>All simulated variables are listed in Table <a href="sediment-biogeochemistry.html#tab:3dev-sedvars">7.1</a>.</p>
+<center>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:400px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:3dev-sedvars">Table 7.1: </span>All sediment variables
 </caption>
 <thead><tr>
-<th style="text-align:center;">
-variables
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Variables
+</th>
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
+Description
 </th>
 </tr></thead>
 <tbody>
 <tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; background-color: white !important;">
 ‘salt’
 </td>
+<td style="text-align:center;background-color: white !important;">
+Salinity
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘mpb’
 </td>
+<td style="text-align:center;">
+Microphytobenthos
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘docl’
 </td>
+<td style="text-align:center;">
+Labile DOC
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘docr’
 </td>
+<td style="text-align:center;">
+Refractory DOC
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘donl’
 </td>
+<td style="text-align:center;">
+Labile DON
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘donr’
 </td>
+<td style="text-align:center;">
+Refractory DON
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘dopl’
 </td>
+<td style="text-align:center;">
+Labile DOP
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘dopr’
 </td>
+<td style="text-align:center;">
+Refractory DOP
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘pocs’
 </td>
+<td style="text-align:center;">
+Macroaglage C
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘pons’
 </td>
+<td style="text-align:center;">
+Macroaglage N
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘pops’
 </td>
+<td style="text-align:center;">
+Macroaglage P
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘pocl’
 </td>
+<td style="text-align:center;">
+Labile POC
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘pocr’
 </td>
+<td style="text-align:center;">
+Refractory POC
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘ponl’
 </td>
+<td style="text-align:center;">
+Labile PON
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘ponr’
 </td>
+<td style="text-align:center;">
+Refractory PON
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘popl’
 </td>
+<td style="text-align:center;">
+Labile POP
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘popr’
 </td>
+<td style="text-align:center;">
+Refractory POP
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘oxy’
 </td>
+<td style="text-align:center;">
+O<sub>2</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘nit’
 </td>
+<td style="text-align:center;">
+NO<sub>3</sub><sup>-</sup>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘amm’
 </td>
+<td style="text-align:center;">
+NH<sub>4</sub><sup>+</sup>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘n2o’
 </td>
+<td style="text-align:center;">
+N<sub>2</sub>O
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘no2’
 </td>
+<td style="text-align:center;">
+NO<sub>2</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘n2’
 </td>
+<td style="text-align:center;">
+N<sub>2</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘so4’
 </td>
+<td style="text-align:center;">
+SO<sub>4</sub><sup>2-</sup>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘h2s’
 </td>
+<td style="text-align:center;">
+H<sub>2</sub>S
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘frp’
 </td>
+<td style="text-align:center;">
+Reactive dissolved PO<sub>4</sub><sup>3-</sup>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘pip’
 </td>
+<td style="text-align:center;">
+Adsorbed P
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘ch4’
 </td>
+<td style="text-align:center;">
+Methane
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘dic’
 </td>
+<td style="text-align:center;">
+∑CO<sub>2</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘mnii’
 </td>
+<td style="text-align:center;">
+Mn<sup>2+</sup>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘mno2a’
 </td>
+<td style="text-align:center;">
+Amorphous MnO<sub>2</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘mno2b’
 </td>
+<td style="text-align:center;">
+Crystalline MnO<sub>2</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘feii’
 </td>
+<td style="text-align:center;">
+Fe<sup>2+</sup>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘feoh3a’
 </td>
+<td style="text-align:center;">
+Amorphous Fe(OH)<sub>3</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘feoh3b’
 </td>
+<td style="text-align:center;">
+Crystalline Fe(OH)<sub>3</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘fes’
 </td>
+<td style="text-align:center;">
+FeS
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘fes2’
 </td>
+<td style="text-align:center;">
+FeS<sub>2</sub>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘ca’
 </td>
+<td style="text-align:center;">
+Ca<sup>2+</sup>
+</td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘caco3’
 </td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; ">
-‘pipvr’
+<td style="text-align:center;">
+CaCO<sub>3</sub>
 </td>
 </tr>
 <tr>
-<td style="text-align:center;min-width: 10em; ">
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
+‘pipvr’
+</td>
+<td style="text-align:center;">
+Unreactive solid P
+</td>
+</tr>
+<tr>
+<td style="text-align:center;min-width: 10em; min-width: 10em; min-width: 10em; ">
 ‘pin’
+</td>
+<td style="text-align:center;">
+Adsorbed N
 </td>
 </tr>
 </tbody>
 </table></div>
 </div>
+</center>
+<p><br></p>
+<p><br></p>
 <div id="linked-variables" class="section level5 unnumbered">
 <h5>Linked variables<a class="anchor" aria-label="anchor" href="#linked-variables"><i class="fas fa-link"></i></a>
 </h5>
-<p>The linked variables are listed in the table. They can be linked by concentration, dissolved flux and particle flux. Salinity has only one possible salinity link, which is hard-coded in the sediment model. The <span class="math inline">\(SO_4^2-^\)</span> link is hard-coded such that <span class="math inline">\(SO_4^2-^\)</span> concentration in mmol L<sup>-1</sup> is 0.9 × salinity (PSU).</p>
+<p>The linked variables are listed in Table <a href="sediment-biogeochemistry.html#tab:3dev-sedlinkvars">7.2</a>. They can be linked by concentration, dissolved flux and particle flux. Salinity has only one possible salinity link, which is hard-coded in the sediment model. The <span class="math inline">\(SO_4^2-\)</span> link is hard-coded such that <span class="math inline">\(SO_4^2-\)</span> concentration in mmol L<sup>-1</sup> is 0.9 × salinity (PSU).</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:650px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:3dev-sedlinkvars">Table 7.2: </span>Linked sediment parameters
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Model variable name
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 …2
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Linked dissolved concentration
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Linked dissolved flux
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Linked particle flux
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Scaling for linked particles
 </th>
 </tr></thead>
@@ -933,114 +1070,116 @@ CaCO<sub>3</sub> (mmol m<sup>-2</sup> y<sup>-1</sup>)
 </tbody>
 </table></div>
 </div>
+<p><br></p>
+<p><br></p>
 </div>
 <div id="initial-conditions" class="section level5 unnumbered">
 <h5>Initial conditions<a class="anchor" aria-label="anchor" href="#initial-conditions"><i class="fas fa-link"></i></a>
 </h5>
-<p>Most chemical species are initialized at zero concentration. Some species are initialised to meet field data (table below). The calibration is outlined in the Calibration section below.</p>
+<p>Most chemical species are initialized at zero concentration. Some species are initialised to meet field data (Table <a href="sediment-biogeochemistry.html#tab:3dev-init">7.3</a>). The calibration is outlined in the calibration section below.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:400px; overflow-x: scroll; width:650px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:3dev-init">Table 7.3: </span>Sediment initial conditions
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Model variable name
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Zone
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 11
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 12
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 13
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 21
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 22
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 23
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 31
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 32
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 33
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 41
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 42
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 43
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 51
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 52
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 53
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 61
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 62
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 63
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 71
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 72
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 73
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 81
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 82
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 83
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 91
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 92
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 93
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 101
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 102
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 103
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 104
 </th>
 </tr></thead>
@@ -2866,12 +3005,16 @@ CaCO<sub>3</sub> (mmol m<sup>-3</sup> solids)
 </tbody>
 </table></div>
 </div>
+<p><br></p>
+<p><br></p>
 </div>
 </div>
 <div id="constant-sediment-water-interface-conditions" class="section level4 unnumbered">
 <h4>Constant sediment-water interface conditions<a class="anchor" aria-label="anchor" href="#constant-sediment-water-interface-conditions"><i class="fas fa-link"></i></a>
 </h4>
-<p>The flux of <span class="math inline">\(Fe(OH)_{3A}\)</span> from the water column to the sediment is set from the parameter ‘default_vals’. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the <span class="math inline">\(Fe^2+^\)</span> concentration value.</p>
+<p>The flux of <span class="math inline">\(Fe(OH)_{3A}\)</span> from the water column to the sediment is set from the parameter ‘default_vals’. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the <span class="math inline">\(Fe^2+\)</span> concentration value.
+<br></p>
+<p><br></p>
 </div>
 <div id="model-parameters" class="section level4 unnumbered">
 <h4>Model parameters<a class="anchor" aria-label="anchor" href="#model-parameters"><i class="fas fa-link"></i></a>
@@ -2879,7 +3022,7 @@ CaCO<sub>3</sub> (mmol m<sup>-3</sup> solids)
 <div id="timing-parameters" class="section level5 unnumbered">
 <h5>Timing parameters<a class="anchor" aria-label="anchor" href="#timing-parameters"><i class="fas fa-link"></i></a>
 </h5>
-<p>The fundamental timing parameters are given in the table below. These set the start and end times, the spin up period and the rates of how often the model runs. These parameters are set in either the tuflow fvc file or the aed.nml.</p>
+<p>The fundamental timing parameters are given in Table <a href="sediment-biogeochemistry.html#tab:3dev-Timing">7.4</a>. These set the start and end times, the spin up period and the rates of how often the model runs. These parameters are set in either the tuflow fvc file or the aed.nml.</p>
 <!-- 1 Timing -->
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2887,13 +3030,13 @@ CaCO<sub>3</sub> (mmol m<sup>-3</sup> solids)
 <span id="tab:3dev-Timing">Table 7.4: </span>Sediment timing parameters
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Description
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Value
 </th>
 </tr></thead>
@@ -2978,11 +3121,13 @@ Sediment model substep (h)
 </tbody>
 </table></div>
 </div>
+<p><br></p>
+<p><br></p>
 </div>
 <div id="physical-parameters" class="section level5 unnumbered">
 <h5>Physical parameters<a class="anchor" aria-label="anchor" href="#physical-parameters"><i class="fas fa-link"></i></a>
 </h5>
-<p>The physical properties of the sediment are given in tables below. Some parameters are set as constant values for all zones, while others are set to be variable in each zone. The variability of bioturbation and irrigation along the length of the lagoon is set using the depth of the effect (<span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span> and <span class="math inline">\(x_{irrig}\)</span>) rather than the intensity (<span class="math inline">\(DB_0\)</span>, <span class="math inline">\(\alpha_0\)</span>). Upper porosity <span class="math inline">\(p_0\)</span> is held at 0.9 (i.e. 90% porewater) for all zones and the lower porosity <span class="math inline">\(p_{00}\)</span> is based on measured data at sites in each zone.</p>
+<p>The physical properties of the sediment are given in Table <a href="sediment-biogeochemistry.html#tab:3dev-Mixing">7.5</a> and <a href="sediment-biogeochemistry.html#tab:3dev-Layers">7.6</a>. Some parameters are set as constant values for all zones, while others are set to be variable in each zone. The variability of bioturbation and irrigation along the length of the lagoon is set using the depth of the effect (<span class="math inline">\(x_1\)</span>, <span class="math inline">\(x_2\)</span> and <span class="math inline">\(x_{irrig}\)</span>) rather than the intensity (<span class="math inline">\(DB_0\)</span>, <span class="math inline">\(\alpha_0\)</span>). Upper porosity <span class="math inline">\(\rho_0\)</span> is held at 0.9 (i.e. 90% porewater) for all zones and the lower porosity <span class="math inline">\(\rho_{00}\)</span> is based on measured data at sites in each zone.</p>
 <!-- 2 Mixing -->
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2990,13 +3135,13 @@ Sediment model substep (h)
 <span id="tab:3dev-Mixing">Table 7.5: </span>Sediment physical properties
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Description
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Value
 </th>
 </tr></thead>
@@ -3126,112 +3271,113 @@ Bottom boundary switch
 </table></div>
 </div>
 <!-- 3 SedimentLayers -->
+<p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:3dev-Layers">Table 7.6: </span>Sediment layer setup parameters and mixing parameters that vary by zone.
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Description
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Zone:
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 11
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 12
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 13
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 21
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 22
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 23
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 31
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 32
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 33
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 41
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 42
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 43
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 51
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 52
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 53
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 61
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 62
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 63
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 71
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 72
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 73
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 81
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 82
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 83
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 91
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 92
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 93
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 101
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 102
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 103
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 104
 </th>
 </tr></thead>
@@ -4175,11 +4321,13 @@ NA
 </tbody>
 </table></div>
 </div>
+<p><br></p>
+<p><br></p>
 </div>
 <div id="organic-matter-parameters" class="section level5 unnumbered">
 <h5>Organic matter parameters<a class="anchor" aria-label="anchor" href="#organic-matter-parameters"><i class="fas fa-link"></i></a>
 </h5>
-<p>Many of the key processes in the sediment are driven by organic matter oxidation. Fresh organic matter supplied to the sediment surface fuels the bacterially-driven primary redox reactions that constantly shift the chemical equilibrium in the sediment. Organic matter metabolism also releases organic N and P to the water column. The parameters are given in the table below.</p>
+<p>Many of the key processes in the sediment are driven by organic matter oxidation. Fresh organic matter supplied to the sediment surface fuels the bacterially-driven primary redox reactions that constantly shift the chemical equilibrium in the sediment. Organic matter metabolism also releases organic N and P to the water column. The parameters are given in Table <a href="sediment-biogeochemistry.html#tab:3dev-OM">7.7</a>.</p>
 <p>The organic matter model option number 2 was used in this project. This option has both particulate and dissolved organic phases, and simulates organic C, N and P as separate state variables.</p>
 <!-- 4 OM -->
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
@@ -4188,13 +4336,13 @@ NA
 <span id="tab:3dev-OM">Table 7.7: </span>Organic matter oxidation parameters
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Description
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Value
 </th>
 </tr></thead>
@@ -4455,11 +4603,13 @@ Description
 </tbody>
 </table></div>
 </div>
+<p><br></p>
+<p><br></p>
 </div>
 <div id="secondary-redox-reactions" class="section level5 unnumbered">
 <h5>Secondary redox reactions<a class="anchor" aria-label="anchor" href="#secondary-redox-reactions"><i class="fas fa-link"></i></a>
 </h5>
-<p>Secondary redox reactions are formed from the by-products of primary redox reactions. The nitrogen redox cycle parameters are given in the table below.</p>
+<p>Secondary redox reactions are formed from the by-products of primary redox reactions. The nitrogen redox cycle parameters are given in Table <a href="sediment-biogeochemistry.html#tab:3dev-NRedox">7.8</a>.</p>
 <!-- 5 NRedox -->
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -4467,13 +4617,13 @@ Description
 <span id="tab:3dev-NRedox">Table 7.8: </span>Nitrogen redox cycle parameters
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter name
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Description
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Value
 </th>
 </tr></thead>
@@ -4580,7 +4730,7 @@ NO<sub>2</sub> oxidation kinetic rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
 </tbody>
 </table></div>
 </div>
-<p>Secondary redox parameters for other processes are given in the table below.</p>
+<p>Secondary redox parameters for other processes are given in Table <a href="sediment-biogeochemistry.html#tab:3dev-SecondaryRedox">7.9</a>.</p>
 <!-- 6 SecondaryRedox -->
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -4588,13 +4738,13 @@ NO<sub>2</sub> oxidation kinetic rate (mmol<sup>-1</sup> L y<sup>-1</sup>)
 <span id="tab:3dev-SecondaryRedox">Table 7.9: </span>Secondary redox arameters
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Description
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Value
 </th>
 </tr></thead>
@@ -4701,11 +4851,13 @@ CH<sub>4</sub> oxidation by SO<sub>4</sub><sup>2-</sup> rate (mmol<sup>-1</sup> 
 </tbody>
 </table></div>
 </div>
+<p><br></p>
+<p><br></p>
 </div>
 <div id="geochemistry-parameters" class="section level5 unnumbered">
 <h5>Geochemistry parameters<a class="anchor" aria-label="anchor" href="#geochemistry-parameters"><i class="fas fa-link"></i></a>
 </h5>
-<p>Equilibrium and precipitation/dissolution constants are given in the table below.</p>
+<p>Equilibrium and precipitation/dissolution constants are given in Table <a href="sediment-biogeochemistry.html#tab:3dev-Geochem">7.10</a>.</p>
 <!-- 7 Geochem -->
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -4713,13 +4865,13 @@ CH<sub>4</sub> oxidation by SO<sub>4</sub><sup>2-</sup> rate (mmol<sup>-1</sup> 
 <span id="tab:3dev-Geochem">Table 7.10: </span>Geochemistry and precipitation/dissolution parameters
 </caption>
 <thead><tr>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Parameter
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Description
 </th>
-<th style="text-align:center;">
+<th style="text-align:center;font-weight: bold;color: white !important;background-color: #14759e !important;">
 Value
 </th>
 </tr></thead>
@@ -4837,289 +4989,6 @@ Equilibrium constant for FeS precipitation (-)
 </tbody>
 </table></div>
 </div>
-<p>The assigned parameters for the model are described below in Table X.</p>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:200px; overflow-x: scroll; width:690px; ">
-<div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">
-<span id="tab:3dev-sedpars">Table 7.11: </span>Sediment physical and transport parameters
-</caption>
-<thead><tr>
-<th style="text-align:center;">
-Parameter name
-</th>
-<th style="text-align:center;">
-Unit
-</th>
-<th style="text-align:center;">
-Value
-</th>
-<th style="text-align:center;">
-Description
-</th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>db0</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm<sup>2</sup> y<sup>-1</sup>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-10.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Biodiffusion coefficient at sediment-water ineterface
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>imix</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-0/1
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-0.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Bioturbation function: 0-Gaussian; 1 – two-layer model
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>xs</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-3.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Half depth for Gaussian mixing (<code>imix - 0</code>)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>x1</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-1.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Depth at which db starts to decreacse (<code>imix -1</code>)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>x2</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-5.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Depth at which db is zero (<code>imix - 1</code>)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>irrig</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-0/1
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-1.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Bioirrigation switch
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>alpha0</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-y<sup>-1</sup>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-15.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Irrigation coefficient
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>xirrig</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-4.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Maximum irrigation depth
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>ventflow</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm y<sup>-1</sup>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-0.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Advective flux (positive value indicates from below)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>w00</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm y<sup>-1</sup>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-0.75
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Sediment accumulation velocity at maximum depth
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>p0</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-0.90
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Porosity at sediment-water interface (<span class="math inline">\(\phi_{0}\)</span> in equation 5 - 104)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>p00</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-0.80
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Porosity at maximum depth (<span class="math inline">\(\phi_{xl}\)</span> in equation 5 - 104)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>bp</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-2.50
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Porosity attenuation coefficient (<span class="math inline">\(\beta\)</span> in equation 5 - 104)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>torteq</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-1/2/03
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-3.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Tortuosity calculation method switch: 1-Archie; 2-Burger; 3-Weissberg
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>an</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-2.14
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Porosity exponent for tortuosity (if Archie)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>aa</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-3.79
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Porosity exponent for tortuosity (if Burger)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>ab</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-2.02
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Porosity exponent for tortuosity (if Weissberg)
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>xl</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-cm
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-100.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Maximum simulation depth
-</td>
-</tr>
-<tr>
-<td style="text-align:center;min-width: 10em; background-color: white !important;">
-<code>maxnpts</code>
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-</td>
-<td style="text-align:center;min-width: 7em; background-color: white !important;">
-40.00
-</td>
-<td style="text-align:center;min-width: 15em; background-color: white !important;">
-Number of vertical layers
-</td>
-</tr>
-</tbody>
-</table></div>
-</div>
 <p><br></p>
 </div>
 </div>
@@ -5128,14 +4997,8 @@ Number of vertical layers
 <h3>
 <span class="header-section-number">7.3.3</span> Model development and setup for the Coorong<a class="anchor" aria-label="anchor" href="#model-development-and-setup-for-the-coorong"><i class="fas fa-link"></i></a>
 </h3>
-<div id="nutrient-budget-overview" class="section level4" number="7.3.3.1">
-<h4>
-<span class="header-section-number">7.3.3.1</span> Nutrient budget overview<a class="anchor" aria-label="anchor" href="#nutrient-budget-overview"><i class="fas fa-link"></i></a>
-</h4>
-</div>
-<div id="nutrient-species" class="section level4" number="7.3.3.2">
-<h4>
-<span class="header-section-number">7.3.3.2</span> Nutrient species<a class="anchor" aria-label="anchor" href="#nutrient-species"><i class="fas fa-link"></i></a>
+<div id="nutrient-species" class="section level4 unnumbered">
+<h4>Nutrient species<a class="anchor" aria-label="anchor" href="#nutrient-species"><i class="fas fa-link"></i></a>
 </h4>
 <p>Nutrients, TN and TP, were transferred between the water column model and the sediment model in three ways:</p>
 <ul>
@@ -5144,48 +5007,41 @@ Number of vertical layers
 <li><p>Dissolved species took their upper sediment concentration from the water column bottom water concentration via the <em>water_link</em> term, using <em>OGM_don</em> and <em>OGM_dop</em> for organics and <em>NIT_nit</em> and <em>NIT_amm</em> for <span class="math inline">\(NO_3^-\)</span> and <span class="math inline">\(NH_4^+\)</span>.</p></li>
 </ul>
 <p>Sediment nutrients were present in several phases: - organic and inorganic, - dissolved and particulate, - labile and refractory, and - oxidised and reduced.</p>
-<p>This is also the case for water column nutrients, however, they were not simulated as labile and refractory. Therefore, the <em>part_sed_link</em> water column <span class="math inline">\(PON\)</span> was partitioned into <span class="math inline">\(PON_L\)</span> and <span class="math inline">\(PON_R\)</span> with the term <em>part_sed_scale</em>. In this simulation, the value for <span class="math inline">\(PON\)</span> was 0.5 (and for all other variables the value was 1). The <em>diss_flux_link</em> of water column <span class="math inline">\(DON\)</span> and <span class="math inline">\(DOP\)</span> were linked to sediment <span class="math inline">\(DON_R\)</span> and <span class="math inline">\(DOP_R\)</span> only.</p>
+<p>This is also the case for water column nutrients, however, they were not simulated as labile and refractory. Therefore, the <em>part_sed_link</em> water column <span class="math inline">\(PON\)</span> was partitioned into <span class="math inline">\(PON_L\)</span> and <span class="math inline">\(PON_R\)</span> with the term <em>part_sed_scale</em>. In this simulation, the value for <span class="math inline">\(PON\)</span> was 0.5 (and for all other variables the value was 1). The <em>diss_flux_link</em> of water column <span class="math inline">\(DON\)</span> and <span class="math inline">\(DOP\)</span> were linked to sediment <span class="math inline">\(DON_R\)</span> and <span class="math inline">\(DOP_R\)</span> only Figure <a href="sediment-biogeochemistry.html#fig:dev-picsbudgetsetup-1">7.9</a>.</p>
 <p>From the calibration, the bulk of the nutrients were the in the refractory organic phases <span class="math inline">\(PON_R\)</span> and <span class="math inline">\(POP_R\)</span>.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
-<img src="images/dev/sed_N_Overall.png" alt="Major N pools as transferred between the water and sediment models." width="75%"><p class="caption">
-(#fig:dev-picsbudgetsetup_1)Major N pools as transferred between the water and sediment models.
+<span style="display:block;" id="fig:dev-picsbudgetsetup-1"></span>
+<img src="images/dev/sed_N_Overall-10-10.png" alt="Schematic of major N pools, as transferred between the water and sediment models. The water column PON is partitioned into labile and refractory fractions in the sediment. The refractory DON is fluxed back to the water column." width="50%"><p class="caption">
+Figure 7.9: Schematic of major N pools, as transferred between the water and sediment models. The water column PON is partitioned into labile and refractory fractions in the sediment. The refractory DON is fluxed back to the water column.
 </p>
 </div>
 </div>
 </div>
-<div id="salinity-and-denitrification" class="section level4" number="7.3.3.3">
-<h4>
-<span class="header-section-number">7.3.3.3</span> Salinity and denitrification<a class="anchor" aria-label="anchor" href="#salinity-and-denitrification"><i class="fas fa-link"></i></a>
+<div id="salinity-and-denitrification" class="section level4 unnumbered">
+<h4>Salinity and denitrification<a class="anchor" aria-label="anchor" href="#salinity-and-denitrification"><i class="fas fa-link"></i></a>
 </h4>
 <p>Salinity was set as a permanently linked variable from the water column AED model, without using <em>water_link</em>.</p>
 <p>A special salinity factor, <span class="math inline">\(F_{Sal}\)</span> was developed for the salinity in the Coorong, to inhibit processes at hypersaline concentrations. <span class="math inline">\(F_{Sal}\)</span> ranges from 1 to 0, as set between salinity concentration parameters <em>Sal1</em> and <em>Sal2</em> (PSU).</p>
+<p>The equations for <span class="math inline">\(F_{Sal}\)</span> are given below.</p>
+<span class="math display">\[\begin{eqnarray}
+     If   Salinity &lt; Sal_1 \ \ then \  \     F_{Sal} = 1 \  
+    \\
+    \\
+     If   Salinity &gt; Sal_1  then     \frac {Sal_2 - Salinity} {Sal_2 - Sal_1} \  
+    \\
+    \\
+     If   Salinity &gt; Sal_2  then      F_{Sal} = 1 \  
+\end{eqnarray}\]</span>
+<p>The effect of the scaling is shown in Figure <a href="sediment-biogeochemistry.html#fig:dev-picsbudgetsetup-2">7.10</a>.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
-<img src="images/dev/sed_FSal.png" alt="Salinity factor $F_{Sal}$ scaling between 1 and 0 between parameters *Sal_1* and *Sal_2*" width="75%"><p class="caption">
-(#fig:dev-picsbudgetsetup_2)Salinity factor <span class="math inline">\(F_{Sal}\)</span> scaling between 1 and 0 between parameters <em>Sal_1</em> and <em>Sal_2</em>
+<span style="display:block;" id="fig:dev-picsbudgetsetup-2"></span>
+<img src="images/dev/sed_FSal.png" alt="Diaagram of the salinity factor $F_{Sal}$, scaling between 1 and 0 between the parameters. In this diagram *Sal~1~* is 40 and *Sal~2~* is 70." width="50%"><p class="caption">
+Figure 7.10: Diaagram of the salinity factor <span class="math inline">\(F_{Sal}\)</span>, scaling between 1 and 0 between the parameters. In this diagram <em>Sal<sub>1</sub></em> is 40 and <em>Sal<sub>2</sub></em> is 70.
 </p>
 </div>
 </div>
-<p>The equations for <span class="math inline">\(F_{Sal}\)</span> are given below.</p>
-<span class="math display">\[\begin{eqnarray}
-
-+----------------------+-----------------------------------------------+
-| IF Salinity \&lt; Sal_1 | F_Sal = 1                                     |
-|                      |                                               |
-| \\nonumber           | \\nonumber                                    |
-+======================+===============================================+
-| IF Salinity \&gt; Sal_1 | Sal_2 - Salinity / Sal_2 - Sal_1              |
-|                      |                                               |
-| \\nonumber           | \\nonumber                                    |
-+----------------------+-----------------------------------------------+
-| IF Salinity \&gt; Sal_2 | F_Sal = 1                                     |
-|                      |                                               |
-| \\nonumber           | \\nonumber                                    |
-+----------------------+-----------------------------------------------+
-
-
-\end{eqnarray}\]</span>
 <p>The values for <em>Sal<sub>1</sub></em> and <em>Sal<sub>2</sub></em> can be found in the physical parameters table above. In this simulation, the same value for all was used in all zones.</p>
 <p><span class="math inline">\(F_{Sal}\)</span> was applied to biota-driven mixing (see below) and to the nitrogen redox reactions. It was multiplied by the following reactions:</p>
 <ul>
@@ -5199,21 +5055,21 @@ Number of vertical layers
 </ul>
 <p>The term affected eall rates equallyand so did not favour the concentration of any of the species. However, it slowed down the transformation of each species into the other, and increased the effect of transport reactions and depth-driven concentration gradients. Since <span class="math inline">\(PON_R\)</span>, <span class="math inline">\(O_2\)</span> and <span class="math inline">\(NO_3^-\)</span> entered the domain from above and <span class="math inline">\(NH_4^+\)</span> generally accumulated with depth, they were subject to more transport before they were reacted.</p>
 </div>
-<div id="sulfur-and-denitrification" class="section level4" number="7.3.3.4">
-<h4>
-<span class="header-section-number">7.3.3.4</span> Sulfur and denitrification<a class="anchor" aria-label="anchor" href="#sulfur-and-denitrification"><i class="fas fa-link"></i></a>
+<div id="sulfur-and-denitrification" class="section level4 unnumbered">
+<h4>Sulfur and denitrification<a class="anchor" aria-label="anchor" href="#sulfur-and-denitrification"><i class="fas fa-link"></i></a>
 </h4>
 <p>As mentioned above, <span class="math inline">\(SO_4^{2-}\)</span> bottom water concentrations were tied to salinity and initial <span class="math inline">\(SO_4^{2-}\)</span> concentrations were set to reflect the salinity gradient along the estuary. Consequently, the generation of <span class="math inline">\(H_{2}S\)</span> was higher in the southern zones. High <span class="math inline">\(H_{2}S\)</span> concentration was set to inhibit biota-driven mixing and nitrogen redox reactions, on the basis that <span class="math inline">\(H_{2}S\)</span> is toxic to organisms. An <span class="math inline">\(H_{2}S\)</span> factor, <span class="math inline">\(F_{Sul}\)</span>, was set up as an inhibition factor similar to other inhibition factors in the sediment model.</p>
 <span class="math display">\[\begin{eqnarray}
 
-$F_{Sul}$ = $\frac {$K_{H_{2}S}$} {($K_{H_{2}S}$ + $H_{2}S$)} $
+F_{Sul} = \frac {K_{H_{2}S}} {(K_{H_{2}S} + H_{2}S)}
 
 \end{eqnarray}\]</span>
-<p>As with <span class="math inline">\(F_{Sal}\)</span>, <span class="math inline">\(F_{Sul}\)</span> scales between 1 and 0, however, as a decay rather than a stepped function. The value for <em>K<sub>H2S</sub></em> can be found in the physical parameters table above. In this simulation, the same value for all was used in all zones.</p>
+<p>As with <span class="math inline">\(F_{Sal}\)</span>, <span class="math inline">\(F_{Sul}\)</span> scales between 1 and 0, however, as a decay rather than a stepped function (Figure <a href="sediment-biogeochemistry.html#fig:dev-picsbudgetsetup-3">7.11</a>). The value for <em>K<sub>H2S</sub></em> can be found in the physical parameters table above. In this simulation, the same value for all was used in all zones.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
-<img src="images/dev/sed_FSul.png" alt="Salinity factor $F_{Sal}$ scaling between 1 and 0 between parameters *Sal_1* and *Sal_2*" width="50%"><p class="caption">
-(#fig:dev-picsbudgetsetup_3)Salinity factor <span class="math inline">\(F_{Sal}\)</span> scaling between 1 and 0 between parameters <em>Sal_1</em> and <em>Sal_2</em>
+<span style="display:block;" id="fig:dev-picsbudgetsetup-3"></span>
+<img src="images/dev/sed_FSul.png" alt="Diagram of the $H_2S$ factor, $F_{Sul}$, scaling from 1 to 0 as $H_2S$ concentration decreases. " width="50%"><p class="caption">
+Figure 7.11: Diagram of the <span class="math inline">\(H_2S\)</span> factor, <span class="math inline">\(F_{Sul}\)</span>, scaling from 1 to 0 as <span class="math inline">\(H_2S\)</span> concentration decreases.
 </p>
 </div>
 </div>
@@ -5228,9 +5084,8 @@ $F_{Sul}$ = $\frac {$K_{H_{2}S}$} {($K_{H_{2}S}$ + $H_{2}S$)} $
 <li><em>NH<sub>4</sub><sup>+</sup> adsorption</em></li>
 </ul>
 </div>
-<div id="sediment-water-interface-fluxes" class="section level4" number="7.3.3.5">
-<h4>
-<span class="header-section-number">7.3.3.5</span> Sediment-water interface fluxes<a class="anchor" aria-label="anchor" href="#sediment-water-interface-fluxes"><i class="fas fa-link"></i></a>
+<div id="sediment-water-interface-fluxes" class="section level4 unnumbered">
+<h4>Sediment-water interface fluxes<a class="anchor" aria-label="anchor" href="#sediment-water-interface-fluxes"><i class="fas fa-link"></i></a>
 </h4>
 <p>Flux across the sediment-water interface was governed by three factors:<br>
 - Advection<br>
@@ -5240,72 +5095,82 @@ $F_{Sul}$ = $\frac {$K_{H_{2}S}$} {($K_{H_{2}S}$ + $H_{2}S$)} $
 - Molecular diffusion<br>
 - Porewater flux<br>
 - Sediment particle deposition</p>
-<p>Molecular diffusion was driven by differences in chemical concentration across the sediment-water interface. For example, high <span class="math inline">\(NH_4^+\)</span> concentration in the sediment fluxes to the lower concentration in the water column. In this simulation there was no external porewater flux, from, say groundwater inflow. The sediment particle deposition rate (<em>w<sub>00</sub></em>) was set to have the same value across the whole of the domain (1 cm y^{-1}). (The particle deposition model was developed in the water column model during this project and a link for water column particle deposition between the models was not implemented in this study.) A link was developed for the shear stress at the sediment-water interface, such that molecular diffusion was increased when the motion in the water column was higher. The sensitivity of sediment-water diffusion to bottom water motion was assigned by the parameter <em>tau<sub>b</sub>sensitivity</em>. The values for* tau<sub>b</sub>sensitivity can be found in the physical parameters table above. The sensitivity was set to be higher in the southern zones. The diffusion was also sensitive to the amount of macroalgae and seagrass roots in each zone, where a high amount of either reduced <span class="math inline">\(tau_b\)</span> to zero, leading to diffusion being mostly controlled by chemical concentration gradient.</p>
-<p>Bioturbation was set up using the step-wise function, where <em>x<sub>1</sub></em> was the depth of full bioturbation, and <em>x<sub>2</sub></em> the depth of zero bioturbation. The values for <em>x<sub>1</sub></em> and <em>x<sub>2</sub></em> can be found in the physical parameters table above. In this simulation, the values were assigned for each zone, with deeper vales for the northern zones. The rate constant <em>DB<sub>0</sub></em> was assigned to be the same for all zones. The original model had a constant bioturbation rate assigned at the initialisation step. For this simulation the model was developed to have a dynamic bioturbation rate that is updated at every time step.</p>
+<p>Molecular diffusion was driven by differences in chemical concentration across the sediment-water interface. For example, high <span class="math inline">\(NH_4^+\)</span> concentration in the sediment fluxes to the lower concentration in the water column. In this simulation there was no external porewater flux, from, say groundwater inflow. The sediment particle deposition rate (<em>w<sub>00</sub></em>) was set to have the same value across the whole of the domain (1 cm y<sup>-1</sup>). (The particle deposition model was developed in the water column model during this project and a link for water column particle deposition between the models was not implemented in this study.) A link was developed for the shear stress at the sediment-water interface, such that molecular diffusion was increased when the motion in the water column was higher. The sensitivity of sediment-water diffusion to bottom water motion was assigned by the parameter <em>tau<sub>b</sub>sensitivity</em>. The values for* tau<sub>b</sub>sensitivity can be found in the physical parameters table above. The sensitivity was set to be higher in the southern zones. The diffusion was also sensitive to the amount of macroalgae and seagrass roots in each zone, where a high amount of either reduced <span class="math inline">\(tau_b\)</span> to zero, leading to diffusion being mostly controlled by chemical concentration gradient.</p>
+<p>Bioturbation was set up using the step-wise function, where <em>x<sub>1</sub></em> was the depth of full bioturbation, and <em>x<sub>2</sub></em> the depth of zero bioturbation (Figure <a href="sediment-biogeochemistry.html#fig:dev-picsbudgetsetup-4">7.12</a>). The values for <em>x<sub>1</sub></em> and <em>x<sub>2</sub></em> can be found in the physical parameters table above. In this simulation, the values were assigned for each zone, with deeper vales for the northern zones. The rate constant <em>DB<sub>0</sub></em> was assigned to be the same for all zones. The original model had a constant bioturbation rate assigned at the initialisation step. For this simulation the model was developed to have a dynamic bioturbation rate that is updated at every time step.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
-<img src="images/dev/sed_Bioturb.png" alt="Salinity factor $F_{Sal}$ scaling between 1 and 0 between parameters *Sal_1* and *Sal_2*" width="50%"><p class="caption">
-(#fig:dev-picsbudgetsetup_4)Salinity factor <span class="math inline">\(F_{Sal}\)</span> scaling between 1 and 0 between parameters <em>Sal_1</em> and <em>Sal_2</em>
+<span style="display:block;" id="fig:dev-picsbudgetsetup-4"></span>
+<img src="images/dev/sed_Bioturb.png" alt="Diagram of bioturbation setup, showing full bioturbation above the parameter *x~1~* and no bioturbation below *x~2~*." width="50%"><p class="caption">
+Figure 7.12: Diagram of bioturbation setup, showing full bioturbation above the parameter <em>x<sub>1</sub></em> and no bioturbation below <em>x<sub>2</sub></em>.
 </p>
 </div>
 </div>
 <p>Bioirrigation was set up as a depth at which non-local transport occurred, using the parameter <em>x<sub>irrig</sub></em>. The value for <em>x<sub>irrig</sub></em> can be found in the physical parameters table above, and as with <em>x<sub>1</sub></em>, the depths of <em>x<sub>irrig</sub></em> were assigned to each zone, to reflect the decrease of benthic fauna in the southern zones. Similarly to bioturbation, the model was also developed so that irrigation was also updated at each time step. As <span class="math inline">\(F_{Sal}\)</span> and <span class="math inline">\(F_{Sal}\)</span> were updated at each time step, bioturbation and bioirrigation were therefore dynamically dependent on water column salinity and <span class="math inline">\(H_{2}S\)</span> concentration.</p>
 </div>
-<div id="nutrient-burial" class="section level4" number="7.3.3.6">
-<h4>
-<span class="header-section-number">7.3.3.6</span> Nutrient burial<a class="anchor" aria-label="anchor" href="#nutrient-burial"><i class="fas fa-link"></i></a>
+<div id="nutrient-burial" class="section level4 unnumbered">
+<h4>Nutrient burial<a class="anchor" aria-label="anchor" href="#nutrient-burial"><i class="fas fa-link"></i></a>
 </h4>
 <p>A process for removing nutrients from the active zone was burial of the nutrients deep in the sediment. As much of the nutrient calibration was based around calculating the mass in the top 5 cm (see Calibration section above), a measurement of burial was defined as the change in mass at 5 cm over time.</p>
 <p>Another mechanism of nutrient removal was adsorption of dissolved nutrients onto solid particles. <span class="math inline">\(NH_4^+\)</span> was simulated as precipitating onto solid particles, including organic matter and clay. Since the Coorong sediment survey showed high concentrations of orgnaic matter and clay, it was assumed that there were unlimited adsorption sites for <span class="math inline">\(NH_4^+\)</span>, and the relative amounts of <span class="math inline">\(NH_4^+\)</span> were assigned by the adsorption constant as per the methods in Van Cappellen and Wang (1996), which was ultimately based on Mackin and Aller (1984). The adsorption constant was set to the same value in all zones, which can be found in the geochemistry parameter table above. A simplified version of the adsorption equations adsorption can be found below (the full equations correct for porosity and solid volume when transferring between particulate and dissolved phases).</p>
+<center>
 <span class="math display">\[\begin{eqnarray}
 
-$NH_{4 _{Total}}^+$       = $NH_{4} + $NH_{4_{Adsorbed}}
-\
-$NH_{4 _{Dissolved}}^+$   = $\frac {1}{$K_{NH_4p}$}
-\
-$NH_{4 _{Particulate}}^+$ = 1 - $NH_{4 _{Dissolved}}^+$ $F_{Sal}$
-\
-$NH_{4 _{Particulate}}^+$ = $NH_{4_{Total}}^+$ $NH_{4 _{Particulate}}^+$
-\
-$NH_{4 _{Dissolved}}^+$   = $NH_{4_{Total}}^+$ - $NH_{4 _{Particulate}}^+$
+NH_{4 _{Total}}^+       = NH_{4}^+ + NH_{4_{Adsorbed}}
+\\
+\\
+NH_{4 _{Dissolved}}^+   = \frac {1}{K_{NH_4p}}
+\\
+\\
+NH_{4 _{Particulate}}^+ = 1 - NH_{4 _{Dissolved}}^+ F_{Sal}
+\\
+\\
+NH_{4 _{Particulate}}^+ = NH_{4_{Total}}^+ NH_{4 _{Particulate}}^+
+\\
+\\
+NH_{4 _{Dissolved}}^+   = NH_{4_{Total}}^+ - NH_{4 _{Particulate}}^+
 
 \end{eqnarray}\]</span>
+</center>
 <p>A similar approach was taken for dissolved organic carbon, nitrogen and phosphrous. The <span class="math inline">\(DON_R\)</span> and <span class="math inline">\(DON_S\)</span> are adsorbed to the sediment with the adsorption constant <em>K<sub>DOMP</sub></em>, and <span class="math inline">\(DOP_R\)</span> and <span class="math inline">\(DOP_S\)</span> adsorbed using the same adsorption constant <em>K<sub>DOMP</sub></em>. The value for <em>K<sub>DOMP</sub></em> defaults to 1.4 and the model defaults to being switched on.</p>
 <p><span class="math inline">\(PO_4^{3-}\)</span> was adsorbed onto the surfaces of iron oxide particles, both the reactive <span class="math inline">\(Fe(OH)_{3A}\)</span> and unreactive <span class="math inline">\(Fe(OH)_{3B}\)</span> fractions. (While the sediment model has optional configurations, as outlined in the AED Manual, in this simulation the options <em>PO4AdsorptionModel</em> = 1 and <em>ads_use_pH</em> = TRUE.) The overall property of this setup was that low oxygen and nitrate concentrations in the sediment cause iron oxide reduction, which dissolves the solid particles and releases the dissolved <span class="math inline">\(PO_4^{3-}\)</span> to the porewater.</p>
 <span class="math display">\[\begin{eqnarray}
 
-$PO_{4 _{Particulate}}^{3-}}$ = $\frac {K_{PO_4p} ($Fe(OH)_{3A}$ + $Fe(OH)_{3B}$)} {1 + K_{PO_4p} ($Fe(OH)_{3A}$ + $Fe(OH)_{3B}$) } $PO_{4 _{Total}}^{3-}}$
-\
-$PO_{4 _{Dissolved}}^{3-}}$   = $\frac {1} {1 + K_{PO_4p} ($Fe(OH)_{3A}$ + $Fe(OH)_{3B}$) } $PO_{4 _{Total}}^{3-}}$
+PO_{4_{Particulate}}^{3-} = \frac {K_{PO_4p} (Fe(OH)_{3A} + Fe(OH)_{3B})}
+{1 + K_{PO_4p} (Fe(OH)_{3A} + Fe(OH)_{3B}) } (PO_{4 _{Total}}^{3-})
+\\
+\\
+PO_{4_{Dissolved}}^{3-}   = \frac {1} {1 + K_{PO_4p} (Fe(OH)_{3A} + Fe(OH)_{3B}) } (PO_{4 _{Total}}^{3-})
 
 \end{eqnarray}\]</span>
-<p>The final feature developed for nutrient burial for this project was the very unreactive organic matter parameter. As mentioned in the model setup above, the organic matter setup in this model has labile and refractory phases, as state variables. The model was extended in this project by dropping the reactivity of the particulate refractory phase towards zero as the concentration approaches a minimum. For <span class="math inline">\(PON_R_\)</span>, the parameter <em>ponu</em> set the minimum concentration and <em>KOMPres_N</em> set the sensitivity of the decrease, as in the equation below. The equivalent parameters for C an P were <em>pocu</em> and <em>popu</em>, and <em>KOMPres_C</em> and <em>KOMPres_P</em>.</p>
+<p>The final feature developed for nutrient burial for this project was the very unreactive organic matter parameter. As mentioned in the model setup above, the organic matter setup in this model has labile and refractory phases, as state variables. The model was extended in this project by dropping the reactivity of the particulate refractory phase towards zero as the concentration approaches a minimum. For <span class="math inline">\(PON_R\)</span>, the parameter <em>ponu</em> set the minimum concentration and <em>KOMPres_N</em> set the sensitivity of the decrease, as in the equation below. The equivalent parameters for C an P were <em>pocu</em> and <em>popu</em>, and <em>KOMPres_C</em> and <em>KOMPres_P</em>.</p>
 <span class="math display">\[\begin{eqnarray}
 
-$komlim$ = \frac {$PON_R$ - $ponu$} {$PON_R$ - $ponu$ + $KOMPres_N$}
-\
-$R_PONR$ = $ponr2donr$ $komlim$
+komlim = \frac {PON_R - ponu} {PON_R - ponu + KOMPres_N}
+\\
+\\
+R_{PONR} = (ponr2donr) (komlim)
 
 \end{eqnarray}\]</span>
 <p>(The equation above is a simplified version, where the full equation had checks to prevent the rate going below zero, plus the respiration processes of <span class="math inline">\(MPB\)</span>.)</p>
 </div>
-<div id="plants-microphytobenthos-and-macroalgae" class="section level4" number="7.3.3.7">
+<div id="plants-microphytobenthos-and-macroalgae" class="section level4" number="7.3.3.1">
 <h4>
-<span class="header-section-number">7.3.3.7</span> Plants, microphytobenthos and macroalgae<a class="anchor" aria-label="anchor" href="#plants-microphytobenthos-and-macroalgae"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.3.1</span> Plants, microphytobenthos and macroalgae<a class="anchor" aria-label="anchor" href="#plants-microphytobenthos-and-macroalgae"><i class="fas fa-link"></i></a>
 </h4>
 <p><span class="math inline">\(O_2\)</span> is injected into the sediment from microphytobenthic algae (<span class="math inline">\(MPB\)</span>) and from plant roots. The oxygen is not part of the mass balance of the ecosystem and it is not in any stoichiometric balance with biomass or <span class="math inline">\(∑CO_2\)</span>. The depths where the <span class="math inline">\(O_2\)</span> is injected are set separately for <span class="math inline">\(MPB\)</span> and roots. The <span class="math inline">\(O_2\)</span> in these layers from <span class="math inline">\(MPB\)</span> is set as a rate of both gross primary production (<span class="math inline">\(Rgpp O_2 input\)</span>) and respiration (<span class="math inline">\(Rrsp O_2 consumption\)</span>). The rate <span class="math inline">\(Rgpp\)</span> is calculated as a function of the <span class="math inline">\(MPB\)</span> production rate, the parameter <em>fgpp<sub>sflux</sub></em> and a decay with depth. The production rate is linked directly to the rate calculated in the water column model. Similarly, the rate <span class="math inline">\(Rrsp\)</span> is calculated as a function of the respiration rate, the same parameter <em>fgpp<sub>sflux</sub></em> and a decay with depth. The respiration rate is also linked directly to the rate calculated in the water column model. Below the parameter <em>MPBDepth</em>, <span class="math inline">\(Rgpp\)</span> is zero, which means that the <span class="math inline">\(MPB\)</span> cannot photosynthesise without light. Below <em>MPBDepth</em> the rate <span class="math inline">\(Rrsp\)</span> is the product of <span class="math inline">\(MPB\)</span> biomass and 52 days, which means that the cells die within a week without access to light.</p>
 <p>The rate of <span class="math inline">\(O_2\)</span> injection from roots is calculated from the variable <span class="math inline">\(RTO_2\)</span>, which applies above the depth <span class="math inline">\(RTDP\)</span>. Both <span class="math inline">\(RTO_2\)</span> and <span class="math inline">\(RTDP\)</span> are linked directly from the water column model.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
-<img src="images/dev/sed_O2Inject.png" alt="$O_2$ injected into the sediment from $MPB$ and plant roots." width="75%"><p class="caption">
-(#fig:dev-picsbudgetsetup_5)<span class="math inline">\(O_2\)</span> injected into the sediment from <span class="math inline">\(MPB\)</span> and plant roots.
+<span style="display:block;" id="fig:dev-picsbudgetsetup-5"></span>
+<img src="images/dev/sed_O2Inject.png" alt="Schematic of the new parameterisation of $O_2$ injection into the sediment. Left: $O_2$ is released where $MPB$ are respiring. Right: $O_2$ comes from plant roots to the depth of *RTDP*." width="75%"><p class="caption">
+Figure 7.13: Schematic of the new parameterisation of <span class="math inline">\(O_2\)</span> injection into the sediment. Left: <span class="math inline">\(O_2\)</span> is released where <span class="math inline">\(MPB\)</span> are respiring. Right: <span class="math inline">\(O_2\)</span> comes from plant roots to the depth of <em>RTDP</em>.
 </p>
 </div>
 </div>
 </div>
-<div id="denitrification" class="section level4" number="7.3.3.8">
+<div id="denitrification" class="section level4" number="7.3.3.2">
 <h4>
-<span class="header-section-number">7.3.3.8</span> Denitrification<a class="anchor" aria-label="anchor" href="#denitrification"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3.3.2</span> Denitrification<a class="anchor" aria-label="anchor" href="#denitrification"><i class="fas fa-link"></i></a>
 </h4>
 <p>One way to remove nitrogen from the modelling domain is conversion of dissolved N to <span class="math inline">\(N_2\)</span>, which then makes it unreactive: this is generally referred to as ‘denitrification’. The two specific processes that create <span class="math inline">\(N_2\)</span> that are used in this model are deammonification (<span class="math inline">\(R_{NH_{4}NO_{2}}\)</span>) and denitrousation (<span class="math inline">\(R_{Denitrousation}\)</span>). Deammonification is the reaction between <span class="math inline">\(NO_2^-\)</span> and <span class="math inline">\(NH_4^+\)</span> and so it is dependent on the concentration of the reactants, and the process is also inhibited by <span class="math inline">\(O_2\)</span>. Deammonification relies on partially-oxidised N as <span class="math inline">\(NO_2^-\)</span> as well as an anoxic environment. Denitrousation converts the N in <span class="math inline">\(N_2O\)</span> to <span class="math inline">\(N_2\)</span> by oxidising organic matter, and so the rate is highly dependent on organic matter concentration, as well as formation of <span class="math inline">\(N_2O\)</span>. Both of these processes require a dynamic oxic-anoxic environment to create the reactants and allow the denitrification reactions to occur uninhibited. These reactions are also inhibited by high salinity, through the <span class="math inline">\(F_{Sal}\)</span> term.</p>
 <p><br></p>
@@ -5336,8 +5201,8 @@ $R_PONR$ = $ponr2donr$ $komlim$
 <div id="oxygen-penetration-depth" class="section level5 unnumbered">
 <h5>Oxygen penetration depth<a class="anchor" aria-label="anchor" href="#oxygen-penetration-depth"><i class="fas fa-link"></i></a>
 </h5>
-<p>The concentration of <span class="math inline">\(O_2\)</span> was not measured in the Coorong sediment. However, some general patterns were observed from the measured data, which informed the setup of the model. The rapid samples had oxygen penetration depths, which were used to guide the general trends of oxygen behaviour. The banks generally had higher concentrations than the deep channel. The South Lagoon had lower concentration than the North lagoon, due to the lower abundance of benthic fauna mixing oxygen into the upper sediment. The oxygen penetration was examined in line with the core measurements in order to calibrate the organic matter reduction. The <span class="math inline">\(O_2\)</span> concentration was dependent on the concentrations of species that could be oxidised, such as organic matter, <span class="math inline">\(NH_4^+\)</span> and <span class="math inline">\(H_2_S\)</span> concentration. It was also dependent on bioturbation bioirrigation, and injection from plant roots and MPB, which were assigned for each zone.</p>
-<p>Achieving the right oxic environment was important for its inhibition of other lower-energy redox processes, such as N cycling, and Fe and <span class="math inline">\(SO4_^{2-}\)</span> reduction.</p>
+<p>The concentration of <span class="math inline">\(O_2\)</span> was not measured in the Coorong sediment. However, some general patterns were observed from the measured data, which informed the setup of the model. The rapid samples had oxygen penetration depths, which were used to guide the general trends of oxygen behaviour. The banks generally had higher concentrations than the deep channel. The South Lagoon had lower concentration than the North lagoon, due to the lower abundance of benthic fauna mixing oxygen into the upper sediment. The oxygen penetration was examined in line with the core measurements in order to calibrate the organic matter reduction. The <span class="math inline">\(O_2\)</span> concentration was dependent on the concentrations of species that could be oxidised, such as organic matter, <span class="math inline">\(NH_4^+\)</span> and <span class="math inline">\(H_2S\)</span> concentration. It was also dependent on bioturbation bioirrigation, and injection from plant roots and MPB, which were assigned for each zone.</p>
+<p>Achieving the right oxic environment was important for its inhibition of other lower-energy redox processes, such as N cycling, and Fe and <span class="math inline">\(SO_4^{2-}\)</span> reduction.</p>
 </div>
 <div id="fluxes" class="section level5 unnumbered">
 <h5>Fluxes<a class="anchor" aria-label="anchor" href="#fluxes"><i class="fas fa-link"></i></a>
@@ -5352,18 +5217,18 @@ $R_PONR$ = $ponr2donr$ $komlim$
 <div id="cores" class="section level5 unnumbered">
 <h5>Cores<a class="anchor" aria-label="anchor" href="#cores"><i class="fas fa-link"></i></a>
 </h5>
-<p>Measured <span class="math inline">\(NH_4^+^\)</span> profiles showed concentrations of about 0.1 mmol L<sup>-1</sup> and accumulation with depth. The model captured this well, with a finely tuned balance between the main source of <span class="math inline">\(NH_4^+^\)</span> from DONR and <span class="math inline">\(NH_{4}^+^\)</span> flux to the bottom water.</p>
-<p>The measured data showed a spike of <span class="math inline">\(Fe^2+^\)</span> at approximately 1 cm depth, with a <span class="math inline">\(H_2S\)</span> spike slightly below that. The model was calibrated to fit this. In many zones, the oxygen was penetrating too deeply into the sediment and inhibiting iron reduction. Once the oxygen was consumed higher in the sediment, more <span class="math inline">\(Fe^2+^\)</span> and <span class="math inline">\(H_2S\)</span> were produced. This was then balanced with the precipitation of FeS.</p>
-<p>Only one <span class="math inline">\(PO_4^3-^\)</span> core was available, which had concentrations around 1×10<sup>-3</sup> mmol L<sup>-1</sup>. Other samples were taken but the concentrations were below detection limit. The model produced concentrations of <span class="math inline">\(PO_4^3-^\)</span> that were satisfactory compared to the measured data.</p>
+<p>Measured <span class="math inline">\(NH_4^+\)</span> profiles showed concentrations of about 0.1 mmol L<sup>-1</sup> and accumulation with depth. The model captured this well, with a finely tuned balance between the main source of <span class="math inline">\(NH_4^+\)</span> from DONR and <span class="math inline">\(NH_{4}^+\)</span> flux to the bottom water.</p>
+<p>The measured data showed a spike of <span class="math inline">\(Fe^2+\)</span> at approximately 1 cm depth, with a <span class="math inline">\(H_2S\)</span> spike slightly below that. The model was calibrated to fit this. In many zones, the oxygen was penetrating too deeply into the sediment and inhibiting iron reduction. Once the oxygen was consumed higher in the sediment, more <span class="math inline">\(Fe^2+\)</span> and <span class="math inline">\(H_2S\)</span> were produced. This was then balanced with the precipitation of FeS.</p>
+<p>Only one <span class="math inline">\(PO_4^3-\)</span> core was available, which had concentrations around 1×10<sup>-3</sup> mmol L<sup>-1</sup>. Other samples were taken but the concentrations were below detection limit. The model produced concentrations of <span class="math inline">\(PO_4^3-\)</span> that were satisfactory compared to the measured data.</p>
 </div>
 <div id="overall-nitrogen-calibration" class="section level5 unnumbered">
 <h5>Overall nitrogen calibration<a class="anchor" aria-label="anchor" href="#overall-nitrogen-calibration"><i class="fas fa-link"></i></a>
 </h5>
 <p>As mentioned above, the nitrogen was initialised and calibrated based on<br>
 - sediment top 5 cm budget<br>
-- <span class="math inline">\(NH_4^+^\)</span> concentrations in the sediment<br>
-- <span class="math inline">\(NH_4^+^\)</span> fluxes into the water column</p>
-<p>The dominant reaction pathways for nitrogen include hydrolysis of <span class="math inline">\(PON_R\)</span> to <span class="math inline">\(DON_R\)</span>, and mineralisation of <span class="math inline">\(DON_R\)</span> to <span class="math inline">\(NH_4^+^\)</span>. The major chemical processes that affected the mass budget were hydrolysis of <span class="math inline">\(PON_R\)</span> to <span class="math inline">\(DON_R\)</span> and mineralization of <span class="math inline">\(DON_R\)</span> to <span class="math inline">\(NH_4^+\)</span>.</p>
+- <span class="math inline">\(NH_4^+\)</span> concentrations in the sediment<br>
+- <span class="math inline">\(NH_4^+\)</span> fluxes into the water column</p>
+<p>The dominant reaction pathways for nitrogen include hydrolysis of <span class="math inline">\(PON_R\)</span> to <span class="math inline">\(DON_R\)</span>, and mineralisation of <span class="math inline">\(DON_R\)</span> to <span class="math inline">\(NH_4^+\)</span>. The major chemical processes that affected the mass budget were hydrolysis of <span class="math inline">\(PON_R\)</span> to <span class="math inline">\(DON_R\)</span> and mineralization of <span class="math inline">\(DON_R\)</span> to <span class="math inline">\(NH_4^+\)</span>.</p>
 <span class="math display">\[\begin{eqnarray}
 \\
     PON_{R} \rightarrow DON_{R}
@@ -5371,14 +5236,14 @@ $R_PONR$ = $ponr2donr$ $komlim$
     DON_{R} \rightarrow NH_{4}^{+}    
 \\
 \end{eqnarray}\]</span>
-<p>The setup was tuned to prevent the degradation of too much <span class="math inline">\(PON_R\)</span> and accumulation of <span class="math inline">\(NH_4^+^\)</span>, especially over the course of a long simulation. During the calibration, <span class="math inline">\(PON_R\)</span> concentrations were in the order of 1×10<sup>3</sup> mmol L<sup>-1</sup>, while <span class="math inline">\(DON_R\)</span> and <span class="math inline">\(NH_4^+\)</span> were in the order of 1×10<sup>-1</sup> mmol L<sup>-1</sup>, and so a small change in the concentration of <span class="math inline">\(PON_R\)</span> was able to cause a large change in the concentrations of DONR and <span class="math inline">\(NH_4^+\)</span>. The accumulation was controlled by adjusting the hydrolysis and mineralisation rate constants, and the amount of unreactive <span class="math inline">\(PON_R\)</span> (see <span class="math inline">\(ponu\)</span> below).</p>
-<p>The concentration of <span class="math inline">\(NH_4^+\)</span> was compared to measured concentration values, and the <span class="math inline">\(NH_4^+^\)</span> flux was compared to both the measured fluxes and the flux rate that was calibrated for the water column model.</p>
-<p>A side effect of producing the <span class="math inline">\(DON_R\)</span> intermediate product was its flux into the water column. The sediment model combined both labile and refractory DON (<span class="math inline">\(DON_L\)</span> and <span class="math inline">\(DON_R\)</span>) and fluxed a combined <span class="math inline">\(DON\)</span> species to the water column (via <em>diss_flux_link</em>). The water column <span class="math inline">\(DON\)</span> was also fluxed back into the sediment and split 50:50 into <span class="math inline">\(DON_L\)</span> and <span class="math inline">\(DON_R\)</span> (via <em>water_link</em>). This resulted in the surprising outcome of a much larger accumulation of <span class="math inline">\(DON\)</span> and <span class="math inline">\(NH_4^+^\)</span> in the water column than had been expected from the uncoupled model. As the simulation proceeded, the <span class="math inline">\(NH_4^+^\)</span> had such high concentrations that it was fluxing back into the sediment, which was an unrealistic outcome.</p>
+<p>The setup was tuned to prevent the degradation of too much <span class="math inline">\(PON_R\)</span> and accumulation of <span class="math inline">\(NH_4^+\)</span>, especially over the course of a long simulation. During the calibration, <span class="math inline">\(PON_R\)</span> concentrations were in the order of 1×10<sup>3</sup> mmol L<sup>-1</sup>, while <span class="math inline">\(DON_R\)</span> and <span class="math inline">\(NH_4^+\)</span> were in the order of 1×10<sup>-1</sup> mmol L<sup>-1</sup>, and so a small change in the concentration of <span class="math inline">\(PON_R\)</span> was able to cause a large change in the concentrations of DONR and <span class="math inline">\(NH_4^+\)</span>. The accumulation was controlled by adjusting the hydrolysis and mineralisation rate constants, and the amount of unreactive <span class="math inline">\(PON_R\)</span> (see <span class="math inline">\(ponu\)</span> below).</p>
+<p>The concentration of <span class="math inline">\(NH_4^+\)</span> was compared to measured concentration values, and the <span class="math inline">\(NH_4^+\)</span> flux was compared to both the measured fluxes and the flux rate that was calibrated for the water column model.</p>
+<p>A side effect of producing the <span class="math inline">\(DON_R\)</span> intermediate product was its flux into the water column. The sediment model combined both labile and refractory DON (<span class="math inline">\(DON_L\)</span> and <span class="math inline">\(DON_R\)</span>) and fluxed a combined <span class="math inline">\(DON\)</span> species to the water column (via <em>diss_flux_link</em>). The water column <span class="math inline">\(DON\)</span> was also fluxed back into the sediment and split 50:50 into <span class="math inline">\(DON_L\)</span> and <span class="math inline">\(DON_R\)</span> (via <em>water_link</em>). This resulted in the surprising outcome of a much larger accumulation of <span class="math inline">\(DON\)</span> and <span class="math inline">\(NH_4^+\)</span> in the water column than had been expected from the uncoupled model. As the simulation proceeded, the <span class="math inline">\(NH_4^+\)</span> had such high concentrations that it was fluxing back into the sediment, which was an unrealistic outcome.</p>
 </div>
 <div id="denitrification-rates" class="section level5 unnumbered">
 <h5>Denitrification rates<a class="anchor" aria-label="anchor" href="#denitrification-rates"><i class="fas fa-link"></i></a>
 </h5>
-<p>In the initial calibration, denitrification processes did not occur in the sediment model, which was in conflict with the rates measured by UA in T&amp;I 1.2.2 (Reference). The high penetration of oxygen into the sediment inhibited the reduction of <span class="math inline">\(NO_3^-^\)</span> to <span class="math inline">\(NO_2^-^\)</span> and <span class="math inline">\(NO_2^-^\)</span> to <span class="math inline">\(NH_4^+^\)</span> or <span class="math inline">\(N_2\)</span>. Furthermore, there was too little labile dissolved organic matter to consume the oxygen in the upper layers. The salinity and sulphide factors <em>FSal</em> and <em>FSul</em> inhibited denitrification in the deep sediment.</p>
+<p>In the initial calibration, denitrification processes did not occur in the sediment model, which was in conflict with the rates measured by UA in T&amp;I 1.2.2 (Reference). The high penetration of oxygen into the sediment inhibited the reduction of <span class="math inline">\(NO_3^-\)</span> to <span class="math inline">\(NO_2^-\)</span> and <span class="math inline">\(NO_2^-\)</span> to <span class="math inline">\(NH_4^+\)</span> or <span class="math inline">\(N_2\)</span>. Furthermore, there was too little labile dissolved organic matter to consume the oxygen in the upper layers. The salinity and sulphide factors <em>FSal</em> and <em>FSul</em> inhibited denitrification in the deep sediment.</p>
 <p><br></p>
 </div>
 </div>
@@ -5389,15 +5254,15 @@ $R_PONR$ = $ponr2donr$ $komlim$
 <div id="top-5-cm-budget-1" class="section level4 unnumbered">
 <h4>Top 5 cm budget<a class="anchor" aria-label="anchor" href="#top-5-cm-budget-1"><i class="fas fa-link"></i></a>
 </h4>
-<p>The total mass of TN and TP in both the north and the south lagoons was calibrated to the right order of magnitude as that measured in the field measurements. The total mass decreased by a small amount over the course of the simulation.</p>
+<p>The total mass of TN and TP in both the north and the south lagoons was calibrated to the right order of magnitude as that measured in the field measurements (Figures <a href="#fig:dev-calpics1"><strong>??</strong></a> to <a href="sediment-biogeochemistry.html#fig:dev-calpics4">7.15</a>). The total mass decreased by a small amount over the course of the simulation.</p>
 <div class="text-image">
 <img src="images/dev/sed_TNNorth.png" width="100%" style="display: block; margin: auto;">
 </div>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-calpics2"></span>
-<img src="images/dev/sed_TNSouth.png" alt="TN budgets in the top 5 cm" width="100%"><p class="caption">
-Figure 7.9: TN budgets in the top 5 cm
+<img src="images/dev/sed_TNSouth.png" alt="TN budgets in the top 5 cm. Above: North lagoon. Below: South lagoon. Left: each zone is displayed in the horizontal bars, changing over time across the x axis. Right: sum of all zones in the lagoon, changing over time across the x axis. The 'Target concentration' is the lagoon concentration as determined by UA." width="100%"><p class="caption">
+Figure 7.14: TN budgets in the top 5 cm. Above: North lagoon. Below: South lagoon. Left: each zone is displayed in the horizontal bars, changing over time across the x axis. Right: sum of all zones in the lagoon, changing over time across the x axis. The ‘Target concentration’ is the lagoon concentration as determined by UA.
 </p>
 </div>
 </div>
@@ -5407,8 +5272,8 @@ Figure 7.9: TN budgets in the top 5 cm
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-calpics4"></span>
-<img src="images/dev/sed_TPSouth.png" alt="TP budgets in the top 5 cm" width="100%"><p class="caption">
-Figure 7.10: TP budgets in the top 5 cm
+<img src="images/dev/sed_TPSouth.png" alt="TP budgets in the top 5 cm. Above: North lagoon. Below: South lagoon. Left: each zone is displayed in the horizontal bars, changing over time across the x axis. Right: sum of all zones in the lagoon, changing over time across the x axis. The 'Target concentration' is the lagoon concentration as determined by UA." width="100%"><p class="caption">
+Figure 7.15: TP budgets in the top 5 cm. Above: North lagoon. Below: South lagoon. Left: each zone is displayed in the horizontal bars, changing over time across the x axis. Right: sum of all zones in the lagoon, changing over time across the x axis. The ‘Target concentration’ is the lagoon concentration as determined by UA.
 </p>
 </div>
 </div>
@@ -5423,12 +5288,12 @@ Figure 7.10: TP budgets in the top 5 cm
 <div id="fluxes-1" class="section level4 unnumbered">
 <h4>Fluxes<a class="anchor" aria-label="anchor" href="#fluxes-1"><i class="fas fa-link"></i></a>
 </h4>
-<p>The fluxes were generally within the right order of magnitude. Comparison was made with either the constant values used by the water column model for calibration, and the measured fluxes. Constant values were available for <span class="math inline">\(O_2\)</span>, <span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(PO_4^{3-}\)</span> and <span class="math inline">\(NH_4^+\)</span>. Zone 52 had the most measured flux data, from Parnka Point and measured under dark and light conditions, with measurements for <span class="math inline">\(O_2\)</span>, <span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>, <span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(N_2O\)</span> and <span class="math inline">\(CH_4\)</span>. Simulated fluxes were generally closer to the measured values than the constant values for <span class="math inline">\(O_2\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>, <span class="math inline">\(NH_4^+\)</span>. In the case of <span class="math inline">\(NO_3^-\)</span>, the constant flux was close to the measured fluxes.</p>
+<p>The fluxes were generally within the right order of magnitude (Figure <a href="sediment-biogeochemistry.html#fig:dev-calpics5">7.16</a>). Comparison was made with either the constant values used by the water column model for calibration, and the measured fluxes. Constant values were available for <span class="math inline">\(O_2\)</span>, <span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(PO_4^{3-}\)</span> and <span class="math inline">\(NH_4^+\)</span>. Zone 52 had the most measured flux data, from Parnka Point and measured under dark and light conditions, with measurements for <span class="math inline">\(O_2\)</span>, <span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>, <span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(N_2O\)</span> and <span class="math inline">\(CH_4\)</span>. Simulated fluxes were generally closer to the measured values than the constant values for <span class="math inline">\(O_2\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>, <span class="math inline">\(NH_4^+\)</span>. In the case of <span class="math inline">\(NO_3^-\)</span>, the constant flux was close to the measured fluxes.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-calpics5"></span>
-<img src="images/dev/sed_t_F_zone_52.png" alt="Sediment-water fluxes in zone 52. Measured values are averages of several measurements for dark and light conditions." width="75%"><p class="caption">
-Figure 7.11: Sediment-water fluxes in zone 52. Measured values are averages of several measurements for dark and light conditions.
+<img src="images/dev/sed_t_F_zone_52.png" alt="Example of 12 sediment-water flux results for zone 52. Measured values are averages of several measurements for dark and light conditions and 'Constant fluxes' were those used in the previous calibration of the water column model." width="100%"><p class="caption">
+Figure 7.16: Example of 12 sediment-water flux results for zone 52. Measured values are averages of several measurements for dark and light conditions and ‘Constant fluxes’ were those used in the previous calibration of the water column model.
 </p>
 </div>
 </div>
@@ -5437,30 +5302,30 @@ Figure 7.11: Sediment-water fluxes in zone 52. Measured values are averages of s
 <div id="cores-1" class="section level4 unnumbered">
 <h4>Cores<a class="anchor" aria-label="anchor" href="#cores-1"><i class="fas fa-link"></i></a>
 </h4>
-<p>Simulated depth profiles of <span class="math inline">\(NH_4^+\)</span> matched the measured values well, in particular in zone 73. This was a major result, considering the very large total mass of N tied up in <span class="math inline">\(PON_R\)</span> and the relatively small amount produced as <span class="math inline">\(DON\)</span> and <span class="math inline">\(NH_4^+\)</span>.</p>
+<p>Simulated depth profiles of <span class="math inline">\(NH_4^+\)</span> matched the measured values well, in particular in zone 73 (Figure <a href="sediment-biogeochemistry.html#fig:dev-calpics6">7.17</a>). This was a major result, considering the very large total mass of N tied up in <span class="math inline">\(PON_R\)</span> and the relatively small amount produced as <span class="math inline">\(DON\)</span> and <span class="math inline">\(NH_4^+\)</span>.</p>
 <p>In most cases the initial concentration was close to the final concentration, with a slight decay over time. In a few zones (51, 52, 53 and 63) the <span class="math inline">\(NH_4^+\)</span> concentration in the upper sediment centimetres was more responsive to the flux at the sediment-water interface.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-calpics6"></span>
-<img src="images/dev/sed_C_D_core_zone73_amm_2020-11-30.png" alt="Ammonium concentration profile for zone 73, compared to data at Noonameena." width="75%"><p class="caption">
-Figure 7.12: Ammonium concentration profile for zone 73, compared to data at Noonameena.
+<img src="images/dev/sed_C_D_core_zone73_amm_2020-11-30.png" alt="Ammonium concentration profile for zone 73, compared to data at Noonameena." width="45%"><p class="caption">
+Figure 7.17: Ammonium concentration profile for zone 73, compared to data at Noonameena.
 </p>
 </div>
 </div>
-<p>Some measured <span class="math inline">\(Fe^{2+}\)</span> and <span class="math inline">\(H_2S\)</span> data showed a clear spike in the profile at around 10 cm (with the <span class="math inline">\(H_2S\)</span> spike being slightly deeper in the sediment than the <span class="math inline">\(Fe^{2+}\)</span> spike). The sediment model did not capture this, and so a future calibration would require getting the total magnitude of both species right, as well as the right depth of <span class="math inline">\(O_2\)</span> penetration. Since the <span class="math inline">\(O_2\)</span> was generally slightly too deep, it is assumed that a shallower <span class="math inline">\(O_2\)</span> depth would create the right anoxic zone for Fe and SO~4<sup>2-</sup> reduction.</p>
+<p>Some measured <span class="math inline">\(Fe^{2+}\)</span> and <span class="math inline">\(H_2S\)</span> data showed a clear spike in the profile at around 10 cm (with the <span class="math inline">\(H_2S\)</span> spike being slightly deeper in the sediment than the <span class="math inline">\(Fe^{2+}\)</span> spike) (Figure <a href="sediment-biogeochemistry.html#fig:dev-calpics7">7.18</a> and <a href="sediment-biogeochemistry.html#fig:dev-calpics8">7.19</a>). The sediment model did not capture this, and so a future calibration would require getting the total magnitude of both species right, as well as the right depth of <span class="math inline">\(O_2\)</span> penetration. Since the <span class="math inline">\(O_2\)</span> was generally slightly too deep, it is assumed that a shallower <span class="math inline">\(O_2\)</span> depth would create the right anoxic zone for Fe and SO<sub>4</sub><sup>2-</sup> reduction.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-calpics7"></span>
-<img src="images/dev/sed_C_D_core_zone33_feii_2020-11-01.png" alt="Iron concentration profile " width="75%"><p class="caption">
-Figure 7.13: Iron concentration profile
+<img src="images/dev/sed_C_D_core_zone33_feii_2020-11-01.png" alt="$Fe^{2+}$ concentration profile with simulated and measured data, as a snapshot at November 2020." width="45%"><p class="caption">
+Figure 7.18: <span class="math inline">\(Fe^{2+}\)</span> concentration profile with simulated and measured data, as a snapshot at November 2020.
 </p>
 </div>
 </div>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-calpics8"></span>
-<img src="images/dev/sed_C_D_core_zone33_h2s_2020-11-01.png" alt="Sulfide concentration profile " width="75%"><p class="caption">
-Figure 7.14: Sulfide concentration profile
+<img src="images/dev/sed_C_D_core_zone33_h2s_2020-11-01.png" alt="$H_2S$ concentration profile with simulated and measured data, as a snapshot at November 2020." width="45%"><p class="caption">
+Figure 7.19: <span class="math inline">\(H_2S\)</span> concentration profile with simulated and measured data, as a snapshot at November 2020.
 </p>
 </div>
 </div>
@@ -5474,18 +5339,18 @@ Figure 7.14: Sulfide concentration profile
 <div id="nutrient-species-1" class="section level4 unnumbered">
 <h4>Nutrient species<a class="anchor" aria-label="anchor" href="#nutrient-species-1"><i class="fas fa-link"></i></a>
 </h4>
-<p>Most of the TN and TP was present in unreactive OM, largely as a result of how the model was initialised to meet the total budget. The concentration of <span class="math inline">\(PON\)</span> was at approximately 500 to 1000 mmol L<sup>-1</sup>, while the concentrations of <span class="math inline">\(DON\)</span> and <span class="math inline">\(NH_4^+\)</span> were around 0.1 to 0.5 mmol L^-1. Although the dissolved N concentrations were so much smaller than the solid concentration, they had an important effect on the water column concentrations.</p>
-<p>&lt;br&gt;</p>
+<p>Most of the TN and TP was present in unreactive OM, largely as a result of how the model was initialised to meet the total budget. The concentration of <span class="math inline">\(PON\)</span> was at approximately 500 to 1000 mmol L<sup>-1</sup>, while the concentrations of <span class="math inline">\(DON\)</span> and <span class="math inline">\(NH_4^+\)</span> were around 0.1 to 0.5 mmol L<sup>-1</sup>. Although the dissolved N concentrations were so much smaller than the solid concentration, they had an important effect on the water column concentrations.</p>
+<p><br></p>
 </div>
 <div id="salinity-and-denitrification-1" class="section level4 unnumbered">
 <h4>Salinity and denitrification<a class="anchor" aria-label="anchor" href="#salinity-and-denitrification-1"><i class="fas fa-link"></i></a>
 </h4>
-<p>High salinity and high <span class="math inline">\(H_2S\)</span> in the southern zones created inhibition. <span class="math inline">\(F_{Sal}\)</span> was at around 0.2 and <span class="math inline">\(F_{Sul}\)</span> around 0.7 (see figure below). In the northern zones, both factors were closer to 1.0, and therefore not inhibitory at all. The inhibition in the southern zones affected biota-driven mixing (see section below) and denitrification reactions (see section below).</p>
+<p>High salinity and high <span class="math inline">\(H_2S\)</span> in the southern zones created inhibition. <span class="math inline">\(F_{Sal}\)</span> was at around 0.2 and <span class="math inline">\(F_{Sul}\)</span> around 0.7 (Figure <a href="sediment-biogeochemistry.html#fig:dev-nutpics1">7.20</a>). In the northern zones, both factors were closer to 1.0, and therefore not inhibitory at all. The inhibition in the southern zones affected biota-driven mixing (see section below) and denitrification reactions (see section below).</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics1"></span>
-<img src="images/dev/sed_FSalFSulBioturb_2-02.png" alt="Salinity and sulfide inhibition functions in four of the sediment zones." width="75%"><p class="caption">
-Figure 7.15: Salinity and sulfide inhibition functions in four of the sediment zones.
+<img src="images/dev/sed_FSalFSulBioturb_2-02.png" alt="Time-magnitude-depth profiles of $F_{Sal}$ and $F_{Sul}$ inhibition factors in four of the sediment zones, from north to south. The central figure shows the interpolated salinity from the UA survey. The higher salinity and higher $H_2S$ in the southern zones resulted in greater inhibition of other processes." width="95%"><p class="caption">
+Figure 7.20: Time-magnitude-depth profiles of <span class="math inline">\(F_{Sal}\)</span> and <span class="math inline">\(F_{Sul}\)</span> inhibition factors in four of the sediment zones, from north to south. The central figure shows the interpolated salinity from the UA survey. The higher salinity and higher <span class="math inline">\(H_2S\)</span> in the southern zones resulted in greater inhibition of other processes.
 </p>
 </div>
 </div>
@@ -5498,47 +5363,47 @@ Figure 7.15: Salinity and sulfide inhibition functions in four of the sediment z
 1) the setup (depths) and<br>
 2) the FSal and FSul gradient along the lagoons (see above).</p>
 <p><br>
-Note that the bioturbation and bioirrigation input parameters were 40 and 200, respectively (see figure below). In the southern zones, these raw inputs were decreased to around 8 for bioturbation and 40 for bioirrigation. The image from Zone 52, which is the intermediate area between the north and south lagoons, illustrates how the dynamic salinity boundary produced a dynamic response from biota-driven mixing. Future work could build in a time lag between the onset of the environmental condition and the result for the benthic fauna.</p>
+Note that the bioturbation and bioirrigation input parameters were 40 and 200, respectively (Figure <a href="sediment-biogeochemistry.html#fig:dev-nutpics3">7.21</a>). In the southern zones, these raw inputs were decreased to around 8 for bioturbation and 40 for bioirrigation. The image from Zone 52, which is the intermediate area between the north and south lagoons, illustrates how the dynamic salinity boundary produced a dynamic response from biota-driven mixing. Future work could build in a time lag between the onset of the environmental condition and the result for the benthic fauna.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics3"></span>
-<img src="images/dev/sed_FSalFSulBioturb-01.png" alt="Salinity and sulfide inhibition functions in four of the sediment zones." width="75%"><p class="caption">
-Figure 7.16: Salinity and sulfide inhibition functions in four of the sediment zones.
+<img src="images/dev/sed_FSalFSulBioturb-01.png" alt="Time-magnitude-depth profiles of bioturbation and bioirrigation in four of the sediment zones, from north to south. The central figure shows the interpolated salinity from the UA survey. The higher salinity and higher $H_2S$ in the southern zones resulted in greater inhibition of bioturbation and bioirrigation." width="95%"><p class="caption">
+Figure 7.21: Time-magnitude-depth profiles of bioturbation and bioirrigation in four of the sediment zones, from north to south. The central figure shows the interpolated salinity from the UA survey. The higher salinity and higher <span class="math inline">\(H_2S\)</span> in the southern zones resulted in greater inhibition of bioturbation and bioirrigation.
 </p>
 </div>
 </div>
-<p>As an example going across the breadth of the lagoon, bioturbation and bioirrigation in zones 61 to 63 are shown in the figure below. The depth and magnitude of bioturbation are smaller in the central, deep zone 62, than on the shallow edge zones, 61 and 63.</p>
+<p>As an example going across the breadth of the lagoon, bioturbation and bioirrigation in zones 61 to 63 are shown in Figure <a href="sediment-biogeochemistry.html#fig:dev-nutpics2">7.22</a>. The depth and magnitude of bioturbation are smaller in the central, deep zone 62, than on the shallow edge zones, 61 and 63.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics2"></span>
-<img src="images/dev/sed_Z6Bioturb.png" alt="Salinity and sulfide inhibition functions in four of the sediment zones." width="75%"><p class="caption">
-Figure 7.17: Salinity and sulfide inhibition functions in four of the sediment zones.
+<img src="images/dev/sed_Z6Bioturb.png" alt="Time-magnitude-depth profiles of bioturbation and bioirrigation in three sediment zones, across the breadth of the lagoon in zone 6. The deeper central zone had lower bioturbation than the edge zones." width="100%"><p class="caption">
+Figure 7.22: Time-magnitude-depth profiles of bioturbation and bioirrigation in three sediment zones, across the breadth of the lagoon in zone 6. The deeper central zone had lower bioturbation than the edge zones.
 </p>
 </div>
 </div>
-<p>The total mass of TN flux across the sediment-water interface was calculated for one year. The flux was dominated by the influx of <span class="math inline">\(PON\)</span> from the water to the sediment. There was a relatively smaller amount of <span class="math inline">\(NH_4^+\)</span> outflux from the sediment to the water.<br><em>Excel figure of summed fluxes, TN North, South</em></p>
+<p>The total mass of TN flux across the sediment-water interface was calculated for one year (Figure <a href="sediment-biogeochemistry.html#fig:dev-nutpics4">7.23</a>). The flux was dominated by the influx of <span class="math inline">\(PON\)</span> from the water to the sediment. There was a relatively smaller amount of <span class="math inline">\(NH_4^+\)</span> outflux from the sediment to the water.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics4"></span>
 <img src="images/dev/sed_TotalNFluxMass.png" alt="Total flux of TN across the sediment-water interface, calculated as a mass (tonnes). The smaller species, such as $NO_2$ were at such low masses that they do not appear on the figure. " width="75%"><p class="caption">
-Figure 7.18: Total flux of TN across the sediment-water interface, calculated as a mass (tonnes). The smaller species, such as <span class="math inline">\(NO_2\)</span> were at such low masses that they do not appear on the figure.
+Figure 7.23: Total flux of TN across the sediment-water interface, calculated as a mass (tonnes). The smaller species, such as <span class="math inline">\(NO_2\)</span> were at such low masses that they do not appear on the figure.
 </p>
 </div>
 </div>
-<p>Although the influx of <span class="math inline">\(PON\)</span> was a far larger amount than the outflux of <span class="math inline">\(NH_4^+\)</span>, there was an overall loss of <span class="math inline">\(PON_R\)</span> in the upper 5 cm (see figure). The <span class="math inline">\(PON_R\)</span> was hydrolysed to <span class="math inline">\(DON_R\)</span>, which was mineralised to <span class="math inline">\(NH_4^+\)</span>. Deeper than 10 cm, the <span class="math inline">\(PON_R\)</span> concentration was stable over time. The <span class="math inline">\(DON_R\)</span> concentration was dependent on the flux to the water column.</p>
+<p>Although the influx of <span class="math inline">\(PON\)</span> was a far larger amount than the outflux of <span class="math inline">\(NH_4^+\)</span>, there was an overall loss of <span class="math inline">\(PON_R\)</span> in the upper 5 cm (Figures <a href="sediment-biogeochemistry.html#fig:dev-nutpics5">7.24</a> and <a href="sediment-biogeochemistry.html#fig:dev-nutpics6">7.25</a>). The <span class="math inline">\(PON_R\)</span> was hydrolysed to <span class="math inline">\(DON_R\)</span>, which was mineralised to <span class="math inline">\(NH_4^+\)</span>. Deeper than 10 cm, the <span class="math inline">\(PON_R\)</span> concentration was stable over time. The <span class="math inline">\(DON_R\)</span> concentration was dependent on the flux to the water column.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics5"></span>
-<img src="images/dev/sed_t_D_C_3N_zone_52.png" alt="Upper 25 cm of sediment over 50 days for zone 52." width="75%"><p class="caption">
-Figure 7.19: Upper 25 cm of sediment over 50 days for zone 52.
+<img src="images/dev/sed_t_D_C_3N_zone_52.png" alt="Time-concentration-depth figures for three major N species. Upper 25 cm of sediment over 50 days for zone 52." width="100%"><p class="caption">
+Figure 7.24: Time-concentration-depth figures for three major N species. Upper 25 cm of sediment over 50 days for zone 52.
 </p>
 </div>
 </div>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics6"></span>
-<img src="images/dev/sed_t_F_3Nzone_52.png" alt="Sediment-water interface fluxes for major N species." width="75%"><p class="caption">
-Figure 7.20: Sediment-water interface fluxes for major N species.
+<img src="images/dev/sed_t_F_3Nzone_52.png" alt="Sediment-water interface fluxes for major N species. The fluxes correspond to the concentration figures above." width="100%"><p class="caption">
+Figure 7.25: Sediment-water interface fluxes for major N species. The fluxes correspond to the concentration figures above.
 </p>
 </div>
 </div>
@@ -5547,13 +5412,12 @@ Figure 7.20: Sediment-water interface fluxes for major N species.
 <div id="nutrient-burial-1" class="section level4 unnumbered">
 <h4>Nutrient burial<a class="anchor" aria-label="anchor" href="#nutrient-burial-1"><i class="fas fa-link"></i></a>
 </h4>
-<p>The change in mass at the 5 cm depth over a year was very small (around 1%) for both lagoons and for both <span class="math inline">\(TN\)</span> and <span class="math inline">\(TP\)</span>. Using this definition of burial, very little of the nutrients were removed.<br>
-The concentration of adsorbed <span class="math inline">\(NH_4^+\)</span> and <span class="math inline">\(PO4^{3-}\)</span> was also a small percentage of TN and TP, and stayed constant over the course of the simulation (see, for example the figure below). It was not the case that adsorption was a major process for removing water column nutrients and locking them in the sediment. In the case of adsorbed <span class="math inline">\(PO4^{3-}\)</span>, the lack of change in concentration was due, in part, to the relatively low amount of Fe reduction in the sediment.</p>
+<p>The change in mass at the 5 cm depth over a year was very small (around 1%) for both lagoons and for both <span class="math inline">\(TN\)</span> and <span class="math inline">\(TP\)</span>. Using this definition of burial, very little of the nutrients were removed. The concentration of adsorbed <span class="math inline">\(NH_4^+\)</span> and <span class="math inline">\(PO4^{3-}\)</span> was also a small percentage of TN and TP, and stayed constant over the course of the simulation (see, for example, Figure <a href="sediment-biogeochemistry.html#fig:dev-nutpics7">7.26</a>). It was not the case that adsorption was a major process for removing water column nutrients and locking them in the sediment. In the case of adsorbed <span class="math inline">\(PO4^{3-}\)</span>, the lack of change in concentration was due, in part, to the relatively low amount of Fe reduction in the sediment.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics7"></span>
-<img src="images/dev/sed_t_D_C_pip_zone_52.png" alt="Adsorbed N and P in zone 52." width="75%"><p class="caption">
-Figure 7.21: Adsorbed N and P in zone 52.
+<img src="images/dev/sed_t_D_C_pip_zone_52.png" alt="Time-concentration-depth figures of adsorbed N and P in zone 52." width="95%"><p class="caption">
+Figure 7.26: Time-concentration-depth figures of adsorbed N and P in zone 52.
 </p>
 </div>
 </div>
@@ -5568,13 +5432,13 @@ Figure 7.21: Adsorbed N and P in zone 52.
 <div id="denitrification-1" class="section level4 unnumbered">
 <h4>Denitrification<a class="anchor" aria-label="anchor" href="#denitrification-1"><i class="fas fa-link"></i></a>
 </h4>
-<p>Little TN was lost through the denitrification reactions. Overall, conditions were not very favourable for denitrification, as the processes were either inhibited by <span class="math inline">\(O_2\)</span> and salinity from above, or <span class="math inline">\(H_2S\)</span> from below. In areas that lacked mixing due to low bioturbation and bioirrigation, <span class="math inline">\(NO_3^-\)</span> was not mixed into the upper sediment layers. Where denitrification did occur, it was through the deammonification pathway, rather than denitrousation (see the figure below). The denitrousation pathway is favoured by mixing labile organic matter deeper into the sediment, and so a low amount of organic matter and inhibited bioturbation made denitrousation unfavourable in this simulation.</p>
+<p>Little TN was lost through the denitrification reactions. Overall, conditions were not very favourable for denitrification, as the processes were either inhibited by <span class="math inline">\(O_2\)</span> and salinity from above, or <span class="math inline">\(H_2S\)</span> from below. In areas that lacked mixing due to low bioturbation and bioirrigation, <span class="math inline">\(NO_3^-\)</span> was not mixed into the upper sediment layers. Where denitrification did occur, it was through the deammonification pathway, rather than denitrousation (see Figure <a href="sediment-biogeochemistry.html#fig:dev-nutpics8">7.27</a>). The denitrousation pathway is favoured by mixing labile organic matter deeper into the sediment, and so a low amount of organic matter and inhibited bioturbation made denitrousation unfavourable in this simulation.</p>
 <p>The total mass of N converted to <span class="math inline">\(N_2\)</span> in each lagoon over the course of the simulation was around 10 g.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-nutpics8"></span>
-<img src="images/dev/sed_FO2-04.png" alt="Denitrification reactions in four zones across the lagoon." width="75%"><p class="caption">
-Figure 7.22: Denitrification reactions in four zones across the lagoon.
+<img src="images/dev/sed_FO2-04.png" alt="Denitrification reactions in four zones across the lagoon from north to south. The occurrence of the process of deammonification can be seen at around 10 to 20 cm." width="95%"><p class="caption">
+Figure 7.27: Denitrification reactions in four zones across the lagoon from north to south. The occurrence of the process of deammonification can be seen at around 10 to 20 cm.
 </p>
 </div>
 </div>
@@ -5583,11 +5447,11 @@ Figure 7.22: Denitrification reactions in four zones across the lagoon.
 <div id="integrated-tn-results" class="section level4 unnumbered">
 <h4>Integrated TN results<a class="anchor" aria-label="anchor" href="#integrated-tn-results"><i class="fas fa-link"></i></a>
 </h4>
-<p>Overall, most of the TN was in the form of <span class="math inline">\(PON_R\)</span>. In the upper 5 cm of the sediment the legacy <span class="math inline">\(PON_R\)</span> decayed to <span class="math inline">\(DON_R\)</span> and was fluxed out of the sediment. In the deeper layers, the <span class="math inline">\(PON_R\)</span> remained relatively constant. The sediment received a greater mass of <span class="math inline">\(PON_R\)</span> and <span class="math inline">\(PON_L\)</span> than it returned to the water column, so it was a source of <span class="math inline">\(NH_4^+\)</span> and <span class="math inline">\(DON_R\)</span> but a sink of TN. The major TN pathways and masses are given in the table below.</p>
+<p>Overall, most of the TN was in the form of <span class="math inline">\(PON_R\)</span>. In the upper 5 cm of the sediment the legacy <span class="math inline">\(PON_R\)</span> decayed to <span class="math inline">\(DON_R\)</span> and was fluxed out of the sediment. In the deeper layers, the <span class="math inline">\(PON_R\)</span> remained relatively constant. The sediment received a greater mass of <span class="math inline">\(PON_R\)</span> and <span class="math inline">\(PON_L\)</span> than it returned to the water column, so it was a source of <span class="math inline">\(NH_4^+\)</span> and <span class="math inline">\(DON_R\)</span> but a sink of TN. The major TN pathways and masses are given in Table <a href="sediment-biogeochemistry.html#tab:3dev-TotalTNa">7.11</a> and <a href="sediment-biogeochemistry.html#tab:3dev-TotalTNb">7.12</a>.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:3dev-TotalTNa">Table 7.12: </span>TN balance for the South Coorong Lagoon
+<span id="tab:3dev-TotalTNa">Table 7.11: </span>TN balance for the South Coorong Lagoon
 </caption>
 <thead><tr>
 <th style="text-align:center;">
@@ -5736,10 +5600,11 @@ NA
 </tbody>
 </table></div>
 </div>
+<p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:300px; overflow-x: scroll; width:600px; ">
 <div class="inline-table"><table class="table table-hover" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
-<span id="tab:3dev-TotalTNb">Table 7.13: </span>TN balance for the North Coorong Lagoon
+<span id="tab:3dev-TotalTNb">Table 7.12: </span>TN balance for the North Coorong Lagoon
 </caption>
 <thead><tr>
 <th style="text-align:center;">
@@ -5890,6 +5755,7 @@ NA
 </div>
 <p><br></p>
 <hr>
+<!-- install.packages("kableExtra", lib="C:/Program Files/R/R-4.2.0/library") --><!-- install.packages("knitr", lib="C:/Program Files/R/R-4.2.0/library") --><!-- install.packages("readxl", lib="C:/Program Files/R/R-4.2.0/library") --><!-- library(rmarkdown, lib.loc = "C:/Program Files/R/R-4.2.0/library") --><!-- install.packages("downlit") --><!-- library(knitr) --><!-- library(kableExtra) --><!-- library(readxl) --><!-- library(downlit) -->
 </div>
 </div>
 </div>
@@ -5933,7 +5799,7 @@ NA
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 14-June-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, D Paraska, S Zhai, B Busch, C Sims, M Gibbs. It was last built on 15-June-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
