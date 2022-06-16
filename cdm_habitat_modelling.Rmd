@@ -255,7 +255,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ```{r threshold-0, echo=FALSE, message=FALSE, warning=FALSE}
 theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 7)
-kbl(theSheet[,1:6], caption = "Suitability functions for *Ruppia* life stages based on past literature review and expert judgement. Note that HSI = 1 under optimal conditions, HSI = 0 under unsuitable conditions, and HSI for sub-optimal is linearly interpolated between these values.", align = "c",escape = F) %>%
+kbl(theSheet[,1:6], caption = "Environmental thresholds for *Ruppia* life-stages based on past literature review and expert judgement.", align = "c",escape = F) %>%
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(bootstrap_options = "basic",full_width = T,font_size = 10)
 #  scroll_box(fixed_thead = FALSE)
@@ -280,7 +280,7 @@ knitr::include_graphics("images/lagoon_habitat/eWater_HSI sexual.png")
 
 #### Generation II model
 
-The hydrodynamic-biogeochemical model TUFLOW-FV -- AED was used to simulate the hydrodynamic conditions (velocity, salinity, temperature and water level), water clarity (light and turbidity) and the potential for filamentous algae (nutrients and algae). Specifically, the HCHB Generation II model was applied, configured using the specification of AED parameters (...). The Coorong has a long residence time and to account for the longer timescales of water and solute flux, multi-year simulations must be performed. The habitat suitability functions for each environmental variable of each *Ruppia* life-stage were determined based on recent literature review, analyses of the HCHB survey data and expert judgement (Table \@ref(tab:timewindow-2) and Table \@ref(tab:threshold-2), Appendix X), and used for the calculation of HSI for each life-stage (Equation \@ref(eq:hab1) and Equation \@ref(eq:hab2)). The HSI for each life-stage were integrated into
+The hydrodynamic-biogeochemical model TUFLOW-FV -- AED was used to simulate the hydrodynamic conditions (velocity, salinity, temperature and water level), water clarity (light and turbidity) and the potential for filamentous algae (nutrients and algae). Specifically, the HCHB Generation II model was applied, configured using the specification of AED parameters (...). The Coorong has a long residence time and to account for the longer timescales of water and solute flux, multi-year simulations must be performed. The habitat suitability functions for each environmental variable of each *Ruppia* life-stage were determined based on recent literature review, analyses of the HCHB survey data and expert judgement (Table \@ref(tab:timewindow-2), Table \@ref(tab:threshold-2), Appendix C), and used for the calculation of HSI for each life-stage (Equation \@ref(eq:hab1) and Equation \@ref(eq:hab2)). The HSI for each life-stage were integrated into
 
 -   An overall HSI sexual, representing the integrated habitat suitability for *Ruppia* to complete its annual life cycle by reproducing sexually, i.e., flowering, which includes i) emerging in autumn, either from germination from seed or sprouting from viable turions that survived the summer; ii) vegetative growth to adult plants in winter; and iii) successful flowering and producing seed in spring; or
 
@@ -314,7 +314,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ```{r threshold-2, echo=FALSE, message=FALSE, warning=FALSE}
 theSheet <- read_excel('tables/habitat/AllTables.xlsx', sheet = 8)
-kbl(theSheet[,1:6], caption = "Suitability functions for *Ruppia* life stages based on recent literature review, HCHB survey data and expert judgement. Note that HSI = 1 under optimal conditions, HSI = 0 under unsuitable conditions, and HSI for sub-optimal is linearly interpolated between these values. Refer to Section 8.1.3.1 and Appendix X for more details on each function and rationale.", align = "c",escape = F) %>%
+kbl(theSheet[,1:6], caption = "Environmental thresholds for *Ruppia* life-stages based on recent literature review, HCHB survey data and expert judgement. Refer to Section 8.1.3.1 and Appendix C for more details on each function and rationale.", align = "c",escape = F) %>%
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(bootstrap_options = "basic",full_width = T,font_size = 10)
 #  scroll_box(fixed_thead = FALSE)
@@ -431,7 +431,7 @@ knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2020.png")
 <br>
 
 
-**iv.Field turion count Sep 2020 (obs) vs. HSI asexual Oct 2020 (model)**
+**iv. Field turion count Sep 2020 (obs) vs. HSI asexual Oct 2020 (model)**
 
 Average number of *Ruppia* turion (type I and II) per square meter recorded in Sep - Dec 2020 (reproductive period) were compared with overall HSI for asexual reproduction up to end of Oct in the same year (Figure \@ref(fig:hchb-turion2020map) and \@ref(fig:hchb-turion2020)). The Gen II model update has significantly improved validation scores compared to the Gen 0 model due to a major change in salinity threshold parameter. The overall distribution of turions agreed with model prediction in that more turions were found around the middle lagoon and northern end of south lagoon, where HSI were highest. 
 
@@ -440,7 +440,7 @@ Average number of *Ruppia* turion (type I and II) per square meter recorded in S
 knitr::include_graphics("images/lagoon_habitat/turion2020_asexual2020_map.png")
 ```
 
-```{r hchb-turion2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* turion count per square meter in Sep – Dec 2020 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
+```{r hchb-turion2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* turion count per square meter in Sep – Dec 2020 versus HSI model output for overall asexual reproduction integrated over Jan - Oct 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions."}
 
 knitr::include_graphics("images/lagoon_habitat/turion2020_asexual2020.png")
 ```
