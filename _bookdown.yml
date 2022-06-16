@@ -15,10 +15,7 @@ rmd_files: ["index.Rmd",
             "cdm_references.Rmd",
             "appendix_a.Rmd",
             "appendix_b.Rmd",
-            "appendix_HSI_functions.Rmd",
-            "appendix_Ruppia_model_assessment_historical.Rmd",
-            "appendix_Ruppia_model_assessment_hchb_v1.Rmd",
-            "appendix_Ruppia_model_assessment_hchb_v2.Rmd",]
+            "appendix_c.Rmd",]
 new_session: no
 
            #"development_and_testing.Rmd",
