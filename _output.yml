@@ -27,3 +27,5 @@ bookdown::bs4_book:
   css: css/style.css
   theme:
     primary: "#637238"
+  includes:
+    after_body: js/imgZoom.html
