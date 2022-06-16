@@ -1950,7 +1950,15 @@ These results show the promise of the model and give direction to focus areas fo
 
 </div>
 </div>
-  <div class="chapter-nav">
+<script>
+var img = document.body.getElementsByTagName("img");
+var i = 0;
+while (i < img.length) {
+    img[i].setAttribute("data-action", "zoom");
+    i++;
+}
+</script><script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script><link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">
+<div class="chapter-nav">
 <div class="prev"><a href="habitat-modelling.html"><span class="header-section-number">8</span> Habitat Modelling</a></div>
 <div class="next"><a href="references.html">References</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
