@@ -61,6 +61,10 @@ fig:dev-pic11
 tab:6-malgpars
 fig:dev-pic12
 fig:dev-pic13
+fig:dev-pic14
+fig:dev-pic15
+fig:dev-pic16
+fig:dev-pic17
 fig:dev-pic00
 eq:biogeochem1
 fig:dev-pics3
