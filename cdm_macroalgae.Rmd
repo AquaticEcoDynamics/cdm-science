@@ -109,20 +109,23 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary
 
 **Historical Monitoring** A summary of historical (pre 2020) *Filamentous Algae* monitoring locations are shown in Figure \@ref(fig:dev-pic10).
 
-```{r dev-pic10, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 4.3. Turquoise outline represents the model boundary."}
 
-knitr::include_graphics(c("images/dev/3_picture10a.png","images/dev/3_picture10b.png"))
+```{r dev-pic10, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
+
+knitr::include_graphics(c("images/dev/algaesites_May2017.png","images/dev/algaesites_Dec2016.png"))
 
 ```
 
 
 **HCHB Monitoring** A summary of the HCHB monitoring locations are shown in Figure \@ref(fig:dev-pic11).
 
-```{r dev-pic11, echo = FALSE, out.width='45%', class = "text-image",fig.align='center', fig.cap = "Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 4.4. Turquoise outline represents the model boundary."}
+```{r dev-pic11, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
 
-knitr::include_graphics("images/dev/3_picture11.png")
+knitr::include_graphics(c("images/dev/algaesites_Sep2020.png","images/dev/algaesites_Mar2021.png","images/dev/algaesites_Sep2020.png"))
 
 ```
+
+
 
 ## Model setup
 
@@ -216,6 +219,26 @@ knitr::include_graphics("images/dev/Algae_2016.png")
 
 ```
 
+The Gen II model results were compared with HCHB survey data in 2020 - 2021.  
+```{r dev-pic14, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
+
+knitr::include_graphics("images/dev/algae_biomass_2020_map.png")
+```
+
+```{r dev-pic15, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel)."}
+
+knitr::include_graphics("images/dev/algae_biomass_2020.png")
+
+```
+```{r dev-pic16, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021."}
+
+knitr::include_graphics("images/dev/algae_biomass_2021_map.png")
+```
+
+```{r dev-pic17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel)."}
+
+knitr::include_graphics("images/dev/algae_biomass_2021.png")
+```
 
 ## Summary (Sept 2021)
 
