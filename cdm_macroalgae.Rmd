@@ -110,9 +110,10 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary
 **Historical Monitoring** A summary of historical (pre 2020) *Filamentous Algae* monitoring locations are shown in Figure \@ref(fig:dev-pic10).
 
 
-```{r dev-pic10, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
+```{r dev-pic10, echo = FALSE, out.width='50%', fig.show='hold',fig.align='default', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
 
-knitr::include_graphics(c("images/dev/algaesites_May2017.png","images/dev/algaesites_Dec2016.png"))
+knitr::include_graphics("images/dev/algaesites_May2017.png")
+knitr::include_graphics("images/dev/algaesites_Dec2016.png")
 
 ```
 
@@ -242,7 +243,7 @@ knitr::include_graphics("images/dev/Algae_2016.png")
 ```
 
 The Gen II model results were compared with HCHB survey data in 2020 - 2021.  
-```{r dev-pic14, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
+```{r dev-pic14, echo = FALSE, out.width='100%', fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
 
 knitr::include_graphics("images/dev/algae_biomass_2020_map.png")
 ```
