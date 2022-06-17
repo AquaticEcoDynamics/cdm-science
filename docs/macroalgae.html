@@ -257,6 +257,654 @@ Figure 6.3: Filamentous algae sampling sites for the HCHB program (T and I 2). A
 <span class="header-section-number">6.4</span> Model setup<a class="anchor" aria-label="anchor" href="#model-setup-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>Four pools were confgured to simulate the biomass of filamentous algae, <span class="math inline">\(ulva_a\)</span>, <span class="math inline">\(ulva_b\)</span>, <span class="math inline">\(ulva_c\)</span> and <span class="math inline">\(ulva_s\)</span>. The parameters used in the setup are outlined in Table (Table <a href="macroalgae.html#tab:6-malgpars">6.2</a>).</p>
+<pre><code>## [1] "Parameter1"
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 10        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.2       
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 50        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 2.4       
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 18        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 23        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 35        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 100       
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.00408   
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.025     
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.04      
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.3       
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 -1        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 28        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 10        
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.02      
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 1.786     
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.16      
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.069     
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.18      
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.069     
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.0064    
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.2526    
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.002976  
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.0015    
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.0096    
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0.0031    
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter1
+##   &lt;chr&gt;     
+## 1 0         
+## [1] "Parameter2"
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 10        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.2       
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 50        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 1.8       
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 20        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 26        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 38        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 100       
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.0051    
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.025     
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.08      
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.3       
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 -1        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 60        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 20        
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.071     
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 2.143     
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.151     
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.054     
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.054     
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.032     
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.0064    
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.3226    
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.0028086 
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.0015    
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.0096    
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0.0031    
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter2
+##   &lt;chr&gt;     
+## 1 0         
+## [1] "Parameter3"
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 10        
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.2       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 50        
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 3.1       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 18        
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 28        
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 39        
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 100       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.00408   
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.025     
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.02      
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.3       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 -2        
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 200       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 60        
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.02      
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 1.786     
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.069     
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.18      
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.069     
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.0064    
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.2426    
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.00186   
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.0015    
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.0096    
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0.0031    
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter3
+##   &lt;chr&gt;     
+## 1 0         
+## [1] "Parameter4"
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 10        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.2       
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 50        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 2.1       
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 18        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 25        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 32        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 100       
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.0048    
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.025     
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.095     
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 1.08      
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.3       
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 -3        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.1       
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 90        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 40        
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.071     
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 2.4       
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.167     
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.069     
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.206     
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.206     
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 1         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.0064    
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.36      
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.0031062 
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.0015    
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.0096    
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0.0031    
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0         
+## # A tibble: 1 × 1
+##   Parameter4
+##   &lt;chr&gt;     
+## 1 0</code></pre>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4600px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -588,16 +1236,16 @@ specific attenuation coefficient
 <span class="math display">\[\small{/m/(mmol\:C/m^2)}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-4.0800000000000003E-3
+0.00408
 </td>
 <td style="text-align:left;min-width: 5em; ">
-5.1000000000000004E-3
+0.0051
 </td>
 <td style="text-align:left;min-width: 5em; ">
-4.0800000000000003E-3
+0.00408
 </td>
 <td style="text-align:left;min-width: 5em; ">
-4.7999999999999996E-3
+0.0048
 </td>
 </tr>
 <tr>
@@ -611,16 +1259,16 @@ fraction of primary production lost to exudation
 <span class="math display">\[\small{-}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-2.5000000000000001E-2
+0.025
 </td>
 <td style="text-align:left;min-width: 5em; ">
-2.5000000000000001E-2
+0.025
 </td>
 <td style="text-align:left;min-width: 5em; ">
-2.5000000000000001E-2
+0.025
 </td>
 <td style="text-align:left;min-width: 5em; ">
-2.5000000000000001E-2
+0.025
 </td>
 </tr>
 <tr grouplength="5">
@@ -648,7 +1296,7 @@ phytoplankton respiration/metabolic loss rate at <span class="math inline">\(20^
 0.02
 </td>
 <td style="text-align:left;min-width: 5em; ">
-9.5000000000000001E-2
+0.095
 </td>
 </tr>
 <tr>
@@ -882,13 +1530,13 @@ external <span class="math inline">\(DIN\)</span> concentration below which upta
 0.02
 </td>
 <td style="text-align:left;min-width: 5em; ">
-7.0999999999999994E-2
+0.071
 </td>
 <td style="text-align:left;min-width: 5em; ">
 0.02
 </td>
 <td style="text-align:left;min-width: 5em; ">
-7.0999999999999994E-2
+0.071
 </td>
 </tr>
 <tr>
@@ -905,7 +1553,7 @@ half-saturation concentration of nitrogen
 1.786
 </td>
 <td style="text-align:left;min-width: 5em; ">
-2.1429999999999998
+2.143
 </td>
 <td style="text-align:left;min-width: 5em; ">
 1.786
@@ -934,7 +1582,7 @@ constant internal nitrogen concentration
 0.1
 </td>
 <td style="text-align:left;min-width: 5em; ">
-0.16700000000000001
+0.167
 </td>
 </tr>
 <tr>
@@ -948,16 +1596,16 @@ minimum internal nitrogen concentration
 <span class="math display">\[\small{mmol\: N/m^3}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.9000000000000006E-2
+0.069
 </td>
 <td style="text-align:left;min-width: 5em; ">
-5.3999999999999999E-2
+0.054
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.9000000000000006E-2
+0.069
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.9000000000000006E-2
+0.069
 </td>
 </tr>
 <tr>
@@ -974,13 +1622,13 @@ maximum internal nitrogen concentration
 0.18
 </td>
 <td style="text-align:left;min-width: 5em; ">
-5.3999999999999999E-2
+0.054
 </td>
 <td style="text-align:left;min-width: 5em; ">
 0.18
 </td>
 <td style="text-align:left;min-width: 5em; ">
-0.20599999999999999
+0.206
 </td>
 </tr>
 <tr>
@@ -994,16 +1642,16 @@ maximum nitrogen uptake rate
 <span class="math display">\[\small{mmol\: N/m^3/d\: /(mmol\: C/m^3)}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.9000000000000006E-2
+0.069
 </td>
 <td style="text-align:left;min-width: 5em; ">
-3.2000000000000001E-2
+0.032
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.9000000000000006E-2
+0.069
 </td>
 <td style="text-align:left;min-width: 5em; ">
-0.20599999999999999
+0.206
 </td>
 </tr>
 <tr grouplength="8">
@@ -1068,16 +1716,16 @@ external <span class="math inline">\(DIP\)</span> concentration below which upta
 <span class="math display">\[\small{mmol\: P/m^3}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.4000000000000003E-3
+0.0064
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.4000000000000003E-3
+0.0064
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.4000000000000003E-3
+0.0064
 </td>
 <td style="text-align:left;min-width: 5em; ">
-6.4000000000000003E-3
+0.0064
 </td>
 </tr>
 <tr>
@@ -1091,13 +1739,13 @@ half-saturation concentration of phosphorus
 <span class="math display">\[\small{mmol\: P/m^3}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-0.25259999999999999
+0.2526
 </td>
 <td style="text-align:left;min-width: 5em; ">
 0.3226
 </td>
 <td style="text-align:left;min-width: 5em; ">
-0.24260000000000001
+0.2426
 </td>
 <td style="text-align:left;min-width: 5em; ">
 0.36
@@ -1114,16 +1762,16 @@ constant internal phosphorus concentration
 <span class="math display">\[\small{mmol\: P/m^3}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-2.9759999999999999E-3
+0.002976
 </td>
 <td style="text-align:left;min-width: 5em; ">
-2.8086000000000001E-3
+0.0028086
 </td>
 <td style="text-align:left;min-width: 5em; ">
-1.8600000000000001E-3
+0.00186
 </td>
 <td style="text-align:left;min-width: 5em; ">
-3.1061999999999999E-3
+0.0031062
 </td>
 </tr>
 <tr>
@@ -1137,16 +1785,16 @@ minimum internal phosphorus concentration
 <span class="math display">\[\small{mmol\: P/m^3}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-1.5E-3
+0.0015
 </td>
 <td style="text-align:left;min-width: 5em; ">
-1.5E-3
+0.0015
 </td>
 <td style="text-align:left;min-width: 5em; ">
-1.5E-3
+0.0015
 </td>
 <td style="text-align:left;min-width: 5em; ">
-1.5E-3
+0.0015
 </td>
 </tr>
 <tr>
@@ -1160,16 +1808,16 @@ maximum internal phosphorus concentration
 <span class="math display">\[\small{mmol\: P/m^3}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-9.5999999999999992E-3
+0.0096
 </td>
 <td style="text-align:left;min-width: 5em; ">
-9.5999999999999992E-3
+0.0096
 </td>
 <td style="text-align:left;min-width: 5em; ">
-9.5999999999999992E-3
+0.0096
 </td>
 <td style="text-align:left;min-width: 5em; ">
-9.5999999999999992E-3
+0.0096
 </td>
 </tr>
 <tr>
@@ -1183,16 +1831,16 @@ maximum phosphorus uptake rate
 <span class="math display">\[\small{mmol\: P/m^3/d\: /(mmol\: C/m^3)}\]</span>
 </td>
 <td style="text-align:left;min-width: 5em; ">
-3.0999999999999999E-3
+0.0031
 </td>
 <td style="text-align:left;min-width: 5em; ">
-3.0999999999999999E-3
+0.0031
 </td>
 <td style="text-align:left;min-width: 5em; ">
-3.0999999999999999E-3
+0.0031
 </td>
 <td style="text-align:left;min-width: 5em; ">
-3.0999999999999999E-3
+0.0031
 </td>
 </tr>
 <tr>
