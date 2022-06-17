@@ -257,16 +257,18 @@ knitr::include_graphics("images/dev/algae_biomass_2020_map.png")
 knitr::include_graphics("images/dev/algae_biomass_2020.png")
 
 ```
+
 ```{r dev-pic16, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021."}
 
 knitr::include_graphics("images/dev/algae_biomass_2021_map.png")
 ```
 
-```{r dev-pic17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel)."}
+
+```{r dev-pic17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). "}
 
 knitr::include_graphics("images/dev/algae_biomass_2021.png")
 ```
 
-## Summary (Sept 2021)
+## Summary 
 
 The macroalgae model in AED is able to capture the broad spatial patterns in environmental drivers that control biomass. Comparison of the Generation 0 model with the pre-HCHB survey data has provided insights to the suitability of the model approach. This is being used to refine the conceptual basis of the model which will be introduced in the next model versions.
