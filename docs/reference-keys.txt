@@ -21,15 +21,16 @@ fig:cdm-plottfvtransect
 fig:cdm-stackedarea
 fig:cdm-nutrientbudget
 fig:dev-sites
+fig:dev-ssarea
+eq:lagoonhabitat4
 eq:lagoonhabitat1
 eq:lagoonhabitat2
 eq:lagoonhabitat3
-eq:lagoonhabitat4
 tab:dev-wavepars
 fig:dev-pic101
-fig:dev-pic2
 fig:dev-pic3
 fig:dev-pic4
+fig:dev-pic2
 fig:water-oxy1
 fig:water-sal1
 eq:watereq1
@@ -245,11 +246,13 @@ resuspension-turbidity
 overview-1
 model-approach
 swan-wave-model-simulation
+suspended-solids-and-resuspension
 suspended-solids-and-light
 resuspension
 validation-and-assessment
-lagoon-scale-predictions
-summary-sept-2021
+wave-characteristics
+lagoon-scale-turbidity
+summary
 oxygen-nutrients-chlorophyll-a
 overview-2
 dissolved-oxygen
@@ -265,7 +268,7 @@ background-2
 model-setup-phytoplankton
 model-setup-microphytobenthos
 model-results-2
-summary
+summary-1
 macroalgae
 overview-3
 model-approach-1
@@ -277,7 +280,7 @@ environmental-threshold-parameter-review
 algae-extent-within-the-lagoon
 model-setup-2
 validation-and-assessment-1
-summary-sept-2021-1
+summary-sept-2021
 sediment-biogeochemistry
 overview-4
 model-approach-candi-aed
@@ -302,7 +305,7 @@ model-application
 generation-0-model
 generation-ii-model
 model-results-and-assessment
-summary-1
+summary-2
 habitat-modelling---fish
 overview-6
 model-description-fish-hsi
@@ -323,4 +326,4 @@ nutrient-budget-assessment
 environmental-response-function-erf-analysis
 habitat-condition-assessment
 coorong-decision-making-framework
-summary-2
+summary-3
