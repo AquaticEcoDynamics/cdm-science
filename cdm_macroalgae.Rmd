@@ -133,7 +133,31 @@ library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
+
+# function to fix floating point decimals
+# df = dataframe to fix
+# colNames = list() of colummns to fix
+fixDecimals <- function(df, colNames){
+  for(i in colNames){
+    print(i)
+    for(ii in 1:NROW(df[,i])){
+      currentVal <- df[ii,i]
+      currentVal <- as.numeric(currentVal)
+      if(!is.na(currentVal)==TRUE){
+        newVal <- as.character(currentVal)
+        df[ii,i] <- newVal
+        print(df[ii,i])
+      } 
+    }
+  }
+  return(df)
+}
+
 theSheet <- read_excel('tables/macroalgae_parameters.xlsx', sheet = 1)
+theSheet <- fixDecimals(
+  df = theSheet, 
+  colNames = list("Parameter1","Parameter2","Parameter3","Parameter4")
+  )
 theSheet <- theSheet[theSheet$Table == "Parameter",]
 theSheetGroups <- unique(theSheet$Group)
 
