@@ -68,7 +68,11 @@ The algal biomass of each group, $PHY_C$, is simulated in units of carbon ($mmol
 
 ### Environmental threshold parameter review
 
-*To be completed*
+•	For salinities from 35—90 ppt, an optimum temperature for the Ulva paradoxa filamentous green algal community was 30°C, that is the temperature where the relationship between weight gain is the most positive (Waycott et al. 2019).
+•	At salinities of 30 - 140 ppt, weight change decreases as salinity increase. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures (Waycott et al. 2019).
+•	At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability (Collier et al. 2017 cited in Asanopoulos and Waycott 2020).
+
+
 
 ### Algae extent within the lagoon
 
@@ -89,7 +93,7 @@ for(i in seq_along(theSheet$Identifier)){
     theSheet$Identifier[i] <- " "
   }
 }
-kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary", align = "l",) %>%
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary", align = "l",escape=F) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
@@ -110,9 +114,9 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary
 **Historical Monitoring** A summary of historical (pre 2020) *Filamentous Algae* monitoring locations are shown in Figure \@ref(fig:dev-pic10).
 
 
-```{r dev-pic10, echo = FALSE, out.width='50%', fig.show='hold',fig.align='default', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
+```{r dev-pic10, echo = FALSE, out.width='50%', class = "text-image", fig.show='hold',fig.align='default', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
 
-knitr::include_graphics("images/dev/algaesites_May2017.png")
+knitr::include_graphics("images/dev/algaesites-may2017.png")
 knitr::include_graphics("images/dev/algaesites_Dec2016.png")
 
 ```
@@ -243,7 +247,7 @@ knitr::include_graphics("images/dev/Algae_2016.png")
 ```
 
 The Gen II model results were compared with HCHB survey data in 2020 - 2021.  
-```{r dev-pic14, echo = FALSE, out.width='100%', fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
+```{r dev-pic14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
 
 knitr::include_graphics("images/dev/algae_biomass_2020_map.png")
 ```
