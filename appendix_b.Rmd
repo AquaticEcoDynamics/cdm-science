@@ -23,7 +23,7 @@ The calculations of statistical metrics was performed for each site where the nu
 .tab button {
   background-color: #2481AA;
   float: left;
-  width: 20%;
+  width: 16.6667%;
   border: none;
   outline: none;
   cursor: pointer;
@@ -43,6 +43,7 @@ The calculations of statistical metrics was performed for each site where the nu
   <button class="tablinks" onclick="opentab(event, 'GEN15')">GEN 1.5</button>
   <button class="tablinks" onclick="opentab(event, 'GEN2')">GEN 2</button>
   <button class="tablinks" onclick="opentab(event, 'MULTI')">MULTI</button>
+  <button class="tablinks" onclick="opentab(event, 'WAVE')">WAVE</button>
 </div>
 
 
@@ -178,6 +179,30 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 </p>
 </div>
 
+<div id="WAVE" class="tabcontent">
+<p> 
+HCHB *Wave Comparisons*
+
+```{r A-waveanalysis, echo=FALSE, message=FALSE, warning=FALSE}
+libratheSheet_Names <- list.files(path = "HTML/WAVES/HTML", pattern = NULL, all.files = FALSE,
+           full.names = FALSE, recursive = FALSE,
+           ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
+
+theSheet <- paste("<",'a href="HTML/WAVES/HTML/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
+
+
+
+kbl(theSheet, caption = "Generation 1.5 Wave Analysis", align = "l",escape = F,col.names = 'Generation 1.5', ) %>%
+
+row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
+  kable_styling(full_width = T,font_size = 10) %>%
+    scroll_box(fixed_thead = FALSE)
+
+```
+</p>
+</div>
+
+
 
 <script>
 function opentab(evt, tabName) {
@@ -280,12 +305,9 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 11) %>%
   scroll_box(fixed_thead = FALSE)
 ```
-<br>
 
 
-
-
-
+HCHB *FSED Sensitivity*
 
 ```{r A-nutsen, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -301,7 +323,6 @@ theSheet_Names <- list.files(path = "HTML/Sed_Nut_flux_sensitivity", pattern = N
 
 theSheet <- paste("<",'a href="HTML/Sed_Nut_flux_sensitivity/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
 
-#theSheet <- append(theSheets,'Nutrient Sensitivity',0)
 
 
 kbl(theSheet, caption = "Model results for nutrient flux sensitivity tests", align = "l",escape = F,col.names = 'Nutrient Sensitivity', ) %>%
@@ -310,4 +331,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
 ```
+
+
+
 
