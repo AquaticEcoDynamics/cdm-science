@@ -139,14 +139,12 @@ library(rmarkdown)
 # colNames = list() of colummns to fix
 fixDecimals <- function(df, colNames){
   for(i in colNames){
-    print(i)
     for(ii in 1:NROW(df[,i])){
       currentVal <- df[ii,i]
       currentVal <- as.numeric(currentVal)
       if(!is.na(currentVal)==TRUE){
         newVal <- as.character(currentVal)
         df[ii,i] <- newVal
-        print(df[ii,i])
       } 
     }
   }
