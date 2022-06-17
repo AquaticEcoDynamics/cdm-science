@@ -163,10 +163,10 @@ library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
-theSheet_Names <- list.files(path = "HTML/Performance/GEN2/HTML", pattern = NULL, all.files = FALSE,
+theSheet_Names <- list.files(path = "HTML/Performance/MULTI/HTML", pattern = NULL, all.files = FALSE,
            full.names = FALSE, recursive = FALSE,
            ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE)
-theSheet <- paste("<",'a href="HTML/Performance/GEN2/HTML/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
+theSheet <- paste("<",'a href="HTML/Performance/MULTI/HTML/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
 #theSheet <- append(theSheets,'Validation 2013 2016',0)
 
 kbl(theSheet, caption = "Comparison of Model Generations 1, 1.5 & 2", align = "l",escape = F,col.names = 'Model Comparison 2017 2022', ) %>%
