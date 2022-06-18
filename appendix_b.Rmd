@@ -185,7 +185,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 HCHB *Wave Comparisons*
 
 ```{r A-testing6, echo=FALSE, message=FALSE, warning=FALSE}
-  library(knitr)
+library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
