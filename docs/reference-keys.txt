@@ -177,8 +177,8 @@ tab:A-testing
 tab:A-testing1
 tab:A-testing2
 tab:A-testing3
-tab:A-testing4
-tab:A-waveanalysis
+tab:A-testing5
+tab:A-testing6
 tab:A-sentbl2
 tab:A-sentbl
 tab:A-nutsen
