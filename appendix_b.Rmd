@@ -41,9 +41,9 @@ The calculations of statistical metrics was performed for each site where the nu
   <button class="tablinks" onclick="opentab(event, 'GEN0')"id="defaultOpen">GEN 0</button>
   <button class="tablinks" onclick="opentab(event, 'GEN1')">GEN 1</button>
   <button class="tablinks" onclick="opentab(event, 'GEN15')">GEN 1.5</button>
-  <button class="tablinks" onclick="opentab(event, 'GEN2')">GEN 2</button>
   <button class="tablinks" onclick="opentab(event, 'MULTI')">MULTI</button>
   <button class="tablinks" onclick="opentab(event, 'WAVE')">WAVE</button>
+   <button class="tablinks" onclick="opentab(event, 'GEN2')">GEN 2</button>
 </div>
 
 
