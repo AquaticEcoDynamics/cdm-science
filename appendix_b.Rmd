@@ -157,7 +157,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 <div id="MULTI" class="tabcontent">
 <p> 
-HCHB *Wave Comparisons*
+HCHB *Model Comparisons*
 
 ```{r A-testing4, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
