@@ -236,10 +236,10 @@ management-challenges
 need-for-an-integrated-model-to-support-coorong-management
 prior-modelling
 knowledge-gaps-and-development-needs
-aims-and-scope
 modelling-development-rationale
 known-gaps-and-model-limitations
 development-focus-and-integration-with-hchb-research-and-monitoring
+scope-of-this-document
 cdm-the-coorong-dynamics-model
 overview
 model-platform
