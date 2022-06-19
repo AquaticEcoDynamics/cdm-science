@@ -76,7 +76,7 @@ The algal biomass of each group, $PHY_C$, is simulated in units of carbon ($mmol
 
 ### Algae extent within the lagoon
 
-A summary of the available algale extent data is summarised in Table X.
+A summary of the available algal extent data is summarised in Table X.
 
 ```{r 3-malgtable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
