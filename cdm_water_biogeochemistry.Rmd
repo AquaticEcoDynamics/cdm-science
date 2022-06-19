@@ -383,9 +383,6 @@ knitr::include_graphics("images/dev/water/salinity_phytoplankton.jpg")
 
 ```
 
-
-
-
 Direct measurements for other group-specific physiological rates and parameters are not yet available for the Coorong, and so the current version of the model relies on prior experience and relevant literature to set the other key parameters shown in Table \@ref(tab:5-phytopars) for each group, such as the sedimentation rate, nutrient stoichiometry and light sensitivity. 
 
 
