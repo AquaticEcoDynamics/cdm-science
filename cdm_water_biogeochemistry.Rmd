@@ -64,7 +64,7 @@ knitr::include_graphics("images/dev/water/oxygen_metabolism_mcgrath.png")
 
 #### Long-term oxygen predictions {.unnumbered}
 
-The predictions of oxygen concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in Appendix B.
+The predictions of oxygen concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in [Appendix B : Results Archive].
 
 <br>
 
@@ -230,7 +230,7 @@ A summary of the overall model parameters used within the CDM simulations relate
 
 ### Model results
 
-A summary of the model performance for several nutrient variables is shown in Figure \@ref(fig:water-nut1), for a wet and dry period in 2018-2019. The results show the gradient along the lagoon, and also the very low concentrations of bio-available nutrient fractions within the total pool. Further results of the nutrient variables are reported in the integrated assessment of the model in Chapter 9. The predictions of nutrient concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in Appendix B.
+A summary of the model performance for several nutrient variables is shown in Figure \@ref(fig:water-nut1), for a wet and dry period in 2018-2019. The results show the gradient along the lagoon, and also the very low concentrations of bio-available nutrient fractions within the total pool. Further results of the nutrient variables are reported in the integrated assessment of the model in Chapter 9. The predictions of nutrient concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in [Appendix B : Results Archive].
 
 
 ```{r water-nut1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Performance of predicted nutrient concentrations along the length of the Coorong. The observed (field) data is from available monitoring over the period of a dry season (left) and wet season (right), presented as a box-whisker plot for each site based on all data available for that site within that period."}
