@@ -11,7 +11,7 @@ Sediments in aquatic systems are resuspended into the water column when the bott
 
 In order to capture the role of wind-driven waves on water column suspended solids and organic matter concentrations within the Coorong, the SWAN wave model was applied. The wave model predicts the spatial pattern of significant wave height and wave periods and the output is used by the TUFLOW-FV model for modelling shear stress at the seabed as affected by orbital wave velocities. Depending on the sediment particle sizes, the combined stress from the wave and current activity is used to predict the rate of sediment resuspension. Capturing sediment resuspension in the Coorong is critical to predict the turbidity fo the water which shapes the underlying light climate that shapes the dynamics of primary producers.
 
-The settings of the wave model and the particle properties such resuspension rates and settling rates are described below. Some wave data are available from experimental work undertaken in 2020 at sites of Policeman Point and Villa de Yampa (Mosley et al., 2021, site map available in Figure 4.1). Turbidity data are available as part of the regular monitoring program and as part of HCHB research at multiple sites along the Coorong. These data are used for calibration purposes and the results are presented and discussed in the following sections. 
+The settings of the wave model and the particle properties such resuspension rates and settling rates are described below. Some wave data are available from experimental work undertaken in 2020 at sites of Policeman Point and Villa de Yampa (Mosley et al., 2021; site map available in Figure \@ref(fig:dev-sites)). Turbidity data is also available as part of the regular monitoring program and as part of HCHB research at multiple sites along the Coorong. These data are used for calibration purposes and the results are presented and discussed in the following sections. 
 
 <br>
 
@@ -19,7 +19,7 @@ The settings of the wave model and the particle properties such resuspension rat
 
 ### SWAN wave model simulation
 
-The SWAN wave model was adopted using a Cartesian grid with 200 m resolution, and the third generation simulation mode. The wave model domain covers the CDM domain (Figure 4.1) therefore the wave outputs can be linked with CDM for resuspension simulations. The model was initially forced with the Narrung weather station data and the water depth was interpolated from the existing (2008) Coorong bathymetry data. Wind data at the wave measurement site was also integrated in the wind forcing dataset for the period of field experiments when it was available.
+The SWAN wave model was adopted using a Cartesian grid with 200 m resolution, and the third generation simulation mode. The wave model domain covers the CDM domain (Figure \@ref(fig:dev-sites)) therefore the wave outputs can be linked with CDM for resuspension simulations. The model was initially forced with the Narrung weather station data and the water depth was interpolated from the existing (2008) Coorong bathymetry data. Wind data at the wave measurement site was also integrated in the wind forcing dataset for the period of field experiments when it was available.
 
 ```{r dev-sites, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Model extents for SWAN Wave Model and the TFV domains, with validation sites."}
 
@@ -29,7 +29,7 @@ knitr::include_graphics("images/dev/HCHB SWAN Extents.png")
 
 ### Sediment solids and resuspension
 
-The field observations of the total suspension solids (TSS) composition showed that the TSS was mostly dominated by the small size particles (<3.8 microns) during the observation periods, while large size particles (186 – 461 microns) may periodically become dominant (Figure 4.2). Based on these observations, the AED component of the simulation has been configured to include upto three suspended solids (SS) groups, namely:
+The field observations of the total suspension solids (TSS) composition showed that the TSS was mostly dominated by the small size particles (<3.8 microns) during the observation periods, while large size particles (186 – 461 microns) may periodically become dominant (Figure \@ref(fig:dev-ssarea)). Based on these observations, the AED component of the simulation has been configured to include upto three suspended solids (SS) groups, namely:
 
  - clay, for suspended particles with size < 3.8 microns;
  - silt, for suspended particles with 3.8 microns ≤ size < 186 microns; and
