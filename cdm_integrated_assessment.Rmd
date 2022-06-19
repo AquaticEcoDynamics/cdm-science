@@ -4,12 +4,12 @@
 
 ## Overview
 
-The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled model, against the complete dataset. The approach to assess the model loosely follows the CSPS framework of Hipsey et al (2020). The framework considers: 
+The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled model, against the complete dataset. The approach to assess the model loosely follows the CSPS framework of Hipsey et al. (2020). The framework considers: 
 
-- Level 0: conceptual evaluation; the conceptual diagrams for each of the water quality variables, biogeochemical reactions, and habitat modelling are based on the scientific review and data inspection as detailed in the previous chapters;
-- Level 1: simulated state variables; a range of metrics is used for a large number of predicted variable and different sites.
-- Level 2: process rates; and 
-- Level 3: system-level patterns and emergent properties; this is evaluated by the overall nutrient budget analysis, nutrient cycling pathway analysis, and assessment of the relationship between the areas of habitat for Ruppia and Ulva.
+- *Level 0*: conceptual evaluation; the conceptual diagrams for each of the water quality variables, biogeochemical reactions, and habitat modelling are based on the scientific review and data inspection as detailed in the previous chapters;
+- *Level 1*: simulated state variables; a range of metrics is used for a large number of predicted variable and different sites.
+- *Level 2*: process rates; and 
+- *Level 3*: system-level patterns and emergent properties; this is evaluated by the overall nutrient budget analysis, nutrient cycling pathway analysis, and assessment of the relationship between the areas of habitat for Ruppia and Ulva.
 
 The specific data available for validation and the assessment metrics used are described next. The level of model uncertainty is discussed in terms of how much confidence is in the current generation of model outputs for the purposes of defining model reliability.
 
@@ -144,11 +144,11 @@ knitr::include_graphics("images/assessment/3_example_data_quality_issue_TN.png")
 <body>
 
 <div class="tab">
-  <button class="tablinks" onclick="opentab(event, 'ass1')"id="defaultOpen">GEN1.5 Assessment (no ALS data)</button>
+  <button class="tablinks" onclick="opentab(event, 'tab1')"id="defaultOpen">GEN1.5 Assessment (no ALS data)</button>
   <button class="tablinks" onclick="opentab(event, 'ass2')">GEN1.5 Assessment (with ALS data)</button>
 </div>
 
-<div id="ass1" class="tabcontent">
+<div id="tab1" class="tabcontent">
   <p>
 
 ```{r ass-004, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "(a) "}
@@ -236,7 +236,7 @@ A methodology for nutrient flux and budget analysis has been developed. For the 
 <body>
 
 <div class="tab">
-  <button class="tablinks" onclick="opentab(event, 'csl_n')"id="defaultOpen">CSL : Nitrogen</button>
+  <button class="tablinks" onclick="opentab(event, 'csl_n')"id="defaultOpen2">CSL : Nitrogen</button>
   <button class="tablinks" onclick="opentab(event, 'csl_p')">CSL : Nitrogen</button>
   <button class="tablinks" onclick="opentab(event, 'cnl_n')">CNL : Phosphorus</button>
   <button class="tablinks" onclick="opentab(event, 'cnl_p')">CNL : Phosphorus</button>
@@ -304,7 +304,7 @@ function opentab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen2").click();
 </script>
 
 </body>
@@ -349,10 +349,10 @@ The overall habitat suitability for sexual and asexual reproduction between 2018
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 /* Style the buttons inside the tab */
-.tab button {
+.tab button { 
   background-color: #2481AA;
   float: left;
-  width: 50%;
+  width: 49%;
   border: none;
   outline: none;
   cursor: pointer;
@@ -367,7 +367,7 @@ The overall habitat suitability for sexual and asexual reproduction between 2018
 <body>
 
 <div class="tab">
-  <button class="tablinks" onclick="opentab(event, 'hab_s')"id="defaultOpen">Ruppia HSI (sexual lifecycle)</button>
+  <button class="tablinks" onclick="opentab(event, 'hab_s')"id="defaultOpen3">Ruppia HSI (sexual lifecycle)</button>
   <button class="tablinks" onclick="opentab(event, 'hab_a')">Ruppia HSI (asexual lifecycle)</button>
 </div>
 
@@ -404,7 +404,7 @@ function opentab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen3").click();
 </script>
 
 </body>
@@ -559,7 +559,19 @@ kbl(theSheet[,3:5], caption = "CDM model reccomendations for future experimetati
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
             background = '#ebebeb') %>%
-  
+ pack_rows(theSheetGroups[2],
+            min(which(theSheet$Group == theSheetGroups[2])),
+            max(which(theSheet$Group == theSheetGroups[2])),
+            background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[3],
+					  min(which(theSheet$Group == theSheetGroups[3])),
+					  max(which(theSheet$Group == theSheetGroups[3])),
+					  background = '#ebebeb') %>%
+  pack_rows(theSheetGroups[4],
+          	min(which(theSheet$Group == theSheetGroups[4])),
+          	max(which(theSheet$Group == theSheetGroups[4])),
+          	background = '#ebebeb') %>%
+
   
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = F,font_size = 10) #%>%
