@@ -115,7 +115,9 @@ where the main growth term is resolved as:</p>
 <h3>
 <span class="header-section-number">6.2.2</span> Macroalgae growth physiology<a class="anchor" aria-label="anchor" href="#macroalgae-growth-physiology"><i class="fas fa-link"></i></a>
 </h3>
-<p>The original AED macroalgal biomass model previously applied in the Generation 0 and 1 CDM applications, and exemplified in the above example, has been further developed to include includes numerous advances to light extinction within the canopy, nutrient cycling and excretion processes, and updates to the parameterisations associated with photosynthesis and biomass accumulation. The latter, in particular, are updated to better align with the experimental work reported in Waycott et al. (2019) and recent survey data collected as part of from the HCHB research program.</p>
+<p>The original AED macroalgal biomass model previously applied in the Generation 0 and 1 CDM applications, and exemplified in the above example, has been further developed to include advances to light extinction within the canopy, nutrient cycling and excretion processes, and updates to the parameterisations associated with photosynthesis and biomass accumulation. The latter, in particular, are updated to better align with the experimental work reported in Waycott et al. (2019) and recent survey data collected as part of from the HCHB research program.</p>
+<p>The algal biomass, <span class="math inline">\(FA\)</span> (or <span class="math inline">\(MAG_C\)</span>), is simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>), and in addition the groups have been configured to have a variable C:N:P ratio. The model therefore tracks the internal cell nutrition and includes dynamic uptake rates of N and P sources simulated in response to changing water column conditions and internal nutrient stress.</p>
+<p>The growth rate functions used in Eq <a href="macroalgae.html#eq:ulva6">(6.2)</a> are tailored to use temperature and salinity ranges based on the experimental data reported in Waycott et al. (2019).</p>
 </div>
 <div id="resolving-seasonal-life-stage-dynamics" class="section level3" number="6.2.3">
 <h3>
@@ -126,14 +128,20 @@ where the main growth term is resolved as:</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:dev-ulva5"></span>
-<img src="images/dev/macroalgae_conceptual.png" alt="Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay." width="100%"><p class="caption">
-Figure 6.2: Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay.
+<img src="images/dev/macroalgae_conceptual.png" alt="Schematic depicting a new life-stage based macroalgal “clump” model  developed to track seasonal macroalgal biomass development stages and late-stage decay." width="100%"><p class="caption">
+Figure 6.2: Schematic depicting a new life-stage based macroalgal “clump” model developed to track seasonal macroalgal biomass development stages and late-stage decay.
 </p>
 </div>
 </div>
 <p>This approach allows more direct links with a) the experimental data collected on biomass accumulation and photosynthesis rates in the lab, and b) the field data estimates of macroalgae density from photos and aerial imagery at different points through the growth season.</p>
 <p>The approach essentially follows a size-class based model for resolving the filamentous algae biomass pool. According to the above conceptual schematic, four discrete life-stage (aka size) categories are included. In general they are fixed in space, but note that ‘sloughed’ biomass (Stage 4) becomes mobilised after a sloughing ‘event’, and can continue to be exposed to surface light irradiances and also begin decomposition should environmental conditions be inadequate for growth (e.g., as the water becomes too salty).</p>
-<p>The algal biomass of each group, <span class="math inline">\(MAG_C\)</span>, is simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>), and the groups have been configured to have a variable C:N:P ratio, with dynamic uptake rates of N and P sources simulated in response to changing water column conditions and cellular physiology. The fundamental balance equation shaping growth remains as depicted in Eq to capture the various processes impacting ulva growth and decay, with the difference that each growth-stage allows for different light, nutrien and salinity sensitivity, and there is a aging component linking the size classes. A full description of the AED macroalgae model can be referred to the <a href="https://aquaticecodynamics.github.io/aed-science/DO_1.html">AED science manual</a>.</p>
+<p>The fundamental balance equation shaping growth remains as depicted in Eq <a href="macroalgae.html#eq:ulva5">(6.1)</a> to capture the various processes impacting ulva growth and decay, with the difference that each growth-stage allows for different light, nutrient and salinity sensitivity, and there is a aging component linking the size classes, <span class="math inline">\(R_{aging}\)</span>. A full description of the AED macroalgae model can be referred to the <a href="https://aquaticecodynamics.github.io/aed-science/DO_1.html">AED science manual</a>.</p>
+</div>
+<div id="ulva-hsi" class="section level3" number="6.2.4">
+<h3>
+<span class="header-section-number">6.2.4</span> Ulva HSI<a class="anchor" aria-label="anchor" href="#ulva-hsi"><i class="fas fa-link"></i></a>
+</h3>
+<p>In addition to the simulation of Ulva biomass, a simple “Habitat Suitability Index” (HSI), termed <span class="math inline">\(Ulva\:HSI\)</span>, was also developed to map Ulva growth potential and ‘hotspot’ locations. The <span class="math inline">\(Ulva\:HSI\)</span> is an index between 0 and 1, and is computed by normalising the expression outlined in Eq <a href="macroalgae.html#eq:ulva6">(6.2)</a>. This metric does not account for the accumulation of biomass, or consider processes such as mortality and sloughing or mobilisation, but is a useful metric to look where high growth rates typically occur.</p>
 <p><br></p>
 </div>
 </div>
@@ -145,7 +153,7 @@ Figure 6.2: Schematic depicting a new life-stage based macroalgal “clump” mo
 <h3>
 <span class="header-section-number">6.3.1</span> Algae extent within the lagoon<a class="anchor" aria-label="anchor" href="#algae-extent-within-the-lagoon"><i class="fas fa-link"></i></a>
 </h3>
-<p>Regular monitoring for macroalgae biomass within the Coorong is not routinely undertaken, but a range of data are available over the model calibration and testing periods. A summary of the available algal extent data is summarised in Table X.</p>
+<p>Regular monitoring for macroalgae biomass within the Coorong is not routinely undertaken, but a range of data are available over the model calibration and testing periods. A summary of the available algal extent data is summarised in Table <a href="macroalgae.html#tab:3-malgtable">6.1</a>.</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:380px; overflow-x: scroll; width:680px; ">
 <div class="inline-table"><table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
@@ -308,7 +316,6 @@ document.getElementById("defaultOpen").click();
 <h2>
 <span class="header-section-number">6.4</span> Model setup<a class="anchor" aria-label="anchor" href="#model-setup-2"><i class="fas fa-link"></i></a>
 </h2>
-<p>, including the salinity limitation functions on phytoplankton communities.</p>
 <p>Four pools were configured to simulate the biomass of filamentous algae, <span class="math inline">\(ulva_a\)</span>, <span class="math inline">\(ulva_b\)</span>, <span class="math inline">\(ulva_c\)</span> and <span class="math inline">\(ulva_s\)</span>. The parameters used in the setup are outlined in Table (Table <a href="macroalgae.html#tab:6-malgpars">6.2</a>).</p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:3400px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1353,7 +1360,7 @@ minimum rate of density decrease with time
 <h3>
 <span class="header-section-number">6.5.1</span> Generation 0<a class="anchor" aria-label="anchor" href="#generation-0"><i class="fas fa-link"></i></a>
 </h3>
-<p>Using the Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure <a href="macroalgae.html#fig:dev-ulva12">6.5</a>).</p>
+<p>Using the Generation 0 model, the following assessment against Ulva biomass prediction and data showing presence/absence was recorded (Figure <a href="macroalgae.html#fig:dev-ulva12">6.5</a>). The simulated biomass reasonably correlated with the presence/absence data record in 2016 in particular, but included several false positives in 2017 in the South Lagoon. Whilst biomass data wasn’t recorded in the survey data for these time periods, the simulated biomass concentrations have retrospectively been seen to be systematically under predicting the typical biomass levels seen in the HCHB field surveys.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva12"></span>
@@ -1362,7 +1369,7 @@ Figure 6.5: Comparison of observed and simulated Ulva for 2016 (left) and 2017 (
 </p>
 </div>
 </div>
-<p>The modelled Ulva HSI prediction correlates well with the observed filamentous algae density, however, the correlation between predicted biomass and obsevred presence was less accurate (Figure <a href="macroalgae.html#fig:dev-ulva13">6.6</a>). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted and further data from 2020-2021 is needed to assess whether the HSI calculation needs further refinement.</p>
+<p>Nonetheless, the modelled <span class="math inline">\(Ulva\:HSI\)</span> prediction correlated well with the observed filamentous algae abundance categories (Figure <a href="macroalgae.html#fig:dev-ulva13">6.6</a>). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation were more complicated, thus justifying the further refinements outlined in Section 6.3. The HSI range was however quite restricted and not as sensitive suggesting the normalisation could be improved.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva13"></span>
@@ -1376,7 +1383,8 @@ Figure 6.6: Filamentous algae observed density and equivalent model predicted Ul
 <h3>
 <span class="header-section-number">6.5.2</span> Generation 2<a class="anchor" aria-label="anchor" href="#generation-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>The Generation 2 model results were compared with HCHB survey data in 2020 - 2021.</p>
+<p>Following further refinement of the general water quality model calibration (as outlined in Chapters 4-5), and the macroalgae model developments (Section 6.3), the Generation 2 model was run over the period from 2020-2021, inclusive, and the results were compared with in-depth HCHB survey data collected during several surveys undertaken within the period (see Figure <a href="macroalgae.html#fig:dev-ulva11">6.3</a>).</p>
+<p>The model results are shown in Figure <a href="macroalgae.html#fig:dev-ulva14">6.7</a> - <a href="macroalgae.html#fig:dev-ulva15">6.8</a> for the 2020 dataset, and Figure <a href="macroalgae.html#fig:dev-ulva16">6.9</a> - <a href="macroalgae.html#fig:dev-ulva17">6.10</a> for the 2021 dataset.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva14"></span>
@@ -1416,7 +1424,8 @@ Figure 6.10: Scatter and box plot of field estimated macroalgae biomass versus s
 <h2>
 <span class="header-section-number">6.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary-2"><i class="fas fa-link"></i></a>
 </h2>
-<p>The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the <em>Ulva</em> community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the Ulva HSI) correlated well with the ealry (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation.</p>
+<p>The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the <em>Ulva</em> community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the <span class="math inline">\(Ulva\:HSI\)</span>) correlated well with the early (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation.</p>
+<p>The Generation 2 model showed mixed accuracy against the more comprehensive dataset from 2021 and 2022 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field.This is recommended as an area for further investigation.</p>
 
 </div>
 </div>
@@ -1441,6 +1450,7 @@ while (i < img.length) {
 <li><a class="nav-link" href="#filamentous-algae"><span class="header-section-number">6.2.1</span> Filamentous algae</a></li>
 <li><a class="nav-link" href="#macroalgae-growth-physiology"><span class="header-section-number">6.2.2</span> Macroalgae growth physiology</a></li>
 <li><a class="nav-link" href="#resolving-seasonal-life-stage-dynamics"><span class="header-section-number">6.2.3</span> Resolving seasonal life-stage dynamics</a></li>
+<li><a class="nav-link" href="#ulva-hsi"><span class="header-section-number">6.2.4</span> Ulva HSI</a></li>
 </ul>
 </li>
 <li>
