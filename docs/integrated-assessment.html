@@ -74,12 +74,16 @@
 <h2>
 <span class="header-section-number">9.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-7"><i class="fas fa-link"></i></a>
 </h2>
-<p>The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled model, against the complete dataset. The approach to assess the model loosely follows the CSPS framework of Hipsey et al (2020). The framework considers:</p>
+<p>The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled model, against the complete dataset. The approach to assess the model loosely follows the CSPS framework of Hipsey et al. (2020). The framework considers:</p>
 <ul>
-<li>Level 0: conceptual evaluation; the conceptual diagrams for each of the water quality variables, biogeochemical reactions, and habitat modelling are based on the scientific review and data inspection as detailed in the previous chapters;</li>
-<li>Level 1: simulated state variables; a range of metrics is used for a large number of predicted variable and different sites.</li>
-<li>Level 2: process rates; and</li>
-<li>Level 3: system-level patterns and emergent properties; this is evaluated by the overall nutrient budget analysis, nutrient cycling pathway analysis, and assessment of the relationship between the areas of habitat for Ruppia and Ulva.</li>
+<li>
+<em>Level 0</em>: conceptual evaluation; the conceptual diagrams for each of the water quality variables, biogeochemical reactions, and habitat modelling are based on the scientific review and data inspection as detailed in the previous chapters;</li>
+<li>
+<em>Level 1</em>: simulated state variables; a range of metrics is used for a large number of predicted variable and different sites.</li>
+<li>
+<em>Level 2</em>: process rates; and</li>
+<li>
+<em>Level 3</em>: system-level patterns and emergent properties; this is evaluated by the overall nutrient budget analysis, nutrient cycling pathway analysis, and assessment of the relationship between the areas of habitat for Ruppia and Ulva.</li>
 </ul>
 <p>The specific data available for validation and the assessment metrics used are described next. The level of model uncertainty is discussed in terms of how much confidence is in the current generation of model outputs for the purposes of defining model reliability.</p>
 <p>In addition to the model performance assessment, the model is also routinely used to support management decision-making. Detail is provided on how the diverse model outputs can be processed and analysed for informing the Coorong Decision Making Framework (DMF) and other applications.</p>
@@ -229,10 +233,10 @@ Figure 9.4: Same as Figure 6.2 except for TN concentration in zone 22.
 }
 </style>
 <div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'ass1')" id="defaultOpen">GEN1.5 Assessment (no ALS data)</button>
+<p><button class="tablinks" onclick="opentab(event, 'tab1')" id="defaultOpen">GEN1.5 Assessment (no ALS data)</button>
 <button class="tablinks" onclick="opentab(event, 'ass2')">GEN1.5 Assessment (with ALS data)</button></p>
 </div>
-<div id="ass1" class="tabcontent">
+<div id="tab1" class="tabcontent">
 <p>
 </p>
 <div class="text-image">
@@ -324,7 +328,7 @@ document.getElementById("defaultOpen").click();
 }
 </style>
 <div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'csl_n')" id="defaultOpen">CSL : Nitrogen</button>
+<p><button class="tablinks" onclick="opentab(event, 'csl_n')" id="defaultOpen2">CSL : Nitrogen</button>
 <button class="tablinks" onclick="opentab(event, 'csl_p')">CSL : Nitrogen</button>
 <button class="tablinks" onclick="opentab(event, 'cnl_n')">CNL : Phosphorus</button>
 <button class="tablinks" onclick="opentab(event, 'cnl_p')">CNL : Phosphorus</button></p>
@@ -395,7 +399,7 @@ function opentab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen2").click();
 </script><p><br></p>
 <p>Summary diagrams of the nitrogen imports vs. exports for both lagoons are presented in Figure <a href="integrated-assessment.html#fig:ass-pie">9.13</a>, which shows that, for the north lagoon (CNL), the nutrient loads transported though the Pelican Pt. are in comparable scales to the sediment load (56% vs. 44% of total sources), while the exports due to sedimentation/burial and transport to south lagoon though Parnka Pt are about 65% and 35% of total loss, respectively. For the south lagoon (CSL), the sediment nutrient loads was the major source (79% of total sources), and the sedimentation loss was also the major sink (92% of total sinks), indicating the internal nutrient cycling overcame the hydrodynamic transport of nutrient be to the dominant pathway of nutrient cycling.</p>
 <center>
@@ -439,10 +443,10 @@ Figure 9.14: Environmental response functions (ERF) of salinity, TN, and TP in s
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 /* Style the buttons inside the tab */
-.tab button {
+.tab button { 
   background-color: #2481AA;
   float: left;
-  width: 50%;
+  width: 49%;
   border: none;
   outline: none;
   cursor: pointer;
@@ -454,7 +458,7 @@ Figure 9.14: Environmental response functions (ERF) of salinity, TN, and TP in s
 }
 </style>
 <div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'hab_s')" id="defaultOpen">Ruppia HSI (sexual lifecycle)</button>
+<p><button class="tablinks" onclick="opentab(event, 'hab_s')" id="defaultOpen3">Ruppia HSI (sexual lifecycle)</button>
 <button class="tablinks" onclick="opentab(event, 'hab_a')">Ruppia HSI (asexual lifecycle)</button></p>
 </div>
 <div id="hab_s" class="tabcontent">
@@ -497,7 +501,7 @@ function opentab(evt, tabName) {
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-document.getElementById("defaultOpen").click();
+document.getElementById("defaultOpen3").click();
 </script><p><br></p>
 </div>
 <div id="coorong-decision-making-framework-dmf" class="section level2" number="9.9">
@@ -2195,8 +2199,13 @@ Revised bathymetry can assist habitat mapping and salinity/water level predictio
 New survey
 </td>
 </tr>
+<tr grouplength="5">
+<td colspan="3" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Water quality</strong>
+</td>
+</tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 DOM:POM partitioning
 </td>
 <td style="text-align:left;">
@@ -2207,7 +2216,7 @@ Including DOM and POM specific measurements, t different sites/times
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 DOM reactivity
 </td>
 <td style="text-align:left;">
@@ -2218,7 +2227,7 @@ Laboratory assays of DOM breakdown (mineralisation) rates under different salini
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 DOM flocculation
 </td>
 <td style="text-align:left;">
@@ -2229,7 +2238,7 @@ Laboratory study of DOM flocculation under various salinity
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 PO4, NH4 and DOM sorption
 </td>
 <td style="text-align:left;">
@@ -2240,7 +2249,7 @@ Laboratory study of adsorption under various salinity
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 Phytoplankton productivity
 </td>
 <td style="text-align:left;">
@@ -2250,8 +2259,13 @@ In situ productivity of phytoplankton in different regions can help understand w
 Mesocosm study of GPP
 </td>
 </tr>
+<tr grouplength="2">
+<td colspan="3" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Sediment conditions</strong>
+</td>
+</tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 Labile nutrient fractions stored in the sediment
 </td>
 <td style="text-align:left;">
@@ -2262,7 +2276,7 @@ Laboratory study of sediment OM at various sites and sediment depths
 </td>
 </tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 Further sediment nutrient flux data, including DOM and N2
 </td>
 <td style="text-align:left;">
@@ -2272,8 +2286,13 @@ Our nutrient budget showed the sediment nutrient load played a key role as the m
 Mesocosm study of nutrient releases from sediment under varied conditions
 </td>
 </tr>
+<tr grouplength="1">
+<td colspan="3" style="border-bottom: 1px solid;background-color: #ebebeb !important;">
+<strong>Macroalgae</strong>
+</td>
+</tr>
 <tr>
-<td style="text-align:left;">
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
 Bloom phenology
 </td>
 <td style="text-align:left;">
