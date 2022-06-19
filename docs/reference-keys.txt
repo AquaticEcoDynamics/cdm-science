@@ -65,6 +65,7 @@ tab:3-malgtable
 fig:dev-ulva11
 fig:dev-ulva10
 tab:6-malgpars
+eq:ulva7
 fig:dev-ulva12
 fig:dev-ulva13
 fig:dev-ulva14

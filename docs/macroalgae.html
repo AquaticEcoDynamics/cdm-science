@@ -102,7 +102,7 @@ Figure 6.1: Images of filamentous algae bloom conditions within the Coorong Sout
 \]</span>
 where the main growth term is resolved as:</p>
 <p><span class="math display" id="eq:ulva6">\[
-\scriptsize{f^{FA}_{\text{uptake}} = \underbrace{R^{FA}_{\text{growth}}}_{\text{max growth} \\ \text{rate at 20$^\circ$C}} \ \ \underbrace{(1-k^{FA}_{\text{pr}})}_{\text{photorespiratory} \\ \text{loss}} \ \ \underbrace{\Phi^{FA}_{\text{tem}}(T)}_{\text{temperature} \\ \text{scaling}} \text{min} \left \{\underbrace{\Phi^{FA}_{\text{light}}(I)}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{N}}(NO_{3},NH_{4})}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{P}}(PO_{4})}_{\text{P limitation}} \right \} [FA]}
+\scriptsize{f^{FA}_{\text{uptake}} = \underbrace{R^{FA}_{\text{growth}}}_{\text{max growth} \\ \text{rate at 20$^\circ$C}} \ \ \underbrace{(1-k^{FA}_{\text{pr}})}_{\text{photorespiratory} \\ \text{loss}} \ \ \underbrace{\Phi^{FA}_{\text{tem}}(T)}_{\text{temperature} \\ \text{scaling}} \text{min} \left \{\underbrace{\Phi^{FA}_{\text{light}}(I)}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{N}}(NO_{3},NH_{4})}_{\text{N limitation}}, \underbrace{\Phi^{FA}_{\text{P}}(PO_{4})}_{\text{P limitation}} \right \} [FA]}
 \tag{6.2}
 \]</span></p>
 <p>An example of the above approach in practice is shown in the below animation. The results highlight, for this time period of interest, the areas where salinity exceeds the threshold and initially limits the productivity, and the shallow areas where light is abundant; along with other environmental drivers (e.g., temperature) these shape the biomass accumulation pattern seen in the top left panel. Animations like this for different periods throughout the year, or between years, can look quite different.</p>
@@ -1351,6 +1351,13 @@ minimum rate of density decrease with time
 </table></div>
 </div>
 <p><br></p>
+<p>The total biomass of <span class="math inline">\(FA\)</span>, in comparable units to the field data (<span class="math inline">\(g\text{ dry weight}/m^2\)</span>), is termed <span class="math inline">\(TMALG\)</span> and computed as the sum of the attached and floating components:</p>
+<p><span class="math display" id="eq:ulva7">\[
+TMALG = \left[\underbrace{\sum_i^{\text{a,b,c}} \left( ulva_{i} \right)}_{\text{attached}} + \underbrace{ulva_{s}\:\Delta z}_{\text{floating}} \right] \: \chi_{c:dw} \: \times 10^{-3}
+\tag{6.3}
+\]</span>
+where <span class="math inline">\(\chi_{c:dw}\)</span> is the dry weight per carbon ratio. <span class="math inline">\(TMALG\)</span> is used to assess against the algal densities reported in the field, thus assuming the reported algal densities from the transects are the combined amount of attached and detached material.</p>
+<p><br></p>
 </div>
 <div id="validation-and-assessment-1" class="section level2" number="6.5">
 <h2>
@@ -1425,7 +1432,7 @@ Figure 6.10: Scatter and box plot of field estimated macroalgae biomass versus s
 <span class="header-section-number">6.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the <em>Ulva</em> community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the <span class="math inline">\(Ulva\:HSI\)</span>) correlated well with the early (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation.</p>
-<p>The Generation 2 model showed mixed accuracy against the more comprehensive dataset from 2021 and 2022 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field.This is recommended as an area for further investigation.</p>
+<p>The Generation 2 model showed mixed accuracy against the more comprehensive dataset from 2021 and 2022 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field. This is recommended as an area for further investigation and may benefit from further data on benthic substrates that can be used to constrain where it is able to attach and grow.</p>
 
 </div>
 </div>
