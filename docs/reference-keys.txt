@@ -57,12 +57,13 @@ fig:water-lim4
 fig:water-lim5
 fig:water-lim6
 fig:water-lim7
+fig:dev-ulva01
 eq:ulva5
 eq:ulva6
 fig:dev-ulva5
 tab:3-malgtable
-fig:dev-ulva10
 fig:dev-ulva11
+fig:dev-ulva10
 tab:6-malgpars
 fig:dev-ulva12
 fig:dev-ulva13
@@ -285,10 +286,12 @@ filamentous-algae
 macroalgae-growth-physiology
 resolving-seasonal-life-stage-dynamics
 data-availability
-environmental-threshold-parameter-review
 algae-extent-within-the-lagoon
+environmental-threshold-parameter-review
 model-setup-2
 validation-and-assessment-1
+generation-0
+generation-2
 summary-2
 sediment-biogeochemistry
 overview-4
@@ -328,7 +331,7 @@ summary-of-validation-data-set
 performance-assessment-metrics
 assessment-and-validation-periods
 integrated-simulation-performance
-generation-0
+generation-0-1
 generation-i.5
 generation-ii
 nutrient-budget-assessment

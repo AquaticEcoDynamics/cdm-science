@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>6 Macroalgae | The Coorong Dynamics Model</title>
 <meta name="author" content="MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims">
-<meta name="description" content="6.1 Overview Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, mainly species from the genus Ulva. The...">
+<meta name="description" content="6.1 Overview Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, and these ‘blooms’ have become...">
 <meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="6 Macroalgae | The Coorong Dynamics Model">
 <meta property="og:type" content="book">
-<meta property="og:description" content="6.1 Overview Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, mainly species from the genus Ulva. The...">
+<meta property="og:description" content="6.1 Overview Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, and these ‘blooms’ have become...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6 Macroalgae | The Coorong Dynamics Model">
-<meta name="twitter:description" content="6.1 Overview Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, mainly species from the genus Ulva. The...">
+<meta name="twitter:description" content="6.1 Overview Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, and these ‘blooms’ have become...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -74,7 +74,15 @@
 <h2>
 <span class="header-section-number">6.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-3"><i class="fas fa-link"></i></a>
 </h2>
-<p>Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, mainly species from the genus <em>Ulva</em>. The survey data highlight that the filamentous algae are tightly associated with the locations where the seagrass <em>Ruppia</em> is present, and late in the season the smothering and deoxygenation caused by large Ulva biomass accumulations can drive poor water quality. This section describes the approach to simulating macroalgae within the CDM, and development of the model to tailor to the observed data collected within the HCHB research program.</p>
+<p>Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, and these ‘blooms’ have become emblematic of the recent cycle of eutrophication experienced in the lagoon (Figure <a href="macroalgae.html#fig:dev-ulva01">6.1</a>). The survey data highlight that the filamentous algae, mainly species from the genus <em>Ulva</em>, are tightly associated with the locations where the seagrass <em>Ruppia</em> is present, and they flourish in areas with shallow, warm and poorly-mixed water. Late in the season the smothering and deoxygenation caused by the breakdown of large <em>Ulva</em> biomass accumulations drives poor water quality. This section describes the approach to simulating macroalgae within the CDM, and development of the model to tailor to the observed data collected within the HCHB research program.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:dev-ulva01"></span>
+<img src="images/dev/paton1.jpeg" alt="Images of filamentous algae bloom conditions within the Coorong South Lagoon, showing the pervasive extent of biomass accumulation. Photo credit: David Paton." width="40%"><img src="images/dev/paton2.jpeg" alt="Images of filamentous algae bloom conditions within the Coorong South Lagoon, showing the pervasive extent of biomass accumulation. Photo credit: David Paton." width="40%"><p class="caption">
+Figure 6.1: Images of filamentous algae bloom conditions within the Coorong South Lagoon, showing the pervasive extent of biomass accumulation. Photo credit: David Paton.
+</p>
+</div>
+</div>
 <p><br></p>
 </div>
 <div id="model-approach-1" class="section level2" number="6.2">
@@ -114,12 +122,12 @@ where the main growth term is resolved as:</p>
 <span class="header-section-number">6.2.3</span> Resolving seasonal life-stage dynamics<a class="anchor" aria-label="anchor" href="#resolving-seasonal-life-stage-dynamics"><i class="fas fa-link"></i></a>
 </h3>
 <p>Following review of the initial data and findings from the T&amp;I project 2, the approach to modelling macroalgae has been revised to better resolve seasonal shifts in form and physiology over the seasonal cycle.</p>
-<p>A new ‘colony’ based model for simulating clump emergence, biomass accumulation and sloughing has been conceptualised (Figure <a href="macroalgae.html#fig:dev-ulva5">6.1</a>). The model adopts the same underlying physiology as described in the above section, but allows for age/size specific application of these rates to better align with recent observations and monitoring.</p>
+<p>A new ‘colony’ based model for simulating clump emergence, biomass accumulation and sloughing has been conceptualised (Figure <a href="macroalgae.html#fig:dev-ulva5">6.2</a>). The model adopts the same underlying physiology as described in the above section, but allows for age/size specific application of these rates to better align with recent observations and monitoring.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:dev-ulva5"></span>
 <img src="images/dev/macroalgae_conceptual.png" alt="Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay." width="100%"><p class="caption">
-Figure 6.1: Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay.
+Figure 6.2: Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay.
 </p>
 </div>
 </div>
@@ -133,20 +141,12 @@ Figure 6.1: Schematic depicting a new life-stage based macroalgal “clump” mo
 <h2>
 <span class="header-section-number">6.3</span> Data availability<a class="anchor" aria-label="anchor" href="#data-availability"><i class="fas fa-link"></i></a>
 </h2>
-<div id="environmental-threshold-parameter-review" class="section level3" number="6.3.1">
+<div id="algae-extent-within-the-lagoon" class="section level3" number="6.3.1">
 <h3>
-<span class="header-section-number">6.3.1</span> Environmental threshold parameter review<a class="anchor" aria-label="anchor" href="#environmental-threshold-parameter-review"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1</span> Algae extent within the lagoon<a class="anchor" aria-label="anchor" href="#algae-extent-within-the-lagoon"><i class="fas fa-link"></i></a>
 </h3>
-<p>• For salinities from 35—90 ppt, an optimum temperature for the Ulva paradoxa filamentous green algal community was 30°C, that is the temperature where the relationship between weight gain is the most positive (Waycott et al. 2019).<br>
-• At salinities of 30 - 140 ppt, weight change decreases as salinity increase. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures (Waycott et al. 2019).<br>
-• At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability (Collier et al. 2017 cited in Asanopoulos and Waycott 2020).</p>
-</div>
-<div id="algae-extent-within-the-lagoon" class="section level3" number="6.3.2">
-<h3>
-<span class="header-section-number">6.3.2</span> Algae extent within the lagoon<a class="anchor" aria-label="anchor" href="#algae-extent-within-the-lagoon"><i class="fas fa-link"></i></a>
-</h3>
-<p>A summary of the available algal extent data is summarised in Table X.</p>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:360px; overflow-x: scroll; width:680px; ">
+<p>Regular monitoring for macroalgae biomass within the Coorong is not routinely undertaken, but a range of data are available over the model calibration and testing periods. A summary of the available algal extent data is summarised in Table X.</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:380px; overflow-x: scroll; width:680px; ">
 <div class="inline-table"><table class="table" style="font-size: 11px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:3-malgtable">Table 6.1: </span>Macroalgae data availability summary
@@ -222,24 +222,86 @@ Estimated algae biomass (7 categories); <br>Algae cover% (0/20/40/50/60/80/100);
 </table></div>
 </div>
 <p><br></p>
-<p><strong>Historical Monitoring</strong> A summary of historical (pre 2020) <em>Filamentous Algae</em> monitoring locations are shown in Figure <a href="macroalgae.html#fig:dev-ulva10">6.2</a>.</p>
-<div class="text-image">
-<div class="figure">
-<span style="display:block;" id="fig:dev-ulva10"></span>
-<img src="images/dev/algaesites-may2017.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary." width="50%"><img src="images/dev/algaesites_Dec2016.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary." width="50%"><p class="caption">
-Figure 6.2: Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary.
-</p>
+<p>The locations of the various smaplign campaigns for assessment of <em>Filamentous Algae</em> presence and biomass are shown for the historical (pre-HCHB) sampling campaigns (Figure <a href="macroalgae.html#fig:dev-ulva10">6.4</a>) and for the more intensive sampling campaigns undertaken within the HCHB research program (Figure <a href="macroalgae.html#fig:dev-ulva11">6.3</a>).</p>
+<br><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #2481AA;
+  float: left;
+  width: 49.5%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+</style>
+<div class="tab">
+<p><button class="tablinks" onclick="opentab(event, 'hchb')" id="defaultOpen">HCHB Monitoring</button>
+<button class="tablinks" onclick="opentab(event, 'hist')">Historical Monitoring</button></p>
 </div>
-</div>
-<p><strong>HCHB Monitoring</strong> A summary of the HCHB monitoring locations are shown in Figure <a href="macroalgae.html#fig:dev-ulva11">6.3</a>.</p>
+<div id="hchb" class="tabcontent">
+<center>
+<p><br></p>
+<p><strong>HCHB Monitoring</strong> A summary of the HCHB <em>Filamentous Algae</em> monitoring locations are shown below.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva11"></span>
-<img src="images/dev/algaesites_Sep2020.png" alt="Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary." width="33%"><img src="images/dev/algaesites_Mar2021.png" alt="Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary." width="33%"><img src="images/dev/algaesites_Sep2020.png" alt="Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary." width="33%"><p class="caption">
-Figure 6.3: Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary.
+<img src="images/dev/algaesites_Sep2020.png" alt="Filamentous algae sampling sites for the HCHB program (T &amp; I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge." width="33%"><img src="images/dev/algaesites_Mar2021.png" alt="Filamentous algae sampling sites for the HCHB program (T &amp; I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge." width="33%"><img src="images/dev/algaesites_Sep2020.png" alt="Filamentous algae sampling sites for the HCHB program (T &amp; I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge." width="33%"><p class="caption">
+Figure 6.3: Filamentous algae sampling sites for the HCHB program (T &amp; I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge.
 </p>
 </div>
 </div>
+</center>
+</div>
+<div id="hist" class="tabcontent">
+<center>
+<p><br></p>
+<p><strong>Historical Monitoring</strong> A summary of historical (pre 2020) <em>Filamentous Algae</em> monitoring locations are shown below.</p>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:dev-ulva10"></span>
+<img src="images/dev/algaesites-may2017.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge." width="50%"><img src="images/dev/algaesites_Dec2016.png" alt="Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge." width="50%"><p class="caption">
+Figure 6.4: Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge.
+</p>
+</div>
+</div>
+</center>
+</div>
+<script>
+function opentab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script><p><br></p>
+</div>
+<div id="environmental-threshold-parameter-review" class="section level3" number="6.3.2">
+<h3>
+<span class="header-section-number">6.3.2</span> Environmental threshold parameter review<a class="anchor" aria-label="anchor" href="#environmental-threshold-parameter-review"><i class="fas fa-link"></i></a>
+</h3>
+<p>In order to set/refine the parameters required for the macroalgae model, such as light, salinity and temperature responses, a review of available experimental data and observations was undertaken. The key information sourced incldued:</p>
+<ul>
+<li>For salinities from 35—90 ppt, an optimum temperature for the <em>Ulva paradoxa</em> filamentous green algal community was 30°C, which was the temperature where the relationship between weight gain became the most positive (Waycott et al. 2019).<br>
+</li>
+<li>At salinities of 30 - 140 ppt, weight change decreased as salinity increases. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures (Waycott et al. 2019).<br>
+</li>
+<li>At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability (Collier et al. 2017, cited in Asanopoulos and Waycott 2020).</li>
+</ul>
+<p><br></p>
 </div>
 </div>
 <div id="model-setup-2" class="section level2" number="6.4">
@@ -247,8 +309,8 @@ Figure 6.3: Filamentous algae sampling sites for the HCHB program (T and I 2). A
 <span class="header-section-number">6.4</span> Model setup<a class="anchor" aria-label="anchor" href="#model-setup-2"><i class="fas fa-link"></i></a>
 </h2>
 <p>, including the salinity limitation functions on phytoplankton communities.</p>
-<p>Four pools were confgured to simulate the biomass of filamentous algae, <span class="math inline">\(ulva_a\)</span>, <span class="math inline">\(ulva_b\)</span>, <span class="math inline">\(ulva_c\)</span> and <span class="math inline">\(ulva_s\)</span>. The parameters used in the setup are outlined in Table (Table <a href="macroalgae.html#tab:6-malgpars">6.2</a>).</p>
-<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4600px; overflow-x: scroll; width:700px; ">
+<p>Four pools were configured to simulate the biomass of filamentous algae, <span class="math inline">\(ulva_a\)</span>, <span class="math inline">\(ulva_b\)</span>, <span class="math inline">\(ulva_c\)</span> and <span class="math inline">\(ulva_s\)</span>. The parameters used in the setup are outlined in Table (Table <a href="macroalgae.html#tab:6-malgpars">6.2</a>).</p>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:3400px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:6-malgpars">Table 6.2: </span>Macralgae (Ulva) parameter summary
@@ -1281,34 +1343,45 @@ minimum rate of density decrease with time
 </tbody>
 </table></div>
 </div>
+<p><br></p>
 </div>
 <div id="validation-and-assessment-1" class="section level2" number="6.5">
 <h2>
 <span class="header-section-number">6.5</span> Validation and assessment<a class="anchor" aria-label="anchor" href="#validation-and-assessment-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>Using the Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure <a href="macroalgae.html#fig:dev-ulva12">6.4</a>).</p>
+<div id="generation-0" class="section level3" number="6.5.1">
+<h3>
+<span class="header-section-number">6.5.1</span> Generation 0<a class="anchor" aria-label="anchor" href="#generation-0"><i class="fas fa-link"></i></a>
+</h3>
+<p>Using the Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure <a href="macroalgae.html#fig:dev-ulva12">6.5</a>).</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva12"></span>
-<img src="images/dev/AlgaeDec2016vsULVAbiomass2016.png" alt="Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)." width="45%"><img src="images/dev/AlgaeMay2017vsUlvaBiomass2016.png" alt="Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)." width="45%"><p class="caption">
-Figure 6.4: Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right).
+<img src="images/dev/AlgaeDec2016vsULVAbiomass2016.png" alt="Comparison of observed and simulated Ulva for 2016 (left) and 2017 (right)." width="45%"><img src="images/dev/AlgaeMay2017vsUlvaBiomass2016.png" alt="Comparison of observed and simulated Ulva for 2016 (left) and 2017 (right)." width="45%"><p class="caption">
+Figure 6.5: Comparison of observed and simulated Ulva for 2016 (left) and 2017 (right).
 </p>
 </div>
 </div>
-<p>The modelled Ulva HSI prediction correlates well with the observed filamentous algae density, however, the correlation between predicted biomass and obsevred presence was less accurate (Figure <a href="macroalgae.html#fig:dev-ulva13">6.5</a>). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted and further data from 2020-2021 is needed to assess whether the HSI calculation needs further refinement.</p>
+<p>The modelled Ulva HSI prediction correlates well with the observed filamentous algae density, however, the correlation between predicted biomass and obsevred presence was less accurate (Figure <a href="macroalgae.html#fig:dev-ulva13">6.6</a>). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted and further data from 2020-2021 is needed to assess whether the HSI calculation needs further refinement.</p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva13"></span>
 <img src="images/dev/Algae_2016.png" alt="Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom)." width="100%"><p class="caption">
-Figure 6.5: Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom).
+Figure 6.6: Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom).
 </p>
 </div>
 </div>
-The Gen II model results were compared with HCHB survey data in 2020 - 2021.<br><div class="text-image">
+</div>
+<div id="generation-2" class="section level3" number="6.5.2">
+<h3>
+<span class="header-section-number">6.5.2</span> Generation 2<a class="anchor" aria-label="anchor" href="#generation-2"><i class="fas fa-link"></i></a>
+</h3>
+<p>The Generation 2 model results were compared with HCHB survey data in 2020 - 2021.</p>
+<div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva14"></span>
 <img src="images/dev/algae_biomass_2020_map.png" alt="Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020." width="100%"><p class="caption">
-Figure 6.6: Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020.
+Figure 6.7: Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020.
 </p>
 </div>
 </div>
@@ -1316,7 +1389,7 @@ Figure 6.6: Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva15"></span>
 <img src="images/dev/algae_biomass_2020.png" alt="Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel)." width="100%"><p class="caption">
-Figure 6.7: Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel).
+Figure 6.8: Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel).
 </p>
 </div>
 </div>
@@ -1324,7 +1397,7 @@ Figure 6.7: Scatter and box plot of field estimated macroalgae biomass versus si
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva16"></span>
 <img src="images/dev/algae_biomass_2021_map.png" alt="Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021." width="100%"><p class="caption">
-Figure 6.8: Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021.
+Figure 6.9: Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021.
 </p>
 </div>
 </div>
@@ -1332,16 +1405,18 @@ Figure 6.8: Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:dev-ulva17"></span>
 <img src="images/dev/algae_biomass_2021.png" alt="Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). " width="100%"><p class="caption">
-Figure 6.9: Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel).
+Figure 6.10: Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel).
 </p>
 </div>
+</div>
+<p><br></p>
 </div>
 </div>
 <div id="summary-2" class="section level2" number="6.6">
 <h2>
 <span class="header-section-number">6.6</span> Summary<a class="anchor" aria-label="anchor" href="#summary-2"><i class="fas fa-link"></i></a>
 </h2>
-<p>The macroalgae model in AED is able to capture the broad spatial patterns in environmental drivers that control biomass. Comparison of the Generation 0 model with the pre-HCHB survey data has provided insights to the suitability of the model approach. This is being used to refine the conceptual basis of the model which will be introduced in the next model versions.</p>
+<p>The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the <em>Ulva</em> community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the Ulva HSI) correlated well with the ealry (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation.</p>
 
 </div>
 </div>
@@ -1370,12 +1445,17 @@ while (i < img.length) {
 </li>
 <li>
 <a class="nav-link" href="#data-availability"><span class="header-section-number">6.3</span> Data availability</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#environmental-threshold-parameter-review"><span class="header-section-number">6.3.1</span> Environmental threshold parameter review</a></li>
-<li><a class="nav-link" href="#algae-extent-within-the-lagoon"><span class="header-section-number">6.3.2</span> Algae extent within the lagoon</a></li>
+<li><a class="nav-link" href="#algae-extent-within-the-lagoon"><span class="header-section-number">6.3.1</span> Algae extent within the lagoon</a></li>
+<li><a class="nav-link" href="#environmental-threshold-parameter-review"><span class="header-section-number">6.3.2</span> Environmental threshold parameter review</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#model-setup-2"><span class="header-section-number">6.4</span> Model setup</a></li>
-<li><a class="nav-link" href="#validation-and-assessment-1"><span class="header-section-number">6.5</span> Validation and assessment</a></li>
+<li>
+<a class="nav-link" href="#validation-and-assessment-1"><span class="header-section-number">6.5</span> Validation and assessment</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#generation-0"><span class="header-section-number">6.5.1</span> Generation 0</a></li>
+<li><a class="nav-link" href="#generation-2"><span class="header-section-number">6.5.2</span> Generation 2</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#summary-2"><span class="header-section-number">6.6</span> Summary</a></li>
 </ul>
 
