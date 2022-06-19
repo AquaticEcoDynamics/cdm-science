@@ -67,6 +67,11 @@ The approach essentially follows a size-class based model for resolving the fila
 
 The algal biomass of each group, $MAG_C$, is simulated in units of carbon ($mmol\:C/m^2$), and the groups have been configured to have a variable C:N:P ratio, with dynamic uptake rates of N and P sources simulated in response to changing water column conditions and cellular physiology. The fundamental balance equation shaping growth remains as depicted in Eq  to capture the various processes impacting ulva growth and decay, with the difference that each growth-stage allows for different light, nutrien and salinity sensitivity, and there is a aging component linking the size classes.  A full description of the AED macroalgae model can be referred to the [AED science manual](https://aquaticecodynamics.github.io/aed-science/DO_1.html). 
 
+### Ulva HSI
+
+In addition to the simulation of Ulva biomass, a simple "Habitat Suitability Index" (HSI), termed $Ulva\:HSI$, was also developed to map Ulva growth potential and 'hotspot' locations. The $Ulva\:HSI$ is an index between 0 and 1, and is computed by normalising the expression outlined in Eq \@ref(eq:ulva6). This metric does not account for the accumulation of biomass, or consider processes such as mortality and sloughing or mobilisation, but is a useful metric to look where high growth rates typically occur.
+
+
 <br>
 
 ## Data availability
@@ -304,7 +309,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ### Generation 0
 
-Using the Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure \@ref(fig:dev-ulva12)).
+Using the Generation 0 model, the following assessment against Ulva biomass prediction and data showing presence/absence was recorded (Figure \@ref(fig:dev-ulva12)). 
 
 ```{r dev-ulva12, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Comparison of observed and simulated Ulva for 2016 (left) and 2017 (right)."}
 
@@ -312,7 +317,7 @@ knitr::include_graphics(c("images/dev/AlgaeDec2016vsULVAbiomass2016.png","images
 
 ```
 
-The modelled Ulva HSI prediction correlates well with the observed filamentous algae density, however, the correlation between predicted biomass and obsevred presence was less accurate (Figure \@ref(fig:dev-ulva13)). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted and further data from 2020-2021 is needed to assess whether the HSI calculation needs further refinement.  
+The modelled $Ulva\:HSI$ prediction correlates well with the observed filamentous algae density, however, the correlation between predicted biomass and obsevred presence was less accurate (Figure \@ref(fig:dev-ulva13)). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted and further data from 2020-2021 is needed to assess whether the HSI calculation needs further refinement.  
 
 
 ```{r dev-ulva13, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom)."}
