@@ -3,7 +3,13 @@
 
 ## Overview
 
-Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, mainly species from the genus *Ulva*. The survey data highlight that the filamentous algae are tightly associated with the locations where the seagrass *Ruppia* is present, and late in the season the smothering and deoxygenation caused by large Ulva biomass accumulations can drive poor water quality. This section describes the approach to simulating macroalgae within the CDM, and development of the model to tailor to the observed data collected within the HCHB research program.   
+Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, and these 'blooms' have become emblematic of the recent cycle of eutrophication experienced in the lagoon (Figure \@ref(fig:dev-ulva01)). The survey data highlight that the filamentous algae, mainly species from the genus *Ulva*, are tightly associated with the locations where the seagrass *Ruppia* is present, and they flourish in areas with shallow, warm and poorly-mixed water. Late in the season the smothering and deoxygenation caused by the breakdown of large *Ulva* biomass accumulations drives poor water quality. This section describes the approach to simulating macroalgae within the CDM, and development of the model to tailor to the observed data collected within the HCHB research program.   
+
+```{r dev-ulva01, echo = FALSE, out.width='40%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Images of filamentous algae bloom conditions within the Coorong South Lagoon, showing the pervasive extent of biomass accumulation. Photo credit: David Paton."}
+
+knitr::include_graphics(c("images/dev/paton1.jpeg","images/dev/paton2.jpeg"))
+
+```
 
 <br>
 
@@ -65,17 +71,9 @@ The algal biomass of each group, $MAG_C$, is simulated in units of carbon ($mmol
 
 ## Data availability
 
-### Environmental threshold parameter review
-
-•	For salinities from 35—90 ppt, an optimum temperature for the Ulva paradoxa filamentous green algal community was 30°C, that is the temperature where the relationship between weight gain is the most positive (Waycott et al. 2019).<br>
-•	At salinities of 30 - 140 ppt, weight change decreases as salinity increase. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures (Waycott et al. 2019).<br>
-•	At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability (Collier et al. 2017 cited in Asanopoulos and Waycott 2020).
-
-
-
 ### Algae extent within the lagoon
 
-A summary of the available algal extent data is summarised in Table X.
+Regular monitoring for macroalgae biomass within the Coorong is not routinely undertaken, but a range of data are available over the model calibration and testing periods. A summary of the available algal extent data is summarised in Table X.
 
 ```{r 3-malgtable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -103,40 +101,113 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary
             background = '#ebebeb') %>%
   row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = F,font_size = 11) %>%
-  scroll_box(width = "680px", height = "360px",
+  scroll_box(width = "680px", height = "380px",
              fixed_thead = FALSE)
 ```
+
 <br>
 
+The locations of the various smaplign campaigns for assessment of *Filamentous Algae* presence and biomass are shown for the historical (pre-HCHB) sampling campaigns (Figure \@ref(fig:dev-ulva10)) and for the more intensive sampling campaigns undertaken within the HCHB research program (Figure \@ref(fig:dev-ulva11)).
 
+<br>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #2481AA;
+  float: left;
+  width: 49.5%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
 
-**Historical Monitoring** A summary of historical (pre 2020) *Filamentous Algae* monitoring locations are shown in Figure \@ref(fig:dev-ulva10).
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event, 'hchb')"id="defaultOpen">HCHB Monitoring</button>
+  <button class="tablinks" onclick="opentab(event, 'hist')">Historical Monitoring</button>
+</div>
 
+<div id="hchb" class="tabcontent">
+<center>
 
-```{r dev-ulva10, echo = FALSE, out.width='50%', class = "text-image", fig.show='hold',fig.align='default', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
+<br>
+
+**HCHB Monitoring** A summary of the HCHB *Filamentous Algae* monitoring locations are shown below.
+
+```{r dev-ulva11, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous algae sampling sites for the HCHB program (T & I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge."}
+
+knitr::include_graphics(c("images/dev/algaesites_Sep2020.png","images/dev/algaesites_Mar2021.png","images/dev/algaesites_Sep2020.png"))
+
+```
+
+</center>
+</div>
+
+<div id="hist" class="tabcontent">
+<center>
+
+<br>
+
+**Historical Monitoring** A summary of historical (pre 2020) *Filamentous Algae* monitoring locations are shown below.
+
+```{r dev-ulva10, echo = FALSE, out.width='50%', class = "text-image", fig.show='hold',fig.align='default', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge."}
 
 knitr::include_graphics("images/dev/algaesites-may2017.png")
 knitr::include_graphics("images/dev/algaesites_Dec2016.png")
 
 ```
 
-
-**HCHB Monitoring** A summary of the HCHB monitoring locations are shown in Figure \@ref(fig:dev-ulva11).
-
-```{r dev-ulva11, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary."}
-
-knitr::include_graphics(c("images/dev/algaesites_Sep2020.png","images/dev/algaesites_Mar2021.png","images/dev/algaesites_Sep2020.png"))
-
-```
+</center>
+</div>
 
 
+<script>
+function opentab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+
+<br>
+
+
+### Environmental threshold parameter review
+
+In order to set/refine the parameters required for the macroalgae model, such as light, salinity and temperature responses, a review of available experimental data and observations was undertaken. The key information sourced incldued:
+
+- For salinities from 35—90 ppt, an optimum temperature for the *Ulva paradoxa* filamentous green algal community was 30°C, which was the temperature where the relationship between weight gain became the most positive (Waycott et al. 2019).<br>
+-	At salinities of 30 - 140 ppt, weight change decreased as salinity increases. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures (Waycott et al. 2019).<br>
+-	At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability (Collier et al. 2017, cited in Asanopoulos and Waycott 2020).
+
+<br>
 
 ## Model setup
 
 , including the salinity limitation functions on phytoplankton communities.
 
 
-Four pools were confgured to simulate the biomass of filamentous algae, $ulva_a$, $ulva_b$, $ulva_c$ and $ulva_s$. The parameters used in the setup are outlined in Table (Table \@ref(tab:6-malgpars)).
+Four pools were configured to simulate the biomass of filamentous algae, $ulva_a$, $ulva_b$, $ulva_c$ and $ulva_s$. The parameters used in the setup are outlined in Table (Table \@ref(tab:6-malgpars)).
 
 ```{r 6-malgpars, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -222,18 +293,20 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   column_spec(5, width_min = "5em") %>%
   column_spec(6, width_min = "5em") %>%
   column_spec(7, width_min = "5em") %>%
-    scroll_box(width = "700px", height = "4600px",
+    scroll_box(width = "700px", height = "3400px",
              fixed_thead = FALSE)
 ```
 
 
-
+<br>
 
 ## Validation and assessment
 
-Using the  Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure \@ref(fig:dev-ulva12)).
+### Generation 0
 
-```{r dev-ulva12, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)."}
+Using the Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure \@ref(fig:dev-ulva12)).
+
+```{r dev-ulva12, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Comparison of observed and simulated Ulva for 2016 (left) and 2017 (right)."}
 
 knitr::include_graphics(c("images/dev/AlgaeDec2016vsULVAbiomass2016.png","images/dev/AlgaeMay2017vsUlvaBiomass2016.png"))
 
@@ -248,7 +321,10 @@ knitr::include_graphics("images/dev/Algae_2016.png")
 
 ```
 
-The Gen II model results were compared with HCHB survey data in 2020 - 2021.  
+### Generation 2
+
+The Generation 2 model results were compared with HCHB survey data in 2020 - 2021.  
+
 ```{r dev-ulva14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
 
 knitr::include_graphics("images/dev/algae_biomass_2020_map.png")
@@ -265,12 +341,17 @@ knitr::include_graphics("images/dev/algae_biomass_2020.png")
 knitr::include_graphics("images/dev/algae_biomass_2021_map.png")
 ```
 
-
 ```{r dev-ulva17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). "}
 
 knitr::include_graphics("images/dev/algae_biomass_2021.png")
 ```
 
+<br>
+
 ## Summary 
 
-The macroalgae model in AED is able to capture the broad spatial patterns in environmental drivers that control biomass. Comparison of the Generation 0 model with the pre-HCHB survey data has provided insights to the suitability of the model approach. This is being used to refine the conceptual basis of the model which will be introduced in the next model versions.
+The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the *Ulva* community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the Ulva HSI) correlated well with the ealry (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation. 
+
+
+
+
