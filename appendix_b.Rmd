@@ -1,18 +1,17 @@
 # Appendix B : Results Archive {-}
 
-## Long term assessment of model performance (2013 – 2019)  {-}
+## Long term assessment of model performance  {-}
 
-### HCHB *Generaton 0* {-}
-
-The aim of this section is to statistically compare the modelling results against historical data collected within the Coorong (where available), over the period of 2013-2019, with outputs of the CDM. The model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics: 
+The aim of this section is to statistically compare the modelling results against historical data collected within the Coorong (where available), over the period of 2013-2021, with outputs of various generations of the CDM. The model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a, are assessed with a set of statistical metrics: 
 
   +	$R$ : regression coefficient; 
   +	$BIAS$ : bias of average prediction to the average observation; 
   +	$RMS$ : root mean square; and 
   +	$NRMS$ : normalized root mean square calculated as $RMS$ normalized by the average of observed values.
 
-The calculations of statistical metrics was performed for each site where the number of field observations was >10 in the assessment period (6 year). The validation plots including the statistics values for each site are presented in the below table (Table 7.3), with links to each assessed water quality variable.
+The calculations of statistical metrics has been performed for each site where the number of field observations was >10 in the assessment/simulation period. 
 
+The validation plots including the statistics for each site are available via the links in the below table (Table \@ref(tab:A-testing)). The tables are organised based on model generation, in addition to a comparison of the performance of the model generations (termed 'mutli').
 
 <br>
 
@@ -226,57 +225,17 @@ document.getElementById("defaultOpen").click();
 </body>
 <p> </p>
 
+<br>
+
 ## Sensitivity assessment {-}
 
 ### Sensitivity to internal nutrient loading  {-}
 
-This section includes the sensitivity assessment results to a selected range of sediment nutrient flux rates, based on the latest report on the field observations and laboratory experiments on nutrient cycling in the Coorong (Mosley et al., 2021, Annual Investigations Report: Sediment quality, nutrient cycling and fluxes). In the prior versions of CDM, the sediment flux rate of ammonium (`Fsed_amm`), nitrate (`Fsed_nit`), phosphate (`Fsed_frp`), and oxygen demand (`Fsed_oxy`) were set based on literature review of similar coastal sites due to absence of relative data in the Coorong. In this sensitivity assessment, the CDM was updated with the finding from Mosley et al. (2021) (Table 7.4), with a series of sediment flux settings as listed in Table 7.5, compared to the HCHB Generation 0 version of CDM (CIIP phase 1).
-
-The results from the sensitivity scenarios with comparison to the prior version of CDM are presented in the below appendix table (Table 7.6), with links to each assessed water quality variable. Key preliminary findings from the sensitivity assessment include:
-
-  +	The laboratory experiment revealed a relatively strong sediment oxygen demand, ammonium flux, and phosphate flux, and weak nitrate sediment flux under dark condition; Compared to the laboratory experiment results, the prior CDM relatively overestimated the sediment nitrate flux, and under-estimated the sediment oxygen demand, and ammonium and phosphate sediment fluxes;
-  +	The scenario results showed complex interactions between the phytoplankton dynamics and the sediment nutrient fluxes. In scenario 1 with relatively low Fsed_nit/Fsed_amm and high Fsed_frp, the model showed to overestimate the FRP concentration in the water while underestimate the phytoplankton biomass; whilst in scenario 2-4 with increasing Fsed_nit/Fsed_amm and Fsed_frp, improvement of the model performance, especially the phytoplankton prediction in the south lagoon are observed;
-  +	The north lagoon especially the area around the Murray Mouth and barrage inputs showed a relatively low sensitivity to the changes in the sediment nutrient fluxes, while in the south lagoon the water quality changes were more dominated by the sediment nutrient fluxes.
-The findings from the sensitivity assessment to the internal nutrient loads will form a base for the next stage of CDM development, and to be integrated into the CDM with other developments such as wave and resuspension and oxygen metabolism of the CDM;
+This section includes the sensitivity assessment results to a selected range of sediment nutrient flux rates, based on the latest report on the field observations and laboratory experiments on nutrient cycling in the Coorong (Mosley et al., 2021, Annual Investigations Report: Sediment quality, nutrient cycling and fluxes). In the early versions of CDM, the sediment flux rate of ammonium (`Fsed_amm`), nitrate (`Fsed_nit`), phosphate (`Fsed_frp`), and oxygen demand (`Fsed_oxy`) were set based on literature review of similar coastal sites due to absence of relative data in the Coorong. In this sensitivity assessment, the CDM was updated with the findings from Mosley et al. (2021) (Table \@ref(tab:5-sedpars)), with a series of sediment flux settings as listed in Table \@ref(tab:B-sentbl), and these were compared to the HCHB Generation 0 version of CDM.
 
 <br>
 
-
-```{r A-sentbl2, echo=FALSE, message=FALSE, warning=FALSE}
-library(knitr)
-library(kableExtra)
-library(readxl)
-library(rmarkdown)
-theSheet <- read_excel('tables/CIIP_phase2_scenarios.xlsx', sheet = 3)
-theSheet <- theSheet[theSheet$Table == "Data",]
-theSheetGroups <- unique(theSheet$Group)
-
-
-kbl(theSheet[,3:6], caption = "T&I 1 Sediment flux data", align = "l",) %>%
-  pack_rows(theSheetGroups[1],
-            min(which(theSheet$Group == theSheetGroups[1])),
-            max(which(theSheet$Group == theSheetGroups[1])),
-            background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[2],
-            min(which(theSheet$Group == theSheetGroups[2])),
-            max(which(theSheet$Group == theSheetGroups[2])),
-            background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[3],
-          min(which(theSheet$Group == theSheetGroups[3])),
-          max(which(theSheet$Group == theSheetGroups[3])),
-          background = '#ebebeb') %>%
-  pack_rows(theSheetGroups[4],
-          min(which(theSheet$Group == theSheetGroups[4])),
-          max(which(theSheet$Group == theSheetGroups[4])),
-          background = '#ebebeb') %>%
-row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
-  kable_styling(full_width = T,font_size = 11) %>%
-  scroll_box(fixed_thead = FALSE)
-```
-<br>
-
-
-```{r A-sentbl, echo=FALSE, message=FALSE, warning=FALSE}
+```{r B-sentbl, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
@@ -308,16 +267,21 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   scroll_box(fixed_thead = FALSE)
 ```
 
+<br> 
 
-HCHB *FSED Sensitivity*
+*FSED Sensitivity*: The results from the sensitivity scenarios with comparison to the prior version of CDM are presented in Table \@ref(tab:B-nutsen), with links to each assessed water quality variable. Key findings from the sensitivity assessment include:
 
-```{r A-nutsen, echo=FALSE, message=FALSE, warning=FALSE}
+  +	The laboratory experiment revealed a relatively strong sediment oxygen demand, ammonium flux, and phosphate flux, and weak nitrate sediment flux under dark condition; Compared to the laboratory experiment results, the prior CDM relatively overestimated the sediment nitrate flux, and under-estimated the sediment oxygen demand, and ammonium and phosphate sediment fluxes;
+  +	The scenario results showed complex interactions between the phytoplankton dynamics and the sediment nutrient fluxes. In scenario 1 with relatively low Fsed_nit/Fsed_amm and high Fsed_frp, the model showed to overestimate the FRP concentration in the water while underestimate the phytoplankton biomass; whilst in scenario 2-4 with increasing Fsed_nit/Fsed_amm and Fsed_frp, improvement of the model performance, especially the phytoplankton prediction in the south lagoon are observed;
+  +	The north lagoon especially the area around the Murray Mouth and barrage inputs showed a relatively low sensitivity to the changes in the sediment nutrient fluxes, while in the south lagoon the water quality changes were more dominated by the sediment nutrient fluxes.
+
+<br>
+
+```{r B-nutsen, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
-
-
 
 theSheet_Names <- list.files(path = "HTML/Sed_Nut_flux_sensitivity", pattern = NULL, all.files = FALSE,
            full.names = FALSE, recursive = FALSE,
@@ -325,9 +289,7 @@ theSheet_Names <- list.files(path = "HTML/Sed_Nut_flux_sensitivity", pattern = N
 
 theSheet <- paste("<",'a href="HTML/Sed_Nut_flux_sensitivity/',theSheet_Names,'"',">",theSheet_Names,"<",'/a',">", sep = "")
 
-
-
-kbl(theSheet, caption = "Model results for nutrient flux sensitivity tests", align = "l",escape = F,col.names = 'Nutrient Sensitivity', ) %>%
+kbl(theSheet, caption = "Model sensitivity test results for sediment nutrient flux rates.", align = "l",escape = F,col.names = 'Variable', ) %>%
 
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
