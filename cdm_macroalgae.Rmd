@@ -30,7 +30,7 @@ $$
 where the main growth term is resolved as:
 
 $$
-\scriptsize{f^{FA}_{\text{uptake}} = \underbrace{R^{FA}_{\text{growth}}}_{\text{max growth} \\ \text{rate at 20$^\circ$C}} \ \ \underbrace{(1-k^{FA}_{\text{pr}})}_{\text{photorespiratory} \\ \text{loss}} \ \ \underbrace{\Phi^{FA}_{\text{tem}}(T)}_{\text{temperature} \\ \text{scaling}} \text{min} \left \{\underbrace{\Phi^{FA}_{\text{light}}(I)}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{N}}(NO_{3},NH_{4})}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{P}}(PO_{4})}_{\text{P limitation}} \right \} [FA]}
+\scriptsize{f^{FA}_{\text{uptake}} = \underbrace{R^{FA}_{\text{growth}}}_{\text{max growth} \\ \text{rate at 20$^\circ$C}} \ \ \underbrace{(1-k^{FA}_{\text{pr}})}_{\text{photorespiratory} \\ \text{loss}} \ \ \underbrace{\Phi^{FA}_{\text{tem}}(T)}_{\text{temperature} \\ \text{scaling}} \text{min} \left \{\underbrace{\Phi^{FA}_{\text{light}}(I)}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{N}}(NO_{3},NH_{4})}_{\text{N limitation}}, \underbrace{\Phi^{FA}_{\text{P}}(PO_{4})}_{\text{P limitation}} \right \} [FA]}
 (\#eq:ulva6)
 $$
 
@@ -70,6 +70,7 @@ This approach allows more direct links with a) the experimental data collected o
 The approach essentially follows a size-class based model for resolving the filamentous algae biomass pool. According to the above conceptual schematic, four discrete life-stage (aka size) categories are included. In general they are fixed in space, but note that 'sloughed' biomass (Stage 4) becomes mobilised after a sloughing 'event', and can continue to be exposed to surface light irradiances and also begin decomposition should environmental conditions be inadequate for growth (e.g., as the water becomes too salty).
 
 The fundamental balance equation shaping growth remains as depicted in Eq \@ref(eq:ulva5) to capture the various processes impacting ulva growth and decay, with the difference that each growth-stage allows for different light, nutrient and salinity sensitivity, and there is a aging component linking the size classes, $R_{aging}$.  A full description of the AED macroalgae model can be referred to the [AED science manual](https://aquaticecodynamics.github.io/aed-science/DO_1.html). 
+
 
 ### Ulva HSI
 
@@ -213,9 +214,7 @@ In order to set/refine the parameters required for the macroalgae model, such as
 
 ## Model setup
 
-
-
-Four pools were configured to simulate the biomass of filamentous algae, $ulva_a$, $ulva_b$, $ulva_c$ and $ulva_s$. The parameters used in the setup are outlined in Table (Table \@ref(tab:6-malgpars)).
+Four pools were configured to simulate the biomass of filamentous algae, $ulva_a$, $ulva_b$, $ulva_c$ and $ulva_s$. The parameters used in the setup are outlined in Table (Table \@ref(tab:6-malgpars)). 
 
 ```{r 6-malgpars, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -305,6 +304,15 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
              fixed_thead = FALSE)
 ```
 
+<br>
+
+The total biomass of $FA$, in comparable units to the field data ($g\text{ dry weight}/m^2$), is termed $TMALG$ and computed as the sum of the attached and floating components:
+
+$$
+TMALG = \left[\underbrace{\sum_i^{\text{a,b,c}} \left( ulva_{i} \right)}_{\text{attached}} + \underbrace{ulva_{s}\:\Delta z}_{\text{floating}} \right] \: \chi_{c:dw} \: \times 10^{-3}
+(\#eq:ulva7)
+$$
+where $\chi_{c:dw}$ is the dry weight per carbon ratio. $TMALG$ is used to assess against the algal densities reported in the field, thus assuming the reported algal densities from the transects are the combined amount of attached and detached material.
 
 <br>
 
@@ -363,7 +371,7 @@ knitr::include_graphics("images/dev/algae_biomass_2021.png")
 
 The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the *Ulva* community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the $Ulva\:HSI$) correlated well with the early (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation. 
 
-The Generation 2 model showed mixed accuracy against the more comprehensive dataset from 2021 and 2022 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field.This is recommended as an area for further investigation.
+The Generation 2 model showed mixed accuracy against the more comprehensive dataset from 2021 and 2022 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field. This is recommended as an area for further investigation and may benefit from further data on  benthic substrates that can be used to constrain where it is able to attach and grow.
 
 
 
