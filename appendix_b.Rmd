@@ -15,9 +15,9 @@ The validation plots including the statistics for each site are available via th
 
 <br>
 
-#### {.panelset}
+#### {.panelset} {-}
 
-##### GEN 0
+##### GEN 0 {-}
 
 HCHB *Generaton 0*
 
@@ -39,7 +39,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 
 
-##### GEN 1
+##### GEN 1 {-}
 
 HCHB *Generaton 1*
 
@@ -61,7 +61,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 
 
-##### GEN 1.5
+##### GEN 1.5 {-}
  
 HCHB *Generaton 1.5*
 
@@ -98,7 +98,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 
 
-##### GEN 2
+##### GEN 2 {-}
  
 HCHB *Generaton 2.0*
 
@@ -133,7 +133,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 
 
-##### MULTI
+##### MULTI {-}
  
 HCHB *Model Comparisons*
 
@@ -157,7 +157,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 
 
-##### WAVE
+##### WAVE {-}
 
 HCHB *Wave Comparisons*
 
