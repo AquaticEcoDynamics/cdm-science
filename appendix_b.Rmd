@@ -15,39 +15,10 @@ The validation plots including the statistics for each site are available via th
 
 <br>
 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: #2481AA;
-  float: left;
-  width: 16.6667%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 14px;
-  color: #FFFFFF;
-  font-weight: bold;
-}
-</style>
-</head>
-<body>
+### Panelset {.panelset}
 
-<div class="tab">
-  <button class="tablinks" onclick="opentab(event, 'GEN0')"id="defaultOpen">GEN 0</button>
-  <button class="tablinks" onclick="opentab(event, 'GEN1')">GEN 1</button>
-  <button class="tablinks" onclick="opentab(event, 'GEN15')">GEN 1.5</button>
-  <button class="tablinks" onclick="opentab(event, 'GEN2')">GEN 2</button>
-  <button class="tablinks" onclick="opentab(event, 'MULTI')">MULTI</button>
-  <button class="tablinks" onclick="opentab(event, 'WAVE')">WAVE</button>
-</div>
+#### GEN 0
 
-
-<div id="GEN0" class="tabcontent">
-<p> 
 HCHB *Generaton 0*
 
 ```{r A-testing, echo=FALSE, message=FALSE, warning=FALSE}
@@ -66,11 +37,10 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-</p>
-</div>
 
-<div id="GEN1" class="tabcontent">
-<p> 
+
+#### GEN 1
+
 HCHB *Generaton 1*
 
 ```{r A-testing1, echo=FALSE, message=FALSE, warning=FALSE}
@@ -89,11 +59,10 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-</p>
-</div>
 
-<div id="GEN15" class="tabcontent">
-<p> 
+
+#### GEN 1.5
+ 
 HCHB *Generaton 1.5*
 
 ```{r A-testing2, echo=FALSE, message=FALSE, warning=FALSE}
@@ -127,11 +96,10 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-</p>
-</div>
 
-<div id="GEN2" class="tabcontent">
-<p> 
+
+#### GEN 2
+ 
 HCHB *Generaton 2.0*
 
 ```{r A-testing3, echo=FALSE, message=FALSE, warning=FALSE}
@@ -163,11 +131,10 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-</p>
-</div>
 
-<div id="MULTI" class="tabcontent">
-<p> 
+
+#### MULTI
+ 
 HCHB *Model Comparisons*
 
 ```{r A-testing5, echo=FALSE, message=FALSE, warning=FALSE}
@@ -188,11 +155,10 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-</p>
-</div>
 
-<div id="WAVE" class="tabcontent">
-<p> 
+
+#### WAVE
+
 HCHB *Wave Comparisons*
 
 ```{r A-testing6, echo=FALSE, message=FALSE, warning=FALSE}
@@ -212,30 +178,11 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 
 ```
-</p>
-</div>
 
 
 
-<script>
-function opentab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-document.getElementById("defaultOpen").click();
-</script>
 
-</body>
-<p> </p>
+
 
 <br>
 
