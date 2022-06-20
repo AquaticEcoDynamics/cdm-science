@@ -86,13 +86,35 @@
 <p>The calculations of statistical metrics has been performed for each site where the number of field observations was &gt;10 in the assessment/simulation period.</p>
 <p>The validation plots including the statistics for each site are available via the links in the below table (Table <a href="appendix-b-results-archive.html#tab:A-testing">9.6</a>). The tables are organised based on model generation, in addition to a comparison of the performance of the model generations (termed ‘mutli’).</p>
 <p><br></p>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #2481AA;
+  float: left;
+  width: 16.6667%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+</style>
+<div class="tab">
+<p><button class="tablinks" onclick="opentab(event, 'GEN0')" id="defaultOpen">GEN 0</button>
+<button class="tablinks" onclick="opentab(event, 'GEN1')">GEN 1</button>
+<button class="tablinks" onclick="opentab(event, 'GEN15')">GEN 1.5</button>
+<button class="tablinks" onclick="opentab(event, 'GEN2')">GEN 2</button>
+<button class="tablinks" onclick="opentab(event, 'MULTI')">MULTI</button>
+<button class="tablinks" onclick="opentab(event, 'WAVE')">WAVE</button></p>
 </div>
-<div id="model-generation-.panelset" class="section level2 unnumbered">
-<h2>Model Generation {.panelset}<a class="anchor" aria-label="anchor" href="#model-generation-.panelset"><i class="fas fa-link"></i></a>
-</h2>
-<div id="gen-0" class="section level3 unnumbered">
-<h3>GEN 0<a class="anchor" aria-label="anchor" href="#gen-0"><i class="fas fa-link"></i></a>
-</h3>
+<div id="GEN0" class="tabcontent">
+<p>
+</p>
 <p>HCHB <em>Generaton 0</em></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -178,10 +200,11 @@ Generation 0 2013 2019
 </tbody>
 </table></div>
 </div>
+
 </div>
-<div id="gen-1" class="section level3 unnumbered">
-<h3>GEN 1<a class="anchor" aria-label="anchor" href="#gen-1"><i class="fas fa-link"></i></a>
-</h3>
+<div id="GEN1" class="tabcontent">
+<p>
+</p>
 <p>HCHB <em>Generaton 1</em></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -267,10 +290,11 @@ Generation 1 2019 2021
 </tbody>
 </table></div>
 </div>
+
 </div>
-<div id="gen-1.5" class="section level3 unnumbered">
-<h3>GEN 1.5<a class="anchor" aria-label="anchor" href="#gen-1.5"><i class="fas fa-link"></i></a>
-</h3>
+<div id="GEN15" class="tabcontent">
+<p>
+</p>
 <p>HCHB <em>Generaton 1.5</em></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -401,10 +425,11 @@ Generation 1.5 wALS Data 2017 2022
 </tbody>
 </table></div>
 </div>
+
 </div>
-<div id="gen-2" class="section level3 unnumbered">
-<h3>GEN 2<a class="anchor" aria-label="anchor" href="#gen-2"><i class="fas fa-link"></i></a>
-</h3>
+<div id="GEN2" class="tabcontent">
+<p>
+</p>
 <p>HCHB <em>Generaton 2.0</em></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -535,10 +560,11 @@ Generation 2 2017 2022 (Transect)
 </tbody>
 </table></div>
 </div>
+
 </div>
-<div id="multi" class="section level3 unnumbered">
-<h3>MULTI<a class="anchor" aria-label="anchor" href="#multi"><i class="fas fa-link"></i></a>
-</h3>
+<div id="MULTI" class="tabcontent">
+<p>
+</p>
 <p>HCHB <em>Model Comparisons</em></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -619,10 +645,11 @@ Model Comparison 2017 2022
 </tbody>
 </table></div>
 </div>
+
 </div>
-<div id="wave" class="section level3 unnumbered">
-<h3>WAVE<a class="anchor" aria-label="anchor" href="#wave"><i class="fas fa-link"></i></a>
-</h3>
+<div id="WAVE" class="tabcontent">
+<p>
+</p>
 <p>HCHB <em>Wave Comparisons</em></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; margin-left: auto; margin-right: auto;">
@@ -708,8 +735,26 @@ Generation 1.5
 </tbody>
 </table></div>
 </div>
-<p><br></p>
+
 </div>
+<script>
+function opentab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script><p>
+</p>
+<p><br></p>
 </div>
 <div id="sensitivity-assessment" class="section level2 unnumbered">
 <h2>Sensitivity assessment<a class="anchor" aria-label="anchor" href="#sensitivity-assessment"><i class="fas fa-link"></i></a>
@@ -1280,16 +1325,6 @@ while (i < img.length) {
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#appendix-b-results-archive">Appendix B : Results Archive</a></li>
 <li><a class="nav-link" href="#long-term-assessment-of-model-performance">Long term assessment of model performance</a></li>
-<li>
-<a class="nav-link" href="#model-generation-.panelset">Model Generation {.panelset}</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#gen-0">GEN 0</a></li>
-<li><a class="nav-link" href="#gen-1">GEN 1</a></li>
-<li><a class="nav-link" href="#gen-1.5">GEN 1.5</a></li>
-<li><a class="nav-link" href="#gen-2">GEN 2</a></li>
-<li><a class="nav-link" href="#multi">MULTI</a></li>
-<li><a class="nav-link" href="#wave">WAVE</a></li>
-</ul>
-</li>
 <li>
 <a class="nav-link" href="#sensitivity-assessment">Sensitivity assessment</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#sensitivity-to-internal-nutrient-loading">Sensitivity to internal nutrient loading</a></li></ul>
 </li>
