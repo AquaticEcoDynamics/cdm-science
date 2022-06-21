@@ -651,7 +651,7 @@ kbl(theSheet[,1:5], caption = "Summary of $LC_{50}$ and $LC_{10}$ estimates of s
 
 ### Model application and results
 
-The Generation 0 model was run between 2017 - 2020 using the base case and two management scenarios. For details of model application and results please refer to Brookes et al. 2022. 
+The Generation 0 model was run between 2017 - 2020 using the base case and two management scenarios. For details of model application and results please refer to [Brookes et al. 2022](https://www.frontiersin.org/articles/10.3389/fenvs.2022.796623/full). 
 
 <!-- ### Model results and assessment -->
 
