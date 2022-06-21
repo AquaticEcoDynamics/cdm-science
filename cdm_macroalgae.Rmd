@@ -341,7 +341,7 @@ knitr::include_graphics("images/dev/Algae_2016.png")
 
 Following further refinement of the general water quality model calibration (as outlined in Chapters 4-5), and the macroalgae model developments (Section 6.3), the Generation 2 model was run over the period from 2020-2021, inclusive, and the results were compared with in-depth HCHB survey data collected during several surveys undertaken within the period (see Figure \@ref(fig:dev-ulva11)).   
 
-The model results are shown in  Figure \@ref(fig:dev-ulva14) - \@ref(fig:dev-ulva15) for the 2020 dataset, and Figure \@ref(fig:dev-ulva16) - \@ref(fig:dev-ulva17) for the 2021 dataset. 
+The model results are shown in  Figure \@ref(fig:dev-ulva14) - \@ref(fig:dev-ulva15) for the 2020 dataset, and Figure \@ref(fig:dev-ulva16) - \@ref(fig:dev-ulva17) for the 2021 dataset. Comparison of zone averaged modelled and observed data in 2020 - 2021 is shown in Figure  \@ref(fig:dev-ulva18).
 
  
 ```{r dev-ulva14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
@@ -365,6 +365,10 @@ knitr::include_graphics("images/dev/algae_biomass_2021_map.png")
 knitr::include_graphics("images/dev/algae_biomass_2021.png")
 ```
 
+```{r dev-ulva18, echo = FALSE, out.width='60%', class = "text-image",fig.align='center', fig.cap = "Scatter plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 - 2021 averaged by zones in the lagoon. Labels indicate zone number (see Figure 2.5 for details)."}
+
+knitr::include_graphics("images/dev/algae_biomass_zone_label.png")
+```
 <br>
 
 ## Summary 
