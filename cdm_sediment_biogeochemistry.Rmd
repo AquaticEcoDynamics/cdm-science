@@ -402,6 +402,20 @@ kable(sediment_OM ,"html", escape = F, align = "c", caption = "Organic matter ox
 
 \
 
+##### Organic matter initialisation {.unnumbered}
+Organic matter was initialised with profiles that had a higher concentration in the upper layers of the sediment. (All other variables were initialised with concentrations that were constant with depth.) This is due to the common assumption that organic matter concentration decreases with depth, based on the degradation of water column-derived organic matter over time. Refractory species (particulate and dissolved) used the linear method and labile species (particulate and dissolved) used the exponential method. The linear method set the initial concentration at the surface, a minimum concentration as a fraction of the initial concentration (*OM_minR*), and a depth at which the minimum concentration would be reached (*InitMinDepthR*). The exponential method set the initial concentration, and an exponential decay constant (*OM_cfL*). An example of how the initial profiles appear is given in \@ref(fig:dev-pics2b). 
+
+\
+
+```{r dev-pics2b, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Organic matter initial profiles. Left - linear profiles for refractory species. Right - exponential profiles for labile species."}
+
+knitr::include_graphics(c("images/dev/sed_OMInitialProfiles-02.png"))
+
+```
+
+
+\
+
 ##### Secondary redox reactions {.unnumbered}
 
 Secondary redox reactions are formed from the by-products of primary redox reactions. The nitrogen redox cycle parameters are given in Table \@ref(tab:3dev-NRedox).
@@ -684,6 +698,23 @@ The initial condition of organic matter was set such that it matched the estimat
 -   the zones that corresponded to the lagoons of the original study.
 
 $TN$ and $TP$ were also compared to the grab samples. The grab samples showed a wide variety of concentrations, over several orders of magnitude, and in some cases it was necessary to compress the range of concentrations in order to get a more constant initial sediment concentration.
+\
+
+##### Top 5 cm over time {.unnumbered}
+
+The combination of the linear initial profile and the *ponu* parameter produced an unexpected result in the long-term concentration of organic nitrogen. Even though the top 5 cm had a high initial concentration, over a long simulation, the concentration would eventually drop to zero. As the $PON_R$ was hydrolysed to $DON_R$, and buried with ongoing sediment deposition, the $PON_R$ concentration in the top 5 cm decreased: $PON_R$ was not replenished by incoming organic matter from the water column (see Figure \@ref(fig:dev-picsbudgetsetup-5b)). The $DON_R$ that was created from $PON_R$ fluxed out of the sediment to the water column or mineralised to $NH_4^+$. The $NH_4^+$ either fluxed to the water column, or accumulated at depth. The problem that this creates for future calibrations is that either 
+   - the $DON_R$ and $NH_4^+$ fluxes are artificially high early in the simulation, as a false result of a long spin-up, or
+   - an additional amount of $PON_R$ needs to be added to the influxing organic matter.
+
+\ 
+
+```{r dev-picsbudgetsetup-5b, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the fate of $PON_R$ over the course of a long simulation. Left - in the initial phase, the concentration resembled the initial profile. The $PON_R$ broke down to $DON_R$ and $NH_4^+$. Right - later in the simulation, the upper 5 cm had a much lower $PON_R$ concentration."}
+
+knitr::include_graphics("images/dev/sed_OMInitialProfiles-03.png")
+
+```
+
+\
 
 ##### Oxygen penetration depth {.unnumbered}
 
