@@ -8,9 +8,10 @@ The Coorong has been recognised as a unique ecosystem that is essential to the o
 
 ### Ecological Character of the Coorong
 
-The Coorong is a shallow and narrow saline to hypersaline lagoon, which runs north-west to south-east, parallel to the South Australian coast for ~110 km and separated from the sea by a sand barrier (Figure 1). It has a constricted channel connection to the sea towards its north-western end, referred to as the Murray Mouth. The Mouth allows exchange with sea water into the main body of the Coorong. River Murray water also enters into Lake Alexandrina and is regulated to flow, under suitable conditions, out to the Murray Mouth-Coorong region via five barrage structures (Tauwitchere, Mundoo, Ewe Island, Boundary Creek and Goolwa).
+The Coorong is a shallow and narrow saline to hypersaline lagoon, which runs north-west to south-east, parallel to the South Australian coast for ~110 km and separated from the sea by a sand barrier (Figure \@ref(fig:intro-pic1)). It has a constricted channel connection to the sea towards its north-western end, referred to as the Murray Mouth. The Mouth allows exchange with sea water into the main body of the Coorong. River Murray water also enters into Lake Alexandrina and is regulated to flow, under suitable conditions, out to the Murray Mouth-Coorong region via five barrage structures (Tauwitchere, Mundoo, Ewe Island, Boundary Creek and Goolwa).
 
 The Coorong naturally splits about halfway into the North and South Lagoons at a narrow constriction (Hell's Gate and Parnka Channel) with width down to approximately 100 m. The average widths of the North and South Lagoons are 1.5 km and 2.5 km respectively, and the average depths are 1.2 m and 1.4 m respectively (Gibbs et al. 2018). The South Lagoon receives inputs of fresh to brackish water from a network of drains from the South-East region of South Australia, discharging at Salt Creek. This discharge can be regulated via structures in Morella Basin (immediately upstream from Salt Creek), and further up the drainage network. Groundwater discharge zones exist along the length of the Coorong, from both perched freshwater lenses and the regional unconfined aquifer, but hydraulic gradients are relatively low (Barnett 2018).
+
 The Coorong system is an important habitat for waterbirds, supporting more than 1% of the global populations of nine waterbird taxa (Paton et al., 2009). The region is recognised as a Wetland of International Importance under the Ramsar Convention. Furthermore, the Lower Lakes and Coorong are an important refuge for waterbirds, hosting up to 90% of waterbirds counted at icon sites in the Murray-Darling Basin during drought (Kingsford and Porter, 2008). However, like other Australian estuaries and coastal wetlands (Kingsford, 2000), the Coorong is increasingly threatened and its ecological health has been eroded by river regulation and over extraction of water. Waterbird populations have declined by at least 30% since 1985 (Paton et al., 2009) and low flows have led to decreased fish abundance (Brookes et al., 2015). Freshwater flows to the Murray Mouth and Coorong help maintain an open Murray Mouth, maintain connectivity for diadromous fish and modify water level and salinity in the Coorong, which shapes the habitat for biota. Freshwater flows are important in maintaining estuarine habitat and ecosystem health and preventing extreme hyper-salinity (Brookes et al. 2009), which are influenced by flows through the barrages. Salinity has been identified as a key driver of fish distribution and assemblage structure by influencing the extent of estuarine fish habitat in the Coorong (Ye et al. 2011; 2016a; Bice et al. 2018; Brookes et al., 2021). Early summer flows are likely to be particularly beneficial as they delay the drop in water level in the South Lagoon and can prevent extreme salinities emerging, thereby improving habitat conditions for key fish species.
 
 ```{r intro-pic1, echo = FALSE, out.width='80%', class = "text-image",fig.align='center', fig.cap = "The Lower Lakes and Coorong. The freshwater in the lakes is isolated from the marine water by five barrages. Exchange with the ocean occurs through the Murray Mouth, which is located near Goolwa. The Coorong is comprised of the North and South lagoons. Source: ..."}
@@ -36,9 +37,7 @@ For the Coorong, the ongoing challenges of managing the degrading water quality 
 
 ### Prior modelling
 
-Various modelling tools have previously been developed to assist in management of the Coorong.  Coorong Hydrodynamic Model (CHM) ...
-
-Additionally, an early version of the CDM was developed over the period 2018-2019. The model TUFLOW-FV was used to simulate the hydrodynamics, and this was coupled with the ecological model AED2 for simulation of nutrients, algae and habitat. TUFLOW-FV hydrodynamics has been validated for the system separately by BMT WBM (2017) and Collier et al. (2017). The model simulations run by Collier et al. (2017) also simulated turbidity (including particle resuspension and sediment redistribution), inorganic and organic nutrients, chlorophyll a (chl-a), and filamentous algae (Ulva); the validation of these components occurred by comparing model outputs against observed data for the period from 2014-2016 at multiple locations within the domain. These years were chosen based on recent data availability for validation (Mosley et al. 2017; Frahn and Gehrig, 2015), and also spanned a range of conditions including water levels that experienced a sharp decline resulting in poor Ruppia habitat, which a weir could be expected to improve. Most recently, the CDM was applied in the Coorong Infrastructure Investigations Project (CIIP) for modelling investigations of hydrodynamics, biogeochemistry, and habitat changes to a range of infrastructure options.
+Various modelling tools have previously been developed to assist in management of the Coorong, such as the 1D Coorong Hydrodynamic Model (CHM). Additionally, an early version of the CDM was developed over the period 2018-2019. The model TUFLOW-FV was used to simulate the hydrodynamics, and this was coupled with the ecological model AED2 for simulation of nutrients, algae and habitat. TUFLOW-FV hydrodynamics has been validated for the system separately by BMT WBM (2017) and Collier et al. (2017). The model simulations run by Collier et al. (2017) also simulated turbidity (including particle resuspension and sediment redistribution), inorganic and organic nutrients, chlorophyll a (chl-a), and filamentous algae (Ulva); the validation of these components occurred by comparing model outputs against observed data for the period from 2014-2016 at multiple locations within the domain. These years were chosen based on recent data availability for validation (Mosley et al. 2017; Frahn and Gehrig, 2015), and also spanned a range of conditions including water levels that experienced a sharp decline resulting in poor Ruppia habitat, which a weir could be expected to improve. Most recently, the CDM was applied in the Coorong Infrastructure Investigations Project (CIIP) for modelling investigations of hydrodynamics, biogeochemistry, and habitat changes to a range of infrastructure options.
 
 A list of the prior modelling work in the Coorong:
 
@@ -64,22 +63,6 @@ Key knowledge gaps identified from the prior modelling work include:
 With the development of the HCHB research program, many of these key knowledge and data gaps have been (or are being) addressed and able to inform improved model approaches. The findings and research outputs range across a range of scales and disciplines and there is therefore a complex integration process to ensure the new knowledge is matched by the model capability and accuracy.
 
 
-## Aims and Scope
-
-The existing platforms will be further developed to expand both the hydrodynamic and biogeochemical capabilities in accordance with the specification. The scope of the project tasks are summarised as per the requirement:
-
--	Coupling of the TUFLOW-FV hydrodynamic model with AED biogeochemical and habitat models, as required to support HCHB science and management goals.
--	Development of improved model representation of:
-    -	external and internal nutrient loads
-    - sediment loads, nutrient fluxes and recycling
-    -	Ruppia habitat suitability
--	Linking the ecological model approaches to the above model framework, including:
-    -	waterbird habitat suitability
-    -	supporting food web modelling (incl. fish)
--	Testing, validation and scenarios using the improved and integrated models and framework.
-
-
-
 ## Modelling development rationale
 
 ### Known gaps and model limitations
@@ -97,13 +80,28 @@ A significant component of the work tasks are allocated to customise and develop
 
 ### Development focus and integration with HCHB research and monitoring
 
-The staged development and assessment approach to the above model components and how they are linked with related T&I components are summarised in Figure * (the data-model integration strategy diagram) and outlined in the below sections.
+The staged development and assessment approach to the above model components and how they are linked with related T&I components are summarised in Figure  \@ref(fig:dev-pic0) (the data-model integration strategy diagram) and outlined in the below sections.
 
 ```{r dev-pic0, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Data and model integration strategy, showing links between the HCHB Goyder T&I research program and the model development priorities."}
 
 knitr::include_graphics("images/dev/Project integration diagram.png")
 
 ```
+
+## Scope of this document
+
+The existing platforms will be further developed to expand both the hydrodynamic and biogeochemical capabilities in accordance with the specification. The scope of the project tasks are summarised as per the requirement:
+
+-	Coupling of the TUFLOW-FV hydrodynamic model with AED biogeochemical and habitat models, as required to support HCHB science and management goals.
+-	Development of improved model representation of:
+    -	external and internal nutrient loads
+    - sediment loads, nutrient fluxes and recycling
+    -	Ruppia habitat suitability
+-	Linking the ecological model approaches to the above model framework, including:
+    -	waterbird habitat suitability
+    -	supporting food web modelling (incl. fish)
+-	Testing, validation and scenarios using the improved and integrated models and framework.
+
 
 <br>
 

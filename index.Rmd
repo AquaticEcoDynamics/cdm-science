@@ -20,6 +20,12 @@ knitr::knit_hooks$set(class = function(before, options, envir) {
 })
 ```
 
+```{r panel-setup, include = FALSE}
+library(downlit)
+xaringanExtra::use_panelset()
+xaringanExtra::style_panelset(font_family = "inherit")
+```
+
 
 # Welcome {-}
 
@@ -83,7 +89,7 @@ If you're unfamiliar with writing `.Rmd` and `.md` files, the [RStudio IDE 1.4](
 
 Please cite this online book in reports and scientific publications as: 
 
-Hipsey, M.R., Huang, P., Zhai, S., Busch, B.. Paraska, D., Sims, C., 2022. The Coorong Dynamics Model. Zenodo: DOI: 10.5281/zenodo.xxpendingxx.  
+*Hipsey, M.R., Huang, P., Zhai, S., Busch, B.. Paraska, D., Sims, C., 2022. The Coorong Dynamics Model. Zenodo: DOI: 10.5281/zenodo.xxpendingxx.*  
 
 <br>
 

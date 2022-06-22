@@ -3,8 +3,15 @@
 
 ## Overview
 
-Recent surveys in the Coorong South Lagoon have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, mainly the species Ulva. The survey data highlight that the filamentous algae are tightly associated with the locations that Ruppia are present, and late in the season the smothering and deoxygenation casued by large biomass accumulations are driving poor water quality. This section describes the approach to simulating macroalgae, and development of the model to the CSL situation.   
+Recent surveys in the Coorong have highlighted the challenge to ecosystem health due to the high biomass and wide extent of filamentous algae, and these 'blooms' have become emblematic of the recent cycle of eutrophication experienced in the lagoon (Figure \@ref(fig:dev-ulva01)). The survey data highlight that the filamentous algae, mainly species from the genus *Ulva*, are tightly associated with the locations where the seagrass *Ruppia* is present, and they flourish in areas with shallow, warm and poorly-mixed water. Late in the season the smothering and deoxygenation caused by the breakdown of large *Ulva* biomass accumulations drives poor water quality. This section describes the approach to simulating macroalgae within the CDM, and development of the model to tailor to the observed data collected within the HCHB research program.   
 
+```{r dev-ulva01, echo = FALSE, out.width='40%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Images of filamentous algae bloom conditions within the Coorong South Lagoon, showing the pervasive extent of biomass accumulation. Photo credit: David Paton."}
+
+knitr::include_graphics(c("images/dev/paton1.jpeg","images/dev/paton2.jpeg"))
+
+```
+
+<br>
 
 ## Model approach
 
@@ -18,13 +25,13 @@ In general, the balance equation describes how the biomass changes over time, ac
 
 $$
 \frac{d\left(FA\right)}{dt}=+f_{\text{uptake}}^{FA}-f_{\text{excr}}^{FA}-f_{\text{mort}}^{FA}-f_{\text{resp}}^{FA}\ -f_{\text{slough}}^{FA}
-(\#eq:lagoonhabitat5)
+(\#eq:ulva5)
 $$
 where the main growth term is resolved as:
 
 $$
-\scriptsize{f^{FA}_{\text{uptake}} = \underbrace{R^{FA}_{\text{growth}}}_{\text{max growth} \\ \text{rate at 20$^\circ$C}} \ \ \underbrace{(1-k^{FA}_{\text{pr}})}_{\text{photorespiratory} \\ \text{loss}} \ \ \underbrace{\Phi^{FA}_{\text{tem}}(T)}_{\text{temperature} \\ \text{scaling}} \text{min} \left \{\underbrace{\Phi^{FA}_{\text{light}}(I)}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{N}}(NO_{3},NH_{4})}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{P}}(PO_{4})}_{\text{P limitation}} \right \} [FA]}
-(\#eq:lagoonhabitat6)
+\scriptsize{f^{FA}_{\text{uptake}} = \underbrace{R^{FA}_{\text{growth}}}_{\text{max growth} \\ \text{rate at 20$^\circ$C}} \ \ \underbrace{(1-k^{FA}_{\text{pr}})}_{\text{photorespiratory} \\ \text{loss}} \ \ \underbrace{\Phi^{FA}_{\text{tem}}(T)}_{\text{temperature} \\ \text{scaling}} \text{min} \left \{\underbrace{\Phi^{FA}_{\text{light}}(I)}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{N}}(NO_{3},NH_{4})}_{\text{N limitation}}, \underbrace{\Phi^{FA}_{\text{P}}(PO_{4})}_{\text{P limitation}} \right \} [FA]}
+(\#eq:ulva6)
 $$
 
 An example of the above approach in practice is shown in the below animation. The results highlight, for this time period of interest, the areas where salinity exceeds the threshold and initially limits the productivity, and the shallow areas where light is abundant; along with other environmental drivers (e.g., temperature) these shape the biomass accumulation pattern seen in the top left panel. Animations like this for different periods throughout the year, or between years, can look quite different.
@@ -40,17 +47,19 @@ An example of the above approach in practice is shown in the below animation. Th
 
 ### Macroalgae growth physiology
 
-The original AED macroalgal biomass model previously applied and exemplified in the above example has been replaced with an updated version that includes numerous advances to light extinction within the canopy, nutrient cycling and excretion processes, and updates to the parameterisations associated with photosynthesis and biomass accumulation. The latter, in particular, are updated to better align with the experimental work reported in Waycott et al. (2019) and ...
+The original AED macroalgal biomass model previously applied in the Generation 0 and 1 CDM applications, and exemplified in the above example, has been further developed to include  advances to light extinction within the canopy, nutrient cycling and excretion processes, and updates to the parameterisations associated with photosynthesis and biomass accumulation. The latter, in particular, are updated to better align with the experimental work reported in Waycott et al. (2019) and recent survey data collected as part of from the HCHB research program.
 
+The algal biomass, $FA$ (or $MAG_C$), is simulated in units of carbon ($mmol\:C/m^2$), and in addition the groups have been configured to have a variable C:N:P ratio. The model therefore tracks the internal cell nutrition and includes dynamic uptake rates of N and P sources simulated in response to changing water column conditions and internal nutrient stress.
 
+The growth rate functions used in Eq \@ref(eq:ulva6) are tailored to use temperature and salinity ranges based on the experimental data reported in Waycott et al. (2019).
 
 ### Resolving seasonal life-stage dynamics
 
 Following review of the initial data and findings from the T&I project 2, the approach to modelling macroalgae has been revised to better resolve seasonal shifts in form and physiology over the seasonal cycle.
 
-A new ‘colony’ based model for simulating clump emergence, biomass accumulation and sloughing has been conceptualised (Figure 13). The model adopts the same underlying physiology as described in the above section, but allows for age/size specific application of these rates to better align with recent observations and monitoring.
+A new ‘colony’ based model for simulating clump emergence, biomass accumulation and sloughing has been conceptualised (Figure \@ref(fig:dev-ulva5)). The model adopts the same underlying physiology as described in the above section, but allows for age/size specific application of these rates to better align with recent observations and monitoring.
 
-```{r dev-pic5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Schematic depicting a new life-stage based macroalgal “clump” model being developed to track seasonal macroalgal biomass development and late-stage decay."}
+```{r dev-ulva5, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Schematic depicting a new life-stage based macroalgal “clump” model  developed to track seasonal macroalgal biomass development stages and late-stage decay."}
 
 knitr::include_graphics("images/dev/macroalgae_conceptual.png")
 
@@ -58,21 +67,23 @@ knitr::include_graphics("images/dev/macroalgae_conceptual.png")
 
 This approach allows more direct links with a) the experimental data collected on biomass accumulation and photosynthesis rates in the lab, and b) the field data estimates of macroalgae density from photos and aerial imagery at different points through the growth season.
 
-The approach essentially follows a size-class based model for resolving the filamentous algae biomass pool. According to the above conceptual schematic, four discrete life-stage (aka size) categories are included. In general they are fixed in space, but note that 'sloughed' biomass that becomes mobilised after a sloughing event can continue to be exposed to surface light irradiances and also begin decomposition should environmental conditions be inadequate for growth (e.g., as the water becomes too salty).
+The approach essentially follows a size-class based model for resolving the filamentous algae biomass pool. According to the above conceptual schematic, four discrete life-stage (aka size) categories are included. In general they are fixed in space, but note that 'sloughed' biomass (Stage 4) becomes mobilised after a sloughing 'event', and can continue to be exposed to surface light irradiances and also begin decomposition should environmental conditions be inadequate for growth (e.g., as the water becomes too salty).
+
+The fundamental balance equation shaping growth remains as depicted in Eq \@ref(eq:ulva5) to capture the various processes impacting ulva growth and decay, with the difference that each growth-stage allows for different light, nutrient and salinity sensitivity, and there is a aging component linking the size classes, $R_{aging}$.  A full description of the AED macroalgae model can be referred to the [AED science manual](https://aquaticecodynamics.github.io/aed-science/DO_1.html). 
 
 
-The algal biomass of each group, $PHY_C$, is simulated in units of carbon ($mmol\:C/m^3$), and the groups have been configured to have a constant C:N:P:Si ratio. , or have dynamic uptake of N and P sources in response to changing water column condition and cellular physiology. Balance equations that capture the various processes impacting phytoplankton are outlined in the following sections, including the salinity limitation functions on phytoplankton communities. A full description of the phytoplankton model can be referred to the AED science manual in https://aquaticecodynamics.github.io/aed-science/phytoplankton.html. 
+### Ulva HSI
 
+In addition to the simulation of Ulva biomass, a simple "Habitat Suitability Index" (HSI), termed $Ulva\:HSI$, was also developed to map Ulva growth potential and 'hotspot' locations. The $Ulva\:HSI$ is an index between 0 and 1, and is computed by normalising the expression outlined in Eq \@ref(eq:ulva6). This metric does not account for the accumulation of biomass, or consider processes such as mortality and sloughing or mobilisation, but is a useful metric to look where high growth rates typically occur.
+
+
+<br>
 
 ## Data availability
 
-### Environmental threshold parameter review
-
-*To be completed*
-
 ### Algae extent within the lagoon
 
-A summary of the available algale extent data is summarised in Table X.
+Regular monitoring for macroalgae biomass within the Coorong is not routinely undertaken, but a range of data are available over the model calibration and testing periods. A summary of the available algal extent data is summarised in Table \@ref(tab:3-malgtable).
 
 ```{r 3-malgtable, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -89,7 +100,7 @@ for(i in seq_along(theSheet$Identifier)){
     theSheet$Identifier[i] <- " "
   }
 }
-kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary", align = "l",) %>%
+kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary", align = "l",escape=F) %>%
   pack_rows(theSheetGroups[1],
             min(which(theSheet$Group == theSheetGroups[1])),
             max(which(theSheet$Group == theSheetGroups[1])),
@@ -100,40 +111,139 @@ kbl(theSheet[,3:NCOL(theSheet)], caption = "Macroalgae data availability summary
             background = '#ebebeb') %>%
   row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = F,font_size = 11) %>%
-  scroll_box(width = "680px", height = "360px",
+  scroll_box(width = "680px", height = "380px",
              fixed_thead = FALSE)
 ```
+
+<br>
+
+The locations of the various smaplign campaigns for assessment of *Filamentous Algae* presence and biomass are shown for the historical (pre-HCHB) sampling campaigns (Figure \@ref(fig:dev-ulva10)) and for the more intensive sampling campaigns undertaken within the HCHB research program (Figure \@ref(fig:dev-ulva11)).
+
+<br>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #2481AA;
+  float: left;
+  width: 49.5%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="opentab(event, 'hchb')"id="defaultOpen">HCHB Monitoring</button>
+  <button class="tablinks" onclick="opentab(event, 'hist')">Historical Monitoring</button>
+</div>
+
+<div id="hchb" class="tabcontent">
+<center>
+
+<br>
+
+**HCHB Monitoring** A summary of the HCHB *Filamentous Algae* monitoring locations are shown below.
+
+```{r dev-ulva11, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous algae sampling sites for the HCHB program (T & I 2). Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge."}
+
+knitr::include_graphics(c("images/dev/algaesites_Sep2020.png","images/dev/algaesites_Mar2021.png","images/dev/algaesites_Sep2020.png"))
+
+```
+
+</center>
+</div>
+
+<div id="hist" class="tabcontent">
+<center>
+
+<br>
+
+**Historical Monitoring** A summary of historical (pre 2020) *Filamentous Algae* monitoring locations are shown below.
+
+```{r dev-ulva10, echo = FALSE, out.width='50%', class = "text-image", fig.show='hold',fig.align='default', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 6.1. Turquoise outline represents the model boundary. Click image to enlarge."}
+
+knitr::include_graphics("images/dev/algaesites-may2017.png")
+knitr::include_graphics("images/dev/algaesites_Dec2016.png")
+
+```
+
+</center>
+</div>
+
+
+<script>
+function opentab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+
 <br>
 
 
+### Environmental threshold parameter review
 
-**Historical Monitoring** A summary of historical (pre 2020) *Filamentous Algae* monitoring locations are shown in Figure \@ref(fig:dev-pic10).
+In order to set/refine the parameters required for the macroalgae model, such as light, salinity and temperature responses, a review of available experimental data and observations was undertaken. The key information sourced incldued:
 
-```{r dev-pic10, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Filamentous Algae sampling sites for monitoring program prior to 2020. Agency/program code under each map corresponds to those listed in Table 4.3. Turquoise outline represents the model boundary."}
+- For salinities from 35—90 ppt, an optimum temperature for the *Ulva paradoxa* filamentous green algal community was 30°C, which was the temperature where the relationship between weight gain became the most positive (Waycott et al. 2019).<br>
+-	At salinities of 30 - 140 ppt, weight change decreased as salinity increases. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures (Waycott et al. 2019).<br>
+-	At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability (Collier et al. 2017, cited in Asanopoulos and Waycott 2020).
 
-knitr::include_graphics(c("images/dev/3_picture10a.png","images/dev/3_picture10b.png"))
-
-```
-
-
-**HCHB Monitoring** A summary of the HCHB monitoring locations are shown in Figure \@ref(fig:dev-pic11).
-
-```{r dev-pic11, echo = FALSE, out.width='45%', class = "text-image",fig.align='center', fig.cap = "Filamentous algae sampling sites for the HCHB program (T and I 2). Agency/program code under each map corresponds to those listed in Table 4.4. Turquoise outline represents the model boundary."}
-
-knitr::include_graphics("images/dev/3_picture11.png")
-
-```
+<br>
 
 ## Model setup
 
-Four pools were confgured to simulate the biomass of filamentous algae, $ulva_a$, $ulva_b$, $ulva_c$ and $ulva_s$. The parameters used in the setup are outlined in Table (Table \@ref(tab:6-malgpars)).
+Four pools were configured to simulate the biomass of filamentous algae, $ulva_a$, $ulva_b$, $ulva_c$ and $ulva_s$. The parameters used in the setup are outlined in Table (Table \@ref(tab:6-malgpars)). 
 
 ```{r 6-malgpars, echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
 library(kableExtra)
 library(readxl)
 library(rmarkdown)
+
+# function to fix floating point decimals
+# df = dataframe to fix
+# colNames = list() of colummns to fix
+fixDecimals <- function(df, colNames){
+  for(i in colNames){
+    for(ii in 1:NROW(df[,i])){
+      currentVal <- df[ii,i]
+      currentVal <- as.numeric(currentVal)
+      if(!is.na(currentVal)==TRUE){
+        newVal <- as.character(currentVal)
+        df[ii,i] <- newVal
+      } 
+    }
+  }
+  return(df)
+}
+
 theSheet <- read_excel('tables/macroalgae_parameters.xlsx', sheet = 1)
+theSheet <- fixDecimals(
+  df = theSheet, 
+  colNames = list("Parameter1","Parameter2","Parameter3","Parameter4")
+  )
 theSheet <- theSheet[theSheet$Table == "Parameter",]
 theSheetGroups <- unique(theSheet$Group)
 
@@ -190,33 +300,102 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   column_spec(5, width_min = "5em") %>%
   column_spec(6, width_min = "5em") %>%
   column_spec(7, width_min = "5em") %>%
-    scroll_box(width = "700px", height = "4600px",
+    scroll_box(width = "700px", height = "3400px",
              fixed_thead = FALSE)
 ```
 
+<br>
 
+The total biomass of $FA$, in comparable units to the field data ($g\text{ dry weight}/m^2$), is termed $TMALG$ and computed as the sum of the attached and floating components:
 
+$$
+TMALG = \left[\underbrace{\sum_i^{\text{a,b,c}} \left( ulva_{i} \right)}_{\text{attached}} + \underbrace{ulva_{s}\:\Delta z}_{\text{floating}} \right] \: \chi_{c:dw} \: \times 10^{-3}
+(\#eq:ulva7)
+$$
+where $\chi_{c:dw}$ is the dry weight per carbon ratio. $TMALG$ is used to assess against the algal densities reported in the field, thus assuming the reported algal densities from the transects are the combined amount of attached and detached material.
+
+<br>
 
 ## Validation and assessment
 
-Using the  Generation 0 model, the following assessment against Ulva biomass prediction and presence absence was recorded (Figure \@ref(fig:dev-pic12)).
+### Generation 0
 
-```{r dev-pic12, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva for 2016 (left) and 2017 (right)."}
+Using the Generation 0 model, the following assessment against Ulva biomass prediction and data showing presence/absence was recorded (Figure \@ref(fig:dev-ulva12)). The simulated biomass reasonably correlated with the presence/absence data record in 2016 in particular, but included several false positives in 2017 in the South Lagoon. Whilst biomass data wasn't recorded in the survey data for these time periods, the simulated biomass concentrations have retrospectively been seen to be systematically under predicting the typical biomass levels seen in the HCHB field surveys.
+
+```{r dev-ulva12, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Comparison of observed and simulated Ulva for 2016 (left) and 2017 (right)."}
 
 knitr::include_graphics(c("images/dev/AlgaeDec2016vsULVAbiomass2016.png","images/dev/AlgaeMay2017vsUlvaBiomass2016.png"))
 
 ```
 
-The modelled Ulva HSI prediction correlates well with the observed filamentous algae density, however, the correlation between predicted biomass and obsevred presence was less accurate (Figure \@ref(fig:dev-pic13)). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation are more complicated and need further refinement. The HSI range was however quite restricted and further data from 2020-2021 is needed to assess whether the HSI calculation needs further refinement.  
+Nonetheless, the modelled $Ulva\:HSI$ prediction correlated well with the observed filamentous algae abundance categories (Figure \@ref(fig:dev-ulva13)). This implies the growth controls (as embodied in the HSI) are well resolved, but the seasonal factors leading to biomass accumulation were more complicated, thus justifying the further refinements outlined in Section 6.3. The HSI range was however quite restricted and not as sensitive suggesting the normalisation could be improved.  
 
 
-```{r dev-pic13, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom)."}
+```{r dev-ulva13, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Filamentous algae observed density and equivalent model predicted Ulva HSI (top) and Ulva Biomass (bottom)."}
 
 knitr::include_graphics("images/dev/Algae_2016.png")
 
 ```
 
+### Generation 2
 
-## Summary (Sept 2021)
+Following further refinement of the general water quality model calibration (as outlined in Chapters 4-5), and the macroalgae model developments (Section 6.3), the Generation 2 model was run over the period from 2020-2021, inclusive, and the results were compared with in-depth HCHB survey data collected during several surveys undertaken within the period (see Figure \@ref(fig:dev-ulva11)).   
 
-The macroalgae model in AED is able to capture the broad spatial patterns in environmental drivers that control biomass. Comparison of the Generation 0 model with the pre-HCHB survey data has provided insights to the suitability of the model approach. This is being used to refine the conceptual basis of the model which will be introduced in the next model versions.
+The model results are shown in  Figure \@ref(fig:dev-ulva14) - \@ref(fig:dev-ulva15) for the 2020 dataset, and Figure \@ref(fig:dev-ulva16) - \@ref(fig:dev-ulva17) for the 2021 dataset.
+
+The simulated biomass in this version is higher that earlier versions, around 100-200 gDW/m2 in the main zones. This is lower than some of the peak biomass densities recorded in the field. This, however, was deemed to be acceptable as the model is predicting the average biomass across broad areas in the simulated mesh, whereas the observed data shows patchy densities with areas of high and low densities, with the higher biomass recorded in the shallow areas near the shore.
+
+ 
+```{r dev-ulva14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
+
+knitr::include_graphics("images/dev/algae_biomass_2020_map.png")
+```
+
+```{r dev-ulva15, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel)."}
+
+knitr::include_graphics("images/dev/algae_biomass_2020.png")
+
+```
+
+```{r dev-ulva16, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021."}
+
+knitr::include_graphics("images/dev/algae_biomass_2021_map.png")
+```
+
+```{r dev-ulva17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). "}
+
+knitr::include_graphics("images/dev/algae_biomass_2021.png")
+```
+
+Comparison of zone averaged modelled and observed data in 2020 - 2021 is shown in Figure \@ref(fig:dev-ulva18).The model did capture accurately that several zones should have no or low biomass, the zones indicated by zeros in Figure \@ref(fig:dev-ulva18). The model recorded zone-averaged biomass accumulating in some zones where observed biomass was lower (e.g. zone 31,33). Therefore, the model isn't capturing the spatial gradient as seen in the field data.
+
+
+```{r dev-ulva18, echo = FALSE, out.width='60%', class = "text-image",fig.align='center', fig.cap = "Scatter plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 - 2021 averaged by zones in the lagoon. Labels indicate zone number (see Figure 2.5 for details)."}
+
+knitr::include_graphics("images/dev/algae_biomass_zone_label.png")
+```
+
+<br>
+
+Closer inspection of the controls on growth are highlighted in the animation below. 
+
+
+<br>
+<center>
+<video width="100%" height="100%" controls>
+<source src="images/lagoon_habitat/ULVA_6_Panel.mp4" type="video/mp4">
+</video>
+</center>
+<br>
+
+
+## Summary 
+
+The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the *Ulva* community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the $Ulva\:HSI$) correlated well with the early (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation. 
+
+The Generation 2 model showed mixed accuracy against the more comprehensive dataset from 2021 and 2022 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field. This is recommended as an area for further investigation and may benefit from further data on  benthic substrates that can be used to constrain where it is able to attach and grow.
+
+
+
+
+
