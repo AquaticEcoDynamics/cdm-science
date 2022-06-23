@@ -191,9 +191,9 @@ tab:ass-gaps
 tab:A-dataclasses
 tab:A-datacatalogue
 tab:A-testing3
-tab:A-testing
-tab:A-testing1
 tab:A-testing2
+tab:A-testing1
+tab:A-testing
 tab:A-testing5
 tab:A-testing6
 tab:B-sentbl
