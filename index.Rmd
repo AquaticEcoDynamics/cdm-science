@@ -4,11 +4,16 @@ author: "MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims"
 date: "`r format(Sys.time(), ' %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography:  ["references/Habitat.bib"]
+bibliography:  ["references/references.bib","references/habitat.bib"]
 biblio-style: apalike
 link-citations: yes
 description: "The Coorong Dynamics Model (CDM)"
 ---
+
+```{r}
+knitr::opts_chunk$set(cache = F)
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+```
 
 ```{r, include=FALSE}
 knitr::knit_hooks$set(class = function(before, options, envir) {

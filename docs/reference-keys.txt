@@ -350,3 +350,5 @@ environmental-response-function-erf-analysis
 habitat-condition-assessment
 coorong-decision-making-framework-dmf
 summary-5
+fig:dev-pics2b
+fig:dev-picsbudgetsetup-5b
