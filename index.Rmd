@@ -4,7 +4,7 @@ author: "MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims"
 date: "`r format(Sys.time(), ' %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography:  ["references/references.bib","references/habitat.bib"]
+bibliography:  ["references/references.bib","references/habitat.bib","references/resuspension.bib"]
 csl: "references/biogeosciences.csl"
 biblio-style: apalike
 link-citations: yes
