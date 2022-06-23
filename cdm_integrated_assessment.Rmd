@@ -224,7 +224,7 @@ knitr::include_graphics("images/assessment/6_nutrient_budgeting_summary_plot.png
 
 ## Environmental response function (ERF) analysis
 
-A useful method for applying the model is to construct environmental response function (ERFs); these can be used to predict water quality variables in estuary sub-domains in response to changes in boundary forcing, and can therefore provide a simple and quick assessment of the occurrence of some target events. As an example, the environmental response of salinity, TN and TP in space and time is compared for two scenarios :
+A useful method for applying the model is to construct environmental response function (ERFs); these can be used to predict water quality variables in estuary/lagoon sub-domains in response to changes in boundary forcing, and can therefore provide a simple and quick assessment of the occurrence of some target events. As an example, the environmental response of salinity, TN and TP in space and time is compared for a scenario assessing the delivery of water for the environment. This compares how the lagoon differs in repsonse to water being provided as an "[environmental flow](https://vimeo.com/715481753)" (e.g. see Brookes et al. 2022). Two simulations are compared:
 
  - ‘all water’ : representing the base-case scenario where water was delivered over the barrages as actually occurred, and 
  - ‘no-eWater’ : representing a counter-factual situation when there was no environmental water delivered across the barrages
@@ -250,7 +250,7 @@ The overall habitat suitability for sexual and asexual reproduction between 2018
 knitr::include_graphics("images/lagoon_habitat/HSI sexual 4yrs.png")
 ```
 
-#### Ruppia HSI (asexual lifecycle) {.unnumbered}
+### Ruppia HSI (asexual lifecycle) {.unnumbered}
 
 ```{r HSIasexual4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Overall Habitat Suitability Index for the successful completion of the asexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
