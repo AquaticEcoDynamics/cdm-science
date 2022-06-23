@@ -15,7 +15,7 @@ The validation plots including the statistics for each site are available via th
 
 <br>
 
-## {.panelset}
+## {.panelset, .nonumber}
 
 ### GEN 2 {.unnumbered}
  
