@@ -90,9 +90,11 @@ tab:3dev-init
 tab:3dev-Mixing
 tab:3dev-Layers
 tab:3dev-OM
+fig:dev-pics2b
 tab:3dev-NRedox
 tab:3dev-SecondaryRedox
 tab:3dev-Geochem
+fig:dev-picsbudgetsetup-5b
 fig:dev-calpics2
 fig:dev-calpics4
 fig:dev-calpics5
@@ -350,5 +352,3 @@ environmental-response-function-erf-analysis
 habitat-condition-assessment
 coorong-decision-making-framework-dmf
 summary-5
-fig:dev-pics2b
-fig:dev-picsbudgetsetup-5b
