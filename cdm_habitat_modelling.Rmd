@@ -547,7 +547,7 @@ model in two ways:
     summer dormancy period and integrated in the HSI calculation before
     turion sprouting to exclude areas where salinity levels were
     sufficiently high to cause ion toxicity in turions during summer.
-    Kim et al. (2013) showed that after exposure to high salinities for
+    @kim2013 showed that after exposure to high salinities for
     60 days, most turions lost viability and failed to sprout after
     being transferred back to fresher conditions. In comparison, seed
     viability was not negatively affected by high salinities.

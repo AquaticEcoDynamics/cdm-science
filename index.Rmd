@@ -5,6 +5,7 @@ date: "`r format(Sys.time(), ' %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:  ["references/references.bib","references/habitat.bib"]
+csl: "references/biogeosciences.csl"
 biblio-style: apalike
 link-citations: yes
 description: "The Coorong Dynamics Model (CDM)"
