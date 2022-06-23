@@ -50,8 +50,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-
-
 ### GEN 0 {.unnumbered}
 
 HCHB *Generaton 0*
@@ -72,8 +70,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-
-
 ### GEN 1 {.unnumbered}
 
 HCHB *Generaton 1*
@@ -93,8 +89,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
 ```
-
-
 
 ### GEN 1.5 {.unnumbered}
  
@@ -131,12 +125,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
     scroll_box(fixed_thead = FALSE)
 ```
 
-
-
-
-
-
-
 ### MULTI {.unnumbered}
  
 HCHB *Model Comparisons*
@@ -158,8 +146,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
 ```
-
-
 
 ### WAVE {.unnumbered}
 
@@ -183,12 +169,6 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ```
 
-
-
-
-
-
-<br>
 
 ## Sensitivity assessment {-}
 
