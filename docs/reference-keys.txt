@@ -172,10 +172,8 @@ fig:ass-pic0
 fig:ass-ass001
 fig:ass-ass002
 fig:ass-ass003
-fig:ass-004
-fig:ass-005
-fig:ass-006
-fig:ass-007
+fig:ass-004d
+fig:ass-005d
 fig:ass-budget1
 fig:ass-budget2
 fig:ass-budget3
@@ -346,6 +344,8 @@ generation-0-1
 generation-1.5
 generation-2-1
 nutrient-budget-assessment
+nutrient-budgets
+source-and-sink-summary
 environmental-response-function-erf-analysis
 habitat-condition-assessment
 coorong-decision-making-framework-dmf

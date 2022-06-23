@@ -123,8 +123,8 @@
 <h3>
 <span class="header-section-number">9.3.2</span> Performance assessment metrics<a class="anchor" aria-label="anchor" href="#performance-assessment-metrics"><i class="fas fa-link"></i></a>
 </h3>
-<p>The modelling results are compared against historical data collected within the Coorong (where available), using both traditional statistical metrics of model error, and other metrics relevant to model function. The approach is applied to each model generation with the aim to identify areas for further improvement and ongoing calibration effort.</p>
-<p>Initially, the model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a are assessed with a set of statistical metrics, and the calculations of statistical metrics was performed for each observation site where the number of field observations was &gt;10 in the assessment period.</p>
+<p>The modelling results are compared against historical data collected within the Coorong (where available), using both traditional statistical metrics of model error, and other metrics relevant to model performance. The approach is applied to each model generation with the aim to identify areas where the model is accurate, and areas for further improvement and ongoing calibration effort.</p>
+<p><strong>Error metrics</strong> : Initially, the model performance in predicting a range of relevant variables including salinity, temperature, nitrogen, phosphorus and total chlorophyll-a are assessed with a set of statistical metrics, and the calculations of statistical metrics was performed for each observation site where the number of field observations was &gt;10 in the assessment period.</p>
 <p>The core statistical metrics considered consist of:</p>
 <ul>
 <li>
@@ -137,6 +137,23 @@
 <span class="math inline">\(RMS\)</span>: root mean squared error, Measures the mean magnitude, but not direction, of the difference between model data and observations, and hence can be used to measure bias. Values near zero are desirable. This method is not affected by cancellation of negative and positive errors, but squaring the data may cause bias towards large events.</li>
 <li>
 <span class="math inline">\(nash\)</span>: the Nash-Sutcliffe metric (also called <span class="math inline">\(NSE\)</span> or <span class="math inline">\(MEF\)</span> is a matrix of modelling efficiency, measures the mean magnitude of the difference between model data and observations. This method compares the performance of the model to that only uses the mean of the observed data. A value of 1 would indicate a perfect model, while a value of zero indicates performance similar to simply using the mean of observed data.</li>
+</ul>
+<p><strong>Seasonality</strong> : The model results are assessed in terms of the degree of seasonal fluctuation, as seen in the field data. Whilst this is captured in the error metrics (e.g. R, the visual assessment can assess timing issues related with seasonal peaks.</p>
+<p><strong>Transects</strong> : The model results are assessed in terms of the seasonal mean along the length of the domain (longitudinal transect). The transect analysis allows a system wide scale assessment of conditions, that smooths out noise and local variability in the field and model predictions.</p>
+<p><strong>Advanced measures</strong> : The model results were finally assessed considered that partitioning of nutrients in terms of inorganic vs organic, and other expected measures.</p>
+<p><strong>Confidence</strong> : Based on the above assessment we evaluate confidence in the model by assigning each variable to the following categories:</p>
+<ul>
+<li>Good</li>
+<li>Acceptable, and</li>
+<li>Caution.</li>
+</ul>
+<p>This confidence evaluation, considers:</p>
+<ul>
+<li>Quality of observed data, which is influenced by field and laboratory data limitations, methodologies, processes and protocols.</li>
+<li>Error metric scores relative to what is typically reported in the literature for water quality models (e.g., Arhonditsis and Brett, 2004).</li>
+<li>Ability of the CDM to capture the mean of an indicator and its spatial gradient and seasonality.</li>
+<li>Partitioning of water quality constituents within different ecosystem pools.</li>
+<li>Natural variability of the indicator at different temporal scales (i.e. sub-daily to seasonal).</li>
 </ul>
 <p><br></p>
 </div>
@@ -178,7 +195,7 @@ Figure 9.1: Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN an
 </div>
 <p>The release of bioavailable nutrients is also subject to change once the sediment modelling is completed and the accuracy resolving bioavailable nutrients is still weak. Examination of phytoplankton and nutrient data (see CDM sensitivity assessment to internal loading in appendix B2), and implmentation of 3D dynamics is under development with the Generation I model to capture the vertical distribution of phytoplankton biomass.</p>
 </div>
-<div id="generation-1.5" class="section level3" number="9.5.2">
+<div id="generation-1.5" class="section level3 panelset" number="9.5.2">
 <h3>
 <span class="header-section-number">9.5.2</span> Generation 1.5<a class="anchor" aria-label="anchor" href="#generation-1.5"><i class="fas fa-link"></i></a>
 </h3>
@@ -215,86 +232,31 @@ Figure 9.4: Same as Figure 6.2 except for TN concentration in zone 22.
 </div>
 </center>
 <p><br></p>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: #2481AA;
-  float: left;
-  width: 50%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 14px;
-  color: #FFFFFF;
-  font-weight: bold;
-}
-</style>
-<div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'tab1')" id="defaultOpen">GEN1.5 Assessment (no ALS data)</button>
-<button class="tablinks" onclick="opentab(event, 'ass2')">GEN1.5 Assessment (with ALS data)</button></p>
-</div>
-<div id="tab1" class="tabcontent">
-<p>
-</p>
+<div id="model-performance-assessment-no-als-data" class="section level4 unnumbered">
+<h4>Model performance assessment (no ALS data)<a class="anchor" aria-label="anchor" href="#model-performance-assessment-no-als-data"><i class="fas fa-link"></i></a>
+</h4>
 <div class="text-image">
-<div class="figure">
-<span style="display:block;" id="fig:ass-004"></span>
-<img src="images/assessment/table%206_2-performance%20table_no_ALS1.png" alt="(a) " width="100%"><p class="caption">
-Figure 9.5: (a)
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ass-004d"></span>
+<img src="images/assessment/table%206_2-performance%20table_no_ALS1.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge." width="99%"><img src="images/assessment/table%206_2-performance%20table_no_ALS2.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge." width="99%"><p class="caption">
+Figure 9.5: Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge.
 </p>
 </div>
 </div>
+</div>
+<div id="model-performance-assessment-all-data" class="section level4 unnumbered">
+<h4>Model performance assessment (all data)<a class="anchor" aria-label="anchor" href="#model-performance-assessment-all-data"><i class="fas fa-link"></i></a>
+</h4>
 <div class="text-image">
-<div class="figure">
-<span style="display:block;" id="fig:ass-005"></span>
-<img src="images/assessment/table%206_2-performance%20table_no_ALS2.png" alt="(b). Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="100%"><p class="caption">
-Figure 9.6: (b). Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge.
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:ass-005d"></span>
+<img src="images/assessment/table%206_1-performance%20table1.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="99%"><img src="images/assessment/table%206_1-performance%20table2.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="99%"><p class="caption">
+Figure 9.6: Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge.
 </p>
 </div>
 </div>
-
+<p><br></p>
 </div>
-<div id="ass2" class="tabcontent">
-<p>
-</p>
-<div class="text-image">
-<div class="figure">
-<span style="display:block;" id="fig:ass-006"></span>
-<img src="images/assessment/table%206_1-performance%20table1.png" alt="(a) " width="100%"><p class="caption">
-Figure 9.7: (a)
-</p>
-</div>
-</div>
-<div class="text-image">
-<div class="figure">
-<span style="display:block;" id="fig:ass-007"></span>
-<img src="images/assessment/table%206_1-performance%20table1.png" alt="(b). Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data including the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="100%"><p class="caption">
-Figure 9.8: (b). Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data including the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge.
-</p>
-</div>
-</div>
-
-</div>
-<script>
-function opentab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-document.getElementById("defaultOpen").click();
-</script><p><br></p>
 </div>
 <div id="generation-2-1" class="section level3" number="9.5.3">
 <h3>
@@ -308,202 +270,129 @@ document.getElementById("defaultOpen").click();
 <h2>
 <span class="header-section-number">9.6</span> Nutrient budget assessment<a class="anchor" aria-label="anchor" href="#nutrient-budget-assessment"><i class="fas fa-link"></i></a>
 </h2>
+<div id="nutrient-budgets" class="section level3 panelset" number="9.6.1">
+<h3>
+<span class="header-section-number">9.6.1</span> Nutrient budgets<a class="anchor" aria-label="anchor" href="#nutrient-budgets"><i class="fas fa-link"></i></a>
+</h3>
 <p>A methodology for nutrient flux and budget analysis has been developed. For the nutrient budget analysis, all of the nutrient pools (dissolved and particulate carbon, nitrogen and phosphorus, macroalgae and Ruppia) can be summarized for different regions of the estuary (north, south etc.). As an example of this method, the results from a period of four years (01/01/2018 to 01/01/2022) were summarized for nitrogen budgeting of NCL and SCL region in Figure 6.4 and 6.5, respectively. The nutrient budgeting analysis showed that the dissolved organic matter is the major nitrogen pool in both the lagoons, while particle organic matter and the nitrogen assimilated by phytoplankton also presented to be major nutrient pools (panel “a”). The sediment diffusion release of ammonium and the nitrogen loss due to phytoplankton burial into the sediment dominate the interaction at the sediment-water interface (panel “b”), which also presented a clear seasonal pattern. The boundary exchange fluxes are dominated by the organic matters in coincident to the major pools in the water (panel “c”). The daily change flux rate varied between 0 to &gt;20 tonne/day in the north lagoon, compared to that of between 0 to ~10 tonnes/day in the south lagoon, indicating stronger hydrodynamic transportation in the north lagoon affected by tidal intrusion and barrage flow. The results showed a net cumulative of nutrient in the sediment (panel “d”), indicating the sediment acting as a sink for the nutrients.</p>
-<p><br></p>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: #2481AA;
-  float: left;
-  width: 24%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 14px;
-  color: #FFFFFF;
-  font-weight: bold;
-}
-</style>
-<div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'csl_n')" id="defaultOpen2">CSL : Nitrogen</button>
-<button class="tablinks" onclick="opentab(event, 'csl_p')">CSL : Nitrogen</button>
-<button class="tablinks" onclick="opentab(event, 'cnl_n')">CNL : Phosphorus</button>
-<button class="tablinks" onclick="opentab(event, 'cnl_p')">CNL : Phosphorus</button></p>
-</div>
-<div id="csl_n" class="tabcontent">
-<p>
-</p>
+<div id="nitrogen-csl" class="section level4 unnumbered">
+<h4>NITROGEN (<strong>CSL</strong>)<a class="anchor" aria-label="anchor" href="#nitrogen-csl"><i class="fas fa-link"></i></a>
+</h4>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget1"></span>
 <img src="images/assessment/5_SCL_4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon." width="100%"><p class="caption">
-Figure 9.9: Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon.
+Figure 9.7: Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon.
 </p>
 </div>
 </div>
-
 </div>
-<div id="csl_p" class="tabcontent">
-<p>
-</p>
+<div id="nitrogen-cnl" class="section level4 unnumbered">
+<h4>NITROGEN (CNL)<a class="anchor" aria-label="anchor" href="#nitrogen-cnl"><i class="fas fa-link"></i></a>
+</h4>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget2"></span>
 <img src="images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon." width="100%"><p class="caption">
-Figure 9.10: Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon.
+Figure 9.8: Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon.
 </p>
 </div>
 </div>
-
 </div>
-<div id="cnl_n" class="tabcontent">
-<p>
-</p>
+<div id="phosphorus-csl" class="section level4 unnumbered">
+<h4>PHOSPHORUS (CSL)<a class="anchor" aria-label="anchor" href="#phosphorus-csl"><i class="fas fa-link"></i></a>
+</h4>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget3"></span>
-<img src="images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon." width="100%"><p class="caption">
-Figure 9.11: Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon.
+<img src="images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon." width="100%"><p class="caption">
+Figure 9.9: Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon.
 </p>
 </div>
 </div>
-
 </div>
-<div id="cnl_p" class="tabcontent">
-<p>
-</p>
+<div id="phosphorus-cnl" class="section level4 unnumbered">
+<h4>PHOSPHORUS (CNL)<a class="anchor" aria-label="anchor" href="#phosphorus-cnl"><i class="fas fa-link"></i></a>
+</h4>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget4"></span>
-<img src="images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon." width="100%"><p class="caption">
-Figure 9.12: Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon.
+<img src="images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon." width="100%"><p class="caption">
+Figure 9.10: Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon.
 </p>
 </div>
 </div>
-
+<p><br></p>
 </div>
-<script>
-function opentab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-document.getElementById("defaultOpen2").click();
-</script><p><br></p>
-<p>Summary diagrams of the nitrogen imports vs. exports for both lagoons are presented in Figure <a href="integrated-assessment.html#fig:ass-pie">9.13</a>, which shows that, for the north lagoon (CNL), the nutrient loads transported though the Pelican Pt. are in comparable scales to the sediment load (56% vs. 44% of total sources), while the exports due to sedimentation/burial and transport to south lagoon though Parnka Pt are about 65% and 35% of total loss, respectively. For the south lagoon (CSL), the sediment nutrient loads was the major source (79% of total sources), and the sedimentation loss was also the major sink (92% of total sinks), indicating the internal nutrient cycling overcame the hydrodynamic transport of nutrient be to the dominant pathway of nutrient cycling.</p>
+</div>
+<div id="source-and-sink-summary" class="section level3" number="9.6.2">
+<h3>
+<span class="header-section-number">9.6.2</span> Source and sink summary<a class="anchor" aria-label="anchor" href="#source-and-sink-summary"><i class="fas fa-link"></i></a>
+</h3>
+<p>Summary diagrams of the nitrogen imports vs. exports for both lagoons are presented in Figure <a href="integrated-assessment.html#fig:ass-pie">9.11</a>, which shows that, for the north lagoon (CNL), the nutrient loads transported though the Pelican Pt. are in comparable scales to the sediment load (56% vs. 44% of total sources), while the exports due to sedimentation/burial and transport to south lagoon though Parnka Pt are about 65% and 35% of total loss, respectively. For the south lagoon (CSL), the sediment nutrient loads was the major source (79% of total sources), and the sedimentation loss was also the major sink (92% of total sinks), indicating the internal nutrient cycling overcame the hydrodynamic transport of nutrient be to the dominant pathway of nutrient cycling.</p>
 <center>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-pie"></span>
 <img src="images/assessment/6_nutrient_budgeting_summary_plot.png" alt="Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL)." width="100%"><p class="caption">
-Figure 9.13: Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL).
+Figure 9.11: Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL).
 </p>
 </div>
 </div>
 </center>
 <p><br></p>
 </div>
+</div>
 <div id="environmental-response-function-erf-analysis" class="section level2" number="9.7">
 <h2>
 <span class="header-section-number">9.7</span> Environmental response function (ERF) analysis<a class="anchor" aria-label="anchor" href="#environmental-response-function-erf-analysis"><i class="fas fa-link"></i></a>
 </h2>
-<p>A useful method for applying the model is to construct environmental response function (ERFs); these can be used to predict water quality variables in estuary sub-domains in response to changes in boundary forcing, and can therefore provide a simple and quick assessment of the occurrence of some target events. As an example, the environmental response of salinity, TN and TP in space and time is compared for two scenarios :</p>
+<p>A useful method for applying the model is to construct environmental response function (ERFs); these can be used to predict water quality variables in estuary/lagoon sub-domains in response to changes in boundary forcing, and can therefore provide a simple and quick assessment of the occurrence of some target events. As an example, the environmental response of salinity, TN and TP in space and time is compared for a scenario assessing the delivery of water for the environment. This compares how the lagoon differs in repsonse to water being provided as an “<a href="https://vimeo.com/715481753">environmental flow</a>” (e.g. see Brookes et al. 2022). Two simulations are compared:</p>
 <ul>
-<li>‘all water’ : representing the base-case scenario where water was deleivered over the barrages as actually occurred, and</li>
+<li>‘all water’ : representing the base-case scenario where water was delivered over the barrages as actually occurred, and</li>
 <li>‘no-eWater’ : representing a counter-factual situation when there was no environmental water delivered across the barrages</li>
 </ul>
-<p>The results demonsrate that, under the current condition, the annual-average salinity presented an increase from north the south, and the condition stayed similar from 2017 to 2021; while if there is no environmental water contribution (the ‘no-eWater’ scenario), the salinity would had increased from about 150 PSU in 2017 to near 190 PSU in 2021 (Figure <a href="integrated-assessment.html#fig:ass-erf">9.14</a>). The nutrient levels showed an increase from north to south, and also increased with time in both scenarios. However, if there is no environmental water contribution, the TN and TP in the south lagoon would have increased at a faster pace. In summary, the environmental water has shown to help to reduce the salinity level as well as the trophic statues of the Coorong, and show how the model can be used to develop ‘look-up’ tables for expected benefits of a given change in operation, without running the full model.</p>
+<p>The results demonstrate that, under the current condition, the annual-average salinity presented an increase from north the south, and the condition stayed similar from 2017 to 2021; while if there is no environmental water contribution (the ‘no-eWater’ scenario), the salinity would had increased from about 150 PSU in 2017 to near 190 PSU in 2021 (Figure <a href="integrated-assessment.html#fig:ass-erf">9.12</a>). The nutrient levels showed an increase from north to south, and also increased with time in both scenarios. However, if there is no environmental water contribution, the TN and TP in the south lagoon would have increased at a faster pace. In summary, the environmental water has shown to help to reduce the salinity level as well as the trophic statues of the Coorong, and show how the model can be used to develop ‘look-up’ tables for expected benefits of a given change in operation, without running the full model.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-erf"></span>
 <img src="images/assessment/7_ERF_plot.png" alt="Environmental response functions (ERF) of salinity, TN, and TP in space and time of the Coorong for the base-case scenario (left panel) and an example ‘no e-Water’ scenario (right panel)." width="100%"><p class="caption">
-Figure 9.14: Environmental response functions (ERF) of salinity, TN, and TP in space and time of the Coorong for the base-case scenario (left panel) and an example ‘no e-Water’ scenario (right panel).
+Figure 9.12: Environmental response functions (ERF) of salinity, TN, and TP in space and time of the Coorong for the base-case scenario (left panel) and an example ‘no e-Water’ scenario (right panel).
 </p>
 </div>
 </div>
 </div>
-<div id="habitat-condition-assessment" class="section level2" number="9.8">
+<div id="habitat-condition-assessment" class="section level2 panelset" number="9.8">
 <h2>
 <span class="header-section-number">9.8</span> Habitat condition assessment<a class="anchor" aria-label="anchor" href="#habitat-condition-assessment"><i class="fas fa-link"></i></a>
 </h2>
-<p>The overall habitat suitability for sexual and asexual reproduction between 2018 - 2021 have been simulated using the Gen 2 model (Figure <a href="integrated-assessment.html#fig:HSIsexual4">9.15</a> and Figure <a href="integrated-assessment.html#fig:HSIasexual4">9.16</a>). The results show that habitat quality and suitable area can shift from year to year. For exmaple, in comparison, 2021 offered the least amount of suitable habitat for <em>Ruppia</em> to complete its sexual life cycle (flowering), which was consistent with field observations in that very few flowers were recorded in 2021 compared to 2020.</p>
+<p>The overall habitat suitability for sexual and asexual reproduction between 2018 - 2021 have been simulated using the Gen 2 model (Figure <a href="integrated-assessment.html#fig:HSIsexual4">9.13</a> and Figure <a href="integrated-assessment.html#fig:HSIasexual4">9.14</a>). The results show that habitat quality and suitable area can shift from year to year. For exmaple, in comparison, 2021 offered the least amount of suitable habitat for <em>Ruppia</em> to complete its sexual life cycle (flowering), which was consistent with field observations in that very few flowers were recorded in 2021 compared to 2020.</p>
 <p><br></p>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Style the buttons inside the tab */
-.tab button { 
-  background-color: #2481AA;
-  float: left;
-  width: 49%;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 14px;
-  color: #FFFFFF;
-  font-weight: bold;
-}
-</style>
-<div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'hab_s')" id="defaultOpen3">Ruppia HSI (sexual lifecycle)</button>
-<button class="tablinks" onclick="opentab(event, 'hab_a')">Ruppia HSI (asexual lifecycle)</button></p>
-</div>
-<div id="hab_s" class="tabcontent">
-<p>
-</p>
+<div id="ruppia-hsi-sexual-lifecycle" class="section level3 unnumbered">
+<h3>Ruppia HSI (sexual lifecycle)<a class="anchor" aria-label="anchor" href="#ruppia-hsi-sexual-lifecycle"><i class="fas fa-link"></i></a>
+</h3>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:HSIsexual4"></span>
 <img src="images/lagoon_habitat/HSI%20sexual%204yrs.png" alt="Overall Habitat Suitability Index for the successful completion of the sexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
-Figure 9.15: Overall Habitat Suitability Index for the successful completion of the sexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
+Figure 9.13: Overall Habitat Suitability Index for the successful completion of the sexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
-
 </div>
-<div id="hab_a" class="tabcontent">
-<p>
-</p>
+<div id="ruppia-hsi-asexual-lifecycle" class="section level3 unnumbered">
+<h3>Ruppia HSI (asexual lifecycle)<a class="anchor" aria-label="anchor" href="#ruppia-hsi-asexual-lifecycle"><i class="fas fa-link"></i></a>
+</h3>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:HSIasexual4"></span>
 <img src="images/lagoon_habitat/HSI%20asexual%204yrs.png" alt="Overall Habitat Suitability Index for the successful completion of the asexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
-Figure 9.16: Overall Habitat Suitability Index for the successful completion of the asexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
+Figure 9.14: Overall Habitat Suitability Index for the successful completion of the asexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
 </div>
 </div>
-
+<p><br></p>
 </div>
-<script>
-function opentab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-document.getElementById("defaultOpen3").click();
-</script><p><br></p>
 </div>
 <div id="coorong-decision-making-framework-dmf" class="section level2" number="9.9">
 <h2>
@@ -2137,7 +2026,7 @@ SAL
 <div class="figure">
 <span style="display:block;" id="fig:ass-pic2"></span>
 <img src="images/cdm/DMF_Example.png" alt="Critial CPS for macroinvertabrates where Average daily area (Km2) with water cover and Salinity is &lt; 25 g/L Apr-Sep" width="50%"><p class="caption">
-Figure 9.17: Critial CPS for macroinvertabrates where Average daily area (Km2) with water cover and Salinity is &lt; 25 g/L Apr-Sep
+Figure 9.15: Critial CPS for macroinvertabrates where Average daily area (Km2) with water cover and Salinity is &lt; 25 g/L Apr-Sep
 </p>
 </div>
 </div>
@@ -2338,9 +2227,19 @@ while (i < img.length) {
 <li><a class="nav-link" href="#generation-2-1"><span class="header-section-number">9.5.3</span> Generation 2</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#nutrient-budget-assessment"><span class="header-section-number">9.6</span> Nutrient budget assessment</a></li>
+<li>
+<a class="nav-link" href="#nutrient-budget-assessment"><span class="header-section-number">9.6</span> Nutrient budget assessment</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#nutrient-budgets"><span class="header-section-number">9.6.1</span> Nutrient budgets</a></li>
+<li><a class="nav-link" href="#source-and-sink-summary"><span class="header-section-number">9.6.2</span> Source and sink summary</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#environmental-response-function-erf-analysis"><span class="header-section-number">9.7</span> Environmental response function (ERF) analysis</a></li>
-<li><a class="nav-link" href="#habitat-condition-assessment"><span class="header-section-number">9.8</span> Habitat condition assessment</a></li>
+<li>
+<a class="nav-link" href="#habitat-condition-assessment"><span class="header-section-number">9.8</span> Habitat condition assessment</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ruppia-hsi-sexual-lifecycle">Ruppia HSI (sexual lifecycle)</a></li>
+<li><a class="nav-link" href="#ruppia-hsi-asexual-lifecycle">Ruppia HSI (asexual lifecycle)</a></li>
+</ul>
+</li>
 <li><a class="nav-link" href="#coorong-decision-making-framework-dmf"><span class="header-section-number">9.9</span> Coorong Decision Making Framework (DMF)</a></li>
 <li><a class="nav-link" href="#summary-5"><span class="header-section-number">9.10</span> Summary</a></li>
 </ul>
@@ -2359,7 +2258,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 22-June-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 23-June-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
