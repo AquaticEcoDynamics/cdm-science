@@ -15,7 +15,8 @@ rmd_files: ["index.Rmd",
             "cdm_references.Rmd",
             "appendix_a.Rmd",
             "appendix_b.Rmd",
-            "appendix_c.Rmd",]
+            "appendix_c.Rmd",
+            "appendix_d.Rmd",]
 new_session: no
 
            #"development_and_testing.Rmd",
