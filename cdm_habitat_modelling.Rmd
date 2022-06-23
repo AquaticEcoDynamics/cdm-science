@@ -2,7 +2,6 @@
 editor_options: 
   markdown: 
     wrap: 72
-bibliography: references.bib
 ---
 
 # Habitat Modelling
@@ -218,13 +217,13 @@ thresholds in the *Ruppia* model. This is because some of the optimal
 values presented in the literature prior to HCHB were thought to be
 possibly biased due to extreme environmental conditions in the Coorong
 during the survey (e.g. salinity thresholds for turion formation from
-[@kim2015], pers. comm). Nonparametric multiplicative regressions (NPMR,
-@mccune2006) were used to derive optimal fit models describing the
-response of different life-stages of *Ruppia* to salinity and water
+[@kim2015\], pers. comm). Nonparametric multiplicative regressions
+(NPMR, @mccune2006) were used to derive optimal fit models describing
+the response of different life-stages of *Ruppia* to salinity and water
 depth in seasons appropriate for each life-stage. Salinity and water
 depth were found to be the most important abiotic factors influencing
 the distribution and abundance of *R. tuberosa* in previous studies
-[@kim2015]. Although recent studies suggested that Distance from Murray
+\[@kim2015]. Although recent studies suggested that Distance from Murray
 Mouth (DFMM), elevation and algal biomass also influence macrophyte
 communities in the lagoon [@lewis2022], they are not included in this
 NPMR analysis as 1) the mechanisms underlying how DFMM influences
@@ -284,20 +283,20 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 As the presence of filamentous algae mats is thought to negatively
 impact *Ruppia* growth by shading submerged plants and entangle
 flowers/fruits potentially causing sexual reproductive failure
-[\@paton2018; \@Asano2020], a literature review and statistical analyses
-on HCHB survey data were conducted on the relationship between *Ruppia*
-abundance and macroalgae abundance in an attempt to quantify the effect
-of macroalgae on *Ruppia* and improve model accuracy. Very limited
-literature exists on the impact of macroalgae on seagrass that may
-potentially be translated to the *Ruppia* model. A field experimental
-study by \@bittick2018 on the effect of *Ulva* biomass on *Zostera
-marina* shoot density and growth indicated that *Zostera* shoot density
-was negatively affected by *Ulva* biomass predictable by an exponential
-decay function (Figure \@ref(fig:Bittick), while *Zostera* growth was
-not affected. [\@irlandi2004] found that 100% drift algal cover for 2-3
-months produced around 25% reduction in above ground seagrass biomass
-(*Thalassia testudinum*). However, below-ground biomass, shoot density
-or growth rate were not impacted.
+\[\@paton2018; \@Asano2020\], a literature review and statistical
+analyses on HCHB survey data were conducted on the relationship between
+*Ruppia* abundance and macroalgae abundance in an attempt to quantify
+the effect of macroalgae on *Ruppia* and improve model accuracy. Very
+limited literature exists on the impact of macroalgae on seagrass that
+may potentially be translated to the *Ruppia* model. A field
+experimental study by \@bittick2018 on the effect of *Ulva* biomass on
+*Zostera marina* shoot density and growth indicated that *Zostera* shoot
+density was negatively affected by *Ulva* biomass predictable by an
+exponential decay function (Figure \@ref(fig:Bittick), while *Zostera*
+growth was not affected. \[\@irlandi2004\] found that 100% drift algal
+cover for 2-3 months produced around 25% reduction in above ground
+seagrass biomass (*Thalassia testudinum*). However, below-ground
+biomass, shoot density or growth rate were not impacted.
 
 ```{r Bittick, echo = FALSE, fig.show="hold", out.width='100%', class = "text-image",  fig.cap = "Relationship between *Ulva* biomass and *Zostera marina* shoot density (Source: Bittick et al. 2018)."}
 
@@ -309,15 +308,15 @@ knitr::include_graphics("images/lagoon_habitat/Bittick2018.png")
 During the HCHB survey filamentous algae largely co-occur with *Ruppia*
 communities both spatially and temporally, and dense mats were observed
 to be almost exclusively associated with the presence of macrophytes
-[\@lewis2022]. \@lewis2022 identified that when estimated algae biomass
-exceeded 184 g DW/m2, there was a significant reduction in macrophyte
-biomass.As it was previously speculated that filamentous algal mats may
-have a negative impact on the reproductive success of *Ruppia* by
-entangling and breaking flower stalks away from the stem [\@paton2018;
-\@Asano2020], further analyses were conducted on the relationship
-between algae biomass and various *Ruppia* life-stages to provide
-insights on assigning appropriate threshold values to each *Ruppia*
-life-stage in the habitat model. HCHB seasonal survey core data
+\[\@lewis2022\]. \@lewis2022 identified that when estimated algae
+biomass exceeded 184 g DW/m2, there was a significant reduction in
+macrophyte biomass.As it was previously speculated that filamentous
+algal mats may have a negative impact on the reproductive success of
+*Ruppia* by entangling and breaking flower stalks away from the stem
+\[\@paton2018; \@Asano2020\], further analyses were conducted on the
+relationship between algae biomass and various *Ruppia* life-stages to
+provide insights on assigning appropriate threshold values to each
+*Ruppia* life-stage in the habitat model. HCHB seasonal survey core data
 including seagrass biomass, seagrass shoot count, *Ruppia* flower count
 and total turion count during period when algae growth was most active
 (i.e., September - December 2020 and December 2021, Figure
@@ -377,11 +376,11 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ```
 
-![(\#fig:site-hist)*Ruppia* sampling sites for various monitoring
-program prior to 2020. Agency/program code under each map corresponds to
-those listed in Table \@ref(tab:data-hist). Turquoise outline represents
-the model boundary. Note that sampling sites of the last dataset listed
-in Table \@ref(tab:data-hist) are the same as UA
+![(#fig:site-hist)*Ruppia* sampling sites for various monitoring program
+prior to 2020. Agency/program code under each map corresponds to those
+listed in Table \@ref(tab:data-hist). Turquoise outline represents the
+model boundary. Note that sampling sites of the last dataset listed in
+Table \@ref(tab:data-hist) are the same as UA
 MDBA_2.](images/lagoon_habitat/surveysites_hist.png){width="100%"}
 
 **HCHB Monitoring** A summary of the HCHB monitoring datasets is shown
@@ -401,7 +400,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 #knitr::include_graphics("images/lagoon_habitat/surveysites_hchb.png")
 ```
 
-![(\#fig:site-hchb)*Ruppia* sampling sites for the HCHB program.
+![(#fig:site-hchb)*Ruppia* sampling sites for the HCHB program.
 Agency/program code under each map corresponds to those listed in Table
 \@ref(tab:data-hchb). Turquoise outline represents the model
 boundary.](images/lagoon_habitat/surveysites_hchb.png){width="100%"}
