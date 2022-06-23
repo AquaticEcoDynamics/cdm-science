@@ -291,7 +291,7 @@ knitr::include_graphics(c("images/dev/sed_Half Page zones11to104.png","images/de
 
 #### Validation sites and data {.unnumbered}
 
-A range of data was collected and is documented in [Appendix A](Appendix A : Data Catalogue). In summary, there were five broad categories of field data available from the HCHB research project surveys for the $SDG$ module setup and parameterisation:
+A range of data was collected and is documented in [Appendix A](Appendix A : Data Catalogue). In summary, there were five broad categories of field data available from the HCHB research project surveys relevant for the $SDG$ module setup and parameterisation:
 
 *Grab samples -- C, N, P, Mn, Fe, S* : These were available for many sites but only one or two depths. They were useful for averaging a concentration at depth within a zone. These were key variables for sediment biogeochemistry.
 
@@ -302,6 +302,8 @@ A range of data was collected and is documented in [Appendix A](Appendix A : Dat
 *Macroinvertebrates -- bioturbation parameters* : Benthic infauna measurements were used for setting bioturbation and bioirrigation parameters. Broadly, the North Lagoon had high bioturbation and the South Lagoon had very little bioturbation. The depth to bioturbation was important, as it was expected that there was uninhabited black ooze below a few centimetres.
 
 *Water column water quality measurements* : These were used for estimating water column concentrations and influxes for variables that were not able to be linked to active AED modules used for the water column model.
+
+A detailed analysis of available sediment data is presented in [Appendix D](Appendix D : Sediment Data) - this was used as the basis for the $SDG$ module steup and validation.
 
 
 ### Model setup and application approach
@@ -416,6 +418,17 @@ kable(sediment_initial,"html", escape = F, align = "c", caption = "Sediment init
 
 <br>
 
+**Organic matter initialisation** : Organic matter was initialised with profiles that had a higher concentration in the upper layers of the sediment. (All other variables were initialised with concentrations that were constant with depth.) This is due to the common assumption that organic matter concentration decreases with depth, based on the degradation of water column-derived organic matter over time. Refractory species (particulate and dissolved) used the linear method and labile species (particulate and dissolved) used the exponential method. The linear method set the initial concentration at the surface, a minimum concentration as a fraction of the initial concentration (*OM_minR*), and a depth at which the minimum concentration would be reached (*InitMinDepthR*). The exponential method set the initial concentration, and an exponential decay constant (*OM_cfL*). An example of how the initial profiles appear is given in \@ref(fig:dev-pics2b). 
+
+\
+
+```{r dev-pics2b, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Organic matter initial profiles. Left - linear profiles for refractory species. Right - exponential profiles for labile species."}
+
+knitr::include_graphics(c("images/dev/sed_OMInitialProfiles-02.png"))
+
+```
+
+
 \
 
 #### Model parameters {.unnumbered}
@@ -492,20 +505,6 @@ kable(sediment_OM ,"html", escape = F, align = "c", caption = "Organic matter ox
 ```
 
 <br>
-
-\
-
-##### Organic matter initialisation {.unnumbered}
-Organic matter was initialised with profiles that had a higher concentration in the upper layers of the sediment. (All other variables were initialised with concentrations that were constant with depth.) This is due to the common assumption that organic matter concentration decreases with depth, based on the degradation of water column-derived organic matter over time. Refractory species (particulate and dissolved) used the linear method and labile species (particulate and dissolved) used the exponential method. The linear method set the initial concentration at the surface, a minimum concentration as a fraction of the initial concentration (*OM_minR*), and a depth at which the minimum concentration would be reached (*InitMinDepthR*). The exponential method set the initial concentration, and an exponential decay constant (*OM_cfL*). An example of how the initial profiles appear is given in \@ref(fig:dev-pics2b). 
-
-\
-
-```{r dev-pics2b, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Organic matter initial profiles. Left - linear profiles for refractory species. Right - exponential profiles for labile species."}
-
-knitr::include_graphics(c("images/dev/sed_OMInitialProfiles-02.png"))
-
-```
-
 
 \
 
@@ -697,23 +696,37 @@ knitr::include_graphics(c("images/dev/sed_TPSouth.png"))
 
 <br>
 
-#### Oxygen penetration depth {.unnumbered}
+#### Oxygen penetration depth {.panelset .unnumbered}
 
-$O_2$ concentration was generally higher, and the penetration was deeper in the northern zones, and it was lower and shallower in the southern zones. In general, the oxygen concentration was higher than that indicated by the RAPID samples. A future calibration should target a lower $O_2$ concentration and a shallower penetration.
+The $O_2$ concentration was generally higher, and the penetration was deeper in the northern zones, and it was lower and shallower in the southern zones. In general, the oxygen penetration depth ($OPD$) was higher than that indicated by the RAPID samples, though the spatia pattern reflected the field sampling. 
 
-<br>
+The penetration of oxygen is shown to vary along the lagoon (Figure \@ref(fig:dev-sdgoxy)) in accordance with the porosity and bioturbation/bioirrigation depth, and this depth controls the vertical profiles of nutrient species like ammonia (Figure \@ref(fig:dev-sdgamm)).
 
-#### Fluxes {.unnumbered}
+##### Oxygen, DO {.unnumbered}
 
-The fluxes were generally within the right order of magnitude (Figure \@ref(fig:dev-calpics5)). Comparison was made with either the constant values used by the water column model for calibration, and the measured fluxes. Constant values were available for $O_2$, $NO_3^-$, $PO_4^{3-}$ and $NH_4^+$. Zone 52 had the most measured flux data, from Parnka Point and measured under dark and light conditions, with measurements for $O_2$, $NO_3^-$, $PO_4^{3-}$, $NH_4^+$, $N_2O$ and $CH_4$. Simulated fluxes were generally closer to the measured values than the constant values for $O_2$, $PO_4^{3-}$, $NH_4^+$. In the case of $NO_3^-$, the constant flux was close to the measured fluxes.
+<center>
 
-```{r dev-calpics5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example of 12 sediment-water flux results for zone 52. Measured values are averages of several measurements for dark and light conditions and 'Constant fluxes' were those used in the previous calibration of the water column model."}
+```{r dev-sdgoxy, echo = FALSE, out.width='70%', class = "text-image", fig.cap = "Simulated sediment concentrations of oxygen in different zones along the length of the lagoon."}
 
-knitr::include_graphics(c("images/dev/sed_t_F_zone_52.png"))
-
+knitr::include_graphics("images/dev/sdg/t_D_C_6panel_oxy.png")
 ```
 
+</center>
+
+##### Ammonium, NH4 {.unnumbered}
+
+<center>
+
+```{r dev-sdgamm, echo = FALSE, out.width='70%', class = "text-image", fig.cap = "Simulated sediment concentrations of ammonium in different zones along the length of the lagoon."}
+
+knitr::include_graphics("images/dev/sdg/t_D_C_6panel_amm.png")
+```
+
+</center>
+
+
 <br>
+
 
 #### Cores {.unnumbered}
 
@@ -738,6 +751,19 @@ knitr::include_graphics(c("images/dev/sed_C_D_core_zone33_feii_2020-11-01.png"))
 ```{r dev-calpics8, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "$H_2S$ concentration profile with simulated and measured data, as a snapshot at November 2020."}
 
 knitr::include_graphics(c("images/dev/sed_C_D_core_zone33_h2s_2020-11-01.png"))
+
+```
+
+<br>
+
+
+#### Fluxes {.unnumbered}
+
+The fluxes were generally within the right order of magnitude (Figure \@ref(fig:dev-calpics5)). Comparison was made with either the constant values used by the water column model for calibration, and the measured fluxes. Constant values were available for $O_2$, $NO_3^-$, $PO_4^{3-}$ and $NH_4^+$. Zone 52 had the most measured flux data, from Parnka Point and measured under dark and light conditions, with measurements for $O_2$, $NO_3^-$, $PO_4^{3-}$, $NH_4^+$, $N_2O$ and $CH_4$. Simulated fluxes were generally closer to the measured values than the constant values for $O_2$, $PO_4^{3-}$, $NH_4^+$. In the case of $NO_3^-$, the constant flux was close to the measured fluxes.
+
+```{r dev-calpics5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example of 12 sediment-water flux results for zone 52. Measured values are averages of several measurements for dark and light conditions and 'Constant fluxes' were those used in the previous calibration of the water column model."}
+
+knitr::include_graphics(c("images/dev/sed_t_F_zone_52.png"))
 
 ```
 
