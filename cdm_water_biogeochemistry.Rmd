@@ -246,7 +246,7 @@ knitr::include_graphics("images/dev/water/nutrient_transect_v3.jpg")
 
 ### Background
 
-Within the Coorong, salinity has been identified as the most important driver of the phytoplankton community (Schapira et al., 2010, Jendyk et al., 2014; Leterme et al., 2015). The water in the north lagoon is brackish because of mixing between the ocean and barrage flows, and this area is generally dominated by chlorophytes since the salinity threshold for dominant chlorophyte species in the lagoon is reported to be ~28 PSU. On the other hand, the water in the south lagoon is hypersaline and generally dominated by diatoms. Cryptophytes and dinoflagellates have also be documented throughout both lagoons but in comparatively lower abundance and biomass (Jendyk et al., 2014; Leterme et al., 2015). 
+Within the Coorong, salinity has been identified as the most important driver of the phytoplankton community [@scha2010; @jend2014; @lete2015]. The water in the north lagoon is brackish because of mixing between the ocean and barrage flows, and this area is generally dominated by chlorophytes since the salinity threshold for dominant chlorophyte species in the lagoon is reported to be ~28 PSU. On the other hand, the water in the south lagoon is hypersaline and generally dominated by diatoms. Cryptophytes and dinoflagellates have also be documented throughout both lagoons but in comparatively lower abundance and biomass [@jend2014; @lete2015]. 
 
 More specifically, this paper proposed 4 salinity regimes that tend to shape phytoplankton habitat:
 
@@ -256,7 +256,7 @@ More specifically, this paper proposed 4 salinity regimes that tend to shape phy
 + waters the H4 category (>41 PSU) which are mainly dominated by diatoms, although the abundance of dinoflagellates was sometimes higher than that of diatoms.
 
 
-Aside from these main habitat-species groupings, Schapira et al (2010) had previously reported on the Coorong phytoplankton community. The major conclusions from theri study were:
+Aside from these main habitat-species groupings, @scha2010 had previously reported on the Coorong phytoplankton community. The major conclusions from theri study were:
 
 + salinity was identified as the main factor structuring the distribution of pico-phytoplankton along the lagoon;
 + the highest pico-phytoplankton abundances were recorded under salinity conditions ranging between 8.0% and 11.0%;

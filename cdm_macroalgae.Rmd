@@ -47,11 +47,11 @@ An example of the above approach in practice is shown in the below animation. Th
 
 ### Macroalgae growth physiology
 
-The original AED macroalgal biomass model previously applied in the Generation 0 and 1 CDM applications, and exemplified in the above example, has been further developed to include  advances to light extinction within the canopy, nutrient cycling and excretion processes, and updates to the parameterisations associated with photosynthesis and biomass accumulation. The latter, in particular, are updated to better align with the experimental work reported in Waycott et al. (2019) and recent survey data collected as part of from the HCHB research program.
+The original AED macroalgal biomass model previously applied in the Generation 0 and 1 CDM applications, and exemplified in the above example, has been further developed to include  advances to light extinction within the canopy, nutrient cycling and excretion processes, and updates to the parameterisations associated with photosynthesis and biomass accumulation. The latter, in particular, are updated to better align with the experimental work reported in @waycott2019 and recent survey data collected as part of from the HCHB research program.
 
 The algal biomass, $FA$ (or $MAG_C$), is simulated in units of carbon ($mmol\:C/m^2$), and in addition the groups have been configured to have a variable C:N:P ratio. The model therefore tracks the internal cell nutrition and includes dynamic uptake rates of N and P sources simulated in response to changing water column conditions and internal nutrient stress.
 
-The growth rate functions used in Eq \@ref(eq:ulva6) are tailored to use temperature and salinity ranges based on the experimental data reported in Waycott et al. (2019).
+The growth rate functions used in Eq \@ref(eq:ulva6) are tailored to use temperature and salinity ranges based on the experimental data reported in @waycott2019.
 
 ### Resolving seasonal life-stage dynamics
 
@@ -206,9 +206,9 @@ document.getElementById("defaultOpen").click();
 
 In order to set/refine the parameters required for the macroalgae model, such as light, salinity and temperature responses, a review of available experimental data and observations was undertaken. The key information sourced incldued:
 
-- For salinities from 35—90 ppt, an optimum temperature for the *Ulva paradoxa* filamentous green algal community was 30°C, which was the temperature where the relationship between weight gain became the most positive (Waycott et al. 2019).<br>
--	At salinities of 30 - 140 ppt, weight change decreased as salinity increases. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures (Waycott et al. 2019).<br>
--	At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability (Collier et al. 2017, cited in Asanopoulos and Waycott 2020).
+- For salinities from 35—90 ppt, an optimum temperature for the *Ulva paradoxa* filamentous green algal community was 30°C, which was the temperature where the relationship between weight gain became the most positive [@waycott2019].<br>
+-	At salinities of 30 - 140 ppt, weight change decreased as salinity increases. Salinities of more than 90 ppt were the most significant at reducing filamentous green algal growth rates. At a salinity of 140 ppt the growth of algae is inhibited at all temperatures [@waycott2019].<br>
+-	At salinities below 35 g/L, algal communities appear resilient to a wide range of temperatures and nutrient availability [@collier2017 cited in @asano2020].
 
 <br>
 
