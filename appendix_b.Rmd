@@ -13,7 +13,6 @@ The calculations of statistical metrics has been performed for each site where t
 
 The validation plots including the statistics for each site are available via the links in the below table (Table \@ref(tab:A-testing)). The tables are organised based on model generation, in addition to a comparison of the performance of the model generations (termed 'mutli').
 
-<br>
 
 ## {.panelset .unnumbered}
 
