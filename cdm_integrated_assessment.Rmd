@@ -161,9 +161,27 @@ knitr::include_graphics(c("images/assessment/table 6_1-performance table1.png","
 
 <br>
 
-### Generation 2
+### Generation 2 {.panelset} 
 
-pending
+The error metrics for the Generation 2.0 simulation are shown below.
+
+<br>
+
+#### Model performance assessment (no ALS data) {.unnumbered}
+
+```{r ass-004e, echo = FALSE, out.width='99%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge."}
+
+knitr::include_graphics(c("images/assessment/GEN2 performance - no ALS - table1.png","images/assessment/GEN2 performance - no ALS - table2.png"))
+
+```
+
+#### Model performance assessment (all data) {.unnumbered}
+
+```{r ass-005e, echo = FALSE, out.width='99%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge."}
+
+knitr::include_graphics(c("images/assessment/GEN2 performance - all data - table1.png","images/assessment/GEN2 performance - all data - table2.png"))
+
+```
 
 <br>
 
@@ -177,7 +195,7 @@ A methodology for nutrient flux and budget analysis has been developed. For the 
 
 ```{r ass-budget1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon."}
 
-knitr::include_graphics("images/assessment/5_SCL_4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/5aSCL-4yrs_nitrogen_budget_timeseries.png")
 
 ```
 
@@ -185,7 +203,7 @@ knitr::include_graphics("images/assessment/5_SCL_4yrs_nitrogen_budget_timeseries
 
 ```{r ass-budget2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon."}
 
-knitr::include_graphics("images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/4aNCL-4yrs_nitrogen_budget_timeseries.png")
 
 ```
 
@@ -193,7 +211,7 @@ knitr::include_graphics("images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries
 
 ```{r ass-budget3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon."}
 
-knitr::include_graphics("images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/5bSCL-4yrs_phosphorus_budget_timeseries.png")
 
 ```
 
@@ -201,7 +219,7 @@ knitr::include_graphics("images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries
 
 ```{r ass-budget4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon."}
 
-knitr::include_graphics("images/assessment/4_NCL_4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/4bNCL-4yrs_phosphorus_budget_timeseries.png")
 
 ```
 
