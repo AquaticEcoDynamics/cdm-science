@@ -178,6 +178,8 @@ fig:ass-ass002
 fig:ass-ass003
 fig:ass-004d
 fig:ass-005d
+fig:ass-004e
+fig:ass-005e
 fig:ass-budget1
 fig:ass-budget2
 fig:ass-budget3
