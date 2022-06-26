@@ -34,7 +34,7 @@ git clone https://github.com/AquaticEcoDynamics/CDM.git
 
 Open the R project file `CDM-manual.Rpoj` and navigate to the `.Rmd` file that corresponds with the desired chapter you wish to edit. Once edits have been made, click the 'Build Book' button in RStudio's 'Build' tab to recompile (alternatively use the shortcut <kbd>Shift</kbd> + <kbd>CTRL</kbd> + <kbd>B</kbd> or <kbd>Shift</kbd> + <kbd>⌘</kbd> + <kbd>B</kbd>).
 
-<img src="images/README/build_book.png" alt="Click to recompile the book!" width="638"/>
+<img src="images/README/build_book.png" alt="Click to recompile the book!" width="438"/>
 
 #### 4. Create a new chapter
 
