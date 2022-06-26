@@ -39,23 +39,34 @@ xaringanExtra::style_panelset(font_family = "inherit")
 
 # Welcome {-}
 
-Welcome to the **Coorong Dynamics Model** ($\mathbf{CDM}$) information pages!
+<br>
+
+```{r banner, echo=FALSE, out.width='100%', class = "text-image"}
+knitr::include_graphics("images/intro/coorong_banner.jpeg")
+
+```
+
+<br>
+
+Welcome to the <span style="color:darkgreen">**Coorong Dynamics Model** </span> ($\mathbf{CDM}$) interactive e-book!
+
+<br>
 
 
 ## Project background {-}
 
-The Coorong is a unique coastal ecosystem that is important in supporting the local culture, economy, and environment, and is recognised globally by its Ramsar-listing. However, the state of the Coorong has degraded significantly over the past decade, primarily due to a reduction in freshwater flows and accumulation of nutrients, and the resulting changes in water quality.
+The Coorong is a unique coastal ecosystem renowned for its important cultural, economic, and environmental values, and it is recognised globally as wetland of international significance through the [Ramsar convention](https://rsis.ramsar.org/ris/321). However, the state of the Coorong has degraded significantly over the past decade, primarily due to a reduction in freshwater flows from the Murray River, and also due to the accumulation of nutrients, which have led to deleterious changes in water quality.
 
-To avoid further degradation and to help restore the ecosystem, the [Healthy Coorong Healthy Basin](https://www.environment.sa.gov.au/topics/coorong/healthy-coorong-healthy-basin) (HCHB) program was established by the Commonwealth and South Australian Governments in 2019. The HCHB Program supports a number of scientific trials, investigations and on-ground works to help restore the balance to the Coorong and identify long term solutions.
+To avoid further degradation and map out a way restore the ecosystem, the [Healthy Coorong Healthy Basin](https://www.environment.sa.gov.au/topics/coorong/healthy-coorong-healthy-basin) (HCHB) program was established by the Commonwealth and South Australian Governments in 2019. The HCHB Program supports a number of [scientific trials and investigations](http://www.goyderinstitute.org/research/healthy-coorong-healthy-basin/), and on-ground works to help restore the balance to the Coorong and identify long term solutions.
 
-As part of the HCHB program, the Coorong Dynamics Model (CDM) has been developed to gain insights in to the nutrient cycling and habitat changes within the Coorong ecosystem, and to assist with Coorong management and decision making. A previous version of the CDM has been developed and applied for assessing the environmental benefits of [Commonwealth Environmental Water](https://flow-mer.org.au/selected-area-lower-murray/) on the ecological habitat, and most recently the [Coorong Infrastructure Investigations Project](https://www.environment.sa.gov.au/topics/coorong/healthy-coorong-healthy-basin/coorong-infrastructure-investigations-project) (CIIP) to assess the environmental effect on water quality and habitat. Within the HCHB program, the key areas of the CDM development is to update core data inputs from other HCHB science investigations such as nutrient cycling studies and ecological habitats surveys, and to integrate these data with our best modelling tools to help improve the functional capability of the CDM in capturing the Coorong environmental conditions.
+As part of the HCHB program, the *Coorong Dynamics Model* ($\mathbf{CDM}$) has been developed as a tool quantify nutrient cycling and habitat changes within the Coorong ecosystem in response to different environmental conditions, and to assist by assessing Coorong management scenarios, and other questions relevant to decision-making. A previous version of the CDM has been developed and applied for assessing the environmental benefits of [Commonwealth Environmental Water](https://flow-mer.org.au/selected-area-lower-murray/) on the ecological habitat, and most recently as part of the [Coorong Infrastructure Investigations Project](https://www.environment.sa.gov.au/topics/coorong/healthy-coorong-healthy-basin/coorong-infrastructure-investigations-project) (CIIP) to assess the proposed changes  on water quality and habitat. Within the HCHB program, the key areas of CDM development has been to update core data inputs from the latest HCHB science investigations, which include nutrient cycling studies and ecological habitats surveys. The modelling presented herein seeks to integrate these data with state-of-the-art modelling tools to help improve the functional capability of the CDM to simulate Coorong environmental conditions.
 
-This report documents the development of the CDM, including the data integration with our knowledge generation activities within the HCHB program. Improvements in the model functional capability, detailed validation tests, and assessment of the management and climate scenarios are reported here.
+This e-book documents the development of the CDM, including the integration with the latest scientific experimental and monitoring data. Improvements in the model functional capability, detailed validation tests, and assessment of the scenarios are reported here. 
 
 
 ## Document layout and guidance {-}
 
-This documentation is structured to allow a systematic description of the model rationale, model description and testing, and the finally results from the model in the context of assessing management options. The document starts with an introduction to the site and general model approach, including an overview opf previous modelling work in the Coorong and the research challenges and knowledge gaps that motivated the present work. The second chapter “*The Coorong Dynamics Model*” describes the details of the CDM platforms, configuration and the approach to data-model integration. The third chapter “*Model Development and Testing*” describes the model integration and development with other HCHB science projects. This is followed by the integrated assessment of the CDM (“*Integrated assessment of CDM*”) with the available Coorong data. Finally, the section “*Scenario testing and management*” reports the outcomes from our process of scenario assessment, which considers the nutrient management scenarios, flow variation scenarios, and climate change scenarios as informed by other HCHB analyses Lastly, the major conclusions and recommendations from the current project are provided.
+This documentation is structured to allow a systematic description of the model rationale, model description and testing, and the finally results from the model in the context of assessing management options. The document starts with an introduction to the site and general model approach, including an overview opf previous modelling work in the Coorong and the research challenges and knowledge gaps that motivated the present work. The second chapter “*The Coorong Dynamics Model*” provides a high-level overview of the CDM platform and configuration, and Chapter 3 outlines the approach to data-model integration. Chapters 4 - 8  describe the model customisations and technical tests by assessing model areas with data from HCHB science projects. This is followed by an *Integrated assessment of CDM*, using a compilation of all available Coorong data. The section also provides an overview of how the model results can be used by other scientists and managers for supporting decision-making.
 
 
 ## Contributing {-}
@@ -80,7 +91,7 @@ The intent of the CDM Manual is that the model - *and its documentation* - can c
 
 The CDM documentation is available via GitHub and prepared in "R Mark Down" language. This is an implementation of mark down that can integrate with the R environment for enabling interactive content.
 
-To access and edit the CDM manual you can [download the CDM repository](https://github.com/AquaticEcoDynamics/CDM) and work with the `CDM-manual` R project file in RStudio.
+To access and edit the CDM manual you can [download the CDM repository](https://github.com/AquaticEcoDynamics/cdm-science) and work with the `CDM-manual` R project file in RStudio.
 
 
 ### Using RStudio's visual editor {.unnumbered}
@@ -88,12 +99,16 @@ To access and edit the CDM manual you can [download the CDM repository](https://
 If you're unfamiliar with writing `.Rmd` and `.md` files, the [RStudio IDE 1.4](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/) release implements a visual markdown editor that minimises the need to learn most syntax. To use this feature, open a `.Rmd` or `.md` file and click the visual editor button in the top right-hand corner of the editor window. You will now see a live-rendered version of your document and the addition of numerous buttons/menus that provide a GUI for formatting. Standard word processing functionality, such as buttons to **bold**, *italicise*, and [underline]{.ul} text are available, as well as shortcuts to features that can be more finicky in the basic source editor (e.g. citations, links, and simple tables). Returning to the source editor will reveal the formatting changes made are directly translated to the syntax of the raw file.
 
 <center>
-<video width="100%" height="100%" controls>
+<video width="100%" height="70%" controls>
 <source src="images/contributing/video1.mp4" type="video/mp4">
 </video>
 </center>
 
 <br>
+
+## Acknowledgements {-}
+
+The model development has been funded by the South Australian Government *Department of Environment and Water* and undertaken by the University of Western Australia *AED research group*. The developers of the model and authors of this e-book gratefully acknowledge the contribution by Matthew Gibbs for assisting with the setup and creation of the CDM project and this CDM online resource. We are also grateful to BMT Commercial Australia for use of the model TUFLOW-FV and Dr. Ian Teakle from BMT for support and collaboration using the TUFLOW-FV hydrodynamic model. Casper Boon provided model development support for the AED platform, and Giles Knight made this online book possible by creation of the R bookdown repository.
 
 ## Citing this document  {-}
 
@@ -103,10 +118,14 @@ Please cite this online book in reports and scientific publications as:
 
 <br>
 
-```{r logo1, echo=FALSE, out.width='25%', class = "text-image"}
-knitr::include_graphics(c("images/contributing/aed-transparent-background.png","images/contributing/UWA-Full-Hor-CMYK.png"))
+<center>
+
+```{r logos, echo=FALSE, out.width='25%', class = "text-image"}
+knitr::include_graphics(c("images/contributing/aed-transparent-background.png","images/contributing/white.png","images/contributing/UWA-Full-Hor-CMYK.png"))
 
 ```
+
+</center>
 
 <br>
 
