@@ -5,6 +5,8 @@ date: "`r format(Sys.time(), ' %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:  ["references/references.bib",
+                "references/introduction.bib",
+                "references/CDMoverview.bib",
                 "references/habitat.bib",
                 "references/resuspension.bib",
                 "references/macroalgae.bib",

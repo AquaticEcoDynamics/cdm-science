@@ -283,20 +283,20 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 As the presence of filamentous algae mats is thought to negatively
 impact *Ruppia* growth by shading submerged plants and entangle
 flowers/fruits potentially causing sexual reproductive failure
-[@paton2018; @asano2020], a literature review and statistical
-analyses on HCHB survey data were conducted on the relationship between
-*Ruppia* abundance and macroalgae abundance in an attempt to quantify
-the effect of macroalgae on *Ruppia* and improve model accuracy. Very
-limited literature exists on the impact of macroalgae on seagrass that
-may potentially be translated to the *Ruppia* model. A field
-experimental study by @bittick2018 on the effect of *Ulva* biomass on
-*Zostera marina* shoot density and growth indicated that *Zostera* shoot
-density was negatively affected by *Ulva* biomass predictable by an
-exponential decay function (Figure \@ref(fig:Bittick), while *Zostera*
-growth was not affected. @irlandi2004 found that 100% drift algal
-cover for 2-3 months produced around 25% reduction in above ground
-seagrass biomass (*Thalassia testudinum*). However, below-ground
-biomass, shoot density or growth rate were not impacted.
+[@paton2018; @asano2020], a literature review and statistical analyses
+on HCHB survey data were conducted on the relationship between *Ruppia*
+abundance and macroalgae abundance in an attempt to quantify the effect
+of macroalgae on *Ruppia* and improve model accuracy. Very limited
+literature exists on the impact of macroalgae on seagrass that may
+potentially be translated to the *Ruppia* model. A field experimental
+study by @bittick2018 on the effect of *Ulva* biomass on *Zostera
+marina* shoot density and growth indicated that *Zostera* shoot density
+was negatively affected by *Ulva* biomass predictable by an exponential
+decay function (Figure \@ref(fig:Bittick), while *Zostera* growth was
+not affected. @irlandi2004 found that 100% drift algal cover for 2-3
+months produced around 25% reduction in above ground seagrass biomass
+(*Thalassia testudinum*). However, below-ground biomass, shoot density
+or growth rate were not impacted.
 
 ```{r Bittick, echo = FALSE, fig.show="hold", out.width='100%', class = "text-image",  fig.cap = "Relationship between *Ulva* biomass and *Zostera marina* shoot density (Source: Bittick et al. 2018)."}
 
@@ -308,37 +308,37 @@ knitr::include_graphics("images/lagoon_habitat/Bittick2018.png")
 During the HCHB survey filamentous algae largely co-occur with *Ruppia*
 communities both spatially and temporally, and dense mats were observed
 to be almost exclusively associated with the presence of macrophytes
-[@lewis2022]. @lewis2022 identified that when estimated algae
-biomass exceeded 184 g DW/m2, there was a significant reduction in
-macrophyte biomass.As it was previously speculated that filamentous
-algal mats may have a negative impact on the reproductive success of
-*Ruppia* by entangling and breaking flower stalks away from the stem
-[@paton2018; @asano2020], further analyses were conducted on the
-relationship between algae biomass and various *Ruppia* life-stages to
-provide insights on assigning appropriate threshold values to each
-*Ruppia* life-stage in the habitat model. HCHB seasonal survey core data
-including seagrass biomass, seagrass shoot count, *Ruppia* flower count
-and total turion count during period when algae growth was most active
-(i.e., September - December 2020 and December 2021, Figure
-\@ref(fig:phe-biomass)) were averaged by site and summarised in boxplots
-against six levels of algae biomass (estimated by converting algal
-severity index, conversion method is described in @lewis2022). Results
-indicated that compared to overall macrophyte biomass or density, flower
-density appeared to have a shaper reduction as algae biomass reached 184
-g DW/m^2^ (Figure \@ref(fig:ruppia-algae)). Although this association
-may not indicate causation, a lower maximum tolerance on algae was
-assigned to the flowering stage than adult growth stage in the habitat
-model (Table \@ref(tab:threshold)) based on the assumption that the
-impact of dense algal mats is likely to be greater on the sexual
-reproductive success than on vegetative growth. In contrast, turion
-density appeared to be almost unaffected by high algae biomass (Figure
+[@lewis2022]. @lewis2022 identified that when estimated algae biomass
+exceeded 184 g DW/m2, there was a significant reduction in macrophyte
+biomass.As it was previously speculated that filamentous algal mats may
+have a negative impact on the reproductive success of *Ruppia* by
+entangling and breaking flower stalks away from the stem [@paton2018;
+@asano2020], further analyses were conducted on the relationship between
+algae biomass and various *Ruppia* life-stages to provide insights on
+assigning appropriate threshold values to each *Ruppia* life-stage in
+the habitat model. HCHB seasonal survey core data including seagrass
+biomass, seagrass shoot count, *Ruppia* flower count and total turion
+count during period when algae growth was most active (i.e., September -
+December 2020 and December 2021, Figure \@ref(fig:phe-biomass)) were
+averaged by site and summarised in boxplots against six levels of algae
+biomass (estimated by converting algal severity index, conversion method
+is described in @lewis2022). Results indicated that compared to overall
+macrophyte biomass or density, flower density appeared to have a shaper
+reduction as algae biomass reached 184 g DW/m^2^ (Figure
+\@ref(fig:ruppia-algae)). Although this association may not indicate
+causation, a lower maximum tolerance on algae was assigned to the
+flowering stage than adult growth stage in the habitat model (Table
+\@ref(tab:threshold)) based on the assumption that the impact of dense
+algal mats is likely to be greater on the sexual reproductive success
+than on vegetative growth. In contrast, turion density appeared to be
+almost unaffected by high algae biomass (Figure
 \@ref(fig:ruppia-algae)). However, it is unclear whether this was a
 shift of reproductive strategy from aboveground (flowering) to
 belowground (turion) when algae mats were dense, or other co-correlating
 factors were at play. As a result, no threshold values were assigned for
 turion formation in the model.
 
-```{r ruppia-algae, echo = FALSE, fig.show="hold", out.width='100%',  class = "text-image",  fig.cap = "Boxplots for macrophyte biomass, macrophyte shoot count, *Ruppia* flower count and turion count against six levels of estimated algae biomass during September - December 2020 and December 2021.."}
+```{r ruppia-algae, echo = FALSE, fig.show="hold", out.width='100%',  class = "text-image",  fig.cap = "Boxplots for macrophyte biomass, macrophyte shoot count, *Ruppia* flower count and turion count against six levels of estimated algae biomass during September - December 2020 and December 2021."}
 
 knitr::include_graphics("images/lagoon_habitat/AlgaeVSRuppia.png")
 ```
@@ -547,9 +547,9 @@ model in two ways:
     summer dormancy period and integrated in the HSI calculation before
     turion sprouting to exclude areas where salinity levels were
     sufficiently high to cause ion toxicity in turions during summer.
-    @kim2013 showed that after exposure to high salinities for
-    60 days, most turions lost viability and failed to sprout after
-    being transferred back to fresher conditions. In comparison, seed
+    @kim2013 showed that after exposure to high salinities for 60 days,
+    most turions lost viability and failed to sprout after being
+    transferred back to fresher conditions. In comparison, seed
     viability was not negatively affected by high salinities.
 
 2.  For the beginning of *Ruppia*'s life cycle in autumn, the
