@@ -1085,6 +1085,18 @@ NA
 </div>
 <p><sub><sup>a: van Rijn (1993)</sup></sub><br><sub><sup>b: Depinto et al. (2010)</sup></sub><br><sub><sup>c: Evans (1994)</sup></sub><br><sub><sup>d: Tang et al. (2019)</sup></sub><br><sub><sup>e: calculated from Eq <a href="resuspension-turbidity.html#eq:resus3">(4.3)</a></sup></sub><br></p>
 <p><br></p>
+<p>An example output from the model showing the spatial variability in <span class="math inline">\(K_d\)</span> at a given time is shown in Figure <a href="resuspension-turbidity.html#fig:dev-pic109">4.4</a>.</p>
+<center>
+<div class="text-image">
+<div class="figure">
+<span style="display:block;" id="fig:dev-pic109"></span>
+<img src="images/dev/extc.png" alt="Model output showing the extinction coefficient, Kd (/m), variability within the lagoon." width="80%"><p class="caption">
+Figure 4.4: Model output showing the extinction coefficient, Kd (/m), variability within the lagoon.
+</p>
+</div>
+</div>
+</center>
+<p><br></p>
 </div>
 </div>
 <div id="validation-and-assessment" class="section level2" number="4.3">
@@ -1095,7 +1107,7 @@ NA
 <h3>
 <span class="header-section-number">4.3.1</span> Wave characteristics<a class="anchor" aria-label="anchor" href="#wave-characteristics"><i class="fas fa-link"></i></a>
 </h3>
-<p>The SWAN wave model was calibrated against data collected during the periods when sediment resuspension studies were undertaken by the UA team in December 2020 and March 2021. The comparison between the SWAN wave model outputs and the field survey data of significant wave height is shown in Figure <a href="resuspension-turbidity.html#fig:dev-pic101">4.4</a>, which indicates the wave model acurately simulated the time variation and magnitude of significant wave height.</p>
+<p>The SWAN wave model was calibrated against data collected during the periods when sediment resuspension studies were undertaken by the UA team in December 2020 and March 2021. The comparison between the SWAN wave model outputs and the field survey data of significant wave height is shown in Figure <a href="resuspension-turbidity.html#fig:dev-pic101">4.5</a>, which indicates the wave model acurately simulated the time variation and magnitude of significant wave height.</p>
 <!-- 
  <div class = 'text-image'><div class="figure">
  <img src="images/dev/3_picture1.png" alt="Comparison of the Coorong SWAN wave model output and the UA field survey data at two sites. Period spanning Mar 2021." width="60%" />
@@ -1107,7 +1119,7 @@ NA
 <div class="figure">
 <span style="display:block;" id="fig:dev-pic101"></span>
 <img src="images/dev/waves/compare_wave_2Sites_new2000wnew.png" alt="Comparison of the Coorong SWAN wave model output and the UA field survey data at two sites. Period spanning Dec 2020 and Mar 2021." width="80%"><p class="caption">
-Figure 4.4: Comparison of the Coorong SWAN wave model output and the UA field survey data at two sites. Period spanning Dec 2020 and Mar 2021.
+Figure 4.5: Comparison of the Coorong SWAN wave model output and the UA field survey data at two sites. Period spanning Dec 2020 and Mar 2021.
 </p>
 </div>
 </div>
@@ -1118,12 +1130,12 @@ Figure 4.4: Comparison of the Coorong SWAN wave model output and the UA field su
 <span class="header-section-number">4.3.2</span> Lagoon scale turbidity<a class="anchor" aria-label="anchor" href="#lagoon-scale-turbidity"><i class="fas fa-link"></i></a>
 </h3>
 <p>The wave model output is then coupled to the TUFLOW-FV - AED model, where it influences <span class="math inline">\(\tau_b\)</span> and influences the rate of sediment resuspension (Eq. <a href="resuspension-turbidity.html#eq:resus1">(4.1)</a>).</p>
-<p>Examples of the spatial distribution of significant wave height, bottom shear stress (TAUB), resuspension rate, and TSS concentration in the water during a low wind event (Figure <a href="resuspension-turbidity.html#fig:dev-pic3">4.5</a>) and high wind event (Figure <a href="resuspension-turbidity.html#fig:dev-pic4">4.6</a>) are shown below. In general, the wind condition was shown to be the dominant factor of the sediment resuspension rate. During the calm wind condition such as in 01/11/2021 when the wind speed was &lt; 3 m/s, the sediment resuspension rate was negligible. The resuspension rate exceeded 20 g/m<sup>2</sup>/day in 19/11/2020 when the wind speed reached 9 m/s, which subsequently led to increase in the water TSS concentrations. The shallow water in the littoral zones are more vulnerable to the wind-induced resuspension.</p>
+<p>Examples of the spatial distribution of significant wave height, bottom shear stress (TAUB), resuspension rate, and TSS concentration in the water during a low wind event (Figure <a href="resuspension-turbidity.html#fig:dev-pic3">4.6</a>) and high wind event (Figure <a href="resuspension-turbidity.html#fig:dev-pic4">4.7</a>) are shown below. In general, the wind condition was shown to be the dominant factor of the sediment resuspension rate. During the calm wind condition such as in 01/11/2021 when the wind speed was &lt; 3 m/s, the sediment resuspension rate was negligible. The resuspension rate exceeded 20 g/m<sup>2</sup>/day in 19/11/2020 when the wind speed reached 9 m/s, which subsequently led to increase in the water TSS concentrations. The shallow water in the littoral zones are more vulnerable to the wind-induced resuspension.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:dev-pic3"></span>
 <img src="images/dev/3_picture2.png" alt="An example output of modelled (a) weight height, (b) bottom shear stress, (c) resuspension rates, and (d) total suspended solid concentration in Coorong during low wind condition (&lt; 3m/s)." width="100%"><p class="caption">
-Figure 4.5: An example output of modelled (a) weight height, (b) bottom shear stress, (c) resuspension rates, and (d) total suspended solid concentration in Coorong during low wind condition (&lt; 3m/s).
+Figure 4.6: An example output of modelled (a) weight height, (b) bottom shear stress, (c) resuspension rates, and (d) total suspended solid concentration in Coorong during low wind condition (&lt; 3m/s).
 </p>
 </div>
 </div>
@@ -1131,7 +1143,7 @@ Figure 4.5: An example output of modelled (a) weight height, (b) bottom shear st
 <div class="figure">
 <span style="display:block;" id="fig:dev-pic4"></span>
 <img src="images/dev/3_picture3.png" alt="Same as Figure xx except for a relatively higher wind condition (&gt;9m/s)." width="100%"><p class="caption">
-Figure 4.6: Same as Figure xx except for a relatively higher wind condition (&gt;9m/s).
+Figure 4.7: Same as Figure xx except for a relatively higher wind condition (&gt;9m/s).
 </p>
 </div>
 </div>
@@ -1140,8 +1152,8 @@ Figure 4.6: Same as Figure xx except for a relatively higher wind condition (&gt
 <video width="100%" height="100%" controls><source src="images/dev/animation_resuspension.mp4" type="video/mp4"></source></video>
 </center>
 <p><br></p>
-<p>The resulting turbidity, in comparison with the field observations and the CDM outputs without the waves, at sites of A4261165, A4261209 and A4261135 is shown in Figure <a href="resuspension-turbidity.html#fig:dev-pic2">4.7</a>. The comparison indicates the degree to which addition of orbital wave velocity into the simulation led to more resuspension when compared to the ‘no-waves’ scenario; the model with the wave inputs included accuractely captured the magnitude and the timing of high turbidity events in general. The results also showed that the wave effects on the turbidity diminished from south to north. While in the north lagoon (e.g., the site A4261135), the turbidity showed similar results between the ‘with wave’ and ‘without waves’ scenarios, indicating that the current dominated the resuspension in the north lagoon.</p>
-<p>Though the wave stress has a significant effect on the turbidity, the effect on the nutrient concentration is relatively small. An example of TN concentration at the same sites between the ‘with wave’ and ‘without wave’ scenario is presented in Figure <a href="resuspension-turbidity.html#fig:dev-picss2">4.8</a>, where shows the difference of TN concentration between the scenarios are generally &lt; 10%, probably due the fact that the Coorong has a large stock of nutrient in the water therefore the resuspension contribution is small when compared to the existing stock.</p>
+<p>The resulting turbidity, in comparison with the field observations and the CDM outputs without the waves, at sites of A4261165, A4261209 and A4261135 is shown in Figure <a href="resuspension-turbidity.html#fig:dev-pic2">4.8</a>. The comparison indicates the degree to which addition of orbital wave velocity into the simulation led to more resuspension when compared to the ‘no-waves’ scenario; the model with the wave inputs included accuractely captured the magnitude and the timing of high turbidity events in general. The results also showed that the wave effects on the turbidity diminished from south to north. While in the north lagoon (e.g., the site A4261135), the turbidity showed similar results between the ‘with wave’ and ‘without waves’ scenarios, indicating that the current dominated the resuspension in the north lagoon.</p>
+<p>Though the wave stress has a significant effect on the turbidity, the effect on the nutrient concentration is relatively small. An example of TN concentration at the same sites between the ‘with wave’ and ‘without wave’ scenario is presented in Figure <a href="resuspension-turbidity.html#fig:dev-picss2">4.9</a>, where shows the difference of TN concentration between the scenarios are generally &lt; 10%, probably due the fact that the Coorong has a large stock of nutrient in the water therefore the resuspension contribution is small when compared to the existing stock.</p>
 <p><br></p>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1171,7 +1183,7 @@ Figure 4.6: Same as Figure xx except for a relatively higher wind condition (&gt
 <div class="figure">
 <span style="display:block;" id="fig:dev-pic2"></span>
 <img src="images/dev/waves/turbidity_performance.jpg" alt="Comparison of the AED turbidity model output against the observed data at three sites within the Coorong over the calibration period from January 2020 to December 2021." width="95%"><p class="caption">
-Figure 4.7: Comparison of the AED turbidity model output against the observed data at three sites within the Coorong over the calibration period from January 2020 to December 2021.
+Figure 4.8: Comparison of the AED turbidity model output against the observed data at three sites within the Coorong over the calibration period from January 2020 to December 2021.
 </p>
 </div>
 </div>
@@ -1183,7 +1195,7 @@ Figure 4.7: Comparison of the AED turbidity model output against the observed da
 <div class="figure">
 <span style="display:block;" id="fig:dev-picss2"></span>
 <img src="images/dev/waves/tn_performance.jpg" alt="Comparison of the AED Total Nitrogen (TN) model output against the observed data at three sites within the Coorong over the calibration period from January 2020 to December 2021." width="95%"><p class="caption">
-Figure 4.8: Comparison of the AED Total Nitrogen (TN) model output against the observed data at three sites within the Coorong over the calibration period from January 2020 to December 2021.
+Figure 4.9: Comparison of the AED Total Nitrogen (TN) model output against the observed data at three sites within the Coorong over the calibration period from January 2020 to December 2021.
 </p>
 </div>
 </div>

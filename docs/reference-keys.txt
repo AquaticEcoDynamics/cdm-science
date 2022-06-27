@@ -31,6 +31,7 @@ eq:resus4
 eq:resus5
 eq:resus6
 tab:dev-wavepars
+fig:dev-pic109
 fig:dev-pic101
 fig:dev-pic3
 fig:dev-pic4
