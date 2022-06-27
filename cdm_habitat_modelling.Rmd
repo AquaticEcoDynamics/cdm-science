@@ -338,7 +338,7 @@ belowground (turion) when algae mats were dense, or other co-correlating
 factors were at play. As a result, no threshold values were assigned for
 turion formation in the model.
 
-```{r ruppia-algae, echo = FALSE, fig.show="hold", out.width='100%',  class = "text-image",  fig.cap = "Boxplots for macrophyte biomass, macrophyte shoot count, *Ruppia* flower count and turion count against six levels of estimated algae biomass during September - December 2020 and December 2021.."}
+```{r ruppia-algae, echo = FALSE, fig.show="hold", out.width='100%',  class = "text-image",  fig.cap = "Boxplots for macrophyte biomass, macrophyte shoot count, *Ruppia* flower count and turion count against six levels of estimated algae biomass during September - December 2020 and December 2021."}
 
 knitr::include_graphics("images/lagoon_habitat/AlgaeVSRuppia.png")
 ```
