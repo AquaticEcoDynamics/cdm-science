@@ -1,6 +1,4 @@
----
-bibliography: references.bib
----
+
 
 # Introduction
 
