@@ -82,8 +82,8 @@ The CDM manual has been developed by the following project team:
 -	Sherry Zhai ǂ
 - Claire Sims \*
 
-ǂ Aquatic Ecodynamics, UWA School of Agriculture & Environment, The University of Western Australia, Crawley WA 6009, Australia.
-*
+<sub><sup>ǂ Aquatic Ecodynamics, UWA School of Agriculture & Environment, The University of Western Australia, Crawley WA 6009, Australia.</sup></sub><br>
+<sub><sup>* Water Science and Monitoring Branch, Water and River Murray Division, Department for Environment and Water, Adelaide, SA 5000, Australia.</sup></sub><br>
 
 ### Adding and updating content {.unnumbered}
 
