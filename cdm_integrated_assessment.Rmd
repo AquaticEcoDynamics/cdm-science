@@ -4,14 +4,14 @@
 
 ## Overview
 
-The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled model, against the complete dataset. The approach to assess the model loosely follows the CSPS framework of Hipsey et al. (2020). The framework considers: 
+The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the fully coupled model, against the complete dataset. The approach to assess the model aims to follow the CSPS framework of Hipsey et al. (2020). The framework considers: 
 
 - *Level 0*: conceptual evaluation; the conceptual diagrams for each of the water quality variables, biogeochemical reactions, and habitat modelling are based on the scientific review and data inspection as detailed in the previous chapters;
 - *Level 1*: simulated state variables; a range of metrics is used for a large number of predicted variable and different sites.
 - *Level 2*: process rates; and 
 - *Level 3*: system-level patterns and emergent properties; this is evaluated by the overall nutrient budget analysis, nutrient cycling pathway analysis, and assessment of the relationship between the areas of habitat for Ruppia and Ulva.
 
-The specific data available for validation and the assessment metrics used are described next. The level of model uncertainty is discussed in terms of how much confidence is in the current generation of model outputs for the purposes of defining model reliability.
+The specific data available for validation and the assessment metrics used are described next. The level of model uncertainty is discussed in terms of how much confidence is in the current generation of model outputs for the purposes of defining model reliability. As the model is continuously evolving, we report performance based on the model generation.
 
 In addition to the model performance assessment, the model is also routinely used to support management decision-making. Detail is provided on how the diverse model outputs can be processed and analysed for informing the Coorong Decision Making Framework (DMF) and other applications.
 
@@ -19,7 +19,7 @@ In addition to the model performance assessment, the model is also routinely use
 
 ## Integrated simulations
 
-A summary of the different simulations used through the model life cycle of model development:
+A summary of the model lineage and provenance of the different simulations that have been assessed include:
 
 <span style="color:teal">**Generation 0** model</span> : Original mesh, 2D hydrodynamics, no surface wave coupling, 1 overall phytoplankton functional group, 5 sediment zones with statically assigned flux rates based on assumed parameters.
 
@@ -29,7 +29,7 @@ A summary of the different simulations used through the model life cycle of mode
 
 <span style="color:darkblue">**Generation 2** model</span> : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.
 
-The results from Generation 0 model and Generation 1 model have been reported separately (and their results archived in [Appendix B : Results Archive]). In this chapter, we focus on the results from the Generation 1.5 and Generation 2 simulations that include the model developments related to the biogeochemistry and habitat, as detailed in the previous chapters.
+The results from Generation 0 model and Generation 1 model have been reported separately (and their results archived in [Appendix B : Results Archive]). In this chapter, we focus on the results from the Generation 1.5 and Generation 2 simulations that include the model developments related to the biogeochemistry and habitat, as detailed in the previous chapters. To access a specific model version, refer to the CDM version downloads within GitHub.
 
 <br>
 
