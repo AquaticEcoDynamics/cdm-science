@@ -7,10 +7,13 @@ documentclass: book
 bibliography:  ["references/references.bib",
                 "references/introduction.bib",
                 "references/CDMoverview.bib",
-                "references/habitat.bib",
                 "references/resuspension.bib",
+                "references/oxygen.bib",
                 "references/macroalgae.bib",
-                "references/oxygen.bib"]
+                "references/sediment.bib",
+                "references/habitat.bib",
+                "references/integrated.bib"
+                ]
 csl: "references/biogeosciences.csl"
 biblio-style: apalike
 link-citations: yes
