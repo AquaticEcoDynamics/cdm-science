@@ -127,7 +127,7 @@
 <h3>
 <span class="header-section-number">2.2.3</span> Water quality and habitat: AED<a class="anchor" aria-label="anchor" href="#water-quality-and-habitat-aed"><i class="fas fa-link"></i></a>
 </h3>
-<p>The Aquatic EcoDynamics (<a href="http://aed.see.uwa.edu.au/research/models/aed/">AED</a> ) water quality model is a community-driven library of modules and algorithms for simulation of “aquatic ecodynamics” - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the AED research group of UWA (Hipsey et al., 2019). Each module aims to be based on state-of-the-art science sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers.</p>
+<p>The Aquatic EcoDynamics (<a href="http://aed.see.uwa.edu.au/research/models/aed/">AED</a>) water quality model is a community-driven library of modules and algorithms for simulation of “aquatic ecodynamics” - water quality, aquatic biogeochemistry, biotic habitat and aquatic ecosystem dynamics, developed by the AED research group of UWA <span class="citation">(<a href="references.html#ref-hipsey2019" role="doc-biblioref">Hipsey et al., 2019</a>)</span>. Each module aims to be based on state-of-the-art science sourced from a wide variety of scientific literature, making the library one of the most advanced available to aquatic ecosystem modellers.</p>
 <p><br></p>
 </div>
 </div>
@@ -285,26 +285,20 @@ Figure 2.4: Summary of inflow files used for boundary specification and the requ
 </h3>
 <p>The key hydrodynamic settings controlling the water transportation and mixing in the TUFLOW-FV model include:</p>
 <ul>
+<li><p><strong>Bottom drag</strong>: For hydrodynamic simulations the bed boundary resistance is described using a <span class="math inline">\(K_S\)</span> bottom drag model, which assumes a log-law velocity profile and requires specification of a surface roughness length-scale. A background roughness length-scale of 0.018 was applied in the CDM (<em>update to reflect zones</em>);</p></li>
+<li><p><strong>Horizontal momentum mixing</strong>: the Smagorinsky scheme was applied for the horizontal momentum mixing modelling, with default Smagorinsky coefficient of 0.2;</p></li>
+<li><p><strong>Horizontal scalar mixing</strong>: the horizontal non-isotropic scalar diffusivity is calculated according to the Elder model, with Global Horizontal Scalar Diffusivity was set to 250 m<sup>2</sup>/s and the coefficient was set to 25;</p></li>
+<li><p><strong>Tidal input</strong>: a <code>WL</code> (water level) boundary condition was applied to the Murray Mouth tidal input;</p></li>
+<li><p><strong>Inflow input</strong>: a <code>Q</code> (nodestring flow) boundary condition was applied to the barrage flows, and a <code>QC</code> (cell inflow) boundary condition was applied to the Salt Ck inflow;</p></li>
 <li>
-<strong>Bottom drag</strong>: For hydrodynamic simulations the bed boundary resistance is described using a <span class="math inline">\(K_S\)</span> bottom drag model, which assumes a log-law velocity profile and requires specification of a surface roughness length-scale. A background roughness length-scale of 0.018 was applied in the CDM (<em>update to reflect zones</em>);</li>
-<li>
-<strong>Horizontal momentum mixing</strong>: the Smagorinsky scheme was applied for the horizontal momentum mixing modelling, with default Smagorinsky coefficient of 0.2;</li>
-<li>
-<strong>Horizontal scalar mixing</strong>: the horizontal non-isotropic scalar diffusivity is calculated according to the Elder model, with Global Horizontal Scalar Diffusivity was set to 250 m<sup>2</sup>/s and the coefficient was set to 25;</li>
-<li>
-<strong>Tidal input</strong>: a <code>WL</code> (water level) boundary condition was applied to the Murray Mouth tidal input;</li>
-<li>
-<strong>Inflow input</strong>: a <code>Q</code> (nodestring flow) boundary condition was applied to the barrage flows, and a <code>QC</code> (cell inflow) boundary condition was applied to the Salt Ck inflow;</li>
-<li>
-<strong>Meteorology</strong>:
+<p><strong>Meteorology</strong>:</p>
 <ul>
 <li>The background shortwave radiation extinction coefficients was set to 2.0, with feedback from the AED model of TSS concentration altering the extinction coefficient;</li>
 <li>Longwave radiation heat transfer model was using the net downward long wave radiation input, based on cloud cover;</li>
-<li>The wind stress was calculated using the Wu (1982) wind stress model.</li>
+<li>The wind stress was calculated using the <span class="citation">(<a href="references.html#ref-wu1982" role="doc-biblioref">Wu, 1982</a>)</span> wind stress model.</li>
 </ul>
 </li>
-<li>
-<strong>Salinity correction on evaporation</strong>: The effect of high salinity on evaporation is included, as outlined <a href="https://github.com/AquaticEcoDynamics/CDM/discussions/5">here</a>.</li>
+<li><p><strong>Salinity correction on evaporation</strong>: The effect of high salinity on evaporation is included, as outlined <a href="https://github.com/AquaticEcoDynamics/CDM/discussions/5">here</a>.</p></li>
 </ul>
 </div>
 <div id="water-quality-modules" class="section level3" number="2.3.4">
@@ -1345,7 +1339,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 27-June-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 28-June-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

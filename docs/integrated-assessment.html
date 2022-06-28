@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>9 Integrated Assessment | The Coorong Dynamics Model</title>
 <meta name="author" content="MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims">
-<meta name="description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled...">
+<meta name="description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
 <meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="9 Integrated Assessment | The Coorong Dynamics Model">
 <meta property="og:type" content="book">
-<meta property="og:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled...">
+<meta property="og:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="9 Integrated Assessment | The Coorong Dynamics Model">
-<meta name="twitter:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled...">
+<meta name="twitter:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -98,7 +98,7 @@
 <h2>
 <span class="header-section-number">9.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-7"><i class="fas fa-link"></i></a>
 </h2>
-<p>The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, using the fully coupled model, against the complete dataset. The approach to assess the model loosely follows the CSPS framework of Hipsey et al. (2020). The framework considers:</p>
+<p>The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the fully coupled model, against the complete dataset. The approach to assess the model aims to follow the CSPS framework of Hipsey et al. (2020). The framework considers:</p>
 <ul>
 <li>
 <em>Level 0</em>: conceptual evaluation; the conceptual diagrams for each of the water quality variables, biogeochemical reactions, and habitat modelling are based on the scientific review and data inspection as detailed in the previous chapters;</li>
@@ -109,7 +109,7 @@
 <li>
 <em>Level 3</em>: system-level patterns and emergent properties; this is evaluated by the overall nutrient budget analysis, nutrient cycling pathway analysis, and assessment of the relationship between the areas of habitat for Ruppia and Ulva.</li>
 </ul>
-<p>The specific data available for validation and the assessment metrics used are described next. The level of model uncertainty is discussed in terms of how much confidence is in the current generation of model outputs for the purposes of defining model reliability.</p>
+<p>The specific data available for validation and the assessment metrics used are described next. The level of model uncertainty is discussed in terms of how much confidence is in the current generation of model outputs for the purposes of defining model reliability. As the model is continuously evolving, we report performance based on the model generation.</p>
 <p>In addition to the model performance assessment, the model is also routinely used to support management decision-making. Detail is provided on how the diverse model outputs can be processed and analysed for informing the Coorong Decision Making Framework (DMF) and other applications.</p>
 <p><br></p>
 </div>
@@ -117,12 +117,12 @@
 <h2>
 <span class="header-section-number">9.2</span> Integrated simulations<a class="anchor" aria-label="anchor" href="#integrated-simulations"><i class="fas fa-link"></i></a>
 </h2>
-<p>A summary of the different simulations used through the model life cycle of model development:</p>
+<p>A summary of the model lineage and provenance of the different simulations that have been assessed include:</p>
 <p><span style="color:teal"><strong>Generation 0</strong> model</span> : Original mesh, 2D hydrodynamics, no surface wave coupling, 1 overall phytoplankton functional group, 5 sediment zones with statically assigned flux rates based on assumed parameters.</p>
 <p><span style="color:orangered"><strong>Generation 1</strong> model</span> : Original mesh, 2D hydrodynamics, no surface wave coupling, 1 overall phytoplankton functional group, 5 sediment zones with statically assigned flux rates, updated based on observed estimates.</p>
 <p><span style="color:brown"><strong>Generation 1.5</strong> model</span> : Original mesh, 2D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones with statically assigned flux rates based on observed parameters.</p>
 <p><span style="color:darkblue"><strong>Generation 2</strong> model</span> : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.</p>
-<p>The results from Generation 0 model and Generation 1 model have been reported separately (and their results archived in <a href="appendix-b-results-archive.html#appendix-b-results-archive">Appendix B : Results Archive</a>). In this chapter, we focus on the results from the Generation 1.5 and Generation 2 simulations that include the model developments related to the biogeochemistry and habitat, as detailed in the previous chapters.</p>
+<p>The results from Generation 0 model and Generation 1 model have been reported separately (and their results archived in <a href="appendix-b-results-archive.html#appendix-b-results-archive">Appendix B : Results Archive</a>). In this chapter, we focus on the results from the Generation 1.5 and Generation 2 simulations that include the model developments related to the biogeochemistry and habitat, as detailed in the previous chapters. To access a specific model version, refer to the CDM version downloads within GitHub.</p>
 <p><br></p>
 </div>
 <div id="model-assessment-approach" class="section level2" number="9.3">
@@ -2306,7 +2306,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 27-June-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 28-June-2022.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
