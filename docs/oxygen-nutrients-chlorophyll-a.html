@@ -99,9 +99,38 @@
 <h2>
 <span class="header-section-number">5.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-2"><i class="fas fa-link"></i></a>
 </h2>
-<p>Coastal lagoons occur along 13% of the coastlines of all continents (Barnes, 1980) and represent a special type of coastal systems in terms of their hydrology and biogeochemistry, where strong gradients in chemical variables and ecosystem function persist (Kjervfe, 1994). Coastal lagoons like the Coorong are shallow with restricted connection with the ocean, and become vulnerable to nutrient enrichment and eutrophication. Choked lagoons have comparatively long water retention time and high phytoplankton biomass (Knoppers et al., 1991, Newton et al., 2005) due to the restricted water exchange. The relatively poor flushing, together with shallow bathymetry and evaporation, leads to accumulation of salt and nutrients within the basins that is not easily flushed out. Within the South Lagoon in particular, the intense cycling of N and P between the organic and inorganic forms is mediated by the many complex controls on oxygen solubility and primary productivity.</p>
-<p>Furthermore, the biogeochemical cycle of hypersaline environments is highly distinct from typical freshwater, estuarine or marine environments because it is strongly affected by changes in the physicochemical parameters of the brine as well as in the state and composition of the biological community in response to the salinity variations (Zhang and Huang, 2011; Isaji et al., 2019; Mosley et al., 2020). The use of water quality models in the management of coastal water has been well recognised and many models have been utilized to date for coastal management, however, water quality models considering hypersaline lagoon environments are relatively rare although extensive hydrodynamic modelling has been undertaken in these systems.</p>
-<p>Therefore, whilst the base AED model platform being used in previous model versions has been a good starting point, there is a need to tailor the setup to the hypersaline Coorong lagoon system. The aim of this section is to describe the approach, model adjustments and model assessment in terms of how the model is applied to capture the core biogeochemical components: the oxygen, nutrients, and phytoplankton that form the foundation of the elemental cycles in the lagoon.</p>
+<p>Coastal lagoons occur along 13% of the coastlines of all continents
+<span class="citation">(<a href="references.html#ref-barnes1980" role="doc-biblioref">Barnes, 1980</a>)</span> and represent a special type of coastal systems in terms
+of their hydrology and biogeochemistry, where strong gradients in
+chemical variables and ecosystem function persist <span class="citation">(<a href="references.html#ref-kjerfve1994" role="doc-biblioref">Kjerfve, 1994</a>)</span>.
+Coastal lagoons like the Coorong are shallow with restricted connection
+with the ocean, and become vulnerable to nutrient enrichment and
+eutrophication. Choked lagoons have comparatively long water retention
+time and high phytoplankton biomass <span class="citation">(<a href="references.html#ref-knoppers1991" role="doc-biblioref">Knoppers et al., 1991</a>; <a href="references.html#ref-newton2005" role="doc-biblioref">Newton and Mudge, 2005</a>)</span> due to
+the restricted water exchange. The relatively poor flushing, together
+with shallow bathymetry and evaporation, leads to accumulation of salt
+and nutrients within the basins that is not easily flushed out. Within
+the South Lagoon in particular, the intense cycling of N and P between
+the organic and inorganic forms is mediated by the many complex controls
+on oxygen solubility and primary productivity.</p>
+<p>Furthermore, the biogeochemical cycle of hypersaline environments is
+highly distinct from typical freshwater, estuarine or marine
+environments because it is strongly affected by changes in the
+physicochemical parameters of the brine as well as in the state and
+composition of the biological community in response to the salinity
+variations <span class="citation">(<a href="references.html#ref-zhang2011" role="doc-biblioref">Zhang and Huang, 2011</a>; <a href="references.html#ref-isaji2019" role="doc-biblioref">Isaji et al., 2019</a>; <a href="references.html#ref-mosley2020" role="doc-biblioref">Mosley et al., 2020</a>)</span>. The use of water
+quality models in the management of coastal water has been well
+recognised and many models have been utilized to date for coastal
+management, however, water quality models considering hypersaline lagoon
+environments are relatively rare although extensive hydrodynamic
+modelling has been undertaken in these systems.</p>
+<p>Therefore, whilst the base AED model platform being used in previous
+model versions has been a good starting point, there is a need to tailor
+the setup to the hypersaline Coorong lagoon system. The aim of this
+section is to describe the approach, model adjustments and model
+assessment in terms of how the model is applied to capture the core
+biogeochemical components: the oxygen, nutrients, and phytoplankton that
+form the foundation of the elemental cycles in the lagoon.</p>
 <p><br></p>
 <!-- -->
 </div>
@@ -113,13 +142,29 @@
 <h3>
 <span class="header-section-number">5.2.1</span> Background<a class="anchor" aria-label="anchor" href="#background"><i class="fas fa-link"></i></a>
 </h3>
-<p>Dissolved Oxygen (<span class="math inline">\(DO\)</span>) dynamics respond to processes of atmospheric exchange, sediment oxygen demand, microbial use during organic matter mineralisation and nitrification, photosynthetic oxygen production and respiratory oxygen consumption, chemical oxygen demand and respiration by other biotic components. In general, within the Coorong, dissolved oxygen levels are affected by salinity and temperature changes, which control oxygen solubility. In the South Lagoon however, enriched sediments create a large sediment oxygen demand (<span class="math inline">\(SOD\)</span>), which can casue a temporary sag in the oxygen saturation levels, particualr under quiescent conditions when wind mixing is unable to replenish low oxugen in the bottom waters. Superimposed on this is the often patchy photosynthetic inputs of oxygen by phytoplankton and filamentous macroalgae, and their subsequent high respiratory demands under dark conditions.</p>
+<p>Dissolved Oxygen (<span class="math inline">\(DO\)</span>) dynamics respond to processes of atmospheric
+exchange, sediment oxygen demand, microbial use during organic matter
+mineralisation and nitrification, photosynthetic oxygen production and
+respiratory oxygen consumption, chemical oxygen demand and respiration
+by other biotic components. In general, within the Coorong, dissolved
+oxygen levels are affected by salinity and temperature changes, which
+control oxygen solubility. In the South Lagoon however, enriched
+sediments create a large sediment oxygen demand (<span class="math inline">\(SOD\)</span>), which can casue
+a temporary sag in the oxygen saturation levels, particualr under
+quiescent conditions when wind mixing is unable to replenish low oxugen
+in the bottom waters. Superimposed on this is the often patchy
+photosynthetic inputs of oxygen by phytoplankton and filamentous
+macroalgae, and their subsequent high respiratory demands under dark
+conditions.</p>
 </div>
 <div id="model-setup" class="section level3" number="5.2.2">
 <h3>
 <span class="header-section-number">5.2.2</span> Model setup<a class="anchor" aria-label="anchor" href="#model-setup"><i class="fas fa-link"></i></a>
 </h3>
-<p>The CDM oxygen modelling approach follows the AED oxygen model setup as outlined in the <a href="https://aquaticecodynamics.github.io/aed-science/DO_1.html">AED science manual</a>. The configuration used in the CDM simulations includes:</p>
+<p>The CDM oxygen modelling approach follows the AED oxygen model setup as
+outlined in the <a href="https://aquaticecodynamics.github.io/aed-science/DO_1.html">AED science
+manual</a>. The
+configuration used in the CDM simulations includes:</p>
 <ul>
 <li>atmospheric exchange, based on oxygen solubility</li>
 <li>phytoplankton photosynthesis and respiration</li>
@@ -129,26 +174,53 @@
 <li>oxygen consumption due to nitrification</li>
 <li>oxygen consumption due to organic matter mineralisation</li>
 </ul>
-<p>The sediment oxygen demand is calculated either by the static sediment oxygen model, or when the SDG model is engaged, then the sediment oxygen demand is computed dynamically based on the oxygen gradient across the sediment-water interface.</p>
-<p>The settings for the model run with the static sediement oxygen demand models, include sensitivity of the SOD to temperature and oxygen concentration in the overlying water. The base oxygen flux rate is however specified for each sediment zone; this is summarised in more detail in the subsequent section.</p>
-<p>Aside from the sediment oxygen demand, the parameters used in the oxygen module are largely fixed and based on either the solubility constants for oxygen, and the reaction rates computed in the nutrient and primary producer modules based on a pre-determined oxygen stoichiometry.</p>
+<p>The sediment oxygen demand is calculated either by the static sediment
+oxygen model, or when the SDG model is engaged, then the sediment oxygen
+demand is computed dynamically based on the oxygen gradient across the
+sediment-water interface.</p>
+<p>The settings for the model run with the static sediement oxygen demand
+models, include sensitivity of the SOD to temperature and oxygen
+concentration in the overlying water. The base oxygen flux rate is
+however specified for each sediment zone; this is summarised in more
+detail in the subsequent section.</p>
+<p>Aside from the sediment oxygen demand, the parameters used in the oxygen
+module are largely fixed and based on either the solubility constants
+for oxygen, and the reaction rates computed in the nutrient and primary
+producer modules based on a pre-determined oxygen stoichiometry.</p>
 </div>
 <div id="model-results" class="section level3" number="5.2.3">
 <h3>
 <span class="header-section-number">5.2.3</span> Model results<a class="anchor" aria-label="anchor" href="#model-results"><i class="fas fa-link"></i></a>
 </h3>
-<p>The oxygen predictions have been assessed over various years of conditions in the Coorong (2017-2021) based on the routine oxygen monitoring data available, in addition to the once-off high-frequency oxygen logger deployment undertaken at McGrath. In assessing the model performance, we sought to ensure:</p>
+<p>The oxygen predictions have been assessed over various years of
+conditions in the Coorong (2017-2021) based on the routine oxygen
+monitoring data available, in addition to the once-off high-frequency
+oxygen logger deployment undertaken at McGrath. In assessing the model
+performance, we sought to ensure:</p>
 <ul>
-<li>the mean solubility condition across the lagoon was resolved along the salinity gradient</li>
-<li>the seasonal cycle of solubility was reproduced in the mouth, south lagoon and north lagoon</li>
-<li>the high-frequency measurements of diel oxygen variation were resolved in the deep (open) water monitoring sites, and</li>
-<li>the high-frequency measurements of diel oxygen variation were resolved in the shallow (littoral) water monitoring locations, which have higher densities of macrophytes and macroalgae.</li>
+<li>the mean solubility condition across the lagoon was resolved along
+the salinity gradient</li>
+<li>the seasonal cycle of solubility was reproduced in the mouth, south
+lagoon and north lagoon</li>
+<li>the high-frequency measurements of diel oxygen variation were
+resolved in the deep (open) water monitoring sites, and</li>
+<li>the high-frequency measurements of diel oxygen variation were
+resolved in the shallow (littoral) water monitoring locations, which
+have higher densities of macrophytes and macroalgae.</li>
 </ul>
-<p>The results of the integrated assessment for the final calibrated model are shown in Chapter 9, and below some focused results are presented to demonstrate model performance in simulation oxygen dynamics.</p>
+<p>The results of the integrated assessment for the final calibrated model
+are shown in Chapter 9, and below some focused results are presented to
+demonstrate model performance in simulation oxygen dynamics.</p>
 <div id="oxygen-metabolism-at-mcgrath" class="section level4 unnumbered">
 <h4>Oxygen metabolism at McGrath<a class="anchor" aria-label="anchor" href="#oxygen-metabolism-at-mcgrath"><i class="fas fa-link"></i></a>
 </h4>
-<p>Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-oxy1">5.1</a> shows the modelled dissolved oxygen saturation levels against the high frequency oxygen logger data that was collected at the site of McGrath. The results indicate the model captures diel oxygen metabolism at this site well, with fluctuations of high oxygen saturation levels in the day time and low oxygen saturation level at the night time, due to primary production and respiration, respectively.</p>
+<p>Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-oxy1">5.1</a> shows the modelled dissolved oxygen
+saturation levels against the high frequency oxygen logger data that was
+collected at the site of McGrath. The results indicate the model
+captures diel oxygen metabolism at this site well, with fluctuations of
+high oxygen saturation levels in the day time and low oxygen saturation
+level at the night time, due to primary production and respiration,
+respectively.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-oxy1"></span>
@@ -161,7 +233,9 @@ Figure 5.1: (a) Long-term time-series and (b) zoom-in view of the modelled vs. 
 <div id="long-term-oxygen-predictions" class="section level4 unnumbered">
 <h4>Long-term oxygen predictions<a class="anchor" aria-label="anchor" href="#long-term-oxygen-predictions"><i class="fas fa-link"></i></a>
 </h4>
-<p>The predictions of oxygen concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in <a href="appendix-b-results-archive.html#appendix-b-results-archive">Appendix B : Results Archive</a>.</p>
+<p>The predictions of oxygen concentrations for the main calibration
+(2020-2021) and validation (2017-2021) multi-year assessments are shown
+in <a href="appendix-b-results-archive.html#appendix-b-results-archive">Appendix B : Results Archive</a>.</p>
 <p><br></p>
 <!-- -->
 </div>
@@ -175,7 +249,20 @@ Figure 5.1: (a) Long-term time-series and (b) zoom-in view of the modelled vs. 
 <h3>
 <span class="header-section-number">5.3.1</span> Background<a class="anchor" aria-label="anchor" href="#background-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>Nutrient retention in the Coorong lagoon is currently a core management driver, linked to habitat quality and a key target of proposed management interventions. Recent analysis of the available historical nutrient data across the lagoon has shown the sharp gradients in nutrient species, and often high levels of nutrients in the South Lagoon in particular (Mosley et al., 202X). Furthermore, process investigations have elucidated the high rates of benthic metabolism and rates of productivity, contributing to a system with intensively cycled materials between ecosystem pools. Yet, we currently have only a limited understanding of the nutrient budget within the lagoons and the hydrodynamic and biogeochemical controls on elemental cycling. In this section, we outline the model setup and approach to parameterisation and parameter selection for the key pools and processes relevant to the Coorong.</p>
+<p>Nutrient retention in the Coorong lagoon is currently a core management
+driver, linked to habitat quality and a key target of proposed
+management interventions. Recent analysis of the available historical
+nutrient data across the lagoon has shown the sharp gradients in
+nutrient species, and often high levels of nutrients in the South Lagoon
+in particular (Mosley et al., 202X). Furthermore, process investigations
+have elucidated the high rates of benthic metabolism and rates of
+productivity, contributing to a system with intensively cycled materials
+between ecosystem pools. Yet, we currently have only a limited
+understanding of the nutrient budget within the lagoons and the
+hydrodynamic and biogeochemical controls on elemental cycling. In this
+section, we outline the model setup and approach to parameterisation and
+parameter selection for the key pools and processes relevant to the
+Coorong.</p>
 </div>
 <div id="model-setup-1" class="section level3" number="5.3.2">
 <h3>
@@ -184,21 +271,72 @@ Figure 5.1: (a) Long-term time-series and (b) zoom-in view of the modelled vs. 
 <div id="general-approach" class="section level4 unnumbered">
 <h4>General approach<a class="anchor" aria-label="anchor" href="#general-approach"><i class="fas fa-link"></i></a>
 </h4>
-<p>The CDM approach to simulate nutrients includes the <a href="https://aquaticecodynamics.github.io/aed-science/inorganic-nitrogen.html">nitrogen</a>, <a href="https://aquaticecodynamics.github.io/aed-science/inorganic-phosphorus.html">phosphorus</a>, <a href="https://aquaticecodynamics.github.io/aed-science/silica.html">silica</a> and <a href="https://aquaticecodynamics.github.io/aed-science/organic-matter.html">organic matter</a> modules within AED. Both the inorganic and organic, and dissolved and particulate forms of C, N and P are modelled explicitly along the general degradation pathway of POM to DOM to dissolved inorganic matter (DIM), however the need for discrete OM pools is elaborated upon below. The nitrogen cycle includes the additional processes of denitrification and nitrification that are not in the carbon and phosphorus cycles.</p>
-<p>An 8-pool organic matter module able to capture the variable reactivity of the OM pool and its stoichiometry is included. Under this conceptual model the decomposition of particulate detrital material is broken down through a process of enzymatic hydrolysis that slowly converts POM to labile DOM. A small fraction, f_ref, of this material is diverted to the DOM-R pool. The bioavailable DOM material enters the bacterial terminal metabolism pathways. These are active depending on the ambient oxygen concentrations and presence of electron acceptors, and of most relevance to the reservoirs, these pathways aerobic breakdown, denitrification, sulfate reduction, and methanogenesis. In most model approaches it is assumed these communities vary in response to temperature, and are mediated using a simple oxygen dependence or limitation factor. Reoxidation of reduced by-products is also included to account the role of nitrifiers, sulfate oxidising bacteria (SOB) and methane oxidising bacteria (MOB).</p>
-<p>Filterable reactive phosphorus also is known to adsorb onto suspended solids (SS), however, the rate is often site specific. Particulate organic matter in that deposits into the sediment may also be resuspended back into the water column when the bottom shear stress is adequate. In addition to the normal process descriptions included in the AED modules summarised above, several adjustments were made during the Coorong application, as dsicussed next.</p>
+<p>The CDM approach to simulate nutrients includes the
+<a href="https://aquaticecodynamics.github.io/aed-science/inorganic-nitrogen.html">nitrogen</a>,
+<a href="https://aquaticecodynamics.github.io/aed-science/inorganic-phosphorus.html">phosphorus</a>,
+<a href="https://aquaticecodynamics.github.io/aed-science/silica.html">silica</a>
+and <a href="https://aquaticecodynamics.github.io/aed-science/organic-matter.html">organic
+matter</a>
+modules within AED. Both the inorganic and organic, and dissolved and
+particulate forms of C, N and P are modelled explicitly along the
+general degradation pathway of POM to DOM to dissolved inorganic matter
+(DIM), however the need for discrete OM pools is elaborated upon below.
+The nitrogen cycle includes the additional processes of denitrification
+and nitrification that are not in the carbon and phosphorus cycles.</p>
+<p>An 8-pool organic matter module able to capture the variable reactivity
+of the OM pool and its stoichiometry is included. Under this conceptual
+model the decomposition of particulate detrital material is broken down
+through a process of enzymatic hydrolysis that slowly converts POM to
+labile DOM. A small fraction, f_ref, of this material is diverted to the
+DOM-R pool. The bioavailable DOM material enters the bacterial terminal
+metabolism pathways. These are active depending on the ambient oxygen
+concentrations and presence of electron acceptors, and of most relevance
+to the reservoirs, these pathways aerobic breakdown, denitrification,
+sulfate reduction, and methanogenesis. In most model approaches it is
+assumed these communities vary in response to temperature, and are
+mediated using a simple oxygen dependence or limitation factor.
+Reoxidation of reduced by-products is also included to account the role
+of nitrifiers, sulfate oxidising bacteria (SOB) and methane oxidising
+bacteria (MOB).</p>
+<p>Filterable reactive phosphorus also is known to adsorb onto suspended
+solids (SS), however, the rate is often site specific. Particulate
+organic matter in that deposits into the sediment may also be
+resuspended back into the water column when the bottom shear stress is
+adequate. In addition to the normal process descriptions included in the
+AED modules summarised above, several adjustments were made during the
+Coorong application, as dsicussed next.</p>
 </div>
 <div id="impact-of-hypersalinity-on-nitrification-and-denitrification" class="section level4 unnumbered">
 <h4>Impact of hypersalinity on nitrification and denitrification<a class="anchor" aria-label="anchor" href="#impact-of-hypersalinity-on-nitrification-and-denitrification"><i class="fas fa-link"></i></a>
 </h4>
-<p>The hypersalinity in the Coorong also has potential to impair the nitrification-denitrification process which is regarded as a function to remove the nitrogen in healthy coastal wetland systems. Multiple studies have suggested that the nitrification and denitrification rates in estuarine environments generally decrease with increasing salinity (Helder and DeVries, 1983; Isaji et al., 2019; Santoro and Enrich-Prast, 2015). Salinity inhibits ammonia oxidizing bacteria activity that has been observed to lead to enrichment of ammonium with salinity (Cui et al., 2016; Isaji et al., 2019). This is coincident with the finding in the Coorong that strong ammonium flux from sediment and high ammonium concentrations within surface sediments observed at Parnka Point (Mosley et al., 2020). In the Coorong, it also has been found that the denitrification gene <em>nirK</em> had a strong inverse relationship with salinity, and the decline of the <em>nirK</em> concentration became more significant when the salinity was over about 40 PSU (Mosley et al., 2020). Therefore, a Michaelis-Menten kinetic function of salinity limitation has been adopted for the nitrification and denitrification rates within the water columns as:</p>
+<p>The hypersalinity in the Coorong also has potential to impair the
+nitrification-denitrification process which is regarded as a function to
+remove the nitrogen in healthy coastal wetland systems. Multiple studies
+have suggested that the nitrification and denitrification rates in
+estuarine environments generally decrease with increasing salinity
+<span class="citation">(<a href="references.html#ref-helder1983" role="doc-biblioref">Helder and De Vries, 1983</a>; <a href="references.html#ref-isaji2019" role="doc-biblioref">Isaji et al., 2019</a>; <a href="references.html#ref-enrich-prast2015" role="doc-biblioref">Enrich-Prast et al., 2015</a>)</span>. Salinity inhibits ammonia
+oxidizing bacteria activity that has been observed to lead to enrichment
+of ammonium with salinity <span class="citation">(<a href="references.html#ref-cui2016" role="doc-biblioref">Cui et al., 2016</a>; <a href="references.html#ref-isaji2019" role="doc-biblioref">Isaji et al., 2019</a>)</span>. This is coincident
+with the finding in the Coorong that strong ammonium flux from sediment
+and high ammonium concentrations within surface sediments observed at
+Parnka Point <span class="citation">(<a href="references.html#ref-mosley2020" role="doc-biblioref">Mosley et al., 2020</a>)</span>. In the Coorong, it also has been found that
+the denitrification gene <em>nirK</em> had a strong inverse relationship with
+salinity, and the decline of the <em>nirK</em> concentration became more
+significant when the salinity was over about 40 PSU <span class="citation">(<a href="references.html#ref-mosley2020" role="doc-biblioref">Mosley et al., 2020</a>)</span>.
+Therefore, a Michaelis-Menten kinetic function of salinity limitation
+has been adopted for the nitrification and denitrification rates within
+the water columns as:</p>
 <span class="math display">\[\begin{equation}
   f_{SAL}=\begin{cases}
     1, &amp; \text{when $S \le S_{thresh}$}\\
     \frac{K_S}{K_S+(S-S_{thresh})}, &amp; \text{when $S&gt;S_{thresh}$}
   \end{cases}
 \end{equation}\]</span>
-<p>where <span class="math inline">\(f_{SAL}\)</span> is the limitation factor, <span class="math inline">\(S\)</span> the salinity, <span class="math inline">\(S_{thresh}\)</span> the salinity threshold when limitation starts to work, and <span class="math inline">\(K_S\)</span> is the half saturation coefficient. In the Coorong, the <span class="math inline">\(S_{thresh}\)</span> is set to 40 PSU and <span class="math inline">\(K_S\)</span> is set to 20 PSU as interpolated from the report of Mosley et al., (2020). This is shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal1">5.2</a>.</p>
+<p>where <span class="math inline">\(f_{SAL}\)</span> is the limitation factor, <span class="math inline">\(S\)</span> the salinity, <span class="math inline">\(S_{thresh}\)</span>
+the salinity threshold when limitation starts to work, and <span class="math inline">\(K_S\)</span> is the
+half saturation coefficient. In the Coorong, the <span class="math inline">\(S_{thresh}\)</span> is set to
+40 PSU and <span class="math inline">\(K_S\)</span> is set to 20 PSU as interpolated from the report of
+<span class="citation">Mosley et al. (<a href="references.html#ref-mosley2020" role="doc-biblioref">2020</a>)</span>. This is shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal1">5.2</a>.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-sal1"></span>
@@ -211,25 +349,45 @@ Figure 5.2: Limitation factor of salinity on base nitrification and denitrificat
 <div id="impact-of-salinity-and-temperature-on-phosphorus-adsorption-desorption" class="section level4 unnumbered">
 <h4>Impact of salinity and temperature on phosphorus adsorption-desorption<a class="anchor" aria-label="anchor" href="#impact-of-salinity-and-temperature-on-phosphorus-adsorption-desorption"><i class="fas fa-link"></i></a>
 </h4>
-<p>Because of low solubility of P-bearing minerals in the earth’s crust and a strong affinity of dissolved phosphate to adsorb on the solid surfaces, sediment, including suspended particles, has been identified as the dominant P reservoir in both freshwater and coastal marine environments. Suspended particles are able to adsorb or desorb phosphate in the water, depending on the sediment phosphorus contents and a range of environmental conditions. Adsorption can vary considerably along a salinity gradient (Sundareshwar and Morris, 1999; Zhang and Huang, 2011) as well as affected by the temperature (Zhang and Huang, 2011). For this process adoption of the algorithm, as implemented by Zhang and Huang, 2011, is a convenient method. In this method, the PO4 adsorption capability (<span class="math inline">\(K_{PO4-P}\)</span>), defined as the ratio of <span class="math inline">\(PO_4\)</span> concentration in the particles and water per mg of suspended particles, is calculated as:</p>
+<p>Because of low solubility of P-bearing minerals in the earth’s crust and
+a strong affinity of dissolved phosphate to adsorb on the solid
+surfaces, sediment, including suspended particles, has been identified
+as the dominant P reservoir in both freshwater and coastal marine
+environments. Suspended particles are able to adsorb or desorb phosphate
+in the water, depending on the sediment phosphorus contents and a range
+of environmental conditions. Adsorption can vary considerably along a
+salinity gradient <span class="citation">(<a href="references.html#ref-sundareshwar1999" role="doc-biblioref">Sundareshwar and Morris, 1999</a>; <a href="references.html#ref-zhang2011" role="doc-biblioref">Zhang and Huang, 2011</a>)</span> as well as affected by
+the temperature <span class="citation">(<a href="references.html#ref-zhang2011" role="doc-biblioref">Zhang and Huang, 2011</a>)</span>. For this process adoption of the
+algorithm, as implemented by <span class="citation">Zhang and Huang (<a href="references.html#ref-zhang2011" role="doc-biblioref">2011</a>)</span>, is a convenient method. In this
+method, the PO4 adsorption capability (<span class="math inline">\(K_{PO4-P}\)</span>), defined as the
+ratio of <span class="math inline">\(PO_4\)</span> concentration in the particles and water per mg of
+suspended particles, is calculated as:</p>
 <center>
 <span class="math display" id="eq:watereq1">\[\begin{equation}
 K_{PO4-P} = (60- [EPC]_0)/(100 ×[EPC]_0)
 \tag{5.1}
 \end{equation}\]</span>
 </center>
-<p>where the <span class="math inline">\([EPC]_0\)</span> is the equilibrium <span class="math inline">\(PO_4\)</span> concentration in the water and is a function of the exchangeable <span class="math inline">\(PO_4\)</span> content in the particle <span class="math inline">\(P_{exch}\)</span>, calculated as:</p>
+<p>where the <span class="math inline">\([EPC]_0\)</span> is the equilibrium <span class="math inline">\(PO_4\)</span> concentration in the water
+and is a function of the exchangeable <span class="math inline">\(PO_4\)</span> content in the particle
+<span class="math inline">\(P_{exch}\)</span>, calculated as:</p>
 <span class="math display" id="eq:watereq2">\[\begin{equation}
 [EPC]_0 = A × P_{exch} +B×P_{exch}^2
 \tag{5.2}
 \end{equation}\]</span>
-<p>where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> in Eq <a href="oxygen-nutrients-chlorophyll-a.html#eq:watereq2">(5.2)</a> are coefficients as a function of salinity and temperature through multi-parameter regression analysis from laboratory experiments as:</p>
+<p>where <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> in Eq <a href="oxygen-nutrients-chlorophyll-a.html#eq:watereq2">(5.2)</a> are coefficients as a
+function of salinity and temperature through multi-parameter regression
+analysis from laboratory experiments as:</p>
 <span class="math display" id="eq:watereq3">\[\begin{equation}
 A=-140.5+1098.2/T+30.67× ln(T)+0.0907×S \\
 B=1225.96-6880.49/T-278.77×ln(T))+0.4561×S
 \tag{5.3}
 \end{equation}\]</span>
-<p>where <span class="math inline">\(T\)</span> is the water temperature in °C, <span class="math inline">\(S\)</span> is the salinity in PSU. In the Coorong, the <span class="math inline">\(P_{exch}\)</span> is estimated as 0.78 µmol P/g from the field survey data (Mosley et al., 2020). The resulting <span class="math inline">\(PO4\)</span> adsorption capability under a range of temperature and salinity is shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal2">5.3</a>.</p>
+<p>where <span class="math inline">\(T\)</span> is the water temperature in °C, <span class="math inline">\(S\)</span> is the salinity in PSU. In
+the Coorong, the <span class="math inline">\(P_{exch}\)</span> is estimated as 0.78 µmol P/g from the field
+survey data <span class="citation">(<a href="references.html#ref-mosley2020" role="doc-biblioref">Mosley et al., 2020</a>)</span>. The resulting <span class="math inline">\(PO4\)</span> adsorption capability
+under a range of temperature and salinity is shown graphically in Figure
+<a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal2">5.3</a>.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-sal2"></span>
@@ -242,10 +400,66 @@ Figure 5.3: Response of the adsorption capability of phosphorus of suspended par
 <div id="nutrient-flux-at-the-sediment-water-interface-swi" class="section level4 unnumbered">
 <h4>Nutrient flux at the sediment-water interface (SWI)<a class="anchor" aria-label="anchor" href="#nutrient-flux-at-the-sediment-water-interface-swi"><i class="fas fa-link"></i></a>
 </h4>
-<p>One of the key drivers of lagoon water quality is the sediment biogeochemical processes and the exchange of nutrient at the SWI (Crowe et al., 2012). In shallow waters, hydrodynamics and diffusion have been regarded as the crucial factors to dominate the rate of sediment nutrient release. More specifically, two modes are responsible for nutrient release from sediment layers to overlying water: static release by nutrient diffusion in relatively calm situations as driven by a concentration gradient, and dynamic release accompanied by hydrodynamic-induced sediment resuspension (Qin et al., 2006, Tengberg et al., 2003). In open water where the fetch is long, in particular, the dynamic release can be the dominant mode since the water-sediment interface is frequently disturbed by hydrodynamic processes (Qin et al., 2006). Fan et al. (2001) have claimed that the internal phosphorus (P) load induced by resuspension was 8–10 times larger than the static release, while Reddy et al. (1996) have reported that ammonia concentration increased ten times in the overlying water caused by resuspension compared with gradient diffusion. It is also found that internal P from sediment resuspension resulting from moderate wind could be comparable in magnitude to the daily external supply (Gelencser and Szilagyi, 1982). Thus, the disturbance at the water-sediment layer induced by wind can significantly affect SS and nutrient behaviors in shallow aquatic ecosystems (Huang et al., 2016).</p>
-<p>Resuspension leads to a predictable increase of suspended solids (including POC) in the overlying water, but the impacts on the dissolved nutrient release rate depends on many factors. Tengler et al (2003) showed the resuspension led to an increase flux of NO3, but decrease of PO4 and no change of NH4. Similarly, Tengberg et al. (2003) and Sondergaard et al. (1992) found that resuspension can led to either higher or lower concentration of phosphate in the overlying water, depending the iron level of the suspended solids. Furthermore, the effects of resuspension on the long-term nitrogen and phosphorus liberation may be mild. Sloth et al. (1996) showed small changes in nutrient fluxes in the laboratory study, and the measured parameters of a marine system returned to the condition before the resuspension events. Blackburn (1997) also stated that natural resuspension does not significantly contribute to a long-term change of sediment nitrogen release. The nitrogen release with or without resuspension is just a matter of time, that is a sudden or a gradual release but to the same extent.</p>
-<p>In the Coorong, the effects of wind-induced resuspension on the nutrient release in the Coorong may be relatively mild. In the field survey of waves and resuspension in the Coorong, there was no significant change in nutrient levels due to resuspension. Total nutrient concentrations did not show a consistent relationship to any other variables and TN and TP had a moderately negative relationship to each other. Dissolved nutrient concentrations were consistently below minimum detectable levels. This is probably due to the major components of N/P released by resuspension was the particulate forms (Tang et al., 2020); also, the sediment experiment showed a strong diffusive nutrient flux of NH4 and PO4 under calm condition, which indicate the diffusive flux of nutrient is the major process of sediment release in the Coorong. The major components of TSS in the Coorong was found to be phytoplankton, where the inorganic suspended particles contributed relatively small to the TSS.</p>
-<p>Therefore, in the CDM generation one the “static” sediment flux algorithm is adopted that is suited to long-term studies and assumed the OM concentration is thought to be relatively stable. The sediment oxygen demand and nutrient flux rates were set based on the sediment flux data from the site of Parnka Point (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-sedpars">5.1</a>) which were then interpolated into the zones based on the sediment particle sizes and organic matter contents, following a role of thumb that the oxygen demand and nutrient flux increased with the organic matter contents (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-zonepars">5.2</a>).</p>
+<p>One of the key drivers of lagoon water quality is the sediment
+biogeochemical processes and the exchange of nutrient at the SWI
+<span class="citation">(<a href="references.html#ref-crowe2012" role="doc-biblioref">Crowe et al., 2012</a>)</span>. In shallow waters, hydrodynamics and diffusion have been
+regarded as the crucial factors to dominate the rate of sediment
+nutrient release. More specifically, two modes are responsible for
+nutrient release from sediment layers to overlying water: static release
+by nutrient diffusion in relatively calm situations as driven by a
+concentration gradient, and dynamic release accompanied by
+hydrodynamic-induced sediment resuspension <span class="citation">(<a href="references.html#ref-qin2006" role="doc-biblioref">Qin et al., 2006</a>; <a href="references.html#ref-teng2003" role="doc-biblioref">Tengberg et al., 2003</a>)</span>. In
+open water where the fetch is long, in particular, the dynamic release
+can be the dominant mode since the water-sediment interface is
+frequently disturbed by hydrodynamic processes <span class="citation">(<a href="references.html#ref-qin2006" role="doc-biblioref">Qin et al., 2006</a>)</span>. <span class="citation">Fan et al. (<a href="references.html#ref-fan2001" role="doc-biblioref">2001</a>)</span> have
+claimed that the internal phosphorus (P) load induced by resuspension
+was 8–10 times larger than the static release, while <span class="citation">Reddy et al. (<a href="references.html#ref-reddy1996" role="doc-biblioref">1996</a>)</span> have
+reported that ammonia concentration increased ten times in the overlying
+water caused by resuspension compared with gradient diffusion. It is
+also found that internal P from sediment resuspension resulting from
+moderate wind could be comparable in magnitude to the daily external
+supply <span class="citation">Gelencser et al. (<a href="references.html#ref-gelencser1982" role="doc-biblioref">1982</a>)</span>. Thus, the disturbance at the water-sediment layer
+induced by wind can significantly affect SS and nutrient behaviors in
+shallow aquatic ecosystems <span class="citation">(<a href="references.html#ref-huang2016" role="doc-biblioref">Huang et al., 2016</a>)</span>.</p>
+<p>Resuspension leads to a predictable increase of suspended solids
+(including POC) in the overlying water, but the impacts on the dissolved
+nutrient release rate depends on many factors. Tengler et al (2003)
+showed the resuspension led to an increase flux of NO3, but decrease of
+PO4 and no change of NH4. Similarly, <span class="citation">Tengberg et al. (<a href="references.html#ref-teng2003" role="doc-biblioref">2003</a>)</span> and <span class="citation">(<a href="references.html#ref-sondergaard1992" role="doc-biblioref">Sondergaard et al., 1992</a>)</span>
+found that resuspension can led to either higher or lower concentration
+of phosphate in the overlying water, depending the iron level of the
+suspended solids. Furthermore, the effects of resuspension on the
+long-term nitrogen and phosphorus liberation may be mild. <span class="citation">(<a href="references.html#ref-sloth1996" role="doc-biblioref">Sloth et al., 1996</a>)</span>
+showed small changes in nutrient fluxes in the laboratory study, and the
+measured parameters of a marine system returned to the condition before
+the resuspension events. <span class="citation">Blackburn (<a href="references.html#ref-black1997" role="doc-biblioref">1997</a>)</span> also stated that natural
+resuspension does not significantly contribute to a long-term change of
+sediment nitrogen release. The nitrogen release with or without
+resuspension is just a matter of time, that is a sudden or a gradual
+release but to the same extent.</p>
+<p>In the Coorong, the effects of wind-induced resuspension on the nutrient
+release in the Coorong may be relatively mild. In the field survey of
+waves and resuspension in the Coorong, there was no significant change
+in nutrient levels due to resuspension. Total nutrient concentrations
+did not show a consistent relationship to any other variables and TN and
+TP had a moderately negative relationship to each other. Dissolved
+nutrient concentrations were consistently below minimum detectable
+levels. This is probably due to the major components of N/P released by
+resuspension was the particulate forms <span class="citation">(<a href="references.html#ref-tang2020" role="doc-biblioref">Tang et al., 2020</a>)</span>; also, the sediment
+experiment showed a strong diffusive nutrient flux of NH4 and PO4 under
+calm condition, which indicate the diffusive flux of nutrient is the
+major process of sediment release in the Coorong. The major components
+of TSS in the Coorong was found to be phytoplankton, where the inorganic
+suspended particles contributed relatively small to the TSS.</p>
+<p>Therefore, in the CDM generation one the “static” sediment flux
+algorithm is adopted that is suited to long-term studies and assumed the
+OM concentration is thought to be relatively stable. The sediment oxygen
+demand and nutrient flux rates were set based on the sediment flux data
+from the site of Parnka Point (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-sedpars">5.1</a>) which were
+then interpolated into the zones based on the sediment particle sizes
+and organic matter contents, following a role of thumb that the oxygen
+demand and nutrient flux increased with the organic matter contents
+(Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-zonepars">5.2</a>).</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
@@ -403,7 +617,12 @@ AED, <code>Fsed_oxy</code>
 </table></div>
 </div>
 <p><br></p>
-<p>These sediment flux parameters serve as the default values used in the intial simulations. When the model is run with the dynamic sediment biogeochemistry model this fluxes in the tables are not used as input parameters, but rather as guides for validation of the predicted rates - see Chapter 7 for further detail about the dynamic prediction of sediment nutrient fluxes.</p>
+<p>These sediment flux parameters serve as the default values used in the
+intial simulations. When the model is run with the dynamic sediment
+biogeochemistry model this fluxes in the tables are not used as input
+parameters, but rather as guides for validation of the predicted rates -
+see Chapter 7 for further detail about the dynamic prediction of
+sediment nutrient fluxes.</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; ">
 <div class="inline-table"><table class="table" style="font-size: 11px; margin-left: auto; margin-right: auto;">
@@ -1059,14 +1278,27 @@ Zone 104
 <div id="parameter-summary" class="section level4 unnumbered">
 <h4>Parameter summary<a class="anchor" aria-label="anchor" href="#parameter-summary"><i class="fas fa-link"></i></a>
 </h4>
-<p>A summary of the overall model parameters used within the CDM simulations related to nutrient dynamics are summarised below in Table X.</p>
+<p>A summary of the overall model parameters used within the CDM
+simulations related to nutrient dynamics are summarised below in Table
+X.</p>
 </div>
 </div>
 <div id="model-results-1" class="section level3" number="5.3.3">
 <h3>
 <span class="header-section-number">5.3.3</span> Model results<a class="anchor" aria-label="anchor" href="#model-results-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>A summary of the model performance for several nutrient variables is shown in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-nut1">5.4</a>, for a wet and dry period in 2018-2019. The results show the gradient along the lagoon, and also the very low concentrations of bio-available nutrient fractions within the total pool. Further results of the nutrient variables are reported in the integrated assessment of the model in Chapter 9. The predictions of nutrient concentrations for the main calibration (2020-2021) and validation (2017-2021) multi-year assessments are shown in <a href="appendix-b-results-archive.html#appendix-b-results-archive">Appendix B : Results Archive</a>. Appendix B also includes the results of a sensitivity analysis undertaken to assess the relative importance of sediment nutrient flux rates on the overlying water nutrient and chlorophyll-a concentrations.</p>
+<p>A summary of the model performance for several nutrient variables is
+shown in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-nut1">5.4</a>, for a wet and dry period in
+2018-2019. The results show the gradient along the lagoon, and also the
+very low concentrations of bio-available nutrient fractions within the
+total pool. Further results of the nutrient variables are reported in
+the integrated assessment of the model in Chapter 9. The predictions of
+nutrient concentrations for the main calibration (2020-2021) and
+validation (2017-2021) multi-year assessments are shown in <a href="appendix-b-results-archive.html#appendix-b-results-archive">Appendix B :
+Results Archive</a>. Appendix B also includes the results of a sensitivity
+analysis undertaken to assess the relative importance of sediment
+nutrient flux rates on the overlying water nutrient and chlorophyll-a
+concentrations.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-nut1"></span>
@@ -1087,31 +1319,98 @@ Figure 5.4: Performance of predicted nutrient concentrations along the length of
 <h3>
 <span class="header-section-number">5.4.1</span> Background<a class="anchor" aria-label="anchor" href="#background-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>Within the Coorong, salinity has been identified as the most important driver of the phytoplankton community <span class="citation">(<a href="references.html#ref-scha2010" role="doc-biblioref">Schapira et al., 2010</a>; <a href="references.html#ref-jend2014" role="doc-biblioref">Jendyk et al., 2014</a>; <a href="references.html#ref-lete2015" role="doc-biblioref">Leterme et al., 2015</a>)</span>. The water in the north lagoon is brackish because of mixing between the ocean and barrage flows, and this area is generally dominated by chlorophytes since the salinity threshold for dominant chlorophyte species in the lagoon is reported to be ~28 PSU. On the other hand, the water in the south lagoon is hypersaline and generally dominated by diatoms. Cryptophytes and dinoflagellates have also be documented throughout both lagoons but in comparatively lower abundance and biomass <span class="citation">(<a href="references.html#ref-jend2014" role="doc-biblioref">Jendyk et al., 2014</a>; <a href="references.html#ref-lete2015" role="doc-biblioref">Leterme et al., 2015</a>)</span>.</p>
-<p>More specifically, this paper proposed 4 salinity regimes that tend to shape phytoplankton habitat:</p>
+<p>Within the Coorong, salinity has been identified as the most important
+driver of the phytoplankton community <span class="citation">(<a href="references.html#ref-scha2010" role="doc-biblioref">Schapira et al., 2010</a>; <a href="references.html#ref-jend2014" role="doc-biblioref">Jendyk et al., 2014</a>; <a href="references.html#ref-lete2015" role="doc-biblioref">Leterme et al., 2015</a>)</span>.
+The water in the north lagoon is brackish because of mixing between the
+ocean and barrage flows, and this area is generally dominated by
+chlorophytes since the salinity threshold for dominant chlorophyte
+species in the lagoon is reported to be ~28 PSU. On the other hand, the
+water in the south lagoon is hypersaline and generally dominated by
+diatoms. Cryptophytes and dinoflagellates have also be documented
+throughout both lagoons but in comparatively lower abundance and biomass
+<span class="citation">(<a href="references.html#ref-jend2014" role="doc-biblioref">Jendyk et al., 2014</a>; <a href="references.html#ref-lete2015" role="doc-biblioref">Leterme et al., 2015</a>)</span>.</p>
+<p>More specifically, this paper proposed 4 salinity regimes that tend to
+shape phytoplankton habitat:</p>
 <ul>
-<li>waters in the H1 category (&lt;5 PSU) which tend to be dominated by chlorophytes, although diatoms and cryptophytes sporadically accounted for between 10 and 50% of the overall phytoplankton abundance at Site 1 and Site 2.</li>
-<li>waters in the H2 category (5–20 PSU) are co-dominated by chlorophytes, diatoms and cryptophytes with no significant temporal differences in the relative overall abundance evident.</li>
-<li>waters in the H3 category (21–40 PSU) saw a drastic decrease in the prevalence of chlorophytes compared to lower salinity habitats, and a marked increases in the abundance of dinoflagellates, particularly toward the higher end of the salinity spectrum.</li>
-<li>waters the H4 category (&gt;41 PSU) which are mainly dominated by diatoms, although the abundance of dinoflagellates was sometimes higher than that of diatoms.</li>
+<li>waters in the H1 category (&lt;5 PSU) which tend to be dominated by
+chlorophytes, although diatoms and cryptophytes sporadically
+accounted for between 10 and 50% of the overall phytoplankton
+abundance at Site 1 and Site 2.</li>
+<li>waters in the H2 category (5–20 PSU) are co-dominated by
+chlorophytes, diatoms and cryptophytes with no significant temporal
+differences in the relative overall abundance evident.</li>
+<li>waters in the H3 category (21–40 PSU) saw a drastic decrease in the
+prevalence of chlorophytes compared to lower salinity habitats, and
+a marked increases in the abundance of dinoflagellates, particularly
+toward the higher end of the salinity spectrum.</li>
+<li>waters the H4 category (&gt;41 PSU) which are mainly dominated by
+diatoms, although the abundance of dinoflagellates was sometimes
+higher than that of diatoms.</li>
 </ul>
-<p>Aside from these main habitat-species groupings, <span class="citation">Schapira et al. (<a href="references.html#ref-scha2010" role="doc-biblioref">2010</a>)</span> had previously reported on the Coorong phytoplankton community. The major conclusions from theri study were:</p>
+<p>Aside from these main habitat-species groupings, <span class="citation">Schapira et al. (<a href="references.html#ref-scha2010" role="doc-biblioref">2010</a>)</span> had
+previously reported on the Coorong phytoplankton community. The major
+conclusions from theri study were:</p>
 <ul>
-<li>salinity was identified as the main factor structuring the distribution of pico-phytoplankton along the lagoon;</li>
-<li>the highest pico-phytoplankton abundances were recorded under salinity conditions ranging between 8.0% and 11.0%;</li>
-<li>one population of pico-eukaryote dominated the community throughout the salinity gradient and was responsible for the bloom observed between 8.0% and 11.0%. Only this halotolerant population and <em>Prochlorococcus</em>-like pico-cyanobacteria were identified in hypersaline waters (i.e. above 14.0%).</li>
+<li>salinity was identified as the main factor structuring the
+distribution of pico-phytoplankton along the lagoon;</li>
+<li>the highest pico-phytoplankton abundances were recorded under
+salinity conditions ranging between 8.0% and 11.0%;</li>
+<li>one population of pico-eukaryote dominated the community throughout
+the salinity gradient and was responsible for the bloom observed
+between 8.0% and 11.0%. Only this halotolerant population and
+<em>Prochlorococcus</em>-like pico-cyanobacteria were identified in
+hypersaline waters (i.e. above 14.0%).</li>
 </ul>
-<p>In addition to the phytoplankton assemblage (algae and cyanobacteria suspended in the water), the lagoon is also characterised by benthic microalgae - the so-called microphytobenthos (MPB). These have been shown to vary along the lagoon as part of the The Living Murray ecological sampling (Dittman et al. 2021). As with the phytoplankton biomass, the benthic chlorophyll-a biomass is also controlled by the sharp salinity gradient with significantly higher biomass in the North Lagoon.</p>
-<p>The subsequent sections document the phytoplankton (<span class="math inline">\(PHY\)</span>) and microphytobenthos (<span class="math inline">\(MPB\)</span>) modelling approach and rationale, and the results and analysis, with comaprisons against available chlorophyll-a data within the lagoon.</p>
+<p>In addition to the phytoplankton assemblage (algae and cyanobacteria
+suspended in the water), the lagoon is also characterised by benthic
+microalgae - the so-called microphytobenthos (MPB). These have been
+shown to vary along the lagoon as part of the The Living Murray
+ecological sampling (Dittman et al. 2021). As with the phytoplankton
+biomass, the benthic chlorophyll-a biomass is also controlled by the
+sharp salinity gradient with significantly higher biomass in the North
+Lagoon.</p>
+<p>The subsequent sections document the phytoplankton (<span class="math inline">\(PHY\)</span>) and
+microphytobenthos (<span class="math inline">\(MPB\)</span>) modelling approach and rationale, and the
+results and analysis, with comaprisons against available chlorophyll-a
+data within the lagoon.</p>
 </div>
 <div id="model-setup-phytoplankton" class="section level3" number="5.4.2">
 <h3>
 <span class="header-section-number">5.4.2</span> Model setup: Phytoplankton<a class="anchor" aria-label="anchor" href="#model-setup-phytoplankton"><i class="fas fa-link"></i></a>
 </h3>
-<p>The approach to simulate algal biomass is to adopt several plankton functional types (PFTs) that are typically defined based on specific groups. Whilst each group that is simulated is unique, they share a common mathematical approach and each simulate growth, death and sedimentation processes, and customisable internal nitrogen, phosphorus and/or silica stores. Distinction between groups is made by adoption of group’s specific parameters for environmental dependencies, and/or enabling options such as vertical migration or N fixation. This way the group-specific traits are used to inform the groups parameterisations.</p>
-<p>Based on the findings of the above-cited studies, the phytoplankton community in the CDM has been configured into four PFTs, according to their salinity tolerance and literature review of their biogeochemical properties asscoiated with the dominant taxa - spanning green algae (chlorophytes), cryptophytes, dinoflagellates, and diatoms.</p>
-<p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of carbon (<span class="math inline">\(mmol\:C/m^3\)</span>), and the groups have been configured to have a constant C:N:P:Si ratio (this can be alternatuvely changed to use dynamic stoichiometry and uptake of N and P sources in response to changing water column condition and cellular physiology if preferred). The total water column chlorophyll-a is calculated from the sum of the individual groups with a carbon:chlorophyll-a conversion applied. Balance equations that capture the various processes impacting phytoplankton are outlined in the full description of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science manual</a>. Key aspects relevant to the Coorong implementation are summarised in the following sections, including the salinity limitation functions and parameters used to differentiate the phytoplankton groups within the community.</p>
-<p>The four pools configured to simulate the biomass of phytoplankton, were denoted <span class="math inline">\(grn\)</span>, <span class="math inline">\(crypt\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>, which map to the mixed assemblage groups identified above as <span class="math inline">\(H1\)</span> - <span class="math inline">\(H4\)</span>. The parameters used in the setup are outlined in Table (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.3</a>).</p>
+<p>The approach to simulate algal biomass is to adopt several plankton
+functional types (PFTs) that are typically defined based on specific
+groups. Whilst each group that is simulated is unique, they share a
+common mathematical approach and each simulate growth, death and
+sedimentation processes, and customisable internal nitrogen, phosphorus
+and/or silica stores. Distinction between groups is made by adoption of
+group’s specific parameters for environmental dependencies, and/or
+enabling options such as vertical migration or N fixation. This way the
+group-specific traits are used to inform the groups parameterisations.</p>
+<p>Based on the findings of the above-cited studies, the phytoplankton
+community in the CDM has been configured into four PFTs, according to
+their salinity tolerance and literature review of their biogeochemical
+properties asscoiated with the dominant taxa - spanning green algae
+(chlorophytes), cryptophytes, dinoflagellates, and diatoms.</p>
+<p>The algal biomass of each group, <span class="math inline">\(PHY_C\)</span>, is simulated in units of
+carbon (<span class="math inline">\(mmol\:C/m^3\)</span>), and the groups have been configured to have a
+constant C:N:P:Si ratio (this can be alternatuvely changed to use
+dynamic stoichiometry and uptake of N and P sources in response to
+changing water column condition and cellular physiology if preferred).
+The total water column chlorophyll-a is calculated from the sum of the
+individual groups with a carbon:chlorophyll-a conversion applied.
+Balance equations that capture the various processes impacting
+phytoplankton are outlined in the full description of the phytoplankton
+model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science
+manual</a>.
+Key aspects relevant to the Coorong implementation are summarised in the
+following sections, including the salinity limitation functions and
+parameters used to differentiate the phytoplankton groups within the
+community.</p>
+<p>The four pools configured to simulate the biomass of phytoplankton, were
+denoted <span class="math inline">\(grn\)</span>, <span class="math inline">\(crypt\)</span>, <span class="math inline">\(diatom\)</span> and <span class="math inline">\(dino\)</span>, which map to the mixed
+assemblage groups identified above as <span class="math inline">\(H1\)</span> - <span class="math inline">\(H4\)</span>. The parameters used
+in the setup are outlined in Table (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.3</a>).</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:4200px; overflow-x: scroll; width:700px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2377,9 +2676,26 @@ fraction of maximum intracellular nitrogen where motility tends up towards light
 </table></div>
 </div>
 <p><br></p>
-<p>In terms of understanding the productivity of phytoplankton, for informing other rate parameters in the model, Joint et al (2002) studied phytoplankton along a hypersalinity gradient and found that elevated photosynthetic pigment concentrations were present in ponds of intermediate (5^11%) and high (s32%) salinity, but that rates of primary production and nutrient uptake were generally reduced at the highest salinity. For example, the maximum primary production was measured at 8% salinity and chlorophyll-specific carbon fixation also maximised at this salinity under conditions where ammonium was the dominant nitrogen source throughout the salinity gradient.</p>
-<p>Noting that salinity impacts productivity and the observations noted in the previous section in the Coorong, the salinity tolerance effect on phytoplankton was therefore given by adopting salinity tolerance functions, <span class="math inline">\(f(S)\)</span>, depending on the group’s sensitivity to salinity. There are four options adding into the <span class="math inline">\(CDM\)</span> based on quadratic functions that are used to define the salinity effect (Griffin et al., 2001; Robson and Hamilton, 2004):</p>
-<p>The salinity limitation settings are included in the phytoplankton parameter table and the use of various salinity limitation options for each phytoplankton PFT are shown graphically in Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal3">5.5</a>.</p>
+<p>In terms of understanding the productivity of phytoplankton, for
+informing other rate parameters in the model, <span class="citation">(<a href="references.html#ref-joint2002" role="doc-biblioref">Joint et al., 2002</a>)</span> studied
+phytoplankton along a hypersalinity gradient and found that elevated
+photosynthetic pigment concentrations were present in ponds of
+intermediate (5^11%) and high (s32%) salinity, but that rates of
+primary production and nutrient uptake were generally reduced at the
+highest salinity. For example, the maximum primary production was
+measured at 8% salinity and chlorophyll-specific carbon fixation also
+maximised at this salinity under conditions where ammonium was the
+dominant nitrogen source throughout the salinity gradient.</p>
+<p>Noting that salinity impacts productivity and the observations noted in
+the previous section in the Coorong, the salinity tolerance effect on
+phytoplankton was therefore given by adopting salinity tolerance
+functions, <span class="math inline">\(f(S)\)</span>, depending on the group’s sensitivity to salinity.
+There are four options adding into the <span class="math inline">\(CDM\)</span> based on quadratic
+functions that are used to define the salinity effect <span class="citation">(<a href="references.html#ref-griffin2001" role="doc-biblioref">Griffin et al., 2001</a>; <a href="references.html#ref-robson2004" role="doc-biblioref">Robson and Hamilton, 2004</a>)</span>:</p>
+<p>The salinity limitation settings are included in the phytoplankton
+parameter table and the use of various salinity limitation options for
+each phytoplankton PFT are shown graphically in Figure
+<a href="oxygen-nutrients-chlorophyll-a.html#fig:water-sal3">5.5</a>.</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-sal3"></span>
@@ -2388,15 +2704,34 @@ Figure 5.5: Salinity limitation curves applied to the photosynthesis rate of eac
 </p>
 </div>
 </div>
-<p>Direct measurements for other group-specific physiological rates and parameters are not yet available for the Coorong, and so the current version of the model relies on prior experience and relevant literature to set the other key parameters shown in Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.3</a> for each group, such as the sedimentation rate, nutrient stoichiometry and light sensitivity.</p>
+<p>Direct measurements for other group-specific physiological rates and
+parameters are not yet available for the Coorong, and so the current
+version of the model relies on prior experience and relevant literature
+to set the other key parameters shown in Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-phytopars">5.3</a>
+for each group, such as the sedimentation rate, nutrient stoichiometry
+and light sensitivity.</p>
 <hr>
 </div>
 <div id="model-setup-microphytobenthos" class="section level3" number="5.4.3">
 <h3>
 <span class="header-section-number">5.4.3</span> Model setup: Microphytobenthos<a class="anchor" aria-label="anchor" href="#model-setup-microphytobenthos"><i class="fas fa-link"></i></a>
 </h3>
-<p>The approach to simulate the biomass of benthic microalgae (microphytobenthos) is to allocate a single biomass pool that cocneptually sites between the water and sediment (i.e., at the sediment-water interface). The biomass of this group, <span class="math inline">\(MPB\)</span>, is simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>), and has a dynamic C:N:P stoichiometry based on the history of the deposited phytopalnkton that have landed on the sediment. The model is conceptually simple compared to the overlying phytoplankton group model, with paramaetrs to mediate response to light, resuspension back into the watre column, and burial into the deeper sediment.Balance equations that capture the various processes impacting phytoplankton are outlined in the full description of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science manual</a>.</p>
-<p>The <span class="math inline">\(MPB\)</span> pool configured to simulate the biomass is configured according to the parameters outlined in Table (Table <a href="oxygen-nutrients-chlorophyll-a.html#tab:5-mpbpars">5.4</a>).</p>
+<p>The approach to simulate the biomass of benthic microalgae
+(microphytobenthos) is to allocate a single biomass pool that
+cocneptually sites between the water and sediment (i.e., at the
+sediment-water interface). The biomass of this group, <span class="math inline">\(MPB\)</span>, is
+simulated in units of carbon (<span class="math inline">\(mmol\:C/m^2\)</span>), and has a dynamic C:N:P
+stoichiometry based on the history of the deposited phytopalnkton that
+have landed on the sediment. The model is conceptually simple compared
+to the overlying phytoplankton group model, with paramaetrs to mediate
+response to light, resuspension back into the watre column, and burial
+into the deeper sediment.Balance equations that capture the various
+processes impacting phytoplankton are outlined in the full description
+of the phytoplankton model within the <a href="https://aquaticecodynamics.github.io/aed-science/phytoplankton.html">AED science
+manual</a>.</p>
+<p>The <span class="math inline">\(MPB\)</span> pool configured to simulate the biomass is configured
+according to the parameters outlined in Table (Table
+<a href="oxygen-nutrients-chlorophyll-a.html#tab:5-mpbpars">5.4</a>).</p>
 <p><br></p>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-y: scroll; height:700px; overflow-x: scroll; width:680px; ">
 <div class="inline-table"><table class="table" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -2544,7 +2879,12 @@ set of benthic zones with <span class="math inline">\(MPB\)</span> active, where
 <h3>
 <span class="header-section-number">5.4.4</span> Model results<a class="anchor" aria-label="anchor" href="#model-results-2"><i class="fas fa-link"></i></a>
 </h3>
-<p>The simulated phytoplankton biomass has been compared against the available chlorophyll-a data from the routine WQ monitoring sites. The model captures well the long-term mean gradient in biomass along the length of the Coorong, which includes the separation of the groups based on their optimum salinity and nutrient parameters (Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-phy1">5.6</a>).</p>
+<p>The simulated phytoplankton biomass has been compared against the
+available chlorophyll-a data from the routine WQ monitoring sites. The
+model captures well the long-term mean gradient in biomass along the
+length of the Coorong, which includes the separation of the groups based
+on their optimum salinity and nutrient parameters (Figure
+<a href="oxygen-nutrients-chlorophyll-a.html#fig:water-phy1">5.6</a>).</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-phy1"></span>
@@ -2554,7 +2894,9 @@ Figure 5.6: Simulated and observed chlorophyll-a concentration along the length 
 </div>
 </div>
 <p><br></p>
-<p>Whilst the above plot shows the along-lagoon gradient, the seasonal and high frequency variability of chlorophyll-a can be more variable and is also well-captured by the model (Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-phy2">5.7</a>).</p>
+<p>Whilst the above plot shows the along-lagoon gradient, the seasonal and
+high frequency variability of chlorophyll-a can be more variable and is
+also well-captured by the model (Figure <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-phy2">5.7</a>).</p>
 <div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:water-phy2"></span>
@@ -2564,7 +2906,9 @@ Figure 5.7: Performance of predicted phytoplankton biomass and other key water q
 </div>
 </div>
 <p><br></p>
-<p>The limitation plots for each simulated group provide insights into the dynamic environmental controls on group productivity (Figures <a href="oxygen-nutrients-chlorophyll-a.html#fig:water-lim1">5.8</a>-<a href="oxygen-nutrients-chlorophyll-a.html#fig:water-lim7">5.14</a>).</p>
+<p>The limitation plots for each simulated group provide insights into the
+dynamic environmental controls on group productivity (Figures
+<a href="oxygen-nutrients-chlorophyll-a.html#fig:water-lim1">5.8</a>-<a href="oxygen-nutrients-chlorophyll-a.html#fig:water-lim7">5.14</a>).</p>
 <p><br></p>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -2585,13 +2929,27 @@ Figure 5.7: Performance of predicted phytoplankton biomass and other key water q
 }
 </style>
 <div class="tab">
-<p><button class="tablinks" onclick="opentab(event, 'A4260633')" id="defaultOpen">A4260633</button>
-<button class="tablinks" onclick="opentab(event, 'A4261036')">A4261036</button>
-<button class="tablinks" onclick="opentab(event, 'A4261039')">A4261039</button>
-<button class="tablinks" onclick="opentab(event, 'A4261134')">A4261134</button>
-<button class="tablinks" onclick="opentab(event, 'A4261135')">A4261135</button>
-<button class="tablinks" onclick="opentab(event, 'A4261165')">A4261165</button>
-<button class="tablinks" onclick="opentab(event, 'A4261209')">A4261209</button></p>
+<button class="tablinks" onclick="opentab(event, 'A4260633')" id="defaultOpen">
+A4260633
+</button>
+<button class="tablinks" onclick="opentab(event, 'A4261036')">
+A4261036
+</button>
+<button class="tablinks" onclick="opentab(event, 'A4261039')">
+A4261039
+</button>
+<button class="tablinks" onclick="opentab(event, 'A4261134')">
+A4261134
+</button>
+<button class="tablinks" onclick="opentab(event, 'A4261135')">
+A4261135
+</button>
+<button class="tablinks" onclick="opentab(event, 'A4261165')">
+A4261165
+</button>
+<button class="tablinks" onclick="opentab(event, 'A4261209')">
+A4261209
+</button>
 </div>
 <div id="A4260633" class="tabcontent">
 <p>

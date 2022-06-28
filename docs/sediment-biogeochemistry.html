@@ -137,7 +137,7 @@ F = D_{0}\frac{\Delta C}{\Delta x} = \frac{D_{0}}{\delta} (C_{bw} - C_{1})
 <div id="model-extensions-and-development" class="section level3 unnumbered">
 <h3>Model extensions and development<a class="anchor" aria-label="anchor" href="#model-extensions-and-development"><i class="fas fa-link"></i></a>
 </h3>
-<p>The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons (Paraska et al. 2014). Three main developments have been undertaken to adapt the CANDI_AED vertical column model to the Coorong application:</p>
+<p>The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons <span class="citation">(<a href="references.html#ref-paraska2014" role="doc-biblioref">Paraska et al., 2014</a>)</span>. Three main developments have been undertaken to adapt the CANDI_AED vertical column model to the Coorong application:</p>
 <ul>
 <li>Improved parameterisation of diffusion at the sediment-water interface, based on <span class="math inline">\(\tau_b\)</span>.</li>
 <li>Inclusion of functionality to resolve resuspension effects</li>
@@ -1188,8 +1188,7 @@ Figure 7.10: Schematic of major N pools, as transferred between the water and se
 </p>
 </div>
 </div>
-<p>The flux of <span class="math inline">\(Fe(OH)_{3A}\)</span> from the water column to the sediment is set from the parameter ‘default_vals’. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the <span class="math inline">\(Fe^2+\)</span> concentration value.
-<br></p>
+<p>The flux of <span class="math inline">\(Fe(OH)_{3A}\)</span> from the water column to the sediment is set from the parameter ‘default_vals’. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the <span class="math inline">\(Fe^2+\)</span> concentration value. <br></p>
 <p><br></p>
 </div>
 <div id="initialisation-and-spinup" class="section level4 unnumbered">
@@ -5013,9 +5012,7 @@ Equilibrium constant for FeS precipitation (-)
 <div id="top-5-cm-over-time" class="section level5 unnumbered">
 <h5>Top 5 cm over time<a class="anchor" aria-label="anchor" href="#top-5-cm-over-time"><i class="fas fa-link"></i></a>
 </h5>
-<p>The combination of the linear initial profile and the <em>ponu</em> parameter produced an unexpected result in the long-term concentration of organic nitrogen. Even though the top 5 cm had a high initial concentration, over a long simulation, the concentration would eventually drop to zero. As the <span class="math inline">\(PON_R\)</span> was hydrolysed to <span class="math inline">\(DON_R\)</span>, and buried with ongoing sediment deposition, the <span class="math inline">\(PON_R\)</span> concentration in the top 5 cm decreased: <span class="math inline">\(PON_R\)</span> was not replenished by incoming organic matter from the water column (see Figure <a href="sediment-biogeochemistry.html#fig:dev-picsbudgetsetup-5b">7.12</a>). The <span class="math inline">\(DON_R\)</span> that was created from <span class="math inline">\(PON_R\)</span> fluxed out of the sediment to the water column or mineralised to <span class="math inline">\(NH_4^+\)</span>. The <span class="math inline">\(NH_4^+\)</span> either fluxed to the water column, or accumulated at depth. The problem that this creates for future calibrations is that either
-- the <span class="math inline">\(DON_R\)</span> and <span class="math inline">\(NH_4^+\)</span> fluxes are artificially high early in the simulation, as a false result of a long spin-up, or
-- an additional amount of <span class="math inline">\(PON_R\)</span> needs to be added to the influxing organic matter.</p>
+<p>The combination of the linear initial profile and the <em>ponu</em> parameter produced an unexpected result in the long-term concentration of organic nitrogen. Even though the top 5 cm had a high initial concentration, over a long simulation, the concentration would eventually drop to zero. As the <span class="math inline">\(PON_R\)</span> was hydrolysed to <span class="math inline">\(DON_R\)</span>, and buried with ongoing sediment deposition, the <span class="math inline">\(PON_R\)</span> concentration in the top 5 cm decreased: <span class="math inline">\(PON_R\)</span> was not replenished by incoming organic matter from the water column (see Figure <a href="sediment-biogeochemistry.html#fig:dev-picsbudgetsetup-5b">7.12</a>). The <span class="math inline">\(DON_R\)</span> that was created from <span class="math inline">\(PON_R\)</span> fluxed out of the sediment to the water column or mineralised to <span class="math inline">\(NH_4^+\)</span>. The <span class="math inline">\(NH_4^+\)</span> either fluxed to the water column, or accumulated at depth. The problem that this creates for future calibrations is that either - the <span class="math inline">\(DON_R\)</span> and <span class="math inline">\(NH_4^+\)</span> fluxes are artificially high early in the simulation, as a false result of a long spin-up, or - an additional amount of <span class="math inline">\(PON_R\)</span> needs to be added to the influxing organic matter.</p>
 <p> </p>
 <div class="text-image">
 <div class="figure" style="text-align: center">
