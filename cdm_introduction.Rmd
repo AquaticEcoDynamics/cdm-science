@@ -1,5 +1,3 @@
-
-
 # Introduction
 
 ## Background and significance of the Coorong
@@ -43,9 +41,9 @@ Various modelling tools have previously been developed to assist in management o
 
 A list of the prior modelling work in the Coorong:
 
--    @bmt2017 . Coorong Options Assessment. Brisbane: BMT WBM Pty Ltd
--    @collier2017 . Optimising Coorong Ruppia habitat: Analysis of management strategies to improve habitat conditions for Ruppia tuberosa in the Coorong (South Australia) based on literature review, manipulative experiments and predictive modelling. Report under review.
--    @mosley2017 . Assessment and modelling of the effects of the 2013-2016 Morella Basin releases on Coorong water quality. Report to the Department of Environment, Water and Natural Resources (DEWNR). University of Adelaide, South Australia.
+-   @bmt2017 . Coorong Options Assessment. Brisbane: BMT WBM Pty Ltd
+-   @collier2017 . Optimising Coorong Ruppia habitat: Analysis of management strategies to improve habitat conditions for Ruppia tuberosa in the Coorong (South Australia) based on literature review, manipulative experiments and predictive modelling. Report under review.
+-   @mosley2017 . Assessment and modelling of the effects of the 2013-2016 Morella Basin releases on Coorong water quality. Report to the Department of Environment, Water and Natural Resources (DEWNR). University of Adelaide, South Australia.
 -   Hipsey, M.R., Busch, B.D., Aldridge, K.T., 2017. Coorong Investigations Project: Ruppia habitat changes in response to augmented South East Flows scenarios and a regulating structure. AED Report \#R39, The University of Western Australia, Perth, Australia. 72pp.
 -   Teakle, I., et al. (2021). Coorong Infrastructure Investigations Project: Hydrodynamic, Biogeochemical and Habitat Modelling Study. Brisbane: BMT WBM Pty Ltd.
 
