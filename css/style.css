@@ -9,3 +9,12 @@ body {
 caption {
   caption-side: top;
 }
+
+/* REFERENCES */
+#refs {
+  font-size: 12px;
+}
+
+.csl-entry {
+  margin: 10px 0;
+}
