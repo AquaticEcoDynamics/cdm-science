@@ -1,12 +1,8 @@
-# Appendix D : Sediment Data {-}
+# Appendix D : Sediment Data {.unnumbered}
 
-
-
-### Sample points {-}
+### Sample points {.unnumbered}
 
 A rich dataset with many types of data were collected along the length of the lagoon, shown in \@ref(fig:dev-seddata1). These sites are referred to throughout this document and catalogued here on one section to create an overview. The grab samples (24) and rapid assessments (50) were taken at many points and provided one snapshot in time, in the surface sediment only. The grab samples were taken at the same points as almost half of the rapid samples and were submitted for many assays, such as total metals, as well as sediment quality. The rapid assessment samples were assessed for texture, colour and oxic/sulfidic state. Seven extra particle size samples were taken, which complement the sediment texture data from the grab samples. Five sites had cores taken in two seasons and used to measured sediment-water fluxes, as well as concentration-depth profiles. Macro invertebrate samples were taken at seven points, and one sample was transplanted to an eighth point. Finally, particle fluxes were measured at the site Villa de Yumpa.
-
-
 
 ```{r dev-seddata1, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Overview of the locations and different types of sediment sample data across the Cooorong. Left - Grab samples. Centre - Particle size samples. Right - Cores. "}
 
@@ -19,16 +15,16 @@ knitr::include_graphics(c("images/dev/AppD/sed_GrabsMap.png"
 
 \
 
- ```{r dev-seddata1b, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Overview of the locations and different types of sediment sample data across the Cooorong. Left - Macroinvertebrates. Centre - Rapid assessments. Right - Flux chamber. "}
- 
+```{r dev-seddata1b, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Overview of the locations and different types of sediment sample data across the Cooorong. Left - Macroinvertebrates. Centre - Rapid assessments. Right - Flux chamber. "}
+
 knitr::include_graphics(c("images/dev/AppD/sed_MacrosMap.png"
-                           ,"images/dev/AppD/sed_RapidMap.png"
-                           ,"images/dev/AppD/sed_FluxChamberMap.png"
-                         ))
- 
- ```
- 
-### Sediment quality {-}
+                          ,"images/dev/AppD/sed_RapidMap.png"
+                          ,"images/dev/AppD/sed_FluxChamberMap.png"
+                        ))
+
+```
+
+### Sediment quality {.unnumbered}
 
 Two sediment quality surveys by the University of Adelaide provided sediment quality data along the length of the lagoon (Figure \@ref(fig:dev-seddata2)). 24 grab samples were measured for % moisture, and proportions of gravel, sand, silt and clay. Seven other samples were taken for grain size analysis in classes of gravel, coarse sand, medium sand, fine sand, very fine sand and mud. These measured points were categorized to represent the ten Coorong zones, as well as deep and shallow areas.
 
@@ -43,8 +39,7 @@ knitr::include_graphics(c("images/dev/AppD/sed_GrabGrainRapMap.png"
 
 \
 
-
-The sediment quality points are summarised in \@ref(tab:3dev-sedQual1). The sediment quality was either sand with low % moisture and low organic matter, clay with high moisture and high organic matter, or somewhere in between these (\@ref(tab:3dev-sedQual2)). The zones that had a combination of these were further refined according to depth. 
+The sediment quality points are summarised in \@ref(tab:3dev-sedQual1). The sediment quality was either sand with low % moisture and low organic matter, clay with high moisture and high organic matter, or somewhere in between these (\@ref(tab:3dev-sedQual2)). The zones that had a combination of these were further refined according to depth.
 
 \
 
@@ -92,21 +87,22 @@ sediment_linkvars <- read_xlsx("tables/sed/SedQualitySamples.xlsx", sheet = "Tex
       #        fixed_thead = FALSE)
 ```
 
-
 </center>
 
 \
 
-The % moisture data was calculated as the mass of water per total mass of sample. This measurement ranged from around 20% for sandy sediment to around 80% for clay sediment. Assuming a dry mass density of 2.7 kg L^-1^, these values translated to roughly 40% porosity for sand and 92% porosity for clay. The rapid assessments had a texture description converted to a scale of 1 to 5, where 1 represented sticky ooze and 5 represented coarse grains \@ref(fig:dev-seddata3)). The dominant texture type was assigned by zone. This was further refined for the bank and channel subzones. 
+The % moisture data was calculated as the mass of water per total mass of sample. This measurement ranged from around 20% for sandy sediment to around 80% for clay sediment. Assuming a dry mass density of 2.7 kg L^-1^, these values translated to roughly 40% porosity for sand and 92% porosity for clay. The rapid assessments had a texture description converted to a scale of 1 to 5, where 1 represented sticky ooze and 5 represented coarse grains \@ref(fig:dev-seddata3)). The dominant texture type was assigned by zone. This was further refined for the bank and channel subzones.
 
 <center>
+
+(ref:hallett2019) @hallett2019
 
 ```{r 3dev-sedQual3, echo=FALSE, message=FALSE, warning=FALSE}
  library(knitr)
  library(kableExtra)
  library(readxl)
 sediment_linkvars <- read_xlsx("tables/sed/SedQualitySamples.xlsx", sheet = "Rapid" )
- kable(sediment_linkvars,"html", escape = F, align = "c", caption = "Rapid assessment criteria, based on Hallet et al. (2019). These samples assessed the grainy or oozy state of the sediment.",
+ kable(sediment_linkvars,"html", escape = F, align = "c", caption = "Rapid assessment criteria, based on (ref:hallett2019). These samples assessed the grainy or oozy state of the sediment.",
        bootstrap_options = "hover") %>%
    kable_styling(sediment_linkvars, bootstrap_options = "hover", 
                  full_width = F, position = "center", 
@@ -135,12 +131,11 @@ knitr::include_graphics(c("images/dev/AppD/sed_Texture.png"
 
 ```
 
-
 \
 
-### Salinity {-}
+### Salinity {.unnumbered}
 
-The salinity in the southern lagoon was much higher than in the northern lagoon, due to the evaporation of the water between rainfall events (\@ref(fig:dev-seddata4)). The Goyder Institute T&T report suggested that high salinity had destroyed habitat for macroinvertebrates (see also section Macroinvertebrates). Salinity was measured in the grab samples 0 to 5 cm deep. It is displayed in (\@ref(fig:dev-seddata4)) as interpolated sediment salinity. Note that it is hypersaline even in the northern lagoon, in zone 6. 
+The salinity in the southern lagoon was much higher than in the northern lagoon, due to the evaporation of the water between rainfall events (\@ref(fig:dev-seddata4)). The Goyder Institute T&T report suggested that high salinity had destroyed habitat for macroinvertebrates (see also section Macroinvertebrates). Salinity was measured in the grab samples 0 to 5 cm deep. It is displayed in (\@ref(fig:dev-seddata4)) as interpolated sediment salinity. Note that it is hypersaline even in the northern lagoon, in zone 6.
 
 ```{r dev-seddata4, echo = FALSE, out.width='40%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Interpolated salinity in the bottom water, performed by the University of Adelaide. Salinity is higher in the southern lagoon. For comparison, seawater is about 35 psu. The colour band only applies to the lagoon in the map, not the lakes, the ocean or zone 1."}
 
@@ -149,8 +144,7 @@ knitr::include_graphics(c("images/dev/AppD/sed_Salinity.png"
 
 ```
 
-
-### Sulfur {-}
+### Sulfur {.unnumbered}
 
 The rapid assessments gave the general oxic/sulfidic state of the sediment, where the ooze texture usually coincided with the sulfidic state of the sediment (see criteria in \@ref(tab:3dev-sedQual4). These were divided per zone (\@ref(fig:dev-seddata5)) and further divided by depth. There were no measurements of $SO_4^{2-}$ in the sediments or the water column, and so an estimate was made by correlating the $SO_4^{2-}$ concentration with salinity.
 
@@ -213,13 +207,11 @@ sediment_linkvars <- read_xlsx("tables/sed/SedQualitySamples.xlsx", sheet = "SCo
 
 </center>
 
-
 \
 
-### Nutrients {-}
+### Nutrients {.unnumbered}
 
-The grab samples also provided TN and TP measurements. These are shown as interpolated data (\@ref(fig:dev-seddata6)). Nutrients were concentrated in zones 4 and 6, either side of the narrow, shallow zone 5 that separates the north and south lagoons. 
-
+The grab samples also provided TN and TP measurements. These are shown as interpolated data (\@ref(fig:dev-seddata6)). Nutrients were concentrated in zones 4 and 6, either side of the narrow, shallow zone 5 that separates the north and south lagoons.
 
 \
 
@@ -237,7 +229,6 @@ Nutrients were measured in cores at three locations (\@ref(fig:dev-seddata7). Wh
 
 \
 
-
 <center>
 
 ```{r dev-seddata7, echo = FALSE, out.width='40%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Sampling sites for nutrient cores, in which $NH_4^+$ and $PO_4^{3-}$ profiles were measured to 12 cm depth."}
@@ -249,7 +240,6 @@ knitr::include_graphics(c("images/dev/AppD/sed_NutrientCores.png"
 
 </center>
 
-
 \
 
 ```{r dev-seddata8, echo = FALSE, out.width='80%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Measured $NH_4^+$ and $PO_4^{3-}$ cores. $PO_4^{3-}$ was below detection limits for Noonameena and Policeman's Point sites."}
@@ -259,9 +249,7 @@ knitr::include_graphics(c("images/dev/AppD/sed_RawCores.png"
 
 ```
 
-
 \
-
 
 ```{r 3dev-sedQual5b, echo=FALSE, message=FALSE, warning=FALSE}
  library(knitr)
@@ -281,12 +269,9 @@ sediment_linkvars <- read_xlsx("tables/sed/SedQualitySamples.xlsx", sheet = "Nut
               # fixed_thead = FALSE)
 ```
 
-
-
-### Oxygen {-}
+### Oxygen {.unnumbered}
 
 The rapid assessment sites give an indication of whether the sediment was oxic (high value) or sulfidic (low value) (\@ref(fig:dev-seddata9)). Zones 3, 4, 6 and 7 were the least oxic.
-
 
 \
 
@@ -300,10 +285,9 @@ knitr::include_graphics(c("images/dev/AppD/sed_RapidTotal.png"
 
 \
 
-Oxygen fluxes were measured at two sites, Parnka Point and Policeman’s Point (\@ref(fig:dev-seddata10)). At each site, there were five cores. Each core was incubated for one to three hours in either light or dark conditions. The oxygen concentration in the headspace was measured. Parnka Point cores had concentration around 6 mg L^-1^, or 180 µmol L^-1^. This site had sandy sediment with low concentrations of organic matter and nutrients. (This was the same point that produced nutrient cores and fluxes.)
+Oxygen fluxes were measured at two sites, Parnka Point and Policeman's Point (\@ref(fig:dev-seddata10)). At each site, there were five cores. Each core was incubated for one to three hours in either light or dark conditions. The oxygen concentration in the headspace was measured. Parnka Point cores had concentration around 6 mg L^-1^, or 180 µmol L^-1^. This site had sandy sediment with low concentrations of organic matter and nutrients. (This was the same point that produced nutrient cores and fluxes.)
 
-Policemans Point cores had concentration of 5 mg L^-1^, or 150 µmol L^-1^. This site had either clay or sand, with high concentrations of organic matter, nutrients, and sulfidic ooze. In all dark cores, the concentration dropped slightly. In all Policeman’s Point light cores concentration increased. In the Parnka Point light cores, results were mixed: in three cores the concentration decreased and in two cores the concentration increased. There are four oxygen fluxes to work within (\@ref(tab:3dev-sedQual6)). Note that Parnka Point has a narrower range of flux and is still negative in the light conditions. Policeman’s Point has a wider range and positive oxygen flux under light conditions.
-
+Policemans Point cores had concentration of 5 mg L^-1^, or 150 µmol L^-1^. This site had either clay or sand, with high concentrations of organic matter, nutrients, and sulfidic ooze. In all dark cores, the concentration dropped slightly. In all Policeman's Point light cores concentration increased. In the Parnka Point light cores, results were mixed: in three cores the concentration decreased and in two cores the concentration increased. There are four oxygen fluxes to work within (\@ref(tab:3dev-sedQual6)). Note that Parnka Point has a narrower range of flux and is still negative in the light conditions. Policeman's Point has a wider range and positive oxygen flux under light conditions.
 
 \
 
@@ -327,7 +311,6 @@ sediment_linkvars <- read_xlsx("tables/sed/SedQualitySamples.xlsx", sheet = "Oxy
               # fixed_thead = FALSE)
 ```
 
-
 \
 
 ```{r dev-seddata10, echo = FALSE, out.width='40%', class = "text-image",fig.show='hold',fig.align='center', fig.cap =" Locations where $O_2$ fluxes were measured.  "}
@@ -337,14 +320,11 @@ knitr::include_graphics(c("images/dev/AppD/sed_OxygenCores.png"
 
 ```
 
-
-
 </center>
 
-### Organic matter {-}
+### Organic matter {.unnumbered}
 
 The grab samples provided a measure of total organic carbon (TOC). The highest areas mapped onto the areas of high nutrients (\@ref(fig:dev-seddata11)).
-
 
 \
 
@@ -358,22 +338,14 @@ knitr::include_graphics(c("images/dev/AppD/sed_TOCgrab.png"
 
 \
 
-TOC % was converted to organic matter (mmol L^-1^) according to the following rationale:
-   - TOC % was measured as kg OC per kg dry sample (and the raw value was divided by 100).
-\
-   - The kg dry sample was converted to L of total sample as (%moisture / 100 + 2.7 × (1 - %moisture / 100)), where %moisture was measured at each site and 2.7 was the value assumed for kg solids per L solids.
-\
-   - The kg OC was converted to mol OC by dividing by 12 g / mol and multiplying by 1000 for g OC.
-\
-   - The mol OC / L was multiplied by 1000 for mmol OC / L total.
-\
-   - The mmol OC / L total was divided by 0.35 to get the total organic matter concentration.
-\
-   - The value 0.35 was derived by assuming a molecular formula of (CH~2~O)~A~(NH~3~)~B~(H~3~PO~4~)~C~ where the ratio A:B:C was assumed to be 106:16:1. Although there were total C and N measurements in the sediment data, there were no measurements of organic C:N:P ratios and so the assumed value was used.
+TOC % was converted to organic matter (mmol L^-1^) according to the following rationale: - TOC % was measured as kg OC per kg dry sample (and the raw value was divided by 100).\
+- The kg dry sample was converted to L of total sample as (%moisture / 100 + 2.7 × (1 - %moisture / 100)), where %moisture was measured at each site and 2.7 was the value assumed for kg solids per L solids.\
+- The kg OC was converted to mol OC by dividing by 12 g / mol and multiplying by 1000 for g OC.\
+- The mol OC / L was multiplied by 1000 for mmol OC / L total.\
+- The mmol OC / L total was divided by 0.35 to get the total organic matter concentration.\
+- The value 0.35 was derived by assuming a molecular formula of (CH~2~O)~A~(NH~3~)~B~(H~3~PO~4~)~C~ where the ratio A:B:C was assumed to be 106:16:1. Although there were total C and N measurements in the sediment data, there were no measurements of organic C:N:P ratios and so the assumed value was used.
 
-
-
-### Macroinvertebrates {-}
+### Macroinvertebrates {.unnumbered}
 
 Macroinvertebrate populations were measured at seven locations (\@ref(fig:dev-seddata12)). The northernmost two sites (zones 10 and 9) had high abundance. Noonameena (zone 7) had moderately low abundance. The southernmost sites (zones 5 and 2) had very low abundance. The variable that explained this pattern was the hypersalinity (T&I reference document). A sample was taken from Jack Point (zone 2) and transplanted to Long Point (zone 8).
 
@@ -390,7 +362,7 @@ knitr::include_graphics(c("images/dev/AppD/sed_MacrosZ.png"
 
 </center>
 
-### Iron and manganese {-}
+### Iron and manganese {.unnumbered}
 
 \
 
@@ -408,9 +380,10 @@ knitr::include_graphics(c("images/dev/AppD/sed_irongrab.png"
 
 \
 
-Cores were taken from five locations, in November 2020 and February 2021 (\@ref(fig:dev-seddata14)) and $Fe^{2+}$ was measured (Table 10). The presence of $Fe^{2+}$ indicates iron reduction of organic matter. The highest concentrations were at Parnka Point (zone 5) and Policeman’s Point (zone 3) in November 2020. These were not sites that had very high TOC or nutrients.
+Cores were taken from five locations, in November 2020 and February 2021 (\@ref(fig:dev-seddata14)) and $Fe^{2+}$ was measured (Table 10). The presence of $Fe^{2+}$ indicates iron reduction of organic matter. The highest concentrations were at Parnka Point (zone 5) and Policeman's Point (zone 3) in November 2020. These were not sites that had very high TOC or nutrients.
 
 \
+
 <center>
 
 ```{r 3dev-sedQual7, echo=FALSE, message=FALSE, warning=FALSE}
@@ -460,9 +433,7 @@ knitr::include_graphics(c("images/dev/AppD/sed_IronCores.png"
 
 ```
 
-
 \
-
 
 ```{r dev-seddata15, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap =" Concentration profiles of $Fe^{2+}$."}
 
@@ -479,17 +450,15 @@ Iron data was also available from the water column sampling to use as a boundary
 
 \
 
-
-
-### Iron sulfides {-}
+### Iron sulfides {.unnumbered}
 
 \
 
 FeS and FeS~2~ are likely to be present in the sediments of the Coorong, however, they were not measured directly. Measurements of acid volatile sulphide (AVS) were taken with each grab sample by the field researchers. It was decided to attempt to connect AVS with FeS concentration, while still weighing the uncertainty of the connection.
 
-An argument has been presented by Rickard and Morse (2005) that measured AVS is not necessarily a good proxy for FeS, because of differences in what is being measured at study sites. The AVS may not correspond to all of the sulphide in the sediment, it may correspond to different metal sulphide species and it may be partly organic sulphur compounds. The rapid assessments in the Coorong showed that there was a sulphurous black ooze in many of the sediment samples and so the presence of an organic sulphur compound mixed with metal sulphur compounds is possible. Several responses to Rickard and Morse’s paper were published in the same issue, including one from Meysman and Middelburg, which presented the issue from the point of view of sediment diagenesis modellers. Meysman and Middelburg’s perspective on modelling reflected the model used for this project well. They wrote that although Rickard and Morse’s explanation is thorough and precise, it is not necessarily helpful for modellers, who cannot include all chemical species in their models, especially if there is not measured data for calibration. Considering this argument, the authors of this paper pursued the AVS measurement.
+An argument has been presented by Rickard and Morse (2005) that measured AVS is not necessarily a good proxy for FeS, because of differences in what is being measured at study sites. The AVS may not correspond to all of the sulphide in the sediment, it may correspond to different metal sulphide species and it may be partly organic sulphur compounds. The rapid assessments in the Coorong showed that there was a sulphurous black ooze in many of the sediment samples and so the presence of an organic sulphur compound mixed with metal sulphur compounds is possible. Several responses to Rickard and Morse's paper were published in the same issue, including one from Meysman and Middelburg, which presented the issue from the point of view of sediment diagenesis modellers. Meysman and Middelburg's perspective on modelling reflected the model used for this project well. They wrote that although Rickard and Morse's explanation is thorough and precise, it is not necessarily helpful for modellers, who cannot include all chemical species in their models, especially if there is not measured data for calibration. Considering this argument, the authors of this paper pursued the AVS measurement.
 
-AVS was converted from units of ‘% S WW’, which was assumed to be kg S (100 kg wet sediment)^-1^, to mmol S (L total volume)^-1^, using porosity at each grab site. (A sample of 0.025 % S WW converted to 3.7 mmol S L^-1^, where the porosity was 0.66). The average of the AVS grabs was 3.36 mmol L^-1^, the minimum value 0.26 and maximum 7.21 mmol L^-1^.
+AVS was converted from units of '% S WW', which was assumed to be kg S (100 kg wet sediment)^-1^, to mmol S (L total volume)^-1^, using porosity at each grab site. (A sample of 0.025 % S WW converted to 3.7 mmol S L^-1^, where the porosity was 0.66). The average of the AVS grabs was 3.36 mmol L^-1^, the minimum value 0.26 and maximum 7.21 mmol L^-1^.
 
 The AVS concentrations in the grab samples mostly corresponded with the values in the rapid assessments, with high concentrations usually in the deep channel and in zones 4, 5 and 6.
 
@@ -497,8 +466,7 @@ The AVS concentrations were compared to the total iron concentrations from the g
 
 \
 
-### pH and alkalinity {-}
+### pH and alkalinity {.unnumbered}
 
 \
 pH was generally high, with an average of 8.72, across the grab samples. This was likely a result of the high amounts of shell grit in the surface sediment, corresponding with the high scores in the rapid assessments. Inorganic carbon was measured as the difference between %Total carbon minus %Total organic carbon. The maximum value was in zone 2 at the inland edge, and the minimum value was in zone 6 in the channel.
-

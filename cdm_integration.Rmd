@@ -2,7 +2,7 @@
 
 <br>
 
-The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure \@ref(fig:cdm-pic5). 
+The data requirements for the modelling are diverse and varied, spanning hydrological, meteorological, water and sediment quality (long-term monitoring, data from intensive campaigns and in situ sondes), plus ecological survey data. This creates an integration challenge for model setup, parameterisation and assessment (calibration and validation) (Figure \@ref(fig:cdm-pic5)). 
 
 
 ```{r cdm-pic5, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "The Coorong model-data ecosystem and conceptual approach to model-data integration, accomodating data diversity and varied model requirements."}
@@ -30,7 +30,7 @@ The data and model files are stored in the Github [CDM Repository](https://githu
 
 ###	**Repository folder structure**
 
-The folders structure follows the logic of data types and resources as shown in Figure 2.7. 
+The folders structure follows the logic of data types and resources as shown in Figure \@ref(fig:cdm-pic7). 
 
 ```{r cdm-pic7, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CDM online data storage folder structure"}
 
@@ -58,7 +58,7 @@ row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
 
 ###	**High level workflows** ###
 
-The raw data collected from previous works and current HCHB component outcomes are stored in the ```data/incoming``` folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the ```scripts``` folder) to convert the raw data into ‘standard’ data format (stored in the ```data/store``` folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure 2.9. 
+The raw data collected from previous works and current HCHB component outcomes are stored in the ```data/incoming``` folder and classified by their sources. These raw data are then post-processed using standard scripts (stored in the ```scripts``` folder) to convert the raw data into ‘standard’ data format (stored in the ```data/store``` folder) for model configuration, calibration/validation, and reporting (see 2.4.2 Data organisation for more details). The data-model workflow is shown in Figure \@ref(fig:cdm-pic8). 
 
 ```{r cdm-pic8, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "CDM conceptual diagram showing the flow of data through the system"}
 
