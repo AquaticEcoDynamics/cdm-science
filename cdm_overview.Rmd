@@ -1,4 +1,3 @@
-
 # CDM: The Coorong Dynamics Model
 
 <br>
@@ -23,7 +22,7 @@ The following sections describe the model platform, detail the CDM configuration
 
 ### Hydrodynamics: TUFLOW-FV
 
-[TUFLOW-FV](https://www.tuflow.com/products/tuflow-fv/) is a finite volume hydrodynamic model, developed by BMT Global Pty Ltd (BMTWBM, 2019). It has flexible-mesh and accounts for variations in water level, salinity, temperature, and density in response to tides, inflows and surface thermodynamics. The current version has various use-ability features including integration with QGIS and optimisiation for operation on desktop GPU resources.
+[TUFLOW-FV](https://www.tuflow.com/products/tuflow-fv/) is a finite volume hydrodynamic model, developed by BMT Global Pty Ltd [@bmt2019]. It has flexible-mesh and accounts for variations in water level, salinity, temperature, and density in response to tides, inflows and surface thermodynamics. The current version has various use-ability features including integration with QGIS and optimisiation for operation on desktop GPU resources.
 
 The TUFLOW-FV has been used extensively in the region for hydrological assessments. Within the CDM two(three) different model domains are applied with different levels of spatial resolution, including both 2D and 3D implementations.
 
