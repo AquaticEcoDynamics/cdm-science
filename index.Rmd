@@ -14,7 +14,7 @@ bibliography:  ["references/references.bib",
                 "references/habitat.bib",
                 "references/integrated.bib"
                 ]
-csl: "references/limnology.csl"
+csl: "references/ecological-modelling.csl"
 biblio-style: apalike
 link-citations: yes
 description: "The Coorong Dynamics Model (CDM)"
