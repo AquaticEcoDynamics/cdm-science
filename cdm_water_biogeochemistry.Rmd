@@ -158,8 +158,8 @@ driver, linked to habitat quality and a key target of proposed
 management interventions. Recent analysis of the available historical
 nutrient data across the lagoon has shown the sharp gradients in
 nutrient species, and often high levels of nutrients in the South Lagoon
-in particular (Mosley et al., 202X). Furthermore, process investigations
-have elucidated the high rates of benthic metabolism and rates of
+in particular [@mosley2021]. Furthermore, process investigations have
+elucidated the high rates of benthic metabolism and rates of
 productivity, contributing to a system with intensively cycled materials
 between ecosystem pools. Yet, we currently have only a limited
 understanding of the nutrient budget within the lagoons and the
@@ -334,11 +334,11 @@ shallow aquatic ecosystems [@huang2016].
 
 Resuspension leads to a predictable increase of suspended solids
 (including POC) in the overlying water, but the impacts on the dissolved
-nutrient release rate depends on many factors. Tengler et al (2003)
-showed the resuspension led to an increase flux of NO3, but decrease of
-PO4 and no change of NH4. Similarly, @teng2003 and [@sondergaard1992]
-found that resuspension can led to either higher or lower concentration
-of phosphate in the overlying water, depending the iron level of the
+nutrient release rate depends on many factors. @teng2003 showed the
+resuspension led to an increase flux of NO3, but decrease of PO4 and no
+change of NH4. Similarly, @teng2003 and @sondergaard1992 found that
+resuspension can led to either higher or lower concentration of
+phosphate in the overlying water, depending the iron level of the
 suspended solids. Furthermore, the effects of resuspension on the
 long-term nitrogen and phosphorus liberation may be mild. [@sloth1996]
 showed small changes in nutrient fluxes in the laboratory study, and the
@@ -525,10 +525,9 @@ In addition to the phytoplankton assemblage (algae and cyanobacteria
 suspended in the water), the lagoon is also characterised by benthic
 microalgae - the so-called microphytobenthos (MPB). These have been
 shown to vary along the lagoon as part of the The Living Murray
-ecological sampling (Dittman et al. 2021). As with the phytoplankton
-biomass, the benthic chlorophyll-a biomass is also controlled by the
-sharp salinity gradient with significantly higher biomass in the North
-Lagoon.
+ecological sampling [@dittman2021]. As with the phytoplankton biomass,
+the benthic chlorophyll-a biomass is also controlled by the sharp
+salinity gradient with significantly higher biomass in the North Lagoon.
 
 The subsequent sections document the phytoplankton ($PHY$) and
 microphytobenthos ($MPB$) modelling approach and rationale, and the
@@ -830,13 +829,47 @@ dynamic environmental controls on group productivity (Figures
 <body>
 
 ::: {.tab}
-<button class="tablinks" onclick="opentab(event, 'A4260633')"id="defaultOpen">A4260633</button>
-<button class="tablinks" onclick="opentab(event, 'A4261036')">A4261036</button>
-<button class="tablinks" onclick="opentab(event, 'A4261039')">A4261039</button>
-<button class="tablinks" onclick="opentab(event, 'A4261134')">A4261134</button>
-<button class="tablinks" onclick="opentab(event, 'A4261135')">A4261135</button>
-<button class="tablinks" onclick="opentab(event, 'A4261165')">A4261165</button>
-<button class="tablinks" onclick="opentab(event, 'A4261209')">A4261209</button>
+<button class="tablinks" onclick="opentab(event, &#39;A4260633&#39;)" id="defaultOpen">
+
+A4260633
+
+</button>
+
+<button class="tablinks" onclick="opentab(event, &#39;A4261036&#39;)">
+
+A4261036
+
+</button>
+
+<button class="tablinks" onclick="opentab(event, &#39;A4261039&#39;)">
+
+A4261039
+
+</button>
+
+<button class="tablinks" onclick="opentab(event, &#39;A4261134&#39;)">
+
+A4261134
+
+</button>
+
+<button class="tablinks" onclick="opentab(event, &#39;A4261135&#39;)">
+
+A4261135
+
+</button>
+
+<button class="tablinks" onclick="opentab(event, &#39;A4261165&#39;)">
+
+A4261165
+
+</button>
+
+<button class="tablinks" onclick="opentab(event, &#39;A4261209&#39;)">
+
+A4261209
+
+</button>
 :::
 
 ::: {#A4260633 .tabcontent}
