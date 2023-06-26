@@ -10,6 +10,8 @@ Under some conditions, the sediment stores can release nutrients to the water co
 
 The aim of this Chapter is to summarise the development of a sediment biogeochemistry model suitable for application to the Coorong, accounting for controls on nutrient cycling and burial, and able to be used to assess relevant management scenarios. The sediment model has been developed to be able capture and contrast different environments along the length of the Coorong. Since the north lagoon of the Coorong has higher populations of macrobiota (Dittman et al. 2021), which cause mixing of oxygen into deeper sediment layers, which in turn helps in removal of organic matter and reduced nitrogen, it was also a requirement that the model needs to include a depth of bioturbation and bioirrigation by the macrobiota living in the sediment. In contrast, in the south lagoon there is less bioturbation of the sediment and it is more likely that organic matter is consumed through anaerobic processes. The production of toxic $H_2S$ gas through sulfate reduction would lead to a further degradation of the ecosystem.
 
+For details of the CANDI-AED model and scientific description, please refer to the AED Manual <here>.
+
 ## Model approach: CANDI-AED
 
 ### Sediment reactive transport model {.unnumbered}
