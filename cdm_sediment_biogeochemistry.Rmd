@@ -16,41 +16,9 @@ For details of the CANDI-AED model and scientific description, please refer to t
 
 ### Sediment reactive transport model {.unnumbered}
 
-The heart of this model is a reaction, diffusion, advection model termed CANDI-AED; a schematic overview of the model is shown in Figure \@ref(fig:dev-pic00). The model resolves the 1D (vertical) sediment and pore-water concentration profiles. Each active sediment "zone" is a column discretized into a user-defineable number of layers that start at thicknesses of around 1 mm at the sediment-water interface and increase down to a pre-defined sediment depth.
+The heart of this model is a reaction, diffusion, advection model termed CANDI-AED.
 
-```{r dev-pic00, echo = FALSE, out.width='80%', class = "text-image", fig.align='center', fig.cap = "CANDI-AED includes chemical processes of organic matter transformation and oxidation, and reduction/oxidation, crystallisation, adsorption and precipitation reactions of inorganic by-products. Most of the processes are triggered by the input of POM at the sediment-water interface."}
 
-knitr::include_graphics("images/dev/sed_image2.png")
-
-```
-
-The CDM sediment modelling approach uses the CANDI-AED model configurable through the AED $SDG$ module, as outlined in the [AED science manual](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html). The configuration used in the CDM simulations resolves both physical (e.g. pore-water diffusion or bioturbation) and chemical (e.g., redox transformations) processes as summarised below.
-
-**Chemical reactions**
-
-The dynamic model considers two types of reactions - the slow, kinetically controlled reactions, and the fast thermodynamically based equilibrium reactions. The latter are simulated in the sediment through appropriate configuration of the geochemistry reactions; the configuration of the equilibrium model applies to both the water and each of the sediment layers. The kinetically controlled reactions are mostly microbially-mediated and include the reactions for organic matter breakdown and eventual oxidation, the re-oxidation of various by-products and the dynamics of the metal sulfides.
-
-The organic matter ($OM$) degradation pathway considers labile and refractory $DOM$ components ($DOM_L$ and $DOM_R$ respectively) and the breakdown pathway simulated is conceptually summarized in Figure \@ref{fig:sed_dynamic}. Reactions included in the kinetic component include the hydrolysis of the complex (e.g., high molecular weight) $OM$ pools ($POM_{VR}$, $POM_R$, $DOM_R$, $POM_L$) and transformation of low molecular weight (LMW) $DOM_L$ by oxidants ($O_2$, $MnO_2$, $Fe(OH)_3$ and $SO_4^{2-}$ - the so-called 'terminal metabolism'), and the release of resulting nutrients ($NO_3^-$, $NH_4^+$, $PO_4^{3-}$) and reduced by-products ($Mn^{2+}$, $Fe^{2+}$, $N_2$, $H_2S$, $CH_4$) and $CO_2$. In addition to the primary redox reactions associated with $OM$ breakdown, the model also includes numerous secondary reactions, such as oxidation of reduced by-products (e.g., Fe or S oxidation).
-
-**Physical processes**
-
-The model accounts for advection and diffusion processes of solid and solute consituents. Porosity ($\phi$) is defined to decrease with depth, and for the porewater components, diffusion coefficients are used that are based on free-solution molecular diffusion constants corrected for sediment tortuosity, $θ$. For bioturbation, the model uses a diffusion coefficient that varies with depth ($D_{B(z)}$) as a two layer function or a Gaussian decrease. The irrigation of pore water is also simulated to account for the activity benthic infauna in the upper sediment.
-
-Fluxes of dissolved species occur between the sediment and water column depending on the sediment type (e.g. porosity), the solute type, and the degree of interfacial turbulence being experienced at the sediment-water interface. Dissolved fluxes are calculated from the concentration gradient at the sediment-water interface according to Fick's Law:
-
-<center>
-
-```{=tex}
-\begin{equation}
-F = D_{0}\frac{\Delta C}{\Delta x} = \frac{D_{0}}{\delta} (C_{bw} - C_{1})
-(\#eq:biogeochem1)
-\end{equation}
-```
-</center>
-
-where $D_{0}$ is the diffusivity at the SWI, $\delta$ is the thickness of the diffusive boundary layer at the sediment-water interface, defined as the length scale of the first sediment layer, $C_{bw}$ is the bottom water concentration and $C_{1}$ is the concentration in the top sediment layer. The diffusivity in these models typically assumes molecular diffusivity rates, which is likely to underestimate the real diffusivity experienced in a shallow lagoon such as the Coorong. In the CDM, a new parameterisation to resolve diffusivity based on sediment type and water turbulence properties was added (see section on Sediment-water interface fluxes). 
-
-<br>
 
 ### Model extensions and development {.unnumbered}
 
@@ -59,15 +27,9 @@ The above model approach is broadly used in lakes, ocean and estuarine environme
 -   Improved parameterisation of diffusion at the sediment-water interface, based on $\tau_b$.
 -   Inclusion of functionality to resolve resuspension effects
 -   Addition of MPB and macrophyte roots $O_2$ sources into the sediment
-<<<<<<< HEAD
-<<<<<<< HEAD
 -   Dynamic bioturbation rates linked to salinity and $H_2S$  concentrations
-=======
 -   Bioturbation rates linked to salinity and $H_2S$ concentrations
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-=======
 -   Bioturbation rates linked to salinity and $H_2S$ concentrations
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
 -   $NH_4^+$, $PO_4^{3-}$ and $DOM$ adsorption
 -   Allocation of a unreactive organic matter pool
 
