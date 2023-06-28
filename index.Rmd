@@ -125,7 +125,7 @@ The model development has been funded by the South Australian Government *Depart
 
 Please cite this online book in reports and scientific publications as: 
 
-*Hipsey, M.R., Huang, P., Zhai, S., Busch, B.. Paraska, D., Sims, C., 2022. The Coorong Dynamics Model. Zenodo: DOI: 10.5281/zenodo.xxpendingxx.*  
+*Hipsey, M.R., Huang, P., Zhai, S., Busch, B.. Paraska, D., Sims, C., 2022. The Coorong Dynamics Model (CDM): Model description and performance assessment. Zenodo: DOI: 10.5281/zenodo.7778773.*  
 
 <br>
 
