@@ -255,15 +255,7 @@ knitr::include_graphics(c("images/dev/sed_Half Page zones11to104.png","images/de
 
 #### Validation sites and data {.unnumbered}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 A range of data was collected and is documented in [Appendix D](Appendix D: Sediment Data). In summary, there were five broad categories of field data available from the HCHB research project surveys for the $SDG$ module setup and parameterisation:
-=======
-A range of data was collected and is documented in [Appendix A](Appendix%20A%20:%20Data%20Catalogue). In summary, there were five broad categories of field data available from the HCHB research project surveys relevant for the $SDG$ module setup and parameterisation:
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-=======
-A range of data was collected and is documented in [Appendix A](Appendix%20A%20:%20Data%20Catalogue). In summary, there were five broad categories of field data available from the HCHB research project surveys relevant for the $SDG$ module setup and parameterisation:
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
 
 *Grab samples -- C, N, P, Mn, Fe, S* : These were available for many sites but only one or two depths. They were useful for averaging a concentration at depth within a zone. These were key variables for sediment biogeochemistry.
 
