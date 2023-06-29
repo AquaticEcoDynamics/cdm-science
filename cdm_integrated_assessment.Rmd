@@ -190,7 +190,7 @@ A methodology for nutrient flux and budget analysis has been developed. For the 
 
 ```{r ass-budget1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon."}
 
-knitr::include_graphics("images/assessment/5aSCL-4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/5aSCL-5yrs_nitrogen_budget_timeseries.png")
 
 ```
 
@@ -198,7 +198,7 @@ knitr::include_graphics("images/assessment/5aSCL-4yrs_nitrogen_budget_timeseries
 
 ```{r ass-budget2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon."}
 
-knitr::include_graphics("images/assessment/4aNCL-4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/4aNCL-5yrs_nitrogen_budget_timeseries.png")
 
 ```
 
@@ -206,7 +206,7 @@ knitr::include_graphics("images/assessment/4aNCL-4yrs_nitrogen_budget_timeseries
 
 ```{r ass-budget3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon."}
 
-knitr::include_graphics("images/assessment/5bSCL-4yrs_phosphorus_budget_timeseries.png")
+knitr::include_graphics("images/assessment/5bSCL-5yrs_phosphorus_budget_timeseries.png")
 
 ```
 
@@ -214,7 +214,7 @@ knitr::include_graphics("images/assessment/5bSCL-4yrs_phosphorus_budget_timeseri
 
 ```{r ass-budget4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon."}
 
-knitr::include_graphics("images/assessment/4bNCL-4yrs_phosphorus_budget_timeseries.png")
+knitr::include_graphics("images/assessment/4bNCL-5yrs_phosphorus_budget_timeseries.png")
 
 ```
 
