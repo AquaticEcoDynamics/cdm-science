@@ -9,7 +9,7 @@ This section outlines the examination of the Coorong sediment environment and th
 ## Background
 
 ### Organic matter – background
-#### Organic matter pools and pathways
+#### Organic matter pools and pathways  {.unnumbered}
 Organic matter drives most of the biogeochemical reactions in the sediment. It acts as a source of reduced carbon for bacteria to metabolise, producing oxidised carbon, $CO_2$. Oxidised organic matter also releases N and P to the environment. As sediment bacteria oxidise organic matter, they consume $O_2$, $NO_3^-$, $MnO_2$, $Fe(OH)_3$ and $SO_4^{2-}$. These processes have implications for the rest of the biogeochemistry: animals are deprived of $O_2$, $NO_3^-$ is ultimately removed from the system as $N_2$, $PO_4^{3-}$ bound to iron minerals is released, toxic $H_2S$ is produced and greenhouse gases $N_2O$ and $CH_4$ are released. 
 
 Although organic matter is fundamental, it does not exist as one clearly defined chemical species. It is present in dissolved and particulate forms, and with different degrees of reactivity. It is composed of recognisable components such as carbohydrates, lipids and proteins and the bacterial metabolism of organic matter is often calculated by considering the consumption of simple molecules such as glucose, acetate or a representative $CH_2O$ polymer. However, it can also be composed of irregular refractory components such as lignin, humic acids or polymerised and aromatic hydrocarbons. The origin of organic matter can be sources such as bacterial biomass, algal detritus, aquatic plants, terrestrial plants and stored sediment organic matter. 
@@ -20,7 +20,7 @@ Although these descriptions apply generally, it is difficult to describe the org
 In the Coorong, observations show a large pool of accumulated organic matter in the sediment. Observational studies have suggested that the Coorong organic matter is largely derived from algal detritus. NMR analysis shows functional groups that are present in algae, rather than plants washed in from the catchment. It is not known why the algal detritus was not consumed by sediment bacteria. 
 
 ### Iron and sulfur – background
-#### Iron and sulfate reduction redox processes
+#### Iron and sulfate reduction redox processes  {.unnumbered}
 Iron reduction and sulfate reduction are anaerobic processes that break down organic matter and produce $Fe^{2+}$ and $∑H_2S$ as reaction by-products. These processes occur deeper in the sediment where $O_2$, $NO_3^-$ and $MnO_2$ have already been consumed, and sulfate reduction occurs where $Fe(OH)_3$ has been consumed. The by-products of these two reactions react with each other to form solid $FeS$. 
  
  
@@ -32,11 +32,11 @@ Antler et al. (2019) described a ‘bistable’ system of salt marshes being eit
  
 Figure 2 Left – in a system with high concentrations of oxidised iron minerals, iron reduction inhibits sulfate reduction. Right – in a system with less iron, sulfate reduction dominates and $H2S$ is produced.
 
-#### Sulphide toxicity
+#### Sulphide toxicity {.unnumbered}
 
 The Coorong may have a similar bistable state controlled by salinity as well as iron. The mechanism may be related to either the salinity itself, as described in the section below on salinity, or it may be related to the $SO_4^{2-}$ that is coincident with salinity. $H_2S$ being toxic to macrofauna may cause the lack of mixing and bring about the anoxic state of the sediment, although examples can be found where the animals are tolerant of $H_2S$. Volkenborn et al. (2007) found that concentrations of 0.1 mmol  L^-1^ $H_2S$ were toxic to macrofauna. Fuller et al. (1994) showed that polychaete worms could tolerate 3.8 mmol  L^-1^ $H_2S$. Shumway et al. (1983) found that clams could survive with $H_2S$ at 2.68 mmol  L^-1^, but were less tolerant of anoxia when $H_2S$ was present. Hargraves et al. (2008) suggested that benthic macrofauna communities may change their composition as sediments become sulfidic, with increasing biomass of species that are tolerant of sulfidic sediment, but lower total biomass of all macrofauna. A review by Hargraves et al. (2008) considered a range of benthic $∑H_2S$, $O_2$ and macrofauna and suggested that the transition from healthy to unhealthy sediments occurred at $H_2S$ concentration between 0.75 and 1.5 mmol L^-1^. These observational studies suggest a likely mechanistic link between the concentration of $H_2S$, mixing and anoxic sediment, though the exact concentrations are hard to pinpoint.
 
-#### Iron and sulfur phases in sediments
+#### Iron and sulfur phases in sediments {.unnumbered}
 Examining the interactions between iron- and sulfur-dominated states requires an estimate of both iron and sulfur species and minerals in the sediment. The variables used in sediment models are rarely measured directly in the environment, and the assumptions made in the model for iron compounds are also dependent on the assumptions for sulfur compounds. Sulfur was measured as acid volatile sulfur (AVS) and chromium reducible sulfur (CRS).
 
 It is assumed that the concentration of AVS corresponds to the amount of FeS. An argument has been presented by Rickard and Morse (2005) that measured AVS is not necessarily a good proxy for FeS, because of differences in what is being measured at study sites. The AVS may not correspond to all of the sulphide in the sediment, it may correspond to different metal sulphide species and it may be partly organic sulphur compounds. The rapid assessments in the Coorong showed that there was a sulphurous black ooze in many of the sediment samples and so the presence of an organic sulphur compound mixed with metal sulphur compounds is possible. Several responses to Rickard and Morse’s paper were published in the same issue, including one from Meysman and Middelburg, which presented the issue from the point of view of sediment diagenesis modellers. Meysman and Middelburg’s perspective on modelling reflected the model used for this project well. They wrote that although Rickard and Morse’s explanation is thorough and precise, it is not necessarily helpful for modellers, who cannot include all chemical species in their models, especially if there is not measured data for calibration. Considering this argument, and the need for general measured concentrations that we can use in the model, we assume that the AVS measurement is an adequate proxy for $FeS$. 
@@ -46,7 +46,9 @@ The concentration of $FeS_2$ is calculated as the difference between CRS and AVS
 The modelling study of Van Cappellen and Wang (1996), based in a marine environment, had a surface peak concentration of Fe(OH)3A of around 35 mmol L^-1^ solids, and $FeCO_3$ of 25 mmol L^-1^ solids. A study by Canfield et al. (1989) measured $Fe(OH)_{3A}$ and $Fe(OH)_{3B}$ at roughly equal concentrations. Thamdrup et al (1994) measured Fe(OH)3A at around 10 to 20% of total iron in the top 4 cm and ‘residual Fe’ at around 70% of total iron, which was constant for approximately the whole depth. $Fe(OH)_{3A}$ was also around 20 to 40 mmol  L^-1^ in five samples, which was consistent with the measurement from Van Cappellen and Wang (1996).
 
 ### Nitrogen – background
-#### Nitrogen redox pathways
+
+#### Nitrogen redox pathways {.unnumbered}
+
 Nitrogen redox processes are important in this context because they control whether bioavailable forms of N, such as $NO_3^-$, are recycled in the ecosystem or removed from the system as $N_2$ gas. The simplest conceptual model of nitrogen redox has $NH_4^+$ oxidised by $O_2$ to $NO_3^-$, and $NO_3^-$ reduced with organic matter to $N_2$. A more sophisticated conceptual model includes the N species $NO_2^-$ and $N_2O$, which allows more reaction processes of DNRA, denitrousation and deammonification (also known as anammox). The full explanation can be found in aed-science [chapter 14.3](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html#model-description-8) for organic matter reactions, and [chapter 6.4.2.1](https://aquaticecodynamics.github.io/aed-science/inorganic-nitrogen.html#model-description---adding-n2o-reactions) for inorganic reactions.
  
  
@@ -68,53 +70,59 @@ There is a tight range of $O_2$ concentration in which these nitrogen redox reac
 The $N_2O$ production rate has been measured at 626 mmol  L^-1^  y^-1^ (Su et al ), 9 mmol L^-1^  y^-1^ (Jiang et al), 175 mmol  L^-1^  y^-1^ (Tan et al ) and 88 mmol  L^-1^  y^-1^ (Hernandez-del-Amo et al ). 
 
 ### Salinity – background 
-####Salinity and benthic fauna
+
+#### Salinity and benthic fauna {.unnumbered}
+
 High salinity does not favour benthic macrofauna and the processes they create, bioturbation and bioirrigation. Bioturbation is the mixing of solids and solutes by small animals as they move in the upper layers of the sediment; bioirrigation is the transport of solutes between the sediment-water interface and the bottom of a burrow. One of the effects of these processes is to increase the concentration of oxygen in the upper layers of the sediment, and so, conversely, a lack of these processes creates an anaerobic environment closer to the sediment-water interface. These processes are captured in the sediment model, as described in the implementation section below, and in the aed-science manual, chapter 14.3. 
 Benthic macrofauna have been described as ‘ecosystem engineers’, in which they maintain the sediment conditions within a range favourable to their own survival (T&I 1.3.2). Beyond a certain point they cannot maintain their own favourable conditions. If they can help bury nutrients deep in the sediment rather than release them to the water column, they can prevent eutrophication and thus prevent oxygen depletion. However, at high salinity, it becomes difficult for benthic macrofauna to survive.
 
-#### Salinity and $SO_4^{2-}$ concentration 
+#### Salinity and $SO_4^{2-}$ concentration {.unnumbered}
 Seawater has a consistent concentration of $SO_4^{2-}$, in mmol L^-1^, of approximately 0.9 × salinity, in PSU. Hypersaline water is produced by evapoconcentration of the salt in seawater, and so in principle it should have a correspondingly high concentration of $SO_4^{2-}$. This calculation may be imprecise because $SO_4^{2-}$ is removed through sulfate reduction, whereas salt only accumulates. However, it provides a first-order approximation. 
 
-#### Salinity and nitrogen redox – theoretical background
+#### Salinity and nitrogen redox – theoretical background  {.unnumbered}
 Some evidence suggests that the hypersaline environment causes lower rates of denitrification. The cause is not clear, but it may be either because the salt has a direct effect on denitrifying bacterial cells, or it may be because of broader environmental effects on the benthic macrofauna. Hypersaline water does impose an energetic cost on cellular systems (Isaji et al., 2019). However, despite the cost, cells can still live in hypersaline environments. 
 
 The process of nitrification has been shown to be inhibited by hypersaline conditions. In some cases, there is a time lag from the onset of hypersaline conditions, for example, a 20-day lag for the growth of ammonium oxidising bacteria (Helder and DeVries 1983). Santoro and Enrich-Prast (2015) found a negative exponential correlation between nitrification rates and salinity between 0 and 30‰. The maximum nitrification rate was 120 nml $NO_3^-$ cm^-3^ h^-1^. Cui et al. (2016) observed that high salinity did not change which ammonia-oxidising bacteria species were dominant, but it did inhibit their activity and abundance. The effect of inhibited nitrification is ultimately less denitrification: in the theoretical redox equilibrium, the nitrogen remains in the $NH_4^+$ phase rather than being nitrified to $NO_3^-$ and reduced to N2. This phenomenon has been observed in algal mats by Isaji et al. (2019). Benthic algae has been observed to correlate positively with nitrification rates (Lorenzen et al. 1998; Risgaard et al. 1999; An and Joye, 2001; Travieso et al. 2006).
 
 ### Observed data and characteristics in the Coorong
-#### Salinity – Coorong observations
+
+#### Salinity – Coorong observations {.unnumbered}
+
 Salinity in the Coorong has been observed to range from as low as around 20 PSU in the north (where freshwater from the lake mixes with marine water) to around 80 in the south (where the salt from the marine water has evapoconcentrated). The whole southern lagoon is more saline and has at least around 60 PSU.
 
-#### Iron and sulfur – Coorong observations
-##### Sediment iron
+#### Iron and sulfur – Coorong observations {.unnumbered}
+
+##### Sediment iron{-}
+
 Coorong grab samples had been analysed as total iron, measured in mg Fe / kg dry sediment solid. For reference with the other variables in the model, raw Coorong iron measurements were converted to the unit of mmol L^-1^. Grab samples averaged around 6500 mg kg^-1^ and ranged from 700 to 23 000 mg kg^-1^. Each grab was converted using the % moisture measured at that site, which ranged widely from 18% to 81%. The final values ranged from 5 to 158 mmol L^-1^ sediment: this wide range in final values was determined mostly because of the % moisture measurements. The average measurement was 45 mmol L^-1^, which was in line with literature values (35 mmol L^-1^ in Van Cappellen and Wang).
 
-##### Water column iron
+##### Water column iron{-}
 Total iron data was also available from the water column sampling to use as a boundary at the sediment water interface. Data was available for total iron and dissolved iron (mg L^-1^), at 16 sites along the whole Coorong, for the time period 1998 to 2012. The dissolved iron was typically less than 1% of the total iron. Both were converted to mmol L^-1^ and averaged over the entire time period at each site. The total iron was assumed to be particulate iron and it was converted from mmol L^-1^ to a flux in mmol m-2 y^-1^ by multiplying the concentration by the deposition rate of 1 cm y^-1^. Iron fluxes ranged from 0.0042 to 0.0109 mmol L^-1^. These fluxes were much lower than literature values used in sediment models, for example, 750 mmol m-2 y^-1^ in Van Cappellen and Wang (1996). Reconciling these differences depends on the settling rate of the iron mineral particles, which is unknown. 
 
-##### Water column $SO_4^{2-}$
+##### Water column $SO_4^{2-}${-}
 Water column $SO_4^{2-}$ data was available from measurements at 16 sites along the length of the Coorong, for the time period 1998 to 2005. When these measurements were converted from mg L^-1^ to mmol L^-1^ and averaged over time, they corresponded well with the theoretical rule mentioned above, where $SO_4^{2-}$ (mmol L^-1^) is equal to 0.9 × salinity (PSU).
 
-##### Sediment sulfides
+#####{-} Sediment sulfides
 AVS was converted from units of ‘% S WW’, which was assumed to be kg S (100 kg wet sediment)-1, to mmol S (L total volume)-1, using porosity at each grab site. (A sample of 0.025 % S WW converted to 3.7 mmol S L^-1^, where the porosity was 0.66). The average of the AVS grabs was 3.36 mmol L^-1^, the minimum value 0.26 and maximum 7.21 mmol L^-1^.The AVS concentrations in the grab samples mostly corresponded with the values in the rapid assessments, with high concentrations usually in the deep channel and in zones 4, 5 and 6.The AVS concentrations were compared to the total iron concentrations from the grab samples. The average total iron was 7.69 mmol L^-1^ total sediment, which implies roughly two Fe for each S on average over the lagoon. Each site did not have a clear correlation between S and Fe.
 
-##### Sediment $∑H2S$ cores
+##### Sediment $∑H2S$ cores{-}
 Depth profiles of $∑H2S$ were taken at two sites in November 2020 and three sites in February 2021. The profiles were measured after either a dark or light incubation, to see the difference in oxic state. Concentrations peaked at around 0.1 mmol L^-1^ and the peak was around 5 cm deep.
 
-##### Sediment $Fe^{2+}$ cores
+##### Sediment $Fe^{2+}$ cores{-}
 $Fe^{2+}$ was measured in cores taken from five locations, in November 2020 and February 2021. The highest concentrations were at Parnka Point and Policeman’s Point in November 2020. These were not sites that had very high TOC or nutrients. 
 
-#### Nitrogen – Coorong observations
-##### Grab sample and core measurements
+#### Nitrogen – Coorong observations  {.unnumbered}
+##### Grab sample and core measurements{-}
 TN was measured in grab samples in units of N%, ranging from 0.04 to 0.78%. This was converted to mmol L^-1^ using each grab sample’s porosity and an assumed density of 2.7 g cm-3. This resulted in a concentration between 0.0063 and 0.0176 mmol L^-1^ of total volume. 
  $NH_4^+$ measurements in the core samples were around 0.1 mmol L^-1^ porewater, increasing with depth. This concentration was similar to that in Van Cappellen and Wang (1996). 
  
-##### Water column model results at the sediment boundary
+##### Water column model results at the sediment boundary{-}
 $NO_3^-$ and  $NH_4^+$ concentrations were measured in the water column and a separate water column model was calibrated to match these concentrations. The average water column concentration of each was 1.5 × 10^-5^ mmol NO3- L^-1^ and 6.0 × 10 -5 mmol $NH_4^+$ L^-1^. Organic N flux was calculated in the water column model at around 250 mmol m-2 y^-1^ for detritus (PONR) and 300 mmol m-2 y^-1^ for algae (PONS). This indicated that most of the N was held in the organic pools.
 
-##### TN and TP budget estimates
+##### TN and TP budget estimates{-}
 The T&I report 1.2.2 Nutrient Dynamics contained an estimate of nutrient budgets in the sediment of the Coorong. The mass of TN was estimated at 25506 tonnes for the South Lagoon and 9377 tonnes for the North Lagoon. The mass of TP was 2204 tonnes for the South Lagoon and 924 tonnes for the North Lagoon. To meet this budget, the concentration of TN was calculated at around 50 mmol L^-1^, which was four orders of magnitude higher than indicated by the TN% measurements. 
 
-##### Nitrogen and salinity 
+##### Nitrogen and salinity {-}
 Observations of denitrification correspond to the theory and literature observations described above. The T&I report 1.3.2 Nutrient Cycling showed a statistical relationship between salinity and the genes present in denitrifying bacteria, indicating that denitrification was occurring at a low rate in hypersaline areas. The Coorong has very low concentrations of NO3-, which suggests that nitrification may be inhibited by the high salinity. However, the  $NH_4^+$ concentrations are also low, and organic nitrogen is high. Therefore the problem is not with the lack of nitrification so much as the binding of the N in algal biomass.
 
 #### Organic matter– Coorong observations
@@ -125,7 +133,7 @@ The grab samples had TOC% measured between 0.1 and 6.6 %C, averaging 2.7%. This 
 
 ## Model approach: CANDI-AED
 
-The heart of this model is a reaction, diffusion, advection model termed CANDI-AED. For details of the CANDI-AED model and scientific description, please refer to the AED Manual [here](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html).
+The heart of this model is a reaction, diffusion, advection model termed CANDI-AED. For details of the CANDI-AED model and scientific description, please refer to [the AED Manual](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html).
 
 The model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons [@paraska2014]. 
 
@@ -143,188 +151,25 @@ Several developments have been undertaken to adapt the CANDI_AED vertical column
 
 In addition, to the physical and chemical process updates described above, the $SDG$ module was further developed to support multi-zone operation of the CANDI-AED model, dynamic links with MPB, MAG and MAC modules, and the ability to allow for spin-up of sediment profiles.
 
-
-
-
-
-
-## Methods
-
 ### Implementation of theory and Coorong observations in the sediment model setup
 
-#### Salinity – implementation on mixing and nitrogen redox
-Two functions to connect salinity to mixing and nitrogen reactions were developed for the sediment model during this project: $F_{Sal}$ and $F_{Sul}$. The full explanation for these can also be found in the aed-science manual, chapter 14.3. The $F_{Sal}$ function decreases from 1 to 0 as salinity increases, with two parameters for salinity concentrations that set the range over which the function works (35 and 70 PSU). The $F_{Sul}$ function decreases from 1 to 0 as $H_2S$ increases, which occurs as organic matter undergoes sulphate reduction. These two functions were applied to both macrofauna mixing processes, by multiplying the process rate by the value between 0 and 1. $F_{Sal}$ was also applied to all nitrogen redox reactions. Therefore, as salinity increased, and as $SO_4^{2-}$ increased and indirectly created H2S, mixing and nitrogen redox were all reduced. $F_{Sal}$ was applied to the nitrogen redox reactions, but not the hydrolysis breakdown pathways that generated NH4+ (Figure 5).
+#### Salinity – implementation on mixing and nitrogen redox {.unnumbered}
+Two functions to connect salinity to mixing and nitrogen reactions were developed for the sediment model during this project: $F_{Sal}$ and $F_{Sul}$. The full explanation for these can also be found in the aed-science manual, chapter 14.3. The $F_{Sal}$ function decreases from 1 to 0 as salinity increases, with two parameters for salinity concentrations that set the range over which the function works (35 and 70 PSU). The $F_{Sul}$ function decreases from 1 to 0 as $H_2S$ increases, which occurs as organic matter undergoes sulphate reduction. These two functions were applied to both macrofauna mixing processes, by multiplying the process rate by the value between 0 and 1. $F_{Sal}$ was also applied to all nitrogen redox reactions. Therefore, as salinity increased, and as $SO_4^{2-}$ increased and indirectly created $H_2S$, mixing and nitrogen redox were all reduced. $F_{Sal}$ was applied to the nitrogen redox reactions, but not the hydrolysis breakdown pathways that generated $NH_4^+$ (Figure 5).
  
 Figure 5 Schematic of the nitrogen breakdown pathways from PONR to N2. PONL was not included in this diagram in order to simplify it, and because PONR was the major PON pool. The salinity inhibition factor, $F_{Sal}$, was applied to those processes where $F_{Sal}$ is beside the arrow.
-Iron and sulfur – implementation
-The influx of redox active Fe(OH)3A was set to 80 mmol m-2 y-1, and a range of boundary fluxes were tested alongside different organic matter influxes. SO42- concentration was set in proportion to salinity, as described in the section above.
-The iron and sulfur cycles function as described in the aed-science manual. In brief, Fe(OH)3A reacts with organic matter to produce Fe2+ and its presence inhibits sulfate reduction. SO42- reacts with organic matter to produce H2S. The by-products Fe2+ and H2S react together to form FeS. 
+
+#### Iron and sulfur – implementation {.unnumbered}
+The influx of redox active Fe(OH)3A was set to 80 mmol m-2 y-1, and a range of boundary fluxes were tested alongside different organic matter influxes. SO42- concentration was set in proportion to salinity, as described in the section above. The iron and sulfur cycles function as described in the aed-science manual. In brief, Fe(OH)3A reacts with organic matter to produce Fe2+ and its presence inhibits sulfate reduction. SO42- reacts with organic matter to produce H2S. The by-products Fe2+ and H2S react together to form FeS. 
+
 Simulations were run with the parameter rxn_mode set to each option, 0 to 4, to test the effect of each option. The options are outlined in the aed-science manual. In brief, with options 0 and 1, FeS does not precipitate; with option 2 FeS precipitates at a constant kinetic rate; with options 3 and 4 FeS precipitates in proportion to the concentrations of the reactants and products already present. Options 2, 3 and 4 often created numerical instability problems. 
-Organic matter– implementation
+
+#### Organic matter– implementation {.unnumbered}
 The sediment model has several organic matter models available to it, as outlined in the aed-science manual. This simulation used OMModel set to 2, which has separate state variables for each of dissolved or particulate, and refractory or labile organic C, N and P – 12 variables. An additional three variables were developed for this project, POCS, PONS and POPS, which were representative of the algal deposition from the water column – 15 variables in total. The boundary fluxes were set to average results from outputs from the water column model. Labile phases were set to be 10% of the value of the refractory variable. This simulation used the advanced nitrogen redox model shown above in Figure 4. 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Coupled model methods
-
-#### Resolving sediment zonation {.unnumbered}
-
-The model was developed to allow the use of multiple independent sediment zones across the domain, which are identical to the above CANDI-AED description but are not necessarily coincident with the grid-structure of the water. This way sediment zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment are averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure \@ref(fig:dev-pics3). Using zones is a practical compromise between using fewer sediment calculations (for computational efficiency) and more calculations (for capturing spatial heterogeneity in sediment properties and their fluxes).
-
-```{r dev-pics3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Schematic depicting sediment zone numerical approach."}
-
-knitr::include_graphics("images/dev/sed_picture5.png")
-
-```
-
-#### Sediment-water coupling {.unnumbered}
-
-The sediment and hydrodynamic models are coupled at the sediment-water interface (Figure \@ref(fig:dev-pics5)). The AED model setup has three separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:
-
--  flux of solid material onto the sediment surface from the water column: *part_sed_link*
--  concentration of dissolved substances in the bottom water to the sediment: *water_link*
--  flux of dissolved substances from the top sediment layer to the water column: *diss_flux_link*
-
-```{r dev-pics5, echo = FALSE, out.width=c('45%','45%'), class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of sediment water coupling approach. Left: the three linking options between the water column and sediment models. Right: Water column cell concentrations and fluxes within a zone are averaged and transferred between the models."}
-
-knitr::include_graphics(c("images/dev/sed_picture3.png","images/dev/sed_picture4.png"))
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#### Sediment-water interface fluxes {.unnumbered}
-
-Flux across the sediment-water interface was governed by three factors:\
-- Advection\
-- Bioturbation\
-- Bioirrigation
-
-The advection component of this was composed of\
-- Molecular diffusion\
-- Porewater flux\
-- Sediment particle deposition
-
-Molecular diffusion was driven by differences in chemical concentration across the sediment-water interface. For example, high $NH_4^+$ concentration in the sediment fluxes to the lower concentration in the water column. In this simulation there was no external porewater flux from, for example, groundwater inflow. The sediment particle deposition rate (*w~00~*) was set to have the same value across the whole of the domain (1 cm y^-1^). (The particle deposition model was developed in the water column model during this project and a link for water column particle deposition between the models was not implemented in this study.) A link was developed for the shear stress at the sediment-water interface, such that molecular diffusion was increased when the motion in the water column was higher. The sensitivity of sediment-water diffusion to bottom water motion was assigned by the parameter *tau~b~sensitivity*. The values for *tau~b~sensitivity* can be found in the physical parameters table above. The sensitivity was set to be higher in the southern zones. The diffusion was also sensitive to the amount of macroalgae and seagrass roots in each zone, where a high amount of either reduced $\tau_b$ to zero, leading to diffusion being mostly controlled by chemical concentration gradient.
-
-Bioturbation was set up using the step-wise function, where *x~1~* was the depth of full bioturbation, and *x~2~* the depth of zero bioturbation (Figure \@ref(fig:dev-picsbudgetsetup-4)). The values for *x~1~* and *x~2~* can be found in the physical parameters table below In this simulation, the values were assigned for each zone, with deeper vales for the northern zones. The rate constant *DB~0~* was assigned to be the same for all zones. The original model code had a constant bioturbation rate assigned at the initialisation step. For this simulation the model was developed to have a dynamic bioturbation rate that is updated at every time step.
-
-```{r dev-picsbudgetsetup-4, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram of bioturbation setup, showing full bioturbation above the parameter *x~1~* and no bioturbation below *x~2~*."}
-
-knitr::include_graphics("images/dev/sed_Bioturb.png")
-
-```
-
-Bioirrigation was set up as a depth at which non-local transport occurred, using the parameter *x~irrig~*. The value for *x~irrig~* can be found in the physical parameters table below, and as with *x~1~*, the depths of *x~irrig~* were assigned to each zone, to reflect the decrease of benthic fauna in the southern zones. 
-
-Within the Coorong, in the hot summer months as the water in the southern lagoon evaporates, the remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment. The model for bioturbation and irrigation was set to update at each time step. As $F_{Sal}$ and $F_{Sal}$ were updated at each time step, bioturbation and bioirrigation were therefore dynamically dependent on water column salinity and $H_{2}S$ concentration.
-
-
-
-#### Salinity coupling method {.unnumbered}
-
-Salinity was set as a permanently linked variable from the water column AED model, without using *water_link*.
-
-A special salinity factor, $F_{Sal}$ was developed for the salinity in the Coorong, to inhibit processes at hypersaline concentrations. $F_{Sal}$ ranges from 1 to 0, as set between salinity concentration parameters *Sal1* and *Sal2* (PSU).
-
-The equations for $F_{Sal}$ are given below.
-
-```{=tex}
-\begin{eqnarray}
-   If  Salinity < Sal_1 \ \ then \ \   F_{Sal} = 1 \ 
-  \\
-  \\
-   If  Salinity > Sal_1 then   \frac {Sal_2 - Salinity} {Sal_2 - Sal_1} \ 
-  \\
-  \\
-   If  Salinity > Sal_2 then   F_{Sal} = 1 \ 
-\end{eqnarray}
-```
-The effect of the scaling is shown in Figure \@ref(fig:dev-picsbudgetsetup-2).
-
-```{r dev-picsbudgetsetup-2, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diaagram of the salinity factor $F_{Sal}$, scaling between 1 and 0 between the parameters. In this diagram *Sal~1~* is 40 and *Sal~2~* is 70."}
-
-knitr::include_graphics("images/dev/sed_FSal.png")
-
-```
-
-The values for *Sal~1~* and *Sal~2~* can be found in the physical parameters table below. In this simulation, the same value for all was used in all zones.
-
-$F_{Sal}$ was applied to biota-driven mixing (see below) and to the nitrogen redox and adsorption reactions. It was multiplied by the following reactions:
-
--  *R~$N_2O$ ~*
--  *R~NO2~*
--  *R~NO3~*
--  *R~NH4ox~*
--  *R~NH4NO2~*
--  *R~NO2O2~*
--  *NH~4~^+^ adsorption*
-
-The term affected all rates equally and so did not favour the concentration of any of the species. However, it slowed down the transformation of each species into the other, and increased the effect of transport reactions and depth-driven concentration gradients. Since $PON_R$, $O_2$ and $NO_3^-$ entered the domain from above and $NH_4^+$ generally accumulated with depth, N variables in areas of high salinity were subject to more transport before they were reacted.
-
 #### Sulfur and denitrification {.unnumbered}
 
-As mentioned above, $SO_4^{2-}$ bottom water concentrations were tied to salinity and initial $SO_4^{2-}$ concentrations were set to reflect the salinity gradient along the estuary. Consequently, the generation of $H_{2}S$ was higher in the southern zones. High $H_{2}S$ concentration was set to inhibit biota-driven mixing and nitrogen redox reactions, on the basis that $H_{2}S$ is toxic to organisms. An $H_{2}S$ factor, $F_{Sul}$, was set up as an inhibition factor similar to other inhibition factors in the sediment model.
-
-```{=tex}
-\begin{eqnarray}
-
-F_{Sul} = \frac {K_{H_{2}S}} {(K_{H_{2}S} + H_{2}S)} 
-
-\end{eqnarray}
-```
-As with $F_{Sal}$, $F_{Sul}$ scales between 1 and 0, however, as a decay rather than a stepped function (Figure \@ref(fig:dev-picsbudgetsetup-3)). The value for *K~H2S~* can be found in the physical parameters table below In this simulation, the same value for *K~H2S~* was used in all zones.
-
-```{r dev-picsbudgetsetup-3, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram of the $H_2S$ factor, $F_{Sul}$, scaling from 1 to 0 as $H_2S$ concentration decreases. "}
-
-knitr::include_graphics("images/dev/sed_FSul.png")
-
-```
-
-As with $F_{Sal}$, $F_{Sul}$ was applied to biota-driven mixing (see below) and to the nitrogen redox reactions. It was multiplied by the following reactions:
-
--  *R~$N_2O$ ~*
--  *R~NO2~*
--  *R~NO3~*
--  *R~NH4ox~*
--  *R~NH4NO2~*
--  *R~NO2O2~*
--  *NH~4~^+^ adsorption*
+As mentioned above, $SO_4^{2-}$ bottom water concentrations were tied to salinity and initial $SO_4^{2-}$ concentrations were set to reflect the salinity gradient along the estuary. Consequently, the generation of $H_{2}S$ was higher in the southern zones. High $H_{2}S$ concentration was set to inhibit biota-driven mixing and nitrogen redox reactions, on the basis that $H_{2}S$ is toxic to organisms. An $H_{2}S$ factor, $F_{Sul}$, was set up as an inhibition factor similar to other inhibition factors in the sediment model. As with $F_{Sal}$, $F_{Sul}$ was applied to biota-driven mixing (see below) and to the nitrogen redox reactions. 
 
 ### Nutrient sorption and burial {.unnumbered}
 
@@ -400,9 +245,132 @@ knitr::include_graphics("images/dev/sed_O2Inject.png")
 
 ```
 
-## Coorong model setup and configuration
 
-### Site description and zonation
+
+
+
+
+
+### Uncoupled model methods - GLM setup
+
+The sediment model was run using the General Lake Model (GLM) for the upper boundary conditions. Most state variables had no initial condition. The initialisation of organic matter is described in the section below. No variables were linked to a dynamic model at the sediment-water interface. Most variables at the sediment-water interface were set with constant concentrations and fluxes, as shown in the table below the (using the default_vals option, as described in the aed-science manual, chapter 14.4.3). The flux of organic matter was tuned during the setup of the model, as described in the section below. The boundary conditions of salinity and SO42- were set to a range of different options for each simulation, as described in the section below. A set of key setup parameters is presented in Table 4. Some of these were varied to test the model confidence. 
+
+
+#### Mass calculation check {.unnumbered}
+The importance of calculating the top 5 cm TN mass warranted a serious effort check that the mass balance of the sediment model was correct. The sediment model was run with no variables except one solid (organic matter) and one solute ($N_2$) ‘tracer’, the reaction rates of which were switched to zero. The tracers were applied as fluxes and concentrations at the sediment-water interface boundary. The simulation had 
+
+-	no influx for 0.5 years to check that the model had equilibrated, then 
+-	the boundary flux or concentration was applied for 1 year, then 
+-	the boundary was switched off and the simulation run for a further year. 
+
+The mass of influxing matter was calculated. Key parameters were changed one by one and a range of simulations was run, in order to check for possible mass balance errors. 
+
+Key parameters that were varied included 
+
+-	either a fixed grid or exponentially increasing layers
+-	grid spacing and time steps
+-	solid sedimentation rates (*ω00*)
+-	porosity (*ρ0* and *ρ00*)
+-	bioturbation depths and functions
+
+
+#### Organic matter initialisation {.unnumbered}
+The particulate, refractory organic matter initial condition was set using the linear option, as described in the aed-science manual, chapter 14.2.2. The initialisation was set to decrease from 10% to 100% from the surface to 12 cm deep. 
+ 
+
+#### Nitrogen transformation rate constants {.unnumbered}
+The kinetic rate constants that governed the reactions between the nitrogen pools were configured as presented in Figure 10. Note that these were not the rates, but the constants that are multiplied by the concentrations of the reactants involved and other limitation and inhibition factors that affected the rates. Thus the total rates were mostly dependent on the concentrations, however, the rate constants affected the distribution between the nitrogen pools.
+
+
+#### Nutrient budget and mass calculator {.unnumbered}
+Since the sediment samples had often contained black ooze, it was assumed that most of the TN and TP was present as refractory organic matter and so the model was calibrated to meet the measured TN and TP budget. Because the sediment model is only resolved in one dimension of depth, in theory it has no specific area or volume. The same model can represent a large or small study site, which had traditionally worked well for reporting units of concentration and flux. 
+The simulation was set up as though it were exactly 1 m2, which was conceptualised as a representative area anywhere in the South Lagoon (Figure 3). The estimate of the masses in the top 5 cm of the South Lagoon were 25 000 tonnes TN and 2200 tonnes TP. The area of the South Lagoon was approximately 1×108 m2. Therefore, the target concentration was approximately 250 g TN m-2 and 22 g TP m-2. Initial and boundary conditions were tuned until a steady mass of TN and TP was reached.
+
+#### Salinity variation tests {-}
+In a suite of model tests, the salinity boundary was changed for ten separate simulations (Figure 12). Each simulation had an annual oscillation, with the highest value in May and the lowest in October (Figure 13). The first five simulations had salinity between 0 and 35, with different ranges of variation. The other five had increasing maximum and minimum salinity, with a range of 50 PSU throughout the year. The SO42- boundary concentration (mmol L-1) was set to 90% of the salinity concentration (PSU), and so SO42- also had a yearly concentration change. 
+Four variations of these ten simulations were run, to isolate the effects of the salinity and SO42- factors. The first used both FSal and FSul, as per the normal simulations. The second used only FSal, the third only FSul, and the final simulation had neither FSal nor FSul (Table 3). 
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Coupled model methods
+
+#### Resolving sediment zonation {.unnumbered}
+
+The model was developed to allow the use of multiple independent sediment zones across the domain, which are identical to the above CANDI-AED description but are not necessarily coincident with the grid-structure of the water. This way sediment zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment are averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure \@ref(fig:dev-pics3). Using zones is a practical compromise between using fewer sediment calculations (for computational efficiency) and more calculations (for capturing spatial heterogeneity in sediment properties and their fluxes).
+
+```{r dev-pics3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Schematic depicting sediment zone numerical approach."}
+
+knitr::include_graphics("images/dev/sed_picture5.png")
+
+```
+
+#### Sediment-water coupling {.unnumbered}
+
+The sediment and hydrodynamic models are coupled at the sediment-water interface (Figure \@ref(fig:dev-pics5)). The AED model setup has three separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:
+
+-  flux of solid material onto the sediment surface from the water column: *part_sed_link*
+-  concentration of dissolved substances in the bottom water to the sediment: *water_link*
+-  flux of dissolved substances from the top sediment layer to the water column: *diss_flux_link*
+
+```{r dev-pics5, echo = FALSE, out.width=c('45%','45%'), class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of sediment water coupling approach. Left: the three linking options between the water column and sediment models. Right: Water column cell concentrations and fluxes within a zone are averaged and transferred between the models."}
+
+knitr::include_graphics(c("images/dev/sed_picture3.png","images/dev/sed_picture4.png"))
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Sediment-water interface fluxes {.unnumbered}
+
+Flux across the sediment-water interface was governed by three factors:
+
+- Advection
+- Bioturbation
+- Bioirrigation
+
+The advection component of this was composed of
+
+- Molecular diffusion
+- Porewater flux
+- Sediment particle deposition
+
+Molecular diffusion was driven by differences in chemical concentration across the sediment-water interface. For example, high $NH_4^+$ concentration in the sediment fluxes to the lower concentration in the water column. In this simulation there was no external porewater flux from, for example, groundwater inflow. The sediment particle deposition rate (*w~00~*) was set to have the same value across the whole of the domain (1 cm y^-1^). (The particle deposition model was developed in the water column model during this project and a link for water column particle deposition between the models was not implemented in this study.) A link was developed for the shear stress at the sediment-water interface, such that molecular diffusion was increased when the motion in the water column was higher. The sensitivity of sediment-water diffusion to bottom water motion was assigned by the parameter *tau~b~sensitivity*. The values for *tau~b~sensitivity* can be found in the physical parameters table above. The sensitivity was set to be higher in the southern zones. The diffusion was also sensitive to the amount of macroalgae and seagrass roots in each zone, where a high amount of either reduced $\tau_b$ to zero, leading to diffusion being mostly controlled by chemical concentration gradient.
+
+Bioirrigation was set up as a depth at which non-local transport occurred, using the parameter *x~irrig~*. The value for *x~irrig~* can be found in the physical parameters table below, and as with *x~1~*, the depths of *x~irrig~* were assigned to each zone, to reflect the decrease of benthic fauna in the southern zones. 
+
+Within the Coorong, in the hot summer months as the water in the southern lagoon evaporates, the remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment. The model for bioturbation and irrigation was set to update at each time step. As $F_{Sal}$ and $F_{Sal}$ were updated at each time step, bioturbation and bioirrigation were therefore dynamically dependent on water column salinity and $H_{2}S$ concentration.
+
+
+
+#### Salinity coupling method {.unnumbered}
+
+Salinity was set as a permanently linked variable from the water column AED model, without using *water_link*.
+
+A special salinity factor, $F_{Sal}$ was developed for the salinity in the Coorong, to inhibit processes at hypersaline concentrations. $F_{Sal}$ ranges from 1 to 0, as set between salinity concentration parameters *Sal1* and *Sal2* (PSU). See the [AED manual](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html#model-description-8) for details. The values for *Sal~1~* and *Sal~2~* can be found in the physical parameters table below. In this simulation, the same value for all was used in all zones. $F_{Sal}$ was applied to biota-driven mixing (see below) and to the nitrogen redox and adsorption reactions. 
+
+
+### Coupled model zonation
 
 **Spatial aggregation - ten regions** In order to simplify the Coorong study site measurement points and simulation areas, the lagoon was divided into ten separate Coorong regions from north to south, that were then split into the simulated zones. These were primarily based on the natural boundaries, channels and sandbars of the estuary. Regions 1 to 4 were the southern lagoon, region 5 was the intermediate area and region 6 to 10 were in the northern lagoon (Figure \@ref(fig:dev-pics1)).
 
@@ -436,9 +404,8 @@ A range of data was collected and is documented in [Appendix D](Appendix D: Sedi
 
 A detailed analysis of available sediment data is presented in [Appendix D](Appendix%20D%20:%20Sediment%20Data) - this was used as the basis for the $SDG$ module steup and validation.
 
-### Model setup and application approach
 
-#### Simulated variables {.unnumbered}
+#### Coupled model simulated variables {.unnumbered}
 
 In total, each sediment zone was configured to include a total of 42 simulated constituents. All simulated variables are listed in Table \@ref(tab:3dev-sedvars).
 
@@ -573,7 +540,7 @@ knitr::include_graphics(c("images/dev/sed_OMInitialProfiles-02.png"))
 
 \
 
-#### Model parameters {.unnumbered}
+#### Coupled model parameters {.unnumbered}
 
 ##### Physical domain and numerical parameters {.unnumbered}
 
@@ -860,7 +827,7 @@ knitr::include_graphics("images/dev/sdg/t_D_C_6panel_oxy.png")
 
 </center>
 
-##### Ammonium, NH4 {.unnumbered}
+#####{-} Ammonium, NH4 {.unnumbered}
 
 <center>
 
