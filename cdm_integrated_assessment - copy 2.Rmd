@@ -27,9 +27,7 @@ A summary of the model lineage and provenance of the different simulations that 
 
 [**Generation 1.5** model]{style="color:brown"} : Original mesh, 2D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones with statically assigned flux rates based on observed parameters.
 
-[**Generation 2.0** model]{style="color:darkblue"} : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.
-
-[**Generation 2.1** model]{style="color:green"} : Based on Gen 2.0, refined domain, mesh, bathymetry and material zones to integrate the lastest datasets and improve the Ruppia and macroalgae performance, and update model run time to Nov 2022.
+[**Generation 2** model]{style="color:darkblue"} : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.
 
 The results from Generation 0 model and Generation 1 model have been reported separately (and their results archived in [Appendix B : Results Archive]). In this chapter, we focus on the results from the Generation 1.5 and Generation 2 simulations that include the model developments related to the biogeochemistry and habitat, as detailed in the previous chapters. To access a specific model version, refer to the CDM version downloads within GitHub.
 
