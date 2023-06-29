@@ -7685,6 +7685,7 @@ where <span class="math inline">\(\chi_{c:dw}\)</span> is the dry weight per car
 <h1><span class="header-section-number">7</span> Sediment Biogeochemistry</h1>
 <div id="overview-4" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Overview</h2>
+<p>Test</p>
 <p>In environments like the Coorong, where nutrient dynamics influence the rest of the ecosystem, management often focuses on reducing nutrient inputs and increasing flushing to the sea. However, it is important to understand the role of the sediment as a long term source or sink of nutrients.</p>
 <p>In previous versions of the Coorong model, a static model to capture nutrient flux rates has been used for simulating water quality within the lagoon – for example consumption of oxygen and release of <span class="math inline">\(NH_4^+\)</span> based on assigned flux rates. This is an efficient and simplified first step, however, the model can be improved by using the depth-resolved sediment diagenesis model to allow the dynamic feedback between sedimentation of particulate material, and the subsequent processing and release of nutrients in dissolved form. The sediment model can represent spatial heterogeneity along the lagoon, it can capture the future burial or release of nutrients and it can make use of the rich data sets measured in the field.</p>
 <p>Under some conditions, the sediment stores can release nutrients to the water column, while under other conditions, the sediment can remove nutrients in the long term through burial, and the surface layers can remove nitrogen through denitrification. The fine balance that controls the conditions under which the sediment will store, release or remove nutrients is largely governed by the aerobic state of the sediment pore water, and the amount of reactive organic matter fuelling the reactions. There is therefore a need for a depth-resolved sediment model that can accounts for mixing from the hydrodynamic model into the upper sediment layers and is able to calculate whether organic matter is consumed aerobically, through denitrification or deeper down, through sulfate reduction or even methanogenesis.</p>
@@ -7695,7 +7696,30 @@ where <span class="math inline">\(\chi_{c:dw}\)</span> is the dry weight per car
 <h2><span class="header-section-number">7.2</span> Model approach: CANDI-AED</h2>
 <div id="sediment-reactive-transport-model" class="section level3 unnumbered">
 <h3 class="unnumbered">Sediment reactive transport model</h3>
-<p>The heart of this model is a reaction, diffusion, advection model termed CANDI-AED.</p>
+<p>The heart of this model is a reaction, diffusion, advection model termed CANDI-AED; a schematic overview of the model is shown in Figure @ref(fig:dev-pic00). The model resolves the 1D (vertical) sediment and pore-water concentration profiles. Each active sediment “zone” is a column discretized into a user-defineable number of layers that start at thicknesses of around 1 mm at the sediment-water interface and increase down to a pre-defined sediment depth.</p>
+<div class="text-image">
+<div class="figure" style="text-align: center">
+<img src="images/dev/sed_image2.png" alt="CANDI-AED includes chemical processes of organic matter transformation and oxidation, and reduction/oxidation, crystallisation, adsorption and precipitation reactions of inorganic by-products. Most of the processes are triggered by the input of POM at the sediment-water interface." width="80%" />
+<p class="caption">
+(#fig:dev-pic00)CANDI-AED includes chemical processes of organic matter transformation and oxidation, and reduction/oxidation, crystallisation, adsorption and precipitation reactions of inorganic by-products. Most of the processes are triggered by the input of POM at the sediment-water interface.
+</p>
+</div>
+</div>
+<p>The CDM sediment modelling approach uses the CANDI-AED model configurable through the AED <span class="math inline">\(SDG\)</span> module, as outlined in the <a href="https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html">AED science manual</a>. The configuration used in the CDM simulations resolves both physical (e.g. pore-water diffusion or bioturbation) and chemical (e.g., redox transformations) processes as summarised below.</p>
+<p><strong>Chemical reactions</strong></p>
+<p>The dynamic model considers two types of reactions - the slow, kinetically controlled reactions, and the fast thermodynamically based equilibrium reactions. The latter are simulated in the sediment through appropriate configuration of the geochemistry reactions; the configuration of the equilibrium model applies to both the water and each of the sediment layers. The kinetically controlled reactions are mostly microbially-mediated and include the reactions for organic matter breakdown and eventual oxidation, the re-oxidation of various by-products and the dynamics of the metal sulfides.</p>
+<p>The organic matter (<span class="math inline">\(OM\)</span>) degradation pathway considers labile and refractory <span class="math inline">\(DOM\)</span> components (<span class="math inline">\(DOM_L\)</span> and <span class="math inline">\(DOM_R\)</span> respectively) and the breakdown pathway simulated is conceptually summarized in Figure @ref{fig:sed_dynamic}. Reactions included in the kinetic component include the hydrolysis of the complex (e.g., high molecular weight) <span class="math inline">\(OM\)</span> pools (<span class="math inline">\(POM_{VR}\)</span>, <span class="math inline">\(POM_R\)</span>, <span class="math inline">\(DOM_R\)</span>, <span class="math inline">\(POM_L\)</span>) and transformation of low molecular weight (LMW) <span class="math inline">\(DOM_L\)</span> by oxidants (<span class="math inline">\(O_2\)</span>, <span class="math inline">\(MnO_2\)</span>, <span class="math inline">\(Fe(OH)_3\)</span> and <span class="math inline">\(SO_4^{2-}\)</span> - the so-called ‘terminal metabolism’), and the release of resulting nutrients (<span class="math inline">\(NO_3^-\)</span>, <span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(PO_4^{3-}\)</span>) and reduced by-products (<span class="math inline">\(Mn^{2+}\)</span>, <span class="math inline">\(Fe^{2+}\)</span>, <span class="math inline">\(N_2\)</span>, <span class="math inline">\(H_2S\)</span>, <span class="math inline">\(CH_4\)</span>) and <span class="math inline">\(CO_2\)</span>. In addition to the primary redox reactions associated with <span class="math inline">\(OM\)</span> breakdown, the model also includes numerous secondary reactions, such as oxidation of reduced by-products (e.g., Fe or S oxidation).</p>
+<p><strong>Physical processes</strong></p>
+<p>The model accounts for advection and diffusion processes of solid and solute consituents. Porosity (<span class="math inline">\(\phi\)</span>) is defined to decrease with depth, and for the porewater components, diffusion coefficients are used that are based on free-solution molecular diffusion constants corrected for sediment tortuosity, <span class="math inline">\(θ\)</span>. For bioturbation, the model uses a diffusion coefficient that varies with depth (<span class="math inline">\(D_{B(z)}\)</span>) as a two layer function or a Gaussian decrease. The irrigation of pore water is also simulated to account for the activity benthic infauna in the upper sediment.</p>
+<p>Fluxes of dissolved species occur between the sediment and water column depending on the sediment type (e.g. porosity), the solute type, and the degree of interfacial turbulence being experienced at the sediment-water interface. Dissolved fluxes are calculated from the concentration gradient at the sediment-water interface according to Fick’s Law:</p>
+<center>
+<span class="math display">\[\begin{equation}
+F = D_{0}\frac{\Delta C}{\Delta x} = \frac{D_{0}}{\delta} (C_{bw} - C_{1})
+(\#eq:biogeochem1)
+\end{equation}\]</span>
+</center>
+<p>where <span class="math inline">\(D_{0}\)</span> is the diffusivity at the SWI, <span class="math inline">\(\delta\)</span> is the thickness of the diffusive boundary layer at the sediment-water interface, defined as the length scale of the first sediment layer, <span class="math inline">\(C_{bw}\)</span> is the bottom water concentration and <span class="math inline">\(C_{1}\)</span> is the concentration in the top sediment layer. The diffusivity in these models typically assumes molecular diffusivity rates, which is likely to underestimate the real diffusivity experienced in a shallow lagoon such as the Coorong. In the CDM, a new parameterisation to resolve diffusivity based on sediment type and water turbulence properties was added (see section on Sediment-water interface fluxes).</p>
+<p><br></p>
 </div>
 <div id="model-extensions-and-development" class="section level3 unnumbered">
 <h3 class="unnumbered">Model extensions and development</h3>
@@ -7703,10 +7727,15 @@ where <span class="math inline">\(\chi_{c:dw}\)</span> is the dry weight per car
 <ul>
 <li>Improved parameterisation of diffusion at the sediment-water interface, based on <span class="math inline">\(\tau_b\)</span>.</li>
 <li>Inclusion of functionality to resolve resuspension effects</li>
-<li>Addition of MPB and macrophyte roots <span class="math inline">\(O_2\)</span> sources into the sediment</li>
-<li>Dynamic bioturbation rates linked to salinity and <span class="math inline">\(H_2S\)</span> concentrations</li>
-<li>Bioturbation rates linked to salinity and <span class="math inline">\(H_2S\)</span> concentrations</li>
-<li>Bioturbation rates linked to salinity and <span class="math inline">\(H_2S\)</span> concentrations</li>
+<li>Addition of MPB and macrophyte roots <span class="math inline">\(O_2\)</span> sources into the sediment
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
+<li><h1 id="dynamic-bioturbation-rates-linked-to-salinity-and-h_2s-concentrations">Dynamic bioturbation rates linked to salinity and <span class="math inline">\(H_2S\)</span> concentrations</h1></li>
+<li>Bioturbation rates linked to salinity and <span class="math inline">\(H_2S\)</span> concentrations
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; e742eb357edda93aef0e5adf1c61f2d7bc8da791
+=======</li>
+<li>Bioturbation rates linked to salinity and <span class="math inline">\(H_2S\)</span> concentrations
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; e742eb357edda93aef0e5adf1c61f2d7bc8da791</li>
 <li><span class="math inline">\(NH_4^+\)</span>, <span class="math inline">\(PO_4^{3-}\)</span> and <span class="math inline">\(DOM\)</span> adsorption</li>
 <li>Allocation of a unreactive organic matter pool</li>
 </ul>
@@ -24337,7 +24366,7 @@ while (i < img.length) {
   <div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 27-June-2023.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 29-June-2023.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
