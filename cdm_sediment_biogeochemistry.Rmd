@@ -2,6 +2,8 @@
 
 ## Overview
 
+Test
+
 In environments like the Coorong, where nutrient dynamics influence the rest of the ecosystem, management often focuses on reducing nutrient inputs and increasing flushing to the sea. However, it is important to understand the role of the sediment as a long term source or sink of nutrients.
 
 In previous versions of the Coorong model, a static model to capture nutrient flux rates has been used for simulating water quality within the lagoon -- for example consumption of oxygen and release of $NH_4^+$ based on assigned flux rates. This is an efficient and simplified first step, however, the model can be improved by using the depth-resolved sediment diagenesis model to allow the dynamic feedback between sedimentation of particulate material, and the subsequent processing and release of nutrients in dissolved form. The sediment model can represent spatial heterogeneity along the lagoon, it can capture the future burial or release of nutrients and it can make use of the rich data sets measured in the field.
