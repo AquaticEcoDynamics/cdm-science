@@ -7,7 +7,7 @@
 <title>9 Integrated Assessment | The Coorong Dynamics Model</title>
 <meta name="author" content="MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims">
 <meta name="description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
-<meta name="generator" content="bookdown 0.26 with bs4_book()">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="9 Integrated Assessment | The Coorong Dynamics Model">
 <meta property="og:type" content="book">
 <meta property="og:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
@@ -16,9 +16,8 @@
 <meta name="twitter:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
-<script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
     
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
@@ -66,23 +65,7 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">Welcome</a></li>
-<li><a class="" href="introduction.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="" href="cdm-the-coorong-dynamics-model.html"><span class="header-section-number">2</span> CDM: The Coorong Dynamics Model</a></li>
-<li><a class="" href="model-data-ecosystem.html"><span class="header-section-number">3</span> Model-Data Ecosystem</a></li>
-<li><a class="" href="resuspension-turbidity.html"><span class="header-section-number">4</span> Resuspension &amp; Turbidity</a></li>
-<li><a class="" href="oxygen-nutrients-chlorophyll-a.html"><span class="header-section-number">5</span> Oxygen, Nutrients &amp; Chlorophyll-a</a></li>
-<li><a class="" href="macroalgae.html"><span class="header-section-number">6</span> Macroalgae</a></li>
-<li><a class="" href="sediment-biogeochemistry.html"><span class="header-section-number">7</span> Sediment Biogeochemistry</a></li>
-<li><a class="" href="habitat-modelling.html"><span class="header-section-number">8</span> Habitat Modelling</a></li>
-<li><a class="active" href="integrated-assessment.html"><span class="header-section-number">9</span> Integrated Assessment</a></li>
-<li><a class="" href="references.html">References</a></li>
-<li><a class="" href="appendix-a-data-catalogue.html">Appendix A : Data Catalogue</a></li>
-<li><a class="" href="appendix-b-results-archive.html">Appendix B : Results Archive</a></li>
-<li><a class="" href="appendix-c-ruppia-habitat-assessment.html">Appendix C : Ruppia Habitat Assessment</a></li>
-<li><a class="" href="appendix-d-sediment-data.html">Appendix D : Sediment Data</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">9</span> Integrated Assessment</a></li></ul>
 
         <div class="book-extra">
           
@@ -121,7 +104,8 @@
 <p><span style="color:teal"><strong>Generation 0</strong> model</span> : Original mesh, 2D hydrodynamics, no surface wave coupling, 1 overall phytoplankton functional group, 5 sediment zones with statically assigned flux rates based on assumed parameters.</p>
 <p><span style="color:orangered"><strong>Generation 1</strong> model</span> : Original mesh, 2D hydrodynamics, no surface wave coupling, 1 overall phytoplankton functional group, 5 sediment zones with statically assigned flux rates, updated based on observed estimates.</p>
 <p><span style="color:brown"><strong>Generation 1.5</strong> model</span> : Original mesh, 2D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones with statically assigned flux rates based on observed parameters.</p>
-<p><span style="color:darkblue"><strong>Generation 2</strong> model</span> : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.</p>
+<p><span style="color:darkblue"><strong>Generation 2.0</strong> model</span> : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.</p>
+<p><span style="color:green"><strong>Generation 2.1</strong> model</span> : Based on Gen 2.0, refined domain, mesh, bathymetry and material zones to integrate the lastest datasets and improve the Ruppia and macroalgae performance, and update model run time to Nov 2022.</p>
 <p>The results from Generation 0 model and Generation 1 model have been reported separately (and their results archived in <a href="appendix-b-results-archive.html#appendix-b-results-archive">Appendix B : Results Archive</a>). In this chapter, we focus on the results from the Generation 1.5 and Generation 2 simulations that include the model developments related to the biogeochemistry and habitat, as detailed in the previous chapters. To access a specific model version, refer to the CDM version downloads within GitHub.</p>
 <p><br></p>
 </div>
@@ -206,13 +190,11 @@
 <p>With the <span style="color:teal"><em>Generation 0</em> model</span> compiled boundary conditions (tide, barrages, Salt Ck inflows) and BARRA weather forcing, the performance of the model in reproducing the long-term nutrient pools has been examined. <!--
 Example model outcomes against the field observations of TN and TP are shown in Figure 10 & 11, and a summary of model performance is provided in Table 1. In summary, the model predicted well the temporal and spatial variations in TN and TP concentrations. However, the model has been shown to poorly predict the phytoplankton concentration in the South Coorong. A reason for this may be due to the current CDM being in in 2D mode which assumes the water column is fully mixed; whilst the phytoplankton samples were taken in the surface water where the phytoplankton can accumulate. The release of bioavailable nutrients is also subject to change once the sediment modelling is completed and the accuracy resolving bioavailable nutrients is still weak. A further examination of phytoplankton and nutrient data is underway, and a 3D Coorong model is under development to capture the vertical distribution of phytoplankton biomass.
 --> A summary of model performance is provided in Table 6.1. The full set of time-series validation plots against comparing the model with field observations of salinity, temperature, phytoplankton, and nitrogen/phosphorus species are included in Appendix B1. In summary, the <span style="color:teal"><em>Generation 0</em></span> model predicted well the temporal and spatial variations in TN and TP concentrations. However, this version of the model poorly predicted the phytoplankton concentration in the South Lagoon. A reason for this may be due to the fact that this version is run in 2D mode which assumes the water column is fully mixed; whilst the phytoplankton samples were taken in the surface water where the phytoplankton can accumulate.</p>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-pic0"></span>
 <img src="tables/error.png" alt="Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN and TP concentrations." width="100%"><p class="caption">
 Figure 9.1: Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN and TP concentrations.
 </p>
-</div>
 </div>
 <p>The release of bioavailable nutrients is also subject to change once the sediment modelling is completed and the accuracy resolving bioavailable nutrients is still weak. Examination of phytoplankton and nutrient data (see CDM sensitivity assessment to internal loading in appendix B2), and implmentation of 3D dynamics is under development with the Generation I model to capture the vertical distribution of phytoplankton biomass.</p>
 </div>
@@ -227,36 +209,29 @@ Figure 9.1: Performance summary of CDM (Gen 0) simulating long-term TCHLA, TN an
 </ol>
 <p>Given the fact that the ALS dataset largely departs from the historical data range, a new validation was performed with all existing data except the ALS dataset. A separate summary of model performance is provided in Table <a href="integrated-assessment.html#fig:ass-ass001">9.2</a>, and the full set of time series validation plots are included in <a href="Appendix%20B%20:%20Results%20Archive">Appendix B</a>. It can be seen from Table @ref(fig:ass-ass15_1) - @ref(fig:ass-ass15_1) that all performance scores of CDM are significantly improved and the performance in most of the water quality prediction are satisfying.</p>
 <center>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-ass001"></span>
 <img src="images/assessment/1_example_data_quality_issue_nitrate.png" alt="Example of data quality issue with modelled vs. measured nitrate concentration in zone 42. Note the consistent nitrate concentration of 0.003 mg/L from 07/2018 to 01/2020 (circled in green)." width="80%"><p class="caption">
 Figure 9.2: Example of data quality issue with modelled vs. measured nitrate concentration in zone 42. Note the consistent nitrate concentration of 0.003 mg/L from 07/2018 to 01/2020 (circled in green).
 </p>
 </div>
-</div>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-ass002"></span>
 <img src="images/assessment/2_example_data_quality_issue_TP.png" alt="Example of data quality issue with modelled vs. measured TP concentration in zone 22. The colours of the observational data indicate their data sources." width="80%"><p class="caption">
 Figure 9.3: Example of data quality issue with modelled vs. measured TP concentration in zone 22. The colours of the observational data indicate their data sources.
 </p>
 </div>
-</div>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-ass003"></span>
 <img src="images/assessment/3_example_data_quality_issue_TN.png" alt="Same as Figure 6.2 except for TN concentration in zone 22." width="80%"><p class="caption">
 Figure 9.4: Same as Figure 6.2 except for TN concentration in zone 22.
 </p>
 </div>
-</div>
 </center>
 <p><br></p>
 <div id="model-performance-assessment-no-als-data" class="section level4 unnumbered">
 <h4>Model performance assessment (no ALS data)<a class="anchor" aria-label="anchor" href="#model-performance-assessment-no-als-data"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:ass-004d"></span>
 <img src="images/assessment/table%206_2-performance%20table_no_ALS1.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge." width="99%"><img src="images/assessment/table%206_2-performance%20table_no_ALS2.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge." width="99%"><p class="caption">
@@ -264,17 +239,14 @@ Figure 9.5: Performance summary of CDM (GEN 1.5) simulating long-term temperatur
 </p>
 </div>
 </div>
-</div>
 <div id="model-performance-assessment-all-data" class="section level4 unnumbered">
 <h4>Model performance assessment (all data)<a class="anchor" aria-label="anchor" href="#model-performance-assessment-all-data"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:ass-005d"></span>
 <img src="images/assessment/table%206_1-performance%20table1.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="99%"><img src="images/assessment/table%206_1-performance%20table2.png" alt="Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="99%"><p class="caption">
 Figure 9.6: Performance summary of CDM (GEN 1.5) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge.
 </p>
-</div>
 </div>
 <p><br></p>
 </div>
@@ -288,7 +260,6 @@ Figure 9.6: Performance summary of CDM (GEN 1.5) simulating long-term temperatur
 <div id="model-performance-assessment-no-als-data-1" class="section level4 unnumbered">
 <h4>Model performance assessment (no ALS data)<a class="anchor" aria-label="anchor" href="#model-performance-assessment-no-als-data-1"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:ass-004e"></span>
 <img src="images/assessment/GEN2%20performance%20-%20no%20ALS%20-%20table1.png" alt="Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge." width="99%"><img src="images/assessment/GEN2%20performance%20-%20no%20ALS%20-%20table2.png" alt="Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge." width="99%"><p class="caption">
@@ -296,17 +267,14 @@ Figure 9.7: Performance summary of CDM (GEN 2) simulating long-term temperature,
 </p>
 </div>
 </div>
-</div>
 <div id="model-performance-assessment-all-data-1" class="section level4 unnumbered">
 <h4>Model performance assessment (all data)<a class="anchor" aria-label="anchor" href="#model-performance-assessment-all-data-1"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:ass-005e"></span>
 <img src="images/assessment/GEN2%20performance%20-%20all%20data%20-%20table1.png" alt="Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="99%"><img src="images/assessment/GEN2%20performance%20-%20all%20data%20-%20table2.png" alt="Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge." width="99%"><p class="caption">
 Figure 9.8: Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge.
 </p>
-</div>
 </div>
 <p><br></p>
 </div>
@@ -320,53 +288,45 @@ Figure 9.8: Performance summary of CDM (GEN 2) simulating long-term temperature,
 <h3>
 <span class="header-section-number">9.6.1</span> Nutrient budgets<a class="anchor" aria-label="anchor" href="#nutrient-budgets"><i class="fas fa-link"></i></a>
 </h3>
-<p>A methodology for nutrient flux and budget analysis has been developed. For the nutrient budget analysis, all of the nutrient pools (dissolved and particulate carbon, nitrogen and phosphorus, macroalgae and Ruppia) can be summarized for different regions of the estuary (north, south etc.). As an example of this method, the results from a period of four years (01/01/2018 to 01/01/2022) were summarized for nitrogen budgeting of NCL and SCL region in Figure 6.4 and 6.5, respectively. The nutrient budgeting analysis showed that the dissolved organic matter is the major nitrogen pool in both the lagoons, while particle organic matter and the nitrogen assimilated by phytoplankton also presented to be major nutrient pools (panel “a”). The sediment diffusion release of ammonium and the nitrogen loss due to phytoplankton burial into the sediment dominate the interaction at the sediment-water interface (panel “b”), which also presented a clear seasonal pattern. The boundary exchange fluxes are dominated by the organic matters in coincident to the major pools in the water (panel “c”). The daily change flux rate varied between 0 to &gt;20 tonne/day in the north lagoon, compared to that of between 0 to ~10 tonnes/day in the south lagoon, indicating stronger hydrodynamic transportation in the north lagoon affected by tidal intrusion and barrage flow. The results showed a net cumulative of nutrient in the sediment (panel “d”), indicating the sediment acting as a sink for the nutrients.</p>
+<p>A methodology for nutrient flux and budget analysis has been developed. For the nutrient budget analysis, all of the nutrient pools (dissolved and particulate carbon, nitrogen and phosphorus, macroalgae and Ruppia) can be summarized for different regions of the estuary (north, south etc.). As an example of this method, the results from a period of five years (01/07/2017 to 01/07/2022) were summarized for nitrogen budgeting of NCL and SCL region in Figure 9.9 - 9.12. The nutrient budgeting analysis showed that the dissolved organic matter is the major nitrogen pool in both the lagoons, while particle organic matter and the nitrogen assimilated by phytoplankton also presented to be major nutrient pools (panel “a”). The sediment diffusion release of ammonium and the nitrogen loss due to phytoplankton burial into the sediment dominate the interaction at the sediment-water interface (panel “b”), which also presented a clear seasonal pattern. The boundary exchange fluxes are dominated by the organic matters in coincident to the major pools in the water (panel “c”). The daily change flux rate varied between 0 to &gt;20 tonne/day in the north lagoon, compared to that of between 0 to ~10 tonnes/day in the south lagoon, indicating stronger hydrodynamic transportation in the north lagoon affected by tidal intrusion and barrage flow. The results showed a net cumulative of nutrient in the sediment (panel “d”), indicating the sediment acting as a sink for the nutrients.</p>
 <div id="nitrogen-csl" class="section level4 unnumbered">
 <h4>NITROGEN (<strong>CSL</strong>)<a class="anchor" aria-label="anchor" href="#nitrogen-csl"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget1"></span>
-<img src="images/assessment/5aSCL-4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon." width="100%"><p class="caption">
+<img src="images/assessment/5aSCL-5yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon." width="100%"><p class="caption">
 Figure 9.9: Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon.
 </p>
-</div>
 </div>
 </div>
 <div id="nitrogen-cnl" class="section level4 unnumbered">
 <h4>NITROGEN (CNL)<a class="anchor" aria-label="anchor" href="#nitrogen-cnl"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget2"></span>
-<img src="images/assessment/4aNCL-4yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon." width="100%"><p class="caption">
+<img src="images/assessment/4aNCL-5yrs_nitrogen_budget_timeseries.png" alt="Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon." width="100%"><p class="caption">
 Figure 9.10: Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon.
 </p>
-</div>
 </div>
 </div>
 <div id="phosphorus-csl" class="section level4 unnumbered">
 <h4>PHOSPHORUS (CSL)<a class="anchor" aria-label="anchor" href="#phosphorus-csl"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget3"></span>
-<img src="images/assessment/5bSCL-4yrs_phosphorus_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon." width="100%"><p class="caption">
+<img src="images/assessment/5bSCL-5yrs_phosphorus_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon." width="100%"><p class="caption">
 Figure 9.11: Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon.
 </p>
-</div>
 </div>
 </div>
 <div id="phosphorus-cnl" class="section level4 unnumbered">
 <h4>PHOSPHORUS (CNL)<a class="anchor" aria-label="anchor" href="#phosphorus-cnl"><i class="fas fa-link"></i></a>
 </h4>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-budget4"></span>
-<img src="images/assessment/4bNCL-4yrs_phosphorus_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon." width="100%"><p class="caption">
+<img src="images/assessment/4bNCL-5yrs_phosphorus_budget_timeseries.png" alt="Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon." width="100%"><p class="caption">
 Figure 9.12: Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon.
 </p>
-</div>
 </div>
 <p><br></p>
 </div>
@@ -375,15 +335,13 @@ Figure 9.12: Time-series plot of daily changes in (a) phosphorus pools, (b) phos
 <h3>
 <span class="header-section-number">9.6.2</span> Source and sink summary<a class="anchor" aria-label="anchor" href="#source-and-sink-summary"><i class="fas fa-link"></i></a>
 </h3>
-<p>Summary diagrams of the nitrogen imports vs. exports for both lagoons are presented in Figure <a href="integrated-assessment.html#fig:ass-pie">9.13</a>, which shows that, for the north lagoon (CNL), the nutrient loads transported though the Pelican Pt. are in comparable scales to the sediment load (56% vs. 44% of total sources), while the exports due to sedimentation/burial and transport to south lagoon though Parnka Pt are about 65% and 35% of total loss, respectively. For the south lagoon (CSL), the sediment nutrient loads was the major source (79% of total sources), and the sedimentation loss was also the major sink (92% of total sinks), indicating the internal nutrient cycling overcame the hydrodynamic transport of nutrient be to the dominant pathway of nutrient cycling.</p>
+Averaging the nitrogen and phosphorus pathways over the 5-year study period highlights the general fate of external nutrient loads entering the system, which is conceptualised as the Coorong “conveyer belt” (Figure 9.13). In summary, the nutrient loads with the barrage flows were the dominant source, representing 99% of total catchment nutrient load from the barrages and Salt Creek. There was active exchange of water and nutrient at the Murray mouth, where most of the nitrogen and phosphorus entering the Coorong through the barrages were exported to the ocean. The net fluxes transported to the CNL and to the CSL showed a gradual decrease, indicating decreasing connectivity from north to south. In CNL, the nitrogen fluxes by sediment release and settling were in the same order to that by transport into the CNL. While in CSL, the internal sediment fluxes were one order higher to that by transport through the boundary. However, although there was fast exchange of nitrogen at the sediment-water interface, the net accumulation in the CSL sediment of nitrogen (4.0% of total catchment load) and of phosphorus (4.1% of total catchment load) was relatively slow and in same order to the boundary exchange.
 <center>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-pie"></span>
-<img src="images/assessment/6_nutrient_budgeting_summary_plot.png" alt="Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL)." width="100%"><p class="caption">
+<img src="images/assessment/5yr_NP.jpg" alt="Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL)." width="100%"><p class="caption">
 Figure 9.13: Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL).
 </p>
-</div>
 </div>
 </center>
 <p><br></p>
@@ -399,13 +357,11 @@ Figure 9.13: Summary pie chart of nitrogen sources and sinks in the north lagoon
 <li>‘no-eWater’ : representing a counter-factual situation when there was no environmental water delivered across the barrages</li>
 </ul>
 <p>The results demonstrate that, under the current condition, the annual-average salinity presented an increase from north the south, and the condition stayed similar from 2017 to 2021; while if there is no environmental water contribution (the ‘no-eWater’ scenario), the salinity would had increased from about 150 PSU in 2017 to near 190 PSU in 2021 (Figure <a href="integrated-assessment.html#fig:ass-erf">9.14</a>). The nutrient levels showed an increase from north to south, and also increased with time in both scenarios. However, if there is no environmental water contribution, the TN and TP in the south lagoon would have increased at a faster pace. In summary, the environmental water has shown to help to reduce the salinity level as well as the trophic statues of the Coorong, and show how the model can be used to develop ‘look-up’ tables for expected benefits of a given change in operation, without running the full model.</p>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-erf"></span>
 <img src="images/assessment/7_ERF_plot.png" alt="Environmental response functions (ERF) of salinity, TN, and TP in space and time of the Coorong for the base-case scenario (left panel) and an example ‘no e-Water’ scenario (right panel)." width="100%"><p class="caption">
 Figure 9.14: Environmental response functions (ERF) of salinity, TN, and TP in space and time of the Coorong for the base-case scenario (left panel) and an example ‘no e-Water’ scenario (right panel).
 </p>
-</div>
 </div>
 </div>
 <div id="habitat-condition-assessment" class="section level2 panelset" number="9.8">
@@ -417,7 +373,6 @@ Figure 9.14: Environmental response functions (ERF) of salinity, TN, and TP in s
 <div id="ruppia-hsi-sexual-lifecycle" class="section level3 unnumbered">
 <h3>Ruppia HSI (sexual lifecycle)<a class="anchor" aria-label="anchor" href="#ruppia-hsi-sexual-lifecycle"><i class="fas fa-link"></i></a>
 </h3>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:HSIsexual4"></span>
 <img src="images/lagoon_habitat/HSI%20sexual%204yrs.png" alt="Overall Habitat Suitability Index for the successful completion of the sexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
@@ -425,17 +380,14 @@ Figure 9.15: Overall Habitat Suitability Index for the successful completion of 
 </p>
 </div>
 </div>
-</div>
 <div id="ruppia-hsi-asexual-lifecycle" class="section level3 unnumbered">
 <h3>Ruppia HSI (asexual lifecycle)<a class="anchor" aria-label="anchor" href="#ruppia-hsi-asexual-lifecycle"><i class="fas fa-link"></i></a>
 </h3>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:HSIasexual4"></span>
 <img src="images/lagoon_habitat/HSI%20asexual%204yrs.png" alt="Overall Habitat Suitability Index for the successful completion of the asexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)." width="100%"><p class="caption">
 Figure 9.16: Overall Habitat Suitability Index for the successful completion of the asexual life cycle in the Coorong, for the Base Case in 2018 - 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow).
 </p>
-</div>
 </div>
 <p><br></p>
 </div>
@@ -705,7 +657,7 @@ Apr-July
 CNL &amp; CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -719,7 +671,7 @@ June-Sept
 CNL &amp; CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -733,7 +685,7 @@ Aug-Dec
 CNL &amp; CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr grouplength="10">
@@ -864,7 +816,7 @@ Apr-Sep
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -878,7 +830,7 @@ Oct-Mar
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr grouplength="7">
@@ -953,7 +905,7 @@ Year-round
 ME
 </td>
 <td style="text-align:left;min-width: 10em; ">
-No. of events that mean monthly estuary-averaged salinity (via stations A4261036, A4261039, A4261128, A4261043) is &gt;40 g/L for ≥2 months
+No. of events that mean monthly estuary-averaged salinity (via stations A4261036, A4261039, A4261128, A4261043) is &gt;40 g/L for =2 months
 </td>
 </tr>
 <tr>
@@ -981,7 +933,7 @@ Year-round
 ME
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days where Murray Mouth depth is ≥ 1 m
+% of days where Murray Mouth depth is = 1 m
 </td>
 </tr>
 <tr grouplength="7">
@@ -1117,7 +1069,7 @@ Oct–Jan
 Boundary condition
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days when barrage flow are ≥ 200 ML/day.
+% of days when barrage flow are = 200 ML/day.
 </td>
 </tr>
 <tr>
@@ -1131,7 +1083,7 @@ May–Jan
 ME
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days where Murray Mouth depth is ≥ 30 cm
+% of days where Murray Mouth depth is = 30 cm
 </td>
 </tr>
 <tr>
@@ -1389,7 +1341,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 650 GL/year
+&lt;U+0394&gt; from 650 GL/year
 </td>
 </tr>
 <tr>
@@ -1403,7 +1355,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 2000 GL/year rolling annual average
+&lt;U+0394&gt; from 2000 GL/year rolling annual average
 </td>
 </tr>
 <tr>
@@ -1417,7 +1369,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 6,000 GL/year
+&lt;U+0394&gt; from 6,000 GL/year
 </td>
 </tr>
 <tr>
@@ -1431,7 +1383,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 10,000 GL/year
+&lt;U+0394&gt; from 10,000 GL/year
 </td>
 </tr>
 <tr>
@@ -1459,7 +1411,7 @@ June-Aug
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are ≥+0.3 m AHD
+% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are =+0.3 m AHD
 </td>
 </tr>
 <tr>
@@ -1501,7 +1453,7 @@ Sep-Dec
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are ≥+0.2 m AHD
+% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are =+0.2 m AHD
 </td>
 </tr>
 <tr>
@@ -1730,7 +1682,7 @@ Apr-Sep
 CNL 
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1744,7 +1696,7 @@ Oct-Mar
 CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1758,7 +1710,7 @@ Oct-Mar
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1772,7 +1724,7 @@ Apr-Sep
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1786,7 +1738,7 @@ Apr-Sep
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥6.5 mg/L
+Average daily area (HA) that minimum DO is =6.5 mg/L
 </td>
 </tr>
 <tr>
@@ -1800,7 +1752,7 @@ Oct-Mar
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥6.5 mg/L
+Average daily area (HA) that minimum DO is =6.5 mg/L
 </td>
 </tr>
 <tr>
@@ -1814,7 +1766,7 @@ Apr-Sep
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥4 mg/L
+Average daily area (HA) that minimum DO is =4 mg/L
 </td>
 </tr>
 <tr>
@@ -1828,7 +1780,7 @@ Oct-Mar
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥4 mg/L
+Average daily area (HA) that minimum DO is =4 mg/L
 </td>
 </tr>
 <tr>
@@ -1842,7 +1794,7 @@ Apr-Sep
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -1856,7 +1808,7 @@ Apr-Sep
 CSL 
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -1870,7 +1822,7 @@ Oct-Mar
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -1884,7 +1836,7 @@ Oct-Mar
 CSL 
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 </tbody>
@@ -2068,13 +2020,11 @@ SAL
 </table></div>
 <p>In addition to the required DMF value, time series plots are also produced to provide context to the data analyst.</p>
 <center>
-<div class="text-image">
 <div class="figure">
 <span style="display:block;" id="fig:ass-pic2"></span>
 <img src="images/cdm/DMF_Example.png" alt="Critial CPS for macroinvertabrates where Average daily area (Km2) with water cover and Salinity is &lt; 25 g/L Apr-Sep" width="50%"><p class="caption">
 Figure 9.17: Critial CPS for macroinvertabrates where Average daily area (Km2) with water cover and Salinity is &lt; 25 g/L Apr-Sep
 </p>
-</div>
 </div>
 </center>
 </div>
@@ -2250,44 +2200,11 @@ while (i < img.length) {
 }
 </script><script src="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom-vanilla.min.js"></script><link href="https://cdn.jsdelivr.net/npm/zoom-vanilla.js/dist/zoom.css" rel="stylesheet">
 <div class="chapter-nav">
-<div class="prev"><a href="habitat-modelling.html"><span class="header-section-number">8</span> Habitat Modelling</a></div>
-<div class="next"><a href="references.html">References</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#integrated-assessment"><span class="header-section-number">9</span> Integrated Assessment</a></li>
-<li><a class="nav-link" href="#overview-7"><span class="header-section-number">9.1</span> Overview</a></li>
-<li><a class="nav-link" href="#integrated-simulations"><span class="header-section-number">9.2</span> Integrated simulations</a></li>
-<li>
-<a class="nav-link" href="#model-assessment-approach"><span class="header-section-number">9.3</span> Model assessment approach</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#summary-of-validation-data-set"><span class="header-section-number">9.3.1</span> Summary of validation data-set</a></li>
-<li><a class="nav-link" href="#performance-assessment-metrics"><span class="header-section-number">9.3.2</span> Performance assessment metrics</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#assessment-and-validation-periods"><span class="header-section-number">9.4</span> Assessment and validation periods</a></li>
-<li>
-<a class="nav-link" href="#integrated-simulation-performance"><span class="header-section-number">9.5</span> Integrated simulation performance</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#generation-0-1"><span class="header-section-number">9.5.1</span> Generation 0</a></li>
-<li><a class="nav-link" href="#generation-1.5"><span class="header-section-number">9.5.2</span> Generation 1.5</a></li>
-<li><a class="nav-link" href="#generation-2-1"><span class="header-section-number">9.5.3</span> Generation 2</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#nutrient-budget-assessment"><span class="header-section-number">9.6</span> Nutrient budget assessment</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#nutrient-budgets"><span class="header-section-number">9.6.1</span> Nutrient budgets</a></li>
-<li><a class="nav-link" href="#source-and-sink-summary"><span class="header-section-number">9.6.2</span> Source and sink summary</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#environmental-response-function-erf-analysis"><span class="header-section-number">9.7</span> Environmental response function (ERF) analysis</a></li>
-<li>
-<a class="nav-link" href="#habitat-condition-assessment"><span class="header-section-number">9.8</span> Habitat condition assessment</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ruppia-hsi-sexual-lifecycle">Ruppia HSI (sexual lifecycle)</a></li>
-<li><a class="nav-link" href="#ruppia-hsi-asexual-lifecycle">Ruppia HSI (asexual lifecycle)</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#coorong-decision-making-framework-dmf"><span class="header-section-number">9.9</span> Coorong Decision Making Framework (DMF)</a></li>
-<li><a class="nav-link" href="#summary-5"><span class="header-section-number">9.10</span> Summary</a></li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -2303,7 +2220,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 20-July-2022.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 29-June-2023.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -2316,7 +2233,7 @@ while (i < img.length) {
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

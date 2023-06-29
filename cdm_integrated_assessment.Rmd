@@ -27,7 +27,9 @@ A summary of the model lineage and provenance of the different simulations that 
 
 [**Generation 1.5** model]{style="color:brown"} : Original mesh, 2D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones with statically assigned flux rates based on observed parameters.
 
-[**Generation 2** model]{style="color:darkblue"} : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.
+[**Generation 2.0** model]{style="color:darkblue"} : Habitat optimised mesh, 2D/3D hydrodynamics, surface wave coupling, 4 phytoplankton functional groups, 31 sediment zones including optional simulation of dynamic, depth-resolved sediment properties, revised life-stage specific macroalgae model, and updated Ruppia habitat thresholds. Uses the 2.0.5 release AED code-base.
+
+[**Generation 2.1** model]{style="color:green"} : Based on Gen 2.0, refined domain, mesh, bathymetry and material zones to integrate the lastest datasets and improve the Ruppia and macroalgae performance, and update model run time to Nov 2022.
 
 The results from Generation 0 model and Generation 1 model have been reported separately (and their results archived in [Appendix B : Results Archive]). In this chapter, we focus on the results from the Generation 1.5 and Generation 2 simulations that include the model developments related to the biogeochemistry and habitat, as detailed in the previous chapters. To access a specific model version, refer to the CDM version downloads within GitHub.
 
@@ -182,13 +184,13 @@ knitr::include_graphics(c("images/assessment/GEN2 performance - all data - table
 
 ### Nutrient budgets {.panelset}
 
-A methodology for nutrient flux and budget analysis has been developed. For the nutrient budget analysis, all of the nutrient pools (dissolved and particulate carbon, nitrogen and phosphorus, macroalgae and Ruppia) can be summarized for different regions of the estuary (north, south etc.). As an example of this method, the results from a period of four years (01/01/2018 to 01/01/2022) were summarized for nitrogen budgeting of NCL and SCL region in Figure 6.4 and 6.5, respectively. The nutrient budgeting analysis showed that the dissolved organic matter is the major nitrogen pool in both the lagoons, while particle organic matter and the nitrogen assimilated by phytoplankton also presented to be major nutrient pools (panel "a"). The sediment diffusion release of ammonium and the nitrogen loss due to phytoplankton burial into the sediment dominate the interaction at the sediment-water interface (panel "b"), which also presented a clear seasonal pattern. The boundary exchange fluxes are dominated by the organic matters in coincident to the major pools in the water (panel "c"). The daily change flux rate varied between 0 to \>20 tonne/day in the north lagoon, compared to that of between 0 to \~10 tonnes/day in the south lagoon, indicating stronger hydrodynamic transportation in the north lagoon affected by tidal intrusion and barrage flow. The results showed a net cumulative of nutrient in the sediment (panel "d"), indicating the sediment acting as a sink for the nutrients.
+A methodology for nutrient flux and budget analysis has been developed. For the nutrient budget analysis, all of the nutrient pools (dissolved and particulate carbon, nitrogen and phosphorus, macroalgae and Ruppia) can be summarized for different regions of the estuary (north, south etc.). As an example of this method, the results from a period of five years (01/07/2017 to 01/07/2022) were summarized for nitrogen budgeting of NCL and SCL region in Figure 9.9 - 9.12. The nutrient budgeting analysis showed that the dissolved organic matter is the major nitrogen pool in both the lagoons, while particle organic matter and the nitrogen assimilated by phytoplankton also presented to be major nutrient pools (panel "a"). The sediment diffusion release of ammonium and the nitrogen loss due to phytoplankton burial into the sediment dominate the interaction at the sediment-water interface (panel "b"), which also presented a clear seasonal pattern. The boundary exchange fluxes are dominated by the organic matters in coincident to the major pools in the water (panel "c"). The daily change flux rate varied between 0 to \>20 tonne/day in the north lagoon, compared to that of between 0 to \~10 tonnes/day in the south lagoon, indicating stronger hydrodynamic transportation in the north lagoon affected by tidal intrusion and barrage flow. The results showed a net cumulative of nutrient in the sediment (panel "d"), indicating the sediment acting as a sink for the nutrients.
 
 #### NITROGEN (**CSL**) {.unnumbered}
 
 ```{r ass-budget1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon."}
 
-knitr::include_graphics("images/assessment/5aSCL-4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/5aSCL-5yrs_nitrogen_budget_timeseries.png")
 
 ```
 
@@ -196,7 +198,7 @@ knitr::include_graphics("images/assessment/5aSCL-4yrs_nitrogen_budget_timeseries
 
 ```{r ass-budget2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) nitrogen pools, (b) nitrogen sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon."}
 
-knitr::include_graphics("images/assessment/4aNCL-4yrs_nitrogen_budget_timeseries.png")
+knitr::include_graphics("images/assessment/4aNCL-5yrs_nitrogen_budget_timeseries.png")
 
 ```
 
@@ -204,7 +206,7 @@ knitr::include_graphics("images/assessment/4aNCL-4yrs_nitrogen_budget_timeseries
 
 ```{r ass-budget3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the south lagoon."}
 
-knitr::include_graphics("images/assessment/5bSCL-4yrs_phosphorus_budget_timeseries.png")
+knitr::include_graphics("images/assessment/5bSCL-5yrs_phosphorus_budget_timeseries.png")
 
 ```
 
@@ -212,7 +214,7 @@ knitr::include_graphics("images/assessment/5bSCL-4yrs_phosphorus_budget_timeseri
 
 ```{r ass-budget4, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Time-series plot of daily changes in (a) phosphorus pools, (b) phosphorus sources and sinks at the atmospheric and sediment interfaces, (c) exchange fluxes at the boundaries, and (d) cumulative changes in water and sediment of the north lagoon."}
 
-knitr::include_graphics("images/assessment/4bNCL-4yrs_phosphorus_budget_timeseries.png")
+knitr::include_graphics("images/assessment/4bNCL-5yrs_phosphorus_budget_timeseries.png")
 
 ```
 
@@ -220,13 +222,12 @@ knitr::include_graphics("images/assessment/4bNCL-4yrs_phosphorus_budget_timeseri
 
 ### Source and sink summary
 
-Summary diagrams of the nitrogen imports vs. exports for both lagoons are presented in Figure \@ref(fig:ass-pie), which shows that, for the north lagoon (CNL), the nutrient loads transported though the Pelican Pt. are in comparable scales to the sediment load (56% vs. 44% of total sources), while the exports due to sedimentation/burial and transport to south lagoon though Parnka Pt are about 65% and 35% of total loss, respectively. For the south lagoon (CSL), the sediment nutrient loads was the major source (79% of total sources), and the sedimentation loss was also the major sink (92% of total sinks), indicating the internal nutrient cycling overcame the hydrodynamic transport of nutrient be to the dominant pathway of nutrient cycling.
-
+Averaging the nitrogen and phosphorus pathways over the 5-year study period highlights the general fate of external nutrient loads entering the system, which is conceptualised as the Coorong “conveyer belt” (Figure 9.13). In summary, the nutrient loads with the barrage flows were the dominant source, representing 99% of total catchment nutrient load from the barrages and Salt Creek. There was active exchange of water and nutrient at the Murray mouth, where most of the nitrogen and phosphorus entering the Coorong through the barrages were exported to the ocean. The net fluxes transported to the CNL and to the CSL showed a gradual decrease, indicating decreasing connectivity from north to south. In CNL, the nitrogen fluxes by sediment release and settling were in the same order to that by transport into the CNL. While in CSL, the internal sediment fluxes were one order higher to that by transport through the boundary. However, although there was fast exchange of nitrogen at the sediment-water interface, the net accumulation in the CSL sediment of nitrogen (4.0% of total catchment load) and of phosphorus (4.1% of total catchment load) was relatively slow and in same order to the boundary exchange.
 <center>
 
 ```{r ass-pie, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL)."}
 
-knitr::include_graphics("images/assessment/6_nutrient_budgeting_summary_plot.png")
+knitr::include_graphics("images/assessment/5yr_NP.jpg")
 ```
 
 </center>

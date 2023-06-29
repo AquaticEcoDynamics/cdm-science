@@ -1,13 +1,6 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
 # Sediment Biogeochemistry
 
 ## Overview
-
-Test
 
 In environments like the Coorong, where nutrient dynamics influence the rest of the ecosystem, management often focuses on reducing nutrient inputs and increasing flushing to the sea. However, it is important to understand the role of the sediment as a long term source or sink of nutrients.
 
@@ -17,70 +10,25 @@ Under some conditions, the sediment stores can release nutrients to the water co
 
 The aim of this Chapter is to summarise the development of a sediment biogeochemistry model suitable for application to the Coorong, accounting for controls on nutrient cycling and burial, and able to be used to assess relevant management scenarios. The sediment model has been developed to be able capture and contrast different environments along the length of the Coorong. Since the north lagoon of the Coorong has higher populations of macrobiota (Dittman et al. 2021), which cause mixing of oxygen into deeper sediment layers, which in turn helps in removal of organic matter and reduced nitrogen, it was also a requirement that the model needs to include a depth of bioturbation and bioirrigation by the macrobiota living in the sediment. In contrast, in the south lagoon there is less bioturbation of the sediment and it is more likely that organic matter is consumed through anaerobic processes. The production of toxic $H_2S$ gas through sulfate reduction would lead to a further degradation of the ecosystem.
 
-For details of the CANDI-AED model and scientific description, please refer to the AED Manual <here>.
 
 ## Model approach: CANDI-AED
 
-### Sediment reactive transport model {.unnumbered}
-
-The heart of this model is a reaction, diffusion, advection model termed CANDI-AED; a schematic overview of the model is shown in Figure \@ref(fig:dev-pic00). The model resolves the 1D (vertical) sediment and pore-water concentration profiles. Each active sediment "zone" is a column discretized into a user-defineable number of layers that start at thicknesses of around 1 mm at the sediment-water interface and increase down to a pre-defined sediment depth.
-
-```{r dev-pic00, echo = FALSE, out.width='80%', class = "text-image", fig.align='center', fig.cap = "CANDI-AED includes chemical processes of organic matter transformation and oxidation, and reduction/oxidation, crystallisation, adsorption and precipitation reactions of inorganic by-products. Most of the processes are triggered by the input of POM at the sediment-water interface."}
-
-knitr::include_graphics("images/dev/sed_image2.png")
-
-```
-
-The CDM sediment modelling approach uses the CANDI-AED model configurable through the AED $SDG$ module, as outlined in the [AED science manual](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html). The configuration used in the CDM simulations resolves both physical (e.g. pore-water diffusion or bioturbation) and chemical (e.g., redox transformations) processes as summarised below.
-
-**Chemical reactions**
-
-The dynamic model considers two types of reactions - the slow, kinetically controlled reactions, and the fast thermodynamically based equilibrium reactions. The latter are simulated in the sediment through appropriate configuration of the geochemistry reactions; the configuration of the equilibrium model applies to both the water and each of the sediment layers. The kinetically controlled reactions are mostly microbially-mediated and include the reactions for organic matter breakdown and eventual oxidation, the re-oxidation of various by-products and the dynamics of the metal sulfides.
-
-The organic matter ($OM$) degradation pathway considers labile and refractory $DOM$ components ($DOM_L$ and $DOM_R$ respectively) and the breakdown pathway simulated is conceptually summarized in Figure \@ref{fig:sed_dynamic}. Reactions included in the kinetic component include the hydrolysis of the complex (e.g., high molecular weight) $OM$ pools ($POM_{VR}$, $POM_R$, $DOM_R$, $POM_L$) and transformation of low molecular weight (LMW) $DOM_L$ by oxidants ($O_2$, $MnO_2$, $Fe(OH)_3$ and $SO_4^{2-}$ - the so-called 'terminal metabolism'), and the release of resulting nutrients ($NO_3^-$, $NH_4^+$, $PO_4^{3-}$) and reduced by-products ($Mn^{2+}$, $Fe^{2+}$, $N_2$, $H_2S$, $CH_4$) and $CO_2$. In addition to the primary redox reactions associated with $OM$ breakdown, the model also includes numerous secondary reactions, such as oxidation of reduced by-products (e.g., Fe or S oxidation).
-
-**Physical processes**
-
-The model accounts for advection and diffusion processes of solid and solute consituents. Porosity ($\phi$) is defined to decrease with depth, and for the porewater components, diffusion coefficients are used that are based on free-solution molecular diffusion constants corrected for sediment tortuosity, $θ$. For bioturbation, the model uses a diffusion coefficient that varies with depth ($D_{B(z)}$) as a two layer function or a Gaussian decrease. The irrigation of pore water is also simulated to account for the activity benthic infauna in the upper sediment.
-
-Fluxes of dissolved species occur between the sediment and water column depending on the sediment type (e.g. porosity), the solute type, and the degree of interfacial turbulence being experienced at the sediment-water interface. Dissolved fluxes are calculated from the concentration gradient at the sediment-water interface according to Fick's Law:
-
-<center>
-
-```{=tex}
-\begin{equation}
-F = D_{0}\frac{\Delta C}{\Delta x} = \frac{D_{0}}{\delta} (C_{bw} - C_{1})
-(\#eq:biogeochem1)
-\end{equation}
-```
-</center>
-
-where $D_{0}$ is the diffusivity at the SWI, $\delta$ is the thickness of the diffusive boundary layer at the sediment-water interface, defined as the length scale of the first sediment layer, $C_{bw}$ is the bottom water concentration and $C_{1}$ is the concentration in the top sediment layer. The diffusivity in these models typically assumes molecular diffusivity rates, which is likely to underestimate the real diffusivity experienced in a shallow lagoon such as the Coorong. In the CDM, a new parameterisation to resolve diffusivity based on sediment type and water turbulence properties was added (see section on Sediment-water interface fluxes). 
-
-<br>
-
-### Model extensions and development {.unnumbered}
+The heart of this model is a reaction, diffusion, advection model termed CANDI-AED. For details of the CANDI-AED model and scientific description, please refer to the AED Manual <here>.
 
 The above model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons [@paraska2014]. Three main developments have been undertaken to adapt the CANDI_AED vertical column model to the Coorong application:
 
 -   Improved parameterisation of diffusion at the sediment-water interface, based on $\tau_b$.
 -   Inclusion of functionality to resolve resuspension effects
 -   Addition of MPB and macrophyte roots $O_2$ sources into the sediment
-<<<<<<< HEAD
-<<<<<<< HEAD
 -   Dynamic bioturbation rates linked to salinity and $H_2S$  concentrations
-=======
 -   Bioturbation rates linked to salinity and $H_2S$ concentrations
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-=======
 -   Bioturbation rates linked to salinity and $H_2S$ concentrations
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
 -   $NH_4^+$, $PO_4^{3-}$ and $DOM$ adsorption
 -   Allocation of a unreactive organic matter pool
 
 In addition, to the physical and chemical processe updates described abve, the $SDG$ module was further developed to support multi-zone operation of the CANDI-AED model, dynamic links with MPB, MAG and MAC modules, and the ability to allow for spin-up of sediment profiles.
 
-#### Resolving sediment zonation {.unnumbered}
+### Resolving sediment zonation {.unnumbered}
 
 The model was developed to allow the use of multiple independent sediment zones across the domain, which are identical to the above CANDI-AED description but are not necessarily coincident with the grid-structure of the water. This way sediment zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment are averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure \@ref(fig:dev-pics3). Using zones is a practical compromise between using fewer sediment calculations (for computational efficiency) and more calculations (for capturing spatial heterogeneity in sediment properties and their fluxes).
 
@@ -90,7 +38,7 @@ knitr::include_graphics("images/dev/sed_picture5.png")
 
 ```
 
-#### Sediment-water coupling {.unnumbered}
+### Sediment-water coupling {.unnumbered}
 
 The sediment and hydrodynamic models are coupled at the sediment-water interface (Figure \@ref(fig:dev-pics5)). The AED model setup has three separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:
 
@@ -104,19 +52,10 @@ knitr::include_graphics(c("images/dev/sed_picture3.png","images/dev/sed_picture4
 
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 **Zone tracer experiment**. To test the new sediment-water coupling functions, a simple simulation was set up using a simulation with five zones. A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones were set as active sediment model zones, with especially high concentrations of tracer. The simulation was used to show that the flux link was working between the sediment and the water, including the zone averaging algorithm.
 
-=======
-**Zone tracer experiment**. To test the new sediment-water coupling functions, a simple simulation was set up using a simulation with five zones. A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones were set as active sediment model zones, with especially high concentrations of tracer. The simulation was sued to show the flux link was working between the sediment and the water, including the zone averaging algotirhm.
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-=======
-**Zone tracer experiment**. To test the new sediment-water coupling functions, a simple simulation was set up using a simulation with five zones. A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones were set as active sediment model zones, with especially high concentrations of tracer. The simulation was sued to show the flux link was working between the sediment and the water, including the zone averaging algotirhm.
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
 
-#### Sediment-water interface fluxes {.unnumbered}
+### Sediment-water interface fluxes {.unnumbered}
 
 Flux across the sediment-water interface was governed by three factors:\
 - Advection\
@@ -138,23 +77,11 @@ knitr::include_graphics("images/dev/sed_Bioturb.png")
 
 ```
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Bioirrigation was set up as a depth at which non-local transport occurred, using the parameter *x~irrig~*. The value for *x~irrig~* can be found in the physical parameters table below, and as with *x~1~*, the depths of *x~irrig~* were assigned to each zone, to reflect the decrease of benthic fauna in the southern zones. 
 
 Within the Coorong, in the hot summer months as the water in the southern lagoon evaporates, the remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment. The model for bioturbation and irrigation was set to  update at each time step. As $F_{Sal}$ and $F_{Sal}$ were updated at each time step, bioturbation and bioirrigation were therefore dynamically dependent on water column salinity and $H_{2}S$ concentration.
-=======
-Bioirrigation was set up as a depth at which non-local transport occurred, using the parameter *x~irrig~*. The value for *x~irrig~* can be found in the physical parameters table above, and as with *x~1~*, the depths of *x~irrig~* were assigned to each zone, to reflect the decrease of benthic fauna in the southern zones.
 
-Within the Coorong, particularly, in the hot summer months as the water in the southern lagoon evaporates, the remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment. The model for bioturbation and irrigation was set to update at each time step. As $F_{Sal}$ and $F_{Sal}$ were updated at each time step, bioturbation and bioirrigation were therefore dynamically dependent on water column salinity and $H_{2}S$ concentration.
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-=======
-Bioirrigation was set up as a depth at which non-local transport occurred, using the parameter *x~irrig~*. The value for *x~irrig~* can be found in the physical parameters table above, and as with *x~1~*, the depths of *x~irrig~* were assigned to each zone, to reflect the decrease of benthic fauna in the southern zones.
-
-Within the Coorong, particularly, in the hot summer months as the water in the southern lagoon evaporates, the remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment. The model for bioturbation and irrigation was set to update at each time step. As $F_{Sal}$ and $F_{Sal}$ were updated at each time step, bioturbation and bioirrigation were therefore dynamically dependent on water column salinity and $H_{2}S$ concentration.
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-
-#### Denitrification
+### Denitrification
 
 One way to remove nitrogen from the modelling domain is conversion of dissolved N to $N_2$, which then makes it unreactive: this is generally referred to as 'denitrification'. The two specific processes that create $N_2$ that are used in this model are deammonification ($R_{NH_{4}NO_{2}}$) and denitrousation ($R_{Denitrousation}$). 
 
@@ -162,7 +89,7 @@ Deammonification is the reaction between $NO_2^-$ and $NH_4^+$ and so it is depe
 
 Denitrousation converts the N in $N_2O$ to $N_2$ by oxidising organic matter, and so the rate is highly dependent on organic matter concentration, as well as formation of $N_2O$. Both of these processes require a dynamic oxic-anoxic environment to create the reactants and allow the denitrification reactions to occur uninhibited. These reactions are also inhibited by high salinity, through the $F_{Sal}$ term.
 
-#### Salinity and denitrification {.unnumbered}
+### Salinity and denitrification {.unnumbered}
 
 Salinity was set as a permanently linked variable from the water column AED model, without using *water_link*.
 
@@ -203,7 +130,7 @@ $F_{Sal}$ was applied to biota-driven mixing (see below) and to the nitrogen red
 
 The term affected all rates equally and so did not favour the concentration of any of the species. However, it slowed down the transformation of each species into the other, and increased the effect of transport reactions and depth-driven concentration gradients. Since $PON_R$, $O_2$ and $NO_3^-$ entered the domain from above and $NH_4^+$ generally accumulated with depth, N variables in areas of high salinity were subject to more transport before they were reacted.
 
-#### Sulfur and denitrification {.unnumbered}
+### Sulfur and denitrification {.unnumbered}
 
 As mentioned above, $SO_4^{2-}$ bottom water concentrations were tied to salinity and initial $SO_4^{2-}$ concentrations were set to reflect the salinity gradient along the estuary. Consequently, the generation of $H_{2}S$ was higher in the southern zones. High $H_{2}S$ concentration was set to inhibit biota-driven mixing and nitrogen redox reactions, on the basis that $H_{2}S$ is toxic to organisms. An $H_{2}S$ factor, $F_{Sul}$, was set up as an inhibition factor similar to other inhibition factors in the sediment model.
 
@@ -232,7 +159,7 @@ As with $F_{Sal}$, $F_{Sul}$ was applied to biota-driven mixing (see below) and 
 -   *R~NO2O2~*
 -   *NH~4~^+^ adsorption*
 
-#### Nutrient sorption and burial {.unnumbered}
+### Nutrient sorption and burial {.unnumbered}
 
 A process for removing nutrients from the active zone was burial of the nutrients deep in the sediment. As much of the nutrient calibration was based around calculating the mass in the top 5 cm (see Calibration section above), a measurement of burial was defined as the change in mass at 5 cm over time.
 
@@ -276,17 +203,11 @@ PO_{4_{Dissolved}}^{3-}   = \frac {1} {1 + K_{PO_4p} (Fe(OH)_{3A} + Fe(OH)_{3B})
 
 \end{eqnarray}
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 Organic P and 'residual' P were assumed to be the two largest fractions of sediment P, based on the work of Koch et al. (2001) from a study site similar to the Coorong. The 'residual' P was bound to sediment particles and extracted with acid. The ratio of PIP:POP was 40:60 in the initialisation step.
 
 The final feature developed for nutrient burial for this project was the very unreactive organic matter parameter. As mentioned in the model setup above, the organic matter setup in this model has labile and refractory phases, as state variables. The model was extended in this project by dropping the reactivity of the particulate refractory phase towards zero as the concentration approached a minimum. For $PON_R$, the parameter *ponu* set the minimum concentration and *KOMPres_N* set the sensitivity of the decrease, as in the equation below. The equivalent parameters for C an P were *pocu* and *popu*, and *KOMPres_C* and *KOMPres_P*.
-=======
-=======
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-The final feature developed for nutrient burial for this project was the very unreactive organic matter parameter. As mentioned in the model setup above, the organic matter setup in this model has labile and refractory phases, as state variables. The model was extended in this project by dropping the reactivity of the particulate refractory phase towards zero as the concentration approaches a minimum. For $PON_R$, the parameter *ponu* set the minimum concentration and *KOMPres_N* set the sensitivity of the decrease, as in the equation below. The equivalent parameters for C an P were *pocu* and *popu*, and *KOMPres_C* and *KOMPres_P*.
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
+
 
 ```{=tex}
 \begin{eqnarray}
@@ -300,7 +221,7 @@ R_{PONR} = (ponr2donr) (komlim)
 ```
 (The equation above is a simplified version, where the full equation had checks to prevent the rate going below zero, plus the respiration processes of $MPB$.)
 
-#### Plants, microphytobenthos and macroalgae
+### Plants, microphytobenthos and macroalgae
 
 $O_2$ is injected into the sediment from microphytobenthic algae ($MPB$) and from plant roots (\@ref(fig:dev-picsbudgetsetup-5)). The oxygen is not part of the mass balance of the ecosystem and it is not in stoichiometric balance with biomass or $∑CO_2$. The depths where the $O_2$ is injected are set separately for $MPB$ and roots. The $O_2$ in these layers from $MPB$ is set as a rate of both gross primary production ($Rgpp O_2 input$) and respiration ($Rrsp O_2 consumption$). The rate $Rgpp$ is calculated as a function of the $MPB$ production rate, the parameter *fgpp~sflux~* and a decay with depth. The production rate is linked directly to the rate calculated in the water column model. Similarly, the rate $Rrsp$ is calculated as a function of the respiration rate, the same parameter *fgpp~sflux~* and a decay with depth. The respiration rate is also linked directly to the rate calculated in the water column model. Below the parameter *MPBDepth*, $Rgpp$ is zero, which means that the $MPB$ cannot photosynthesise without light. Below *MPBDepth* the rate $Rrsp$ is the product of $MPB$ biomass and 52 days, which means that the cells die within a week without access to light.
 
@@ -334,15 +255,7 @@ knitr::include_graphics(c("images/dev/sed_Half Page zones11to104.png","images/de
 
 #### Validation sites and data {.unnumbered}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 A range of data was collected and is documented in [Appendix D](Appendix D: Sediment Data). In summary, there were five broad categories of field data available from the HCHB research project surveys for the $SDG$ module setup and parameterisation:
-=======
-A range of data was collected and is documented in [Appendix A](Appendix%20A%20:%20Data%20Catalogue). In summary, there were five broad categories of field data available from the HCHB research project surveys relevant for the $SDG$ module setup and parameterisation:
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
-=======
-A range of data was collected and is documented in [Appendix A](Appendix%20A%20:%20Data%20Catalogue). In summary, there were five broad categories of field data available from the HCHB research project surveys relevant for the $SDG$ module setup and parameterisation:
->>>>>>> e742eb357edda93aef0e5adf1c61f2d7bc8da791
 
 *Grab samples -- C, N, P, Mn, Fe, S* : These were available for many sites but only one or two depths. They were useful for averaging a concentration at depth within a zone. These were key variables for sediment biogeochemistry.
 
