@@ -1,5 +1,7 @@
 # Sediment Biogeochemistry
 
+<br>
+
 ## Overview
 
 This section outlines the examination of the Coorong sediment environment and the simulation of its key processes using CANDI-AED. This section consists of the theory, a summary of relevant Coorong data, how the theory is implemented in CANDI-AED, a standalone sediment simulation and a coupled sediment-water simulation. 
@@ -125,7 +127,10 @@ The grab samples had TOC% measured between 0.1 and 6.6 %C, averaging 2.7%. This 
 
 The heart of this model is a reaction, diffusion, advection model termed CANDI-AED. For details of the CANDI-AED model and scientific description, please refer to the AED Manual [here](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html).
 
-The model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons [@paraska2014]. Several developments have been undertaken to adapt the CANDI_AED vertical column model to the Coorong application:
+The model approach is broadly used in lakes, ocean and estuarine environments, but there remain few cases in shallow lagoons [@paraska2014]. 
+
+### Model developments made during the Coorong project
+Several developments have been undertaken to adapt the CANDI_AED vertical column model to the Coorong application:
 
 -  Improved parameterisation of diffusion at the sediment-water interface, based on $\tau_b$.
 -  Inclusion of functionality to resolve resuspension effects
@@ -138,7 +143,55 @@ The model approach is broadly used in lakes, ocean and estuarine environments, b
 
 In addition, to the physical and chemical process updates described above, the $SDG$ module was further developed to support multi-zone operation of the CANDI-AED model, dynamic links with MPB, MAG and MAC modules, and the ability to allow for spin-up of sediment profiles.
 
-### Resolving sediment zonation {.unnumbered}
+
+
+
+
+
+## Methods
+
+### Implementation of theory and Coorong observations in the sediment model setup
+
+#### Salinity – implementation on mixing and nitrogen redox
+Two functions to connect salinity to mixing and nitrogen reactions were developed for the sediment model during this project: $F_{Sal}$ and $F_{Sul}$. The full explanation for these can also be found in the aed-science manual, chapter 14.3. The $F_{Sal}$ function decreases from 1 to 0 as salinity increases, with two parameters for salinity concentrations that set the range over which the function works (35 and 70 PSU). The $F_{Sul}$ function decreases from 1 to 0 as $H_2S$ increases, which occurs as organic matter undergoes sulphate reduction. These two functions were applied to both macrofauna mixing processes, by multiplying the process rate by the value between 0 and 1. $F_{Sal}$ was also applied to all nitrogen redox reactions. Therefore, as salinity increased, and as $SO_4^{2-}$ increased and indirectly created H2S, mixing and nitrogen redox were all reduced. $F_{Sal}$ was applied to the nitrogen redox reactions, but not the hydrolysis breakdown pathways that generated NH4+ (Figure 5).
+ 
+Figure 5 Schematic of the nitrogen breakdown pathways from PONR to N2. PONL was not included in this diagram in order to simplify it, and because PONR was the major PON pool. The salinity inhibition factor, $F_{Sal}$, was applied to those processes where $F_{Sal}$ is beside the arrow.
+Iron and sulfur – implementation
+The influx of redox active Fe(OH)3A was set to 80 mmol m-2 y-1, and a range of boundary fluxes were tested alongside different organic matter influxes. SO42- concentration was set in proportion to salinity, as described in the section above.
+The iron and sulfur cycles function as described in the aed-science manual. In brief, Fe(OH)3A reacts with organic matter to produce Fe2+ and its presence inhibits sulfate reduction. SO42- reacts with organic matter to produce H2S. The by-products Fe2+ and H2S react together to form FeS. 
+Simulations were run with the parameter rxn_mode set to each option, 0 to 4, to test the effect of each option. The options are outlined in the aed-science manual. In brief, with options 0 and 1, FeS does not precipitate; with option 2 FeS precipitates at a constant kinetic rate; with options 3 and 4 FeS precipitates in proportion to the concentrations of the reactants and products already present. Options 2, 3 and 4 often created numerical instability problems. 
+Organic matter– implementation
+The sediment model has several organic matter models available to it, as outlined in the aed-science manual. This simulation used OMModel set to 2, which has separate state variables for each of dissolved or particulate, and refractory or labile organic C, N and P – 12 variables. An additional three variables were developed for this project, POCS, PONS and POPS, which were representative of the algal deposition from the water column – 15 variables in total. The boundary fluxes were set to average results from outputs from the water column model. Labile phases were set to be 10% of the value of the refractory variable. This simulation used the advanced nitrogen redox model shown above in Figure 4. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Coupled model methods
+
+#### Resolving sediment zonation {.unnumbered}
 
 The model was developed to allow the use of multiple independent sediment zones across the domain, which are identical to the above CANDI-AED description but are not necessarily coincident with the grid-structure of the water. This way sediment zones may be defined for the domain, and depending on the nature of the grid, the water cells above the sediment are averaged for the purposes of the interfacial fluxes, allowing more efficient simulations (see for example Figure \@ref(fig:dev-pics3). Using zones is a practical compromise between using fewer sediment calculations (for computational efficiency) and more calculations (for capturing spatial heterogeneity in sediment properties and their fluxes).
 
@@ -148,7 +201,7 @@ knitr::include_graphics("images/dev/sed_picture5.png")
 
 ```
 
-### Sediment-water coupling {.unnumbered}
+#### Sediment-water coupling {.unnumbered}
 
 The sediment and hydrodynamic models are coupled at the sediment-water interface (Figure \@ref(fig:dev-pics5)). The AED model setup has three separate functions for coupling the bottom-most cell of the TUFLOW-FV hydrodynamic model to the top-most layer of the sediment model:
 
@@ -162,10 +215,20 @@ knitr::include_graphics(c("images/dev/sed_picture3.png","images/dev/sed_picture4
 
 ```
 
-**Zone tracer experiment**. To test the new sediment-water coupling functions, a simple simulation was set up using a simulation with five zones. A dissolved species was used, which had a reaction rate of zero, and so it acted as a tracer. Zones were set as active sediment model zones, with especially high concentrations of tracer. The simulation was used to show that the flux link was working between the sediment and the water, including the zone averaging algorithm.
 
 
-### Sediment-water interface fluxes {.unnumbered}
+
+
+
+
+
+
+
+
+
+
+
+#### Sediment-water interface fluxes {.unnumbered}
 
 Flux across the sediment-water interface was governed by three factors:\
 - Advection\
@@ -191,15 +254,9 @@ Bioirrigation was set up as a depth at which non-local transport occurred, using
 
 Within the Coorong, in the hot summer months as the water in the southern lagoon evaporates, the remaining water becomes hypersaline. The hypersaline water kills the macroinvertebrate fauna, which causes a decrease in fauna-driven mixing of the upper sediment. The model for bioturbation and irrigation was set to update at each time step. As $F_{Sal}$ and $F_{Sal}$ were updated at each time step, bioturbation and bioirrigation were therefore dynamically dependent on water column salinity and $H_{2}S$ concentration.
 
-### Denitrification
 
-One way to remove nitrogen from the modelling domain is conversion of dissolved N to $N_2$, which then makes it unreactive: this is generally referred to as 'denitrification'. The two specific processes that create $N_2$ that are used in this model are deammonification ($R_{NH_{4}NO_{2}}$) and denitrousation ($R_{Denitrousation}$). 
 
-Deammonification is the reaction between $NO_2^-$ and $NH_4^+$ and so it is dependent on the concentration of the reactants, and the process is also inhibited by $O_2$. Deammonification relies on partially-oxidised N as $NO_2^-$ as well as an anoxic environment. 
-
-Denitrousation converts the N in $N_2O$ to $N_2$ by oxidising organic matter, and so the rate is highly dependent on organic matter concentration, as well as formation of $N_2O$. Both of these processes require a dynamic oxic-anoxic environment to create the reactants and allow the denitrification reactions to occur uninhibited. These reactions are also inhibited by high salinity, through the $F_{Sal}$ term.
-
-### Salinity and denitrification {.unnumbered}
+#### Salinity coupling method {.unnumbered}
 
 Salinity was set as a permanently linked variable from the water column AED model, without using *water_link*.
 
@@ -240,7 +297,7 @@ $F_{Sal}$ was applied to biota-driven mixing (see below) and to the nitrogen red
 
 The term affected all rates equally and so did not favour the concentration of any of the species. However, it slowed down the transformation of each species into the other, and increased the effect of transport reactions and depth-driven concentration gradients. Since $PON_R$, $O_2$ and $NO_3^-$ entered the domain from above and $NH_4^+$ generally accumulated with depth, N variables in areas of high salinity were subject to more transport before they were reacted.
 
-### Sulfur and denitrification {.unnumbered}
+#### Sulfur and denitrification {.unnumbered}
 
 As mentioned above, $SO_4^{2-}$ bottom water concentrations were tied to salinity and initial $SO_4^{2-}$ concentrations were set to reflect the salinity gradient along the estuary. Consequently, the generation of $H_{2}S$ was higher in the southern zones. High $H_{2}S$ concentration was set to inhibit biota-driven mixing and nitrogen redox reactions, on the basis that $H_{2}S$ is toxic to organisms. An $H_{2}S$ factor, $F_{Sul}$, was set up as an inhibition factor similar to other inhibition factors in the sediment model.
 
@@ -481,7 +538,7 @@ The flux of $Fe(OH)_{3A}$ from the water column to the sediment is set from the 
 #### Initialisation and spinup {.unnumbered}
 
 Most chemical species were initialized at zero concentration. Some species were initialised as guided by the available field data (Table \@ref(tab:3dev-init)), or where field measurements were not available, then literature sources for coastal sediment were assumed. From the initial tests, it was assumed the bulk of the nutrients were the in the refractory organic phases, e.g., $PON_R$ and $POP_R$.
-=======
+
 Most chemical species are initialized at zero concentration. Some species are initialised as guided by the available field data (Table \@ref(tab:3dev-init)), or where field measurements were not available, then literature sources for coastal sediment were assumed. From the initial tests, it was assumed the bulk of the nutrients were the in the refractory organic phases, e.g., $PON_R$ and $POP_R$.
 
 ```{r 3dev-init, echo=FALSE, message=FALSE, warning=FALSE}
@@ -521,7 +578,7 @@ knitr::include_graphics(c("images/dev/sed_OMInitialProfiles-02.png"))
 ##### Physical domain and numerical parameters {.unnumbered}
 
 The physical properties of the sediment are given in Table \@ref(tab:3dev-Mixing) and \@ref(tab:3dev-Layers). In general, the SDG module was set to run with a time-step of 2 hours, resolve a vertical sediment depth of 80 cm using 50 layers. 
-=======
+
 The physical properties of the sediment are given in Table \@ref(tab:3dev-Mixing) and \@ref(tab:3dev-Layers). In general, the SDG module was set to run with a time-step of 2 hours, resolve a vertical sediment depth of 80cm using 50 layers.
 
 The physical properties of the sediment are given in Table \@ref(tab:3dev-Mixing) and \@ref(tab:3dev-Layers). In general, the SDG module was set to run with a time-step of 2 hours, resolve a vertical sediment depth of 80cm using 50 layers.
@@ -750,7 +807,7 @@ A side effect of producing the $DON_R$ intermediate product was its flux into th
 
 ##### Denitrification rates {.unnumbered}
 
-In the initial calibration, denitrification processes did not occur in the sediment model, which was in conflict with the rates measured by UA in T&I 1.2.2 (Reference). The high penetration of oxygen into the sediment inhibited the reduction of $NO_3^-$ to $NO_2^-$ and $NO_2^-$ to $NH_4^+$ or $N_2$. Furthermore, there was too little labile dissolved organic matter to consume the oxygen in the upper layers. The salinity and sulphide factors *FSal* and *FSul* inhibited denitrification in the deep sediment.
+In the initial calibration, denitrification processes did not occur in the sediment model, which was in conflict with the rates measured by UA in T&I 1.2.2 (Reference). The high penetration of oxygen into the sediment inhibited the reduction of $NO_3^-$ to $NO_2^-$ and $NO_2^-$ to $NH_4^+$ or $N_2$. Furthermore, there was too little labile dissolved organic matter to consume the oxygen in the upper layers. The salinity and sulphide factors *$F_{Sal}$* and *$F_{Sul}$* inhibited denitrification in the deep sediment.
 
 <br>
 
@@ -880,7 +937,7 @@ knitr::include_graphics(c("images/dev/sed_FSalFSulBioturb_2-02.png"))
 
 Bioturbation and irrigation resulted from\
 - the setup (depths) and\
-- the FSal and FSul gradient along the lagoons (see above).
+- the $F_{Sal}$ and $F_{Sul}$ gradient along the lagoons (see above).
 
 \
 Note that the bioturbation and bioirrigation input parameters were 40 and 200 cm y^-1^, respectively (Figure \@ref(fig:dev-nutpics3)). In the southern zones, these raw inputs were decreased to around 8 for bioturbation and 40 for bioirrigation. The image from Zone 52, which is the intermediate area between the north and south lagoons, illustrates how the dynamic salinity boundary produced a dynamic response from biota-driven mixing. Future work could build in a time lag between the onset of the environmental condition and the result for the benthic fauna.
