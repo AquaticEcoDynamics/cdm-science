@@ -228,7 +228,7 @@ Summary diagrams of the nitrogen imports vs. exports for both lagoons are presen
 
 ```{r ass-pie, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Summary pie chart of nitrogen sources and sinks in the north lagoon (NCL) and south lagoon (SCL)."}
 
-knitr::include_graphics("images/assessment/6_nutrient_budgeting_summary_plot.png")
+knitr::include_graphics("images/assessment/5yr_NP.jpg")
 ```
 
 </center>
