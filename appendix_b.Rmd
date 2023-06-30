@@ -41,7 +41,7 @@ theSheet <- paste(
 theSheet <- str_split_fixed(theSheet, ',', 2)
 
 
-kbl(theSheet, caption = "Model results for GEN 2.1 nWV nSDG simulation (Generation 2 model without wave or dynamic sediment modules engaged.)", align = "l",escape = F,col.names = c("Generation 2  (TIME SERIES)","Generation 2 (TRANSECT)"), ) %>%
+kbl(theSheet, caption = "Model results for GEN 2.1 nWV nSDG simulation (Generation 2.1 model without wave or dynamic sediment modules engaged.)", align = "l",escape = F,col.names = c("Generation 2.1  (TIME SERIES)","Generation 2.1 (TRANSECT)"), ) %>%
 row_spec(0, background = "#14759e", bold = TRUE, color = "white") %>%
   kable_styling(full_width = T,font_size = 10) %>%
     scroll_box(fixed_thead = FALSE)
