@@ -156,7 +156,7 @@ knitr::include_graphics(c("images/assessment/table 6_1-performance table1.png","
 
 <br>
 
-### Generation 2 {.panelset}
+### Generation 2.0 {.panelset}
 
 The error metrics for the Generation 2.0 simulation are shown below.
 
@@ -164,7 +164,7 @@ The error metrics for the Generation 2.0 simulation are shown below.
 
 #### Model performance assessment (no ALS data) {.unnumbered}
 
-```{r ass-004e, echo = FALSE, out.width='99%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge."}
+```{r ass-004e, echo = FALSE, out.width='99%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Performance summary of CDM (GEN 2.0) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge."}
 
 knitr::include_graphics(c("images/assessment/GEN2 performance - no ALS - table1.png","images/assessment/GEN2 performance - no ALS - table2.png"))
 
@@ -172,9 +172,25 @@ knitr::include_graphics(c("images/assessment/GEN2 performance - no ALS - table1.
 
 #### Model performance assessment (all data) {.unnumbered}
 
-```{r ass-005e, echo = FALSE, out.width='99%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Performance summary of CDM (GEN 2) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge."}
+```{r ass-005e, echo = FALSE, out.width='99%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Performance summary of CDM (GEN 2.0) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data except the laboratory data from ALS. Red indicates a poor calibration result where results should be considered with caution, yellow indicates an acceptable level of performance, and green indicates a highly accurate prediction. Click to enlarge."}
 
 knitr::include_graphics(c("images/assessment/GEN2 performance - all data - table1.png","images/assessment/GEN2 performance - all data - table2.png"))
+
+```
+
+<br>
+
+### Generation 2.1 {.panelset}
+
+The error metrics for the Generation 2.1 simulation are shown below.
+
+<br>
+
+#### Model performance assessment (no ALS data) {.unnumbered}
+
+```{r ass-006e, echo = FALSE, out.width='99%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Performance summary of CDM (GEN 2.1) simulating long-term temperature, salinity, and nutrient concentrations, validated with all existing data available (inlcuding ALS). Red indicates a poor calibration result suggesting those variables should be considered with caution, yellow indicates an acceptable level of performance, and green indicates anaccurate prediction. Click to enlarge."}
+
+knitr::include_graphics(c("images/assessment/GEN2p1 performance - no ALS - table1.png","images/assessment/GEN2p1 performance - no ALS - table2.png"))
 
 ```
 
