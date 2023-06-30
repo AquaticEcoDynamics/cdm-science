@@ -874,16 +874,80 @@ A similar pattern was present for $H_2S$ concentrations. At seawater salinity, $
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/LowDeep.pdf")
 
 ```
+
+
+
  
+```{r dev-salsims3, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = ""}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/1.png")
+
+```
+
+
+```{r dev-salsims4, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the concentration of NH4+ (above) and H2S (below). This simulation had salinity ranging from 10 to 50 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained. "}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/2.png")
+
+```
+```{r dev-salsims5, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = " "}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/3.png")
+
+```
+```{r dev-salsims6, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the concentration of NH4+ (above) and H2S (below). This simulation had salinity ranging from 50 to 100 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained. "}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/4.png")
+
+```
+
 
 ####### Uncoupled denitrification rates and salinity {-}
 Deammonification occured in a narrow band of sediment at approximately 8 cm deep and magnitude of approximately 1.5×10-5 mmol L^{-1} y^{-1}. At intermediate salinity, the rate occurred at an oscillating depth. At high salinity, the rate was approximately 1.5×10-6 mmol L^{-1} and occurred at 1 cm deep. This general pattern was consistent for the other nitrogen redox reactions: high salinity caused the nitrogen redox processes to occur closer to the sediment-water interface and at a lower magnitude. 
+
+
+
+
+```{r dev-salsims7, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "General result of denitrification rate across simulations."}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalDenitRate.pdf")
+
+```
+
+```{r dev-salsims8, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example figure for the rate of deammonification in relation to salinity. This simulation had salinity ranging from 25 to 75 PSU. The reaction rate had a decrease in magnitude and depth as salinity increased.  "}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/5.png")
+
+```
+
+```{r dev-salsims9, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Approximate rates of the nitrogen redox processes."}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/NitrogenPools/Npools-09.png")
+
+```
+
+
 
 ###### Distinguishing salinity and SO42- effects on macrofauna mixing
 The general patterns described above are explained through the effects of FSal and FSul. Both factors caused macrofauna mixing to decrease, and to respond quickly to a change in salinity concentration. 
 When the salinity dropped during its seasonal oscillation, with enough mixing, $H_2S$ and $NH_4^+$ could be fluxed out of the sediment. However, if the $H_2S$ concentration reached a minimum value, a positive feedback occurred and the sediment switched over to its new equilibrium state. In the simulation with a salinity between 10 and 50 PSU, the sediment maintained its outflux of $H_2S$, and the concentration reached 0.5 mmol L^{-1} in the deep sediment. With a salinity between 25 and 75 PSU, $H_2S$ accumulated in the shallow sediment and though it oscillated in response to the salinity, it increased with each oscillation. 
 
 In the simulation where FSal and FSul were turned off, even at the highest salinity concentration, $H_2S$ did not accumulate to high concentrations near the sediment-water interface. In the simulation where FSal was off but FSul was on, the result was the same. Although $H_2S$ accumulated to 0.4 mmol L^{-1} in the deepest sediment, this was not enough to cause a switch to a sulphide rich system. With this model setup, FSul alone was not enough to capture an environment in an unhealthy state. Further simulations with only FSul switched on may be able to capture this system with, for example, a longer simulation, a lower K$H_2S$ parameter, or a different FSul inhibition function.  
+
+
+```{r dev-salsims10, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "  "}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/6.png")
+
+```
+
+
+```{r dev-salsims11, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the FSal (above) and FSul (below), in relation to salinity. This simulation had salinity ranging from 50 to 100 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained."}
+
+knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/7.png")
+
+```
+
 
 #### Uncoupled simluation summary {-}
 ##### Salinity and sulfur{-}
