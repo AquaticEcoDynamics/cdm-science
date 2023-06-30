@@ -23,7 +23,7 @@ In the Coorong, observations show a large pool of accumulated organic matter in 
 #### Iron and sulfate reduction redox processes  {.unnumbered}
 Iron reduction and sulfate reduction are anaerobic processes that break down organic matter and produce $Fe^{2+}$ and $∑H_2S$ as reaction by-products (\@ref(fig:dev-boxes1)). These processes occur deeper in the sediment where $O_2$, $NO_3^-$ and $MnO_2$ have already been consumed, and sulfate reduction occurs where $Fe(OH)_3$ has been consumed. The by-products of these two reactions react with each other to form solid $FeS$. 
  
-```{r dev-boxes1, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the iron and sulfate reduction parts of the organic matter oxidation reactions. When both reactions occur, the reduced by-products combine to form $FeS$."}
+```{r dev-boxes1, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the iron and sulfate reduction parts of the organic matter oxidation reactions. When both reactions occur, the reduced by-products combine to form $FeS$."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Boxes&Arrows/FeSO4-24.png")
 
@@ -56,13 +56,13 @@ The modelling study of Van Cappellen and Wang (1996), based in a marine environm
 
 Nitrogen redox processes are important in this context because they control whether bioavailable forms of N, such as $NO_3^-$, are recycled in the ecosystem or removed from the system as $N_2$ gas. The simplest conceptual model of nitrogen redox has $NH_4^+$ oxidised by $O_2$ to $NO_3^-$, and $NO_3^-$ reduced with organic matter to $N_2$(\@ref(fig:dev-boxes3)). A more sophisticated conceptual model includes the N species $NO_2^-$ and $N_2O$, which allows more reaction processes of DNRA, denitrousation and deammonification (also known as anammox)(\@ref(fig:dev-boxes4)). The full explanation can be found in aed-science [chapter 14.3](https://aquaticecodynamics.github.io/aed-science/sediment-biogeochemistry.html#model-description-8) for organic matter reactions, and [chapter 6.4.2.1](https://aquaticecodynamics.github.io/aed-science/inorganic-nitrogen.html#model-description---adding-n2o-reactions) for inorganic reactions.
  
-```{r dev-boxes3, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the nitrogen redox model commonly used in sediment biogeochemical models."}
+```{r dev-boxes3, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the nitrogen redox model commonly used in sediment biogeochemical models."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Boxes&Arrows/NModels-02.png")
 
 ```
 
-```{r dev-boxes4, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the nitrogen redox reactions used in this sediment model. Brown pathways are the oxidation of organic matter by nitrogen species; red pathways are oxidation of nitrogen species by oxygen; the blue pathway is the oxidation of one nitrogen species by another."}
+```{r dev-boxes4, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the nitrogen redox reactions used in this sediment model. Brown pathways are the oxidation of organic matter by nitrogen species; red pathways are oxidation of nitrogen species by oxygen; the blue pathway is the oxidation of one nitrogen species by another."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Boxes&Arrows/NModels-10.png")
 
@@ -102,7 +102,7 @@ Salinity in the Coorong has been observed to range from as low as around 20 PSU 
 Coorong grab samples had been analysed as total iron, measured in mg Fe / kg dry sediment solid. For reference with the other variables in the model, raw Coorong iron measurements were converted to the unit of mmol L^-1^. Grab samples averaged around 6500 mg kg^-1^ and ranged from 700 to 23 000 mg kg^-1^. Each grab was converted using the % moisture measured at that site, which ranged widely from 18% to 81%. The final values ranged from 5 to 158 mmol L^-1^ sediment: this wide range in final values was determined mostly because of the % moisture measurements. The average measurement was 45 mmol L^-1^, which was in line with literature values (35 mmol L^-1^ in Van Cappellen and Wang).
 
 ##### Water column iron{-}
-Total iron data was also available from the water column sampling to use as a boundary at the sediment water interface. Data was available for total iron and dissolved iron (mg L^-1^), at 16 sites along the whole Coorong, for the time period 1998 to 2012. The dissolved iron was typically less than 1% of the total iron. Both were converted to mmol L^-1^ and averaged over the entire time period at each site. The total iron was assumed to be particulate iron and it was converted from mmol L^-1^ to a flux in mmol m^{-2} y^-1^ by multiplying the concentration by the deposition rate of 1 cm y^-1^. Iron fluxes ranged from 0.0042 to 0.0109 mmol L^-1^. These fluxes were much lower than literature values used in sediment models, for example, 750 mmol m^{-2} y^-1^ in Van Cappellen and Wang (1996). Reconciling these differences depends on the settling rate of the iron mineral particles, which is unknown. 
+Total iron data was also available from the water column sampling to use as a boundary at the sediment water interface. Data was available for total iron and dissolved iron (mg L^-1^), at 16 sites along the whole Coorong, for the time period 1998 to 2012. The dissolved iron was typically less than 1% of the total iron. Both were converted to mmol L^-1^ and averaged over the entire time period at each site. The total iron was assumed to be particulate iron and it was converted from mmol L^-1^ to a flux in mmol m^-2^ y^-1^ by multiplying the concentration by the deposition rate of 1 cm y^-1^. Iron fluxes ranged from 0.0042 to 0.0109 mmol L^-1^. These fluxes were much lower than literature values used in sediment models, for example, 750 mmol m^-2^ y^-1^ in Van Cappellen and Wang (1996). Reconciling these differences depends on the settling rate of the iron mineral particles, which is unknown. 
 
 ##### Water column $SO_4^{2-}${-}
 Water column $SO_4^{2-}$ data was available from measurements at 16 sites along the length of the Coorong, for the time period 1998 to 2005. When these measurements were converted from mg L^-1^ to mmol L^-1^ and averaged over time, they corresponded well with the theoretical rule mentioned above, where $SO_4^{2-}$ (mmol L^-1^) is equal to 0.9 × salinity (PSU).
@@ -122,7 +122,7 @@ TN was measured in grab samples in units of N%, ranging from 0.04 to 0.78%. This
  $NH_4^+$ measurements in the core samples were around 0.1 mmol L^-1^ porewater, increasing with depth. This concentration was similar to that in Van Cappellen and Wang (1996). 
  
 ##### Water column model results at the sediment boundary{-}
-$NO_3^-$ and  $NH_4^+$ concentrations were measured in the water column and a separate water column model was calibrated to match these concentrations. The average water column concentration of each was 1.5 × 10^-5^ mmol NO3- L^-1^ and 6.0 × 10 -5 mmol $NH_4^+$ L^-1^. Organic N flux was calculated in the water column model at around 250 mmol m^{-2} y^-1^ for detritus (PONR) and 300 mmol m^{-2} y^-1^ for algae (PONS). This indicated that most of the N was held in the organic pools.
+$NO_3^-$ and  $NH_4^+$ concentrations were measured in the water column and a separate water column model was calibrated to match these concentrations. The average water column concentration of each was 1.5 × 10^-5^ mmol NO3- L^-1^ and 6.0 × 10 -5 mmol $NH_4^+$ L^-1^. Organic N flux was calculated in the water column model at around 250 mmol m^-2^ y^-1^ for detritus (PONR) and 300 mmol m^-2^ y^-1^ for algae (PONS). This indicated that most of the N was held in the organic pools.
 
 ##### TN and TP budget estimates{-}
 The T&I report 1.2.2 Nutrient Dynamics contained an estimate of nutrient budgets in the sediment of the Coorong. The mass of TN was estimated at 25506 tonnes for the South Lagoon and 9377 tonnes for the North Lagoon. The mass of TP was 2204 tonnes for the South Lagoon and 924 tonnes for the North Lagoon. To meet this budget, the concentration of TN was calculated at around 50 mmol L^-1^, which was four orders of magnitude higher than indicated by the TN% measurements. 
@@ -161,34 +161,34 @@ In addition, to the physical and chemical process updates described above, the $
 #### Salinity – implementation on mixing and nitrogen redox {.unnumbered}
 Two functions to connect salinity to mixing and nitrogen reactions were developed for the sediment model during this project: $F_{Sal}$ and $F_{Sul}$. The full explanation for these can also be found in the aed-science manual, chapter 14.3. The $F_{Sal}$ function decreases from 1 to 0 as salinity increases, with two parameters for salinity concentrations that set the range over which the function works (35 and 70 PSU). The $F_{Sul}$ function decreases from 1 to 0 as $H_2S$ increases, which occurs as organic matter undergoes sulphate reduction. These two functions were applied to both macrofauna mixing processes, by multiplying the process rate by the value between 0 and 1. $F_{Sal}$ was also applied to all nitrogen redox reactions. Therefore, as salinity increased, and as $SO_4^{2-}$ increased and indirectly created $H_2S$, mixing and nitrogen redox were all reduced. $F_{Sal}$ was applied to the nitrogen redox reactions, but not the hydrolysis breakdown pathways that generated $NH_4^+$ (\@ref(fig:dev-boxes5)).
  
-```{r dev-boxes5, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the nitrogen breakdown pathways from PONR to N2. PONL was not included in this diagram in order to simplify it, and because PONR was the major PON pool. The salinity inhibition factor, $F_{Sal}$, was applied to those processes where $F_{Sal}$ is beside the arrow."}
+```{r dev-boxes5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of the nitrogen breakdown pathways from $PON_R$ to $N_2$. PONL was not included in this diagram in order to simplify it, and because PONR was the major PON pool. The salinity inhibition factor, $F_{Sal}$, was applied to those processes where $F_{Sal}$ is beside the arrow."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Boxes&Arrows/NModels-07.png")
 
 ```
  
 #### Iron and sulfur – implementation {.unnumbered}
-The influx of redox active Fe(OH)3A was set to 80 mmol m^{-2} y^{-1}, and a range of boundary fluxes were tested alongside different organic matter influxes. SO42- concentration was set in proportion to salinity, as described in the section above. The iron and sulfur cycles function as described in the aed-science manual. In brief, Fe(OH)3A reacts with organic matter to produce Fe2+ and its presence inhibits sulfate reduction. SO42- reacts with organic matter to produce $H_2S$. The by-products Fe2+ and $H_2S$ react together to form FeS. 
+The influx of redox active Fe(OH)3A was set to 80 mmol m^-2^ y^-1^, and a range of boundary fluxes were tested alongside different organic matter influxes. SO42- concentration was set in proportion to salinity, as described in the section above. The iron and sulfur cycles function as described in the aed-science manual. In brief, Fe(OH)3A reacts with organic matter to produce Fe2+ and its presence inhibits sulfate reduction. SO42- reacts with organic matter to produce $H_2S$. The by-products Fe2+ and $H_2S$ react together to form FeS. 
 
 Simulations were run with the parameter rxn_mode set to each option, 0 to 4, to test the effect of each option. The options are outlined in the aed-science manual. In brief, with options 0 and 1, FeS does not precipitate; with option 2 FeS precipitates at a constant kinetic rate; with options 3 and 4 FeS precipitates in proportion to the concentrations of the reactants and products already present. Options 2, 3 and 4 often created numerical instability problems. 
 
 #### Organic matter– implementation {.unnumbered}
 The sediment model has several organic matter models available to it, as outlined in the aed-science manual. This simulation used OMModel set to 2, which has separate state variables for each of dissolved or particulate, and refractory or labile organic C, N and P – 12 variables. An additional three variables were developed for this project, POCS, PONS and POPS, which were representative of the algal deposition from the water column – 15 variables in total. The boundary fluxes were set to average results from outputs from the water column model. Labile phases were set to be 10% of the value of the refractory variable. This simulation used the advanced nitrogen redox model shown above in (\@ref(fig:dev-boxes5)). 
 
-```{r dev-boxes6, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Model of organic carbon decomposition. Particulate phases are hydrolysed to dissolved phases, and finally the labile dissolved phase is oxidised to $CO_2$."}
+```{r dev-boxes6, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Model of organic carbon decomposition. Particulate phases are hydrolysed to dissolved phases, and finally the labile dissolved phase is oxidised to $CO_2$."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Boxes&Arrows/OMbreakdown-21.png")
 
 ```
  
-```{r dev-boxes6, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Model of organic nitrogen decomposition. Particulate phases are hydrolysed to dissolved phases, and finally the $NH_4^+$ enters the redox reactions."}
+```{r dev-boxes7, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Model of organic nitrogen decomposition. Particulate phases are hydrolysed to dissolved phases, and finally the $NH_4^+$ enters the redox reactions."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Boxes&Arrows/OMbreakdown-22.png")
 
 ```
 
 
-```{r dev-boxes6, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Model of organic phosphorus decomposition. Particulate phases are hydrolysed to dissolved phases, and finally the labile dissolved phase is released as to $PO_4^{3-}$."}
+```{r dev-boxes8, echo = FALSE, out.width='50%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Model of organic phosphorus decomposition. Particulate phases are hydrolysed to dissolved phases, and finally the labile dissolved phase is released as to $PO_4^{3-}$."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Boxes&Arrows/OMbreakdown-23.png")
 
@@ -296,7 +296,7 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/Initialisation/I
 #### Nitrogen transformation rate constants {.unnumbered}
 The kinetic rate constants that governed the reactions between the nitrogen pools were configured as presented in (\@ref(fig:dev-initprof1)). Note that these were not the rates, but the constants that are multiplied by the concentrations of the reactants involved and other limitation and inhibition factors that affected the rates. Thus the total rates were mostly dependent on the concentrations, however, the rate constants affected the distribution between the nitrogen pools.
 
-```{r dev-initprof1, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram of the processes of nitrogen breakdown with the kinetic rate constants shown for each process."}
+```{r dev-initprof2, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram of the processes of nitrogen breakdown with the kinetic rate constants shown for each process."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/NitrogenPools/NPools-06.png")
 
@@ -307,9 +307,9 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/NitrogenPools/NP
 #### Nutrient budget and mass calculator {.unnumbered}
 Since the sediment samples had often contained black ooze, it was assumed that most of the TN and TP was present as refractory organic matter and so the model was calibrated to meet the measured TN and TP budget. Because the sediment model is only resolved in one dimension of depth, in theory it has no specific area or volume. The same model can represent a large or small study site, which had traditionally worked well for reporting units of concentration and flux. 
 
-The simulation was set up as though it were exactly 1 m2, which was conceptualised as a representative area anywhere in the South Lagoon (\@ref(fig:dev-area1m2)). The estimate of the masses in the top 5 cm of the South Lagoon were 25 000 tonnes TN and 2200 tonnes TP. The area of the South Lagoon was approximately 1×108 m2. Therefore, the target concentration was approximately 250 g TN m^{-2} and 22 g TP m^{-2}. Initial and boundary conditions were tuned until a steady mass of TN and TP was reached.
+The simulation was set up as though it were exactly 1 m2, which was conceptualised as a representative area anywhere in the South Lagoon (\@ref(fig:dev-area1m2)). The estimate of the masses in the top 5 cm of the South Lagoon were 25 000 tonnes TN and 2200 tonnes TP. The area of the South Lagoon was approximately 1×108 m2. Therefore, the target concentration was approximately 250 g TN m^-2^ and 22 g TP m^-2^. Initial and boundary conditions were tuned until a steady mass of TN and TP was reached.
 
-```{r dev-area1m2, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram of the processes of nitrogen breakdown with the kinetic rate constants shown for each process."}
+```{r dev-area1m2, echo = FALSE, out.width='33%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Diagram representing the approach to area in this study. For the purposes of calculating mass, a representative 1 m2 from the South Lagoon was used"}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/1m2-02.png")
 
@@ -318,7 +318,7 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/1m
 
 
 #### Salinity variation tests {-}
-In a suite of model tests, the salinity boundary was changed for ten separate simulations (\@ref(fig:dev-salinitysims1)). Each simulation had an annual oscillation, with the highest value in May and the lowest in October (Figure 13). The first five simulations had salinity between 0 and 35, with different ranges of variation. The other five had increasing maximum and minimum salinity, with a range of 50 PSU throughout the year. The $SO_4^{2-}$ boundary concentration (mmol L^{-1}) was set to 90% of the salinity concentration (PSU), and so $SO_4^{2-}$ also had a yearly concentration change. 
+In a suite of model tests, the salinity boundary was changed for ten separate simulations (\@ref(fig:dev-salinitysims1)). Each simulation had an annual oscillation, with the highest value in May and the lowest in October (Figure 13). The first five simulations had salinity between 0 and 35, with different ranges of variation. The other five had increasing maximum and minimum salinity, with a range of 50 PSU throughout the year. The $SO_4^{2-}$ boundary concentration (mmol L^-1^) was set to 90% of the salinity concentration (PSU), and so $SO_4^{2-}$ also had a yearly concentration change. 
 
 Four variations of these ten simulations were run, to isolate the effects of the salinity and SO42- factors. The first used both $F_{Sal}$ and $F_{Sul}$, as per the normal simulations. The second used only $F_{Sal}$, the third only $F_{Sul}$, and the final simulation had neither $F_{Sal}$ nor $F_{Sul}$. 
 
@@ -537,7 +537,7 @@ Sediment nutrients were present in several phases: - organic and inorganic, - di
 
  ```{r dev-picsbudgetsetup-1, echo = FALSE, out.width='50%', class = "text-image", fig.show='hold' , fig.align='center', fig.cap = "Schematic of major N pools, as transferred between the water and sediment models. The water column PON is partitioned into labile and refractory fractions in the sediment. The refractory DON is fluxed back to the water column."}
 
- knitr::include_graphics("images/dev/sed_N_OveralL^{-1}0-10.png")
+ knitr::include_graphics("images/dev/sed_N_Overall-10-10.png")
 
  ```
 
@@ -838,13 +838,13 @@ Table 11 Calibrated values for setting the PONR and POPR budgets. These were the
 
 	                PONR	POPR
   Approximate mass	250 g	20 g
-  Initial concentration at the sediment-water interface	800 mmol L^{-1}	30 mmol L^{-1}
-  Flux at the sediment-water interface 	4000 mmol m^{-2} y^{-1}	100 mmol m^{-2} y^{-1}
-  Approximate concentration through the profile at the final time	400 mmol L^{-1}	10 mmol L^{-1}
+  Initial concentration at the sediment-water interface	800 mmol L^-1^	30 mmol L^-1^
+  Flux at the sediment-water interface 	4000 mmol m^-2^ y^-1^	100 mmol m^-2^ y^-1^
+  Approximate concentration through the profile at the final time	400 mmol L^-1^	10 mmol L^-1^
 
 PONR had the highest concentration, and the amount of TN in the redox active phases was comparatively very small. The approximate distribution of concentrations is given in Figure 8. (The $NH_4^+$ concentration profiles, magnitude and flux varied the most between the simulations, as is explained in the section below.) The distribution of concentrations was partly proportional to the kinetic rate constants. There is uncertainty involved in all of these constants and a recalibration of any of them could produce a different distribution of relative concentrations.
 
-```{r dev-NPools, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "SApproximate maximum concentrations for each of the nitrogen pools. The concentrations varied with depth, but these values are representative and show the relative orders of magnitude for each pool."}
+```{r dev-NPools, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Approximate maximum concentrations for each of the nitrogen pools. The concentrations varied with depth, but these values are representative and show the relative orders of magnitude for each pool."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/NitrogenPools/NPools-08.png")
 
@@ -852,12 +852,12 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/NitrogenPools/NP
  
 
 ##### Uncoupled organic matter flux variation results {-}
-The calibrations that met the organic nitrogen budget required a PONR influx of 4000 mmol m^{-2} y^{-1}. The calibrations that used the values from the water column model used PONR of 250 and PONS of 300 mmol m^{-2} y^{-1}: 550 in total. So the influx that met the budget required around four times the amount of flux. The POCS was added later in the calibration process as a means of increasing the influx while maintaining the link with the water column model. 
+The calibrations that met the organic nitrogen budget required a PONR influx of 4000 mmol m^-2^ y^-1^. The calibrations that used the values from the water column model used PONR of 250 and PONS of 300 mmol m^-2^ y^-1^: 550 in total. So the influx that met the budget required around four times the amount of flux. The POCS was added later in the calibration process as a means of increasing the influx while maintaining the link with the water column model. 
 
 ##### Uncoupled salinity variation {-}
 With increasing salinity, two general states were observed in the model. At low salinity, macrofauna mixing was continuous. As salinity increased to the values around 35 to 70 PSU (parameters *Sal1* and *Sal2* in the $F_{Sal}$ function) a clear pattern could be seen where mixing increased and decreased in proportion to the salinity oscillation. However, the general concentrations remained approximately within the limits of the low salinity simulations. At high salinity, mixing ceased and the reaction products accumulated much closer to the sediment-water interface.
 
-```{r dev-salsim1, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "General description of the results. At high salinity, mixing from bioturbation and bioirrigation does not occur."}
+```{r dev-salsim1, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "General description of the results. At high salinity, mixing from bioturbation and bioirrigation does not occur."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/MixingNoMixing.pdf")
 
@@ -865,11 +865,11 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/Mi
  
 
 ###### $NH_4^+$ and $H_2S$ patterns in low and high salinity {-}
-At low salinity, $NH_4^+$ was approximately 0.05 mmol L^{-1} and accumulated in the deep sediment, towards 40 cm. Thus the $NH_4^+$ was removed from the system through burial. At high salinity, $NH_4^+$ reached approximately 0.4 mmol L^{-1} and accumulated at approximately 10 cm deep. At low salinity, $NH_4^+$ fluxed into the sediment because the concentration in the top few cm was low. At high salinity, $NH_4^+$ flux from the sediment to the water column was around 200 mmol L^{-1} y^{-1}. 
+At low salinity, $NH_4^+$ was approximately 0.05 mmol L^-1^ and accumulated in the deep sediment, towards 40 cm. Thus the $NH_4^+$ was removed from the system through burial. At high salinity, $NH_4^+$ reached approximately 0.4 mmol L^-1^ and accumulated at approximately 10 cm deep. At low salinity, $NH_4^+$ fluxed into the sediment because the concentration in the top few cm was low. At high salinity, $NH_4^+$ flux from the sediment to the water column was around 200 mmol L^-1^ y^-1^. 
 
-A similar pattern was present for $H_2S$ concentrations. At seawater salinity, $H_2S$ was approximately 0.4 mmol L^{-1} and accumulated in the deep sediment. At high salinity, $H_2S$ reached approximately 1.5 mmol L^{-1} and accumulated at approximately 10 cm deep. At seawater salinity, $H_2S$ flux from the sediment to the water column was approximately 50 mmol m^{-2} y^{-1}. At high salinity it was approximately 100 mmol m^{-2} y^{-1}.
+A similar pattern was present for $H_2S$ concentrations. At seawater salinity, $H_2S$ was approximately 0.4 mmol L^-1^ and accumulated in the deep sediment. At high salinity, $H_2S$ reached approximately 1.5 mmol L^-1^ and accumulated at approximately 10 cm deep. At seawater salinity, $H_2S$ flux from the sediment to the water column was approximately 50 mmol m^-2^ y^-1^. At high salinity it was approximately 100 mmol m^-2^ y^-1^.
 
-```{r dev-salsims2, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "General result of the simulations for $NH_4^+$ and $H_2S$"}
+```{r dev-salsims2, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "General result of the simulations for $NH_4^+$ and $H_2S$"}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/LowDeep.pdf")
 
@@ -878,24 +878,24 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/Lo
 
 
  
-```{r dev-salsims3, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = ""}
+```{r dev-salsims3, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = ""}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/1.png")
 
 ```
 
 
-```{r dev-salsims4, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the concentration of NH4+ (above) and H2S (below). This simulation had salinity ranging from 10 to 50 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained. "}
+```{r dev-salsims4, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the concentration of NH4+ (above) and H2S (below). This simulation had salinity ranging from 10 to 50 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained. "}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/2.png")
 
 ```
-```{r dev-salsims5, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = " "}
+```{r dev-salsims5, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = " "}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/3.png")
 
 ```
-```{r dev-salsims6, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the concentration of NH4+ (above) and H2S (below). This simulation had salinity ranging from 50 to 100 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained. "}
+```{r dev-salsims6, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the concentration of NH4+ (above) and H2S (below). This simulation had salinity ranging from 50 to 100 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained. "}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/4.png")
 
@@ -903,18 +903,18 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/Sa
 
 
 ####### Uncoupled denitrification rates and salinity {-}
-Deammonification occured in a narrow band of sediment at approximately 8 cm deep and magnitude of approximately 1.5×10-5 mmol L^{-1} y^{-1}. At intermediate salinity, the rate occurred at an oscillating depth. At high salinity, the rate was approximately 1.5×10-6 mmol L^{-1} and occurred at 1 cm deep. This general pattern was consistent for the other nitrogen redox reactions: high salinity caused the nitrogen redox processes to occur closer to the sediment-water interface and at a lower magnitude. 
+Deammonification occured in a narrow band of sediment at approximately 8 cm deep and magnitude of approximately 1.5×10-5 mmol L^-1^ y^-1^. At intermediate salinity, the rate occurred at an oscillating depth. At high salinity, the rate was approximately 1.5×10-6 mmol L^-1^ and occurred at 1 cm deep. This general pattern was consistent for the other nitrogen redox reactions: high salinity caused the nitrogen redox processes to occur closer to the sediment-water interface and at a lower magnitude. 
 
 
 
 
-```{r dev-salsims7, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "General result of denitrification rate across simulations."}
+```{r dev-salsims7, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "General result of denitrification rate across simulations."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalDenitRate.pdf")
 
 ```
 
-```{r dev-salsims8, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example figure for the rate of deammonification in relation to salinity. This simulation had salinity ranging from 25 to 75 PSU. The reaction rate had a decrease in magnitude and depth as salinity increased.  "}
+```{r dev-salsims8, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Example figure for the rate of deammonification in relation to salinity. This simulation had salinity ranging from 25 to 75 PSU. The reaction rate had a decrease in magnitude and depth as salinity increased.  "}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/5.png")
 
@@ -930,19 +930,19 @@ knitr::include_graphics("images/dev/23-sediment_biogeochemistry/NitrogenPools/Np
 
 ###### Distinguishing salinity and SO42- effects on macrofauna mixing
 The general patterns described above are explained through the effects of FSal and FSul. Both factors caused macrofauna mixing to decrease, and to respond quickly to a change in salinity concentration. 
-When the salinity dropped during its seasonal oscillation, with enough mixing, $H_2S$ and $NH_4^+$ could be fluxed out of the sediment. However, if the $H_2S$ concentration reached a minimum value, a positive feedback occurred and the sediment switched over to its new equilibrium state. In the simulation with a salinity between 10 and 50 PSU, the sediment maintained its outflux of $H_2S$, and the concentration reached 0.5 mmol L^{-1} in the deep sediment. With a salinity between 25 and 75 PSU, $H_2S$ accumulated in the shallow sediment and though it oscillated in response to the salinity, it increased with each oscillation. 
+When the salinity dropped during its seasonal oscillation, with enough mixing, $H_2S$ and $NH_4^+$ could be fluxed out of the sediment. However, if the $H_2S$ concentration reached a minimum value, a positive feedback occurred and the sediment switched over to its new equilibrium state. In the simulation with a salinity between 10 and 50 PSU, the sediment maintained its outflux of $H_2S$, and the concentration reached 0.5 mmol L^-1^ in the deep sediment. With a salinity between 25 and 75 PSU, $H_2S$ accumulated in the shallow sediment and though it oscillated in response to the salinity, it increased with each oscillation. 
 
-In the simulation where FSal and FSul were turned off, even at the highest salinity concentration, $H_2S$ did not accumulate to high concentrations near the sediment-water interface. In the simulation where FSal was off but FSul was on, the result was the same. Although $H_2S$ accumulated to 0.4 mmol L^{-1} in the deepest sediment, this was not enough to cause a switch to a sulphide rich system. With this model setup, FSul alone was not enough to capture an environment in an unhealthy state. Further simulations with only FSul switched on may be able to capture this system with, for example, a longer simulation, a lower K$H_2S$ parameter, or a different FSul inhibition function.  
+In the simulation where FSal and FSul were turned off, even at the highest salinity concentration, $H_2S$ did not accumulate to high concentrations near the sediment-water interface. In the simulation where FSal was off but FSul was on, the result was the same. Although $H_2S$ accumulated to 0.4 mmol L^-1^ in the deepest sediment, this was not enough to cause a switch to a sulphide rich system. With this model setup, FSul alone was not enough to capture an environment in an unhealthy state. Further simulations with only FSul switched on may be able to capture this system with, for example, a longer simulation, a lower K$H_2S$ parameter, or a different FSul inhibition function.  
 
 
-```{r dev-salsims10, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "  "}
+```{r dev-salsims10, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "  "}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/6.png")
 
 ```
 
 
-```{r dev-salsims11, echo = FALSE, out.width='75%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the FSal (above) and FSul (below), in relation to salinity. This simulation had salinity ranging from 50 to 100 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained."}
+```{r dev-salsims11, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Figures for the FSal (above) and FSul (below), in relation to salinity. This simulation had salinity ranging from 50 to 100 PSU. With this setup, the concentrations were deeper and macrofauna mixing was maintained."}
 
 knitr::include_graphics("images/dev/23-sediment_biogeochemistry/CoorongImages/SalinitySims/7.png")
 
@@ -961,8 +961,8 @@ One of the focuses of the Coorong project was N removal. This study showed that 
 
 ##### Organic matter{-}
 High organic matter concentration fit the other factors described here: causing less bioturbation, oxygen, denitrification and iron reduction. The general trend was clear from the simulation, however, the specifics were not. It was difficult to reconcile the different measurements and the theoretical processes. 
-The organic N budget was approximately 1×105 tonnes N, which corresponded to approximately 400 mmol L^{-1}. The grab sample measurements averaged 34 mmol L^{-1} for TOC, which would suggest organic N of around 1 mmol L^{-1}. However, the grab samples TN measurements were around 0.0063 and 0.0176 mmol L^{-1}, which suggests that the assumptions in one of the unit conversions were not right. 
-The water column model influx, as suggested by the water column model, was 250 mmol m^{-2} y^{-1}. The only way to reconcile the organic nitrogen influx with any of these concentrations was to have a slow reaction rate (the kinetic rate constant for the hydrolysis of PONR). This matched the theory if we assumed that the incoming organic nitrogen was from algal detritus (as suggested by the NMR studies) that was unable to decompose quickly in the sediment environment. However, this conclusion reaches the limit of our theoretical understanding of the processes, and our empirical data from the site. 
+The organic N budget was approximately 1×105 tonnes N, which corresponded to approximately 400 mmol L^-1^. The grab sample measurements averaged 34 mmol L^-1^ for TOC, which would suggest organic N of around 1 mmol L^-1^. However, the grab samples TN measurements were around 0.0063 and 0.0176 mmol L^-1^, which suggests that the assumptions in one of the unit conversions were not right. 
+The water column model influx, as suggested by the water column model, was 250 mmol m^-2^ y^-1^. The only way to reconcile the organic nitrogen influx with any of these concentrations was to have a slow reaction rate (the kinetic rate constant for the hydrolysis of PONR). This matched the theory if we assumed that the incoming organic nitrogen was from algal detritus (as suggested by the NMR studies) that was unable to decompose quickly in the sediment environment. However, this conclusion reaches the limit of our theoretical understanding of the processes, and our empirical data from the site. 
 
 
 
@@ -1052,7 +1052,7 @@ knitr::include_graphics(c("images/dev/sed_C_D_core_zone33_feii_2020-11-01.png"))
 
 ```{r dev-calpics8, echo = FALSE, out.width='45%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "$H_2S$ concentration profile with simulated and measured data, as a snapshot at November 2020."}
 
-knitr::include_graphics(c("images/dev/sed_C_D_core_zone33_$H_2S$_2020-11-01.png"))
+knitr::include_graphics(c("images/dev/sed_C_D_core_zone33_H2S_2020-11-01.png"))
 
 ```
 
@@ -1173,7 +1173,7 @@ Across the lagoon, there were at least three major types of sediment environment
 
 ```{r dev-nutpics9, echo = FALSE, out.width='100%', class = "text-image",fig.show='hold',fig.align='center', fig.cap = "Schematic of three of the possible sediment zone denitrification results. Left: low-salinity areas were well mixed and had $O_2$ added at a relatively deep layer. Centre: high-salinity zones had little mixing and so influxing chemicals were confined to the very top layers. Right: High-salinity zones with plants had $O_2$ but not other variables mixed into the deeper layers."}
 
-knitr::include_graphics(c("images/dev/sed_3paneL^{-1}6.png"))
+knitr::include_graphics(c("images/dev/sed_3panel-16.png"))
 
 ```
 

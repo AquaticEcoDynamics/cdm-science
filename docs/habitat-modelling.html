@@ -7,19 +7,45 @@
 <title>8 Habitat Modelling | The Coorong Dynamics Model</title>
 <meta name="author" content="MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims">
 <meta name="description" content="8.1 Habitat modelling - Ruppia  8.1.1 Overview Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="8 Habitat Modelling | The Coorong Dynamics Model">
 <meta property="og:type" content="book">
 <meta property="og:description" content="8.1 Habitat modelling - Ruppia  8.1.1 Overview Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8 Habitat Modelling | The Coorong Dynamics Model">
 <meta name="twitter:description" content="8.1 Habitat modelling - Ruppia  8.1.1 Overview Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.10/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.0/transition.js"></script><script src="libs/bs3compat-0.3.0/tabs.js"></script><script src="libs/bs3compat-0.3.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -440,7 +466,7 @@ f(T): Temperature (°C)
 &gt;30 unsuitable
 </td>
 <td style="text-align:left;">
-The optimum temperature for photosynthesis of Ruppia sp. is approximately 20 – 23°C. At temperatures that are =30°C biomass declines, and if sustained, there may be no reproductive output. Lower threshold is unclear
+The optimum temperature for photosynthesis of Ruppia sp. is approximately 20 – 23°C. At temperatures that are ≥30°C biomass declines, and if sustained, there may be no reproductive output. Lower threshold is unclear
 </td>
 <td style="text-align:left;width: 10em; ">
 <span class="citation">Santamarı́a and Hootsmans (<a href="references.html#ref-santa1998" role="doc-biblioref">1998</a>)</span> cited in <span class="citation">Collier et al. (<a href="references.html#ref-collier2017" role="doc-biblioref">2017</a>)</span>.
@@ -2477,7 +2503,7 @@ viability + turion sprouting + adult growth Sep 2020 (model)</strong></p>
 <p>Average number of seagrass shoots per square meter recorded in Sep - Dec
 2020 (reproductive period) were compared with combined HSI for seed
 germination, turion sprouting and adult growth up to end of Sep in the
-same year (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-shoot2020map">9.44</a> and
+same year (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-shoot2020map">9.45</a> and
 <a href="habitat-modelling.html#fig:hchb-shoot2020">8.17</a>). The Gen II model update has resulted in
 slightly higher validation scores (correlation coefficient) than that of
 the Gen 0 model. The overall distribution of shoots was consistent with
@@ -2500,7 +2526,7 @@ Figure 8.17: Scatter plot and boxplot of average seagrass shoot count per square
 <p>Average number of <em>Ruppia</em> flower per square meter recorded in Sep - Dec
 2020 (reproductive period) were compared with overall HSI for sexual
 reproduction up to end of Oct in the same year (Figure
-<a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-flower2020map">9.46</a> and <a href="habitat-modelling.html#fig:hchb-flower2020">8.18</a>). The Gen
+<a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-flower2020map">9.47</a> and <a href="habitat-modelling.html#fig:hchb-flower2020">8.18</a>). The Gen
 II has similar validation scores of the Gen 0 model. The overall
 distribution of flowers was consistent with model prediction. Highest
 density of flowers was found in the north lagoon where HSI predictions
@@ -2523,7 +2549,7 @@ Figure 8.18: Scatter plot and boxplot of average <em>Ruppia</em> flower count pe
 <p><strong>iii. Field seed count Mar 2021 (obs) vs. HSI sexual Dec 2020 (model)</strong></p>
 <p>Average number of <em>Ruppia tuberosa</em> seed per square meter recorded in
 Mar - Apr 2021 (aestivation period) were compared with overall HSI for
-sexual reproduction in 2020 (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-seed2021map">9.48</a> and
+sexual reproduction in 2020 (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-seed2021map">9.49</a> and
 <a href="habitat-modelling.html#fig:hchb-seed2021">8.19</a>). The Gen II model update has resulted in
 better validation scores than the Gen 0 model, especially in the south
 lagoon. It’s important to note that seeds have the potential to disperse
@@ -2547,7 +2573,7 @@ Figure 8.19: Scatter plot and boxplot of average <em>Ruppia tuberosa</em> seed c
 <p>Average number of <em>Ruppia</em> turion (type I and II) per square meter
 recorded in Sep - Dec 2020 (reproductive period) were compared with
 overall HSI for asexual reproduction up to end of Oct in the same year
-(Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-turion2020map">9.50</a> and <a href="habitat-modelling.html#fig:hchb-turion2020">8.20</a>).
+(Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-turion2020map">9.51</a> and <a href="habitat-modelling.html#fig:hchb-turion2020">8.20</a>).
 The Gen II model update has significantly improved validation scores
 compared to the Gen 0 model due to a major change in salinity threshold
 parameter. The overall distribution of turions agreed with model
@@ -2571,7 +2597,7 @@ viability + turion sprouting + adult growth Sep 2021 (model)</strong></p>
 <p>Average number of seagrass shoots per square meter recorded in Dec 2021
 (reproductive period) were compared with combined HSI for seed
 germination, turion sprouting and adult growth up to end of Sep in the
-same year (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-shoot2021map">9.52</a> and
+same year (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-shoot2021map">9.53</a> and
 <a href="habitat-modelling.html#fig:hchb-shoot2021">8.21</a>). The validation scores of 2021 were lower
 than that of 2020, possibly due to the environmental conditions
 experienced in winter-spring 2021 (including unusually cool and wet
@@ -2594,7 +2620,7 @@ Figure 8.21: Scatter plot and boxplot of average seagrass shoot count per square
 (model)</strong></p>
 <p>Average number of <em>Ruppia</em> flowers per square meter recorded in Dec 2021
 (reproductive period) were compared with overall HSI for sexual
-reproduction in 2021 (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-flower2021map">9.54</a> and
+reproduction in 2021 (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-flower2021map">9.55</a> and
 <a href="habitat-modelling.html#fig:hchb-flower2021">8.22</a>). The validation scores of 2021 were lower
 than that of 2020, possibly due to the environmental conditions
 experienced in winter-spring 2021 (including unusually cool and wet
@@ -2620,7 +2646,7 @@ Figure 8.22: Scatter plot and boxplot of average <em>Ruppia</em> flower count pe
 <p><strong>vii. Field seed count Dec 2021 (obs) vs. HSI sexual Dec 2021 (model)</strong></p>
 <p>Average number of <em>Ruppia tuberosa</em> seeds per square meter recorded in
 Dec 2021 (reproductive period) were compared with overall HSI for sexual
-reproduction in 2021 (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-seed2021map-2">9.56</a> and
+reproduction in 2021 (Figure <a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-seed2021map-2">9.57</a> and
 <a href="habitat-modelling.html#fig:hchb-seed2021-2">8.23</a>). The validation scores of 2021 were lower
 than that of 2020. This is as expected, since flowering activity was
 markedly delayed in 2021 and would not have set seed in Dec yet.</p>
@@ -2642,7 +2668,7 @@ Figure 8.23: Scatter plot and boxplot of average <em>Ruppia tuberosa</em> seed c
 <p>Average number of <em>Ruppia</em> turion (type I and II) per square meter
 recorded in Dec 2021 (reproductive period) were compared with overall
 HSI for asexual reproduction in 2021 (Figure
-<a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-turion2021map">9.58</a> and <a href="habitat-modelling.html#fig:hchb-turion2021">8.24</a>).
+<a href="appendix-c-ruppia-habitat-assessment.html#fig:hchb-turion2021map">9.59</a> and <a href="habitat-modelling.html#fig:hchb-turion2021">8.24</a>).
 Validation scores for 2021 is markedly higher than in 2020. The overall
 distribution of turions agreed with model prediction in that more
 turions were found around the middle lagoon and northern half of south
@@ -3016,7 +3042,7 @@ while (i < img.length) {
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
