@@ -162,6 +162,7 @@ fig:ass-004d
 fig:ass-005d
 fig:ass-004e
 fig:ass-005e
+fig:ass-006e
 fig:ass-budget1
 fig:ass-budget2
 fig:ass-budget3
@@ -387,7 +388,8 @@ assessment-and-validation-periods
 integrated-simulation-performance
 generation-0-1
 generation-1.5
-generation-2-1
+generation-2.0
+generation-2.1
 nutrient-budget-assessment
 nutrient-budgets
 source-and-sink-summary
