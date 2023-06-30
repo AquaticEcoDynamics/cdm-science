@@ -176,6 +176,7 @@ fig:ass-pic2
 tab:ass-gaps
 tab:A-dataclasses
 tab:A-datacatalogue
+tab:A-testing4
 tab:A-testing3
 tab:A-testing2
 tab:A-testing1
