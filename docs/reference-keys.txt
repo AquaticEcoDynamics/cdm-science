@@ -87,7 +87,6 @@ fig:dev-initprof1
 fig:dev-initprof2
 fig:dev-area1m2
 fig:dev-salinitysims1
-fig:dev-salinitysims2
 fig:dev-pics3
 fig:dev-pics5
 fig:dev-pics1
@@ -105,7 +104,6 @@ tab:3dev-SecondaryRedox
 tab:3dev-Geochem
 fig:dev-picsbudgetsetup-5b
 fig:dev-NPools
-fig:dev-salsim1
 fig:dev-salsims2
 fig:dev-salsims4
 fig:dev-salsims6
@@ -370,7 +368,6 @@ iron-and-sulfur-background
 nitrogen-background
 salinity-background
 observed-data-and-characteristics-in-the-coorong
-organic-matter-coorong-observations
 model-approach-candi-aed
 model-developments-made-during-the-coorong-project
 implementation-of-theory-and-coorong-observations-in-the-sediment-model-setup
