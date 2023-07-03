@@ -716,11 +716,11 @@ same year (Figure \@ref(fig:hchb-shoot2020map) and
 model prediction. Seagrass density around the middle lagoon and north
 lagoon were higher, where HSI predictions were highest.
 
-<!-- # ```{r hchb-shoot2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average seagrass shoot count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-shoot2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average seagrass shoot count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/shoot2020_germspradt2020_map.png") -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/shoot2020_germspradt2020_map.png")
 
-<!-- # ``` -->
+```
 
 ```{r hchb-shoot2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per square meter in Sep – Dec 2020 versus HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions. Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 
@@ -739,15 +739,11 @@ reproduction up to end of Oct in the same year (Figure
 \@ref(fig:hchb-flower2020map) and \@ref(fig:hchb-flower2020)). The overall
 distribution of flowers generally aligned with model prediction where the highest density of flowers occurred in suitable habitat (HSI \> 0.5).
 
-<!-- # ```{r hchb-flower2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* flower count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-flower2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* flower count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- #  -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/flower2020_sexual2020_map.png")
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/flower2020_sexual2020_map.png") -->
-
-<!-- #  -->
-
-<!-- # ``` -->
+```
 
 ```{r hchb-flower2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* flower count per square meter in Sep – Dec 2020 versus HSI model output for overall sexual reproduction integrated over Jan - Oct 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions.Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 
@@ -766,13 +762,11 @@ sexual reproduction in 2020 (Figure \@ref(fig:hchb-seed2021map) and
 with water current/wind therefore its distribution and abundance may be
 less predictable than other plant materials.
 
-<!-- # ```{r hchb-seed2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia tuberosa* seed count per square meter in Mar – Apr 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-seed2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia tuberosa* seed count per square meter in Mar – Apr 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- #  -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/seed2021_sexual2020_map.png")
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2020_map.png") -->
-
-<!-- # ``` -->
+```
 
 ```{r hchb-seed2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia tuberosa* seed count per square meter in Mar – Apr 2021 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions. Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 
@@ -791,13 +785,11 @@ overall HSI for asexual reproduction up to end of Oct in the same year
 The overall distribution of turions agreed with model
 prediction although there were some misalignment in the North lagoon.
 
-<!-- # ```{r hchb-turion2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* turion count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-turion2020map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* turion count per square meter in Sep – Dec 2020 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Oct 2020. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- #  -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/turion2020_asexual2020_map.png")
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/turion2020_asexual2020_map.png") -->
-
-<!-- # ``` -->
+```
 
 ```{r hchb-turion2020, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* turion count per square meter in Sep – Dec 2020 versus HSI model output for overall asexual reproduction integrated over Jan - Oct 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions. Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 
@@ -819,13 +811,11 @@ experienced in winter-spring 2021 (including unusually cool and wet
 conditions), which may have caused a delay in the *Ruppia* life cycle
 (Waycott 2022, pers. comm.).
 
-<!-- # ```{r hchb-shoot2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average seagrass shoot count per square meter in Dec 2021 (circles) overlaid on HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-shoot2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average seagrass shoot count per square meter in Dec 2021 (circles) overlaid on HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- #  -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/shoot2021_germspradt2021_map.png")
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/shoot2021_germspradt2021_map.png") -->
-
-<!-- # ``` -->
+```
 
 ```{r hchb-shoot2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average seagrass shoot count per square meter in Dec 2021 versus HSI model output for germination, sprouting and adult growth integrated over Jan - Sep 2020. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions. Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 
@@ -850,13 +840,11 @@ triggered by warming temperature (Waycott 2022, pers. comm.), the
 threshold of which remains unclear (in the current model the temperature
 threshold for flowering is assumed to be the same as vegetative growth).
 
-<!-- # ```{r hchb-flower2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* flower count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-flower2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* flower count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- #  -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/flower2021_sexual2021_map.png")
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/flower2021_sexual2021_map.png") -->
-
-<!-- # ``` -->
+```
 
 ```{r hchb-flower2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* flower count per square meter in Dec 2021 versus HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions. Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 
@@ -873,13 +861,11 @@ reproduction in 2021 (Figure \@ref(fig:hchb-seed2021map-2) and
 \@ref(fig:hchb-seed2021-2)). It was expected that seed prediction may not be accurate this year since flowering activity was
 markedly delayed and would not have yet set seed in Dec.
 
-<!-- # ```{r hchb-seed2021map-2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia tuberosa* seed count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-seed2021map-2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia tuberosa* seed count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall sexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- #  -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/seed2021_sexual2021_map.png")
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/seed2021_sexual2021_map.png") -->
-
-<!-- # ``` -->
+```
 
 ```{r hchb-seed2021-2, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia tuberosa* seed count per square meter in Dec 2021 versus HSI model output for overall sexual reproduction integrated over Jan - Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions. Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 
@@ -900,13 +886,11 @@ distribution of turions agreed with model prediction in that more
 turions were found around the middle lagoon and northern half of south
 lagoon, where HSI were higher.
 
-<!-- # ```{r hchb-turion2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* turion count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."} -->
+```{r hchb-turion2021map, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Average *Ruppia* turion count per square meter in Dec 2021 (circles) overlaid on HSI model output for overall asexual reproduction integrated over Jan – Dec 2021. An HSI of 0 (dark purple) represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions (yellow)."}
 
-<!-- #  -->
+knitr::include_graphics("images/lagoon_habitat/Gen2.1/turion2021_asexual2021_map.png")
 
-<!-- # knitr::include_graphics("images/lagoon_habitat/turion2021_asexual2021_map.png") -->
-
-<!-- # ``` -->
+```
 
 ```{r hchb-turion2021, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Scatter plot and boxplot of average *Ruppia* turion count per square meter in Dec 2021 versus HSI model output for overall asexual reproduction integrated over Jan - Dec 2021. Top panel: the entire lagoon (red: north, blue: south), bottom panel: south lagoon. An HSI of 0 represents unsuitable habitat conditions, while an HSI of 1 represents optimal conditions. Vertical dashed line: median count; horizontal dashed line: HSI = 0.5, above which the habitat is classified as ‘preferred habitat’; points within light shaded area: True Positive; points within dark shaded area: True Negative."}
 

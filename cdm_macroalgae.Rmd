@@ -346,10 +346,10 @@ The model results are shown in  Figure \@ref(fig:dev-ulva14) - \@ref(fig:dev-ulv
 The simulated biomass in this version is higher that Gen 0, around 100-200 gDW/m2 in the main zones. This is lower than some of the peak biomass densities recorded in the field. This, however, was deemed to be acceptable as the model is predicting the average biomass across broad areas in the simulated mesh, whereas the observed data shows patchy densities with areas of high and low densities, with the higher biomass recorded in the shallow areas near the shore.
 
  
-<!-- # ```{r dev-ulva14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."} -->
-<!-- #  -->
-<!-- # knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2020_map.png") -->
-<!-- # ``` -->
+```{r dev-ulva14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
+
+knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2020_map.png")
+```
 
 ```{r dev-ulva15, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). rs: Spearman's rank correlation coefficient."}
 
@@ -357,10 +357,10 @@ knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2020.png")
 
 ```
 
-<!-- # ```{r dev-ulva16, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021."} -->
-<!-- #  -->
-<!-- # knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2021_map.png") -->
-<!-- # ``` -->
+```{r dev-ulva16, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021."}
+
+knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2021_map.png")
+```
 
 ```{r dev-ulva17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). rs: Spearman's rank correlation coefficient. "}
 
