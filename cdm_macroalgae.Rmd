@@ -337,42 +337,42 @@ knitr::include_graphics("images/dev/Algae_2016.png")
 
 ```
 
-### Generation 2
+### Generation 2.1
 
-Following further refinement of the general water quality model calibration (as outlined in Chapters 4-5), and the macroalgae model developments (Section 6.3), the Generation 2 model was run over the period from 2020-2021, inclusive, and the results were compared with in-depth HCHB survey data collected during several surveys undertaken within the period (see Figure \@ref(fig:dev-ulva11)).   
+Following further refinement of the general water quality model calibration (as outlined in Chapters 4-5), and the macroalgae model developments (Section 6.3), the Generation 2.1 model was run over the period from 2020-2021, inclusive, and the results were compared with in-depth HCHB survey data collected during several surveys undertaken within the period (see Figure \@ref(fig:dev-ulva11)).   
 
 The model results are shown in  Figure \@ref(fig:dev-ulva14) - \@ref(fig:dev-ulva15) for the 2020 dataset, and Figure \@ref(fig:dev-ulva16) - \@ref(fig:dev-ulva17) for the 2021 dataset.
 
-The simulated biomass in this version is higher that earlier versions, around 100-200 gDW/m2 in the main zones. This is lower than some of the peak biomass densities recorded in the field. This, however, was deemed to be acceptable as the model is predicting the average biomass across broad areas in the simulated mesh, whereas the observed data shows patchy densities with areas of high and low densities, with the higher biomass recorded in the shallow areas near the shore.
+The simulated biomass in this version is higher that Gen 0, around 100-200 gDW/m2 in the main zones. This is lower than some of the peak biomass densities recorded in the field. This, however, was deemed to be acceptable as the model is predicting the average biomass across broad areas in the simulated mesh, whereas the observed data shows patchy densities with areas of high and low densities, with the higher biomass recorded in the shallow areas near the shore.
 
  
-```{r dev-ulva14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."}
+<!-- # ```{r dev-ulva14, echo = FALSE, out.width='100%', class = "text-image", fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2020."} -->
+<!-- #  -->
+<!-- # knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2020_map.png") -->
+<!-- # ``` -->
 
-knitr::include_graphics("images/dev/algae_biomass_2020_map.png")
+```{r dev-ulva15, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). rs: Spearman's rank correlation coefficient."}
+
+knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2020.png")
+
 ```
 
-```{r dev-ulva15, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel)."}
+<!-- # ```{r dev-ulva16, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021."} -->
+<!-- #  -->
+<!-- # knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2021_map.png") -->
+<!-- # ``` -->
 
-knitr::include_graphics("images/dev/algae_biomass_2020.png")
+```{r dev-ulva17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). rs: Spearman's rank correlation coefficient. "}
 
-```
-
-```{r dev-ulva16, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Comparison of Observed and Simulated Ulva biomass (g DW/m2) for 2021."}
-
-knitr::include_graphics("images/dev/algae_biomass_2021_map.png")
-```
-
-```{r dev-ulva17, echo = FALSE, out.width='100%', class = "text-image",fig.align='center', fig.cap = "Scatter and box plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2021 in the entire lagoon (top panel: red - north lagoon sites; blue - south lagoon sites) and south lagoon (bottom panel). "}
-
-knitr::include_graphics("images/dev/algae_biomass_2021.png")
+knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_2021.png")
 ```
 
 Comparison of zone averaged modelled and observed data in 2020 - 2021 is shown in Figure \@ref(fig:dev-ulva18).The model did capture accurately that several zones should have no or low biomass, the zones indicated by zeros in Figure \@ref(fig:dev-ulva18). The model recorded zone-averaged biomass accumulating in some zones where observed biomass was lower (e.g. zone 31,33). Therefore, the model isn't capturing the spatial gradient as seen in the field data.
 
 
-```{r dev-ulva18, echo = FALSE, out.width='60%', class = "text-image",fig.align='center', fig.cap = "Scatter plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 - 2021 averaged by zones in the lagoon. Labels indicate zone number (see Figure 2.5 for details)."}
+```{r dev-ulva18, echo = FALSE, out.width='60%', class = "text-image",fig.align='center', fig.cap = "Scatter plot of field estimated macroalgae biomass versus simulated Ulva biomass for 2020 - 2021 averaged by zones in the lagoon. Labels indicate zone number (see Figure 2.5 for details). rs: Spearman's rank correlation coefficient."}
 
-knitr::include_graphics("images/dev/algae_biomass_zone_label.png")
+knitr::include_graphics("images/dev/Gen2.1_macroalgae/algae_biomass_zone_label.png")
 ```
 
 <br>
@@ -393,7 +393,7 @@ Closer inspection of the controls on growth are highlighted in the animation bel
 
 The macroalgae model in AED has been able to capture the broad spatial patterns in environmental drivers that control the drivers and biomass of the *Ulva* community. Comparison of the Generation 0 model with the pre-HCHB survey data provided insights to the suitability of the model approach, and demonstrated the growth drivers (as captured via the $Ulva\:HSI$) correlated well with the early (albeit patchy) observations of biomass occurrence. This has been further refined in the Generation 1, 1.5 and 2.0 model simulations to ultimately allow simulation of the spatial extent of filamentous algal biomass accumulation. 
 
-The Generation 2 model showed mixed accuracy against the more comprehensive dataset from 2021 and 2022 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field. This is recommended as an area for further investigation and may benefit from further data on  benthic substrates that can be used to constrain where it is able to attach and grow.
+The Generation 2.1 model showed mixed accuracy against the more comprehensive dataset from 2020 and 2021 with a more notable number of false positives - areas where biomass was predicted to occur but was not observed in the field. This is recommended as an area for further investigation and may benefit from further data on  benthic substrates that can be used to constrain where it is able to attach and grow.
 
 
 

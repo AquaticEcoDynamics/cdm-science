@@ -43,8 +43,6 @@ kbl(theSheet[,2:8], caption = "Habitat suitability functions for Ruppia life sta
 
 <br>
 
-
-
 ## Model assessment - historical (pre-HCHB) data {.unnumbered}
 
 <br> **i. Field seed/flower count (obs) vs. HSI flowering and seed set (model)**
@@ -136,7 +134,6 @@ knitr::include_graphics("images/lagoon_habitat/hist_shoot2019vsHSI2018.png")
 
 <br>
 
-
 ## Model assessment - HCHB data version 1 {.unnumbered}
 
 **i. Field seagrass shoot count Sep 2020 (obs) vs. HSI germination & sprouting Jul 2020 (model)**
@@ -205,7 +202,6 @@ knitr::include_graphics("images/lagoon_habitat/hchbv1_algaecover2020vsbiomass.pn
 ```
 
 <br>
-
 
 ## Model assessment - HCHB data version 2 {.unnumbered}
 

@@ -7,7 +7,7 @@
 <title>7 Sediment Biogeochemistry | The Coorong Dynamics Model</title>
 <meta name="author" content="MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims">
 <meta name="description" content="7.1 Overview This section outlines the examination of the Coorong sediment environment and the simulation of its key processes using CANDI-AED. This section consists of the theory, a summary of...">
-<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="7 Sediment Biogeochemistry | The Coorong Dynamics Model">
 <meta property="og:type" content="book">
 <meta property="og:description" content="7.1 Overview This section outlines the examination of the Coorong sediment environment and the simulation of its key processes using CANDI-AED. This section consists of the theory, a summary of...">
@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="7.1 Overview This section outlines the examination of the Coorong sediment environment and the simulation of its key processes using CANDI-AED. This section consists of the theory, a summary of...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -195,7 +195,7 @@ Figure 7.4: Schematic of the nitrogen redox reactions used in this sediment mode
 <h4>Salinity and benthic fauna<a class="anchor" aria-label="anchor" href="#salinity-and-benthic-fauna"><i class="fas fa-link"></i></a>
 </h4>
 <p>High salinity does not favour benthic macrofauna and the processes they create, bioturbation and bioirrigation. Bioturbation is the mixing of solids and solutes by small animals as they move in the upper layers of the sediment; bioirrigation is the transport of solutes between the sediment-water interface and the bottom of a burrow. One of the effects of these processes is to increase the concentration of oxygen in the upper layers of the sediment, and so, conversely, a lack of these processes creates an anaerobic environment closer to the sediment-water interface. These processes are captured in the sediment model, as described in the implementation section below, and in the aed-science manual, chapter 14.3.
-Benthic macrofauna have been described as ‘ecosystem engineers’, in which they maintain the sediment conditions within a range favourable to their own survival (T&amp;I 1.3.2). Beyond a certain point they cannot maintain their own favourable conditions. If they can help bury nutrients deep in the sediment rather than release them to the water column, they can prevent eutrophication and thus prevent oxygen depletion. However, at high salinity, it becomes difficult for benthic macrofauna to survive.</p>
+Benthic macrofauna have been described as ‘ecosystem engineers,’ in which they maintain the sediment conditions within a range favourable to their own survival (T&amp;I 1.3.2). Beyond a certain point they cannot maintain their own favourable conditions. If they can help bury nutrients deep in the sediment rather than release them to the water column, they can prevent eutrophication and thus prevent oxygen depletion. However, at high salinity, it becomes difficult for benthic macrofauna to survive.</p>
 </div>
 <div id="salinity-and-so_42--concentration" class="section level4 unnumbered">
 <h4>Salinity and <span class="math inline">\(SO_4^{2-}\)</span> concentration<a class="anchor" aria-label="anchor" href="#salinity-and-so_42--concentration"><i class="fas fa-link"></i></a>
@@ -239,7 +239,7 @@ Benthic macrofauna have been described as ‘ecosystem engineers’, in which th
 <div id="sediment-sulfides" class="section level5 unnumbered">
 <h5>Sediment sulfides<a class="anchor" aria-label="anchor" href="#sediment-sulfides"><i class="fas fa-link"></i></a>
 </h5>
-<p>AVS was converted from units of ‘% S WW’, which was assumed to be kg S (100 kg wet sediment)-1, to mmol S (L total volume)-1, using porosity at each grab site. (A sample of 0.025 % S WW converted to 3.7 mmol S L<sup>-1</sup>, where the porosity was 0.66). The average of the AVS grabs was 3.36 mmol L<sup>-1</sup>, the minimum value 0.26 and maximum 7.21 mmol L<sup>-1</sup>.The AVS concentrations in the grab samples mostly corresponded with the values in the rapid assessments, with high concentrations usually in the deep channel and in zones 4, 5 and 6.The AVS concentrations were compared to the total iron concentrations from the grab samples. The average total iron was 7.69 mmol L<sup>-1</sup> total sediment, which implies roughly two Fe for each S on average over the lagoon. Each site did not have a clear correlation between S and Fe.</p>
+<p>AVS was converted from units of ‘% S WW,’ which was assumed to be kg S (100 kg wet sediment)-1, to mmol S (L total volume)-1, using porosity at each grab site. (A sample of 0.025 % S WW converted to 3.7 mmol S L<sup>-1</sup>, where the porosity was 0.66). The average of the AVS grabs was 3.36 mmol L<sup>-1</sup>, the minimum value 0.26 and maximum 7.21 mmol L<sup>-1</sup>.The AVS concentrations in the grab samples mostly corresponded with the values in the rapid assessments, with high concentrations usually in the deep channel and in zones 4, 5 and 6.The AVS concentrations were compared to the total iron concentrations from the grab samples. The average total iron was 7.69 mmol L<sup>-1</sup> total sediment, which implies roughly two Fe for each S on average over the lagoon. Each site did not have a clear correlation between S and Fe.</p>
 </div>
 <div id="sediment-h_2s-cores" class="section level5 unnumbered">
 <h5>Sediment <span class="math inline">\(∑\)</span>H_2S$ cores<a class="anchor" aria-label="anchor" href="#sediment-h_2s-cores"><i class="fas fa-link"></i></a>
@@ -375,7 +375,7 @@ Figure 7.8: Model of organic phosphorus decomposition. Particulate phases are hy
 <p>The final feature developed for nutrient burial for this project was the very unreactive organic matter parameter. As mentioned in the model setup above, the organic matter setup in this model has labile and refractory phases, as state variables. The model was extended in this project by dropping the reactivity of the particulate refractory phase towards zero as the concentration approached a minimum. For <span class="math inline">\(PON_R\)</span>, the parameter <em>ponu</em> set the minimum concentration and <em>KOMPres_N</em> set the sensitivity of the decrease, as in the equation below. The equivalent parameters for C an P were <em>pocu</em> and <em>popu</em>, and <em>KOMPres_C</em> and <em>KOMPres_P</em>.</p>
 <span class="math display">\[\begin{eqnarray}
 
-komlim = \frac {PON_R - ponu} {PON_R - ponu + KOMPres_N}
+komlim = \frac {PON_R - ponu} {PON_R - ponu + KOMPres_N} 
 \\
 \\
 R_{PONR} = (ponr2donr) (komlim)
@@ -803,7 +803,7 @@ Methane
 ‘dic’
 </td>
 <td style="text-align:center;">
-∑CO<sub>2</sub>
+<u>CO<sub>2</sub></u>
 </td>
 </tr>
 <tr>
@@ -908,7 +908,7 @@ Adsorbed N
 </center>
 <p><br></p>
 <p><br></p>
-<p>row_spec(0, background = “#14759e”, bold = TRUE, color = “white”) %&gt;%
+<p>row_spec(0, background = “#14759e,” bold = TRUE, color = “white”) %&gt;%
 kable_styling(full_width = T,font_size = 10) %&gt;%
 scroll_box(fixed_thead = FALSE)</p>
 </div>
@@ -1368,7 +1368,7 @@ Figure 7.18: Schematic of major N pools, as transferred between the water and se
 </p>
 </div>
 </div>
-<p>The flux of <span class="math inline">\(Fe(OH)_{3A}\)</span> from the water column to the sediment is set from the parameter ‘default_vals’. In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the <span class="math inline">\(Fe^2+\)</span> concentration value. <br></p>
+<p>The flux of <span class="math inline">\(Fe(OH)_{3A}\)</span> from the water column to the sediment is set from the parameter ‘default_vals.’ In the water column model, Fe is not simulated, therefore one value was applied equally to all zones. The value was calibrated to fit the <span class="math inline">\(Fe^2+\)</span> concentration value. <br></p>
 <p><br></p>
 </div>
 <div id="initialisation-and-spinup" class="section level4 unnumbered">
@@ -5240,7 +5240,7 @@ Figure 7.20: Schematic of the fate of <span class="math inline">\(PON_R\)</span>
 <p>The dominant reaction pathways for nitrogen include hydrolysis of <span class="math inline">\(PON_R\)</span> to <span class="math inline">\(DON_R\)</span>, and mineralisation of <span class="math inline">\(DON_R\)</span> to <span class="math inline">\(NH_4^+\)</span>. The major chemical processes that affected the mass budget were hydrolysis of <span class="math inline">\(PON_R\)</span> to <span class="math inline">\(DON_R\)</span> and mineralization of <span class="math inline">\(DON_R\)</span> to <span class="math inline">\(NH_4^+\)</span>.</p>
 <span class="math display">\[\begin{eqnarray}
 \\
-  PON_{R} \rightarrow DON_{R}
+  PON_{R} \rightarrow DON_{R} 
 \\
   DON_{R} \rightarrow NH_{4}^{+}  
 \\
@@ -6048,7 +6048,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 30-June-2023.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 03-July-2023.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -6061,7 +6061,7 @@ while (i < img.length) {
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

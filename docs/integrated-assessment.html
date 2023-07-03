@@ -7,7 +7,7 @@
 <title>9 Integrated Assessment | The Coorong Dynamics Model</title>
 <meta name="author" content="MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims">
 <meta name="description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
-<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta name="generator" content="bookdown 0.26 with bs4_book()">
 <meta property="og:title" content="9 Integrated Assessment | The Coorong Dynamics Model">
 <meta property="og:type" content="book">
 <meta property="og:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
@@ -16,7 +16,7 @@
 <meta name="twitter:description" content="9.1 Overview The previous chapters have detailed the nature of the model setup, additions and areas of development. In this section, the model is assessed in its entirety, for each version of the...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet">
 <script src="libs/panelset-0.2.6/panelset.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
@@ -174,7 +174,7 @@
 <p>This confidence evaluation, considers:</p>
 <ul>
 <li>Quality of observed data, which is influenced by field and laboratory data limitations, methodologies, processes and protocols.</li>
-<li>Error metric scores relative to what is typically reported in the literature for water quality models (e.g., <span class="citation">Arhonditsis and Brett (<a href="references.html#ref-arhonditsis2004" role="doc-biblioref">2004</a>)</span> ).</li>
+<li>Error metric scores relative to what is typically reported in the literature for water quality models (e.g., <span class="citation"><a href="references.html#ref-arhonditsis2004" role="doc-biblioref">Arhonditsis and Brett</a> (<a href="references.html#ref-arhonditsis2004" role="doc-biblioref">2004</a>)</span> ).</li>
 <li>Ability of the CDM to capture the mean of an indicator and its spatial gradient and seasonality.</li>
 <li>Partitioning of water quality constituents within different ecosystem pools.</li>
 <li>Natural variability of the indicator at different temporal scales (i.e. sub-daily to seasonal).</li>
@@ -312,9 +312,9 @@ Figure 9.8: Performance summary of CDM (GEN 2.0) simulating long-term temperatur
 <p><br></p>
 </div>
 </div>
-<div id="generation-2.1" class="section level3 panelset" number="9.5.4">
+<div id="generation-2.1-1" class="section level3 panelset" number="9.5.4">
 <h3>
-<span class="header-section-number">9.5.4</span> Generation 2.1<a class="anchor" aria-label="anchor" href="#generation-2.1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.4</span> Generation 2.1<a class="anchor" aria-label="anchor" href="#generation-2.1-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>The error metrics for the Generation 2.1 simulation are shown below.</p>
 <p><br></p>
@@ -414,7 +414,7 @@ Figure 9.14: Summary pie chart of nitrogen sources and sinks in the north lagoon
 <h2>
 <span class="header-section-number">9.7</span> Environmental response function (ERF) analysis<a class="anchor" aria-label="anchor" href="#environmental-response-function-erf-analysis"><i class="fas fa-link"></i></a>
 </h2>
-<p>A useful method for applying the model is to construct environmental response function (ERFs); these can be used to predict water quality variables in estuary/lagoon sub-domains in response to changes in boundary forcing, and can therefore provide a simple and quick assessment of the occurrence of some target events. As an example, the environmental response of salinity, TN and TP in space and time is compared for a scenario assessing the delivery of water for the environment. This compares how the lagoon differs in repsonse to water being provided as an “<a href="https://vimeo.com/715481753">environmental flow</a>” (e.g. see <span class="citation">Brookes et al. (<a href="references.html#ref-brookes2022" role="doc-biblioref">2022</a>)</span> ). Two simulations are compared:</p>
+<p>A useful method for applying the model is to construct environmental response function (ERFs); these can be used to predict water quality variables in estuary/lagoon sub-domains in response to changes in boundary forcing, and can therefore provide a simple and quick assessment of the occurrence of some target events. As an example, the environmental response of salinity, TN and TP in space and time is compared for a scenario assessing the delivery of water for the environment. This compares how the lagoon differs in repsonse to water being provided as an “<a href="https://vimeo.com/715481753">environmental flow</a>” (e.g. see <span class="citation"><a href="references.html#ref-brookes2022" role="doc-biblioref">Brookes et al.</a> (<a href="references.html#ref-brookes2022" role="doc-biblioref">2022</a>)</span> ). Two simulations are compared:</p>
 <ul>
 <li>‘all water’ : representing the base-case scenario where water was delivered over the barrages as actually occurred, and</li>
 <li>‘no-eWater’ : representing a counter-factual situation when there was no environmental water delivered across the barrages</li>
@@ -726,7 +726,7 @@ Apr-July
 CNL &amp; CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -740,7 +740,7 @@ June-Sept
 CNL &amp; CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -754,7 +754,7 @@ Aug-Dec
 CNL &amp; CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr grouplength="10">
@@ -885,7 +885,7 @@ Apr-Sep
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -899,7 +899,7 @@ Oct-Mar
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr grouplength="7">
@@ -974,7 +974,7 @@ Year-round
 ME
 </td>
 <td style="text-align:left;min-width: 10em; ">
-No. of events that mean monthly estuary-averaged salinity (via stations A4261036, A4261039, A4261128, A4261043) is &gt;40 g/L for ≥2 months
+No. of events that mean monthly estuary-averaged salinity (via stations A4261036, A4261039, A4261128, A4261043) is &gt;40 g/L for =2 months
 </td>
 </tr>
 <tr>
@@ -1002,7 +1002,7 @@ Year-round
 ME
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days where Murray Mouth depth is ≥ 1 m
+% of days where Murray Mouth depth is = 1 m
 </td>
 </tr>
 <tr grouplength="7">
@@ -1138,7 +1138,7 @@ Oct–Jan
 Boundary condition
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days when barrage flow are ≥ 200 ML/day.
+% of days when barrage flow are = 200 ML/day.
 </td>
 </tr>
 <tr>
@@ -1152,7 +1152,7 @@ May–Jan
 ME
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days where Murray Mouth depth is ≥ 30 cm
+% of days where Murray Mouth depth is = 30 cm
 </td>
 </tr>
 <tr>
@@ -1410,7 +1410,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 650 GL/year
+&lt;U+0394&gt; from 650 GL/year
 </td>
 </tr>
 <tr>
@@ -1424,7 +1424,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 2000 GL/year rolling annual average
+&lt;U+0394&gt; from 2000 GL/year rolling annual average
 </td>
 </tr>
 <tr>
@@ -1438,7 +1438,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 6,000 GL/year
+&lt;U+0394&gt; from 6,000 GL/year
 </td>
 </tr>
 <tr>
@@ -1452,7 +1452,7 @@ Year-round
 System-wide
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Δ from 10,000 GL/year
+&lt;U+0394&gt; from 10,000 GL/year
 </td>
 </tr>
 <tr>
@@ -1480,7 +1480,7 @@ June-Aug
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are ≥+0.3 m AHD
+% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are =+0.3 m AHD
 </td>
 </tr>
 <tr>
@@ -1522,7 +1522,7 @@ Sep-Dec
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are ≥+0.2 m AHD
+% of days CSL lagoon-averaged mean-daily water levels (via CSL stations A4260633, A4261209 and A4261165) are =+0.2 m AHD
 </td>
 </tr>
 <tr>
@@ -1751,7 +1751,7 @@ Apr-Sep
 CNL 
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1765,7 +1765,7 @@ Oct-Mar
 CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1779,7 +1779,7 @@ Oct-Mar
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1793,7 +1793,7 @@ Apr-Sep
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily ∆ from the mean daily lagoon-averaged T Chl-a concentration
+Average daily &lt;U+2206&gt; from the mean daily lagoon-averaged T Chl-a concentration
 </td>
 </tr>
 <tr>
@@ -1807,7 +1807,7 @@ Apr-Sep
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥6.5 mg/L
+Average daily area (HA) that minimum DO is =6.5 mg/L
 </td>
 </tr>
 <tr>
@@ -1821,7 +1821,7 @@ Oct-Mar
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥6.5 mg/L
+Average daily area (HA) that minimum DO is =6.5 mg/L
 </td>
 </tr>
 <tr>
@@ -1835,7 +1835,7 @@ Apr-Sep
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥4 mg/L
+Average daily area (HA) that minimum DO is =4 mg/L
 </td>
 </tr>
 <tr>
@@ -1849,7 +1849,7 @@ Oct-Mar
 CSL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (HA) that minimum DO is ≥4 mg/L
+Average daily area (HA) that minimum DO is =4 mg/L
 </td>
 </tr>
 <tr>
@@ -1863,7 +1863,7 @@ Apr-Sep
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -1877,7 +1877,7 @@ Apr-Sep
 CSL 
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -1891,7 +1891,7 @@ Oct-Mar
 ME, CNL
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 <tr>
@@ -1905,7 +1905,7 @@ Oct-Mar
 CSL 
 </td>
 <td style="text-align:left;min-width: 10em; ">
-Average daily area (Km2) where OPD is ≥3 cm using shallow sediment zones
+Average daily area (Km2) where OPD is =3 cm using shallow sediment zones
 </td>
 </tr>
 </tbody>
@@ -2113,7 +2113,7 @@ Figure 9.18: Critial CPS for macroinvertabrates where Average daily area (Km2) w
 <li>Error metric assessment</li>
 <li>Habitat area calculation</li>
 </ul>
-<p>Looking holistically at the statistic results in the long-term simulation, the CDM appeared to capture the salinity and temperature changes, and also the TN, TP and dissolved oxygen variation compared to the observational data in most regions. Reasonable predictions were obtained for other nutrient species. The Ruppia HSI shows reasonable performance against field sample data and the predicted macroalgae biomass reasonably captures the spatial distribution of filamentous algae. As is expected for these type of simulations (e.g., see <span class="citation">Arhonditsis and Brett (<a href="references.html#ref-arhonditsis2004" role="doc-biblioref">2004</a>)</span> ), model performance is much better for the hydrodynamic variables (salinity and temperature) than for the nutrient and biological properties. It is particularly challenging to get high model performance scores when values have high inherent variance, and/or are near to the detection limit. This was the case for many variables assessed in this study, particularly the bioavailable nutrients, and the error metric numbers should be considered with the data quality issues in mind as discussed in Chapter 9.4.2.</p>
+<p>Looking holistically at the statistic results in the long-term simulation, the CDM appeared to capture the salinity and temperature changes, and also the TN, TP and dissolved oxygen variation compared to the observational data in most regions. Reasonable predictions were obtained for other nutrient species. The Ruppia HSI shows reasonable performance against field sample data and the predicted macroalgae biomass reasonably captures the spatial distribution of filamentous algae. As is expected for these type of simulations (e.g., see <span class="citation"><a href="references.html#ref-arhonditsis2004" role="doc-biblioref">Arhonditsis and Brett</a> (<a href="references.html#ref-arhonditsis2004" role="doc-biblioref">2004</a>)</span> ), model performance is much better for the hydrodynamic variables (salinity and temperature) than for the nutrient and biological properties. It is particularly challenging to get high model performance scores when values have high inherent variance, and/or are near to the detection limit. This was the case for many variables assessed in this study, particularly the bioavailable nutrients, and the error metric numbers should be considered with the data quality issues in mind as discussed in Chapter 9.4.2.</p>
 <p>Overall, the model performance is consistent in both the focus period (2020-2021) and the long-term simulation (2017-2021) when adopting the same water quality modules and model parameters, suggesting in its present form the model is suitable for assessing the management scenarios associated with water management. These results show the promise of the model and give direction to focus areas for development and calibration. Key challenges in model setup, calibration and use for scenario assessment appear to be:</p>
 <ul>
 <li>Salinity calibration in the South Lagoon has remained problematic in some years</li>
@@ -2291,7 +2291,7 @@ while (i < img.length) {
 <li><a class="nav-link" href="#generation-0-1"><span class="header-section-number">9.5.1</span> Generation 0</a></li>
 <li><a class="nav-link" href="#generation-1.5"><span class="header-section-number">9.5.2</span> Generation 1.5</a></li>
 <li><a class="nav-link" href="#generation-2.0"><span class="header-section-number">9.5.3</span> Generation 2.0</a></li>
-<li><a class="nav-link" href="#generation-2.1"><span class="header-section-number">9.5.4</span> Generation 2.1</a></li>
+<li><a class="nav-link" href="#generation-2.1-1"><span class="header-section-number">9.5.4</span> Generation 2.1</a></li>
 </ul>
 </li>
 <li>
@@ -2325,7 +2325,7 @@ while (i < img.length) {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 30-June-2023.</p>
+    <p>"<strong>The Coorong Dynamics Model</strong>" was written by MR Hipsey, P Huang, S Zhai, B Busch, D Paraska, C Sims. It was last built on 03-July-2023.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -2338,7 +2338,7 @@ while (i < img.length) {
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
